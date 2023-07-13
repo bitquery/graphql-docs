@@ -36,19 +36,21 @@ const config = {
   },
 
   plugins: [
-    [
-      "@graphql-markdown/docusaurus",
-      {
-        schema: "https://graphql.bitquery.io",
-        rootPath: "./docs/v1/graphql-reference/", // docs will be generated under './docs/v1/graphql-reference'
-        baseURL: ".",
-        linkRoot: "/docs/v1/graphql-reference/",
-        homepage: "./docs/v1/graphql-reference/intro.md",
-        loaders: {
-          UrlLoader: "@graphql-tools/url-loader",
-        },
-      },
-    ],
+    //temporarily commented
+    // [
+    //   "@graphql-markdown/docusaurus",
+    //   {
+    //     schema: "./schema.graphql",
+    //     rootPath: "./docs/v1/", // docs will be generated under './docs/v1/graphql-reference'
+    //     baseURL: ".",
+    //     linkRoot: "/docs/v1/",
+    //     homepage: "./docs/v1/intro.md",
+    //     // loaders: {
+    //     //   UrlLoader: "@graphql-tools/url-loader",
+    //     // },
+  
+    //   },
+    // ],
     [
       require.resolve("@cmfcmf/docusaurus-search-local"),
       {
