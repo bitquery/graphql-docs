@@ -1,0 +1,174 @@
+---
+id: ripple-ripple-state-measurable
+title: RippleRippleStateMeasurable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum RippleRippleStateMeasurable {
+  date
+  time
+  block
+  transactionIndex
+  transactionHash
+  transactionSender
+  transactionType
+  operation
+  lowAccount
+  highAccount
+  currencyName
+  currencySymbol
+  balance
+  prevBalance
+  prevTxnId
+  prevLedgerSequence
+  flags
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateMeasurable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateMeasurable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateMeasurable.<b>block</b></code>](#)  
+> 
+> 
+> Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateMeasurable.<b>transactionIndex</b></code>](#)  
+> 
+> 
+> Transaction index
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateMeasurable.<b>transactionHash</b></code>](#)  
+> 
+> 
+> Transaction hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateMeasurable.<b>transactionSender</b></code>](#)  
+> 
+> 
+> Transaction sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateMeasurable.<b>transactionType</b></code>](#)  
+> 
+> 
+> Transaction type
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateMeasurable.<b>operation</b></code>](#)  
+> 
+> 
+> Operation
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateMeasurable.<b>lowAccount</b></code>](#)  
+> 
+> 
+> Low account
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateMeasurable.<b>highAccount</b></code>](#)  
+> 
+> 
+> High account
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateMeasurable.<b>currencyName</b></code>](#)  
+> 
+> 
+> Currency name
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateMeasurable.<b>currencySymbol</b></code>](#)  
+> 
+> 
+> Currency symbol
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateMeasurable.<b>balance</b></code>](#)  
+> 
+> 
+> Balance
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateMeasurable.<b>prevBalance</b></code>](#)  
+> 
+> 
+> Pre balance
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateMeasurable.<b>prevTxnId</b></code>](#)  
+> 
+> 
+> Prev txn
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateMeasurable.<b>prevLedgerSequence</b></code>](#)  
+> 
+> 
+> Prev ledger sequence
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateMeasurable.<b>flags</b></code>](#)  
+> 
+> 
+> Flags
+> 
+
+
+

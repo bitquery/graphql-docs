@@ -1,0 +1,220 @@
+---
+id: flow-block-seal
+title: FlowBlockSeal
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Block seals in Flow blockchain
+
+
+```graphql
+type FlowBlockSeal {
+  any(
+    of: FlowBlockSealsMeasureable!
+  ): String
+  block(
+    height: BlockSelector
+    blockId: HashSelector
+  ): FlowBlockDimension!
+  count(
+    uniq: FlowBlockSealUniq
+  ): Int
+  countBigInt(
+    uniq: FlowBlockSealUniq
+  ): BigInt
+  date: Date
+  executionReceiptId: String
+  executionReceiptSignatures: [String!]
+  expression(
+    get: String!
+  ): DecimalNumber
+  index: Int
+  maximum(
+    of: FlowBlockSealsMeasureable!
+    get: FlowBlockSealsMeasureable
+  ): String
+  minimum(
+    of: FlowBlockSealsMeasureable!
+    get: FlowBlockSealsMeasureable
+  ): String
+  resultApprovalSignatures: [String!]
+  sealId: String
+  time: DateTime
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.<b>any</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.any.<b>of</b></code>](#)<Bullet />[`FlowBlockSealsMeasureable!`](/docs/v1/graphql-reference/enums/flow-block-seals-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.<b>block</b></code>](#)<Bullet />[`FlowBlockDimension!`](/docs/v1/graphql-reference/objects/flow-block-dimension) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Block information
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.block.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.block.<b>blockId</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.<b>count</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.count.<b>uniq</b></code>](#)<Bullet />[`FlowBlockSealUniq`](/docs/v1/graphql-reference/enums/flow-block-seal-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.countBigInt.<b>uniq</b></code>](#)<Bullet />[`FlowBlockSealUniq`](/docs/v1/graphql-reference/enums/flow-block-seal-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.<b>date</b></code>](#)<Bullet />[`Date`](/docs/v1/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The date this transaction was created
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.<b>executionReceiptId</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> ID execution receipt being sealed
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.<b>executionReceiptSignatures</b></code>](#)<Bullet />[`[String!]`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> BLS signatures of verification nodes on the execution receipt contents
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/v1/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.<b>index</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Index inside block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.maximum.<b>of</b></code>](#)<Bullet />[`FlowBlockSealsMeasureable!`](/docs/v1/graphql-reference/enums/flow-block-seals-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.maximum.<b>get</b></code>](#)<Bullet />[`FlowBlockSealsMeasureable`](/docs/v1/graphql-reference/enums/flow-block-seals-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.minimum.<b>of</b></code>](#)<Bullet />[`FlowBlockSealsMeasureable!`](/docs/v1/graphql-reference/enums/flow-block-seals-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.minimum.<b>get</b></code>](#)<Bullet />[`FlowBlockSealsMeasureable`](/docs/v1/graphql-reference/enums/flow-block-seals-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.<b>resultApprovalSignatures</b></code>](#)<Bullet />[`[String!]`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> BLS signatures of verification nodes on the result approval contents
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.<b>sealId</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> ID of the block being sealed
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowBlockSeal.<b>time</b></code>](#)<Bullet />[`DateTime`](/docs/v1/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The time this transaction was created
+> 
+
+
+
+### Member of
+
+[`Flow`](/docs/v1/graphql-reference/objects/flow)  <Badge class="secondary" text="object"/>
+

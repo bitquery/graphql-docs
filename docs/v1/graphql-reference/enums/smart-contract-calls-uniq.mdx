@@ -1,0 +1,111 @@
+---
+id: smart-contract-calls-uniq
+title: SmartContractCallsUniq
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum SmartContractCallsUniq {
+  calls
+  txs
+  senders
+  callers
+  smart_contracts
+  smart_contract_methods
+  blocks
+  dates
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractCallsUniq.<b>calls</b></code>](#)  
+> 
+> 
+> Calls
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractCallsUniq.<b>txs</b></code>](#)  
+> 
+> 
+> Unique transactions count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractCallsUniq.<b>senders</b></code>](#)  
+> 
+> 
+> Unique transaction senders
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractCallsUniq.<b>callers</b></code>](#)  
+> 
+> 
+> Unique callers count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractCallsUniq.<b>smart_contracts</b></code>](#)  
+> 
+> 
+> Unique smart contracts count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractCallsUniq.<b>smart_contract_methods</b></code>](#)  
+> 
+> 
+> Unique smart contract methods count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractCallsUniq.<b>blocks</b></code>](#)  
+> 
+> 
+> Unique blocks
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractCallsUniq.<b>dates</b></code>](#)  
+> 
+> 
+> Unique date count
+> 
+
+
+

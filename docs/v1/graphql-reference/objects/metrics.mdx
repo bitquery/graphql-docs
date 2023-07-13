@@ -1,0 +1,91 @@
+---
+id: metrics
+title: Metrics
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Query metrics
+
+
+```graphql
+type Metrics {
+  id: String!
+  list: [Metric!]!
+  points: Float!
+  sqlRequestsCount: Int!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Metrics.<b>id</b></code>](#)<Bullet />[`String!`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Graphql query ID
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Metrics.<b>list</b></code>](#)<Bullet />[`[Metric!]!`](/docs/v1/graphql-reference/objects/metric) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Metrics
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Metrics.<b>points</b></code>](#)<Bullet />[`Float!`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Points
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Metrics.<b>sqlRequestsCount</b></code>](#)<Bullet />[`Int!`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> SQL requests count
+> 
+
+
+
+### Returned by
+
+[`metrics`](/docs/v1/graphql-reference/queries/metrics)  <Badge class="secondary" text="query"/>
+
+### Member of
+
+[`Utilities`](/docs/v1/graphql-reference/objects/utilities)  <Badge class="secondary" text="object"/>
+

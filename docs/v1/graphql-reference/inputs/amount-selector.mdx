@@ -1,0 +1,122 @@
+---
+id: amount-selector
+title: AmountSelector
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Select by amount
+
+
+```graphql
+input AmountSelector {
+  is: Float
+  not: Float
+  in: [Float!]
+  notIn: [Float!]
+  gt: Float
+  lt: Float
+  lteq: Float
+  gteq: Float
+  between: [Float!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>AmountSelector.<b>is</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Amount is
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AmountSelector.<b>not</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Amount not
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AmountSelector.<b>in</b></code>](#)<Bullet />[`[Float!]`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Amount in the list
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AmountSelector.<b>notIn</b></code>](#)<Bullet />[`[Float!]`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Amount not in the list
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AmountSelector.<b>gt</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Amount greater than
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AmountSelector.<b>lt</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Amount less than
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AmountSelector.<b>lteq</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Amount less or equal than
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AmountSelector.<b>gteq</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Amount greater or equal than
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AmountSelector.<b>between</b></code>](#)<Bullet />[`[Float!]`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Amount in range
+> 
+
+
+
+### Member of
+
+[`AlgorandBlockFilter`](/docs/v1/graphql-reference/inputs/algorand-block-filter)  <Badge class="secondary" text="input"/><Bullet />[`AlgorandTransferFilter`](/docs/v1/graphql-reference/inputs/algorand-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`BinanceOrderFilter`](/docs/v1/graphql-reference/inputs/binance-order-filter)  <Badge class="secondary" text="input"/><Bullet />[`BinanceTradeFilter`](/docs/v1/graphql-reference/inputs/binance-trade-filter)  <Badge class="secondary" text="input"/><Bullet />[`BinanceTransactionFilter`](/docs/v1/graphql-reference/inputs/binance-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`BinanceTransferFilter`](/docs/v1/graphql-reference/inputs/binance-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`ConfluxTransactionFilter`](/docs/v1/graphql-reference/inputs/conflux-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`ConfluxTransferFilter`](/docs/v1/graphql-reference/inputs/conflux-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`CosmosTransactionFilter`](/docs/v1/graphql-reference/inputs/cosmos-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`CosmosTransferFilter`](/docs/v1/graphql-reference/inputs/cosmos-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`EosTransferFilter`](/docs/v1/graphql-reference/inputs/eos-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`Ethereum2ValidatorUpdatesFilter`](/docs/v1/graphql-reference/inputs/ethereum-2-validator-updates-filter)  <Badge class="secondary" text="input"/><Bullet />[`EthereumBlockFilter`](/docs/v1/graphql-reference/inputs/ethereum-block-filter)  <Badge class="secondary" text="input"/><Bullet />[`EthereumDexTradeFilter`](/docs/v1/graphql-reference/inputs/ethereum-dex-trade-filter)  <Badge class="secondary" text="input"/><Bullet />[`EthereumTransactionFilter`](/docs/v1/graphql-reference/inputs/ethereum-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`EthereumTransferFilter`](/docs/v1/graphql-reference/inputs/ethereum-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`FilecoinCallFilter`](/docs/v1/graphql-reference/inputs/filecoin-call-filter)  <Badge class="secondary" text="input"/><Bullet />[`FilecoinMessageFilter`](/docs/v1/graphql-reference/inputs/filecoin-message-filter)  <Badge class="secondary" text="input"/><Bullet />[`FilecoinTransferFilter`](/docs/v1/graphql-reference/inputs/filecoin-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`HederaInputFilter`](/docs/v1/graphql-reference/inputs/hedera-input-filter)  <Badge class="secondary" text="input"/><Bullet />[`LibraMintFilter`](/docs/v1/graphql-reference/inputs/libra-mint-filter)  <Badge class="secondary" text="input"/><Bullet />[`LibraTransferFilter`](/docs/v1/graphql-reference/inputs/libra-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`SolanaBlockFilter`](/docs/v1/graphql-reference/inputs/solana-block-filter)  <Badge class="secondary" text="input"/><Bullet />[`SolanaBlockRewardFilter`](/docs/v1/graphql-reference/inputs/solana-block-reward-filter)  <Badge class="secondary" text="input"/><Bullet />[`SolanaTransactionFilter`](/docs/v1/graphql-reference/inputs/solana-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`SolanaTransferFilter`](/docs/v1/graphql-reference/inputs/solana-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`TronDexTradeFilter`](/docs/v1/graphql-reference/inputs/tron-dex-trade-filter)  <Badge class="secondary" text="input"/><Bullet />[`TronTradeFilter`](/docs/v1/graphql-reference/inputs/tron-trade-filter)  <Badge class="secondary" text="input"/><Bullet />[`TronTransferFilter`](/docs/v1/graphql-reference/inputs/tron-transfer-filter)  <Badge class="secondary" text="input"/>
+

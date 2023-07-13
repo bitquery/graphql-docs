@@ -1,0 +1,262 @@
+---
+id: binance-transfer-type
+title: BinanceTransferType
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum BinanceTransferType {
+  BLOCK_REWARD
+  BURN
+  CLAIM_HTL
+  DEPOSIT_HTL
+  DEX_FEE
+  GENESIS_DELEGATION
+  GENESIS_SUPPLY
+  TINY_TOKEN_ISSUE
+  MINI_TOKEN_ISSUE
+  HTL_TRANSFER
+  ISSUE
+  MINT
+  TRADE_BUY
+  TRADE_SELL
+  TRANSFER
+  TX_FEE
+  CREATE_SIDECHAIN_VALIDATOR
+  EDIT_SIDECHAIN_VALIDATOR
+  SIDECHAIN_DELEGATE
+  SIDECHAIN_REDELEGATE
+  SIDECHAIN_UNBOND
+  SIDE_SUBMIT_PROPOSAL
+  SIDE_DEPOSIT
+  SIDE_VOTE
+  TRANSFER_OUT
+  BSC_SUBMIT_EVIDENCE
+  CLAIM
+  BIND
+  UNBIND
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>BLOCK_REWARD</b></code>](#)  
+> 
+> 
+> Reward for block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>BURN</b></code>](#)  
+> 
+> 
+> Burning amount
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>CLAIM_HTL</b></code>](#)  
+> 
+> 
+> Claiming Hash Timer Locked Transfer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>DEPOSIT_HTL</b></code>](#)  
+> 
+> 
+> Deposit for Hash Timer Locked Transfer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>DEX_FEE</b></code>](#)  
+> 
+> 
+> Fee for DEX orders
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>GENESIS_DELEGATION</b></code>](#)  
+> 
+> 
+> Genesis declaration
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>GENESIS_SUPPLY</b></code>](#)  
+> 
+> 
+> Genesis supply declaration
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>TINY_TOKEN_ISSUE</b></code>](#)  
+> 
+> 
+> Tiny Token Issue
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>MINI_TOKEN_ISSUE</b></code>](#)  
+> 
+> 
+> Mini Token Issue
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>HTL_TRANSFER</b></code>](#)  
+> 
+> 
+> Hash Timer Locked Transfer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>ISSUE</b></code>](#)  
+> 
+> 
+> Issue token
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>MINT</b></code>](#)  
+> 
+> 
+> Mint token
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>TRADE_BUY</b></code>](#)  
+> 
+> 
+> Trade buy side
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>TRADE_SELL</b></code>](#)  
+> 
+> 
+> Trade sell side
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>TRANSFER</b></code>](#)  
+> 
+> 
+> Transfer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>TX_FEE</b></code>](#)  
+> 
+> 
+> Transaction fee
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>CREATE_SIDECHAIN_VALIDATOR</b></code>](#)  
+> 
+> 
+> Create sidechain validator
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>EDIT_SIDECHAIN_VALIDATOR</b></code>](#)  
+> 
+> 
+> Edit sidechain validator
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>SIDECHAIN_DELEGATE</b></code>](#)  
+> 
+> 
+> Delegate for sidechain
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>SIDECHAIN_REDELEGATE</b></code>](#)  
+> 
+> 
+> ReDelegate for sidechain
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>SIDECHAIN_UNBOND</b></code>](#)  
+> 
+> 
+> Unbond from sidechain
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>SIDE_SUBMIT_PROPOSAL</b></code>](#)  
+> 
+> 
+> Side chain submit poroposal
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>SIDE_DEPOSIT</b></code>](#)  
+> 
+> 
+> Side chain deposit
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>SIDE_VOTE</b></code>](#)  
+> 
+> 
+> Side chain vote
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>TRANSFER_OUT</b></code>](#)  
+> 
+> 
+> Cross chain transfer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>BSC_SUBMIT_EVIDENCE</b></code>](#)  
+> 
+> 
+> Submit evidence
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>CLAIM</b></code>](#)  
+> 
+> 
+> Cross chain claim
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>BIND</b></code>](#)  
+> 
+> 
+> Bind
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferType.<b>UNBIND</b></code>](#)  
+> 
+> 
+> UnBind
+> 
+
+
+
+### Member of
+
+[`BinanceTransfers`](/docs/v1/graphql-reference/objects/binance-transfers)  <Badge class="secondary" text="object"/><Bullet />[`BinanceTransferTypeSelector`](/docs/v1/graphql-reference/inputs/binance-transfer-type-selector)  <Badge class="secondary" text="input"/>
+

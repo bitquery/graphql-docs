@@ -1,0 +1,153 @@
+---
+id: stellar-transfer-uniq
+title: StellarTransferUniq
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum StellarTransferUniq {
+  times
+  dates
+  transactionHashes
+  transactionIndices
+  transactionSenders
+  operations
+  opIndices
+  receivers
+  senders
+  currenciesFromName
+  currenciesToName
+  currenciesFromSymbol
+  currenciesToSymbol
+  directions
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransferUniq.<b>times</b></code>](#)  
+> 
+> 
+> Uniq times count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransferUniq.<b>dates</b></code>](#)  
+> 
+> 
+> Uniq dates count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransferUniq.<b>transactionHashes</b></code>](#)  
+> 
+> 
+> Uniq transaction hashes
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransferUniq.<b>transactionIndices</b></code>](#)  
+> 
+> 
+> Uniq transaction indices
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransferUniq.<b>transactionSenders</b></code>](#)  
+> 
+> 
+> Uniq transaction senders
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransferUniq.<b>operations</b></code>](#)  
+> 
+> 
+> Uniq operations
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransferUniq.<b>opIndices</b></code>](#)  
+> 
+> 
+> Uniq operation indices
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransferUniq.<b>receivers</b></code>](#)  
+> 
+> 
+> Uniq transfer receivers
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransferUniq.<b>senders</b></code>](#)  
+> 
+> 
+> Uniq transfer senders
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransferUniq.<b>currenciesFromName</b></code>](#)  
+> 
+> 
+> Uniq currency from names
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransferUniq.<b>currenciesToName</b></code>](#)  
+> 
+> 
+> Uniq currency to names
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransferUniq.<b>currenciesFromSymbol</b></code>](#)  
+> 
+> 
+> Uniq currency from symbols
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransferUniq.<b>currenciesToSymbol</b></code>](#)  
+> 
+> 
+> Uniq currency to symbols
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransferUniq.<b>directions</b></code>](#)  
+> 
+> 
+> Uniq directions
+> 
+
+
+

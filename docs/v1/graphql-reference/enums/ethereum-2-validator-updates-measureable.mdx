@@ -1,0 +1,202 @@
+---
+id: ethereum-2-validator-updates-measureable
+title: Ethereum2ValidatorUpdatesMeasureable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum Ethereum2ValidatorUpdatesMeasureable {
+  date
+  time
+  block
+  epoch
+  block_root_hash
+  parent_root_hash
+  state_root_hash
+  eth1_deposit_root_hash
+  eth1_deposit_count
+  eth1_block_hash
+  proposer_index
+  proposer_pubkey_hash
+  validator_index
+  validator_pubkey_hash
+  validator_slashed
+  validator_balance
+  validator_effective_balance
+  validator_balance_change
+  validator_activation_epoch
+  validator_exit_epoch
+  validator_withdrawable_epoch
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>block</b></code>](#)  
+> 
+> 
+> Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>epoch</b></code>](#)  
+> 
+> 
+> Epoch
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>block_root_hash</b></code>](#)  
+> 
+> 
+> Block hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>parent_root_hash</b></code>](#)  
+> 
+> 
+> Parent root hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>state_root_hash</b></code>](#)  
+> 
+> 
+> State root hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>eth1_deposit_root_hash</b></code>](#)  
+> 
+> 
+> Eth1 deposit root hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>eth1_deposit_count</b></code>](#)  
+> 
+> 
+> Eth1 deposit count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>eth1_block_hash</b></code>](#)  
+> 
+> 
+> Eth1 block hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>proposer_index</b></code>](#)  
+> 
+> 
+> Proposer index
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>proposer_pubkey_hash</b></code>](#)  
+> 
+> 
+> Proposer pubkey hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>validator_index</b></code>](#)  
+> 
+> 
+> Validator index
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>validator_pubkey_hash</b></code>](#)  
+> 
+> 
+> Validator pubkey hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>validator_slashed</b></code>](#)  
+> 
+> 
+> Validator slashed
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>validator_balance</b></code>](#)  
+> 
+> 
+> Validator balance
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>validator_effective_balance</b></code>](#)  
+> 
+> 
+> Validator effective balance
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>validator_balance_change</b></code>](#)  
+> 
+> 
+> Validator balance change
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>validator_activation_epoch</b></code>](#)  
+> 
+> 
+> Validator activation epoch
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>validator_exit_epoch</b></code>](#)  
+> 
+> 
+> Validator exit epoch
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2ValidatorUpdatesMeasureable.<b>validator_withdrawable_epoch</b></code>](#)  
+> 
+> 
+> Validator withdrawable epoch
+> 
+
+
+

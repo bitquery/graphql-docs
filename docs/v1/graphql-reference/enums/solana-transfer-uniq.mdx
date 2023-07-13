@@ -1,0 +1,139 @@
+---
+id: solana-transfer-uniq
+title: SolanaTransferUniq
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum SolanaTransferUniq {
+  times
+  dates
+  height
+  signature
+  fee_payer
+  signer
+  sender_address
+  receiver_address
+  sender_mint_address
+  receiver_mint_address
+  currencies
+  token_account
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferUniq.<b>times</b></code>](#)  
+> 
+> 
+> Unique time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferUniq.<b>dates</b></code>](#)  
+> 
+> 
+> Unique date count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferUniq.<b>height</b></code>](#)  
+> 
+> 
+> Number of block in the blockchains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferUniq.<b>signature</b></code>](#)  
+> 
+> 
+> Transaction Hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferUniq.<b>fee_payer</b></code>](#)  
+> 
+> 
+> Fee Payer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferUniq.<b>signer</b></code>](#)  
+> 
+> 
+> Signer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferUniq.<b>sender_address</b></code>](#)  
+> 
+> 
+> Transfer From
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferUniq.<b>receiver_address</b></code>](#)  
+> 
+> 
+> Transfer To
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferUniq.<b>sender_mint_address</b></code>](#)  
+> 
+> 
+> Transfer From Mint Address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferUniq.<b>receiver_mint_address</b></code>](#)  
+> 
+> 
+> Transfer To Mint Address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferUniq.<b>currencies</b></code>](#)  
+> 
+> 
+> Currencies
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferUniq.<b>token_account</b></code>](#)  
+> 
+> 
+> Token Account Address
+> 
+
+
+

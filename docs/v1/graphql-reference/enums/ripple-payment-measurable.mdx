@@ -1,0 +1,244 @@
+---
+id: ripple-payment-measurable
+title: RipplePaymentMeasurable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum RipplePaymentMeasurable {
+  date
+  time
+  block
+  transactionIndex
+  transactionHash
+  sender
+  receiver
+  amountCurrencyName
+  amountCurrencySymbol
+  amountIssuer
+  amount
+  deliveredCurrencyName
+  deliveredCurrencySymbol
+  deliveredIssuer
+  deliveredAmount
+  sendMaxCurrencyName
+  sendMaxCurrencySymbol
+  sendMaxIssuer
+  sendMaxAmount
+  deliverMinCurrencyName
+  deliverMinCurrencySymbol
+  deliverMinIssuer
+  deliverMinAmount
+  tag
+  invoice
+  flags
+  partial
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>block</b></code>](#)  
+> 
+> 
+> Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>transactionIndex</b></code>](#)  
+> 
+> 
+> Transaction index
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>transactionHash</b></code>](#)  
+> 
+> 
+> Transaction hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>sender</b></code>](#)  
+> 
+> 
+> Sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>receiver</b></code>](#)  
+> 
+> 
+> Receiver
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>amountCurrencyName</b></code>](#)  
+> 
+> 
+> Amount currency name
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>amountCurrencySymbol</b></code>](#)  
+> 
+> 
+> Amount currency symbol
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>amountIssuer</b></code>](#)  
+> 
+> 
+> Amount issuer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>amount</b></code>](#)  
+> 
+> 
+> Amount
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>deliveredCurrencyName</b></code>](#)  
+> 
+> 
+> Delivered currency name
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>deliveredCurrencySymbol</b></code>](#)  
+> 
+> 
+> Delivered currency symbol
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>deliveredIssuer</b></code>](#)  
+> 
+> 
+> Delivered issuer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>deliveredAmount</b></code>](#)  
+> 
+> 
+> Delivered amount
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>sendMaxCurrencyName</b></code>](#)  
+> 
+> 
+> Send max currency name
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>sendMaxCurrencySymbol</b></code>](#)  
+> 
+> 
+> Send max currency symbol
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>sendMaxIssuer</b></code>](#)  
+> 
+> 
+> Send max issuer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>sendMaxAmount</b></code>](#)  
+> 
+> 
+> Send max amount
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>deliverMinCurrencyName</b></code>](#)  
+> 
+> 
+> Deliver min currency name
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>deliverMinCurrencySymbol</b></code>](#)  
+> 
+> 
+> Deliver min currency symbol
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>deliverMinIssuer</b></code>](#)  
+> 
+> 
+> Deliver min issuer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>deliverMinAmount</b></code>](#)  
+> 
+> 
+> Deliver min amount
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>tag</b></code>](#)  
+> 
+> 
+> Tag
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>invoice</b></code>](#)  
+> 
+> 
+> Invoice
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>flags</b></code>](#)  
+> 
+> 
+> Flags
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentMeasurable.<b>partial</b></code>](#)  
+> 
+> 
+> Partial
+> 
+
+
+

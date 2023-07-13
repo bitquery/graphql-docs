@@ -1,0 +1,118 @@
+---
+id: smart-contract-events-uniq
+title: SmartContractEventsUniq
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum SmartContractEventsUniq {
+  blocks
+  dates
+  txs
+  tx_to
+  tx_from
+  smart_contracts
+  smart_contract_methods
+  shard_id
+  to_shard_id
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractEventsUniq.<b>blocks</b></code>](#)  
+> 
+> 
+> Unique blocks
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractEventsUniq.<b>dates</b></code>](#)  
+> 
+> 
+> Unique date count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractEventsUniq.<b>txs</b></code>](#)  
+> 
+> 
+> Unique transactions count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractEventsUniq.<b>tx_to</b></code>](#)  
+> 
+> 
+> Unique callers count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractEventsUniq.<b>tx_from</b></code>](#)  
+> 
+> 
+> Unique transaction senders
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractEventsUniq.<b>smart_contracts</b></code>](#)  
+> 
+> 
+> Unique smart contracts count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractEventsUniq.<b>smart_contract_methods</b></code>](#)  
+> 
+> 
+> Unique smart contract methods count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractEventsUniq.<b>shard_id</b></code>](#)  
+> 
+> 
+> Shard ID
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractEventsUniq.<b>to_shard_id</b></code>](#)  
+> 
+> 
+> To Shard ID
+> 
+
+
+

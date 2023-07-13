@@ -1,0 +1,139 @@
+---
+id: hedera-output-measureable
+title: HederaOutputMeasureable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum HederaOutputMeasureable {
+  date
+  time
+  valid_start
+  valid_duration
+  transaction_hash
+  max_fee
+  transaction_fee
+  amount
+  currency_symbol
+  currency_address
+  token_type
+  token_id
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaOutputMeasureable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaOutputMeasureable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaOutputMeasureable.<b>valid_start</b></code>](#)  
+> 
+> 
+> Valid start
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaOutputMeasureable.<b>valid_duration</b></code>](#)  
+> 
+> 
+> Valid duration
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaOutputMeasureable.<b>transaction_hash</b></code>](#)  
+> 
+> 
+> Transaction Hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaOutputMeasureable.<b>max_fee</b></code>](#)  
+> 
+> 
+> Max Fee
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaOutputMeasureable.<b>transaction_fee</b></code>](#)  
+> 
+> 
+> Charged Fee
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaOutputMeasureable.<b>amount</b></code>](#)  
+> 
+> 
+> Amount
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaOutputMeasureable.<b>currency_symbol</b></code>](#)  
+> 
+> 
+> Currency Symbol
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaOutputMeasureable.<b>currency_address</b></code>](#)  
+> 
+> 
+> Currency Address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaOutputMeasureable.<b>token_type</b></code>](#)  
+> 
+> 
+> Token Type
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaOutputMeasureable.<b>token_id</b></code>](#)  
+> 
+> 
+> Token ID
+> 
+
+
+

@@ -1,0 +1,160 @@
+---
+id: ripple-ripple-state-uniq
+title: RippleRippleStateUniq
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum RippleRippleStateUniq {
+  dates
+  times
+  blocks
+  transactionIndices
+  transactionHashes
+  transactionSenders
+  transactionTypes
+  operations
+  lowAccounts
+  highAccounts
+  currencyNames
+  currencySymbols
+  prevTxnIds
+  prevLedgerSequences
+  flags
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateUniq.<b>dates</b></code>](#)  
+> 
+> 
+> Uniq dates count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateUniq.<b>times</b></code>](#)  
+> 
+> 
+> Uniq times count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateUniq.<b>blocks</b></code>](#)  
+> 
+> 
+> Uniq blocks count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateUniq.<b>transactionIndices</b></code>](#)  
+> 
+> 
+> Uniq transaction indices count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateUniq.<b>transactionHashes</b></code>](#)  
+> 
+> 
+> Uniq transaction hashes count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateUniq.<b>transactionSenders</b></code>](#)  
+> 
+> 
+> Uniq transaction senders count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateUniq.<b>transactionTypes</b></code>](#)  
+> 
+> 
+> Uniq transaction types count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateUniq.<b>operations</b></code>](#)  
+> 
+> 
+> Uniq operations count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateUniq.<b>lowAccounts</b></code>](#)  
+> 
+> 
+> Uniq low accounts count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateUniq.<b>highAccounts</b></code>](#)  
+> 
+> 
+> Uniq high accounts count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateUniq.<b>currencyNames</b></code>](#)  
+> 
+> 
+> Uniq currency names count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateUniq.<b>currencySymbols</b></code>](#)  
+> 
+> 
+> Uniq currency symbols count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateUniq.<b>prevTxnIds</b></code>](#)  
+> 
+> 
+> Uniq prev txn ids count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateUniq.<b>prevLedgerSequences</b></code>](#)  
+> 
+> 
+> Uniq prev ledger sequences count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleRippleStateUniq.<b>flags</b></code>](#)  
+> 
+> 
+> Uniq flags count
+> 
+
+
+

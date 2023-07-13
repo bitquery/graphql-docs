@@ -44,7 +44,6 @@ const config = {
         rootPath: "./docs/v1/graphql-reference/", // docs will be generated under './docs/v1/graphql-reference'
         baseURL: ".",
         linkRoot: "/docs/v1/graphql-reference/",
-        homepage: "./docs/v1/graphql-reference/intro.md",
         loaders: {
           GraphQLFileLoader: "@graphql-tools/graphql-file-loader",
         },

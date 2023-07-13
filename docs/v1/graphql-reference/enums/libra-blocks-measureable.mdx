@@ -1,0 +1,97 @@
+---
+id: libra-blocks-measureable
+title: LibraBlocksMeasureable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum LibraBlocksMeasureable {
+  date
+  time
+  block
+  version
+  proposer
+  gas_used
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>LibraBlocksMeasureable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LibraBlocksMeasureable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LibraBlocksMeasureable.<b>block</b></code>](#)  
+> 
+> 
+> Block round
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LibraBlocksMeasureable.<b>version</b></code>](#)  
+> 
+> 
+> Version
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LibraBlocksMeasureable.<b>proposer</b></code>](#)  
+> 
+> 
+> Proposer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LibraBlocksMeasureable.<b>gas_used</b></code>](#)  
+> 
+> 
+> Gas Used
+> 
+
+
+

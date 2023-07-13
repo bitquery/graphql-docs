@@ -1,0 +1,73 @@
+---
+id: block
+title: Block
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Block
+
+
+```graphql
+type Block {
+  height: Int!
+  timestamp: DateTime
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Block.<b>height</b></code>](#)<Bullet />[`Int!`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Block number (height) in blockchain
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Block.<b>timestamp</b></code>](#)<Bullet />[`DateTime`](/docs/v1/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Block timestamp
+> 
+
+
+
+### Member of
+
+[`AlgorandArguments`](/docs/v1/graphql-reference/objects/algorand-arguments)  <Badge class="secondary" text="object"/><Bullet />[`AlgorandCoinpath`](/docs/v1/graphql-reference/objects/algorand-coinpath)  <Badge class="secondary" text="object"/><Bullet />[`AlgorandSmartContractCalls`](/docs/v1/graphql-reference/objects/algorand-smart-contract-calls)  <Badge class="secondary" text="object"/><Bullet />[`AlgorandTransactions`](/docs/v1/graphql-reference/objects/algorand-transactions)  <Badge class="secondary" text="object"/><Bullet />[`AlgorandTransfers`](/docs/v1/graphql-reference/objects/algorand-transfers)  <Badge class="secondary" text="object"/><Bullet />[`BinanceCoinpath`](/docs/v1/graphql-reference/objects/binance-coinpath)  <Badge class="secondary" text="object"/><Bullet />[`BinanceOrders`](/docs/v1/graphql-reference/objects/binance-orders)  <Badge class="secondary" text="object"/><Bullet />[`BinanceTrades`](/docs/v1/graphql-reference/objects/binance-trades)  <Badge class="secondary" text="object"/><Bullet />[`BinanceTransactions`](/docs/v1/graphql-reference/objects/binance-transactions)  <Badge class="secondary" text="object"/><Bullet />[`BinanceTransfers`](/docs/v1/graphql-reference/objects/binance-transfers)  <Badge class="secondary" text="object"/><Bullet />[`BitcoinCoinpath`](/docs/v1/graphql-reference/objects/bitcoin-coinpath)  <Badge class="secondary" text="object"/><Bullet />[`BitcoinOmniTransactiosn`](/docs/v1/graphql-reference/objects/bitcoin-omni-transactiosn)  <Badge class="secondary" text="object"/><Bullet />[`BitcoinOmniTransfers`](/docs/v1/graphql-reference/objects/bitcoin-omni-transfers)  <Badge class="secondary" text="object"/><Bullet />[`BitcoinTransaction`](/docs/v1/graphql-reference/objects/bitcoin-transaction)  <Badge class="secondary" text="object"/><Bullet />[`BitcoinTransactionInput`](/docs/v1/graphql-reference/objects/bitcoin-transaction-input)  <Badge class="secondary" text="object"/><Bullet />[`BitcoinTransactionOutput`](/docs/v1/graphql-reference/objects/bitcoin-transaction-output)  <Badge class="secondary" text="object"/><Bullet />[`CardanoCoinpath`](/docs/v1/graphql-reference/objects/cardano-coinpath)  <Badge class="secondary" text="object"/><Bullet />[`CardanoTransaction`](/docs/v1/graphql-reference/objects/cardano-transaction)  <Badge class="secondary" text="object"/><Bullet />[`CardanoTransactionInput`](/docs/v1/graphql-reference/objects/cardano-transaction-input)  <Badge class="secondary" text="object"/><Bullet />[`CardanoTransactionMint`](/docs/v1/graphql-reference/objects/cardano-transaction-mint)  <Badge class="secondary" text="object"/><Bullet />[`CardanoTransactionOutput`](/docs/v1/graphql-reference/objects/cardano-transaction-output)  <Badge class="secondary" text="object"/><Bullet />[`ConfluxArguments`](/docs/v1/graphql-reference/objects/conflux-arguments)  <Badge class="secondary" text="object"/><Bullet />[`ConfluxCoinpath`](/docs/v1/graphql-reference/objects/conflux-coinpath)  <Badge class="secondary" text="object"/><Bullet />[`ConfluxSmartContractCalls`](/docs/v1/graphql-reference/objects/conflux-smart-contract-calls)  <Badge class="secondary" text="object"/><Bullet />[`ConfluxSmartContractEvent`](/docs/v1/graphql-reference/objects/conflux-smart-contract-event)  <Badge class="secondary" text="object"/><Bullet />[`ConfluxTransfers`](/docs/v1/graphql-reference/objects/conflux-transfers)  <Badge class="secondary" text="object"/><Bullet />[`CosmosCoinpath`](/docs/v1/graphql-reference/objects/cosmos-coinpath)  <Badge class="secondary" text="object"/><Bullet />[`EosCoinpath`](/docs/v1/graphql-reference/objects/eos-coinpath)  <Badge class="secondary" text="object"/><Bullet />[`EosSmartContractCalls`](/docs/v1/graphql-reference/objects/eos-smart-contract-calls)  <Badge class="secondary" text="object"/><Bullet />[`EosTransactions`](/docs/v1/graphql-reference/objects/eos-transactions)  <Badge class="secondary" text="object"/><Bullet />[`EosTransfers`](/docs/v1/graphql-reference/objects/eos-transfers)  <Badge class="secondary" text="object"/><Bullet />[`Ethereum2Attestation`](/docs/v1/graphql-reference/objects/ethereum-2-attestation)  <Badge class="secondary" text="object"/><Bullet />[`Ethereum2AttesterSlashing`](/docs/v1/graphql-reference/objects/ethereum-2-attester-slashing)  <Badge class="secondary" text="object"/><Bullet />[`Ethereum2Deposit`](/docs/v1/graphql-reference/objects/ethereum-2-deposit)  <Badge class="secondary" text="object"/><Bullet />[`Ethereum2ProposerSlashing`](/docs/v1/graphql-reference/objects/ethereum-2-proposer-slashing)  <Badge class="secondary" text="object"/><Bullet />[`Ethereum2ValidatorUpdates`](/docs/v1/graphql-reference/objects/ethereum-2-validator-updates)  <Badge class="secondary" text="object"/><Bullet />[`Ethereum2VoluntaryExit`](/docs/v1/graphql-reference/objects/ethereum-2-voluntary-exit)  <Badge class="secondary" text="object"/><Bullet />[`EthereumArguments`](/docs/v1/graphql-reference/objects/ethereum-arguments)  <Badge class="secondary" text="object"/><Bullet />[`EthereumCoinpath`](/docs/v1/graphql-reference/objects/ethereum-coinpath)  <Badge class="secondary" text="object"/><Bullet />[`EthereumReferencess`](/docs/v1/graphql-reference/objects/ethereum-referencess)  <Badge class="secondary" text="object"/><Bullet />[`EthereumSmartContractCalls`](/docs/v1/graphql-reference/objects/ethereum-smart-contract-calls)  <Badge class="secondary" text="object"/><Bullet />[`EthereumSmartContractEvent`](/docs/v1/graphql-reference/objects/ethereum-smart-contract-event)  <Badge class="secondary" text="object"/><Bullet />[`EthereumTransactions`](/docs/v1/graphql-reference/objects/ethereum-transactions)  <Badge class="secondary" text="object"/><Bullet />[`EthereumTransfers`](/docs/v1/graphql-reference/objects/ethereum-transfers)  <Badge class="secondary" text="object"/><Bullet />[`EverscaleCoinpath`](/docs/v1/graphql-reference/objects/everscale-coinpath)  <Badge class="secondary" text="object"/><Bullet />[`FilecoinCalls`](/docs/v1/graphql-reference/objects/filecoin-calls)  <Badge class="secondary" text="object"/><Bullet />[`FilecoinCoinpath`](/docs/v1/graphql-reference/objects/filecoin-coinpath)  <Badge class="secondary" text="object"/><Bullet />[`FilecoinMessages`](/docs/v1/graphql-reference/objects/filecoin-messages)  <Badge class="secondary" text="object"/><Bullet />[`FlowCoinpath`](/docs/v1/graphql-reference/objects/flow-coinpath)  <Badge class="secondary" text="object"/><Bullet />[`HarmonySmartContractCalls`](/docs/v1/graphql-reference/objects/harmony-smart-contract-calls)  <Badge class="secondary" text="object"/><Bullet />[`HarmonySmartContractEvents`](/docs/v1/graphql-reference/objects/harmony-smart-contract-events)  <Badge class="secondary" text="object"/><Bullet />[`HederaCoinpath`](/docs/v1/graphql-reference/objects/hedera-coinpath)  <Badge class="secondary" text="object"/><Bullet />[`LibraCoinpath`](/docs/v1/graphql-reference/objects/libra-coinpath)  <Badge class="secondary" text="object"/><Bullet />[`LibraMints`](/docs/v1/graphql-reference/objects/libra-mints)  <Badge class="secondary" text="object"/><Bullet />[`LibraTransactions`](/docs/v1/graphql-reference/objects/libra-transactions)  <Badge class="secondary" text="object"/><Bullet />[`LibraTransfers`](/docs/v1/graphql-reference/objects/libra-transfers)  <Badge class="secondary" text="object"/><Bullet />[`RippleCoinpath`](/docs/v1/graphql-reference/objects/ripple-coinpath)  <Badge class="secondary" text="object"/><Bullet />[`SolanaCoinpath`](/docs/v1/graphql-reference/objects/solana-coinpath)  <Badge class="secondary" text="object"/><Bullet />[`StellarCoinpath`](/docs/v1/graphql-reference/objects/stellar-coinpath)  <Badge class="secondary" text="object"/><Bullet />[`TezosCoinpath`](/docs/v1/graphql-reference/objects/tezos-coinpath)  <Badge class="secondary" text="object"/><Bullet />[`TronArguments`](/docs/v1/graphql-reference/objects/tron-arguments)  <Badge class="secondary" text="object"/><Bullet />[`TronCoinpath`](/docs/v1/graphql-reference/objects/tron-coinpath)  <Badge class="secondary" text="object"/><Bullet />[`TronSmartContractCalls`](/docs/v1/graphql-reference/objects/tron-smart-contract-calls)  <Badge class="secondary" text="object"/><Bullet />[`TronSmartContractEvents`](/docs/v1/graphql-reference/objects/tron-smart-contract-events)  <Badge class="secondary" text="object"/><Bullet />[`TronSmartContracts`](/docs/v1/graphql-reference/objects/tron-smart-contracts)  <Badge class="secondary" text="object"/><Bullet />[`TronTrades`](/docs/v1/graphql-reference/objects/tron-trades)  <Badge class="secondary" text="object"/><Bullet />[`TronTransactions`](/docs/v1/graphql-reference/objects/tron-transactions)  <Badge class="secondary" text="object"/><Bullet />[`TronTransfers`](/docs/v1/graphql-reference/objects/tron-transfers)  <Badge class="secondary" text="object"/>
+

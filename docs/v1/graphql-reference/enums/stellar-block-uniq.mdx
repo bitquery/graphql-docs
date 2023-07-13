@@ -1,0 +1,90 @@
+---
+id: stellar-block-uniq
+title: StellarBlockUniq
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum StellarBlockUniq {
+  dates
+  blocks
+  hashes
+  maxTxSetSizes
+  protocolVersions
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarBlockUniq.<b>dates</b></code>](#)  
+> 
+> 
+> Uniq date count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarBlockUniq.<b>blocks</b></code>](#)  
+> 
+> 
+> Uniq blocks count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarBlockUniq.<b>hashes</b></code>](#)  
+> 
+> 
+> Uniq hashes count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarBlockUniq.<b>maxTxSetSizes</b></code>](#)  
+> 
+> 
+> Uniq max tx set sizes count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarBlockUniq.<b>protocolVersions</b></code>](#)  
+> 
+> 
+> Uniq protocol versions
+> 
+
+
+

@@ -1,0 +1,770 @@
+---
+id: everscale-argument
+title: EverscaleArgument
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Argument in Everscale blockchain
+
+
+```graphql
+type EverscaleArgument {
+  any(
+    of: EverscaleArgumentMeasurable!
+  ): String
+  blockHash: String
+  blockShard: String
+  blockWorkchain: BigInt
+  count(
+    uniq: EverscaleArgumentUniq
+    date: DateSelector
+    time: DateTimeSelector
+    blockHash: HashSelector
+    blockHeight: BlockSelector
+    blockShard: BigIntIdSelector
+    blockWorkchain: BigIntIdSelector
+    shardedHeight: BlockSelector
+    shardedBlockHash: HashSelector
+    shardedBlockShard: BigIntIdSelector
+    shardedBlockWorkchain: BigIntIdSelector
+    previousBlock: BlockSelector
+    txHash: StringSelector
+    txType: IntegerSelector
+    txAccount: StringSelector
+    txAborted: StringSelector
+    txOriginalStatus: EverscaleAccountStateSelector
+    txEndStatus: EverscaleAccountStateSelector
+    messageHash: HashSelector
+    messageTypeName: EverscaleMessageTypeNameSelector
+    messageDirection: EverscaleMessageDirectionSelector
+    messageSender: AddressSelector
+    messageReceiver: AddressSelector
+    messageValue: FloatSelector
+    smartContractAddress: AddressSelector
+    smartContractMethod: MethodSelector
+    argumentType: EverscaleArgumentTypeSelector
+    argumentIndex: IntegerSelector
+    argumentField: StringSelector
+    argumentValue: StringSelector
+  ): Int
+  countBigInt(
+    uniq: EverscaleArgumentUniq
+    date: DateSelector
+    time: DateTimeSelector
+    blockHash: HashSelector
+    blockHeight: BlockSelector
+    blockShard: BigIntIdSelector
+    blockWorkchain: BigIntIdSelector
+    shardedHeight: BlockSelector
+    shardedBlockHash: HashSelector
+    shardedBlockShard: BigIntIdSelector
+    shardedBlockWorkchain: BigIntIdSelector
+    previousBlock: BlockSelector
+    txHash: StringSelector
+    txType: IntegerSelector
+    txAccount: StringSelector
+    txAborted: StringSelector
+    txOriginalStatus: EverscaleAccountStateSelector
+    txEndStatus: EverscaleAccountStateSelector
+    messageHash: HashSelector
+    messageTypeName: EverscaleMessageTypeNameSelector
+    messageDirection: EverscaleMessageDirectionSelector
+    messageSender: AddressSelector
+    messageReceiver: AddressSelector
+    messageValue: FloatSelector
+    smartContractAddress: AddressSelector
+    smartContractMethod: MethodSelector
+    argumentType: EverscaleArgumentTypeSelector
+    argumentIndex: IntegerSelector
+    argumentField: StringSelector
+    argumentValue: StringSelector
+  ): BigInt
+  date: Date
+  expression(
+    get: String!
+  ): DecimalNumber
+  field: String
+  height: BigInt
+  index: Int
+  maximum(
+    of: EverscaleArgumentMeasurable!
+    get: EverscaleArgumentMeasurable
+  ): String
+  messages(
+    messageHash: HashSelector
+    messageTypeName: EverscaleMessageTypeNameSelector
+    messageDirection: EverscaleMessageDirectionSelector
+    messageSender: AddressSelector
+    messageReceiver: AddressSelector
+    messageValue: FloatSelector
+  ): EverscaleMessageDimension
+  minimum(
+    of: EverscaleArgumentMeasurable!
+    get: EverscaleArgumentMeasurable
+  ): String
+  previousBlock: BigInt
+  shardedBlock(
+    height: BlockSelector
+    hash: HashSelector
+    shard: StringIdSelector
+    workchain: BigIntIdSelector
+  ): EverscaleShardedBlockDimension
+  smartContractAddress: Address
+  smartContractMethod(
+    smartContractMethod: MethodSelector
+  ): Method
+  timestamp: DateTime
+  transactions(
+    txHash: HashSelector
+    txType: StringSelector
+    txAccount: AddressSelector
+    txAborted: BigIntIdSelector
+  ): EverscaleTransactionDimension
+  type: String
+  value: String
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>any</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.any.<b>of</b></code>](#)<Bullet />[`EverscaleArgumentMeasurable!`](/docs/v1/graphql-reference/enums/everscale-argument-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>blockHash</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Hash of the the block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>blockShard</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Shard number of block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>blockWorkchain</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Proposer block hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>count</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>uniq</b></code>](#)<Bullet />[`EverscaleArgumentUniq`](/docs/v1/graphql-reference/enums/everscale-argument-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>blockHeight</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>blockShard</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>blockWorkchain</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>shardedHeight</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>shardedBlockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>shardedBlockShard</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>shardedBlockWorkchain</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>previousBlock</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>txHash</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>txType</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>txAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>txAborted</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>txOriginalStatus</b></code>](#)<Bullet />[`EverscaleAccountStateSelector`](/docs/v1/graphql-reference/inputs/everscale-account-state-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>txEndStatus</b></code>](#)<Bullet />[`EverscaleAccountStateSelector`](/docs/v1/graphql-reference/inputs/everscale-account-state-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>messageHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>messageTypeName</b></code>](#)<Bullet />[`EverscaleMessageTypeNameSelector`](/docs/v1/graphql-reference/inputs/everscale-message-type-name-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>messageDirection</b></code>](#)<Bullet />[`EverscaleMessageDirectionSelector`](/docs/v1/graphql-reference/inputs/everscale-message-direction-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>messageSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>messageReceiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>messageValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>smartContractAddress</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>argumentType</b></code>](#)<Bullet />[`EverscaleArgumentTypeSelector`](/docs/v1/graphql-reference/inputs/everscale-argument-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>argumentIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>argumentField</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.count.<b>argumentValue</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>uniq</b></code>](#)<Bullet />[`EverscaleArgumentUniq`](/docs/v1/graphql-reference/enums/everscale-argument-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>blockHeight</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>blockShard</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>blockWorkchain</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>shardedHeight</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>shardedBlockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>shardedBlockShard</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>shardedBlockWorkchain</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>previousBlock</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>txHash</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>txType</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>txAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>txAborted</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>txOriginalStatus</b></code>](#)<Bullet />[`EverscaleAccountStateSelector`](/docs/v1/graphql-reference/inputs/everscale-account-state-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>txEndStatus</b></code>](#)<Bullet />[`EverscaleAccountStateSelector`](/docs/v1/graphql-reference/inputs/everscale-account-state-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>messageHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>messageTypeName</b></code>](#)<Bullet />[`EverscaleMessageTypeNameSelector`](/docs/v1/graphql-reference/inputs/everscale-message-type-name-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>messageDirection</b></code>](#)<Bullet />[`EverscaleMessageDirectionSelector`](/docs/v1/graphql-reference/inputs/everscale-message-direction-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>messageSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>messageReceiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>messageValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>smartContractAddress</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>argumentType</b></code>](#)<Bullet />[`EverscaleArgumentTypeSelector`](/docs/v1/graphql-reference/inputs/everscale-argument-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>argumentIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>argumentField</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.countBigInt.<b>argumentValue</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>date</b></code>](#)<Bullet />[`Date`](/docs/v1/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Calendar date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/v1/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>field</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Argument Field
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>height</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Number of block in the blockchains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>index</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Argument Index
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.maximum.<b>of</b></code>](#)<Bullet />[`EverscaleArgumentMeasurable!`](/docs/v1/graphql-reference/enums/everscale-argument-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.maximum.<b>get</b></code>](#)<Bullet />[`EverscaleArgumentMeasurable`](/docs/v1/graphql-reference/enums/everscale-argument-measurable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>messages</b></code>](#)<Bullet />[`EverscaleMessageDimension`](/docs/v1/graphql-reference/objects/everscale-message-dimension) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> messages
+> ##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.messages.<b>messageHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.messages.<b>messageTypeName</b></code>](#)<Bullet />[`EverscaleMessageTypeNameSelector`](/docs/v1/graphql-reference/inputs/everscale-message-type-name-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.messages.<b>messageDirection</b></code>](#)<Bullet />[`EverscaleMessageDirectionSelector`](/docs/v1/graphql-reference/inputs/everscale-message-direction-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.messages.<b>messageSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.messages.<b>messageReceiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.messages.<b>messageValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.minimum.<b>of</b></code>](#)<Bullet />[`EverscaleArgumentMeasurable!`](/docs/v1/graphql-reference/enums/everscale-argument-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.minimum.<b>get</b></code>](#)<Bullet />[`EverscaleArgumentMeasurable`](/docs/v1/graphql-reference/enums/everscale-argument-measurable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>previousBlock</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Previous Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>shardedBlock</b></code>](#)<Bullet />[`EverscaleShardedBlockDimension`](/docs/v1/graphql-reference/objects/everscale-sharded-block-dimension) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Sharded Block Information
+> ##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.shardedBlock.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.shardedBlock.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.shardedBlock.<b>shard</b></code>](#)<Bullet />[`StringIdSelector`](/docs/v1/graphql-reference/inputs/string-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.shardedBlock.<b>workchain</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>smartContractAddress</b></code>](#)<Bullet />[`Address`](/docs/v1/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> smart contract address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>smartContractMethod</b></code>](#)<Bullet />[`Method`](/docs/v1/graphql-reference/objects/method) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Contract method invoked
+> ##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.smartContractMethod.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>timestamp</b></code>](#)<Bullet />[`DateTime`](/docs/v1/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Timestamp
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>transactions</b></code>](#)<Bullet />[`EverscaleTransactionDimension`](/docs/v1/graphql-reference/objects/everscale-transaction-dimension) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Transactions
+> ##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.transactions.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.transactions.<b>txType</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.transactions.<b>txAccount</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.transactions.<b>txAborted</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>type</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Argument Type
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleArgument.<b>value</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Argument Vlaue
+> 
+
+
+
+### Member of
+
+[`Everscale`](/docs/v1/graphql-reference/objects/everscale)  <Badge class="secondary" text="object"/>
+

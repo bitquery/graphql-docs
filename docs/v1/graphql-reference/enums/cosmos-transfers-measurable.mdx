@@ -1,0 +1,181 @@
+---
+id: cosmos-transfers-measurable
+title: CosmosTransfersMeasurable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum CosmosTransfersMeasurable {
+  date
+  time
+  height
+  blockHash
+  transactionIndex
+  transactionHash
+  transactionSigner
+  sender
+  receiver
+  value
+  type
+  messageIndex
+  messageType
+  senders
+  currency_symbol
+  currency_address
+  token_type
+  token_id
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransfersMeasurable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransfersMeasurable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransfersMeasurable.<b>height</b></code>](#)  
+> 
+> 
+> Number of block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransfersMeasurable.<b>blockHash</b></code>](#)  
+> 
+> 
+> Hash of the block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransfersMeasurable.<b>transactionIndex</b></code>](#)  
+> 
+> 
+> Index of the transaction
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransfersMeasurable.<b>transactionHash</b></code>](#)  
+> 
+> 
+> Hash of the transaction
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransfersMeasurable.<b>transactionSigner</b></code>](#)  
+> 
+> 
+> Transaction Signer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransfersMeasurable.<b>sender</b></code>](#)  
+> 
+> 
+> Transfer From
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransfersMeasurable.<b>receiver</b></code>](#)  
+> 
+> 
+> Transfer To
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransfersMeasurable.<b>value</b></code>](#)  
+> 
+> 
+> Transfer value
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransfersMeasurable.<b>type</b></code>](#)  
+> 
+> 
+> Type of transfer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransfersMeasurable.<b>messageIndex</b></code>](#)  
+> 
+> 
+> Message index in transaction
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransfersMeasurable.<b>messageType</b></code>](#)  
+> 
+> 
+> Type of message
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransfersMeasurable.<b>senders</b></code>](#)  
+> 
+> 
+> Message senders
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransfersMeasurable.<b>currency_symbol</b></code>](#)  
+> 
+> 
+> Currency Symbol
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransfersMeasurable.<b>currency_address</b></code>](#)  
+> 
+> 
+> Currency Address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransfersMeasurable.<b>token_type</b></code>](#)  
+> 
+> 
+> Token Type
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransfersMeasurable.<b>token_id</b></code>](#)  
+> 
+> 
+> Token ID
+> 
+
+
+

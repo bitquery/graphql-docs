@@ -1,0 +1,2003 @@
+---
+id: filecoin-messages
+title: FilecoinMessages
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Messages in Filecoin blockchain
+
+
+```graphql
+type FilecoinMessages {
+  amount(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): Float
+  amountDecimal(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): DecimalNumberAsDiv
+  any(
+    of: FilecoinMessagesMeasureable!
+  ): String
+  baseFeeBurn(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): Float
+  baseFeeBurnDecimal(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): DecimalNumberAsDiv
+  block(
+    height: BlockSelector
+    time: DateTimeSelector
+  ): Block
+  burned(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): Float
+  burnedDecimal(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): DecimalNumberAsDiv
+  count(
+    uniq: FilecoinMessagesUniq
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): Int
+  countBigInt(
+    uniq: FilecoinMessagesUniq
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): BigInt
+  date: Date
+  exitCode: BigInt
+  expression(
+    get: String!
+  ): DecimalNumber
+  gas(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): Int
+  gasBigInt(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): BigInt
+  gasFeeCap: BigInt
+  gasLimit: BigInt
+  gasPremium: Float
+  hash(
+    hash: HashSelector
+  ): String
+  maximum(
+    of: FilecoinMessagesMeasureable!
+    get: FilecoinMessagesMeasureable
+  ): String
+  method(
+    method: IntegerSelector
+  ): NameWithId
+  minedBlock: FilecoinMinedBlock
+  minerPenalty(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): Float
+  minerPenaltyDecimal(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): DecimalNumberAsDiv
+  minerTip(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): Float
+  minerTipDecimal(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): DecimalNumberAsDiv
+  minimum(
+    of: FilecoinMessagesMeasureable!
+    get: FilecoinMessagesMeasureable
+  ): String
+  nonce: BigInt
+  overEstimationBurn(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): Float
+  overEstimationBurnDecimal(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): DecimalNumberAsDiv
+  receiver(
+    receiver: AddressSelector
+  ): AddressWithAccount
+  refund(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): Float
+  refundDecimal(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): DecimalNumberAsDiv
+  returnValue: String
+  sender(
+    sender: AddressSelector
+  ): AddressWithAccount
+  signature: String
+  signatureType: String
+  signedHash: String
+  success(
+    success: Boolean
+  ): Boolean
+  totalCost(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): Float
+  totalCostDecimal(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    index: IntegerSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    method: IntegerSelector
+    success: Boolean
+    amount: AmountSelector
+  ): DecimalNumberAsDiv
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>amount</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amount.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/v1/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amount.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amount.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amount.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amount.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amount.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amount.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amount.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amount.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amount.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amount.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>amountDecimal</b></code>](#)<Bullet />[`DecimalNumberAsDiv`](/docs/v1/graphql-reference/scalars/decimal-number-as-div) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Amount as decimal
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amountDecimal.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amountDecimal.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amountDecimal.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amountDecimal.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amountDecimal.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amountDecimal.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amountDecimal.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amountDecimal.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amountDecimal.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amountDecimal.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.amountDecimal.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>any</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.any.<b>of</b></code>](#)<Bullet />[`FilecoinMessagesMeasureable!`](/docs/v1/graphql-reference/enums/filecoin-messages-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>baseFeeBurn</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurn.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurn.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/v1/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurn.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurn.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurn.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurn.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurn.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurn.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurn.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurn.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurn.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurn.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>baseFeeBurnDecimal</b></code>](#)<Bullet />[`DecimalNumberAsDiv`](/docs/v1/graphql-reference/scalars/decimal-number-as-div) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurnDecimal.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurnDecimal.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurnDecimal.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurnDecimal.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurnDecimal.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurnDecimal.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurnDecimal.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurnDecimal.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurnDecimal.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurnDecimal.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.baseFeeBurnDecimal.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>block</b></code>](#)<Bullet />[`Block`](/docs/v1/graphql-reference/objects/block) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Block where transfer Message is included
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.block.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.block.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>burned</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burned.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burned.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/v1/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burned.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burned.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burned.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burned.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burned.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burned.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burned.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burned.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burned.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burned.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>burnedDecimal</b></code>](#)<Bullet />[`DecimalNumberAsDiv`](/docs/v1/graphql-reference/scalars/decimal-number-as-div) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burnedDecimal.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burnedDecimal.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burnedDecimal.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burnedDecimal.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burnedDecimal.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burnedDecimal.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burnedDecimal.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burnedDecimal.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burnedDecimal.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burnedDecimal.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.burnedDecimal.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>count</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.count.<b>uniq</b></code>](#)<Bullet />[`FilecoinMessagesUniq`](/docs/v1/graphql-reference/enums/filecoin-messages-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.count.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.count.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.count.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.count.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.count.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.count.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.count.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.count.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.count.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.count.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.countBigInt.<b>uniq</b></code>](#)<Bullet />[`FilecoinMessagesUniq`](/docs/v1/graphql-reference/enums/filecoin-messages-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.countBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.countBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.countBigInt.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.countBigInt.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.countBigInt.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.countBigInt.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.countBigInt.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.countBigInt.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.countBigInt.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.countBigInt.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>date</b></code>](#)<Bullet />[`Date`](/docs/v1/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Calendar date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>exitCode</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/v1/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>gas</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gas.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gas.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gas.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gas.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gas.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gas.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gas.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gas.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gas.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gas.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gas.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>gasBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gasBigInt.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gasBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gasBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gasBigInt.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gasBigInt.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gasBigInt.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gasBigInt.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gasBigInt.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gasBigInt.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gasBigInt.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.gasBigInt.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>gasFeeCap</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>gasLimit</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>gasPremium</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>hash</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Message hash
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.hash.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.maximum.<b>of</b></code>](#)<Bullet />[`FilecoinMessagesMeasureable!`](/docs/v1/graphql-reference/enums/filecoin-messages-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.maximum.<b>get</b></code>](#)<Bullet />[`FilecoinMessagesMeasureable`](/docs/v1/graphql-reference/enums/filecoin-messages-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>method</b></code>](#)<Bullet />[`NameWithId`](/docs/v1/graphql-reference/objects/name-with-id) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Method
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.method.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>minedBlock</b></code>](#)<Bullet />[`FilecoinMinedBlock`](/docs/v1/graphql-reference/objects/filecoin-mined-block) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>minerPenalty</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenalty.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenalty.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/v1/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenalty.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenalty.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenalty.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenalty.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenalty.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenalty.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenalty.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenalty.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenalty.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenalty.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>minerPenaltyDecimal</b></code>](#)<Bullet />[`DecimalNumberAsDiv`](/docs/v1/graphql-reference/scalars/decimal-number-as-div) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenaltyDecimal.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenaltyDecimal.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenaltyDecimal.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenaltyDecimal.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenaltyDecimal.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenaltyDecimal.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenaltyDecimal.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenaltyDecimal.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenaltyDecimal.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenaltyDecimal.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerPenaltyDecimal.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>minerTip</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTip.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTip.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/v1/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTip.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTip.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTip.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTip.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTip.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTip.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTip.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTip.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTip.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTip.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>minerTipDecimal</b></code>](#)<Bullet />[`DecimalNumberAsDiv`](/docs/v1/graphql-reference/scalars/decimal-number-as-div) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTipDecimal.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTipDecimal.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTipDecimal.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTipDecimal.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTipDecimal.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTipDecimal.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTipDecimal.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTipDecimal.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTipDecimal.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTipDecimal.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minerTipDecimal.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minimum.<b>of</b></code>](#)<Bullet />[`FilecoinMessagesMeasureable!`](/docs/v1/graphql-reference/enums/filecoin-messages-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.minimum.<b>get</b></code>](#)<Bullet />[`FilecoinMessagesMeasureable`](/docs/v1/graphql-reference/enums/filecoin-messages-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>nonce</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>overEstimationBurn</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurn.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurn.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/v1/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurn.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurn.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurn.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurn.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurn.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurn.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurn.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurn.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurn.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurn.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>overEstimationBurnDecimal</b></code>](#)<Bullet />[`DecimalNumberAsDiv`](/docs/v1/graphql-reference/scalars/decimal-number-as-div) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurnDecimal.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurnDecimal.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurnDecimal.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurnDecimal.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurnDecimal.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurnDecimal.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurnDecimal.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurnDecimal.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurnDecimal.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurnDecimal.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.overEstimationBurnDecimal.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>receiver</b></code>](#)<Bullet />[`AddressWithAccount`](/docs/v1/graphql-reference/objects/address-with-account) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Message receiver
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.receiver.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>refund</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refund.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refund.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/v1/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refund.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refund.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refund.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refund.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refund.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refund.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refund.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refund.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refund.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refund.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>refundDecimal</b></code>](#)<Bullet />[`DecimalNumberAsDiv`](/docs/v1/graphql-reference/scalars/decimal-number-as-div) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refundDecimal.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refundDecimal.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refundDecimal.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refundDecimal.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refundDecimal.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refundDecimal.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refundDecimal.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refundDecimal.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refundDecimal.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refundDecimal.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.refundDecimal.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>returnValue</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>sender</b></code>](#)<Bullet />[`AddressWithAccount`](/docs/v1/graphql-reference/objects/address-with-account) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Message sender
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.sender.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>signature</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>signatureType</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>signedHash</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Signed Message hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Success
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.success.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>totalCost</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCost.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCost.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/v1/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCost.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCost.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCost.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCost.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCost.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCost.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCost.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCost.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCost.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCost.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.<b>totalCostDecimal</b></code>](#)<Bullet />[`DecimalNumberAsDiv`](/docs/v1/graphql-reference/scalars/decimal-number-as-div) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCostDecimal.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCostDecimal.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCostDecimal.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCostDecimal.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCostDecimal.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCostDecimal.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCostDecimal.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCostDecimal.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCostDecimal.<b>method</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCostDecimal.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FilecoinMessages.totalCostDecimal.<b>amount</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+### Member of
+
+[`Filecoin`](/docs/v1/graphql-reference/objects/filecoin)  <Badge class="secondary" text="object"/>
+

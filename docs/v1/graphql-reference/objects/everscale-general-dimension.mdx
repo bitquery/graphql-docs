@@ -1,0 +1,87 @@
+---
+id: everscale-general-dimension
+title: EverscaleGeneralDimension
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+General Block information
+
+
+```graphql
+type EverscaleGeneralDimension {
+  catchainSeqno: BigInt
+  softwareCapabilities: String
+  softwareVersion: BigInt
+  validatorListHashShort: BigInt
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleGeneralDimension.<b>catchainSeqno</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Catchain Sequence
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleGeneralDimension.<b>softwareCapabilities</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Software capabilities
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleGeneralDimension.<b>softwareVersion</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Software version
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleGeneralDimension.<b>validatorListHashShort</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Validator List Hast Short
+> 
+
+
+
+### Member of
+
+[`EverscaleBlock`](/docs/v1/graphql-reference/objects/everscale-block)  <Badge class="secondary" text="object"/>
+

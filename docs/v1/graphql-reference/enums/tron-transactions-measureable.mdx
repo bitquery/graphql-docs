@@ -1,0 +1,118 @@
+---
+id: tron-transactions-measureable
+title: TronTransactionsMeasureable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum TronTransactionsMeasureable {
+  date
+  time
+  block
+  tx_hash
+  fee
+  fee_limit
+  energy_fee
+  net_usage
+  internal_transactions_count
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTransactionsMeasureable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTransactionsMeasureable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTransactionsMeasureable.<b>block</b></code>](#)  
+> 
+> 
+> Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTransactionsMeasureable.<b>tx_hash</b></code>](#)  
+> 
+> 
+> Transaction hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTransactionsMeasureable.<b>fee</b></code>](#)  
+> 
+> 
+> Fee
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTransactionsMeasureable.<b>fee_limit</b></code>](#)  
+> 
+> 
+> Fee Limit
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTransactionsMeasureable.<b>energy_fee</b></code>](#)  
+> 
+> 
+> Energy Fee
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTransactionsMeasureable.<b>net_usage</b></code>](#)  
+> 
+> 
+> Net usage
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTransactionsMeasureable.<b>internal_transactions_count</b></code>](#)  
+> 
+> 
+> Internal transactions count
+> 
+
+
+

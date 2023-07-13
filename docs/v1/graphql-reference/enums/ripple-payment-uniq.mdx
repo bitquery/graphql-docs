@@ -1,0 +1,209 @@
+---
+id: ripple-payment-uniq
+title: RipplePaymentUniq
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum RipplePaymentUniq {
+  dates
+  time
+  blocks
+  transactionIndices
+  transactionHashes
+  senders
+  receivers
+  amountCurrencyNames
+  amountCurrencySymbols
+  amountIssuers
+  deliveredCurrencyNames
+  deliveredCurrencySymbols
+  deliveredIssuers
+  sendMaxCurrencyNames
+  sendMaxCurrencySymbols
+  sendMaxIssuers
+  deliverMinCurrencyNames
+  deliverMinCurrencySymbols
+  deliverMinIssuers
+  tags
+  invoices
+  flags
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>dates</b></code>](#)  
+> 
+> 
+> Uniq dates count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>time</b></code>](#)  
+> 
+> 
+> Uniq time count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>blocks</b></code>](#)  
+> 
+> 
+> Uniq blocks count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>transactionIndices</b></code>](#)  
+> 
+> 
+> Uniq transaction indices count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>transactionHashes</b></code>](#)  
+> 
+> 
+> Uniq transaction hashes count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>senders</b></code>](#)  
+> 
+> 
+> Uniq senders count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>receivers</b></code>](#)  
+> 
+> 
+> Uniq receivers count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>amountCurrencyNames</b></code>](#)  
+> 
+> 
+> Uniq amount currency names count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>amountCurrencySymbols</b></code>](#)  
+> 
+> 
+> Uniq amount currency symbols count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>amountIssuers</b></code>](#)  
+> 
+> 
+> Uniq amount issuers count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>deliveredCurrencyNames</b></code>](#)  
+> 
+> 
+> Uniq delivered currency names count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>deliveredCurrencySymbols</b></code>](#)  
+> 
+> 
+> Uniq delivered currency symbols count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>deliveredIssuers</b></code>](#)  
+> 
+> 
+> Uniq delivered issuers count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>sendMaxCurrencyNames</b></code>](#)  
+> 
+> 
+> Uniq send max currency names count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>sendMaxCurrencySymbols</b></code>](#)  
+> 
+> 
+> Uniq send max currency symbols count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>sendMaxIssuers</b></code>](#)  
+> 
+> 
+> Uniq send max issuers count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>deliverMinCurrencyNames</b></code>](#)  
+> 
+> 
+> Uniq deliver min currency names count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>deliverMinCurrencySymbols</b></code>](#)  
+> 
+> 
+> Uniq deliver min currency symbols count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>deliverMinIssuers</b></code>](#)  
+> 
+> 
+> Uniq deliver min issuers count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>tags</b></code>](#)  
+> 
+> 
+> Uniq tags count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>invoices</b></code>](#)  
+> 
+> 
+> Uniq invoices count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RipplePaymentUniq.<b>flags</b></code>](#)  
+> 
+> 
+> Uniq flags count
+> 
+
+
+

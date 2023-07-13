@@ -1,0 +1,279 @@
+---
+id: everscale-message-measurable
+title: EverscaleMessageMeasurable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum EverscaleMessageMeasurable {
+  date
+  time
+  hash
+  height
+  shard
+  workchain
+  sharded_block
+  sharded_block_hash
+  sharded_block_shard
+  sharded_block_workchain
+  previous_block
+  tx_hash
+  tx_type
+  tx_account
+  message_hash
+  message_type_name
+  message_direction
+  message_index
+  message_sender
+  message_receiver
+  message_value
+  created_logical_time
+  ihr_disabled
+  ihr_fee
+  fwd_fee
+  bounce
+  bounced
+  body
+  body_hash
+  data
+  data_hash
+  boc
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>hash</b></code>](#)  
+> 
+> 
+> Hash of the the block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>height</b></code>](#)  
+> 
+> 
+> Number of block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>shard</b></code>](#)  
+> 
+> 
+> Shard of block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>workchain</b></code>](#)  
+> 
+> 
+> Workchain of block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>sharded_block</b></code>](#)  
+> 
+> 
+> Number of sharded block block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>sharded_block_hash</b></code>](#)  
+> 
+> 
+> Hash of the the sharded block block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>sharded_block_shard</b></code>](#)  
+> 
+> 
+> Shard of sharded block block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>sharded_block_workchain</b></code>](#)  
+> 
+> 
+> Workchain of sharded block block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>previous_block</b></code>](#)  
+> 
+> 
+> Previous Message
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>tx_hash</b></code>](#)  
+> 
+> 
+> Tx Hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>tx_type</b></code>](#)  
+> 
+> 
+> Tx Type
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>tx_account</b></code>](#)  
+> 
+> 
+> Tx Account
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>message_hash</b></code>](#)  
+> 
+> 
+> Message Hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>message_type_name</b></code>](#)  
+> 
+> 
+> Message Type Name
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>message_direction</b></code>](#)  
+> 
+> 
+> Message direction
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>message_index</b></code>](#)  
+> 
+> 
+> Message Index
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>message_sender</b></code>](#)  
+> 
+> 
+> Message sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>message_receiver</b></code>](#)  
+> 
+> 
+> Message receiver
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>message_value</b></code>](#)  
+> 
+> 
+> Message value
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>created_logical_time</b></code>](#)  
+> 
+> 
+> Message created logical time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>ihr_disabled</b></code>](#)  
+> 
+> 
+> Message Ihr Disabled
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>ihr_fee</b></code>](#)  
+> 
+> 
+> Message ihr fee
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>fwd_fee</b></code>](#)  
+> 
+> 
+> Message fwd fee
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>bounce</b></code>](#)  
+> 
+> 
+> Message bounce
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>bounced</b></code>](#)  
+> 
+> 
+> Message bounced
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>body</b></code>](#)  
+> 
+> 
+> Message body
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>body_hash</b></code>](#)  
+> 
+> 
+> Message body hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>data</b></code>](#)  
+> 
+> 
+> Message data
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>data_hash</b></code>](#)  
+> 
+> 
+> Message data hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageMeasurable.<b>boc</b></code>](#)  
+> 
+> 
+> Message boc
+> 
+
+
+

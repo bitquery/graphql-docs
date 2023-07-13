@@ -1,0 +1,230 @@
+---
+id: everscale-transfer-measurable
+title: EverscaleTransferMeasurable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum EverscaleTransferMeasurable {
+  date
+  time
+  hash
+  height
+  shard
+  workchain
+  sharded_block
+  sharded_block_hash
+  sharded_block_shard
+  sharded_block_workchain
+  previous_block
+  tx_hash
+  tx_type
+  tx_account
+  tx_aborted
+  message_hash
+  message_type_name
+  message_direction
+  message_sender
+  message_receiver
+  message_value
+  value
+  currency_symbol
+  currency_address
+  currency_name
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>hash</b></code>](#)  
+> 
+> 
+> Hash of the the block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>height</b></code>](#)  
+> 
+> 
+> Number of block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>shard</b></code>](#)  
+> 
+> 
+> Shard of block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>workchain</b></code>](#)  
+> 
+> 
+> Workchain of block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>sharded_block</b></code>](#)  
+> 
+> 
+> Number of sharded block block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>sharded_block_hash</b></code>](#)  
+> 
+> 
+> Hash of the the sharded block block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>sharded_block_shard</b></code>](#)  
+> 
+> 
+> Shard of sharded block block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>sharded_block_workchain</b></code>](#)  
+> 
+> 
+> Workchain of sharded block block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>previous_block</b></code>](#)  
+> 
+> 
+> Previous Message
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>tx_hash</b></code>](#)  
+> 
+> 
+> Tx Hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>tx_type</b></code>](#)  
+> 
+> 
+> Tx Type
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>tx_account</b></code>](#)  
+> 
+> 
+> Tx Account
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>tx_aborted</b></code>](#)  
+> 
+> 
+> Tx Aborted
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>message_hash</b></code>](#)  
+> 
+> 
+> Message Hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>message_type_name</b></code>](#)  
+> 
+> 
+> Message type name
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>message_direction</b></code>](#)  
+> 
+> 
+> Message direction
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>message_sender</b></code>](#)  
+> 
+> 
+> Message sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>message_receiver</b></code>](#)  
+> 
+> 
+> Message receiver
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>message_value</b></code>](#)  
+> 
+> 
+> Message value
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>value</b></code>](#)  
+> 
+> 
+> Value
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>currency_symbol</b></code>](#)  
+> 
+> 
+> Currency Symbol
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>currency_address</b></code>](#)  
+> 
+> 
+> Currency Address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleTransferMeasurable.<b>currency_name</b></code>](#)  
+> 
+> 
+> Currency Name
+> 
+
+
+

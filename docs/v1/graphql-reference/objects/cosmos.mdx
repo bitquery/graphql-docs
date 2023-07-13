@@ -1,0 +1,661 @@
+---
+id: cosmos
+title: Cosmos
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Cosmos Blockchain
+
+
+```graphql
+type Cosmos {
+  address(
+    address: [AddressSelectorIn!]!
+  ): [CosmosAddressInfo!]!
+  attributes(
+    date: DateSelector
+    time: DateTimeSelector
+    blockHeight: BlockSelector
+    blockHash: HashSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSigner: StringSelector
+    messageType: StringSelector
+    messageIndex: IntegerSelector
+    success: BooleanSelector
+    senders: StringSelector
+    eventType: StringSelector
+    attribute: StringSelector
+    value: StringSelector
+    valueIndex: IntegerSelector
+    any: [CosmosAttributeFilter!]
+    options: QueryOptions
+  ): [CosmosAttribute!]
+  blocks(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    hash: HashSelector
+    proposer: AddressSelector
+    any: [CosmosBlocksFilter!]
+    options: QueryOptions
+  ): [CosmosBlock!]
+  coinpath(
+    sender: AddressSelector
+    receiver: AddressSelector
+    currency: [CosmosCurrencySelector!]
+    initialAddress: AddressSelector
+    initialDate: DateSelector
+    initialTime: DateTimeSelector
+    date: DateSelector
+    time: DateTimeSelector
+    depth: IntegerLimitedSelector
+    options: CoinpathOptions
+  ): [CosmosCoinpath!]
+  messages(
+    date: DateSelector
+    blockHeight: BlockSelector
+    blockHash: HashSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSigner: AddressSelector
+    type: StringSelector
+    index: IntegerSelector
+    success: BooleanSelector
+    senders: StringSelector
+    any: [CosmosMessageFilter!]
+    options: QueryOptions
+  ): [CosmosMessage!]
+  transactions(
+    date: DateSelector
+    time: DateTimeSelector
+    blockHash: HashSelector
+    blockHeight: BlockSelector
+    hash: HashSelector
+    type: StringSelector
+    index: IntegerSelector
+    gasUsed: IntegerSelector
+    gasWanted: IntegerSelector
+    signer: AddressSelector
+    memo: StringSelector
+    fee: AmountSelector
+    code: IntegerSelector
+    success: BooleanSelector
+    any: [CosmosTransactionFilter!]
+    options: QueryOptions
+  ): [CosmosTransaction!]
+  transfers(
+    date: DateSelector
+    time: DateTimeSelector
+    block: BlockSelector
+    blockHash: HashSelector
+    transactionHash: HashSelector
+    transactionIndex: IntegerSelector
+    transactionSigner: AddressSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    currency: CosmosCurrencySelector
+    value: AmountSelector
+    type: StringSelector
+    index: IntegerSelector
+    senders: AddressSelector
+    typeTransfer: BooleanSelector
+    any: [CosmosTransferFilter!]
+    options: QueryOptions
+  ): [CosmosTransfers!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Cosmos.<b>address</b></code>](#)<Bullet />[`[CosmosAddressInfo!]!`](/docs/v1/graphql-reference/objects/cosmos-address-info) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Basic information about address
+> ##### [<code style={{ fontWeight: 'normal' }}>Cosmos.address.<b>address</b></code>](#)<Bullet />[`[AddressSelectorIn!]!`](/docs/v1/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Cosmos.<b>attributes</b></code>](#)<Bullet />[`[CosmosAttribute!]`](/docs/v1/graphql-reference/objects/cosmos-attribute) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Cosmos Attributes
+> ##### [<code style={{ fontWeight: 'normal' }}>Cosmos.attributes.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.attributes.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.attributes.<b>blockHeight</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.attributes.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.attributes.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.attributes.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.attributes.<b>transactionSigner</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.attributes.<b>messageType</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.attributes.<b>messageIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.attributes.<b>success</b></code>](#)<Bullet />[`BooleanSelector`](/docs/v1/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.attributes.<b>senders</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.attributes.<b>eventType</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.attributes.<b>attribute</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.attributes.<b>value</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.attributes.<b>valueIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.attributes.<b>any</b></code>](#)<Bullet />[`[CosmosAttributeFilter!]`](/docs/v1/graphql-reference/inputs/cosmos-attribute-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.attributes.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/v1/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Cosmos.<b>blocks</b></code>](#)<Bullet />[`[CosmosBlock!]`](/docs/v1/graphql-reference/objects/cosmos-block) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Cosmos Blocks
+> ##### [<code style={{ fontWeight: 'normal' }}>Cosmos.blocks.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.blocks.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.blocks.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.blocks.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.blocks.<b>proposer</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.blocks.<b>any</b></code>](#)<Bullet />[`[CosmosBlocksFilter!]`](/docs/v1/graphql-reference/inputs/cosmos-blocks-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.blocks.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/v1/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Cosmos.<b>coinpath</b></code>](#)<Bullet />[`[CosmosCoinpath!]`](/docs/v1/graphql-reference/objects/cosmos-coinpath) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Money flow using Coinpath technology
+> ##### [<code style={{ fontWeight: 'normal' }}>Cosmos.coinpath.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.coinpath.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.coinpath.<b>currency</b></code>](#)<Bullet />[`[CosmosCurrencySelector!]`](/docs/v1/graphql-reference/inputs/cosmos-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.coinpath.<b>initialAddress</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.coinpath.<b>initialDate</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.coinpath.<b>initialTime</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.coinpath.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.coinpath.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.coinpath.<b>depth</b></code>](#)<Bullet />[`IntegerLimitedSelector`](/docs/v1/graphql-reference/inputs/integer-limited-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.coinpath.<b>options</b></code>](#)<Bullet />[`CoinpathOptions`](/docs/v1/graphql-reference/inputs/coinpath-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Cosmos.<b>messages</b></code>](#)<Bullet />[`[CosmosMessage!]`](/docs/v1/graphql-reference/objects/cosmos-message) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Cosmos Messages
+> ##### [<code style={{ fontWeight: 'normal' }}>Cosmos.messages.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.messages.<b>blockHeight</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.messages.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.messages.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.messages.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.messages.<b>transactionSigner</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.messages.<b>type</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.messages.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.messages.<b>success</b></code>](#)<Bullet />[`BooleanSelector`](/docs/v1/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.messages.<b>senders</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.messages.<b>any</b></code>](#)<Bullet />[`[CosmosMessageFilter!]`](/docs/v1/graphql-reference/inputs/cosmos-message-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.messages.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/v1/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Cosmos.<b>transactions</b></code>](#)<Bullet />[`[CosmosTransaction!]`](/docs/v1/graphql-reference/objects/cosmos-transaction) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Cosmos Transactions
+> ##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transactions.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transactions.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transactions.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transactions.<b>blockHeight</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transactions.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transactions.<b>type</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transactions.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transactions.<b>gasUsed</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transactions.<b>gasWanted</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transactions.<b>signer</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transactions.<b>memo</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transactions.<b>fee</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transactions.<b>code</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transactions.<b>success</b></code>](#)<Bullet />[`BooleanSelector`](/docs/v1/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transactions.<b>any</b></code>](#)<Bullet />[`[CosmosTransactionFilter!]`](/docs/v1/graphql-reference/inputs/cosmos-transaction-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transactions.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/v1/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Cosmos.<b>transfers</b></code>](#)<Bullet />[`[CosmosTransfers!]`](/docs/v1/graphql-reference/objects/cosmos-transfers) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Cosmos Transfers
+> ##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transfers.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transfers.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transfers.<b>block</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transfers.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transfers.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transfers.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transfers.<b>transactionSigner</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transfers.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transfers.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transfers.<b>currency</b></code>](#)<Bullet />[`CosmosCurrencySelector`](/docs/v1/graphql-reference/inputs/cosmos-currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transfers.<b>value</b></code>](#)<Bullet />[`AmountSelector`](/docs/v1/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transfers.<b>type</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transfers.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transfers.<b>senders</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transfers.<b>typeTransfer</b></code>](#)<Bullet />[`BooleanSelector`](/docs/v1/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transfers.<b>any</b></code>](#)<Bullet />[`[CosmosTransferFilter!]`](/docs/v1/graphql-reference/inputs/cosmos-transfer-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Cosmos.transfers.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/v1/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+### Returned by
+
+[`cosmos`](/docs/v1/graphql-reference/queries/cosmos)  <Badge class="secondary" text="query"/>
+

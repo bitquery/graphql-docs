@@ -1,0 +1,90 @@
+---
+id: cardano-block-uniq
+title: CardanoBlockUniq
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum CardanoBlockUniq {
+  dates
+  epoch
+  slot
+  slot_leader
+  version
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoBlockUniq.<b>dates</b></code>](#)  
+> 
+> 
+> Unique date count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoBlockUniq.<b>epoch</b></code>](#)  
+> 
+> 
+> Unique epoch
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoBlockUniq.<b>slot</b></code>](#)  
+> 
+> 
+> Unique slot
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoBlockUniq.<b>slot_leader</b></code>](#)  
+> 
+> 
+> Unique slot leader
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoBlockUniq.<b>version</b></code>](#)  
+> 
+> 
+> Unique version
+> 
+
+
+

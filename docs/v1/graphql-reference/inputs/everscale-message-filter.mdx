@@ -1,0 +1,300 @@
+---
+id: everscale-message-filter
+title: EverscaleMessageFilter
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+input EverscaleMessageFilter {
+  date: DateSelector
+  time: DateTimeSelector
+  blockHash: HashSelector
+  blockHeight: BlockSelector
+  blockShard: BigIntIdSelector
+  blockWorkchain: BigIntIdSelector
+  shardedHeight: BlockSelector
+  shardedBlockHash: HashSelector
+  shardedBlockShard: BigIntIdSelector
+  shardedBlockWorkchain: BigIntIdSelector
+  previousBlock: BlockSelector
+  txHash: StringSelector
+  txType: IntegerSelector
+  txAccount: StringSelector
+  txAborted: StringSelector
+  txOriginalStatus: EverscaleAccountStateSelector
+  txEndStatus: EverscaleAccountStateSelector
+  messageHash: HashSelector
+  messageTypeName: EverscaleMessageTypeNameSelector
+  messageDirection: EverscaleMessageDirectionSelector
+  messageIndex: IntegerSelector
+  messageSender: StringSelector
+  messageReceiver: StringSelector
+  messageValue: FloatSelector
+  messageCreatedLogicalTime: BigIntegerSelector
+  messageIhrDisabled: BooleanSelector
+  messageIrbFee: FloatSelector
+  messageFwdFee: FloatSelector
+  messageBounce: BooleanSelector
+  messageBounced: BooleanSelector
+  messageBody: StringSelector
+  messageBodyHash: StringSelector
+  messageData: StringSelector
+  messageDataHash: StringSelector
+  messageBoc: StringSelector
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>blockHeight</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>blockShard</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>blockWorkchain</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>shardedHeight</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>shardedBlockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>shardedBlockShard</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>shardedBlockWorkchain</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>previousBlock</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>txHash</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>txType</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>txAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>txAborted</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>txOriginalStatus</b></code>](#)<Bullet />[`EverscaleAccountStateSelector`](/docs/v1/graphql-reference/inputs/everscale-account-state-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>txEndStatus</b></code>](#)<Bullet />[`EverscaleAccountStateSelector`](/docs/v1/graphql-reference/inputs/everscale-account-state-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>messageHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>messageTypeName</b></code>](#)<Bullet />[`EverscaleMessageTypeNameSelector`](/docs/v1/graphql-reference/inputs/everscale-message-type-name-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>messageDirection</b></code>](#)<Bullet />[`EverscaleMessageDirectionSelector`](/docs/v1/graphql-reference/inputs/everscale-message-direction-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>messageIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>messageSender</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>messageReceiver</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>messageValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>messageCreatedLogicalTime</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/v1/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>messageIhrDisabled</b></code>](#)<Bullet />[`BooleanSelector`](/docs/v1/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>messageIrbFee</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>messageFwdFee</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>messageBounce</b></code>](#)<Bullet />[`BooleanSelector`](/docs/v1/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>messageBounced</b></code>](#)<Bullet />[`BooleanSelector`](/docs/v1/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>messageBody</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>messageBodyHash</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>messageData</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>messageDataHash</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleMessageFilter.<b>messageBoc</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+

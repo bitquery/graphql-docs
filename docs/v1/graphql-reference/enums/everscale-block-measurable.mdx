@@ -1,0 +1,279 @@
+---
+id: everscale-block-measurable
+title: EverscaleBlockMeasurable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum EverscaleBlockMeasurable {
+  date
+  time
+  hash
+  height
+  shard
+  workchain
+  sharded_block
+  sharded_block_hash
+  sharded_block_shard
+  sharded_block_workchain
+  previous_block
+  tx_count
+  status
+  global_id
+  logical_time_start
+  logical_time_end
+  version
+  after_merge
+  after_split
+  before_split
+  want_merge
+  want_split
+  vertical_seq_no
+  minimal_reference_masterchain_block
+  value_flow_from_previous_block
+  value_flow_to_previous_block
+  value_flow_imported
+  value_flow_exported
+  value_flow_fees_collected
+  value_flow_fees_imported
+  value_flow_created
+  value_flow_minted
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>hash</b></code>](#)  
+> 
+> 
+> Hash of the the block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>height</b></code>](#)  
+> 
+> 
+> Number of block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>shard</b></code>](#)  
+> 
+> 
+> Shard of block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>workchain</b></code>](#)  
+> 
+> 
+> Workchain of block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>sharded_block</b></code>](#)  
+> 
+> 
+> Number of sharded block block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>sharded_block_hash</b></code>](#)  
+> 
+> 
+> Hash of the the sharded block block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>sharded_block_shard</b></code>](#)  
+> 
+> 
+> Shard of sharded block block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>sharded_block_workchain</b></code>](#)  
+> 
+> 
+> Workchain of sharded block block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>previous_block</b></code>](#)  
+> 
+> 
+> Previous Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>tx_count</b></code>](#)  
+> 
+> 
+> Count of transactions in this block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>status</b></code>](#)  
+> 
+> 
+> Status
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>global_id</b></code>](#)  
+> 
+> 
+> Global ID
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>logical_time_start</b></code>](#)  
+> 
+> 
+> Logical Time Start
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>logical_time_end</b></code>](#)  
+> 
+> 
+> Logical Time End
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>version</b></code>](#)  
+> 
+> 
+> Version
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>after_merge</b></code>](#)  
+> 
+> 
+> After Merge
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>after_split</b></code>](#)  
+> 
+> 
+> After Split
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>before_split</b></code>](#)  
+> 
+> 
+> Before Split
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>want_merge</b></code>](#)  
+> 
+> 
+> Want Merge
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>want_split</b></code>](#)  
+> 
+> 
+> Want Split
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>vertical_seq_no</b></code>](#)  
+> 
+> 
+> Vertical Sequence
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>minimal_reference_masterchain_block</b></code>](#)  
+> 
+> 
+> Minimal Reference Masterchain Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>value_flow_from_previous_block</b></code>](#)  
+> 
+> 
+> Value From Previous Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>value_flow_to_previous_block</b></code>](#)  
+> 
+> 
+> Value To Previous Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>value_flow_imported</b></code>](#)  
+> 
+> 
+> Value Imported
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>value_flow_exported</b></code>](#)  
+> 
+> 
+> Value Exported
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>value_flow_fees_collected</b></code>](#)  
+> 
+> 
+> Value Fees collected
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>value_flow_fees_imported</b></code>](#)  
+> 
+> 
+> Value Fees imported
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>value_flow_created</b></code>](#)  
+> 
+> 
+> Value created
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlockMeasurable.<b>value_flow_minted</b></code>](#)  
+> 
+> 
+> Value minted
+> 
+
+
+

@@ -1,0 +1,118 @@
+---
+id: solana-transaction-measureable
+title: SolanaTransactionMeasureable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum SolanaTransactionMeasureable {
+  date
+  time
+  block_hash
+  height
+  previous_block_hash
+  parent_slot
+  signature
+  fee
+  transaction_fee
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransactionMeasureable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransactionMeasureable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransactionMeasureable.<b>block_hash</b></code>](#)  
+> 
+> 
+> Hash of the the block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransactionMeasureable.<b>height</b></code>](#)  
+> 
+> 
+> Number of block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransactionMeasureable.<b>previous_block_hash</b></code>](#)  
+> 
+> 
+> The block hash of this block`s parent
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransactionMeasureable.<b>parent_slot</b></code>](#)  
+> 
+> 
+> The slot index of this block`s parent
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransactionMeasureable.<b>signature</b></code>](#)  
+> 
+> 
+> Transaction Hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransactionMeasureable.<b>fee</b></code>](#)  
+> 
+> 
+> Transaction Fee
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransactionMeasureable.<b>transaction_fee</b></code>](#)  
+> 
+> 
+> Transaction Fee
+> 
+
+
+

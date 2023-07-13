@@ -1,0 +1,125 @@
+---
+id: binance-transactions-measureable
+title: BinanceTransactionsMeasureable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum BinanceTransactionsMeasureable {
+  date
+  time
+  block
+  tx_hash
+  transaction_source_name
+  transaction_source_code
+  transaction_code
+  transaction_type
+  transaction_memo
+  currency_symbol
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransactionsMeasureable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransactionsMeasureable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransactionsMeasureable.<b>block</b></code>](#)  
+> 
+> 
+> Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransactionsMeasureable.<b>tx_hash</b></code>](#)  
+> 
+> 
+> Transaction hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransactionsMeasureable.<b>transaction_source_name</b></code>](#)  
+> 
+> 
+> Transaction Source Name
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransactionsMeasureable.<b>transaction_source_code</b></code>](#)  
+> 
+> 
+> Transaction Source Code
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransactionsMeasureable.<b>transaction_code</b></code>](#)  
+> 
+> 
+> Transaction Code
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransactionsMeasureable.<b>transaction_type</b></code>](#)  
+> 
+> 
+> Transaction Type
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransactionsMeasureable.<b>transaction_memo</b></code>](#)  
+> 
+> 
+> Transaction Memo
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransactionsMeasureable.<b>currency_symbol</b></code>](#)  
+> 
+> 
+> Currency
+> 
+
+
+

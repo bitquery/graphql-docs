@@ -1,0 +1,174 @@
+---
+id: tezos-argument-measurable
+title: TezosArgumentMeasurable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum TezosArgumentMeasurable {
+  date
+  time
+  block
+  blockHash
+  proto
+  protocol
+  transactionHash
+  transactionSource
+  opPath
+  internal
+  sender
+  receiver
+  status
+  success
+  argname
+  argvalue
+  amount
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentMeasurable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentMeasurable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentMeasurable.<b>block</b></code>](#)  
+> 
+> 
+> Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentMeasurable.<b>blockHash</b></code>](#)  
+> 
+> 
+> Block hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentMeasurable.<b>proto</b></code>](#)  
+> 
+> 
+> Proto
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentMeasurable.<b>protocol</b></code>](#)  
+> 
+> 
+> Protocol
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentMeasurable.<b>transactionHash</b></code>](#)  
+> 
+> 
+> Transaction hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentMeasurable.<b>transactionSource</b></code>](#)  
+> 
+> 
+> Transaction source
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentMeasurable.<b>opPath</b></code>](#)  
+> 
+> 
+> Op path
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentMeasurable.<b>internal</b></code>](#)  
+> 
+> 
+> Internal
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentMeasurable.<b>sender</b></code>](#)  
+> 
+> 
+> Sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentMeasurable.<b>receiver</b></code>](#)  
+> 
+> 
+> Receiver
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentMeasurable.<b>status</b></code>](#)  
+> 
+> 
+> Status
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentMeasurable.<b>success</b></code>](#)  
+> 
+> 
+> Success
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentMeasurable.<b>argname</b></code>](#)  
+> 
+> 
+> Argname
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentMeasurable.<b>argvalue</b></code>](#)  
+> 
+> 
+> Argvalue
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentMeasurable.<b>amount</b></code>](#)  
+> 
+> 
+> Amount
+> 
+
+
+

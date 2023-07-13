@@ -1,0 +1,153 @@
+---
+id: tezos-operation-measurable
+title: TezosOperationMeasurable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum TezosOperationMeasurable {
+  date
+  time
+  block
+  blockHash
+  proto
+  protocol
+  kind
+  transactionHash
+  transactionSource
+  opPath
+  internal
+  source
+  success
+  contents
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosOperationMeasurable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosOperationMeasurable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosOperationMeasurable.<b>block</b></code>](#)  
+> 
+> 
+> Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosOperationMeasurable.<b>blockHash</b></code>](#)  
+> 
+> 
+> Block hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosOperationMeasurable.<b>proto</b></code>](#)  
+> 
+> 
+> Proto
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosOperationMeasurable.<b>protocol</b></code>](#)  
+> 
+> 
+> Protocol
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosOperationMeasurable.<b>kind</b></code>](#)  
+> 
+> 
+> Kind
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosOperationMeasurable.<b>transactionHash</b></code>](#)  
+> 
+> 
+> Transaction hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosOperationMeasurable.<b>transactionSource</b></code>](#)  
+> 
+> 
+> Transaction source
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosOperationMeasurable.<b>opPath</b></code>](#)  
+> 
+> 
+> Op path
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosOperationMeasurable.<b>internal</b></code>](#)  
+> 
+> 
+> Internal
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosOperationMeasurable.<b>source</b></code>](#)  
+> 
+> 
+> Source
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosOperationMeasurable.<b>success</b></code>](#)  
+> 
+> 
+> Success
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosOperationMeasurable.<b>contents</b></code>](#)  
+> 
+> 
+> Contents
+> 
+
+
+

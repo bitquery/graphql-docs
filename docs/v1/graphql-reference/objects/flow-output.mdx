@@ -1,0 +1,637 @@
+---
+id: flow-output
+title: FlowOutput
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Outputs in Flow blockchain
+
+
+```graphql
+type FlowOutput {
+  address: Address!
+  amount(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    blockId: HashSelector
+    transactionId: HashSelector
+    transactionStatusCode: IntegerSelector
+    transactionIndexInCollection: IntegerSelector
+    index: IntegerSelector
+    smartContractAddress: StringSelector
+    smartContractMethod: MethodSelector
+    type: StringSelector
+    eventIndex: IntegerSelector
+    address: StringSelector
+    entityId: BigIntIdSelector
+    transferReason: FlowTransferReasonSelector
+    currency: CurrencySelector
+  ): Float
+  amountDecimal(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    blockId: HashSelector
+    transactionId: HashSelector
+    transactionStatusCode: IntegerSelector
+    transactionIndexInCollection: IntegerSelector
+    index: IntegerSelector
+    smartContractAddress: StringSelector
+    smartContractMethod: MethodSelector
+    type: StringSelector
+    eventIndex: IntegerSelector
+    address: StringSelector
+    entityId: BigIntIdSelector
+    transferReason: FlowTransferReasonSelector
+    currency: CurrencySelector
+  ): DecimalNumberAsDiv
+  any(
+    of: FlowOutputMeasureable!
+  ): String
+  block(
+    height: BlockSelector
+    blockId: HashSelector
+  ): FlowBlockDimension!
+  count(
+    uniq: FlowOutputUniq
+  ): Int
+  countBigInt(
+    uniq: FlowOutputUniq
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    blockId: HashSelector
+    transactionId: HashSelector
+    transactionStatusCode: IntegerSelector
+    transactionIndexInCollection: IntegerSelector
+    index: IntegerSelector
+    smartContractAddress: StringSelector
+    smartContractMethod: MethodSelector
+    type: StringSelector
+    eventIndex: IntegerSelector
+    address: StringSelector
+    entityId: BigIntIdSelector
+    transferReason: FlowTransferReasonSelector
+    currency: CurrencySelector
+  ): BigInt
+  currency: Currency
+  date: Date
+  entityId: BigInt!
+  eventIndex: Int!
+  expression(
+    get: String!
+  ): DecimalNumber
+  maximum(
+    of: FlowOutputMeasureable!
+    get: FlowOutputMeasureable
+  ): String
+  minimum(
+    of: FlowOutputMeasureable!
+    get: FlowOutputMeasureable
+  ): String
+  smartContractAddress: Address
+  smartContractMethod: Method
+  time: DateTime
+  transaction(
+    transactionId: HashSelector
+    transactionIndexInCollection: IntegerSelector
+    transactionStatusCode: IntegerSelector
+  ): FlowMinorTransactionDimension!
+  transferReason: String!
+  type: String!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>address</b></code>](#)<Bullet />[`Address!`](/docs/v1/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>amount</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amount.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/v1/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amount.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amount.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amount.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amount.<b>blockId</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amount.<b>transactionId</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amount.<b>transactionStatusCode</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amount.<b>transactionIndexInCollection</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amount.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amount.<b>smartContractAddress</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amount.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amount.<b>type</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amount.<b>eventIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amount.<b>address</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amount.<b>entityId</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amount.<b>transferReason</b></code>](#)<Bullet />[`FlowTransferReasonSelector`](/docs/v1/graphql-reference/inputs/flow-transfer-reason-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amount.<b>currency</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>amountDecimal</b></code>](#)<Bullet />[`DecimalNumberAsDiv`](/docs/v1/graphql-reference/scalars/decimal-number-as-div) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Input value as decimal
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amountDecimal.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amountDecimal.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amountDecimal.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amountDecimal.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amountDecimal.<b>blockId</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amountDecimal.<b>transactionId</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amountDecimal.<b>transactionStatusCode</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amountDecimal.<b>transactionIndexInCollection</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amountDecimal.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amountDecimal.<b>smartContractAddress</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amountDecimal.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amountDecimal.<b>type</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amountDecimal.<b>eventIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amountDecimal.<b>address</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amountDecimal.<b>entityId</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amountDecimal.<b>transferReason</b></code>](#)<Bullet />[`FlowTransferReasonSelector`](/docs/v1/graphql-reference/inputs/flow-transfer-reason-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.amountDecimal.<b>currency</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>any</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.any.<b>of</b></code>](#)<Bullet />[`FlowOutputMeasureable!`](/docs/v1/graphql-reference/enums/flow-output-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>block</b></code>](#)<Bullet />[`FlowBlockDimension!`](/docs/v1/graphql-reference/objects/flow-block-dimension) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Block information
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.block.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.block.<b>blockId</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>count</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.count.<b>uniq</b></code>](#)<Bullet />[`FlowOutputUniq`](/docs/v1/graphql-reference/enums/flow-output-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.countBigInt.<b>uniq</b></code>](#)<Bullet />[`FlowOutputUniq`](/docs/v1/graphql-reference/enums/flow-output-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.countBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.countBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.countBigInt.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.countBigInt.<b>blockId</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.countBigInt.<b>transactionId</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.countBigInt.<b>transactionStatusCode</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.countBigInt.<b>transactionIndexInCollection</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.countBigInt.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.countBigInt.<b>smartContractAddress</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.countBigInt.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.countBigInt.<b>type</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.countBigInt.<b>eventIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.countBigInt.<b>address</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.countBigInt.<b>entityId</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.countBigInt.<b>transferReason</b></code>](#)<Bullet />[`FlowTransferReasonSelector`](/docs/v1/graphql-reference/inputs/flow-transfer-reason-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.countBigInt.<b>currency</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>currency</b></code>](#)<Bullet />[`Currency`](/docs/v1/graphql-reference/objects/currency) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Currency of transfer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>date</b></code>](#)<Bullet />[`Date`](/docs/v1/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The date this transaction was created
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>entityId</b></code>](#)<Bullet />[`BigInt!`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> NFT Id
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>eventIndex</b></code>](#)<Bullet />[`Int!`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Index of event inside transaction
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/v1/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.maximum.<b>of</b></code>](#)<Bullet />[`FlowOutputMeasureable!`](/docs/v1/graphql-reference/enums/flow-output-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.maximum.<b>get</b></code>](#)<Bullet />[`FlowOutputMeasureable`](/docs/v1/graphql-reference/enums/flow-output-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.minimum.<b>of</b></code>](#)<Bullet />[`FlowOutputMeasureable!`](/docs/v1/graphql-reference/enums/flow-output-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.minimum.<b>get</b></code>](#)<Bullet />[`FlowOutputMeasureable`](/docs/v1/graphql-reference/enums/flow-output-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>smartContractAddress</b></code>](#)<Bullet />[`Address`](/docs/v1/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Smart contract address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>smartContractMethod</b></code>](#)<Bullet />[`Method`](/docs/v1/graphql-reference/objects/method) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Contract method invoked
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>time</b></code>](#)<Bullet />[`DateTime`](/docs/v1/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The time this transaction was created
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>transaction</b></code>](#)<Bullet />[`FlowMinorTransactionDimension!`](/docs/v1/graphql-reference/objects/flow-minor-transaction-dimension) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Transaction information
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.transaction.<b>transactionId</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.transaction.<b>transactionIndexInCollection</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowOutput.transaction.<b>transactionStatusCode</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>transferReason</b></code>](#)<Bullet />[`String!`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transfer reason, e.g. nft_transfer, fungible_token_transfer, fee
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowOutput.<b>type</b></code>](#)<Bullet />[`String!`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Type of field, e.g. UInt64, String, Bool, etc..
+> 
+
+
+
+### Member of
+
+[`Flow`](/docs/v1/graphql-reference/objects/flow)  <Badge class="secondary" text="object"/>
+

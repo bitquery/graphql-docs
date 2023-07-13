@@ -1,0 +1,88 @@
+---
+id: tron-currency-selector
+title: TronCurrencySelector
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Currency selector in Tron blockchain.
+Token identified by address of contract for TRC20 tokens and token name (or numeric token ID )  for TRC10
+
+
+```graphql
+input TronCurrencySelector {
+  is: String
+  not: String
+  in: [String!]
+  notIn: [String!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>TronCurrencySelector.<b>is</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Currency is
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronCurrencySelector.<b>not</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Currency not
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronCurrencySelector.<b>in</b></code>](#)<Bullet />[`[String!]`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Currency in the list
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronCurrencySelector.<b>notIn</b></code>](#)<Bullet />[`[String!]`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Currency not in the list
+> 
+
+
+
+### Member of
+
+[`TronContractFilter`](/docs/v1/graphql-reference/inputs/tron-contract-filter)  <Badge class="secondary" text="input"/><Bullet />[`TronDexTradeFilter`](/docs/v1/graphql-reference/inputs/tron-dex-trade-filter)  <Badge class="secondary" text="input"/><Bullet />[`TronTradeFilter`](/docs/v1/graphql-reference/inputs/tron-trade-filter)  <Badge class="secondary" text="input"/><Bullet />[`TronTransferFilter`](/docs/v1/graphql-reference/inputs/tron-transfer-filter)  <Badge class="secondary" text="input"/>
+

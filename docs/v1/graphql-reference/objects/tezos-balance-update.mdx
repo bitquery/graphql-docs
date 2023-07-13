@@ -1,0 +1,654 @@
+---
+id: tezos-balance-update
+title: TezosBalanceUpdate
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Balance update in Tezos blockchain
+
+
+```graphql
+type TezosBalanceUpdate {
+  address: Address
+  any(
+    of: TezosBalanceUpdateMeasurable!
+  ): String
+  attribute: String
+  block: TezosBlockWithHashDimension
+  category: String
+  change(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    block: BigIntIdSelector
+    blockHash: HashSelector
+    proto: BigIntIdSelector
+    protocol: StringSelector
+    kind: StringSelector
+    transactionHash: HashSelector
+    transactionSource: StringSelector
+    opPath: StringSelector
+    internal: BooleanSelector
+    source: AddressSelector
+    freezer: BooleanSelector
+    category: StringSelector
+    address: AddressSelector
+    cycle: BigIntIdSelector
+    attribute: StringSelector
+    change: FloatSelector
+  ): DecimalNumberAsDiv
+  count(
+    uniq: TezosBalanceUpdateUniq
+    date: DateSelector
+    time: DateTimeSelector
+    block: BigIntIdSelector
+    blockHash: HashSelector
+    proto: BigIntIdSelector
+    protocol: StringSelector
+    kind: StringSelector
+    transactionHash: HashSelector
+    transactionSource: StringSelector
+    opPath: StringSelector
+    internal: BooleanSelector
+    source: AddressSelector
+    freezer: BooleanSelector
+    category: StringSelector
+    address: AddressSelector
+    cycle: BigIntIdSelector
+    attribute: StringSelector
+    change: FloatSelector
+  ): Int
+  countBigInt(
+    uniq: TezosBalanceUpdateUniq
+    date: DateSelector
+    time: DateTimeSelector
+    block: BigIntIdSelector
+    blockHash: HashSelector
+    proto: BigIntIdSelector
+    protocol: StringSelector
+    kind: StringSelector
+    transactionHash: HashSelector
+    transactionSource: StringSelector
+    opPath: StringSelector
+    internal: BooleanSelector
+    source: AddressSelector
+    freezer: BooleanSelector
+    category: StringSelector
+    address: AddressSelector
+    cycle: BigIntIdSelector
+    attribute: StringSelector
+    change: FloatSelector
+  ): BigInt
+  cycle: BigInt
+  date: Date
+  expression(
+    get: String!
+  ): DecimalNumber
+  freezer: Boolean
+  internal: Boolean
+  kind: String
+  maximum(
+    of: TezosBalanceUpdateMeasurable!
+    get: TezosBalanceUpdateMeasurable
+  ): String
+  minimum(
+    of: TezosBalanceUpdateMeasurable!
+    get: TezosBalanceUpdateMeasurable
+  ): String
+  opPath: String
+  proto: BigInt
+  protocol: String
+  source: Address
+  timestamp: DateTime
+  transaction: TezosTransactionWithSourceDimension
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>address</b></code>](#)<Bullet />[`Address`](/docs/v1/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>any</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.any.<b>of</b></code>](#)<Bullet />[`TezosBalanceUpdateMeasurable!`](/docs/v1/graphql-reference/enums/tezos-balance-update-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>attribute</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Attribute
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>block</b></code>](#)<Bullet />[`TezosBlockWithHashDimension`](/docs/v1/graphql-reference/objects/tezos-block-with-hash-dimension) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>category</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Category
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>change</b></code>](#)<Bullet />[`DecimalNumberAsDiv`](/docs/v1/graphql-reference/scalars/decimal-number-as-div) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/v1/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>block</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>proto</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>protocol</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>kind</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>transactionSource</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>opPath</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>internal</b></code>](#)<Bullet />[`BooleanSelector`](/docs/v1/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>source</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>freezer</b></code>](#)<Bullet />[`BooleanSelector`](/docs/v1/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>category</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>address</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>cycle</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>attribute</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.change.<b>change</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>count</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.count.<b>uniq</b></code>](#)<Bullet />[`TezosBalanceUpdateUniq`](/docs/v1/graphql-reference/enums/tezos-balance-update-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.count.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.count.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.count.<b>block</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.count.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.count.<b>proto</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.count.<b>protocol</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.count.<b>kind</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.count.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.count.<b>transactionSource</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.count.<b>opPath</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.count.<b>internal</b></code>](#)<Bullet />[`BooleanSelector`](/docs/v1/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.count.<b>source</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.count.<b>freezer</b></code>](#)<Bullet />[`BooleanSelector`](/docs/v1/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.count.<b>category</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.count.<b>address</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.count.<b>cycle</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.count.<b>attribute</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.count.<b>change</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.countBigInt.<b>uniq</b></code>](#)<Bullet />[`TezosBalanceUpdateUniq`](/docs/v1/graphql-reference/enums/tezos-balance-update-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.countBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.countBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.countBigInt.<b>block</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.countBigInt.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.countBigInt.<b>proto</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.countBigInt.<b>protocol</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.countBigInt.<b>kind</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.countBigInt.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.countBigInt.<b>transactionSource</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.countBigInt.<b>opPath</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.countBigInt.<b>internal</b></code>](#)<Bullet />[`BooleanSelector`](/docs/v1/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.countBigInt.<b>source</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.countBigInt.<b>freezer</b></code>](#)<Bullet />[`BooleanSelector`](/docs/v1/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.countBigInt.<b>category</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.countBigInt.<b>address</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.countBigInt.<b>cycle</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.countBigInt.<b>attribute</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.countBigInt.<b>change</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>cycle</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Cycle
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>date</b></code>](#)<Bullet />[`Date`](/docs/v1/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Calendar date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/v1/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>freezer</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Freezer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>internal</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Internal
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>kind</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Kind
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.maximum.<b>of</b></code>](#)<Bullet />[`TezosBalanceUpdateMeasurable!`](/docs/v1/graphql-reference/enums/tezos-balance-update-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.maximum.<b>get</b></code>](#)<Bullet />[`TezosBalanceUpdateMeasurable`](/docs/v1/graphql-reference/enums/tezos-balance-update-measurable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.minimum.<b>of</b></code>](#)<Bullet />[`TezosBalanceUpdateMeasurable!`](/docs/v1/graphql-reference/enums/tezos-balance-update-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.minimum.<b>get</b></code>](#)<Bullet />[`TezosBalanceUpdateMeasurable`](/docs/v1/graphql-reference/enums/tezos-balance-update-measurable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>opPath</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Op path
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>proto</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Proto
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>protocol</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Protocol
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>source</b></code>](#)<Bullet />[`Address`](/docs/v1/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Source
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>timestamp</b></code>](#)<Bullet />[`DateTime`](/docs/v1/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Timestamp
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBalanceUpdate.<b>transaction</b></code>](#)<Bullet />[`TezosTransactionWithSourceDimension`](/docs/v1/graphql-reference/objects/tezos-transaction-with-source-dimension) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Transaction
+> 
+
+
+
+### Member of
+
+[`Tezos`](/docs/v1/graphql-reference/objects/tezos)  <Badge class="secondary" text="object"/>
+

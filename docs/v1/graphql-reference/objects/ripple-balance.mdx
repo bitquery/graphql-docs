@@ -1,0 +1,681 @@
+---
+id: ripple-balance
+title: RippleBalance
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Balance in Ripple blockchain
+
+
+```graphql
+type RippleBalance {
+  account: Address
+  any(
+    of: RippleBalanceMeasurable!
+  ): String
+  balance(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    block: BigIntIdSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSender: AddressSelector
+    transactionType: StringSelector
+    operation: StringSelector
+    account: AddressSelector
+    currencySymbol: CurrencySelector
+    issuer: AddressSelector
+    prevLedgerSequence: BigIntIdSelector
+    flags: BigIntIdSelector
+    balance: FloatSelector
+    prevBalance: FloatSelector
+  ): Float
+  block: BigInt
+  count(
+    uniq: RippleBalanceUniq
+    date: DateSelector
+    time: DateTimeSelector
+    block: BigIntIdSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSender: AddressSelector
+    transactionType: StringSelector
+    operation: StringSelector
+    account: AddressSelector
+    currencySymbol: CurrencySelector
+    issuer: AddressSelector
+    prevLedgerSequence: BigIntIdSelector
+    flags: BigIntIdSelector
+    balance: FloatSelector
+    prevBalance: FloatSelector
+  ): Int
+  countBigInt(
+    uniq: RippleBalanceUniq
+    date: DateSelector
+    time: DateTimeSelector
+    block: BigIntIdSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSender: AddressSelector
+    transactionType: StringSelector
+    operation: StringSelector
+    account: AddressSelector
+    currencySymbol: CurrencySelector
+    issuer: AddressSelector
+    prevLedgerSequence: BigIntIdSelector
+    flags: BigIntIdSelector
+    balance: FloatSelector
+    prevBalance: FloatSelector
+  ): BigInt
+  currency: Currency
+  date: Date
+  expression(
+    get: String!
+  ): DecimalNumber
+  flags: BigInt
+  issuer: Address
+  maximum(
+    of: RippleBalanceMeasurable!
+    get: RippleBalanceMeasurable
+  ): String
+  minimum(
+    of: RippleBalanceMeasurable!
+    get: RippleBalanceMeasurable
+  ): String
+  operation: String
+  prevBalance(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    block: BigIntIdSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSender: AddressSelector
+    transactionType: StringSelector
+    operation: StringSelector
+    account: AddressSelector
+    currencySymbol: CurrencySelector
+    issuer: AddressSelector
+    prevLedgerSequence: BigIntIdSelector
+    flags: BigIntIdSelector
+    balance: FloatSelector
+    prevBalance: FloatSelector
+  ): Float
+  prevLedgerSequence: BigInt
+  timestamp: DateTime
+  transaction: RippleTransactionDimension
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleBalance.<b>account</b></code>](#)<Bullet />[`Address`](/docs/v1/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Account
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleBalance.<b>any</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.any.<b>of</b></code>](#)<Bullet />[`RippleBalanceMeasurable!`](/docs/v1/graphql-reference/enums/ripple-balance-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleBalance.<b>balance</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.balance.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.balance.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/v1/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.balance.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.balance.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.balance.<b>block</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.balance.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.balance.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.balance.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.balance.<b>transactionType</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.balance.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.balance.<b>account</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.balance.<b>currencySymbol</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.balance.<b>issuer</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.balance.<b>prevLedgerSequence</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.balance.<b>flags</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.balance.<b>balance</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.balance.<b>prevBalance</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleBalance.<b>block</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleBalance.<b>count</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.count.<b>uniq</b></code>](#)<Bullet />[`RippleBalanceUniq`](/docs/v1/graphql-reference/enums/ripple-balance-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.count.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.count.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.count.<b>block</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.count.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.count.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.count.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.count.<b>transactionType</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.count.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.count.<b>account</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.count.<b>currencySymbol</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.count.<b>issuer</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.count.<b>prevLedgerSequence</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.count.<b>flags</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.count.<b>balance</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.count.<b>prevBalance</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleBalance.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.countBigInt.<b>uniq</b></code>](#)<Bullet />[`RippleBalanceUniq`](/docs/v1/graphql-reference/enums/ripple-balance-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.countBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.countBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.countBigInt.<b>block</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.countBigInt.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.countBigInt.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.countBigInt.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.countBigInt.<b>transactionType</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.countBigInt.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.countBigInt.<b>account</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.countBigInt.<b>currencySymbol</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.countBigInt.<b>issuer</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.countBigInt.<b>prevLedgerSequence</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.countBigInt.<b>flags</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.countBigInt.<b>balance</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.countBigInt.<b>prevBalance</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleBalance.<b>currency</b></code>](#)<Bullet />[`Currency`](/docs/v1/graphql-reference/objects/currency) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Currency
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleBalance.<b>date</b></code>](#)<Bullet />[`Date`](/docs/v1/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Calendar date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleBalance.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/v1/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleBalance.<b>flags</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Flags
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleBalance.<b>issuer</b></code>](#)<Bullet />[`Address`](/docs/v1/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Issuer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleBalance.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.maximum.<b>of</b></code>](#)<Bullet />[`RippleBalanceMeasurable!`](/docs/v1/graphql-reference/enums/ripple-balance-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.maximum.<b>get</b></code>](#)<Bullet />[`RippleBalanceMeasurable`](/docs/v1/graphql-reference/enums/ripple-balance-measurable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleBalance.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.minimum.<b>of</b></code>](#)<Bullet />[`RippleBalanceMeasurable!`](/docs/v1/graphql-reference/enums/ripple-balance-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.minimum.<b>get</b></code>](#)<Bullet />[`RippleBalanceMeasurable`](/docs/v1/graphql-reference/enums/ripple-balance-measurable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleBalance.<b>operation</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Operation
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleBalance.<b>prevBalance</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.prevBalance.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.prevBalance.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/v1/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.prevBalance.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.prevBalance.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.prevBalance.<b>block</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.prevBalance.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.prevBalance.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.prevBalance.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.prevBalance.<b>transactionType</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.prevBalance.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.prevBalance.<b>account</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.prevBalance.<b>currencySymbol</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.prevBalance.<b>issuer</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.prevBalance.<b>prevLedgerSequence</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.prevBalance.<b>flags</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.prevBalance.<b>balance</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleBalance.prevBalance.<b>prevBalance</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleBalance.<b>prevLedgerSequence</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Prev ledger sequence
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleBalance.<b>timestamp</b></code>](#)<Bullet />[`DateTime`](/docs/v1/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Timestamp
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleBalance.<b>transaction</b></code>](#)<Bullet />[`RippleTransactionDimension`](/docs/v1/graphql-reference/objects/ripple-transaction-dimension) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Transaction
+> 
+
+
+
+### Member of
+
+[`Ripple`](/docs/v1/graphql-reference/objects/ripple)  <Badge class="secondary" text="object"/>
+

@@ -1,0 +1,769 @@
+---
+id: tron-smart-contract-calls
+title: TronSmartContractCalls
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Smart Contract Calls
+
+
+```graphql
+type TronSmartContractCalls {
+  amount(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txFrom: AddressSelector
+    txTo: AddressSelector
+    smartContractAddress: AddressSelector
+    smartContractMethod: MethodSelector
+    external: Boolean
+    success: Boolean
+  ): Float
+  any(
+    of: TronCallsMeasureable!
+  ): String
+  arguments: [ArgumentNameValue!]
+  block(
+    height: BlockSelector
+    time: DateTimeSelector
+  ): Block
+  callDepth: String
+  count(
+    uniq: SmartContractCallsUniq
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txFrom: AddressSelector
+    txTo: AddressSelector
+    smartContractAddress: AddressSelector
+    smartContractMethod: MethodSelector
+    external: Boolean
+    success: Boolean
+  ): Int
+  countBigInt(
+    uniq: SmartContractCallsUniq
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txFrom: AddressSelector
+    txTo: AddressSelector
+    smartContractAddress: AddressSelector
+    smartContractMethod: MethodSelector
+    external: Boolean
+    success: Boolean
+  ): BigInt
+  date: Date
+  energyUsageTotal(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txFrom: AddressSelector
+    txTo: AddressSelector
+    smartContractAddress: AddressSelector
+    smartContractMethod: MethodSelector
+    external: Boolean
+    success: Boolean
+  ): Float
+  expression(
+    get: String!
+  ): DecimalNumber
+  external(
+    external: Boolean
+  ): Boolean
+  fee(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txFrom: AddressSelector
+    txTo: AddressSelector
+    smartContractAddress: AddressSelector
+    smartContractMethod: MethodSelector
+    external: Boolean
+    success: Boolean
+  ): Float
+  maximum(
+    of: TronCallsMeasureable!
+    get: TronCallsMeasureable
+  ): String
+  minimum(
+    of: TronCallsMeasureable!
+    get: TronCallsMeasureable
+  ): String
+  netUsage(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txFrom: AddressSelector
+    txTo: AddressSelector
+    smartContractAddress: AddressSelector
+    smartContractMethod: MethodSelector
+    external: Boolean
+    success: Boolean
+  ): Float
+  smartContract(
+    smartContractAddress: AddressSelector
+  ): TronSmartContract
+  smartContractMethod(
+    smartContractMethod: MethodSelector
+  ): Method
+  success(
+    success: [Boolean!]
+  ): Boolean
+  txFrom(
+    txFrom: AddressSelector
+  ): Address
+  txHash(
+    txHash: HashSelector
+  ): String
+  txTo(
+    txTo: AddressSelector
+  ): Address
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>amount</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.amount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.amount.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/v1/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.amount.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.amount.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.amount.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.amount.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.amount.<b>txFrom</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.amount.<b>txTo</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.amount.<b>smartContractAddress</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.amount.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.amount.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.amount.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>any</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.any.<b>of</b></code>](#)<Bullet />[`TronCallsMeasureable!`](/docs/v1/graphql-reference/enums/tron-calls-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>arguments</b></code>](#)<Bullet />[`[ArgumentNameValue!]`](/docs/v1/graphql-reference/objects/argument-name-value) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Call arguments
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>block</b></code>](#)<Bullet />[`Block`](/docs/v1/graphql-reference/objects/block) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Block in the blockchain
+> ##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.block.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.block.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>callDepth</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Depth of the call. Empty string for external call, then counted as 0...N, and the next layer is added through '-'. For example 0-3-9.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>count</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Counts and other metrics
+> ##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.count.<b>uniq</b></code>](#)<Bullet />[`SmartContractCallsUniq`](/docs/v1/graphql-reference/enums/smart-contract-calls-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.count.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.count.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.count.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.count.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.count.<b>txFrom</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.count.<b>txTo</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.count.<b>smartContractAddress</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.count.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.count.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.count.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Counts and other metrics
+> ##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.countBigInt.<b>uniq</b></code>](#)<Bullet />[`SmartContractCallsUniq`](/docs/v1/graphql-reference/enums/smart-contract-calls-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.countBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.countBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.countBigInt.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.countBigInt.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.countBigInt.<b>txFrom</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.countBigInt.<b>txTo</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.countBigInt.<b>smartContractAddress</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.countBigInt.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.countBigInt.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.countBigInt.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>date</b></code>](#)<Bullet />[`Date`](/docs/v1/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Calendar date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>energyUsageTotal</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.energyUsageTotal.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.energyUsageTotal.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.energyUsageTotal.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.energyUsageTotal.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.energyUsageTotal.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.energyUsageTotal.<b>txFrom</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.energyUsageTotal.<b>txTo</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.energyUsageTotal.<b>smartContractAddress</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.energyUsageTotal.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.energyUsageTotal.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.energyUsageTotal.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/v1/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> External call executed explicitly by caller. Internal calls executed by smart contracts.
+> ##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.external.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>fee</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.fee.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.fee.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/v1/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.fee.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.fee.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.fee.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.fee.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.fee.<b>txFrom</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.fee.<b>txTo</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.fee.<b>smartContractAddress</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.fee.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.fee.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.fee.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.maximum.<b>of</b></code>](#)<Bullet />[`TronCallsMeasureable!`](/docs/v1/graphql-reference/enums/tron-calls-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.maximum.<b>get</b></code>](#)<Bullet />[`TronCallsMeasureable`](/docs/v1/graphql-reference/enums/tron-calls-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.minimum.<b>of</b></code>](#)<Bullet />[`TronCallsMeasureable!`](/docs/v1/graphql-reference/enums/tron-calls-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.minimum.<b>get</b></code>](#)<Bullet />[`TronCallsMeasureable`](/docs/v1/graphql-reference/enums/tron-calls-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>netUsage</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.netUsage.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.netUsage.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.netUsage.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.netUsage.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.netUsage.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.netUsage.<b>txFrom</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.netUsage.<b>txTo</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.netUsage.<b>smartContractAddress</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.netUsage.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.netUsage.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.netUsage.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>smartContract</b></code>](#)<Bullet />[`TronSmartContract`](/docs/v1/graphql-reference/objects/tron-smart-contract) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Smart contract being called
+> ##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.smartContract.<b>smartContractAddress</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>smartContractMethod</b></code>](#)<Bullet />[`Method`](/docs/v1/graphql-reference/objects/method) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Contract method invoked
+> ##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.smartContractMethod.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> True if call succeeded, false if error happened. Note, that by default only successfull calls are returned in API.
+> ##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.success.<b>success</b></code>](#)<Bullet />[`[Boolean!]`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>txFrom</b></code>](#)<Bullet />[`Address`](/docs/v1/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Action from address
+> ##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.txFrom.<b>txFrom</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>txHash</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction hash where transfer happened
+> ##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.txHash.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.<b>txTo</b></code>](#)<Bullet />[`Address`](/docs/v1/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Action to address
+> ##### [<code style={{ fontWeight: 'normal' }}>TronSmartContractCalls.txTo.<b>txTo</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+### Member of
+
+[`Tron`](/docs/v1/graphql-reference/objects/tron)  <Badge class="secondary" text="object"/>
+

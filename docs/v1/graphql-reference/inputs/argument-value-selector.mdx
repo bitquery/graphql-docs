@@ -1,0 +1,87 @@
+---
+id: argument-value-selector
+title: ArgumentValueSelector
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Selector of value of argument for smart contract method or event
+
+
+```graphql
+input ArgumentValueSelector {
+  is: String
+  not: String
+  in: [String!]
+  notIn: [String!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>ArgumentValueSelector.<b>is</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Value is
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ArgumentValueSelector.<b>not</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Value not
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ArgumentValueSelector.<b>in</b></code>](#)<Bullet />[`[String!]`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Value in the list
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ArgumentValueSelector.<b>notIn</b></code>](#)<Bullet />[`[String!]`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Value not in the list
+> 
+
+
+
+### Member of
+
+[`AlgorandArgumentFilter`](/docs/v1/graphql-reference/inputs/algorand-argument-filter)  <Badge class="secondary" text="input"/><Bullet />[`ConfluxArgumentFilter`](/docs/v1/graphql-reference/inputs/conflux-argument-filter)  <Badge class="secondary" text="input"/><Bullet />[`EthereumArgumentFilter`](/docs/v1/graphql-reference/inputs/ethereum-argument-filter)  <Badge class="secondary" text="input"/><Bullet />[`TronArgumentFilter`](/docs/v1/graphql-reference/inputs/tron-argument-filter)  <Badge class="secondary" text="input"/>
+

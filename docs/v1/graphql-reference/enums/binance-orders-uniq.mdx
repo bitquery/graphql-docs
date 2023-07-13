@@ -1,0 +1,104 @@
+---
+id: binance-orders-uniq
+title: BinanceOrdersUniq
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum BinanceOrdersUniq {
+  txs
+  owners
+  base_currencies
+  quote_currencies
+  blocks
+  dates
+  orders
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrdersUniq.<b>txs</b></code>](#)  
+> 
+> 
+> Unique Transactions
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrdersUniq.<b>owners</b></code>](#)  
+> 
+> 
+> Unique order owners
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrdersUniq.<b>base_currencies</b></code>](#)  
+> 
+> 
+> Unique base currencies
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrdersUniq.<b>quote_currencies</b></code>](#)  
+> 
+> 
+> Unique quote currencies
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrdersUniq.<b>blocks</b></code>](#)  
+> 
+> 
+> Unique blocks
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrdersUniq.<b>dates</b></code>](#)  
+> 
+> 
+> Unique date count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrdersUniq.<b>orders</b></code>](#)  
+> 
+> 
+> Unique order ID count
+> 
+
+
+

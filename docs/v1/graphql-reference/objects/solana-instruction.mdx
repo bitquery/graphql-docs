@@ -1,0 +1,352 @@
+---
+id: solana-instruction
+title: SolanaInstruction
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Instruction in Solana  blockchain
+
+
+```graphql
+type SolanaInstruction {
+  accountsCount: Int
+  action(
+    parsedActionName: StringSelector
+    parsedType: StringSelector
+  ): Action
+  any(
+    of: SolanaInstructionMeasureable!
+  ): String
+  block(
+    height: BlockSelector
+    blockHash: HashSelector
+    time: DateTimeSelector
+  ): SolanaBlockInfo
+  callPath(
+    callPath: StringSelector
+  ): String
+  count(
+    uniq: SolanaInstructionUniq
+  ): Int
+  countBigInt(
+    uniq: SolanaInstructionUniq
+  ): BigInt
+  data(
+    dataBase58: StringSelector
+    dataHex: StringSelector
+  ): Data
+  date: Date
+  expression(
+    get: String!
+  ): DecimalNumber
+  external(
+    external: BooleanSelector
+  ): Boolean
+  externalAction(
+    externalParsedActionName: StringSelector
+    externalParsedType: StringSelector
+  ): Action
+  externalProgram(
+    externalProgramId: StringSelector
+    externalProgramName: StringSelector
+    externalParsedProgramName: StringSelector
+  ): Program
+  log: Log
+  maximum(
+    of: SolanaInstructionMeasureable!
+    get: SolanaInstructionMeasureable
+  ): String
+  minimum(
+    of: SolanaInstructionMeasureable!
+    get: SolanaInstructionMeasureable
+  ): String
+  program(
+    programId: StringSelector
+    programName: StringSelector
+    parsedProgramName: StringSelector
+  ): Program
+  transaction(
+    signature: HashSelector
+  ): SolanaTransactionInfo
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.<b>accountsCount</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Accounts count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.<b>action</b></code>](#)<Bullet />[`Action`](/docs/v1/graphql-reference/objects/action) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Action
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.action.<b>parsedActionName</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.action.<b>parsedType</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.<b>any</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.any.<b>of</b></code>](#)<Bullet />[`SolanaInstructionMeasureable!`](/docs/v1/graphql-reference/enums/solana-instruction-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.<b>block</b></code>](#)<Bullet />[`SolanaBlockInfo`](/docs/v1/graphql-reference/objects/solana-block-info) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Block where  transaction is included
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.block.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.block.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.block.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.<b>callPath</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Call Path
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.callPath.<b>callPath</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.<b>count</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.count.<b>uniq</b></code>](#)<Bullet />[`SolanaInstructionUniq`](/docs/v1/graphql-reference/enums/solana-instruction-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.countBigInt.<b>uniq</b></code>](#)<Bullet />[`SolanaInstructionUniq`](/docs/v1/graphql-reference/enums/solana-instruction-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.<b>data</b></code>](#)<Bullet />[`Data`](/docs/v1/graphql-reference/objects/data) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Instruction Data
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.data.<b>dataBase58</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.data.<b>dataHex</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.<b>date</b></code>](#)<Bullet />[`Date`](/docs/v1/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The date this transaction was created
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/v1/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> External
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.external.<b>external</b></code>](#)<Bullet />[`BooleanSelector`](/docs/v1/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.<b>externalAction</b></code>](#)<Bullet />[`Action`](/docs/v1/graphql-reference/objects/action) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> External Action
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.externalAction.<b>externalParsedActionName</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.externalAction.<b>externalParsedType</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.<b>externalProgram</b></code>](#)<Bullet />[`Program`](/docs/v1/graphql-reference/objects/program) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> External Program
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.externalProgram.<b>externalProgramId</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.externalProgram.<b>externalProgramName</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.externalProgram.<b>externalParsedProgramName</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.<b>log</b></code>](#)<Bullet />[`Log`](/docs/v1/graphql-reference/objects/log) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.maximum.<b>of</b></code>](#)<Bullet />[`SolanaInstructionMeasureable!`](/docs/v1/graphql-reference/enums/solana-instruction-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.maximum.<b>get</b></code>](#)<Bullet />[`SolanaInstructionMeasureable`](/docs/v1/graphql-reference/enums/solana-instruction-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.minimum.<b>of</b></code>](#)<Bullet />[`SolanaInstructionMeasureable!`](/docs/v1/graphql-reference/enums/solana-instruction-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.minimum.<b>get</b></code>](#)<Bullet />[`SolanaInstructionMeasureable`](/docs/v1/graphql-reference/enums/solana-instruction-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.<b>program</b></code>](#)<Bullet />[`Program`](/docs/v1/graphql-reference/objects/program) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Program
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.program.<b>programId</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.program.<b>programName</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.program.<b>parsedProgramName</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.<b>transaction</b></code>](#)<Bullet />[`SolanaTransactionInfo`](/docs/v1/graphql-reference/objects/solana-transaction-info) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Transaction where instruction is included
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaInstruction.transaction.<b>signature</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+### Member of
+
+[`Solana`](/docs/v1/graphql-reference/objects/solana)  <Badge class="secondary" text="object"/>
+

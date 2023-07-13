@@ -1,0 +1,87 @@
+---
+id: currency-selector
+title: CurrencySelector
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Currency selector
+
+
+```graphql
+input CurrencySelector {
+  is: String
+  not: String
+  in: [String!]
+  notIn: [String!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>CurrencySelector.<b>is</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Currency is
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CurrencySelector.<b>not</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Currency not
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CurrencySelector.<b>in</b></code>](#)<Bullet />[`[String!]`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Currency in the list
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CurrencySelector.<b>notIn</b></code>](#)<Bullet />[`[String!]`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Currency not in the list
+> 
+
+
+
+### Member of
+
+[`ElrondTransferFilter`](/docs/v1/graphql-reference/inputs/elrond-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`EverscaleTransferFilter`](/docs/v1/graphql-reference/inputs/everscale-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`FlowInputFilter`](/docs/v1/graphql-reference/inputs/flow-input-filter)  <Badge class="secondary" text="input"/><Bullet />[`FlowOutputFilter`](/docs/v1/graphql-reference/inputs/flow-output-filter)  <Badge class="secondary" text="input"/><Bullet />[`HarmonyTransfersFilter`](/docs/v1/graphql-reference/inputs/harmony-transfers-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleBalanceFilter`](/docs/v1/graphql-reference/inputs/ripple-balance-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleCheckFilter`](/docs/v1/graphql-reference/inputs/ripple-check-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleEscrowFilter`](/docs/v1/graphql-reference/inputs/ripple-escrow-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleNftokenOfferFilter`](/docs/v1/graphql-reference/inputs/ripple-nftoken-offer-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleOfferFilter`](/docs/v1/graphql-reference/inputs/ripple-offer-filter)  <Badge class="secondary" text="input"/><Bullet />[`RipplePaymentFilter`](/docs/v1/graphql-reference/inputs/ripple-payment-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleRippleStateFilter`](/docs/v1/graphql-reference/inputs/ripple-ripple-state-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleTransferFilter`](/docs/v1/graphql-reference/inputs/ripple-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarBalanceEffectFilter`](/docs/v1/graphql-reference/inputs/stellar-balance-effect-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarClaimableBalanceEffectFilter`](/docs/v1/graphql-reference/inputs/stellar-claimable-balance-effect-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarLiquidityPoolEffectFilter`](/docs/v1/graphql-reference/inputs/stellar-liquidity-pool-effect-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarLiquidityPoolTradeEffectFilter`](/docs/v1/graphql-reference/inputs/stellar-liquidity-pool-trade-effect-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarPaymentFilter`](/docs/v1/graphql-reference/inputs/stellar-payment-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarTradeEffectFilter`](/docs/v1/graphql-reference/inputs/stellar-trade-effect-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarTransferFilter`](/docs/v1/graphql-reference/inputs/stellar-transfer-filter)  <Badge class="secondary" text="input"/>
+

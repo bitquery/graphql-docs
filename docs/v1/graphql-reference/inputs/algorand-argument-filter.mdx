@@ -1,0 +1,146 @@
+---
+id: algorand-argument-filter
+title: AlgorandArgumentFilter
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+input AlgorandArgumentFilter {
+  date: DateSelector
+  time: DateTimeSelector
+  height: BlockSelector
+  txHash: HashSelector
+  txIndex: TxIndexSelector
+  txType: TxTypeSelector
+  txFrom: [AddressSelector!]
+  caller: [AddressSelector!]
+  reference: [AddressSelector!]
+  value: [ArgumentValueSelector!]
+  argument: [ArgumentSelector!]
+  smartContractAddress: [AddressSelector!]
+  argindex: ArgumentIndexSelector
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandArgumentFilter.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandArgumentFilter.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandArgumentFilter.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandArgumentFilter.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandArgumentFilter.<b>txIndex</b></code>](#)<Bullet />[`TxIndexSelector`](/docs/v1/graphql-reference/inputs/tx-index-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandArgumentFilter.<b>txType</b></code>](#)<Bullet />[`TxTypeSelector`](/docs/v1/graphql-reference/inputs/tx-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandArgumentFilter.<b>txFrom</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandArgumentFilter.<b>caller</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandArgumentFilter.<b>reference</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandArgumentFilter.<b>value</b></code>](#)<Bullet />[`[ArgumentValueSelector!]`](/docs/v1/graphql-reference/inputs/argument-value-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandArgumentFilter.<b>argument</b></code>](#)<Bullet />[`[ArgumentSelector!]`](/docs/v1/graphql-reference/inputs/argument-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandArgumentFilter.<b>smartContractAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandArgumentFilter.<b>argindex</b></code>](#)<Bullet />[`ArgumentIndexSelector`](/docs/v1/graphql-reference/inputs/argument-index-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+

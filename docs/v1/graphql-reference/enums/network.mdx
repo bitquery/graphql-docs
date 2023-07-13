@@ -1,0 +1,451 @@
+---
+id: network
+title: Network
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum Network {
+  ethereum
+  ethclassic
+  ethpow
+  ethclassic_reorg
+  binance
+  celo_alfajores
+  celo_baklava
+  celo_rc1
+  celo_mainnet
+  bitcoin
+  bitcash
+  bitcoinsv
+  litecoin
+  dash
+  dogecoin
+  cardano
+  zcash
+  algorand
+  algorand_testnet
+  algorand_betanet
+  conflux_oceanus
+  conflux_tethys
+  conflux_hydra
+  libra_testnet
+  diem_testnet
+  eos
+  tron
+  bsc
+  bsc_testnet
+  goerli
+  eth2
+  medalla
+  filecoin
+  hedera
+  solana
+  matic
+  velas
+  velas_testnet
+  klaytn
+  elrond
+  flow
+  avalanche
+  fantom
+  moonbeam
+  cronos
+  cosmoshub
+  heimdall
+  crypto_mainnet
+  crypto_testnet
+  terra
+  stellar
+  ripple
+  harmony
+  harmony_testnet
+  tezos
+  everscale
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>ethereum</b></code>](#)  
+> 
+> 
+> Ethereum Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>ethclassic</b></code>](#)  
+> 
+> 
+> Ethereum Classic
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>ethpow</b></code>](#)  
+> 
+> 
+> Ethereum PoW
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>ethclassic_reorg</b></code>](#)  
+> 
+> 
+> Ethereum Classic ( no reorg from block 10904146)
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>binance</b></code>](#)  
+> 
+> 
+> Binance DEX
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>celo_alfajores</b></code>](#)  
+> 
+> 
+> Celo Alfajores Testnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>celo_baklava</b></code>](#)  
+> 
+> 
+> Celo Baklava Testnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>celo_rc1</b></code>](#)  
+> 
+> 
+> DEPRECATED. Use celo_mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>celo_mainnet</b></code>](#)  
+> 
+> 
+> Celo Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>bitcoin</b></code>](#)  
+> 
+> 
+> Bitcoin ( BTC )
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>bitcash</b></code>](#)  
+> 
+> 
+> Bitcoin Cash ( BCH )
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>bitcoinsv</b></code>](#)  
+> 
+> 
+> Bitcoin SV ( BSV )
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>litecoin</b></code>](#)  
+> 
+> 
+> Litecoin ( LTC )
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>dash</b></code>](#)  
+> 
+> 
+> Dash ( DASH )
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>dogecoin</b></code>](#)  
+> 
+> 
+> Dogecoin ( DOGE )
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>cardano</b></code>](#)  
+> 
+> 
+> Cardano ( ADA )
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>zcash</b></code>](#)  
+> 
+> 
+> Zcash ( ZEC )
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>algorand</b></code>](#)  
+> 
+> 
+> Algorand Mainnet (ALGO)
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>algorand_testnet</b></code>](#)  
+> 
+> 
+> Algorand Testnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>algorand_betanet</b></code>](#)  
+> 
+> 
+> Algorand Betanet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>conflux_oceanus</b></code>](#)  
+> 
+> 
+> Conflux Oceanus
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>conflux_tethys</b></code>](#)  
+> 
+> 
+> Conflux Tethys
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>conflux_hydra</b></code>](#)  
+> 
+> 
+> Conflux Hydra
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>libra_testnet</b></code>](#)  
+> 
+> 
+> Libra Testnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>diem_testnet</b></code>](#)  
+> 
+> 
+> Diem Testnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>eos</b></code>](#)  
+> 
+> 
+> EOS Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>tron</b></code>](#)  
+> 
+> 
+> TRON Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>bsc</b></code>](#)  
+> 
+> 
+> Binance Smart Chain Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>bsc_testnet</b></code>](#)  
+> 
+> 
+> Binance Smart Chain Testnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>goerli</b></code>](#)  
+> 
+> 
+> Goerli Ethereum Testnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>eth2</b></code>](#)  
+> 
+> 
+> Beacon Chain Ethereum 2.0
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>medalla</b></code>](#)  
+> 
+> 
+> Medalla Ethereum 2.0 Beacon Testnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>filecoin</b></code>](#)  
+> 
+> 
+> Filecoin Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>hedera</b></code>](#)  
+> 
+> 
+> Hedera Hashgraph
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>solana</b></code>](#)  
+> 
+> 
+> Solana Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>matic</b></code>](#)  
+> 
+> 
+> Matic (Polygon) Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>velas</b></code>](#)  
+> 
+> 
+> Velas Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>velas_testnet</b></code>](#)  
+> 
+> 
+> Velas Testnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>klaytn</b></code>](#)  
+> 
+> 
+> Klaytn Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>elrond</b></code>](#)  
+> 
+> 
+> Elrond Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>flow</b></code>](#)  
+> 
+> 
+> Flow Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>avalanche</b></code>](#)  
+> 
+> 
+> Avalanche C-chain
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>fantom</b></code>](#)  
+> 
+> 
+> Fantom Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>moonbeam</b></code>](#)  
+> 
+> 
+> Moonbeam Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>cronos</b></code>](#)  
+> 
+> 
+> Cronos Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>cosmoshub</b></code>](#)  
+> 
+> 
+> Cosmos Hub
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>heimdall</b></code>](#)  
+> 
+> 
+> Heimdall (Matic Verification Network)
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>crypto_mainnet</b></code>](#)  
+> 
+> 
+> Crypto.org Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>crypto_testnet</b></code>](#)  
+> 
+> 
+> Crypto.org Croeseid Testnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>terra</b></code>](#)  
+> 
+> 
+> Terra Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>stellar</b></code>](#)  
+> 
+> 
+> Stellar Ledger
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>ripple</b></code>](#)  
+> 
+> 
+> Ripple XRP Ledger
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>harmony</b></code>](#)  
+> 
+> 
+> Harmony Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>harmony_testnet</b></code>](#)  
+> 
+> 
+> Harmony Testnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>tezos</b></code>](#)  
+> 
+> 
+> Tezos
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Network.<b>everscale</b></code>](#)  
+> 
+> 
+> Everscale
+> 
+
+
+
+### Member of
+
+[`BlockchainNetwork`](/docs/v1/graphql-reference/objects/blockchain-network)  <Badge class="secondary" text="object"/><Bullet />[`search`](/docs/v1/graphql-reference/queries/search)  <Badge class="secondary" text="query"/>
+

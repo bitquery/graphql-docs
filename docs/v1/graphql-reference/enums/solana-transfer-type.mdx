@@ -1,0 +1,143 @@
+---
+id: solana-transfer-type
+title: SolanaTransferType
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum SolanaTransferType {
+  transfer
+  self
+  mint
+  create_account
+  close_account
+  rent_exemption
+  stake
+  stake_withdraw
+  trade_unknown
+  burn
+  vote
+  nonce_withdraw
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferType.<b>transfer</b></code>](#)  
+> 
+> 
+> Transfer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferType.<b>self</b></code>](#)  
+> 
+> 
+> Self
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferType.<b>mint</b></code>](#)  
+> 
+> 
+> Mint
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferType.<b>create_account</b></code>](#)  
+> 
+> 
+> Create Account
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferType.<b>close_account</b></code>](#)  
+> 
+> 
+> Close Account
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferType.<b>rent_exemption</b></code>](#)  
+> 
+> 
+> Rent Exemption
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferType.<b>stake</b></code>](#)  
+> 
+> 
+> Stake
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferType.<b>stake_withdraw</b></code>](#)  
+> 
+> 
+> Stake Withdraw
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferType.<b>trade_unknown</b></code>](#)  
+> 
+> 
+> Trade Unknown
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferType.<b>burn</b></code>](#)  
+> 
+> 
+> Burn
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferType.<b>vote</b></code>](#)  
+> 
+> 
+> Vote
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaTransferType.<b>nonce_withdraw</b></code>](#)  
+> 
+> 
+> Nonce Withdraw
+> 
+
+
+
+### Member of
+
+[`SolanaTransferTypeSelector`](/docs/v1/graphql-reference/inputs/solana-transfer-type-selector)  <Badge class="secondary" text="input"/>
+

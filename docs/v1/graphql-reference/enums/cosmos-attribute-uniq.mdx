@@ -1,0 +1,153 @@
+---
+id: cosmos-attribute-uniq
+title: CosmosAttributeUniq
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum CosmosAttributeUniq {
+  times
+  dates
+  blocks
+  blockHashes
+  transactionIndices
+  transactionSigners
+  transactionHashes
+  messageTypes
+  messageIndices
+  messageSenders
+  eventTypes
+  attributes
+  values
+  valueIndices
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributeUniq.<b>times</b></code>](#)  
+> 
+> 
+> Unique time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributeUniq.<b>dates</b></code>](#)  
+> 
+> 
+> Unique date count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributeUniq.<b>blocks</b></code>](#)  
+> 
+> 
+> Unique blocks
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributeUniq.<b>blockHashes</b></code>](#)  
+> 
+> 
+> Unique block hashes
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributeUniq.<b>transactionIndices</b></code>](#)  
+> 
+> 
+> Unique transaction indices
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributeUniq.<b>transactionSigners</b></code>](#)  
+> 
+> 
+> Unique transaction signers
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributeUniq.<b>transactionHashes</b></code>](#)  
+> 
+> 
+> Unique transaction hashes
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributeUniq.<b>messageTypes</b></code>](#)  
+> 
+> 
+> Unique message types
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributeUniq.<b>messageIndices</b></code>](#)  
+> 
+> 
+> Unique message indices
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributeUniq.<b>messageSenders</b></code>](#)  
+> 
+> 
+> Unique message senders
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributeUniq.<b>eventTypes</b></code>](#)  
+> 
+> 
+> Unique event types
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributeUniq.<b>attributes</b></code>](#)  
+> 
+> 
+> Unique attributes
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributeUniq.<b>values</b></code>](#)  
+> 
+> 
+> Unique values
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributeUniq.<b>valueIndices</b></code>](#)  
+> 
+> 
+> Unique value indices
+> 
+
+
+

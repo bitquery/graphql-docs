@@ -1,0 +1,933 @@
+---
+id: ripple-nftoken-offer
+title: RippleNFTokenOffer
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+NFTokenOffer in Ripple blockchain
+
+
+```graphql
+type RippleNFTokenOffer {
+  amount(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    block: BigIntIdSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSender: AddressSelector
+    transactionType: StringSelector
+    operation: StringSelector
+    account: AddressSelector
+    takerGetsCurrencySymbol: CurrencySelector
+    takerPaysCurrencySymbol: CurrencySelector
+    bookDirectory: StringSelector
+    bookNode: StringSelector
+    expiration: BigIntIdSelector
+    sequence: BigIntIdSelector
+    prevTxnId: BigIntIdSelector
+    prevLedgerSequence: BigIntIdSelector
+    flags: BigIntIdSelector
+    takerGetsAmount: FloatSelector
+    takerPaysAmount: FloatSelector
+    preTakerGetsAmount: FloatSelector
+    preTakerPaysAmount: FloatSelector
+  ): Float
+  any(
+    of: RippleOfferMeasurable!
+  ): String
+  block: BigInt
+  bookDirectory: String
+  bookNode: String
+  count(
+    uniq: RippleOfferUniq
+    date: DateSelector
+    time: DateTimeSelector
+    block: BigIntIdSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSender: AddressSelector
+    transactionType: StringSelector
+    operation: StringSelector
+    account: AddressSelector
+    takerGetsCurrencySymbol: CurrencySelector
+    takerPaysCurrencySymbol: CurrencySelector
+    bookDirectory: StringSelector
+    bookNode: StringSelector
+    expiration: BigIntIdSelector
+    sequence: BigIntIdSelector
+    prevTxnId: BigIntIdSelector
+    prevLedgerSequence: BigIntIdSelector
+    flags: BigIntIdSelector
+    takerGetsAmount: FloatSelector
+    takerPaysAmount: FloatSelector
+    preTakerGetsAmount: FloatSelector
+    preTakerPaysAmount: FloatSelector
+  ): Int
+  countBigInt(
+    uniq: RippleOfferUniq
+    date: DateSelector
+    time: DateTimeSelector
+    block: BigIntIdSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSender: AddressSelector
+    transactionType: StringSelector
+    operation: StringSelector
+    account: AddressSelector
+    takerGetsCurrencySymbol: CurrencySelector
+    takerPaysCurrencySymbol: CurrencySelector
+    bookDirectory: StringSelector
+    bookNode: StringSelector
+    expiration: BigIntIdSelector
+    sequence: BigIntIdSelector
+    prevTxnId: BigIntIdSelector
+    prevLedgerSequence: BigIntIdSelector
+    flags: BigIntIdSelector
+    takerGetsAmount: FloatSelector
+    takerPaysAmount: FloatSelector
+    preTakerGetsAmount: FloatSelector
+    preTakerPaysAmount: FloatSelector
+  ): BigInt
+  currency: Currency
+  date: Date
+  destinationAccount: Address
+  expiration: BigInt
+  expression(
+    get: String!
+  ): DecimalNumber
+  flags: BigInt
+  fromAccount: Address
+  maximum(
+    of: RippleOfferMeasurable!
+    get: RippleOfferMeasurable
+  ): String
+  minimum(
+    of: RippleOfferMeasurable!
+    get: RippleOfferMeasurable
+  ): String
+  nftokenAmount(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    block: BigIntIdSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSender: AddressSelector
+    transactionType: StringSelector
+    operation: StringSelector
+    account: AddressSelector
+    takerGetsCurrencySymbol: CurrencySelector
+    takerPaysCurrencySymbol: CurrencySelector
+    bookDirectory: StringSelector
+    bookNode: StringSelector
+    expiration: BigIntIdSelector
+    sequence: BigIntIdSelector
+    prevTxnId: BigIntIdSelector
+    prevLedgerSequence: BigIntIdSelector
+    flags: BigIntIdSelector
+    takerGetsAmount: FloatSelector
+    takerPaysAmount: FloatSelector
+    preTakerGetsAmount: FloatSelector
+    preTakerPaysAmount: FloatSelector
+  ): Float
+  nftokenBuyOffer: String
+  nftokenCurrency: Currency
+  nftokenSellOffer: String
+  operation: String
+  prevLedgerSequence: BigInt
+  prevTxnId: String
+  sequence: BigInt
+  timestamp: DateTime
+  transaction: RippleTransactionDimension
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>amount</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/v1/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>block</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>transactionType</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>account</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>takerGetsCurrencySymbol</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>takerPaysCurrencySymbol</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>bookDirectory</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>bookNode</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>expiration</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>sequence</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>prevTxnId</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>prevLedgerSequence</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>flags</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>takerGetsAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>takerPaysAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>preTakerGetsAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.amount.<b>preTakerPaysAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>any</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.any.<b>of</b></code>](#)<Bullet />[`RippleOfferMeasurable!`](/docs/v1/graphql-reference/enums/ripple-offer-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>block</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>bookDirectory</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Book directory
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>bookNode</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Book node
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>count</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>uniq</b></code>](#)<Bullet />[`RippleOfferUniq`](/docs/v1/graphql-reference/enums/ripple-offer-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>block</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>transactionType</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>account</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>takerGetsCurrencySymbol</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>takerPaysCurrencySymbol</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>bookDirectory</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>bookNode</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>expiration</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>sequence</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>prevTxnId</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>prevLedgerSequence</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>flags</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>takerGetsAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>takerPaysAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>preTakerGetsAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.count.<b>preTakerPaysAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>uniq</b></code>](#)<Bullet />[`RippleOfferUniq`](/docs/v1/graphql-reference/enums/ripple-offer-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>block</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>transactionType</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>account</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>takerGetsCurrencySymbol</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>takerPaysCurrencySymbol</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>bookDirectory</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>bookNode</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>expiration</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>sequence</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>prevTxnId</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>prevLedgerSequence</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>flags</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>takerGetsAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>takerPaysAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>preTakerGetsAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.countBigInt.<b>preTakerPaysAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>currency</b></code>](#)<Bullet />[`Currency`](/docs/v1/graphql-reference/objects/currency) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Taker pays currency
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>date</b></code>](#)<Bullet />[`Date`](/docs/v1/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Calendar date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>destinationAccount</b></code>](#)<Bullet />[`Address`](/docs/v1/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Destination Account
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>expiration</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Expiration
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/v1/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>flags</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Flags
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>fromAccount</b></code>](#)<Bullet />[`Address`](/docs/v1/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> From Account
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.maximum.<b>of</b></code>](#)<Bullet />[`RippleOfferMeasurable!`](/docs/v1/graphql-reference/enums/ripple-offer-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.maximum.<b>get</b></code>](#)<Bullet />[`RippleOfferMeasurable`](/docs/v1/graphql-reference/enums/ripple-offer-measurable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.minimum.<b>of</b></code>](#)<Bullet />[`RippleOfferMeasurable!`](/docs/v1/graphql-reference/enums/ripple-offer-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.minimum.<b>get</b></code>](#)<Bullet />[`RippleOfferMeasurable`](/docs/v1/graphql-reference/enums/ripple-offer-measurable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>nftokenAmount</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/v1/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>block</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>transactionType</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>account</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>takerGetsCurrencySymbol</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>takerPaysCurrencySymbol</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>bookDirectory</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>bookNode</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>expiration</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>sequence</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>prevTxnId</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>prevLedgerSequence</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>flags</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/v1/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>takerGetsAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>takerPaysAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>preTakerGetsAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.nftokenAmount.<b>preTakerPaysAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>nftokenBuyOffer</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> NFToken Buy Offer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>nftokenCurrency</b></code>](#)<Bullet />[`Currency`](/docs/v1/graphql-reference/objects/currency) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Taker gets currency
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>nftokenSellOffer</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> NFToken Sell Offer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>operation</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Operation
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>prevLedgerSequence</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Prev ledger sequence
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>prevTxnId</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Prev txn
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>sequence</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Sequence
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>timestamp</b></code>](#)<Bullet />[`DateTime`](/docs/v1/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Timestamp
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleNFTokenOffer.<b>transaction</b></code>](#)<Bullet />[`RippleTransactionDimension`](/docs/v1/graphql-reference/objects/ripple-transaction-dimension) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Transaction
+> 
+
+
+
+### Member of
+
+[`Ripple`](/docs/v1/graphql-reference/objects/ripple)  <Badge class="secondary" text="object"/>
+

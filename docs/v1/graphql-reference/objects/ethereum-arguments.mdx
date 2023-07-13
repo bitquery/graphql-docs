@@ -1,0 +1,1047 @@
+---
+id: ethereum-arguments
+title: EthereumArguments
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Arguments of Smart Contract Calls and Events
+
+
+```graphql
+type EthereumArguments {
+  any(
+    of: EthereumArgumentsMeasureable!
+    as: EthereumArgumentsConvertable
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txFrom: [EthereumAddressSelector!]
+    caller: [EthereumAddressSelector!]
+    reference: [EthereumAddressSelector!]
+    value: [ArgumentValueSelector!]
+    argument: [ArgumentSelector!]
+    argumentType: [ArgumentTypeSelector!]
+    signatureType: SignatureTypeSelector
+    smartContractAddress: [EthereumAddressSelector!]
+    smartContractMethod: MethodSelector
+    smartContractEvent: EventSelector
+    external: Boolean
+    callDepth: StringSelector
+  ): String
+  argument(
+    argument: [ArgumentSelector!]
+    argumentType: String
+  ): ArgumentName
+  block(
+    height: BlockSelector
+    time: DateTimeSelector
+  ): Block
+  callDepth: String
+  caller(
+    caller: [EthereumAddressSelector!]
+  ): EthereumAddressInfo
+  count(
+    uniq: SmartContractArgumentsUniq
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txFrom: [EthereumAddressSelector!]
+    caller: [EthereumAddressSelector!]
+    reference: [EthereumAddressSelector!]
+    value: [ArgumentValueSelector!]
+    argument: [ArgumentSelector!]
+    argumentType: [ArgumentTypeSelector!]
+    signatureType: SignatureTypeSelector
+    smartContractAddress: [EthereumAddressSelector!]
+    smartContractMethod: MethodSelector
+    smartContractEvent: EventSelector
+    external: Boolean
+    callDepth: StringSelector
+  ): Int
+  countBigInt(
+    uniq: SmartContractArgumentsUniq
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txFrom: [EthereumAddressSelector!]
+    caller: [EthereumAddressSelector!]
+    reference: [EthereumAddressSelector!]
+    value: [ArgumentValueSelector!]
+    argument: [ArgumentSelector!]
+    argumentType: [ArgumentTypeSelector!]
+    signatureType: SignatureTypeSelector
+    smartContractAddress: [EthereumAddressSelector!]
+    smartContractMethod: MethodSelector
+    smartContractEvent: EventSelector
+    external: Boolean
+    callDepth: StringSelector
+  ): BigInt
+  date: Date
+  expression(
+    get: String!
+  ): DecimalNumber
+  external(
+    external: Boolean
+  ): Boolean
+  index: String!
+  maximum(
+    of: EthereumArgumentsMeasureable!
+    get: EthereumArgumentsMeasureable
+    as: EthereumArgumentsConvertable
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txFrom: [EthereumAddressSelector!]
+    caller: [EthereumAddressSelector!]
+    reference: [EthereumAddressSelector!]
+    value: [ArgumentValueSelector!]
+    argument: [ArgumentSelector!]
+    argumentType: [ArgumentTypeSelector!]
+    signatureType: SignatureTypeSelector
+    smartContractAddress: [EthereumAddressSelector!]
+    smartContractMethod: MethodSelector
+    smartContractEvent: EventSelector
+    external: Boolean
+    callDepth: StringSelector
+  ): String
+  minimum(
+    of: EthereumArgumentsMeasureable!
+    get: EthereumArgumentsMeasureable
+    as: EthereumArgumentsConvertable
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txFrom: [EthereumAddressSelector!]
+    caller: [EthereumAddressSelector!]
+    reference: [EthereumAddressSelector!]
+    value: [ArgumentValueSelector!]
+    argument: [ArgumentSelector!]
+    argumentType: [ArgumentTypeSelector!]
+    signatureType: SignatureTypeSelector
+    smartContractAddress: [EthereumAddressSelector!]
+    smartContractMethod: MethodSelector
+    smartContractEvent: EventSelector
+    external: Boolean
+    callDepth: StringSelector
+  ): String
+  number(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txFrom: [EthereumAddressSelector!]
+    caller: [EthereumAddressSelector!]
+    reference: [EthereumAddressSelector!]
+    value: [ArgumentValueSelector!]
+    argument: [ArgumentSelector!]
+    argumentType: [ArgumentTypeSelector!]
+    signatureType: SignatureTypeSelector
+    smartContractAddress: [EthereumAddressSelector!]
+    smartContractMethod: MethodSelector
+    smartContractEvent: EventSelector
+    external: Boolean
+    callDepth: StringSelector
+  ): Float
+  reference(
+    reference: [EthereumAddressSelector!]
+  ): EthereumAddressInfo @deprecated
+  smartContract(
+    smartContractAddress: [EthereumAddressSelector!]
+  ): EthereumSmartContract
+  smartContractSignature(
+    smartContractMethod: MethodSelector
+    smartContractEvent: EventSelector
+    signatureType: SignatureTypeSelector
+  ): Signature
+  success(
+    success: [Boolean!]
+  ): Boolean
+  transaction(
+    txHash: [HashSelector!]
+    txFrom: [EthereumAddressSelector!]
+  ): EthereumTransactionInfo
+  value(
+    value: [ArgumentValueSelector!]
+  ): ArgumentValue
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>any</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.any.<b>of</b></code>](#)<Bullet />[`EthereumArgumentsMeasureable!`](/docs/v1/graphql-reference/enums/ethereum-arguments-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.any.<b>as</b></code>](#)<Bullet />[`EthereumArgumentsConvertable`](/docs/v1/graphql-reference/enums/ethereum-arguments-convertable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.any.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.any.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.any.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.any.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.any.<b>txFrom</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.any.<b>caller</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.any.<b>reference</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.any.<b>value</b></code>](#)<Bullet />[`[ArgumentValueSelector!]`](/docs/v1/graphql-reference/inputs/argument-value-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.any.<b>argument</b></code>](#)<Bullet />[`[ArgumentSelector!]`](/docs/v1/graphql-reference/inputs/argument-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.any.<b>argumentType</b></code>](#)<Bullet />[`[ArgumentTypeSelector!]`](/docs/v1/graphql-reference/inputs/argument-type-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.any.<b>signatureType</b></code>](#)<Bullet />[`SignatureTypeSelector`](/docs/v1/graphql-reference/enums/signature-type-selector) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.any.<b>smartContractAddress</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.any.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.any.<b>smartContractEvent</b></code>](#)<Bullet />[`EventSelector`](/docs/v1/graphql-reference/inputs/event-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.any.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.any.<b>callDepth</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>argument</b></code>](#)<Bullet />[`ArgumentName`](/docs/v1/graphql-reference/objects/argument-name) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Method or event argument
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.argument.<b>argument</b></code>](#)<Bullet />[`[ArgumentSelector!]`](/docs/v1/graphql-reference/inputs/argument-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.argument.<b>argumentType</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>block</b></code>](#)<Bullet />[`Block`](/docs/v1/graphql-reference/objects/block) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Block in the blockchain
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.block.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.block.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>callDepth</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Depth of the call. Empty string for external call, then counted as 0...N, and the next layer is added through '-'. For example 0-3-9.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>caller</b></code>](#)<Bullet />[`EthereumAddressInfo`](/docs/v1/graphql-reference/objects/ethereum-address-info) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Caller of the method invocation ( tx sender or another smart contract )
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.caller.<b>caller</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>count</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Counts and other metrics
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.count.<b>uniq</b></code>](#)<Bullet />[`SmartContractArgumentsUniq`](/docs/v1/graphql-reference/enums/smart-contract-arguments-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.count.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.count.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.count.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.count.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.count.<b>txFrom</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.count.<b>caller</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.count.<b>reference</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.count.<b>value</b></code>](#)<Bullet />[`[ArgumentValueSelector!]`](/docs/v1/graphql-reference/inputs/argument-value-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.count.<b>argument</b></code>](#)<Bullet />[`[ArgumentSelector!]`](/docs/v1/graphql-reference/inputs/argument-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.count.<b>argumentType</b></code>](#)<Bullet />[`[ArgumentTypeSelector!]`](/docs/v1/graphql-reference/inputs/argument-type-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.count.<b>signatureType</b></code>](#)<Bullet />[`SignatureTypeSelector`](/docs/v1/graphql-reference/enums/signature-type-selector) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.count.<b>smartContractAddress</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.count.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.count.<b>smartContractEvent</b></code>](#)<Bullet />[`EventSelector`](/docs/v1/graphql-reference/inputs/event-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.count.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.count.<b>callDepth</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Counts and other metrics
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.countBigInt.<b>uniq</b></code>](#)<Bullet />[`SmartContractArgumentsUniq`](/docs/v1/graphql-reference/enums/smart-contract-arguments-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.countBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.countBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.countBigInt.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.countBigInt.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.countBigInt.<b>txFrom</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.countBigInt.<b>caller</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.countBigInt.<b>reference</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.countBigInt.<b>value</b></code>](#)<Bullet />[`[ArgumentValueSelector!]`](/docs/v1/graphql-reference/inputs/argument-value-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.countBigInt.<b>argument</b></code>](#)<Bullet />[`[ArgumentSelector!]`](/docs/v1/graphql-reference/inputs/argument-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.countBigInt.<b>argumentType</b></code>](#)<Bullet />[`[ArgumentTypeSelector!]`](/docs/v1/graphql-reference/inputs/argument-type-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.countBigInt.<b>signatureType</b></code>](#)<Bullet />[`SignatureTypeSelector`](/docs/v1/graphql-reference/enums/signature-type-selector) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.countBigInt.<b>smartContractAddress</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.countBigInt.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.countBigInt.<b>smartContractEvent</b></code>](#)<Bullet />[`EventSelector`](/docs/v1/graphql-reference/inputs/event-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.countBigInt.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.countBigInt.<b>callDepth</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>date</b></code>](#)<Bullet />[`Date`](/docs/v1/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Calendar date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/v1/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> External call executed explicitly by tx sender. Internal calls executed by smart contracts.
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.external.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>index</b></code>](#)<Bullet />[`String!`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Sequential index of value in array ( multi-dimensional)
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.maximum.<b>of</b></code>](#)<Bullet />[`EthereumArgumentsMeasureable!`](/docs/v1/graphql-reference/enums/ethereum-arguments-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.maximum.<b>get</b></code>](#)<Bullet />[`EthereumArgumentsMeasureable`](/docs/v1/graphql-reference/enums/ethereum-arguments-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.maximum.<b>as</b></code>](#)<Bullet />[`EthereumArgumentsConvertable`](/docs/v1/graphql-reference/enums/ethereum-arguments-convertable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.maximum.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.maximum.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.maximum.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.maximum.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.maximum.<b>txFrom</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.maximum.<b>caller</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.maximum.<b>reference</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.maximum.<b>value</b></code>](#)<Bullet />[`[ArgumentValueSelector!]`](/docs/v1/graphql-reference/inputs/argument-value-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.maximum.<b>argument</b></code>](#)<Bullet />[`[ArgumentSelector!]`](/docs/v1/graphql-reference/inputs/argument-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.maximum.<b>argumentType</b></code>](#)<Bullet />[`[ArgumentTypeSelector!]`](/docs/v1/graphql-reference/inputs/argument-type-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.maximum.<b>signatureType</b></code>](#)<Bullet />[`SignatureTypeSelector`](/docs/v1/graphql-reference/enums/signature-type-selector) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.maximum.<b>smartContractAddress</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.maximum.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.maximum.<b>smartContractEvent</b></code>](#)<Bullet />[`EventSelector`](/docs/v1/graphql-reference/inputs/event-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.maximum.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.maximum.<b>callDepth</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.minimum.<b>of</b></code>](#)<Bullet />[`EthereumArgumentsMeasureable!`](/docs/v1/graphql-reference/enums/ethereum-arguments-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.minimum.<b>get</b></code>](#)<Bullet />[`EthereumArgumentsMeasureable`](/docs/v1/graphql-reference/enums/ethereum-arguments-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.minimum.<b>as</b></code>](#)<Bullet />[`EthereumArgumentsConvertable`](/docs/v1/graphql-reference/enums/ethereum-arguments-convertable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.minimum.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.minimum.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.minimum.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.minimum.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.minimum.<b>txFrom</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.minimum.<b>caller</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.minimum.<b>reference</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.minimum.<b>value</b></code>](#)<Bullet />[`[ArgumentValueSelector!]`](/docs/v1/graphql-reference/inputs/argument-value-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.minimum.<b>argument</b></code>](#)<Bullet />[`[ArgumentSelector!]`](/docs/v1/graphql-reference/inputs/argument-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.minimum.<b>argumentType</b></code>](#)<Bullet />[`[ArgumentTypeSelector!]`](/docs/v1/graphql-reference/inputs/argument-type-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.minimum.<b>signatureType</b></code>](#)<Bullet />[`SignatureTypeSelector`](/docs/v1/graphql-reference/enums/signature-type-selector) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.minimum.<b>smartContractAddress</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.minimum.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.minimum.<b>smartContractEvent</b></code>](#)<Bullet />[`EventSelector`](/docs/v1/graphql-reference/inputs/event-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.minimum.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.minimum.<b>callDepth</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>number</b></code>](#)<Bullet />[`Float`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.number.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.number.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.number.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.number.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.number.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.number.<b>txFrom</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.number.<b>caller</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.number.<b>reference</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.number.<b>value</b></code>](#)<Bullet />[`[ArgumentValueSelector!]`](/docs/v1/graphql-reference/inputs/argument-value-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.number.<b>argument</b></code>](#)<Bullet />[`[ArgumentSelector!]`](/docs/v1/graphql-reference/inputs/argument-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.number.<b>argumentType</b></code>](#)<Bullet />[`[ArgumentTypeSelector!]`](/docs/v1/graphql-reference/inputs/argument-type-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.number.<b>signatureType</b></code>](#)<Bullet />[`SignatureTypeSelector`](/docs/v1/graphql-reference/enums/signature-type-selector) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.number.<b>smartContractAddress</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.number.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.number.<b>smartContractEvent</b></code>](#)<Bullet />[`EventSelector`](/docs/v1/graphql-reference/inputs/event-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.number.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.number.<b>callDepth</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>reference</b></code>](#)<Bullet />[`EthereumAddressInfo`](/docs/v1/graphql-reference/objects/ethereum-address-info) <Badge class="badge badge--deprecated badge--secondary" text="deprecated"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> :::caution DEPRECATED
+> DEPRECATED! Please use ethereum { references }
+> :::
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.reference.<b>reference</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>smartContract</b></code>](#)<Bullet />[`EthereumSmartContract`](/docs/v1/graphql-reference/objects/ethereum-smart-contract) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Smart contract being called
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.smartContract.<b>smartContractAddress</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>smartContractSignature</b></code>](#)<Bullet />[`Signature`](/docs/v1/graphql-reference/unions/signature) <Badge class="badge badge--secondary" text="union"/> 
+> 
+> 
+> Contract method or event
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.smartContractSignature.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/v1/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.smartContractSignature.<b>smartContractEvent</b></code>](#)<Bullet />[`EventSelector`](/docs/v1/graphql-reference/inputs/event-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.smartContractSignature.<b>signatureType</b></code>](#)<Bullet />[`SignatureTypeSelector`](/docs/v1/graphql-reference/enums/signature-type-selector) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> True if call succeeded, false if error happened. Note, that by default only successfull calls are returned in API.
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.success.<b>success</b></code>](#)<Bullet />[`[Boolean!]`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>transaction</b></code>](#)<Bullet />[`EthereumTransactionInfo`](/docs/v1/graphql-reference/objects/ethereum-transaction-info) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Transaction where call happened
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.transaction.<b>txHash</b></code>](#)<Bullet />[`[HashSelector!]`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.transaction.<b>txFrom</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/v1/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.<b>value</b></code>](#)<Bullet />[`ArgumentValue`](/docs/v1/graphql-reference/objects/argument-value) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The Value of method or event argument
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumArguments.value.<b>value</b></code>](#)<Bullet />[`[ArgumentValueSelector!]`](/docs/v1/graphql-reference/inputs/argument-value-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+### Member of
+
+[`Ethereum`](/docs/v1/graphql-reference/objects/ethereum)  <Badge class="secondary" text="object"/>
+

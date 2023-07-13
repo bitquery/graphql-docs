@@ -1,0 +1,87 @@
+---
+id: smart-contract-type-selector
+title: SmartContractTypeSelector
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Selector of smart contract type
+
+
+```graphql
+input SmartContractTypeSelector {
+  is: SmartContractType
+  not: SmartContractType
+  in: [SmartContractType!]
+  notIn: [SmartContractType!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractTypeSelector.<b>is</b></code>](#)<Bullet />[`SmartContractType`](/docs/v1/graphql-reference/enums/smart-contract-type) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Smart Contract type is
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractTypeSelector.<b>not</b></code>](#)<Bullet />[`SmartContractType`](/docs/v1/graphql-reference/enums/smart-contract-type) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Smart Contract type not
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractTypeSelector.<b>in</b></code>](#)<Bullet />[`[SmartContractType!]`](/docs/v1/graphql-reference/enums/smart-contract-type) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Smart Contract type in the list
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractTypeSelector.<b>notIn</b></code>](#)<Bullet />[`[SmartContractType!]`](/docs/v1/graphql-reference/enums/smart-contract-type) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Smart Contract type not in the list
+> 
+
+
+
+### Member of
+
+[`EthereumDexTradeFilter`](/docs/v1/graphql-reference/inputs/ethereum-dex-trade-filter)  <Badge class="secondary" text="input"/><Bullet />[`EthereumSmartContractCallFilter`](/docs/v1/graphql-reference/inputs/ethereum-smart-contract-call-filter)  <Badge class="secondary" text="input"/><Bullet />[`EthereumSmartContractEventFilter`](/docs/v1/graphql-reference/inputs/ethereum-smart-contract-event-filter)  <Badge class="secondary" text="input"/>
+

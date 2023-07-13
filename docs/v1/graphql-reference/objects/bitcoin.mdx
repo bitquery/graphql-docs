@@ -1,0 +1,786 @@
+---
+id: bitcoin
+title: Bitcoin
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Bitcoin and other UTXO type blockchains
+
+
+```graphql
+type Bitcoin {
+  addressStats(
+    address: AddressSelector!
+    options: QueryOptions
+  ): [BitcoinAddressStats!]
+  blocks(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    blockHash: StringIdSelector
+    blockSize: IntegerSelector
+    blockWeight: IntegerSelector
+    blockVersion: IntegerSelector
+    transactionCount: IntegerSelector
+    blockStrippedSize: IntegerSelector
+    difficulty: FloatSelector
+    any: [BitcoinBlockFilter!]
+    options: QueryOptions
+  ): [BitcoinBlock!]
+  coinpath(
+    sender: AddressSelector
+    receiver: AddressSelector
+    initialAddress: AddressSelector
+    initialDate: DateSelector
+    initialTime: DateTimeSelector
+    date: DateSelector
+    time: DateTimeSelector
+    depth: IntegerLimitedSelector
+    options: BitcoinCoinpathOptions
+  ): [BitcoinCoinpath!]
+  inputs(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    inputIndex: IntegerSelector
+    inputAddress: AddressSelector
+    inOutputTxId: HashSelector
+    inOutputIndex: IntegerSelector
+    inputScriptType: StringSelector
+    inputValue: FloatSelector
+    any: [BitcoinInputFilter!]
+    options: QueryOptions
+  ): [BitcoinTransactionInput!]
+  omniTransactions(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    version: IntegerSelector
+    valid: IntegerSelector
+    invalidReason: StringSelector
+    type: StringSelector
+    typeId: IntegerSelector
+    txSender: HashSelector
+    feeValue: FloatSelector
+    any: [BitcoinOmniTransactionsFilter!]
+    options: QueryOptions
+  ): [BitcoinOmniTransactiosn!]
+  omniTransfers(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    version: IntegerSelector
+    valid: IntegerSelector
+    invalidReason: StringSelector
+    type: StringSelector
+    typeId: IntegerSelector
+    txSender: HashSelector
+    feeValue: FloatSelector
+    any: [BitcoinOmniTransfersFilter!]
+    options: QueryOptions
+  ): [BitcoinOmniTransfers!]
+  outputs(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    outputIndex: IntegerSelector
+    outputAddress: AddressSelector
+    outputScriptType: StringSelector
+    outputDirection: BitcoinOutputDirectionSelector
+    outputValue: FloatSelector
+    any: [BitcoinOutputFilter!]
+    options: QueryOptions
+  ): [BitcoinTransactionOutput!]
+  transactions(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    txVsize: IntegerSelector
+    txWeight: IntegerSelector
+    txVersion: IntegerSelector
+    txCoinbase: Boolean
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    minedValue: FloatSelector
+    txLocktime: IntegerSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+    any: [BitcoinTransactionFilter!]
+    options: QueryOptions
+  ): [BitcoinTransaction!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Bitcoin.<b>addressStats</b></code>](#)<Bullet />[`[BitcoinAddressStats!]`](/docs/v1/graphql-reference/objects/bitcoin-address-stats) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Blockchain Address Statistics
+> ##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.addressStats.<b>address</b></code>](#)<Bullet />[`AddressSelector!`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.addressStats.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/v1/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bitcoin.<b>blocks</b></code>](#)<Bullet />[`[BitcoinBlock!]`](/docs/v1/graphql-reference/objects/bitcoin-block) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Blockchain Blocks
+> ##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.blocks.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.blocks.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.blocks.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.blocks.<b>blockHash</b></code>](#)<Bullet />[`StringIdSelector`](/docs/v1/graphql-reference/inputs/string-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.blocks.<b>blockSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.blocks.<b>blockWeight</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.blocks.<b>blockVersion</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.blocks.<b>transactionCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.blocks.<b>blockStrippedSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.blocks.<b>difficulty</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.blocks.<b>any</b></code>](#)<Bullet />[`[BitcoinBlockFilter!]`](/docs/v1/graphql-reference/inputs/bitcoin-block-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.blocks.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/v1/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bitcoin.<b>coinpath</b></code>](#)<Bullet />[`[BitcoinCoinpath!]`](/docs/v1/graphql-reference/objects/bitcoin-coinpath) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Money flow using Coinpath technology
+> ##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.coinpath.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.coinpath.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.coinpath.<b>initialAddress</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.coinpath.<b>initialDate</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.coinpath.<b>initialTime</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.coinpath.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.coinpath.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.coinpath.<b>depth</b></code>](#)<Bullet />[`IntegerLimitedSelector`](/docs/v1/graphql-reference/inputs/integer-limited-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.coinpath.<b>options</b></code>](#)<Bullet />[`BitcoinCoinpathOptions`](/docs/v1/graphql-reference/inputs/bitcoin-coinpath-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bitcoin.<b>inputs</b></code>](#)<Bullet />[`[BitcoinTransactionInput!]`](/docs/v1/graphql-reference/objects/bitcoin-transaction-input) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Blockchain Transaction Inputs
+> ##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.inputs.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.inputs.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.inputs.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.inputs.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.inputs.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.inputs.<b>inputIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.inputs.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.inputs.<b>inOutputTxId</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.inputs.<b>inOutputIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.inputs.<b>inputScriptType</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.inputs.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.inputs.<b>any</b></code>](#)<Bullet />[`[BitcoinInputFilter!]`](/docs/v1/graphql-reference/inputs/bitcoin-input-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.inputs.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/v1/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bitcoin.<b>omniTransactions</b></code>](#)<Bullet />[`[BitcoinOmniTransactiosn!]`](/docs/v1/graphql-reference/objects/bitcoin-omni-transactiosn) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Blockchain Transaction OmniTransactions
+> ##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransactions.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransactions.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransactions.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransactions.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransactions.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransactions.<b>version</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransactions.<b>valid</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransactions.<b>invalidReason</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransactions.<b>type</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransactions.<b>typeId</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransactions.<b>txSender</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransactions.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransactions.<b>any</b></code>](#)<Bullet />[`[BitcoinOmniTransactionsFilter!]`](/docs/v1/graphql-reference/inputs/bitcoin-omni-transactions-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransactions.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/v1/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bitcoin.<b>omniTransfers</b></code>](#)<Bullet />[`[BitcoinOmniTransfers!]`](/docs/v1/graphql-reference/objects/bitcoin-omni-transfers) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Blockchain Transaction OmniTransfers
+> ##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransfers.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransfers.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransfers.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransfers.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransfers.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransfers.<b>version</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransfers.<b>valid</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransfers.<b>invalidReason</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransfers.<b>type</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransfers.<b>typeId</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransfers.<b>txSender</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransfers.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransfers.<b>any</b></code>](#)<Bullet />[`[BitcoinOmniTransfersFilter!]`](/docs/v1/graphql-reference/inputs/bitcoin-omni-transfers-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.omniTransfers.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/v1/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bitcoin.<b>outputs</b></code>](#)<Bullet />[`[BitcoinTransactionOutput!]`](/docs/v1/graphql-reference/objects/bitcoin-transaction-output) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Blockchain Transaction Outputs
+> ##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.outputs.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.outputs.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.outputs.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.outputs.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.outputs.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.outputs.<b>outputIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.outputs.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.outputs.<b>outputScriptType</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.outputs.<b>outputDirection</b></code>](#)<Bullet />[`BitcoinOutputDirectionSelector`](/docs/v1/graphql-reference/inputs/bitcoin-output-direction-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.outputs.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.outputs.<b>any</b></code>](#)<Bullet />[`[BitcoinOutputFilter!]`](/docs/v1/graphql-reference/inputs/bitcoin-output-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.outputs.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/v1/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bitcoin.<b>transactions</b></code>](#)<Bullet />[`[BitcoinTransaction!]`](/docs/v1/graphql-reference/objects/bitcoin-transaction) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Blockchain Transactions
+> ##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>txVsize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>txWeight</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>txVersion</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>txCoinbase</b></code>](#)<Bullet />[`Boolean`](/docs/v1/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>minedValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>txLocktime</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/v1/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/v1/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>any</b></code>](#)<Bullet />[`[BitcoinTransactionFilter!]`](/docs/v1/graphql-reference/inputs/bitcoin-transaction-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Bitcoin.transactions.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/v1/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+### Returned by
+
+[`bitcoin`](/docs/v1/graphql-reference/queries/bitcoin)  <Badge class="secondary" text="query"/>
+

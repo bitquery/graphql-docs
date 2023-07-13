@@ -1,0 +1,97 @@
+---
+id: cardano-input-uniq
+title: CardanoInputUniq
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum CardanoInputUniq {
+  transactions
+  blocks
+  dates
+  addresses
+  currencies
+  sources
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoInputUniq.<b>transactions</b></code>](#)  
+> 
+> 
+> Unique transactions count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoInputUniq.<b>blocks</b></code>](#)  
+> 
+> 
+> Unique block count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoInputUniq.<b>dates</b></code>](#)  
+> 
+> 
+> Unique date count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoInputUniq.<b>addresses</b></code>](#)  
+> 
+> 
+> Unique addresses count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoInputUniq.<b>currencies</b></code>](#)  
+> 
+> 
+> Unique currencies count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoInputUniq.<b>sources</b></code>](#)  
+> 
+> 
+> Unique source count
+> 
+
+
+

@@ -1,0 +1,153 @@
+---
+id: tezos-argument-uniq
+title: TezosArgumentUniq
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum TezosArgumentUniq {
+  dates
+  times
+  blocks
+  blockHashes
+  protos
+  protocols
+  transactionHashes
+  transactionSources
+  opPaths
+  senders
+  receivers
+  statuses
+  argnames
+  argvalues
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentUniq.<b>dates</b></code>](#)  
+> 
+> 
+> Uniq dates count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentUniq.<b>times</b></code>](#)  
+> 
+> 
+> Uniq times count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentUniq.<b>blocks</b></code>](#)  
+> 
+> 
+> Uniq blocks count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentUniq.<b>blockHashes</b></code>](#)  
+> 
+> 
+> Uniq block hashes count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentUniq.<b>protos</b></code>](#)  
+> 
+> 
+> Uniq protos count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentUniq.<b>protocols</b></code>](#)  
+> 
+> 
+> Uniq protocols count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentUniq.<b>transactionHashes</b></code>](#)  
+> 
+> 
+> Uniq transaction hashes count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentUniq.<b>transactionSources</b></code>](#)  
+> 
+> 
+> Uniq transaction sources count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentUniq.<b>opPaths</b></code>](#)  
+> 
+> 
+> Uniq op paths count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentUniq.<b>senders</b></code>](#)  
+> 
+> 
+> Uniq senders count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentUniq.<b>receivers</b></code>](#)  
+> 
+> 
+> Uniq receivers count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentUniq.<b>statuses</b></code>](#)  
+> 
+> 
+> Uniq statuses count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentUniq.<b>argnames</b></code>](#)  
+> 
+> 
+> Uniq argnames count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosArgumentUniq.<b>argvalues</b></code>](#)  
+> 
+> 
+> Uniq argvalues count
+> 
+
+
+

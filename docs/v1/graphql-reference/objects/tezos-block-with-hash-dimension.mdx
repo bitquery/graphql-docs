@@ -1,0 +1,73 @@
+---
+id: tezos-block-with-hash-dimension
+title: TezosBlockWithHashDimension
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Tezos block with hash
+
+
+```graphql
+type TezosBlockWithHashDimension {
+  hash: String!
+  height: BigInt!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBlockWithHashDimension.<b>hash</b></code>](#)<Bullet />[`String!`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Block hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TezosBlockWithHashDimension.<b>height</b></code>](#)<Bullet />[`BigInt!`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Block
+> 
+
+
+
+### Member of
+
+[`TezosArgument`](/docs/v1/graphql-reference/objects/tezos-argument)  <Badge class="secondary" text="object"/><Bullet />[`TezosBalanceUpdate`](/docs/v1/graphql-reference/objects/tezos-balance-update)  <Badge class="secondary" text="object"/><Bullet />[`TezosOperation`](/docs/v1/graphql-reference/objects/tezos-operation)  <Badge class="secondary" text="object"/><Bullet />[`TezosTransaction`](/docs/v1/graphql-reference/objects/tezos-transaction)  <Badge class="secondary" text="object"/><Bullet />[`TezosTransfer`](/docs/v1/graphql-reference/objects/tezos-transfer)  <Badge class="secondary" text="object"/>
+

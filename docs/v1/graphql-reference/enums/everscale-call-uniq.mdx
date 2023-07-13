@@ -1,0 +1,139 @@
+---
+id: everscale-call-uniq
+title: EverscaleCallUniq
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum EverscaleCallUniq {
+  dates
+  times
+  height
+  block_shard
+  block_workchain
+  sharded_blocks
+  sharded_block_shards
+  sharded_block_workchains
+  txs
+  messages
+  smart_contracts
+  smart_contract_methods
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleCallUniq.<b>dates</b></code>](#)  
+> 
+> 
+> Uniq dates count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleCallUniq.<b>times</b></code>](#)  
+> 
+> 
+> Uniq times count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleCallUniq.<b>height</b></code>](#)  
+> 
+> 
+> Unique Number of block in the blockchains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleCallUniq.<b>block_shard</b></code>](#)  
+> 
+> 
+> Unique Number of Shards in the blockchains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleCallUniq.<b>block_workchain</b></code>](#)  
+> 
+> 
+> Unique Number of workchains in the blockchains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleCallUniq.<b>sharded_blocks</b></code>](#)  
+> 
+> 
+> Unique Number of sharded blocks in the blockchains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleCallUniq.<b>sharded_block_shards</b></code>](#)  
+> 
+> 
+> Unique Number of sharded block shards in the blockchains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleCallUniq.<b>sharded_block_workchains</b></code>](#)  
+> 
+> 
+> Unique Number of sharded block workchains in the blockchains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleCallUniq.<b>txs</b></code>](#)  
+> 
+> 
+> Unique Number of transactions
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleCallUniq.<b>messages</b></code>](#)  
+> 
+> 
+> Unique Number of messages
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleCallUniq.<b>smart_contracts</b></code>](#)  
+> 
+> 
+> Unique Number of smart contracts
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleCallUniq.<b>smart_contract_methods</b></code>](#)  
+> 
+> 
+> Unique Number of signatures
+> 
+
+
+

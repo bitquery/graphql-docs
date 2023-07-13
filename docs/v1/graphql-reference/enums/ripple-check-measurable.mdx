@@ -1,0 +1,202 @@
+---
+id: ripple-check-measurable
+title: RippleCheckMeasurable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum RippleCheckMeasurable {
+  date
+  time
+  block
+  transactionIndex
+  transactionHash
+  transactionSender
+  transactionType
+  operation
+  account
+  destination
+  currencyName
+  currencySymbol
+  sendMax
+  expiration
+  invoiceId
+  sourceTag
+  destinationTag
+  sequence
+  prevTxnId
+  prevLedgerSequence
+  flags
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>block</b></code>](#)  
+> 
+> 
+> Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>transactionIndex</b></code>](#)  
+> 
+> 
+> Transaction index
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>transactionHash</b></code>](#)  
+> 
+> 
+> Transaction hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>transactionSender</b></code>](#)  
+> 
+> 
+> Transaction sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>transactionType</b></code>](#)  
+> 
+> 
+> Transaction type
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>operation</b></code>](#)  
+> 
+> 
+> Operation
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>account</b></code>](#)  
+> 
+> 
+> Account
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>destination</b></code>](#)  
+> 
+> 
+> Destination
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>currencyName</b></code>](#)  
+> 
+> 
+> Currency name
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>currencySymbol</b></code>](#)  
+> 
+> 
+> Currency symbol
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>sendMax</b></code>](#)  
+> 
+> 
+> Send max
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>expiration</b></code>](#)  
+> 
+> 
+> Expiration
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>invoiceId</b></code>](#)  
+> 
+> 
+> Invoice
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>sourceTag</b></code>](#)  
+> 
+> 
+> Source tag
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>destinationTag</b></code>](#)  
+> 
+> 
+> Destination tag
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>sequence</b></code>](#)  
+> 
+> 
+> Sequence
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>prevTxnId</b></code>](#)  
+> 
+> 
+> Prev txn
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>prevLedgerSequence</b></code>](#)  
+> 
+> 
+> Prev ledger sequence
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleCheckMeasurable.<b>flags</b></code>](#)  
+> 
+> 
+> Flags
+> 
+
+
+

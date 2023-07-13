@@ -1,0 +1,230 @@
+---
+id: elrond-events-measureable
+title: ElrondEventsMeasureable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum ElrondEventsMeasureable {
+  date
+  time
+  block_hash
+  height
+  previous_block_hash
+  transaction_count
+  miniblock_hash
+  miniblock_receiver_block_hash
+  miniblock_receiver_shard
+  type
+  tx_hash
+  tx_receiver
+  tx_receiver_shard
+  tx_sender
+  tx_sender_shard
+  data
+  gas_limit
+  gas_price
+  gas_used
+  tx_value
+  event_index
+  call_result_path
+  event_type
+  address
+  identifier
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>block_hash</b></code>](#)  
+> 
+> 
+> Hash of the the block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>height</b></code>](#)  
+> 
+> 
+> Number of block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>previous_block_hash</b></code>](#)  
+> 
+> 
+> The block hash of this block`s parent
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>transaction_count</b></code>](#)  
+> 
+> 
+> The block hash of this block`s parent
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>miniblock_hash</b></code>](#)  
+> 
+> 
+> Hash of the miniblock
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>miniblock_receiver_block_hash</b></code>](#)  
+> 
+> 
+> Hash of the miniblocks receiver block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>miniblock_receiver_shard</b></code>](#)  
+> 
+> 
+> Miniblock receiver shard
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>type</b></code>](#)  
+> 
+> 
+> Type of miniblock
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>tx_hash</b></code>](#)  
+> 
+> 
+> Transaction hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>tx_receiver</b></code>](#)  
+> 
+> 
+> Receiver hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>tx_receiver_shard</b></code>](#)  
+> 
+> 
+> Shard number of the receiver
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>tx_sender</b></code>](#)  
+> 
+> 
+> Sender hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>tx_sender_shard</b></code>](#)  
+> 
+> 
+> Shard number of the sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>data</b></code>](#)  
+> 
+> 
+> Data
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>gas_limit</b></code>](#)  
+> 
+> 
+> Gas Limit
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>gas_price</b></code>](#)  
+> 
+> 
+> Gas Price
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>gas_used</b></code>](#)  
+> 
+> 
+> Gas Used
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>tx_value</b></code>](#)  
+> 
+> 
+> Value
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>event_index</b></code>](#)  
+> 
+> 
+> Event Index
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>call_result_path</b></code>](#)  
+> 
+> 
+> Call Result Path
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>event_type</b></code>](#)  
+> 
+> 
+> Event Type
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>address</b></code>](#)  
+> 
+> 
+> Address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondEventsMeasureable.<b>identifier</b></code>](#)  
+> 
+> 
+> Identifier
+> 
+
+
+

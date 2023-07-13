@@ -1,0 +1,80 @@
+---
+id: filecoin-mined-block
+title: FilecoinMinedBlock
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Filecoin Mined Block
+
+
+```graphql
+type FilecoinMinedBlock {
+  hash: String
+  index: Int
+  miner: Address
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMinedBlock.<b>hash</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMinedBlock.<b>index</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Index on height
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FilecoinMinedBlock.<b>miner</b></code>](#)<Bullet />[`Address`](/docs/v1/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Miner
+> 
+
+
+
+### Member of
+
+[`FilecoinCalls`](/docs/v1/graphql-reference/objects/filecoin-calls)  <Badge class="secondary" text="object"/><Bullet />[`FilecoinMessages`](/docs/v1/graphql-reference/objects/filecoin-messages)  <Badge class="secondary" text="object"/>
+

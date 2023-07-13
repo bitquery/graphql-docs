@@ -1,0 +1,160 @@
+---
+id: cosmos-attributes-measurable
+title: CosmosAttributesMeasurable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum CosmosAttributesMeasurable {
+  date
+  time
+  block
+  blockHash
+  transactionIndex
+  transactionHash
+  transactionSigner
+  messageType
+  messageIndex
+  messageSuccess
+  messageSenders
+  eventType
+  attribute
+  value
+  valueIndex
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributesMeasurable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributesMeasurable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributesMeasurable.<b>block</b></code>](#)  
+> 
+> 
+> Number of block in the blockhains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributesMeasurable.<b>blockHash</b></code>](#)  
+> 
+> 
+> Hash of the block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributesMeasurable.<b>transactionIndex</b></code>](#)  
+> 
+> 
+> Index of the transaction in block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributesMeasurable.<b>transactionHash</b></code>](#)  
+> 
+> 
+> Hash of the transaction
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributesMeasurable.<b>transactionSigner</b></code>](#)  
+> 
+> 
+> Transaction Signer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributesMeasurable.<b>messageType</b></code>](#)  
+> 
+> 
+> Type of message
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributesMeasurable.<b>messageIndex</b></code>](#)  
+> 
+> 
+> Message index in transaction
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributesMeasurable.<b>messageSuccess</b></code>](#)  
+> 
+> 
+> Message success
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributesMeasurable.<b>messageSenders</b></code>](#)  
+> 
+> 
+> Message senders
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributesMeasurable.<b>eventType</b></code>](#)  
+> 
+> 
+> Type of attr
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributesMeasurable.<b>attribute</b></code>](#)  
+> 
+> 
+>  attribute 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributesMeasurable.<b>value</b></code>](#)  
+> 
+> 
+> attributeValue
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosAttributesMeasurable.<b>valueIndex</b></code>](#)  
+> 
+> 
+> valueIndex
+> 
+
+
+

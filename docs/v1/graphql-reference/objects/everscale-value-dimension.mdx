@@ -1,0 +1,115 @@
+---
+id: everscale-value-dimension
+title: EverscaleValueDimension
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Value Block information
+
+
+```graphql
+type EverscaleValueDimension {
+  created: BigInt
+  exported: BigInt
+  feesCollected: BigInt
+  feesImported: BigInt
+  fromPreviousBlock: BigInt
+  imported: BigInt
+  minted: BigInt
+  toNextBlock: BigInt
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleValueDimension.<b>created</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Created
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleValueDimension.<b>exported</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Exported
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleValueDimension.<b>feesCollected</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Fees Collected
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleValueDimension.<b>feesImported</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Fees imported
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleValueDimension.<b>fromPreviousBlock</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> From Previous Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleValueDimension.<b>imported</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Imported
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleValueDimension.<b>minted</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Minted
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleValueDimension.<b>toNextBlock</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Value Flow To Next Block
+> 
+
+
+
+### Member of
+
+[`EverscaleBlock`](/docs/v1/graphql-reference/objects/everscale-block)  <Badge class="secondary" text="object"/>
+

@@ -1,0 +1,195 @@
+---
+id: harmony-transfers-measureable
+title: HarmonyTransfersMeasureable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum HarmonyTransfersMeasureable {
+  date
+  time
+  ledger
+  block_hash
+  transaction_hash
+  gas_price
+  sender
+  value
+  gas_value
+  gas
+  staking_tx_type
+  currency_symbol
+  currency_address
+  token_id
+  token_type
+  transfer_from
+  transfer_to
+  tx_sender
+  tx_to
+  entity_id
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>ledger</b></code>](#)  
+> 
+> 
+> Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>block_hash</b></code>](#)  
+> 
+> 
+> Block Hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>transaction_hash</b></code>](#)  
+> 
+> 
+> Transaction Hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>gas_price</b></code>](#)  
+> 
+> 
+> Gas price provided by the sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>sender</b></code>](#)  
+> 
+> 
+> Validator Address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>value</b></code>](#)  
+> 
+> 
+> Value transferred in ATTO
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>gas_value</b></code>](#)  
+> 
+> 
+> Gas value provided by the sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>gas</b></code>](#)  
+> 
+> 
+> Gas provided by the sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>staking_tx_type</b></code>](#)  
+> 
+> 
+> Staking Tx Type
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>currency_symbol</b></code>](#)  
+> 
+> 
+> Currency symbol
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>currency_address</b></code>](#)  
+> 
+> 
+> Token address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>token_id</b></code>](#)  
+> 
+> 
+> Token ID
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>token_type</b></code>](#)  
+> 
+> 
+> Token type
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>transfer_from</b></code>](#)  
+> 
+> 
+> Token From
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>transfer_to</b></code>](#)  
+> 
+> 
+> Token To
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>tx_sender</b></code>](#)  
+> 
+> 
+> Tx Sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>tx_to</b></code>](#)  
+> 
+> 
+> Tx To
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyTransfersMeasureable.<b>entity_id</b></code>](#)  
+> 
+> 
+> Tx To
+> 
+
+
+

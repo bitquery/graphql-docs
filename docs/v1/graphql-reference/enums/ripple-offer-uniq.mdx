@@ -1,0 +1,195 @@
+---
+id: ripple-offer-uniq
+title: RippleOfferUniq
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum RippleOfferUniq {
+  dates
+  times
+  blocks
+  transactionIndices
+  transactionHashes
+  transactionSenders
+  transactionTypes
+  operations
+  accounts
+  takerGetsCurrencyNames
+  takerGetsCurrencySymbols
+  takerPaysCurrencyNames
+  takerPaysCurrencySymbols
+  bookDirectories
+  bookNodes
+  expirations
+  sequences
+  prevTxnIds
+  prevLedgerSequences
+  flags
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>dates</b></code>](#)  
+> 
+> 
+> Uniq dates count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>times</b></code>](#)  
+> 
+> 
+> Uniq times count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>blocks</b></code>](#)  
+> 
+> 
+> Uniq blocks count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>transactionIndices</b></code>](#)  
+> 
+> 
+> Uniq transaction indices count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>transactionHashes</b></code>](#)  
+> 
+> 
+> Uniq transaction hashes count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>transactionSenders</b></code>](#)  
+> 
+> 
+> Uniq transaction senders count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>transactionTypes</b></code>](#)  
+> 
+> 
+> Uniq transaction types count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>operations</b></code>](#)  
+> 
+> 
+> Uniq operations count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>accounts</b></code>](#)  
+> 
+> 
+> Uniq accounts count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>takerGetsCurrencyNames</b></code>](#)  
+> 
+> 
+> Uniq taker gets currency names count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>takerGetsCurrencySymbols</b></code>](#)  
+> 
+> 
+> Uniq taker gets currency symbols count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>takerPaysCurrencyNames</b></code>](#)  
+> 
+> 
+> Uniq taker pays currency names count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>takerPaysCurrencySymbols</b></code>](#)  
+> 
+> 
+> Uniq taker pays currency symbols count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>bookDirectories</b></code>](#)  
+> 
+> 
+> Uniq book directories count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>bookNodes</b></code>](#)  
+> 
+> 
+> Uniq book nodes count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>expirations</b></code>](#)  
+> 
+> 
+> Uniq expirations count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>sequences</b></code>](#)  
+> 
+> 
+> Uniq sequences count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>prevTxnIds</b></code>](#)  
+> 
+> 
+> Uniq prev txn ids count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>prevLedgerSequences</b></code>](#)  
+> 
+> 
+> Uniq prev ledger sequences count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>RippleOfferUniq.<b>flags</b></code>](#)  
+> 
+> 
+> Uniq flags count
+> 
+
+
+

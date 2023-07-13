@@ -1,0 +1,108 @@
+---
+id: bitcoin-coinpath-address
+title: BitcoinCoinpathAddress
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Address detailed information for Bitcoin network
+
+
+```graphql
+type BitcoinCoinpathAddress {
+  address: String
+  annotation: String
+  firstTxAt: DateTime
+  lastTxAt: DateTime
+  receiversCount: Int
+  sendersCount: Int
+  type: String
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>BitcoinCoinpathAddress.<b>address</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BitcoinCoinpathAddress.<b>annotation</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Annotations ( tags ), if exists
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BitcoinCoinpathAddress.<b>firstTxAt</b></code>](#)<Bullet />[`DateTime`](/docs/v1/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Smart Contract if exists on the address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BitcoinCoinpathAddress.<b>lastTxAt</b></code>](#)<Bullet />[`DateTime`](/docs/v1/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Smart Contract if exists on the address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BitcoinCoinpathAddress.<b>receiversCount</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BitcoinCoinpathAddress.<b>sendersCount</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BitcoinCoinpathAddress.<b>type</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Address type
+> 
+
+
+
+### Member of
+
+[`BitcoinCoinpath`](/docs/v1/graphql-reference/objects/bitcoin-coinpath)  <Badge class="secondary" text="object"/>
+

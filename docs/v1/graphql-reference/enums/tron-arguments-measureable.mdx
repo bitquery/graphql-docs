@@ -1,0 +1,174 @@
+---
+id: tron-arguments-measureable
+title: TronArgumentsMeasureable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum TronArgumentsMeasureable {
+  date
+  time
+  block
+  tx_hash
+  tx_index
+  owner
+  receiver
+  smart_contract
+  signature_name
+  signature
+  signature_type
+  signature_hash
+  call_depth
+  argument
+  argument_type
+  argument_value
+  argument_index
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>TronArgumentsMeasureable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronArgumentsMeasureable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronArgumentsMeasureable.<b>block</b></code>](#)  
+> 
+> 
+> Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronArgumentsMeasureable.<b>tx_hash</b></code>](#)  
+> 
+> 
+> Transaction hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronArgumentsMeasureable.<b>tx_index</b></code>](#)  
+> 
+> 
+> Transaction Index
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronArgumentsMeasureable.<b>owner</b></code>](#)  
+> 
+> 
+> Owner
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronArgumentsMeasureable.<b>receiver</b></code>](#)  
+> 
+> 
+> Receiver
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronArgumentsMeasureable.<b>smart_contract</b></code>](#)  
+> 
+> 
+> Smart Contract
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronArgumentsMeasureable.<b>signature_name</b></code>](#)  
+> 
+> 
+> Smart Contract Method Name
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronArgumentsMeasureable.<b>signature</b></code>](#)  
+> 
+> 
+> Smart Contract Method Signature
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronArgumentsMeasureable.<b>signature_type</b></code>](#)  
+> 
+> 
+> Smart Contract Method Signature
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronArgumentsMeasureable.<b>signature_hash</b></code>](#)  
+> 
+> 
+> Smart Contract Method Signature Hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronArgumentsMeasureable.<b>call_depth</b></code>](#)  
+> 
+> 
+> Call depth
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronArgumentsMeasureable.<b>argument</b></code>](#)  
+> 
+> 
+> Argument
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronArgumentsMeasureable.<b>argument_type</b></code>](#)  
+> 
+> 
+> Argument type
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronArgumentsMeasureable.<b>argument_value</b></code>](#)  
+> 
+> 
+> Argument value
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronArgumentsMeasureable.<b>argument_index</b></code>](#)  
+> 
+> 
+> Argument index
+> 
+
+
+

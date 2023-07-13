@@ -1,0 +1,118 @@
+---
+id: cosmos-transaction-uniq
+title: CosmosTransactionUniq
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum CosmosTransactionUniq {
+  dates
+  times
+  blocks
+  signers
+  hashes
+  codes
+  types
+  memos
+  indices
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransactionUniq.<b>dates</b></code>](#)  
+> 
+> 
+> Unique date count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransactionUniq.<b>times</b></code>](#)  
+> 
+> 
+> Unique time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransactionUniq.<b>blocks</b></code>](#)  
+> 
+> 
+> Unique blocks
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransactionUniq.<b>signers</b></code>](#)  
+> 
+> 
+> Unique signers
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransactionUniq.<b>hashes</b></code>](#)  
+> 
+> 
+> Unique hashes
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransactionUniq.<b>codes</b></code>](#)  
+> 
+> 
+> Unique timecodes
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransactionUniq.<b>types</b></code>](#)  
+> 
+> 
+> Unique types
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransactionUniq.<b>memos</b></code>](#)  
+> 
+> 
+> Unique memos
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CosmosTransactionUniq.<b>indices</b></code>](#)  
+> 
+> 
+> Unique indices
+> 
+
+
+

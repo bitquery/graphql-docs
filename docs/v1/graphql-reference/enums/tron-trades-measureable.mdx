@@ -1,0 +1,195 @@
+---
+id: tron-trades-measureable
+title: TronTradesMeasureable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum TronTradesMeasureable {
+  date
+  time
+  block
+  tx_hash
+  amount_sell
+  amount_buy
+  buyer
+  seller
+  buy_currency_symbol
+  buy_currency_name
+  buy_currency_address
+  buy_token_id
+  buy_token_type
+  sell_currency_symbol
+  sell_currency_name
+  sell_currency_address
+  sell_token_id
+  sell_token_type
+  exchange_id
+  contract_type
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>block</b></code>](#)  
+> 
+> 
+> Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>tx_hash</b></code>](#)  
+> 
+> 
+> Transaction hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>amount_sell</b></code>](#)  
+> 
+> 
+> Amount Sell
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>amount_buy</b></code>](#)  
+> 
+> 
+> Amount Sell
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>buyer</b></code>](#)  
+> 
+> 
+> Buyer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>seller</b></code>](#)  
+> 
+> 
+> Seller
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>buy_currency_symbol</b></code>](#)  
+> 
+> 
+> Buy Currency symbol
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>buy_currency_name</b></code>](#)  
+> 
+> 
+> Buy Currency name
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>buy_currency_address</b></code>](#)  
+> 
+> 
+> Buy Token address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>buy_token_id</b></code>](#)  
+> 
+> 
+> Buy Token address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>buy_token_type</b></code>](#)  
+> 
+> 
+> Buy Token type
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>sell_currency_symbol</b></code>](#)  
+> 
+> 
+> Buy Currency symbol
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>sell_currency_name</b></code>](#)  
+> 
+> 
+> Buy Currency name
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>sell_currency_address</b></code>](#)  
+> 
+> 
+> Buy Token address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>sell_token_id</b></code>](#)  
+> 
+> 
+> Buy Token address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>sell_token_type</b></code>](#)  
+> 
+> 
+> Buy Token type
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>exchange_id</b></code>](#)  
+> 
+> 
+> Exchange ID
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTradesMeasureable.<b>contract_type</b></code>](#)  
+> 
+> 
+> Contract Type
+> 
+
+
+

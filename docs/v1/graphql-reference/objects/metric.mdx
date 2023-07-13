@@ -1,0 +1,129 @@
+---
+id: metric
+title: Metric
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Query metric object
+
+
+```graphql
+type Metric {
+  cost: Float!
+  divider: BigInt!
+  max: BigInt!
+  maxUnit: Float!
+  min: BigInt!
+  minUnit: Float!
+  name: String!
+  price: Float!
+  value: BigInt!
+  valueUnit: Float!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Metric.<b>cost</b></code>](#)<Bullet />[`Float!`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Metric cost
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Metric.<b>divider</b></code>](#)<Bullet />[`BigInt!`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Metric divider
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Metric.<b>max</b></code>](#)<Bullet />[`BigInt!`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Metric maximum
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Metric.<b>maxUnit</b></code>](#)<Bullet />[`Float!`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Metric maximum unit
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Metric.<b>min</b></code>](#)<Bullet />[`BigInt!`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Metric minimum
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Metric.<b>minUnit</b></code>](#)<Bullet />[`Float!`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Metric minimum unit
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Metric.<b>name</b></code>](#)<Bullet />[`String!`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Metric name
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Metric.<b>price</b></code>](#)<Bullet />[`Float!`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Metric price
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Metric.<b>value</b></code>](#)<Bullet />[`BigInt!`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Metric value
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Metric.<b>valueUnit</b></code>](#)<Bullet />[`Float!`](/docs/v1/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Metric value unit
+> 
+
+
+
+### Member of
+
+[`Metrics`](/docs/v1/graphql-reference/objects/metrics)  <Badge class="secondary" text="object"/>
+

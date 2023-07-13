@@ -1,0 +1,125 @@
+---
+id: ethereum-transfers-measureable
+title: EthereumTransfersMeasureable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum EthereumTransfersMeasureable {
+  date
+  time
+  block
+  tx_hash
+  amount
+  sender
+  receiver
+  currency_symbol
+  currency_address
+  entity_id
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfersMeasureable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfersMeasureable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfersMeasureable.<b>block</b></code>](#)  
+> 
+> 
+> Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfersMeasureable.<b>tx_hash</b></code>](#)  
+> 
+> 
+> Transaction hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfersMeasureable.<b>amount</b></code>](#)  
+> 
+> 
+> Amount
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfersMeasureable.<b>sender</b></code>](#)  
+> 
+> 
+> Sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfersMeasureable.<b>receiver</b></code>](#)  
+> 
+> 
+> Receiver
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfersMeasureable.<b>currency_symbol</b></code>](#)  
+> 
+> 
+> Currency symbol
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfersMeasureable.<b>currency_address</b></code>](#)  
+> 
+> 
+> Token address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfersMeasureable.<b>entity_id</b></code>](#)  
+> 
+> 
+> Entity ID
+> 
+
+
+

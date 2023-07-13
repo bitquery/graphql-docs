@@ -1,0 +1,111 @@
+---
+id: libra-transactions-measureable
+title: LibraTransactionsMeasureable
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum LibraTransactionsMeasureable {
+  date
+  time
+  block
+  version
+  tx_sender
+  script_hash
+  gas_price
+  gas
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>LibraTransactionsMeasureable.<b>date</b></code>](#)  
+> 
+> 
+> Date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LibraTransactionsMeasureable.<b>time</b></code>](#)  
+> 
+> 
+> Time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LibraTransactionsMeasureable.<b>block</b></code>](#)  
+> 
+> 
+> Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LibraTransactionsMeasureable.<b>version</b></code>](#)  
+> 
+> 
+> Version
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LibraTransactionsMeasureable.<b>tx_sender</b></code>](#)  
+> 
+> 
+> Transaction Sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LibraTransactionsMeasureable.<b>script_hash</b></code>](#)  
+> 
+> 
+> Script Hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LibraTransactionsMeasureable.<b>gas_price</b></code>](#)  
+> 
+> 
+> Gas price
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LibraTransactionsMeasureable.<b>gas</b></code>](#)  
+> 
+> 
+> Gas used
+> 
+
+
+

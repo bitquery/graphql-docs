@@ -1,0 +1,87 @@
+---
+id: address-selector
+title: AddressSelector
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Address selector
+
+
+```graphql
+input AddressSelector {
+  is: String
+  not: String
+  in: [String!]
+  notIn: [String!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>AddressSelector.<b>is</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Equal to Address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AddressSelector.<b>not</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Not Equal to Address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AddressSelector.<b>in</b></code>](#)<Bullet />[`[String!]`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> In the list of Addresses
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AddressSelector.<b>notIn</b></code>](#)<Bullet />[`[String!]`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Not in the list of Addresses
+> 
+
+
+
+### Member of
+
+[`AlgorandArgumentFilter`](/docs/v1/graphql-reference/inputs/algorand-argument-filter)  <Badge class="secondary" text="input"/><Bullet />[`AlgorandBlockFilter`](/docs/v1/graphql-reference/inputs/algorand-block-filter)  <Badge class="secondary" text="input"/><Bullet />[`AlgorandSmartContractCallFilter`](/docs/v1/graphql-reference/inputs/algorand-smart-contract-call-filter)  <Badge class="secondary" text="input"/><Bullet />[`AlgorandTransactionFilter`](/docs/v1/graphql-reference/inputs/algorand-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`AlgorandTransferFilter`](/docs/v1/graphql-reference/inputs/algorand-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`BitcoinInputFilter`](/docs/v1/graphql-reference/inputs/bitcoin-input-filter)  <Badge class="secondary" text="input"/><Bullet />[`BitcoinOutputFilter`](/docs/v1/graphql-reference/inputs/bitcoin-output-filter)  <Badge class="secondary" text="input"/><Bullet />[`CardanoInputFilter`](/docs/v1/graphql-reference/inputs/cardano-input-filter)  <Badge class="secondary" text="input"/><Bullet />[`CardanoOutputFilter`](/docs/v1/graphql-reference/inputs/cardano-output-filter)  <Badge class="secondary" text="input"/><Bullet />[`CosmosBlocksFilter`](/docs/v1/graphql-reference/inputs/cosmos-blocks-filter)  <Badge class="secondary" text="input"/><Bullet />[`CosmosMessageFilter`](/docs/v1/graphql-reference/inputs/cosmos-message-filter)  <Badge class="secondary" text="input"/><Bullet />[`CosmosTransactionFilter`](/docs/v1/graphql-reference/inputs/cosmos-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`CosmosTransferFilter`](/docs/v1/graphql-reference/inputs/cosmos-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`ElrondEventFilter`](/docs/v1/graphql-reference/inputs/elrond-event-filter)  <Badge class="secondary" text="input"/><Bullet />[`ElrondOperationFilter`](/docs/v1/graphql-reference/inputs/elrond-operation-filter)  <Badge class="secondary" text="input"/><Bullet />[`ElrondTransferFilter`](/docs/v1/graphql-reference/inputs/elrond-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`EosBlockFilter`](/docs/v1/graphql-reference/inputs/eos-block-filter)  <Badge class="secondary" text="input"/><Bullet />[`EosSmartContractCallFilter`](/docs/v1/graphql-reference/inputs/eos-smart-contract-call-filter)  <Badge class="secondary" text="input"/><Bullet />[`EosTransferFilter`](/docs/v1/graphql-reference/inputs/eos-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`EverscaleArgumentFilter`](/docs/v1/graphql-reference/inputs/everscale-argument-filter)  <Badge class="secondary" text="input"/><Bullet />[`EverscaleCallFilter`](/docs/v1/graphql-reference/inputs/everscale-call-filter)  <Badge class="secondary" text="input"/><Bullet />[`EverscaleEventFilter`](/docs/v1/graphql-reference/inputs/everscale-event-filter)  <Badge class="secondary" text="input"/><Bullet />[`EverscaleTransferFilter`](/docs/v1/graphql-reference/inputs/everscale-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`FilecoinBlockFilter`](/docs/v1/graphql-reference/inputs/filecoin-block-filter)  <Badge class="secondary" text="input"/><Bullet />[`FilecoinCallFilter`](/docs/v1/graphql-reference/inputs/filecoin-call-filter)  <Badge class="secondary" text="input"/><Bullet />[`FilecoinMessageFilter`](/docs/v1/graphql-reference/inputs/filecoin-message-filter)  <Badge class="secondary" text="input"/><Bullet />[`FilecoinTransferFilter`](/docs/v1/graphql-reference/inputs/filecoin-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`FlowTransactionAuthorizerFilter`](/docs/v1/graphql-reference/inputs/flow-transaction-authorizer-filter)  <Badge class="secondary" text="input"/><Bullet />[`FlowTransactionEnvelopeSignatureFilter`](/docs/v1/graphql-reference/inputs/flow-transaction-envelope-signature-filter)  <Badge class="secondary" text="input"/><Bullet />[`FlowTransactionFilter`](/docs/v1/graphql-reference/inputs/flow-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`FlowTransactionPayloadSignatureFilter`](/docs/v1/graphql-reference/inputs/flow-transaction-payload-signature-filter)  <Badge class="secondary" text="input"/><Bullet />[`HarmonySmartContractCallsFilter`](/docs/v1/graphql-reference/inputs/harmony-smart-contract-calls-filter)  <Badge class="secondary" text="input"/><Bullet />[`HarmonySmartContractEventsFilter`](/docs/v1/graphql-reference/inputs/harmony-smart-contract-events-filter)  <Badge class="secondary" text="input"/><Bullet />[`HarmonyTransfersFilter`](/docs/v1/graphql-reference/inputs/harmony-transfers-filter)  <Badge class="secondary" text="input"/><Bullet />[`LibraBlockFilter`](/docs/v1/graphql-reference/inputs/libra-block-filter)  <Badge class="secondary" text="input"/><Bullet />[`LibraMintFilter`](/docs/v1/graphql-reference/inputs/libra-mint-filter)  <Badge class="secondary" text="input"/><Bullet />[`LibraTransactionFilter`](/docs/v1/graphql-reference/inputs/libra-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`LibraTransferFilter`](/docs/v1/graphql-reference/inputs/libra-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleAccountRootFilter`](/docs/v1/graphql-reference/inputs/ripple-account-root-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleBalanceFilter`](/docs/v1/graphql-reference/inputs/ripple-balance-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleCheckFilter`](/docs/v1/graphql-reference/inputs/ripple-check-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleEscrowFilter`](/docs/v1/graphql-reference/inputs/ripple-escrow-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleNftokenOfferFilter`](/docs/v1/graphql-reference/inputs/ripple-nftoken-offer-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleOfferFilter`](/docs/v1/graphql-reference/inputs/ripple-offer-filter)  <Badge class="secondary" text="input"/><Bullet />[`RipplePaymentFilter`](/docs/v1/graphql-reference/inputs/ripple-payment-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleRippleStateFilter`](/docs/v1/graphql-reference/inputs/ripple-ripple-state-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleTransactionFilter`](/docs/v1/graphql-reference/inputs/ripple-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleTransferFilter`](/docs/v1/graphql-reference/inputs/ripple-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarBalanceEffectFilter`](/docs/v1/graphql-reference/inputs/stellar-balance-effect-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarClaimableBalanceEffectFilter`](/docs/v1/graphql-reference/inputs/stellar-claimable-balance-effect-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarEffectArgumentFilter`](/docs/v1/graphql-reference/inputs/stellar-effect-argument-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarEffectFilter`](/docs/v1/graphql-reference/inputs/stellar-effect-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarLiquidityPoolEffectFilter`](/docs/v1/graphql-reference/inputs/stellar-liquidity-pool-effect-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarLiquidityPoolTradeEffectFilter`](/docs/v1/graphql-reference/inputs/stellar-liquidity-pool-trade-effect-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarOperationFilter`](/docs/v1/graphql-reference/inputs/stellar-operation-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarPaymentFilter`](/docs/v1/graphql-reference/inputs/stellar-payment-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarTradeEffectFilter`](/docs/v1/graphql-reference/inputs/stellar-trade-effect-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarTransactionFilter`](/docs/v1/graphql-reference/inputs/stellar-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarTransferFilter`](/docs/v1/graphql-reference/inputs/stellar-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`TezosArgumentFilter`](/docs/v1/graphql-reference/inputs/tezos-argument-filter)  <Badge class="secondary" text="input"/><Bullet />[`TezosBalanceUpdateFilter`](/docs/v1/graphql-reference/inputs/tezos-balance-update-filter)  <Badge class="secondary" text="input"/><Bullet />[`TezosTransactionFilter`](/docs/v1/graphql-reference/inputs/tezos-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`TezosTransferFilter`](/docs/v1/graphql-reference/inputs/tezos-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`TronArgumentFilter`](/docs/v1/graphql-reference/inputs/tron-argument-filter)  <Badge class="secondary" text="input"/><Bullet />[`TronBlockFilter`](/docs/v1/graphql-reference/inputs/tron-block-filter)  <Badge class="secondary" text="input"/><Bullet />[`TronContractFilter`](/docs/v1/graphql-reference/inputs/tron-contract-filter)  <Badge class="secondary" text="input"/><Bullet />[`TronDexTradeFilter`](/docs/v1/graphql-reference/inputs/tron-dex-trade-filter)  <Badge class="secondary" text="input"/><Bullet />[`TronSmartContractCallFilter`](/docs/v1/graphql-reference/inputs/tron-smart-contract-call-filter)  <Badge class="secondary" text="input"/><Bullet />[`TronSmartContractEventFilter`](/docs/v1/graphql-reference/inputs/tron-smart-contract-event-filter)  <Badge class="secondary" text="input"/><Bullet />[`TronTradeFilter`](/docs/v1/graphql-reference/inputs/tron-trade-filter)  <Badge class="secondary" text="input"/><Bullet />[`TronTransactionFilter`](/docs/v1/graphql-reference/inputs/tron-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`TronTransferFilter`](/docs/v1/graphql-reference/inputs/tron-transfer-filter)  <Badge class="secondary" text="input"/>
+

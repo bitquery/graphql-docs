@@ -1,0 +1,849 @@
+---
+id: stellar-liquidity-pool-trade-effect
+title: StellarLiquidityPoolTradeEffect
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Liquidity pool trade effect in Stellar blockchain
+
+
+```graphql
+type StellarLiquidityPoolTradeEffect {
+  address: Address
+  any(
+    of: StellarLiquidityPoolTradeEffectMeasurable!
+  ): String
+  block: BigInt
+  buyAmount(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    block: BlockSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSender: AddressSelector
+    operation: StringSelector
+    opIndex: IntegerSelector
+    opSourceAccount: AddressSelector
+    effectIndex: IntegerSelector
+    order: IntegerSelector
+    address: AddressSelector
+    buyCurrencyName: CurrencySelector
+    buyIssuer: AddressSelector
+    sellCurrencyName: CurrencySelector
+    sellIssuer: AddressSelector
+    liquidityPoolId: StringSelector
+    liquidityPoolDetails: StringSelector
+    buyAmount: FloatSelector
+    sellAmount: FloatSelector
+  ): DecimalNumberAsDiv
+  buyCurrency: Currency
+  buyIssuer: Address
+  count(
+    uniq: StellarLiquidityPoolTradeEffectUniq
+    date: DateSelector
+    time: DateTimeSelector
+    block: BlockSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSender: AddressSelector
+    operation: StringSelector
+    opIndex: IntegerSelector
+    opSourceAccount: AddressSelector
+    effectIndex: IntegerSelector
+    order: IntegerSelector
+    address: AddressSelector
+    buyCurrencyName: CurrencySelector
+    buyIssuer: AddressSelector
+    sellCurrencyName: CurrencySelector
+    sellIssuer: AddressSelector
+    liquidityPoolId: StringSelector
+    liquidityPoolDetails: StringSelector
+    buyAmount: FloatSelector
+    sellAmount: FloatSelector
+  ): Int
+  countBigInt(
+    uniq: StellarLiquidityPoolTradeEffectUniq
+    date: DateSelector
+    time: DateTimeSelector
+    block: BlockSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSender: AddressSelector
+    operation: StringSelector
+    opIndex: IntegerSelector
+    opSourceAccount: AddressSelector
+    effectIndex: IntegerSelector
+    order: IntegerSelector
+    address: AddressSelector
+    buyCurrencyName: CurrencySelector
+    buyIssuer: AddressSelector
+    sellCurrencyName: CurrencySelector
+    sellIssuer: AddressSelector
+    liquidityPoolId: StringSelector
+    liquidityPoolDetails: StringSelector
+    buyAmount: FloatSelector
+    sellAmount: FloatSelector
+  ): BigInt
+  date: Date
+  effectIndex: Int
+  expression(
+    get: String!
+  ): DecimalNumber
+  liquidityPoolDetails: String
+  liquidityPoolId: String
+  maximum(
+    of: StellarLiquidityPoolTradeEffectMeasurable!
+    get: StellarLiquidityPoolTradeEffectMeasurable
+  ): String
+  minimum(
+    of: StellarLiquidityPoolTradeEffectMeasurable!
+    get: StellarLiquidityPoolTradeEffectMeasurable
+  ): String
+  operation: OperationIndexedWithAccount
+  order: Int
+  sellAmount(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    block: BlockSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSender: AddressSelector
+    operation: StringSelector
+    opIndex: IntegerSelector
+    opSourceAccount: AddressSelector
+    effectIndex: IntegerSelector
+    order: IntegerSelector
+    address: AddressSelector
+    buyCurrencyName: CurrencySelector
+    buyIssuer: AddressSelector
+    sellCurrencyName: CurrencySelector
+    sellIssuer: AddressSelector
+    liquidityPoolId: StringSelector
+    liquidityPoolDetails: StringSelector
+    buyAmount: FloatSelector
+    sellAmount: FloatSelector
+  ): DecimalNumberAsDiv
+  sellCurrency: Currency
+  sellIssuer: Address
+  timestamp: DateTime
+  transaction: StellarTransactionDimension
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>address</b></code>](#)<Bullet />[`Address`](/docs/v1/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>any</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.any.<b>of</b></code>](#)<Bullet />[`StellarLiquidityPoolTradeEffectMeasurable!`](/docs/v1/graphql-reference/enums/stellar-liquidity-pool-trade-effect-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>block</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>buyAmount</b></code>](#)<Bullet />[`DecimalNumberAsDiv`](/docs/v1/graphql-reference/scalars/decimal-number-as-div) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/v1/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>block</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>opIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>opSourceAccount</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>effectIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>order</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>address</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>buyCurrencyName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>buyIssuer</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>sellCurrencyName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>sellIssuer</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>liquidityPoolId</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>liquidityPoolDetails</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>buyAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.buyAmount.<b>sellAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>buyCurrency</b></code>](#)<Bullet />[`Currency`](/docs/v1/graphql-reference/objects/currency) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Buy currency
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>buyIssuer</b></code>](#)<Bullet />[`Address`](/docs/v1/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Buy issuer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>count</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>uniq</b></code>](#)<Bullet />[`StellarLiquidityPoolTradeEffectUniq`](/docs/v1/graphql-reference/enums/stellar-liquidity-pool-trade-effect-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>block</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>opIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>opSourceAccount</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>effectIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>order</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>address</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>buyCurrencyName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>buyIssuer</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>sellCurrencyName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>sellIssuer</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>liquidityPoolId</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>liquidityPoolDetails</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>buyAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.count.<b>sellAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/v1/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>uniq</b></code>](#)<Bullet />[`StellarLiquidityPoolTradeEffectUniq`](/docs/v1/graphql-reference/enums/stellar-liquidity-pool-trade-effect-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>block</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>opIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>opSourceAccount</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>effectIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>order</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>address</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>buyCurrencyName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>buyIssuer</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>sellCurrencyName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>sellIssuer</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>liquidityPoolId</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>liquidityPoolDetails</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>buyAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.countBigInt.<b>sellAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>date</b></code>](#)<Bullet />[`Date`](/docs/v1/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Calendar date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>effectIndex</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Effect index
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/v1/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>liquidityPoolDetails</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Liquidity pool details
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>liquidityPoolId</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Liquidity pool
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.maximum.<b>of</b></code>](#)<Bullet />[`StellarLiquidityPoolTradeEffectMeasurable!`](/docs/v1/graphql-reference/enums/stellar-liquidity-pool-trade-effect-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.maximum.<b>get</b></code>](#)<Bullet />[`StellarLiquidityPoolTradeEffectMeasurable`](/docs/v1/graphql-reference/enums/stellar-liquidity-pool-trade-effect-measurable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/v1/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.minimum.<b>of</b></code>](#)<Bullet />[`StellarLiquidityPoolTradeEffectMeasurable!`](/docs/v1/graphql-reference/enums/stellar-liquidity-pool-trade-effect-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.minimum.<b>get</b></code>](#)<Bullet />[`StellarLiquidityPoolTradeEffectMeasurable`](/docs/v1/graphql-reference/enums/stellar-liquidity-pool-trade-effect-measurable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>operation</b></code>](#)<Bullet />[`OperationIndexedWithAccount`](/docs/v1/graphql-reference/objects/operation-indexed-with-account) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Operation
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>order</b></code>](#)<Bullet />[`Int`](/docs/v1/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Order
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>sellAmount</b></code>](#)<Bullet />[`DecimalNumberAsDiv`](/docs/v1/graphql-reference/scalars/decimal-number-as-div) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/v1/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/v1/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/v1/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/v1/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>block</b></code>](#)<Bullet />[`BlockSelector`](/docs/v1/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/v1/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>opIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>opSourceAccount</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>effectIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>order</b></code>](#)<Bullet />[`IntegerSelector`](/docs/v1/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>address</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>buyCurrencyName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>buyIssuer</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>sellCurrencyName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/v1/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>sellIssuer</b></code>](#)<Bullet />[`AddressSelector`](/docs/v1/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>liquidityPoolId</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>liquidityPoolDetails</b></code>](#)<Bullet />[`StringSelector`](/docs/v1/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>buyAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.sellAmount.<b>sellAmount</b></code>](#)<Bullet />[`FloatSelector`](/docs/v1/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>sellCurrency</b></code>](#)<Bullet />[`Currency`](/docs/v1/graphql-reference/objects/currency) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Sell currency
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>sellIssuer</b></code>](#)<Bullet />[`Address`](/docs/v1/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Sell issuer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>timestamp</b></code>](#)<Bullet />[`DateTime`](/docs/v1/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Timestamp
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolTradeEffect.<b>transaction</b></code>](#)<Bullet />[`StellarTransactionDimension`](/docs/v1/graphql-reference/objects/stellar-transaction-dimension) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Transaction
+> 
+
+
+
+### Member of
+
+[`Stellar`](/docs/v1/graphql-reference/objects/stellar)  <Badge class="secondary" text="object"/>
+

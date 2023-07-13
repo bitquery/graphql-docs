@@ -1,0 +1,125 @@
+---
+id: flow-transaction-envelope-signature-uniq
+title: FlowTransactionEnvelopeSignatureUniq
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum FlowTransactionEnvelopeSignatureUniq {
+  times
+  dates
+  height
+  collection_id
+  tx_id
+  tx_index_in_collection
+  reference_block_id
+  payers
+  proposers
+  addresses
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionEnvelopeSignatureUniq.<b>times</b></code>](#)  
+> 
+> 
+> Unique time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionEnvelopeSignatureUniq.<b>dates</b></code>](#)  
+> 
+> 
+> Unique date count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionEnvelopeSignatureUniq.<b>height</b></code>](#)  
+> 
+> 
+> Unique Number of block in the blockchains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionEnvelopeSignatureUniq.<b>collection_id</b></code>](#)  
+> 
+> 
+> Unique Number of collection
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionEnvelopeSignatureUniq.<b>tx_id</b></code>](#)  
+> 
+> 
+> Transaction ID
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionEnvelopeSignatureUniq.<b>tx_index_in_collection</b></code>](#)  
+> 
+> 
+> Transaction index inside collection
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionEnvelopeSignatureUniq.<b>reference_block_id</b></code>](#)  
+> 
+> 
+> Reference block hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionEnvelopeSignatureUniq.<b>payers</b></code>](#)  
+> 
+> 
+> The account paying for the transaction fees
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionEnvelopeSignatureUniq.<b>proposers</b></code>](#)  
+> 
+> 
+> The account that specifies a proposal key
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionEnvelopeSignatureUniq.<b>addresses</b></code>](#)  
+> 
+> 
+> The address and key ID fields declare the account key that generated the signature
+> 
+
+
+
