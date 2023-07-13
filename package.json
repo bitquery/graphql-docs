@@ -11,17 +11,16 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids",
-    "download-schema": "apollo schema:download --endpoint=https://graphql.bitquery.io --header=\"X-API-KEY: yourkeys\""
+    "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
     "@cmfcmf/docusaurus-search-local": "^1.1.0",
     "@docusaurus/core": "^2.4.0",
     "@docusaurus/preset-classic": "^2.4.0",
+    "@edno/docusaurus2-graphql-doc-generator": "^1.13.1",
     "@graphql-markdown/docusaurus": "^1.20.2",
     "@graphql-tools/url-loader": "^7.17.18",
     "@mdx-js/react": "^1.6.22",
-    "apollo": "^2.34.0",
     "clsx": "^1.2.1",
     "docusaurus": "^1.14.7",
     "graphql": "^16.7.1",
@@ -47,5 +46,8 @@
   },
   "engines": {
     "node": ">=16.14"
+  },
+  "resolutions": {
+    "graphql": "16.7.1"
   }
 }

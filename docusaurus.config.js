@@ -36,21 +36,21 @@ const config = {
   },
 
   plugins: [
-    //temporarily commented
-    // [
-    //   "@graphql-markdown/docusaurus",
-    //   {
-    //     schema: "./schema.graphql",
-    //     rootPath: "./docs/v1/", // docs will be generated under './docs/v1/graphql-reference'
-    //     baseURL: ".",
-    //     linkRoot: "/docs/v1/",
-    //     homepage: "./docs/v1/intro.md",
-    //     // loaders: {
-    //     //   UrlLoader: "@graphql-tools/url-loader",
-    //     // },
-  
-    //   },
-    // ],
+
+    [
+      "@graphql-markdown/docusaurus",
+      {
+        schema: "./schema/v1.graphql",
+        rootPath: "./docs/v1/graphql-reference/", // docs will be generated under './docs/v1/graphql-reference'
+        baseURL: ".",
+        linkRoot: "/docs/v1/graphql-reference/",
+        homepage: "./docs/v1/graphql-reference/intro.md",
+        loaders: {
+          GraphQLFileLoader: "@graphql-tools/graphql-file-loader",
+        },
+      },
+    ],
+
     [
       require.resolve("@cmfcmf/docusaurus-search-local"),
       {
