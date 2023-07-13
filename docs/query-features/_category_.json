@@ -1,0 +1,8 @@
+{
+    "label": "Query Features",
+    "position": 4,
+    "link": {
+        "type": "generated-index",
+        "description": "Understanding Query Features"
+    }
+}
