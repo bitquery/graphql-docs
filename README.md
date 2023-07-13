@@ -25,6 +25,15 @@ $ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
+
+#### Schema to Docs
+
+To update schema, run
+
+```
+npx run download-schema
+```
+
 ### Deployment
 
 Using SSH:
@@ -51,3 +60,5 @@ yarn serve
 npx docusaurus-print-pdf -u http://localhost:3000/docs/intro
 
 ```
+
+
