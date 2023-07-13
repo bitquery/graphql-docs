@@ -1,0 +1,8 @@
+{
+    "label": "Expressions",
+    "position": 3,
+    "link": {
+        "type": "generated-index",
+        "description": "Understanding how axpressions work in a query"
+    }
+}
