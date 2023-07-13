@@ -1,0 +1,368 @@
+---
+id: stellar-operation
+title: StellarOperation
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Operation in Stellar blockchain
+
+
+```graphql
+type StellarOperation {
+  any(
+    of: StellarOperationMeasurable!
+  ): String
+  block: BigInt
+  count(
+    uniq: StellarOperationUniq
+    date: DateSelector
+    time: DateTimeSelector
+    block: BlockSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSender: AddressSelector
+    operation: StringSelector
+    index: IntegerSelector
+    sourceAccount: AddressSelector
+    details: StringSelector
+    success: BooleanSelector
+  ): Int
+  countBigInt(
+    uniq: StellarOperationUniq
+    date: DateSelector
+    time: DateTimeSelector
+    block: BlockSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSender: AddressSelector
+    operation: StringSelector
+    index: IntegerSelector
+    sourceAccount: AddressSelector
+    details: StringSelector
+    success: BooleanSelector
+  ): BigInt
+  date: Date
+  details: String
+  expression(
+    get: String!
+  ): DecimalNumber
+  index: Int
+  maximum(
+    of: StellarOperationMeasurable!
+    get: StellarOperationMeasurable
+  ): String
+  minimum(
+    of: StellarOperationMeasurable!
+    get: StellarOperationMeasurable
+  ): String
+  operation: String
+  sourceAccount: Address
+  success: Boolean
+  timestamp: DateTime
+  transaction: StellarTransactionDimension
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarOperation.<b>any</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.any.<b>of</b></code>](#)<Bullet />[`StellarOperationMeasurable!`](/docs/graphql-reference/enums/stellar-operation-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarOperation.<b>block</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarOperation.<b>count</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.count.<b>uniq</b></code>](#)<Bullet />[`StellarOperationUniq`](/docs/graphql-reference/enums/stellar-operation-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.count.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.count.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.count.<b>block</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.count.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.count.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.count.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.count.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.count.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.count.<b>sourceAccount</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.count.<b>details</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.count.<b>success</b></code>](#)<Bullet />[`BooleanSelector`](/docs/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarOperation.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.countBigInt.<b>uniq</b></code>](#)<Bullet />[`StellarOperationUniq`](/docs/graphql-reference/enums/stellar-operation-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.countBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.countBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.countBigInt.<b>block</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.countBigInt.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.countBigInt.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.countBigInt.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.countBigInt.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.countBigInt.<b>index</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.countBigInt.<b>sourceAccount</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.countBigInt.<b>details</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.countBigInt.<b>success</b></code>](#)<Bullet />[`BooleanSelector`](/docs/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarOperation.<b>date</b></code>](#)<Bullet />[`Date`](/docs/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Calendar date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarOperation.<b>details</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Details
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarOperation.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarOperation.<b>index</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Operation index
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarOperation.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.maximum.<b>of</b></code>](#)<Bullet />[`StellarOperationMeasurable!`](/docs/graphql-reference/enums/stellar-operation-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.maximum.<b>get</b></code>](#)<Bullet />[`StellarOperationMeasurable`](/docs/graphql-reference/enums/stellar-operation-measurable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarOperation.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.minimum.<b>of</b></code>](#)<Bullet />[`StellarOperationMeasurable!`](/docs/graphql-reference/enums/stellar-operation-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarOperation.minimum.<b>get</b></code>](#)<Bullet />[`StellarOperationMeasurable`](/docs/graphql-reference/enums/stellar-operation-measurable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarOperation.<b>operation</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Operation
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarOperation.<b>sourceAccount</b></code>](#)<Bullet />[`Address`](/docs/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Operation source account
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarOperation.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Success
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarOperation.<b>timestamp</b></code>](#)<Bullet />[`DateTime`](/docs/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Timestamp
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarOperation.<b>transaction</b></code>](#)<Bullet />[`StellarTransactionDimension`](/docs/graphql-reference/objects/stellar-transaction-dimension) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Transaction
+> 
+
+
+
+### Member of
+
+[`Stellar`](/docs/graphql-reference/objects/stellar)  <Badge class="secondary" text="object"/>
+

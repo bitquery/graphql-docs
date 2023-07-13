@@ -1,0 +1,122 @@
+---
+id: big-int-id-selector
+title: BigIntIdSelector
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Select by ID with BigInt datatype
+
+
+```graphql
+input BigIntIdSelector {
+  is: BigInt
+  not: BigInt
+  in: [BigInt!]
+  notIn: [BigInt!]
+  gt: BigInt
+  lt: BigInt
+  lteq: BigInt
+  gteq: BigInt
+  between: [BigInt!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>BigIntIdSelector.<b>is</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> ID is
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BigIntIdSelector.<b>not</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> ID not
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BigIntIdSelector.<b>in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> ID in the list
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BigIntIdSelector.<b>notIn</b></code>](#)<Bullet />[`[BigInt!]`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> ID not in the list
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BigIntIdSelector.<b>gt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> ID greater than
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BigIntIdSelector.<b>lt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> ID less than
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BigIntIdSelector.<b>lteq</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> ID less or equal than
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BigIntIdSelector.<b>gteq</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> ID greater or equal than
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BigIntIdSelector.<b>between</b></code>](#)<Bullet />[`[BigInt!]`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> ID in range
+> 
+
+
+
+### Member of
+
+[`ElrondBlockFilter`](/docs/graphql-reference/inputs/elrond-block-filter)  <Badge class="secondary" text="input"/><Bullet />[`ElrondBlockValidatorFilter`](/docs/graphql-reference/inputs/elrond-block-validator-filter)  <Badge class="secondary" text="input"/><Bullet />[`ElrondCallResultFilter`](/docs/graphql-reference/inputs/elrond-call-result-filter)  <Badge class="secondary" text="input"/><Bullet />[`ElrondEventFilter`](/docs/graphql-reference/inputs/elrond-event-filter)  <Badge class="secondary" text="input"/><Bullet />[`ElrondMiniblockFilter`](/docs/graphql-reference/inputs/elrond-miniblock-filter)  <Badge class="secondary" text="input"/><Bullet />[`ElrondNotarizedBlockFilter`](/docs/graphql-reference/inputs/elrond-notarized-block-filter)  <Badge class="secondary" text="input"/><Bullet />[`ElrondOperationFilter`](/docs/graphql-reference/inputs/elrond-operation-filter)  <Badge class="secondary" text="input"/><Bullet />[`ElrondTransactionFilter`](/docs/graphql-reference/inputs/elrond-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`ElrondTransferFilter`](/docs/graphql-reference/inputs/elrond-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`EverscaleArgumentFilter`](/docs/graphql-reference/inputs/everscale-argument-filter)  <Badge class="secondary" text="input"/><Bullet />[`EverscaleBlockFilter`](/docs/graphql-reference/inputs/everscale-block-filter)  <Badge class="secondary" text="input"/><Bullet />[`EverscaleCallFilter`](/docs/graphql-reference/inputs/everscale-call-filter)  <Badge class="secondary" text="input"/><Bullet />[`EverscaleEventFilter`](/docs/graphql-reference/inputs/everscale-event-filter)  <Badge class="secondary" text="input"/><Bullet />[`EverscaleMessageFilter`](/docs/graphql-reference/inputs/everscale-message-filter)  <Badge class="secondary" text="input"/><Bullet />[`EverscalePhaseFilter`](/docs/graphql-reference/inputs/everscale-phase-filter)  <Badge class="secondary" text="input"/><Bullet />[`EverscaleTransactionFilter`](/docs/graphql-reference/inputs/everscale-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`EverscaleTransferFilter`](/docs/graphql-reference/inputs/everscale-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`FlowInputFilter`](/docs/graphql-reference/inputs/flow-input-filter)  <Badge class="secondary" text="input"/><Bullet />[`FlowOutputFilter`](/docs/graphql-reference/inputs/flow-output-filter)  <Badge class="secondary" text="input"/><Bullet />[`HarmonyArgumentsFilter`](/docs/graphql-reference/inputs/harmony-arguments-filter)  <Badge class="secondary" text="input"/><Bullet />[`HarmonySmartContractCallsFilter`](/docs/graphql-reference/inputs/harmony-smart-contract-calls-filter)  <Badge class="secondary" text="input"/><Bullet />[`HarmonySmartContractEventsFilter`](/docs/graphql-reference/inputs/harmony-smart-contract-events-filter)  <Badge class="secondary" text="input"/><Bullet />[`HarmonyStakingTransactionsFilter`](/docs/graphql-reference/inputs/harmony-staking-transactions-filter)  <Badge class="secondary" text="input"/><Bullet />[`HarmonyTransactionsFilter`](/docs/graphql-reference/inputs/harmony-transactions-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleAccountRootFilter`](/docs/graphql-reference/inputs/ripple-account-root-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleBalanceFilter`](/docs/graphql-reference/inputs/ripple-balance-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleBlockFilter`](/docs/graphql-reference/inputs/ripple-block-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleCheckFilter`](/docs/graphql-reference/inputs/ripple-check-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleEscrowFilter`](/docs/graphql-reference/inputs/ripple-escrow-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleNftokenOfferFilter`](/docs/graphql-reference/inputs/ripple-nftoken-offer-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleOfferFilter`](/docs/graphql-reference/inputs/ripple-offer-filter)  <Badge class="secondary" text="input"/><Bullet />[`RipplePaymentFilter`](/docs/graphql-reference/inputs/ripple-payment-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleRippleStateFilter`](/docs/graphql-reference/inputs/ripple-ripple-state-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleTransactionFilter`](/docs/graphql-reference/inputs/ripple-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleTransferFilter`](/docs/graphql-reference/inputs/ripple-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`TezosArgumentFilter`](/docs/graphql-reference/inputs/tezos-argument-filter)  <Badge class="secondary" text="input"/><Bullet />[`TezosBalanceUpdateFilter`](/docs/graphql-reference/inputs/tezos-balance-update-filter)  <Badge class="secondary" text="input"/><Bullet />[`TezosBlockFilter`](/docs/graphql-reference/inputs/tezos-block-filter)  <Badge class="secondary" text="input"/><Bullet />[`TezosOperationFilter`](/docs/graphql-reference/inputs/tezos-operation-filter)  <Badge class="secondary" text="input"/><Bullet />[`TezosTransactionFilter`](/docs/graphql-reference/inputs/tezos-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`TezosTransferFilter`](/docs/graphql-reference/inputs/tezos-transfer-filter)  <Badge class="secondary" text="input"/>
+

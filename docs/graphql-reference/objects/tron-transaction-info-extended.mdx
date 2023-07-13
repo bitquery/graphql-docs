@@ -1,0 +1,122 @@
+---
+id: tron-transaction-info-extended
+title: TronTransactionInfoExtended
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Blockchain Transaction Extended info
+
+
+```graphql
+type TronTransactionInfoExtended {
+  contractAddress: Address
+  expiration: Int!
+  feeLimit: Int!
+  hash: String!
+  index: Int
+  refBlockHash: String!
+  result: String
+  signatures: String!
+  success: Boolean
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTransactionInfoExtended.<b>contractAddress</b></code>](#)<Bullet />[`Address`](/docs/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Contract Address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTransactionInfoExtended.<b>expiration</b></code>](#)<Bullet />[`Int!`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Expiration
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTransactionInfoExtended.<b>feeLimit</b></code>](#)<Bullet />[`Int!`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Fee Limit
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTransactionInfoExtended.<b>hash</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Hash hex representation
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTransactionInfoExtended.<b>index</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction index in block, 0 based
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTransactionInfoExtended.<b>refBlockHash</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Ref block Hash hex representation
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTransactionInfoExtended.<b>result</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Result message
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTransactionInfoExtended.<b>signatures</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Signatures
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronTransactionInfoExtended.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Success
+> 
+
+
+
+### Member of
+
+[`TronDexTrades`](/docs/graphql-reference/objects/tron-dex-trades)  <Badge class="secondary" text="object"/>
+

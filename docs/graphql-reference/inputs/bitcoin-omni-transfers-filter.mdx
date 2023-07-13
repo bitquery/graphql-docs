@@ -1,0 +1,139 @@
+---
+id: bitcoin-omni-transfers-filter
+title: BitcoinOmniTransfersFilter
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+input BitcoinOmniTransfersFilter {
+  date: DateSelector
+  time: DateTimeSelector
+  height: BlockSelector
+  txHash: HashSelector
+  txIndex: IntegerSelector
+  version: IntegerSelector
+  valid: IntegerSelector
+  invalidReason: StringSelector
+  type: StringSelector
+  typeId: IntegerSelector
+  txSender: HashSelector
+  feeValue: FloatSelector
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>BitcoinOmniTransfersFilter.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BitcoinOmniTransfersFilter.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BitcoinOmniTransfersFilter.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BitcoinOmniTransfersFilter.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BitcoinOmniTransfersFilter.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BitcoinOmniTransfersFilter.<b>version</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BitcoinOmniTransfersFilter.<b>valid</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BitcoinOmniTransfersFilter.<b>invalidReason</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BitcoinOmniTransfersFilter.<b>type</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BitcoinOmniTransfersFilter.<b>typeId</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BitcoinOmniTransfersFilter.<b>txSender</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BitcoinOmniTransfersFilter.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+

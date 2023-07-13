@@ -1,0 +1,652 @@
+---
+id: ethereum-transfers
+title: EthereumTransfers
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Currency transfers from/to addresses in crypto currencies
+
+
+```graphql
+type EthereumTransfers {
+  amount(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txFrom: [EthereumAddressSelector!]
+    entityId: EntitySelector
+    sender: [EthereumAddressSelector!]
+    receiver: [EthereumAddressSelector!]
+    currency: [EthereumCurrencySelector!]
+    external: Boolean
+    success: Boolean
+    amount: [AmountSelector!]
+  ): Float
+  any(
+    of: EthereumTransfersMeasureable!
+  ): String
+  block(
+    height: BlockSelector
+    time: DateTimeSelector
+  ): Block
+  count(
+    uniq: TransfersUniq
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txFrom: [EthereumAddressSelector!]
+    entityId: EntitySelector
+    sender: [EthereumAddressSelector!]
+    receiver: [EthereumAddressSelector!]
+    currency: [EthereumCurrencySelector!]
+    external: Boolean
+    success: Boolean
+    amount: [AmountSelector!]
+  ): Int
+  countBigInt(
+    uniq: TransfersUniq
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txFrom: [EthereumAddressSelector!]
+    entityId: EntitySelector
+    sender: [EthereumAddressSelector!]
+    receiver: [EthereumAddressSelector!]
+    currency: [EthereumCurrencySelector!]
+    external: Boolean
+    success: Boolean
+    amount: [AmountSelector!]
+  ): BigInt
+  currency(
+    currency: [EthereumCurrencySelector!]
+  ): Currency
+  date: Date
+  entityId(
+    entityId: EntitySelector
+  ): String
+  expression(
+    get: String!
+  ): DecimalNumber
+  external(
+    external: Boolean
+  ): Boolean
+  gasValue(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txFrom: [EthereumAddressSelector!]
+    entityId: EntitySelector
+    sender: [EthereumAddressSelector!]
+    receiver: [EthereumAddressSelector!]
+    currency: [EthereumCurrencySelector!]
+    external: Boolean
+    success: Boolean
+    amount: [AmountSelector!]
+  ): Float
+  maximum(
+    of: EthereumTransfersMeasureable!
+    get: EthereumTransfersMeasureable
+  ): String
+  minimum(
+    of: EthereumTransfersMeasureable!
+    get: EthereumTransfersMeasureable
+  ): String
+  receiver(
+    receiver: [EthereumAddressSelector!]
+  ): EthereumAddressInfo
+  sender(
+    sender: [EthereumAddressSelector!]
+  ): EthereumAddressInfo
+  success(
+    success: Boolean
+  ): Boolean
+  transaction(
+    txHash: [HashSelector!]
+    txFrom: [EthereumAddressSelector!]
+  ): EthereumTransactionInfo
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.<b>amount</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.amount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.amount.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.amount.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.amount.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.amount.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.amount.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.amount.<b>txFrom</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.amount.<b>entityId</b></code>](#)<Bullet />[`EntitySelector`](/docs/graphql-reference/inputs/entity-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.amount.<b>sender</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.amount.<b>receiver</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.amount.<b>currency</b></code>](#)<Bullet />[`[EthereumCurrencySelector!]`](/docs/graphql-reference/inputs/ethereum-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.amount.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.amount.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.amount.<b>amount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.<b>any</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.any.<b>of</b></code>](#)<Bullet />[`EthereumTransfersMeasureable!`](/docs/graphql-reference/enums/ethereum-transfers-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.<b>block</b></code>](#)<Bullet />[`Block`](/docs/graphql-reference/objects/block) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Block where transfer transaction is included
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.block.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.block.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.<b>count</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.count.<b>uniq</b></code>](#)<Bullet />[`TransfersUniq`](/docs/graphql-reference/enums/transfers-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.count.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.count.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.count.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.count.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.count.<b>txFrom</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.count.<b>entityId</b></code>](#)<Bullet />[`EntitySelector`](/docs/graphql-reference/inputs/entity-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.count.<b>sender</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.count.<b>receiver</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.count.<b>currency</b></code>](#)<Bullet />[`[EthereumCurrencySelector!]`](/docs/graphql-reference/inputs/ethereum-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.count.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.count.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.count.<b>amount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.countBigInt.<b>uniq</b></code>](#)<Bullet />[`TransfersUniq`](/docs/graphql-reference/enums/transfers-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.countBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.countBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.countBigInt.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.countBigInt.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.countBigInt.<b>txFrom</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.countBigInt.<b>entityId</b></code>](#)<Bullet />[`EntitySelector`](/docs/graphql-reference/inputs/entity-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.countBigInt.<b>sender</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.countBigInt.<b>receiver</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.countBigInt.<b>currency</b></code>](#)<Bullet />[`[EthereumCurrencySelector!]`](/docs/graphql-reference/inputs/ethereum-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.countBigInt.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.countBigInt.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.countBigInt.<b>amount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.<b>currency</b></code>](#)<Bullet />[`Currency`](/docs/graphql-reference/objects/currency) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Currency of transfer
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.currency.<b>currency</b></code>](#)<Bullet />[`[EthereumCurrencySelector!]`](/docs/graphql-reference/inputs/ethereum-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.<b>date</b></code>](#)<Bullet />[`Date`](/docs/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Calendar date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.<b>entityId</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Entity identifier ( for ERC-721 NFT tokens )
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.entityId.<b>entityId</b></code>](#)<Bullet />[`EntitySelector`](/docs/graphql-reference/inputs/entity-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> External transfer executed explicitly by tx sender. Internal transfers executed by smart contracts.
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.external.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.<b>gasValue</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.gasValue.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.gasValue.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.gasValue.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.gasValue.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.gasValue.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.gasValue.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.gasValue.<b>txFrom</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.gasValue.<b>entityId</b></code>](#)<Bullet />[`EntitySelector`](/docs/graphql-reference/inputs/entity-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.gasValue.<b>sender</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.gasValue.<b>receiver</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.gasValue.<b>currency</b></code>](#)<Bullet />[`[EthereumCurrencySelector!]`](/docs/graphql-reference/inputs/ethereum-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.gasValue.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.gasValue.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.gasValue.<b>amount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.maximum.<b>of</b></code>](#)<Bullet />[`EthereumTransfersMeasureable!`](/docs/graphql-reference/enums/ethereum-transfers-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.maximum.<b>get</b></code>](#)<Bullet />[`EthereumTransfersMeasureable`](/docs/graphql-reference/enums/ethereum-transfers-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.minimum.<b>of</b></code>](#)<Bullet />[`EthereumTransfersMeasureable!`](/docs/graphql-reference/enums/ethereum-transfers-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.minimum.<b>get</b></code>](#)<Bullet />[`EthereumTransfersMeasureable`](/docs/graphql-reference/enums/ethereum-transfers-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.<b>receiver</b></code>](#)<Bullet />[`EthereumAddressInfo`](/docs/graphql-reference/objects/ethereum-address-info) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Transfer receiver
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.receiver.<b>receiver</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.<b>sender</b></code>](#)<Bullet />[`EthereumAddressInfo`](/docs/graphql-reference/objects/ethereum-address-info) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Transfer sender
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.sender.<b>sender</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Success flag
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.success.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.<b>transaction</b></code>](#)<Bullet />[`EthereumTransactionInfo`](/docs/graphql-reference/objects/ethereum-transaction-info) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Transaction where transfer happened
+> ##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.transaction.<b>txHash</b></code>](#)<Bullet />[`[HashSelector!]`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EthereumTransfers.transaction.<b>txFrom</b></code>](#)<Bullet />[`[EthereumAddressSelector!]`](/docs/graphql-reference/inputs/ethereum-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+### Member of
+
+[`Ethereum`](/docs/graphql-reference/objects/ethereum)  <Badge class="secondary" text="object"/>
+

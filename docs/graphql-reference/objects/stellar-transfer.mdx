@@ -1,0 +1,681 @@
+---
+id: stellar-transfer
+title: StellarTransfer
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Transfer in Stellar blockchain
+
+
+```graphql
+type StellarTransfer {
+  amountFrom(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    block: BlockSelector
+    transactionHash: HashSelector
+    transactionIndex: IntegerSelector
+    transactionSender: AddressSelector
+    receiver: AddressSelector
+    sender: AddressSelector
+    operation: StringSelector
+    opIndex: IntegerSelector
+    currencyFromName: CurrencySelector
+    currencyToName: CurrencySelector
+    direction: StringSelector
+    amountFrom: FloatSelector
+    amountTo: FloatSelector
+  ): Float
+  amountTo(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    block: BlockSelector
+    transactionHash: HashSelector
+    transactionIndex: IntegerSelector
+    transactionSender: AddressSelector
+    receiver: AddressSelector
+    sender: AddressSelector
+    operation: StringSelector
+    opIndex: IntegerSelector
+    currencyFromName: CurrencySelector
+    currencyToName: CurrencySelector
+    direction: StringSelector
+    amountFrom: FloatSelector
+    amountTo: FloatSelector
+  ): Float
+  any(
+    of: StellarTransferMeasurable!
+  ): String
+  block: BigInt
+  count(
+    uniq: StellarTransferUniq
+    date: DateSelector
+    time: DateTimeSelector
+    block: BlockSelector
+    transactionHash: HashSelector
+    transactionIndex: IntegerSelector
+    transactionSender: AddressSelector
+    receiver: AddressSelector
+    sender: AddressSelector
+    operation: StringSelector
+    opIndex: IntegerSelector
+    currencyFromName: CurrencySelector
+    currencyToName: CurrencySelector
+    direction: StringSelector
+    amountFrom: FloatSelector
+    amountTo: FloatSelector
+  ): Int
+  countBigInt(
+    uniq: StellarTransferUniq
+    date: DateSelector
+    time: DateTimeSelector
+    block: BlockSelector
+    transactionHash: HashSelector
+    transactionIndex: IntegerSelector
+    transactionSender: AddressSelector
+    receiver: AddressSelector
+    sender: AddressSelector
+    operation: StringSelector
+    opIndex: IntegerSelector
+    currencyFromName: CurrencySelector
+    currencyToName: CurrencySelector
+    direction: StringSelector
+    amountFrom: FloatSelector
+    amountTo: FloatSelector
+  ): BigInt
+  currencyFrom: Currency
+  currencyTo: Currency
+  date: Date
+  direction: String
+  expression(
+    get: String!
+  ): DecimalNumber
+  maximum(
+    of: StellarTransferMeasurable!
+    get: StellarTransferMeasurable
+  ): String
+  minimum(
+    of: StellarTransferMeasurable!
+    get: StellarTransferMeasurable
+  ): String
+  operation: OperationIndexed
+  receiver: Address
+  sender: Address
+  timestamp: DateTime
+  transaction: StellarTransactionDimension
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.<b>amountFrom</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountFrom.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountFrom.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountFrom.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountFrom.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountFrom.<b>block</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountFrom.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountFrom.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountFrom.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountFrom.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountFrom.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountFrom.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountFrom.<b>opIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountFrom.<b>currencyFromName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountFrom.<b>currencyToName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountFrom.<b>direction</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountFrom.<b>amountFrom</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountFrom.<b>amountTo</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.<b>amountTo</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountTo.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountTo.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountTo.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountTo.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountTo.<b>block</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountTo.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountTo.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountTo.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountTo.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountTo.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountTo.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountTo.<b>opIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountTo.<b>currencyFromName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountTo.<b>currencyToName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountTo.<b>direction</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountTo.<b>amountFrom</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.amountTo.<b>amountTo</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.<b>any</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.any.<b>of</b></code>](#)<Bullet />[`StellarTransferMeasurable!`](/docs/graphql-reference/enums/stellar-transfer-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.<b>block</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> The sequence number of the ledger that this transaction was included in
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.<b>count</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.count.<b>uniq</b></code>](#)<Bullet />[`StellarTransferUniq`](/docs/graphql-reference/enums/stellar-transfer-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.count.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.count.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.count.<b>block</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.count.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.count.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.count.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.count.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.count.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.count.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.count.<b>opIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.count.<b>currencyFromName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.count.<b>currencyToName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.count.<b>direction</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.count.<b>amountFrom</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.count.<b>amountTo</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.countBigInt.<b>uniq</b></code>](#)<Bullet />[`StellarTransferUniq`](/docs/graphql-reference/enums/stellar-transfer-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.countBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.countBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.countBigInt.<b>block</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.countBigInt.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.countBigInt.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.countBigInt.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.countBigInt.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.countBigInt.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.countBigInt.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.countBigInt.<b>opIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.countBigInt.<b>currencyFromName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.countBigInt.<b>currencyToName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.countBigInt.<b>direction</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.countBigInt.<b>amountFrom</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.countBigInt.<b>amountTo</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.<b>currencyFrom</b></code>](#)<Bullet />[`Currency`](/docs/graphql-reference/objects/currency) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Currency from of transfer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.<b>currencyTo</b></code>](#)<Bullet />[`Currency`](/docs/graphql-reference/objects/currency) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Currency to of transfer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.<b>date</b></code>](#)<Bullet />[`Date`](/docs/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The date this transaction was created
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.<b>direction</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Direction
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.maximum.<b>of</b></code>](#)<Bullet />[`StellarTransferMeasurable!`](/docs/graphql-reference/enums/stellar-transfer-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.maximum.<b>get</b></code>](#)<Bullet />[`StellarTransferMeasurable`](/docs/graphql-reference/enums/stellar-transfer-measurable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.minimum.<b>of</b></code>](#)<Bullet />[`StellarTransferMeasurable!`](/docs/graphql-reference/enums/stellar-transfer-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.minimum.<b>get</b></code>](#)<Bullet />[`StellarTransferMeasurable`](/docs/graphql-reference/enums/stellar-transfer-measurable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.<b>operation</b></code>](#)<Bullet />[`OperationIndexed`](/docs/graphql-reference/objects/operation-indexed) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Operation
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.<b>receiver</b></code>](#)<Bullet />[`Address`](/docs/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The account this transaction is been sent to
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.<b>sender</b></code>](#)<Bullet />[`Address`](/docs/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.<b>timestamp</b></code>](#)<Bullet />[`DateTime`](/docs/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The time this transaction was created
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarTransfer.<b>transaction</b></code>](#)<Bullet />[`StellarTransactionDimension`](/docs/graphql-reference/objects/stellar-transaction-dimension) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Transaction
+> 
+
+
+
+### Member of
+
+[`Stellar`](/docs/graphql-reference/objects/stellar)  <Badge class="secondary" text="object"/>
+

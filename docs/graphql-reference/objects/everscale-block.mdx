@@ -1,0 +1,939 @@
+---
+id: everscale-block
+title: EverscaleBlock
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Block in Everscale blockchain
+
+
+```graphql
+type EverscaleBlock {
+  afterMerge: Boolean
+  afterSplit: Boolean
+  any(
+    of: EverscaleBlockMeasurable!
+  ): String
+  beforeSplit: Boolean
+  boc: String
+  count(
+    uniq: EverscaleBlockUniq
+    date: DateSelector
+    time: DateTimeSelector
+    blockHash: HashSelector
+    blockHeight: BlockSelector
+    blockShard: BigIntIdSelector
+    blockWorkchain: BigIntIdSelector
+    shardedHeight: BlockSelector
+    shardedBlockHash: HashSelector
+    shardedBlockShard: BigIntIdSelector
+    shardedBlockWorkchain: BigIntIdSelector
+    previousBlock: BlockSelector
+    txCount: IntegerSelector
+    status: IntegerSelector
+    globalId: IntegerSelector
+    logicalTimeStart: BigIntegerSelector
+    logicalTimeEnd: BigIntegerSelector
+    version: BigIntegerSelector
+    afterMerge: BooleanSelector
+    afterSplit: BooleanSelector
+    beforeSplit: BooleanSelector
+    wantMerge: BooleanSelector
+    wantSplit: BooleanSelector
+    verticalSeqNo: BigIntegerSelector
+    minimalReferenceMasterchainBlock: BigIntegerSelector
+    catchainSeqno: IntegerSelector
+    validatorListHastShort: IntegerSelector
+    softwareVersion: IntegerSelector
+    softwareCapabilities: StringSelector
+    valueFlowFromPreviousBlock: BigIntegerSelector
+    valueFlowToNextBlock: BigIntegerSelector
+    valueFlowImported: BigIntegerSelector
+    valueFlowExported: BigIntegerSelector
+    valueFlowFeesCollected: BigIntegerSelector
+    valueFlowFeesImported: BigIntegerSelector
+    valueFlowCreated: BigIntegerSelector
+    valueFlowMinted: BigIntegerSelector
+  ): Int
+  countBigInt(
+    uniq: EverscaleBlockUniq
+    date: DateSelector
+    time: DateTimeSelector
+    blockHash: HashSelector
+    blockHeight: BlockSelector
+    blockShard: BigIntIdSelector
+    blockWorkchain: BigIntIdSelector
+    shardedHeight: BlockSelector
+    shardedBlockHash: HashSelector
+    shardedBlockShard: BigIntIdSelector
+    shardedBlockWorkchain: BigIntIdSelector
+    previousBlock: BlockSelector
+    txCount: IntegerSelector
+    status: IntegerSelector
+    globalId: IntegerSelector
+    logicalTimeStart: BigIntegerSelector
+    logicalTimeEnd: BigIntegerSelector
+    version: BigIntegerSelector
+    afterMerge: BooleanSelector
+    afterSplit: BooleanSelector
+    beforeSplit: BooleanSelector
+    wantMerge: BooleanSelector
+    wantSplit: BooleanSelector
+    verticalSeqNo: BigIntegerSelector
+    minimalReferenceMasterchainBlock: BigIntegerSelector
+    catchainSeqno: IntegerSelector
+    validatorListHastShort: IntegerSelector
+    softwareVersion: IntegerSelector
+    softwareCapabilities: StringSelector
+    valueFlowFromPreviousBlock: BigIntegerSelector
+    valueFlowToNextBlock: BigIntegerSelector
+    valueFlowImported: BigIntegerSelector
+    valueFlowExported: BigIntegerSelector
+    valueFlowFeesCollected: BigIntegerSelector
+    valueFlowFeesImported: BigIntegerSelector
+    valueFlowCreated: BigIntegerSelector
+    valueFlowMinted: BigIntegerSelector
+  ): BigInt
+  date: Date
+  expression(
+    get: String!
+  ): DecimalNumber
+  general(
+    catchainSeqno: IntegerSelector
+    validatorListHastShort: IntegerSelector
+    softwareVersion: IntegerSelector
+    softwareCapabilities: StringSelector
+  ): EverscaleGeneralDimension
+  globalId: Int
+  hash: String
+  height: BigInt
+  logicalTimeEnd: BigInt
+  logicalTimeStart: BigInt
+  maximum(
+    of: EverscaleBlockMeasurable!
+    get: EverscaleBlockMeasurable
+  ): String
+  minimalReferenceMasterchainBlock: BigInt
+  minimum(
+    of: EverscaleBlockMeasurable!
+    get: EverscaleBlockMeasurable
+  ): String
+  previousBlock: BigInt
+  randomSeed: String
+  shard: String
+  shardedBlock(
+    height: BlockSelector
+    hash: HashSelector
+    shard: StringIdSelector
+    workchain: BigIntIdSelector
+  ): EverscaleShardedBlockDimension
+  status: Int
+  timestamp: DateTime
+  txCount: BigInt
+  value(
+    valueFlowFromPreviousBlock: BigIntegerSelector
+    valueFlowToNextBlock: BigIntegerSelector
+    valueFlowImported: BigIntegerSelector
+    valueFlowExported: BigIntegerSelector
+    valueFlowFeesCollected: BigIntegerSelector
+    valueFlowFeesImported: BigIntegerSelector
+    valueFlowCreated: BigIntegerSelector
+    valueFlowMinted: BigIntegerSelector
+  ): EverscaleValueDimension
+  version: BigInt
+  verticalSeqNo: BigInt
+  wantMerge: Boolean
+  wantSplit: Boolean
+  workchain: BigInt
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>afterMerge</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> After Merge
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>afterSplit</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> After Split
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>any</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.any.<b>of</b></code>](#)<Bullet />[`EverscaleBlockMeasurable!`](/docs/graphql-reference/enums/everscale-block-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>beforeSplit</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Before Split
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>boc</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Boc
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>count</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>uniq</b></code>](#)<Bullet />[`EverscaleBlockUniq`](/docs/graphql-reference/enums/everscale-block-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>blockHeight</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>blockShard</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>blockWorkchain</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>shardedHeight</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>shardedBlockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>shardedBlockShard</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>shardedBlockWorkchain</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>previousBlock</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>txCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>status</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>globalId</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>logicalTimeStart</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>logicalTimeEnd</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>version</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>afterMerge</b></code>](#)<Bullet />[`BooleanSelector`](/docs/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>afterSplit</b></code>](#)<Bullet />[`BooleanSelector`](/docs/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>beforeSplit</b></code>](#)<Bullet />[`BooleanSelector`](/docs/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>wantMerge</b></code>](#)<Bullet />[`BooleanSelector`](/docs/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>wantSplit</b></code>](#)<Bullet />[`BooleanSelector`](/docs/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>verticalSeqNo</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>minimalReferenceMasterchainBlock</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>catchainSeqno</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>validatorListHastShort</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>softwareVersion</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>softwareCapabilities</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>valueFlowFromPreviousBlock</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>valueFlowToNextBlock</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>valueFlowImported</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>valueFlowExported</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>valueFlowFeesCollected</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>valueFlowFeesImported</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>valueFlowCreated</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.count.<b>valueFlowMinted</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>uniq</b></code>](#)<Bullet />[`EverscaleBlockUniq`](/docs/graphql-reference/enums/everscale-block-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>blockHeight</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>blockShard</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>blockWorkchain</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>shardedHeight</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>shardedBlockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>shardedBlockShard</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>shardedBlockWorkchain</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>previousBlock</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>txCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>status</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>globalId</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>logicalTimeStart</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>logicalTimeEnd</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>version</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>afterMerge</b></code>](#)<Bullet />[`BooleanSelector`](/docs/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>afterSplit</b></code>](#)<Bullet />[`BooleanSelector`](/docs/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>beforeSplit</b></code>](#)<Bullet />[`BooleanSelector`](/docs/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>wantMerge</b></code>](#)<Bullet />[`BooleanSelector`](/docs/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>wantSplit</b></code>](#)<Bullet />[`BooleanSelector`](/docs/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>verticalSeqNo</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>minimalReferenceMasterchainBlock</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>catchainSeqno</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>validatorListHastShort</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>softwareVersion</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>softwareCapabilities</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>valueFlowFromPreviousBlock</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>valueFlowToNextBlock</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>valueFlowImported</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>valueFlowExported</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>valueFlowFeesCollected</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>valueFlowFeesImported</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>valueFlowCreated</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.countBigInt.<b>valueFlowMinted</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>date</b></code>](#)<Bullet />[`Date`](/docs/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Calendar date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>general</b></code>](#)<Bullet />[`EverscaleGeneralDimension`](/docs/graphql-reference/objects/everscale-general-dimension) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Information about block general
+> ##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.general.<b>catchainSeqno</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.general.<b>validatorListHastShort</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.general.<b>softwareVersion</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.general.<b>softwareCapabilities</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>globalId</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Global Id
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>hash</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Hash of the the block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>height</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Number of block in the blockchains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>logicalTimeEnd</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Logical Time end
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>logicalTimeStart</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Logical Time Start
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.maximum.<b>of</b></code>](#)<Bullet />[`EverscaleBlockMeasurable!`](/docs/graphql-reference/enums/everscale-block-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.maximum.<b>get</b></code>](#)<Bullet />[`EverscaleBlockMeasurable`](/docs/graphql-reference/enums/everscale-block-measurable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>minimalReferenceMasterchainBlock</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Minimal Reference Masterchain Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.minimum.<b>of</b></code>](#)<Bullet />[`EverscaleBlockMeasurable!`](/docs/graphql-reference/enums/everscale-block-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.minimum.<b>get</b></code>](#)<Bullet />[`EverscaleBlockMeasurable`](/docs/graphql-reference/enums/everscale-block-measurable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>previousBlock</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Previous Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>randomSeed</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Random Seed
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>shard</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Shard number of block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>shardedBlock</b></code>](#)<Bullet />[`EverscaleShardedBlockDimension`](/docs/graphql-reference/objects/everscale-sharded-block-dimension) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Sharded Block Information
+> ##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.shardedBlock.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.shardedBlock.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.shardedBlock.<b>shard</b></code>](#)<Bullet />[`StringIdSelector`](/docs/graphql-reference/inputs/string-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.shardedBlock.<b>workchain</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>status</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Status
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>timestamp</b></code>](#)<Bullet />[`DateTime`](/docs/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Timestamp
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>txCount</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Tx Count
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>value</b></code>](#)<Bullet />[`EverscaleValueDimension`](/docs/graphql-reference/objects/everscale-value-dimension) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.value.<b>valueFlowFromPreviousBlock</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.value.<b>valueFlowToNextBlock</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.value.<b>valueFlowImported</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.value.<b>valueFlowExported</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.value.<b>valueFlowFeesCollected</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.value.<b>valueFlowFeesImported</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.value.<b>valueFlowCreated</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.value.<b>valueFlowMinted</b></code>](#)<Bullet />[`BigIntegerSelector`](/docs/graphql-reference/inputs/big-integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>version</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Version
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>verticalSeqNo</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Vertical Sequence
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>wantMerge</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Want Merge
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>wantSplit</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Want Split
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EverscaleBlock.<b>workchain</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Proposer block hash
+> 
+
+
+
+### Member of
+
+[`Everscale`](/docs/graphql-reference/objects/everscale)  <Badge class="secondary" text="object"/>
+

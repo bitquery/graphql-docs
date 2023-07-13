@@ -1,0 +1,115 @@
+---
+id: smart-contract-type
+title: SmartContractType
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum SmartContractType {
+  None
+  Generic
+  MarginPositionToken
+  Multisig
+  Token
+  TokenSale
+  DEX
+  TEAL
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractType.<b>None</b></code>](#)  
+> 
+> 
+> Not A Smart contract
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractType.<b>Generic</b></code>](#)  
+> 
+> 
+> General Purpose Smart contract
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractType.<b>MarginPositionToken</b></code>](#)  
+> 
+> 
+> Smart contract for token derivatives
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractType.<b>Multisig</b></code>](#)  
+> 
+> 
+> Multi signature wallet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractType.<b>Token</b></code>](#)  
+> 
+> 
+> Token
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractType.<b>TokenSale</b></code>](#)  
+> 
+> 
+> Token Sale
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractType.<b>DEX</b></code>](#)  
+> 
+> 
+> Decentralized exchange
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SmartContractType.<b>TEAL</b></code>](#)  
+> 
+> 
+> Transaction Execution Approval Language
+> 
+
+
+
+### Member of
+
+[`ConfluxSmartContract`](/docs/graphql-reference/objects/conflux-smart-contract)  <Badge class="secondary" text="object"/><Bullet />[`ConfluxSmartContractInfo`](/docs/graphql-reference/objects/conflux-smart-contract-info)  <Badge class="secondary" text="object"/><Bullet />[`ConfluxSmartContractInfoWithAttributes`](/docs/graphql-reference/objects/conflux-smart-contract-info-with-attributes)  <Badge class="secondary" text="object"/><Bullet />[`ConfluxSmartContractTypeSelector`](/docs/graphql-reference/inputs/conflux-smart-contract-type-selector)  <Badge class="secondary" text="input"/><Bullet />[`EosSmartContract`](/docs/graphql-reference/objects/eos-smart-contract)  <Badge class="secondary" text="object"/><Bullet />[`EosSmartContractInfo`](/docs/graphql-reference/objects/eos-smart-contract-info)  <Badge class="secondary" text="object"/><Bullet />[`EthereumSmartContract`](/docs/graphql-reference/objects/ethereum-smart-contract)  <Badge class="secondary" text="object"/><Bullet />[`EthereumSmartContractInfo`](/docs/graphql-reference/objects/ethereum-smart-contract-info)  <Badge class="secondary" text="object"/><Bullet />[`EthereumSmartContractInfoWithAttributes`](/docs/graphql-reference/objects/ethereum-smart-contract-info-with-attributes)  <Badge class="secondary" text="object"/><Bullet />[`SmartContract`](/docs/graphql-reference/objects/smart-contract)  <Badge class="secondary" text="object"/><Bullet />[`SmartContractInfo`](/docs/graphql-reference/objects/smart-contract-info)  <Badge class="secondary" text="object"/><Bullet />[`SmartContractTypeSelector`](/docs/graphql-reference/inputs/smart-contract-type-selector)  <Badge class="secondary" text="input"/><Bullet />[`TronSmartContract`](/docs/graphql-reference/objects/tron-smart-contract)  <Badge class="secondary" text="object"/><Bullet />[`TronSmartContractInfo`](/docs/graphql-reference/objects/tron-smart-contract-info)  <Badge class="secondary" text="object"/>
+

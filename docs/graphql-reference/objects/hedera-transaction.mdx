@@ -1,0 +1,502 @@
+---
+id: hedera-transaction
+title: HederaTransaction
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Transactions in Hedera blockchain
+
+
+```graphql
+type HederaTransaction {
+  any(
+    of: HederaTransactionMeasureable!
+  ): String
+  consensusTimestamp: Timestamp
+  count(
+    uniq: HederaTransactionsUniq
+  ): Int
+  countBigInt(
+    uniq: HederaTransactionsUniq
+  ): BigInt
+  date: Date
+  entity(
+    entityType: EntityTypeSelector
+  ): Entity
+  expression(
+    get: String!
+  ): DecimalNumber
+  feeCurrency: Currency
+  initialBalance(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    nodeAccount: StringSelector
+    payerAccount: StringSelector
+    transactionHash: HashSelector
+    result: HashSelector
+    entityType: EntityTypeSelector
+    success: Boolean
+  ): Float
+  maxFee(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    nodeAccount: StringSelector
+    payerAccount: StringSelector
+    transactionHash: HashSelector
+    result: HashSelector
+    entityType: EntityTypeSelector
+    success: Boolean
+  ): Float
+  maximum(
+    of: HederaTransactionMeasureable!
+    get: HederaTransactionMeasureable
+  ): String
+  memo: String
+  minimum(
+    of: HederaTransactionMeasureable!
+    get: HederaTransactionMeasureable
+  ): String
+  nodeAccount: Account
+  payerAccount: Account
+  result(
+    result: HashSelector
+  ): TransactionResult
+  success(
+    success: Boolean
+  ): Boolean
+  time: DateTime
+  transactionBytes: String
+  transactionFee(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    nodeAccount: StringSelector
+    payerAccount: StringSelector
+    transactionHash: HashSelector
+    result: HashSelector
+    entityType: EntityTypeSelector
+    success: Boolean
+  ): Float
+  transactionHash(
+    transactionHash: HashSelector
+  ): String
+  transactionType: String
+  transactionValidDurationInSec: Int
+  validStart(
+    time: DateTimeSelector
+    nanoseconds: BigInt
+  ): Timestamp
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>any</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.any.<b>of</b></code>](#)<Bullet />[`HederaTransactionMeasureable!`](/docs/graphql-reference/enums/hedera-transaction-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>consensusTimestamp</b></code>](#)<Bullet />[`Timestamp`](/docs/graphql-reference/objects/timestamp) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>count</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.count.<b>uniq</b></code>](#)<Bullet />[`HederaTransactionsUniq`](/docs/graphql-reference/enums/hedera-transactions-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.countBigInt.<b>uniq</b></code>](#)<Bullet />[`HederaTransactionsUniq`](/docs/graphql-reference/enums/hedera-transactions-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>date</b></code>](#)<Bullet />[`Date`](/docs/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Calendar date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>entity</b></code>](#)<Bullet />[`Entity`](/docs/graphql-reference/objects/entity) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Entity
+> ##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.entity.<b>entityType</b></code>](#)<Bullet />[`EntityTypeSelector`](/docs/graphql-reference/inputs/entity-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>feeCurrency</b></code>](#)<Bullet />[`Currency`](/docs/graphql-reference/objects/currency) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Currency of transfer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>initialBalance</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.initialBalance.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.initialBalance.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.initialBalance.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.initialBalance.<b>nodeAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.initialBalance.<b>payerAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.initialBalance.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.initialBalance.<b>result</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.initialBalance.<b>entityType</b></code>](#)<Bullet />[`EntityTypeSelector`](/docs/graphql-reference/inputs/entity-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.initialBalance.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>maxFee</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.maxFee.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.maxFee.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.maxFee.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.maxFee.<b>nodeAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.maxFee.<b>payerAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.maxFee.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.maxFee.<b>result</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.maxFee.<b>entityType</b></code>](#)<Bullet />[`EntityTypeSelector`](/docs/graphql-reference/inputs/entity-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.maxFee.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.maximum.<b>of</b></code>](#)<Bullet />[`HederaTransactionMeasureable!`](/docs/graphql-reference/enums/hedera-transaction-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.maximum.<b>get</b></code>](#)<Bullet />[`HederaTransactionMeasureable`](/docs/graphql-reference/enums/hedera-transaction-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>memo</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.minimum.<b>of</b></code>](#)<Bullet />[`HederaTransactionMeasureable!`](/docs/graphql-reference/enums/hedera-transaction-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.minimum.<b>get</b></code>](#)<Bullet />[`HederaTransactionMeasureable`](/docs/graphql-reference/enums/hedera-transaction-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>nodeAccount</b></code>](#)<Bullet />[`Account`](/docs/graphql-reference/objects/account) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Used to reference a specific
+>       account of the node the transaction is being sent to
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>payerAccount</b></code>](#)<Bullet />[`Account`](/docs/graphql-reference/objects/account) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Used to
+>       reference a specific account in transactions
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>result</b></code>](#)<Bullet />[`TransactionResult`](/docs/graphql-reference/objects/transaction-result) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Transaction result
+> ##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.result.<b>result</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Success
+> ##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.success.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>time</b></code>](#)<Bullet />[`DateTime`](/docs/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Calendar time
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>transactionBytes</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>transactionFee</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.transactionFee.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.transactionFee.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.transactionFee.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.transactionFee.<b>nodeAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.transactionFee.<b>payerAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.transactionFee.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.transactionFee.<b>result</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.transactionFee.<b>entityType</b></code>](#)<Bullet />[`EntityTypeSelector`](/docs/graphql-reference/inputs/entity-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.transactionFee.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>transactionHash</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction hash where transfer happened
+> ##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.transactionHash.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>transactionType</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction Type
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>transactionValidDurationInSec</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.<b>validStart</b></code>](#)<Bullet />[`Timestamp`](/docs/graphql-reference/objects/timestamp) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.validStart.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HederaTransaction.validStart.<b>nanoseconds</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+
+
+### Member of
+
+[`Hedera`](/docs/graphql-reference/objects/hedera)  <Badge class="secondary" text="object"/>
+

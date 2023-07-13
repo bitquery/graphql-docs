@@ -1,0 +1,374 @@
+---
+id: binance-block
+title: BinanceBlock
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Block
+
+
+```graphql
+type BinanceBlock {
+  any(
+    of: BinanceBlocksMeasureable!
+  ): String
+  blockId(
+    blockId: StringIdSelector
+  ): String
+  count(
+    uniq: BinanceBlockUniq
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    blockId: StringIdSelector
+    validatorMoniker: StringIdSelector
+    validatorFeeAddr: BinanceAddressSelector
+    validatorOperatorAddress: BinanceAddressSelector
+    validatorOperahraddress: BinanceAddressSelector
+  ): Int
+  countBigInt(
+    uniq: BinanceBlockUniq
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    blockId: StringIdSelector
+    validatorMoniker: StringIdSelector
+    validatorFeeAddr: BinanceAddressSelector
+    validatorOperatorAddress: BinanceAddressSelector
+    validatorOperahraddress: BinanceAddressSelector
+  ): BigInt
+  date: Date
+  expression(
+    get: String!
+  ): DecimalNumber
+  height(
+    height: BlockSelector
+  ): Int!
+  maximum(
+    of: BinanceBlocksMeasureable!
+    get: BinanceBlocksMeasureable
+  ): String
+  minimum(
+    of: BinanceBlocksMeasureable!
+    get: BinanceBlocksMeasureable
+  ): String
+  timestamp(
+    time: DateTimeSelector
+  ): DateTime
+  validatorConsensusPubkey(
+    validatorConsensusPubkey: StringIdSelector
+  ): String
+  validatorFeeAddr(
+    validatorFeeAddr: BinanceAddressSelector
+  ): Address
+  validatorMoniker(
+    validatorMoniker: StringIdSelector
+  ): String
+  validatorOperaHrAddress(
+    validatorOperaHrAddress: BinanceAddressSelector
+  ): Address
+  validatorOperatorAddress(
+    validatorOperatorAddress: BinanceAddressSelector
+  ): Address
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.<b>any</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.any.<b>of</b></code>](#)<Bullet />[`BinanceBlocksMeasureable!`](/docs/graphql-reference/enums/binance-blocks-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.<b>blockId</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Block ID
+> ##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.blockId.<b>blockId</b></code>](#)<Bullet />[`StringIdSelector`](/docs/graphql-reference/inputs/string-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.<b>count</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.count.<b>uniq</b></code>](#)<Bullet />[`BinanceBlockUniq`](/docs/graphql-reference/enums/binance-block-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.count.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.count.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.count.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.count.<b>blockId</b></code>](#)<Bullet />[`StringIdSelector`](/docs/graphql-reference/inputs/string-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.count.<b>validatorMoniker</b></code>](#)<Bullet />[`StringIdSelector`](/docs/graphql-reference/inputs/string-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.count.<b>validatorFeeAddr</b></code>](#)<Bullet />[`BinanceAddressSelector`](/docs/graphql-reference/inputs/binance-address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.count.<b>validatorOperatorAddress</b></code>](#)<Bullet />[`BinanceAddressSelector`](/docs/graphql-reference/inputs/binance-address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.count.<b>validatorOperahraddress</b></code>](#)<Bullet />[`BinanceAddressSelector`](/docs/graphql-reference/inputs/binance-address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.countBigInt.<b>uniq</b></code>](#)<Bullet />[`BinanceBlockUniq`](/docs/graphql-reference/enums/binance-block-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.countBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.countBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.countBigInt.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.countBigInt.<b>blockId</b></code>](#)<Bullet />[`StringIdSelector`](/docs/graphql-reference/inputs/string-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.countBigInt.<b>validatorMoniker</b></code>](#)<Bullet />[`StringIdSelector`](/docs/graphql-reference/inputs/string-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.countBigInt.<b>validatorFeeAddr</b></code>](#)<Bullet />[`BinanceAddressSelector`](/docs/graphql-reference/inputs/binance-address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.countBigInt.<b>validatorOperatorAddress</b></code>](#)<Bullet />[`BinanceAddressSelector`](/docs/graphql-reference/inputs/binance-address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.countBigInt.<b>validatorOperahraddress</b></code>](#)<Bullet />[`BinanceAddressSelector`](/docs/graphql-reference/inputs/binance-address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.<b>date</b></code>](#)<Bullet />[`Date`](/docs/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Calendar date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.<b>height</b></code>](#)<Bullet />[`Int!`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Block number (height) in blockchain
+> ##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.height.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.maximum.<b>of</b></code>](#)<Bullet />[`BinanceBlocksMeasureable!`](/docs/graphql-reference/enums/binance-blocks-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.maximum.<b>get</b></code>](#)<Bullet />[`BinanceBlocksMeasureable`](/docs/graphql-reference/enums/binance-blocks-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.minimum.<b>of</b></code>](#)<Bullet />[`BinanceBlocksMeasureable!`](/docs/graphql-reference/enums/binance-blocks-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.minimum.<b>get</b></code>](#)<Bullet />[`BinanceBlocksMeasureable`](/docs/graphql-reference/enums/binance-blocks-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.<b>timestamp</b></code>](#)<Bullet />[`DateTime`](/docs/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Block timestamp
+> ##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.timestamp.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.<b>validatorConsensusPubkey</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Validator consensus pubkey
+> ##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.validatorConsensusPubkey.<b>validatorConsensusPubkey</b></code>](#)<Bullet />[`StringIdSelector`](/docs/graphql-reference/inputs/string-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.<b>validatorFeeAddr</b></code>](#)<Bullet />[`Address`](/docs/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Validator fee address
+> ##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.validatorFeeAddr.<b>validatorFeeAddr</b></code>](#)<Bullet />[`BinanceAddressSelector`](/docs/graphql-reference/inputs/binance-address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.<b>validatorMoniker</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Validator moniker
+> ##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.validatorMoniker.<b>validatorMoniker</b></code>](#)<Bullet />[`StringIdSelector`](/docs/graphql-reference/inputs/string-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.<b>validatorOperaHrAddress</b></code>](#)<Bullet />[`Address`](/docs/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Validator operator HR address
+> ##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.validatorOperaHrAddress.<b>validatorOperaHrAddress</b></code>](#)<Bullet />[`BinanceAddressSelector`](/docs/graphql-reference/inputs/binance-address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.<b>validatorOperatorAddress</b></code>](#)<Bullet />[`Address`](/docs/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Validator operator address
+> ##### [<code style={{ fontWeight: 'normal' }}>BinanceBlock.validatorOperatorAddress.<b>validatorOperatorAddress</b></code>](#)<Bullet />[`BinanceAddressSelector`](/docs/graphql-reference/inputs/binance-address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+### Member of
+
+[`Binance`](/docs/graphql-reference/objects/binance)  <Badge class="secondary" text="object"/>
+

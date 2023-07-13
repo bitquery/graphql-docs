@@ -1,0 +1,779 @@
+---
+id: stellar-liquidity-pool-effect
+title: StellarLiquidityPoolEffect
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Liquidity pool effect in Stellar blockchain
+
+
+```graphql
+type StellarLiquidityPoolEffect {
+  amount(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    block: BlockSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSender: AddressSelector
+    operation: StringSelector
+    opIndex: IntegerSelector
+    opSourceAccount: AddressSelector
+    effect: StringSelector
+    effectIndex: IntegerSelector
+    order: IntegerSelector
+    currencyName: CurrencySelector
+    issuer: AddressSelector
+    liquidityPoolId: StringSelector
+    liquidityPoolDetails: StringSelector
+    amount: FloatSelector
+    shares: FloatSelector
+  ): DecimalNumberAsDiv
+  any(
+    of: StellarLiquidityPoolEffectMeasurable!
+  ): String
+  block: BigInt
+  count(
+    uniq: StellarLiquidityPoolEffectUniq
+    date: DateSelector
+    time: DateTimeSelector
+    block: BlockSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSender: AddressSelector
+    operation: StringSelector
+    opIndex: IntegerSelector
+    opSourceAccount: AddressSelector
+    effect: StringSelector
+    effectIndex: IntegerSelector
+    order: IntegerSelector
+    currencyName: CurrencySelector
+    issuer: AddressSelector
+    liquidityPoolId: StringSelector
+    liquidityPoolDetails: StringSelector
+    amount: FloatSelector
+    shares: FloatSelector
+  ): Int
+  countBigInt(
+    uniq: StellarLiquidityPoolEffectUniq
+    date: DateSelector
+    time: DateTimeSelector
+    block: BlockSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSender: AddressSelector
+    operation: StringSelector
+    opIndex: IntegerSelector
+    opSourceAccount: AddressSelector
+    effect: StringSelector
+    effectIndex: IntegerSelector
+    order: IntegerSelector
+    currencyName: CurrencySelector
+    issuer: AddressSelector
+    liquidityPoolId: StringSelector
+    liquidityPoolDetails: StringSelector
+    amount: FloatSelector
+    shares: FloatSelector
+  ): BigInt
+  currency: Currency
+  date: Date
+  effect: String
+  effectIndex: Int
+  expression(
+    get: String!
+  ): DecimalNumber
+  issuer: Address
+  liquidityPoolDetails: String
+  liquidityPoolId: String
+  maximum(
+    of: StellarLiquidityPoolEffectMeasurable!
+    get: StellarLiquidityPoolEffectMeasurable
+  ): String
+  minimum(
+    of: StellarLiquidityPoolEffectMeasurable!
+    get: StellarLiquidityPoolEffectMeasurable
+  ): String
+  operation: OperationIndexedWithAccount
+  order: Int
+  shares(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    block: BlockSelector
+    transactionIndex: IntegerSelector
+    transactionHash: HashSelector
+    transactionSender: AddressSelector
+    operation: StringSelector
+    opIndex: IntegerSelector
+    opSourceAccount: AddressSelector
+    effect: StringSelector
+    effectIndex: IntegerSelector
+    order: IntegerSelector
+    currencyName: CurrencySelector
+    issuer: AddressSelector
+    liquidityPoolId: StringSelector
+    liquidityPoolDetails: StringSelector
+    amount: FloatSelector
+    shares: FloatSelector
+  ): DecimalNumber
+  timestamp: DateTime
+  transaction: StellarTransactionDimension
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>amount</b></code>](#)<Bullet />[`DecimalNumberAsDiv`](/docs/graphql-reference/scalars/decimal-number-as-div) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>block</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>opIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>opSourceAccount</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>effect</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>effectIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>order</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>currencyName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>issuer</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>liquidityPoolId</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>liquidityPoolDetails</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>amount</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.amount.<b>shares</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>any</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.any.<b>of</b></code>](#)<Bullet />[`StellarLiquidityPoolEffectMeasurable!`](/docs/graphql-reference/enums/stellar-liquidity-pool-effect-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>block</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>count</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.count.<b>uniq</b></code>](#)<Bullet />[`StellarLiquidityPoolEffectUniq`](/docs/graphql-reference/enums/stellar-liquidity-pool-effect-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.count.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.count.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.count.<b>block</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.count.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.count.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.count.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.count.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.count.<b>opIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.count.<b>opSourceAccount</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.count.<b>effect</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.count.<b>effectIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.count.<b>order</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.count.<b>currencyName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.count.<b>issuer</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.count.<b>liquidityPoolId</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.count.<b>liquidityPoolDetails</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.count.<b>amount</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.count.<b>shares</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.countBigInt.<b>uniq</b></code>](#)<Bullet />[`StellarLiquidityPoolEffectUniq`](/docs/graphql-reference/enums/stellar-liquidity-pool-effect-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.countBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.countBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.countBigInt.<b>block</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.countBigInt.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.countBigInt.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.countBigInt.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.countBigInt.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.countBigInt.<b>opIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.countBigInt.<b>opSourceAccount</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.countBigInt.<b>effect</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.countBigInt.<b>effectIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.countBigInt.<b>order</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.countBigInt.<b>currencyName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.countBigInt.<b>issuer</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.countBigInt.<b>liquidityPoolId</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.countBigInt.<b>liquidityPoolDetails</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.countBigInt.<b>amount</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.countBigInt.<b>shares</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>currency</b></code>](#)<Bullet />[`Currency`](/docs/graphql-reference/objects/currency) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Currency
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>date</b></code>](#)<Bullet />[`Date`](/docs/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Calendar date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>effect</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Effect
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>effectIndex</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Effect index
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>issuer</b></code>](#)<Bullet />[`Address`](/docs/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Issuer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>liquidityPoolDetails</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Liquidity pool details
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>liquidityPoolId</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Liquidity pool id bin
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.maximum.<b>of</b></code>](#)<Bullet />[`StellarLiquidityPoolEffectMeasurable!`](/docs/graphql-reference/enums/stellar-liquidity-pool-effect-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.maximum.<b>get</b></code>](#)<Bullet />[`StellarLiquidityPoolEffectMeasurable`](/docs/graphql-reference/enums/stellar-liquidity-pool-effect-measurable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.minimum.<b>of</b></code>](#)<Bullet />[`StellarLiquidityPoolEffectMeasurable!`](/docs/graphql-reference/enums/stellar-liquidity-pool-effect-measurable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.minimum.<b>get</b></code>](#)<Bullet />[`StellarLiquidityPoolEffectMeasurable`](/docs/graphql-reference/enums/stellar-liquidity-pool-effect-measurable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>operation</b></code>](#)<Bullet />[`OperationIndexedWithAccount`](/docs/graphql-reference/objects/operation-indexed-with-account) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Operation
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>order</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Order
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>shares</b></code>](#)<Bullet />[`DecimalNumber`](/docs/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>block</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>transactionIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>transactionSender</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>operation</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>opIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>opSourceAccount</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>effect</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>effectIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>order</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>currencyName</b></code>](#)<Bullet />[`CurrencySelector`](/docs/graphql-reference/inputs/currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>issuer</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>liquidityPoolId</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>liquidityPoolDetails</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>amount</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.shares.<b>shares</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>timestamp</b></code>](#)<Bullet />[`DateTime`](/docs/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Timestamp
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>StellarLiquidityPoolEffect.<b>transaction</b></code>](#)<Bullet />[`StellarTransactionDimension`](/docs/graphql-reference/objects/stellar-transaction-dimension) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Transaction
+> 
+
+
+
+### Member of
+
+[`Stellar`](/docs/graphql-reference/objects/stellar)  <Badge class="secondary" text="object"/>
+

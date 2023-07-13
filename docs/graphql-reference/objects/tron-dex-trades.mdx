@@ -1,0 +1,2502 @@
+---
+id: tron-dex-trades
+title: TronDexTrades
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Trades on DEX smart contracts
+
+
+```graphql
+type TronDexTrades {
+  address(
+    makerOrTaker: [AddressSelector!]
+  ): TronAddressInfo
+  any(
+    of: TronDexTradesMeasureable!
+  ): String
+  baseAmount(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+  ): Float
+  baseCurrency(
+    baseCurrency: [TronCurrencySelector!]
+  ): Currency
+  block(
+    height: BlockSelector
+    time: DateTimeSelector
+  ): BlockExtended
+  buyAmount(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+  ): Float
+  buyCurrency(
+    buyCurrency: [TronCurrencySelector!]
+  ): Currency
+  count(
+    uniq: TronDexTradesUniq
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    protocol: [StringSelector!]
+    smartContractAddress: [AddressSelector!]
+    exchangeAddress: [AddressSelector!]
+    exchangeName: [StringSelector!]
+    sellCurrency: [TronCurrencySelector!]
+    buyCurrency: [TronCurrencySelector!]
+    baseCurrency: [TronCurrencySelector!]
+    quoteCurrency: [TronCurrencySelector!]
+    maker: [AddressSelector!]
+    taker: [AddressSelector!]
+    makerOrTaker: [AddressSelector!]
+    tradeIndex: [StringSelector!]
+    buyAmount: [AmountSelector!]
+    sellAmount: [AmountSelector!]
+    price: [AmountSelector!]
+    priceAsymmetry: [FloatSelector!]
+    tradeAmountUsd: [FloatSelector!]
+  ): Int
+  countBigInt(
+    uniq: TronDexTradesUniq
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    protocol: [StringSelector!]
+    smartContractAddress: [AddressSelector!]
+    exchangeAddress: [AddressSelector!]
+    exchangeName: [StringSelector!]
+    sellCurrency: [TronCurrencySelector!]
+    buyCurrency: [TronCurrencySelector!]
+    baseCurrency: [TronCurrencySelector!]
+    quoteCurrency: [TronCurrencySelector!]
+    maker: [AddressSelector!]
+    taker: [AddressSelector!]
+    makerOrTaker: [AddressSelector!]
+    tradeIndex: [StringSelector!]
+    buyAmount: [AmountSelector!]
+    sellAmount: [AmountSelector!]
+    price: [AmountSelector!]
+    priceAsymmetry: [FloatSelector!]
+    tradeAmountUsd: [FloatSelector!]
+  ): BigInt
+  date: Date
+  energyFee(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    protocol: [StringSelector!]
+    smartContractAddress: [AddressSelector!]
+    exchangeAddress: [AddressSelector!]
+    exchangeName: [StringSelector!]
+    sellCurrency: [TronCurrencySelector!]
+    buyCurrency: [TronCurrencySelector!]
+    baseCurrency: [TronCurrencySelector!]
+    quoteCurrency: [TronCurrencySelector!]
+    maker: [AddressSelector!]
+    taker: [AddressSelector!]
+    makerOrTaker: [AddressSelector!]
+    tradeIndex: [StringSelector!]
+    buyAmount: [AmountSelector!]
+    sellAmount: [AmountSelector!]
+    price: [AmountSelector!]
+    priceAsymmetry: [FloatSelector!]
+    tradeAmountUsd: [FloatSelector!]
+  ): Float
+  energyUsageTotal(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    protocol: [StringSelector!]
+    smartContractAddress: [AddressSelector!]
+    exchangeAddress: [AddressSelector!]
+    exchangeName: [StringSelector!]
+    sellCurrency: [TronCurrencySelector!]
+    buyCurrency: [TronCurrencySelector!]
+    baseCurrency: [TronCurrencySelector!]
+    quoteCurrency: [TronCurrencySelector!]
+    maker: [AddressSelector!]
+    taker: [AddressSelector!]
+    makerOrTaker: [AddressSelector!]
+    tradeIndex: [StringSelector!]
+    buyAmount: [AmountSelector!]
+    sellAmount: [AmountSelector!]
+    price: [AmountSelector!]
+    priceAsymmetry: [FloatSelector!]
+    tradeAmountUsd: [FloatSelector!]
+  ): Float
+  exchange(
+    exchangeAddress: [AddressSelector!]
+    exchangeName: [StringSelector!]
+  ): TronDex
+  expression(
+    get: String!
+  ): DecimalNumber
+  fee(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    protocol: [StringSelector!]
+    smartContractAddress: [AddressSelector!]
+    exchangeAddress: [AddressSelector!]
+    exchangeName: [StringSelector!]
+    sellCurrency: [TronCurrencySelector!]
+    buyCurrency: [TronCurrencySelector!]
+    baseCurrency: [TronCurrencySelector!]
+    quoteCurrency: [TronCurrencySelector!]
+    maker: [AddressSelector!]
+    taker: [AddressSelector!]
+    makerOrTaker: [AddressSelector!]
+    tradeIndex: [StringSelector!]
+    buyAmount: [AmountSelector!]
+    sellAmount: [AmountSelector!]
+    price: [AmountSelector!]
+    priceAsymmetry: [FloatSelector!]
+    tradeAmountUsd: [FloatSelector!]
+  ): Float
+  internalTransactionsCount(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    protocol: [StringSelector!]
+    smartContractAddress: [AddressSelector!]
+    exchangeAddress: [AddressSelector!]
+    exchangeName: [StringSelector!]
+    sellCurrency: [TronCurrencySelector!]
+    buyCurrency: [TronCurrencySelector!]
+    baseCurrency: [TronCurrencySelector!]
+    quoteCurrency: [TronCurrencySelector!]
+    maker: [AddressSelector!]
+    taker: [AddressSelector!]
+    makerOrTaker: [AddressSelector!]
+    tradeIndex: [StringSelector!]
+    buyAmount: [AmountSelector!]
+    sellAmount: [AmountSelector!]
+    price: [AmountSelector!]
+    priceAsymmetry: [FloatSelector!]
+    tradeAmountUsd: [FloatSelector!]
+  ): Int
+  internalTransactionsCountBigInt(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    protocol: [StringSelector!]
+    smartContractAddress: [AddressSelector!]
+    exchangeAddress: [AddressSelector!]
+    exchangeName: [StringSelector!]
+    sellCurrency: [TronCurrencySelector!]
+    buyCurrency: [TronCurrencySelector!]
+    baseCurrency: [TronCurrencySelector!]
+    quoteCurrency: [TronCurrencySelector!]
+    maker: [AddressSelector!]
+    taker: [AddressSelector!]
+    makerOrTaker: [AddressSelector!]
+    tradeIndex: [StringSelector!]
+    buyAmount: [AmountSelector!]
+    sellAmount: [AmountSelector!]
+    price: [AmountSelector!]
+    priceAsymmetry: [FloatSelector!]
+    tradeAmountUsd: [FloatSelector!]
+  ): BigInt
+  logsCount(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    protocol: [StringSelector!]
+    smartContractAddress: [AddressSelector!]
+    exchangeAddress: [AddressSelector!]
+    exchangeName: [StringSelector!]
+    sellCurrency: [TronCurrencySelector!]
+    buyCurrency: [TronCurrencySelector!]
+    baseCurrency: [TronCurrencySelector!]
+    quoteCurrency: [TronCurrencySelector!]
+    maker: [AddressSelector!]
+    taker: [AddressSelector!]
+    makerOrTaker: [AddressSelector!]
+    tradeIndex: [StringSelector!]
+    buyAmount: [AmountSelector!]
+    sellAmount: [AmountSelector!]
+    price: [AmountSelector!]
+    priceAsymmetry: [FloatSelector!]
+    tradeAmountUsd: [FloatSelector!]
+  ): Int
+  logsCountBigInt(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    protocol: [StringSelector!]
+    smartContractAddress: [AddressSelector!]
+    exchangeAddress: [AddressSelector!]
+    exchangeName: [StringSelector!]
+    sellCurrency: [TronCurrencySelector!]
+    buyCurrency: [TronCurrencySelector!]
+    baseCurrency: [TronCurrencySelector!]
+    quoteCurrency: [TronCurrencySelector!]
+    maker: [AddressSelector!]
+    taker: [AddressSelector!]
+    makerOrTaker: [AddressSelector!]
+    tradeIndex: [StringSelector!]
+    buyAmount: [AmountSelector!]
+    sellAmount: [AmountSelector!]
+    price: [AmountSelector!]
+    priceAsymmetry: [FloatSelector!]
+    tradeAmountUsd: [FloatSelector!]
+  ): BigInt
+  maker(
+    maker: [AddressSelector!]
+  ): TronAddressInfo
+  maximum(
+    of: TronDexTradesMeasureable!
+    get: TronDexTradesMeasureable
+  ): String
+  minimum(
+    of: TronDexTradesMeasureable!
+    get: TronDexTradesMeasureable
+  ): String
+  netFee(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    protocol: [StringSelector!]
+    smartContractAddress: [AddressSelector!]
+    exchangeAddress: [AddressSelector!]
+    exchangeName: [StringSelector!]
+    sellCurrency: [TronCurrencySelector!]
+    buyCurrency: [TronCurrencySelector!]
+    baseCurrency: [TronCurrencySelector!]
+    quoteCurrency: [TronCurrencySelector!]
+    maker: [AddressSelector!]
+    taker: [AddressSelector!]
+    makerOrTaker: [AddressSelector!]
+    tradeIndex: [StringSelector!]
+    buyAmount: [AmountSelector!]
+    sellAmount: [AmountSelector!]
+    price: [AmountSelector!]
+    priceAsymmetry: [FloatSelector!]
+    tradeAmountUsd: [FloatSelector!]
+  ): Float
+  netUsage(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    protocol: [StringSelector!]
+    smartContractAddress: [AddressSelector!]
+    exchangeAddress: [AddressSelector!]
+    exchangeName: [StringSelector!]
+    sellCurrency: [TronCurrencySelector!]
+    buyCurrency: [TronCurrencySelector!]
+    baseCurrency: [TronCurrencySelector!]
+    quoteCurrency: [TronCurrencySelector!]
+    maker: [AddressSelector!]
+    taker: [AddressSelector!]
+    makerOrTaker: [AddressSelector!]
+    tradeIndex: [StringSelector!]
+    buyAmount: [AmountSelector!]
+    sellAmount: [AmountSelector!]
+    price: [AmountSelector!]
+    priceAsymmetry: [FloatSelector!]
+    tradeAmountUsd: [FloatSelector!]
+  ): Float
+  price(
+    calculate: PriceAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    protocol: [StringSelector!]
+    smartContractAddress: [AddressSelector!]
+    exchangeAddress: [AddressSelector!]
+    exchangeName: [StringSelector!]
+    sellCurrency: [TronCurrencySelector!]
+    buyCurrency: [TronCurrencySelector!]
+    baseCurrency: [TronCurrencySelector!]
+    quoteCurrency: [TronCurrencySelector!]
+    maker: [AddressSelector!]
+    taker: [AddressSelector!]
+    makerOrTaker: [AddressSelector!]
+    tradeIndex: [StringSelector!]
+    buyAmount: [AmountSelector!]
+    sellAmount: [AmountSelector!]
+    price: [AmountSelector!]
+    priceAsymmetry: [FloatSelector!]
+    tradeAmountUsd: [FloatSelector!]
+  ): Float
+  protocol(
+    protocol: [StringSelector!]
+  ): String
+  quoteAmount(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+  ): Float
+  quoteCurrency(
+    quoteCurrency: [TronCurrencySelector!]
+  ): Currency
+  quotePrice(
+    calculate: PriceAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    protocol: [StringSelector!]
+    smartContractAddress: [AddressSelector!]
+    exchangeAddress: [AddressSelector!]
+    exchangeName: [StringSelector!]
+    sellCurrency: [TronCurrencySelector!]
+    buyCurrency: [TronCurrencySelector!]
+    baseCurrency: [TronCurrencySelector!]
+    quoteCurrency: [TronCurrencySelector!]
+    maker: [AddressSelector!]
+    taker: [AddressSelector!]
+    makerOrTaker: [AddressSelector!]
+    tradeIndex: [StringSelector!]
+    buyAmount: [AmountSelector!]
+    sellAmount: [AmountSelector!]
+    price: [AmountSelector!]
+    priceAsymmetry: [FloatSelector!]
+    tradeAmountUsd: [FloatSelector!]
+  ): Float
+  sellAmount(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+  ): Float
+  sellCurrency(
+    sellCurrency: [TronCurrencySelector!]
+  ): Currency
+  side: TradeSide
+  smartContract(
+    smartContractAddress: [AddressSelector!]
+  ): TronSmartContract
+  taker(
+    taker: [AddressSelector!]
+  ): TronAddressInfo
+  timeInterval: TimeInterval
+  tradeAmount(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum!
+  ): Float
+  tradeIndex(
+    tradeIndex: [StringSelector!]
+  ): String
+  transaction(
+    txHash: [HashSelector!]
+  ): TronTransactionInfoExtended
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>address</b></code>](#)<Bullet />[`TronAddressInfo`](/docs/graphql-reference/objects/tron-address-info) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Trader (maker or taker)
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.address.<b>makerOrTaker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>any</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.any.<b>of</b></code>](#)<Bullet />[`TronDexTradesMeasureable!`](/docs/graphql-reference/enums/tron-dex-trades-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>baseAmount</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.baseAmount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.baseAmount.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>baseCurrency</b></code>](#)<Bullet />[`Currency`](/docs/graphql-reference/objects/currency) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Base currency
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.baseCurrency.<b>baseCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>block</b></code>](#)<Bullet />[`BlockExtended`](/docs/graphql-reference/objects/block-extended) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Block in the blockchain
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.block.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.block.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>buyAmount</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.buyAmount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.buyAmount.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>buyCurrency</b></code>](#)<Bullet />[`Currency`](/docs/graphql-reference/objects/currency) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Maker buys this currency
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.buyCurrency.<b>buyCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>count</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>uniq</b></code>](#)<Bullet />[`TronDexTradesUniq`](/docs/graphql-reference/enums/tron-dex-trades-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>protocol</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>smartContractAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>exchangeAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>exchangeName</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>sellCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>buyCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>baseCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>quoteCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>maker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>taker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>makerOrTaker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>tradeIndex</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>buyAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>sellAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>price</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>priceAsymmetry</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.count.<b>tradeAmountUsd</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>uniq</b></code>](#)<Bullet />[`TronDexTradesUniq`](/docs/graphql-reference/enums/tron-dex-trades-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>protocol</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>smartContractAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>exchangeAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>exchangeName</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>sellCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>buyCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>baseCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>quoteCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>maker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>taker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>makerOrTaker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>tradeIndex</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>buyAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>sellAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>price</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>priceAsymmetry</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.countBigInt.<b>tradeAmountUsd</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>date</b></code>](#)<Bullet />[`Date`](/docs/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Calendar date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>energyFee</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>protocol</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>smartContractAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>exchangeAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>exchangeName</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>sellCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>buyCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>baseCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>quoteCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>maker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>taker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>makerOrTaker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>tradeIndex</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>buyAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>sellAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>price</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>priceAsymmetry</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyFee.<b>tradeAmountUsd</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>energyUsageTotal</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>protocol</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>smartContractAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>exchangeAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>exchangeName</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>sellCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>buyCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>baseCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>quoteCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>maker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>taker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>makerOrTaker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>tradeIndex</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>buyAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>sellAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>price</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>priceAsymmetry</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.energyUsageTotal.<b>tradeAmountUsd</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>exchange</b></code>](#)<Bullet />[`TronDex`](/docs/graphql-reference/objects/tron-dex) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Identification of admin / manager / factory of smart contract, executing trades
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.exchange.<b>exchangeAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.exchange.<b>exchangeName</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>fee</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>protocol</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>smartContractAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>exchangeAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>exchangeName</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>sellCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>buyCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>baseCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>quoteCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>maker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>taker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>makerOrTaker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>tradeIndex</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>buyAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>sellAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>price</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>priceAsymmetry</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.fee.<b>tradeAmountUsd</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>internalTransactionsCount</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>protocol</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>smartContractAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>exchangeAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>exchangeName</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>sellCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>buyCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>baseCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>quoteCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>maker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>taker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>makerOrTaker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>tradeIndex</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>buyAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>sellAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>price</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>priceAsymmetry</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCount.<b>tradeAmountUsd</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>internalTransactionsCountBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>protocol</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>smartContractAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>exchangeAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>exchangeName</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>sellCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>buyCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>baseCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>quoteCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>maker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>taker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>makerOrTaker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>tradeIndex</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>buyAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>sellAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>price</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>priceAsymmetry</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.internalTransactionsCountBigInt.<b>tradeAmountUsd</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>logsCount</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>protocol</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>smartContractAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>exchangeAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>exchangeName</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>sellCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>buyCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>baseCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>quoteCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>maker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>taker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>makerOrTaker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>tradeIndex</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>buyAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>sellAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>price</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>priceAsymmetry</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCount.<b>tradeAmountUsd</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>logsCountBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>protocol</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>smartContractAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>exchangeAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>exchangeName</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>sellCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>buyCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>baseCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>quoteCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>maker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>taker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>makerOrTaker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>tradeIndex</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>buyAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>sellAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>price</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>priceAsymmetry</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.logsCountBigInt.<b>tradeAmountUsd</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>maker</b></code>](#)<Bullet />[`TronAddressInfo`](/docs/graphql-reference/objects/tron-address-info) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Trade 'maker' side
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.maker.<b>maker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.maximum.<b>of</b></code>](#)<Bullet />[`TronDexTradesMeasureable!`](/docs/graphql-reference/enums/tron-dex-trades-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.maximum.<b>get</b></code>](#)<Bullet />[`TronDexTradesMeasureable`](/docs/graphql-reference/enums/tron-dex-trades-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.minimum.<b>of</b></code>](#)<Bullet />[`TronDexTradesMeasureable!`](/docs/graphql-reference/enums/tron-dex-trades-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.minimum.<b>get</b></code>](#)<Bullet />[`TronDexTradesMeasureable`](/docs/graphql-reference/enums/tron-dex-trades-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>netFee</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>protocol</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>smartContractAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>exchangeAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>exchangeName</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>sellCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>buyCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>baseCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>quoteCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>maker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>taker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>makerOrTaker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>tradeIndex</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>buyAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>sellAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>price</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>priceAsymmetry</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netFee.<b>tradeAmountUsd</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>netUsage</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>protocol</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>smartContractAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>exchangeAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>exchangeName</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>sellCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>buyCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>baseCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>quoteCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>maker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>taker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>makerOrTaker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>tradeIndex</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>buyAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>sellAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>price</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>priceAsymmetry</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.netUsage.<b>tradeAmountUsd</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>price</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>calculate</b></code>](#)<Bullet />[`PriceAggregateFunction`](/docs/graphql-reference/enums/price-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>protocol</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>smartContractAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>exchangeAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>exchangeName</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>sellCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>buyCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>baseCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>quoteCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>maker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>taker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>makerOrTaker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>tradeIndex</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>buyAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>sellAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>price</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>priceAsymmetry</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.price.<b>tradeAmountUsd</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>protocol</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Protocol name of the smart contract
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.protocol.<b>protocol</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>quoteAmount</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quoteAmount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quoteAmount.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>quoteCurrency</b></code>](#)<Bullet />[`Currency`](/docs/graphql-reference/objects/currency) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Quote currency
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quoteCurrency.<b>quoteCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>quotePrice</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>calculate</b></code>](#)<Bullet />[`PriceAggregateFunction`](/docs/graphql-reference/enums/price-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>protocol</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>smartContractAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>exchangeAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>exchangeName</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>sellCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>buyCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>baseCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>quoteCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>maker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>taker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>makerOrTaker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>tradeIndex</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>buyAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>sellAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>price</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>priceAsymmetry</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.quotePrice.<b>tradeAmountUsd</b></code>](#)<Bullet />[`[FloatSelector!]`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>sellAmount</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.sellAmount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.sellAmount.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>sellCurrency</b></code>](#)<Bullet />[`Currency`](/docs/graphql-reference/objects/currency) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Maker sells this currency
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.sellCurrency.<b>sellCurrency</b></code>](#)<Bullet />[`[TronCurrencySelector!]`](/docs/graphql-reference/inputs/tron-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>side</b></code>](#)<Bullet />[`TradeSide`](/docs/graphql-reference/enums/trade-side) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Side of trade ( SELL / BUY )
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>smartContract</b></code>](#)<Bullet />[`TronSmartContract`](/docs/graphql-reference/objects/tron-smart-contract) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Smart contract being called
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.smartContract.<b>smartContractAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>taker</b></code>](#)<Bullet />[`TronAddressInfo`](/docs/graphql-reference/objects/tron-address-info) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Trade 'taker' side
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.taker.<b>taker</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>timeInterval</b></code>](#)<Bullet />[`TimeInterval`](/docs/graphql-reference/objects/time-interval) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Time interval
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>tradeAmount</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.tradeAmount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.tradeAmount.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum!`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>tradeIndex</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Index of trade in transaction, used to separate trades in transaction
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.tradeIndex.<b>tradeIndex</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.<b>transaction</b></code>](#)<Bullet />[`TronTransactionInfoExtended`](/docs/graphql-reference/objects/tron-transaction-info-extended) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Transaction of DexTrade
+> ##### [<code style={{ fontWeight: 'normal' }}>TronDexTrades.transaction.<b>txHash</b></code>](#)<Bullet />[`[HashSelector!]`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+### Member of
+
+[`Tron`](/docs/graphql-reference/objects/tron)  <Badge class="secondary" text="object"/>
+

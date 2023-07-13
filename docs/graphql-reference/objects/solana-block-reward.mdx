@@ -1,0 +1,405 @@
+---
+id: solana-block-reward
+title: SolanaBlockReward
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+BlockReward in Solana  blockchain
+
+
+```graphql
+type SolanaBlockReward {
+  account(
+    account: HashSelector
+  ): String
+  amount(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    blockHash: HashSelector
+    height: BlockSelector
+    previousBlockHash: HashSelector
+    reward: AmountSelector
+    parentSlot: IntegerSelector
+    postBalance: AmountSelector
+    account: StringSelector
+    rewardType: RewardTypeSelector
+  ): Float
+  any(
+    of: SolanaBlockRewardMeasureable!
+  ): String
+  block(
+    height: BlockSelector
+    hash: HashSelector
+    time: DateTimeSelector
+    previousBlockHash: HashSelector
+    parentSlot: StringSelector
+  ): SolanaBlockInfo
+  count(
+    uniq: SolanaBlockRewardUniq
+  ): Int
+  countBigInt(
+    uniq: SolanaBlockRewardUniq
+  ): BigInt
+  currency: Currency
+  date: Date
+  expression(
+    get: String!
+  ): DecimalNumber
+  maximum(
+    of: SolanaBlockRewardMeasureable!
+    get: SolanaBlockRewardMeasureable
+  ): String
+  minimum(
+    of: SolanaBlockRewardMeasureable!
+    get: SolanaBlockRewardMeasureable
+  ): String
+  postBalance(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    blockHash: HashSelector
+    height: BlockSelector
+    previousBlockHash: HashSelector
+    reward: AmountSelector
+    parentSlot: IntegerSelector
+    postBalance: AmountSelector
+    account: StringSelector
+    rewardType: RewardTypeSelector
+  ): Float
+  rewardType(
+    rewardType: RewardTypeSelector
+  ): String
+  time: DateTime
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.<b>account</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Account
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.account.<b>account</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.<b>amount</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.amount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.amount.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.amount.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.amount.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.amount.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.amount.<b>previousBlockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.amount.<b>reward</b></code>](#)<Bullet />[`AmountSelector`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.amount.<b>parentSlot</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.amount.<b>postBalance</b></code>](#)<Bullet />[`AmountSelector`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.amount.<b>account</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.amount.<b>rewardType</b></code>](#)<Bullet />[`RewardTypeSelector`](/docs/graphql-reference/inputs/reward-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.<b>any</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.any.<b>of</b></code>](#)<Bullet />[`SolanaBlockRewardMeasureable!`](/docs/graphql-reference/enums/solana-block-reward-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.<b>block</b></code>](#)<Bullet />[`SolanaBlockInfo`](/docs/graphql-reference/objects/solana-block-info) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Block where  transaction is included
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.block.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.block.<b>hash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.block.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.block.<b>previousBlockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.block.<b>parentSlot</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.<b>count</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.count.<b>uniq</b></code>](#)<Bullet />[`SolanaBlockRewardUniq`](/docs/graphql-reference/enums/solana-block-reward-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.countBigInt.<b>uniq</b></code>](#)<Bullet />[`SolanaBlockRewardUniq`](/docs/graphql-reference/enums/solana-block-reward-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.<b>currency</b></code>](#)<Bullet />[`Currency`](/docs/graphql-reference/objects/currency) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Currency of transfer
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.<b>date</b></code>](#)<Bullet />[`Date`](/docs/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The date this transaction was created
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.maximum.<b>of</b></code>](#)<Bullet />[`SolanaBlockRewardMeasureable!`](/docs/graphql-reference/enums/solana-block-reward-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.maximum.<b>get</b></code>](#)<Bullet />[`SolanaBlockRewardMeasureable`](/docs/graphql-reference/enums/solana-block-reward-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.minimum.<b>of</b></code>](#)<Bullet />[`SolanaBlockRewardMeasureable!`](/docs/graphql-reference/enums/solana-block-reward-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.minimum.<b>get</b></code>](#)<Bullet />[`SolanaBlockRewardMeasureable`](/docs/graphql-reference/enums/solana-block-reward-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.<b>postBalance</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.postBalance.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.postBalance.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.postBalance.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.postBalance.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.postBalance.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.postBalance.<b>previousBlockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.postBalance.<b>reward</b></code>](#)<Bullet />[`AmountSelector`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.postBalance.<b>parentSlot</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.postBalance.<b>postBalance</b></code>](#)<Bullet />[`AmountSelector`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.postBalance.<b>account</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.postBalance.<b>rewardType</b></code>](#)<Bullet />[`RewardTypeSelector`](/docs/graphql-reference/inputs/reward-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.<b>rewardType</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Type of reward
+> ##### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.rewardType.<b>rewardType</b></code>](#)<Bullet />[`RewardTypeSelector`](/docs/graphql-reference/inputs/reward-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>SolanaBlockReward.<b>time</b></code>](#)<Bullet />[`DateTime`](/docs/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The time this transaction was created
+> 
+
+
+
+### Member of
+
+[`Solana`](/docs/graphql-reference/objects/solana)  <Badge class="secondary" text="object"/>
+

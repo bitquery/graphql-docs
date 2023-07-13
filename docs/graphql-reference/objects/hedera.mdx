@@ -1,0 +1,597 @@
+---
+id: hedera
+title: Hedera
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Hedera Chain
+
+
+```graphql
+type Hedera {
+  address(
+    address: [AddressSelectorIn!]!
+  ): [HederaAddressInfoWithBalance!]!
+  arguments(
+    date: DateSelector
+    nodeAccount: StringSelector
+    payerAccount: StringSelector
+    smartContractEntity: StringSelector
+    transactionHash: HashSelector
+    result: HashSelector
+    success: Boolean
+    any: [HederaArgumentFilter!]
+    options: QueryOptions
+  ): [HederaArgument!]
+  calls(
+    date: DateSelector
+    nodeAccount: StringSelector
+    payerAccount: StringSelector
+    smartContractEntity: StringSelector
+    transactionHash: HashSelector
+    result: HashSelector
+    callInput: HashSelector
+    callResult: HashSelector
+    success: Boolean
+    any: [HederaCallFilter!]
+    options: QueryOptions
+  ): [HederaCall!]
+  coinpath(
+    sender: AddressSelector
+    receiver: AddressSelector
+    initialAddress: AddressSelector
+    initialDate: DateSelector
+    initialTime: DateTimeSelector
+    date: DateSelector
+    time: DateTimeSelector
+    depth: IntegerLimitedSelector
+    options: CoinpathOptions
+  ): [HederaCoinpath!]
+  inputs(
+    date: DateSelector
+    transferEntity: StringSelector
+    nodeAccount: StringSelector
+    payerAccount: StringSelector
+    transactionHash: HashSelector
+    result: HashSelector
+    entityType: EntityTypeSelector
+    success: Boolean
+    amount: [AmountSelector!]
+    any: [HederaInputFilter!]
+    options: QueryOptions
+  ): [HederaInput!]
+  messages(
+    date: DateSelector
+    nodeAccount: StringSelector
+    payerAccount: StringSelector
+    transactionHash: HashSelector
+    transactionRunningHash: HashSelector
+    result: HashSelector
+    entityType: EntityTypeSelector
+    success: Boolean
+    any: [HederaMessageFilter!]
+    options: QueryOptions
+  ): [HederaMessage!]
+  outputs(
+    date: DateSelector
+    transferEntity: StringSelector
+    nodeAccount: StringSelector
+    payerAccount: StringSelector
+    transactionHash: HashSelector
+    result: HashSelector
+    entityType: EntityTypeSelector
+    success: Boolean
+    any: [HederaOutputFilter!]
+    options: QueryOptions
+  ): [HederaOutput!]
+  transactions(
+    date: DateSelector
+    nodeAccount: StringSelector
+    payerAccount: StringSelector
+    transactionHash: HashSelector
+    result: HashSelector
+    entityType: EntityTypeSelector
+    success: Boolean
+    any: [HederaTransactionFilter!]
+    options: QueryOptions
+  ): [HederaTransaction!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Hedera.<b>address</b></code>](#)<Bullet />[`[HederaAddressInfoWithBalance!]!`](/docs/graphql-reference/objects/hedera-address-info-with-balance) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Basic information about address
+> ##### [<code style={{ fontWeight: 'normal' }}>Hedera.address.<b>address</b></code>](#)<Bullet />[`[AddressSelectorIn!]!`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Hedera.<b>arguments</b></code>](#)<Bullet />[`[HederaArgument!]`](/docs/graphql-reference/objects/hedera-argument) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Blockchain Arguments
+> ##### [<code style={{ fontWeight: 'normal' }}>Hedera.arguments.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.arguments.<b>nodeAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.arguments.<b>payerAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.arguments.<b>smartContractEntity</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.arguments.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.arguments.<b>result</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.arguments.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.arguments.<b>any</b></code>](#)<Bullet />[`[HederaArgumentFilter!]`](/docs/graphql-reference/inputs/hedera-argument-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.arguments.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Hedera.<b>calls</b></code>](#)<Bullet />[`[HederaCall!]`](/docs/graphql-reference/objects/hedera-call) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Blockhain Calls
+> ##### [<code style={{ fontWeight: 'normal' }}>Hedera.calls.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.calls.<b>nodeAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.calls.<b>payerAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.calls.<b>smartContractEntity</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.calls.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.calls.<b>result</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.calls.<b>callInput</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.calls.<b>callResult</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.calls.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.calls.<b>any</b></code>](#)<Bullet />[`[HederaCallFilter!]`](/docs/graphql-reference/inputs/hedera-call-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.calls.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Hedera.<b>coinpath</b></code>](#)<Bullet />[`[HederaCoinpath!]`](/docs/graphql-reference/objects/hedera-coinpath) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Money flow using Coinpath technology
+> ##### [<code style={{ fontWeight: 'normal' }}>Hedera.coinpath.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.coinpath.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.coinpath.<b>initialAddress</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.coinpath.<b>initialDate</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.coinpath.<b>initialTime</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.coinpath.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.coinpath.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.coinpath.<b>depth</b></code>](#)<Bullet />[`IntegerLimitedSelector`](/docs/graphql-reference/inputs/integer-limited-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.coinpath.<b>options</b></code>](#)<Bullet />[`CoinpathOptions`](/docs/graphql-reference/inputs/coinpath-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Hedera.<b>inputs</b></code>](#)<Bullet />[`[HederaInput!]`](/docs/graphql-reference/objects/hedera-input) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Blockhain Inputs
+> ##### [<code style={{ fontWeight: 'normal' }}>Hedera.inputs.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.inputs.<b>transferEntity</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.inputs.<b>nodeAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.inputs.<b>payerAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.inputs.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.inputs.<b>result</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.inputs.<b>entityType</b></code>](#)<Bullet />[`EntityTypeSelector`](/docs/graphql-reference/inputs/entity-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.inputs.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.inputs.<b>amount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.inputs.<b>any</b></code>](#)<Bullet />[`[HederaInputFilter!]`](/docs/graphql-reference/inputs/hedera-input-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.inputs.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Hedera.<b>messages</b></code>](#)<Bullet />[`[HederaMessage!]`](/docs/graphql-reference/objects/hedera-message) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Blockhain Messages
+> ##### [<code style={{ fontWeight: 'normal' }}>Hedera.messages.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.messages.<b>nodeAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.messages.<b>payerAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.messages.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.messages.<b>transactionRunningHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.messages.<b>result</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.messages.<b>entityType</b></code>](#)<Bullet />[`EntityTypeSelector`](/docs/graphql-reference/inputs/entity-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.messages.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.messages.<b>any</b></code>](#)<Bullet />[`[HederaMessageFilter!]`](/docs/graphql-reference/inputs/hedera-message-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.messages.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Hedera.<b>outputs</b></code>](#)<Bullet />[`[HederaOutput!]`](/docs/graphql-reference/objects/hedera-output) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Blockchain Outputs
+> ##### [<code style={{ fontWeight: 'normal' }}>Hedera.outputs.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.outputs.<b>transferEntity</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.outputs.<b>nodeAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.outputs.<b>payerAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.outputs.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.outputs.<b>result</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.outputs.<b>entityType</b></code>](#)<Bullet />[`EntityTypeSelector`](/docs/graphql-reference/inputs/entity-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.outputs.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.outputs.<b>any</b></code>](#)<Bullet />[`[HederaOutputFilter!]`](/docs/graphql-reference/inputs/hedera-output-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.outputs.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Hedera.<b>transactions</b></code>](#)<Bullet />[`[HederaTransaction!]`](/docs/graphql-reference/objects/hedera-transaction) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Blockchain Transactions
+> ##### [<code style={{ fontWeight: 'normal' }}>Hedera.transactions.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.transactions.<b>nodeAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.transactions.<b>payerAccount</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.transactions.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.transactions.<b>result</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.transactions.<b>entityType</b></code>](#)<Bullet />[`EntityTypeSelector`](/docs/graphql-reference/inputs/entity-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.transactions.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.transactions.<b>any</b></code>](#)<Bullet />[`[HederaTransactionFilter!]`](/docs/graphql-reference/inputs/hedera-transaction-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Hedera.transactions.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+### Returned by
+
+[`hedera`](/docs/graphql-reference/queries/hedera)  <Badge class="secondary" text="query"/>
+

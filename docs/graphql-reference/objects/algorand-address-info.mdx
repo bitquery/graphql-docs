@@ -1,0 +1,126 @@
+---
+id: algorand-address-info
+title: AlgorandAddressInfo
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Address detailed information for Algorand network
+
+
+```graphql
+type AlgorandAddressInfo {
+  address: Address
+  balance(
+    in: BaseCurrencyEnum
+  ): Float
+  pendingRewards(
+    in: BaseCurrencyEnum
+  ): Float
+  rewards(
+    in: BaseCurrencyEnum
+  ): Float
+  round: String
+  smartContract: AlgorandSmartContract
+  status: String
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandAddressInfo.<b>address</b></code>](#)<Bullet />[`Address`](/docs/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandAddressInfo.<b>balance</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Current address balance
+> ##### [<code style={{ fontWeight: 'normal' }}>AlgorandAddressInfo.balance.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandAddressInfo.<b>pendingRewards</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Current pending rewards
+> ##### [<code style={{ fontWeight: 'normal' }}>AlgorandAddressInfo.pendingRewards.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandAddressInfo.<b>rewards</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Current rewards
+> ##### [<code style={{ fontWeight: 'normal' }}>AlgorandAddressInfo.rewards.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandAddressInfo.<b>round</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Current round
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandAddressInfo.<b>smartContract</b></code>](#)<Bullet />[`AlgorandSmartContract`](/docs/graphql-reference/objects/algorand-smart-contract) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Smart Contract if exists on the address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AlgorandAddressInfo.<b>status</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Current status
+> 
+
+
+
+### Member of
+
+[`Algorand`](/docs/graphql-reference/objects/algorand)  <Badge class="secondary" text="object"/>
+

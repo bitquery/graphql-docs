@@ -1,0 +1,500 @@
+---
+id: eos
+title: Eos
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+EOS Chain
+
+
+```graphql
+type Eos {
+  address(
+    address: [AddressSelectorIn!]!
+  ): [EosAddressInfo!]!
+  addressStats(
+    address: AddressSelector!
+    options: QueryOptions
+  ): [EosAddressStats!]
+  blocks(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    blockHash: HashSelector
+    proposer: AddressSelector
+    any: [EosBlockFilter!]
+    options: QueryOptions
+  ): [EosBlocks!]
+  coinpath(
+    sender: AddressSelector
+    receiver: AddressSelector
+    currency: EosCurrencySelector
+    initialAddress: AddressSelector
+    initialDate: DateSelector
+    initialTime: DateTimeSelector
+    date: DateSelector
+    time: DateTimeSelector
+    depth: IntegerLimitedSelector
+    options: CoinpathOptions
+  ): [EosCoinpath!]
+  smartContractCalls(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txFrom: AddressSelector
+    txTo: AddressSelector
+    smartContractAddress: AddressSelector
+    smartContractMethod: MethodSelector
+    external: Boolean
+    success: Boolean
+    scheduled: Boolean
+    any: [EosSmartContractCallFilter!]
+    options: QueryOptions
+  ): [EosSmartContractCalls!]
+  transactions(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: TxIndexSelector
+    success: Boolean
+    scheduled: Boolean
+    any: [EosTransactionFilter!]
+    options: QueryOptions
+  ): [EosTransactions!]
+  transfers(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txFrom: AddressSelector
+    txTo: AddressSelector
+    sender: AddressSelector
+    receiver: AddressSelector
+    currency: EosCurrencySelector
+    entityId: EntitySelector
+    external: Boolean
+    success: Boolean
+    amount: [AmountSelector!]
+    any: [EosTransferFilter!]
+    options: QueryOptions
+  ): [EosTransfers!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Eos.<b>address</b></code>](#)<Bullet />[`[EosAddressInfo!]!`](/docs/graphql-reference/objects/eos-address-info) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Basic information about address ( or smart contract )
+> ##### [<code style={{ fontWeight: 'normal' }}>Eos.address.<b>address</b></code>](#)<Bullet />[`[AddressSelectorIn!]!`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Eos.<b>addressStats</b></code>](#)<Bullet />[`[EosAddressStats!]`](/docs/graphql-reference/objects/eos-address-stats) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Blockchain Address Statistics
+> ##### [<code style={{ fontWeight: 'normal' }}>Eos.addressStats.<b>address</b></code>](#)<Bullet />[`AddressSelector!`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.addressStats.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Eos.<b>blocks</b></code>](#)<Bullet />[`[EosBlocks!]`](/docs/graphql-reference/objects/eos-blocks) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Blockchain Blocks
+> ##### [<code style={{ fontWeight: 'normal' }}>Eos.blocks.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.blocks.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.blocks.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.blocks.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.blocks.<b>proposer</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.blocks.<b>any</b></code>](#)<Bullet />[`[EosBlockFilter!]`](/docs/graphql-reference/inputs/eos-block-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.blocks.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Eos.<b>coinpath</b></code>](#)<Bullet />[`[EosCoinpath!]`](/docs/graphql-reference/objects/eos-coinpath) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Money flow using Coinpath technology
+> ##### [<code style={{ fontWeight: 'normal' }}>Eos.coinpath.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.coinpath.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.coinpath.<b>currency</b></code>](#)<Bullet />[`EosCurrencySelector`](/docs/graphql-reference/inputs/eos-currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.coinpath.<b>initialAddress</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.coinpath.<b>initialDate</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.coinpath.<b>initialTime</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.coinpath.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.coinpath.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.coinpath.<b>depth</b></code>](#)<Bullet />[`IntegerLimitedSelector`](/docs/graphql-reference/inputs/integer-limited-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.coinpath.<b>options</b></code>](#)<Bullet />[`CoinpathOptions`](/docs/graphql-reference/inputs/coinpath-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Eos.<b>smartContractCalls</b></code>](#)<Bullet />[`[EosSmartContractCalls!]`](/docs/graphql-reference/objects/eos-smart-contract-calls) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Smart Contract Calls
+> ##### [<code style={{ fontWeight: 'normal' }}>Eos.smartContractCalls.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.smartContractCalls.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.smartContractCalls.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.smartContractCalls.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.smartContractCalls.<b>txFrom</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.smartContractCalls.<b>txTo</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.smartContractCalls.<b>smartContractAddress</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.smartContractCalls.<b>smartContractMethod</b></code>](#)<Bullet />[`MethodSelector`](/docs/graphql-reference/inputs/method-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.smartContractCalls.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.smartContractCalls.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.smartContractCalls.<b>scheduled</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.smartContractCalls.<b>any</b></code>](#)<Bullet />[`[EosSmartContractCallFilter!]`](/docs/graphql-reference/inputs/eos-smart-contract-call-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.smartContractCalls.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Eos.<b>transactions</b></code>](#)<Bullet />[`[EosTransactions!]`](/docs/graphql-reference/objects/eos-transactions) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Blockchain Transactions
+> ##### [<code style={{ fontWeight: 'normal' }}>Eos.transactions.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transactions.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transactions.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transactions.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transactions.<b>txIndex</b></code>](#)<Bullet />[`TxIndexSelector`](/docs/graphql-reference/inputs/tx-index-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transactions.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transactions.<b>scheduled</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transactions.<b>any</b></code>](#)<Bullet />[`[EosTransactionFilter!]`](/docs/graphql-reference/inputs/eos-transaction-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transactions.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Eos.<b>transfers</b></code>](#)<Bullet />[`[EosTransfers!]`](/docs/graphql-reference/objects/eos-transfers) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Currency Transfers
+> ##### [<code style={{ fontWeight: 'normal' }}>Eos.transfers.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transfers.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transfers.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transfers.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transfers.<b>txFrom</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transfers.<b>txTo</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transfers.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transfers.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transfers.<b>currency</b></code>](#)<Bullet />[`EosCurrencySelector`](/docs/graphql-reference/inputs/eos-currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transfers.<b>entityId</b></code>](#)<Bullet />[`EntitySelector`](/docs/graphql-reference/inputs/entity-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transfers.<b>external</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transfers.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transfers.<b>amount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transfers.<b>any</b></code>](#)<Bullet />[`[EosTransferFilter!]`](/docs/graphql-reference/inputs/eos-transfer-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Eos.transfers.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+### Returned by
+
+[`eos`](/docs/graphql-reference/queries/eos)  <Badge class="secondary" text="query"/>
+

@@ -1,0 +1,73 @@
+---
+id: boolean-selector
+title: BooleanSelector
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Select by boolean (sequence number)
+
+
+```graphql
+input BooleanSelector {
+  is: Boolean
+  not: Boolean
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>BooleanSelector.<b>is</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Is
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BooleanSelector.<b>not</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Is not
+> 
+
+
+
+### Member of
+
+[`CosmosAttributeFilter`](/docs/graphql-reference/inputs/cosmos-attribute-filter)  <Badge class="secondary" text="input"/><Bullet />[`CosmosMessageFilter`](/docs/graphql-reference/inputs/cosmos-message-filter)  <Badge class="secondary" text="input"/><Bullet />[`CosmosTransactionFilter`](/docs/graphql-reference/inputs/cosmos-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`CosmosTransferFilter`](/docs/graphql-reference/inputs/cosmos-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`Ethereum2ValidatorUpdatesFilter`](/docs/graphql-reference/inputs/ethereum-2-validator-updates-filter)  <Badge class="secondary" text="input"/><Bullet />[`EverscaleBlockFilter`](/docs/graphql-reference/inputs/everscale-block-filter)  <Badge class="secondary" text="input"/><Bullet />[`EverscaleMessageFilter`](/docs/graphql-reference/inputs/everscale-message-filter)  <Badge class="secondary" text="input"/><Bullet />[`EverscaleTransactionFilter`](/docs/graphql-reference/inputs/everscale-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`RipplePaymentFilter`](/docs/graphql-reference/inputs/ripple-payment-filter)  <Badge class="secondary" text="input"/><Bullet />[`RippleTransactionFilter`](/docs/graphql-reference/inputs/ripple-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`SolanaInstructionAccountFilter`](/docs/graphql-reference/inputs/solana-instruction-account-filter)  <Badge class="secondary" text="input"/><Bullet />[`SolanaInstructionFilter`](/docs/graphql-reference/inputs/solana-instruction-filter)  <Badge class="secondary" text="input"/><Bullet />[`SolanaTransactionFilter`](/docs/graphql-reference/inputs/solana-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`SolanaTransferFilter`](/docs/graphql-reference/inputs/solana-transfer-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarOperationFilter`](/docs/graphql-reference/inputs/stellar-operation-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarPaymentFilter`](/docs/graphql-reference/inputs/stellar-payment-filter)  <Badge class="secondary" text="input"/><Bullet />[`StellarTransactionFilter`](/docs/graphql-reference/inputs/stellar-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`TezosArgumentFilter`](/docs/graphql-reference/inputs/tezos-argument-filter)  <Badge class="secondary" text="input"/><Bullet />[`TezosBalanceUpdateFilter`](/docs/graphql-reference/inputs/tezos-balance-update-filter)  <Badge class="secondary" text="input"/><Bullet />[`TezosOperationFilter`](/docs/graphql-reference/inputs/tezos-operation-filter)  <Badge class="secondary" text="input"/><Bullet />[`TezosTransactionFilter`](/docs/graphql-reference/inputs/tezos-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`TezosTransferFilter`](/docs/graphql-reference/inputs/tezos-transfer-filter)  <Badge class="secondary" text="input"/>
+

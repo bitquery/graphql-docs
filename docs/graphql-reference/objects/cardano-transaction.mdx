@@ -1,0 +1,2894 @@
+---
+id: cardano-transaction
+title: CardanoTransaction
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Transaction
+
+
+```graphql
+type CardanoTransaction {
+  any(
+    of: CardanoTransactionsMeasureable!
+  ): String
+  block(
+    height: BlockSelector
+    time: DateTimeSelector
+  ): Block
+  count(
+    uniq: CardanoTransactionUniq
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): Int
+  countBigInt(
+    uniq: CardanoTransactionUniq
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): BigInt
+  date: Date
+  depositValue(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): Float
+  depositValueDecimal(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): DecimalNumberAsDiv
+  expression(
+    get: String!
+  ): DecimalNumber
+  feeValue(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): Float
+  feeValueDecimal(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): DecimalNumberAsDiv
+  hash(
+    txHash: StringIdSelector
+  ): String!
+  includedAt: DateTime
+  index(
+    txIndex: IntegerSelector
+  ): String!
+  inputCount(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): Int
+  inputCountBigInt(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): BigInt
+  inputValue(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): Float
+  inputValueDecimal(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): DecimalNumberAsDiv
+  invalidBefore: String
+  invalidHereafter: String
+  maximum(
+    of: CardanoTransactionsMeasureable!
+    get: CardanoTransactionsMeasureable
+  ): String
+  metadata: String
+  minimum(
+    of: CardanoTransactionsMeasureable!
+    get: CardanoTransactionsMeasureable
+  ): String
+  mintCount(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): Int
+  mintCountBigInt(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): BigInt
+  outputCount(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): Int
+  outputCountBigInt(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): BigInt
+  outputValue(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): Float
+  outputValueDecimal(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): DecimalNumberAsDiv
+  txSize(
+    txSize: IntegerSelector
+  ): Int
+  withdrawalCount(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): Int
+  withdrawalCountBigInt(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): BigInt
+  withdrawalValue(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): Float
+  withdrawalValueDecimal(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: IntegerSelector
+    txSize: IntegerSelector
+    inputCount: IntegerSelector
+    outputCount: IntegerSelector
+    inputValue: FloatSelector
+    outputValue: FloatSelector
+    feeValue: FloatSelector
+    withdrawalCount: IntegerSelector
+    mintCount: IntegerSelector
+    withdrawalValue: FloatSelector
+    depositValue: FloatSelector
+    outputAddress: AddressSelectorIn
+    inputAddress: AddressSelectorIn
+  ): DecimalNumberAsDiv
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>any</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.any.<b>of</b></code>](#)<Bullet />[`CardanoTransactionsMeasureable!`](/docs/graphql-reference/enums/cardano-transactions-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>block</b></code>](#)<Bullet />[`Block`](/docs/graphql-reference/objects/block) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Block where transaction is included
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.block.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.block.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>count</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction  count
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.count.<b>uniq</b></code>](#)<Bullet />[`CardanoTransactionUniq`](/docs/graphql-reference/enums/cardano-transaction-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.count.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.count.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.count.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.count.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.count.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.count.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.count.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.count.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.count.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.count.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.count.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.count.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.count.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.count.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.count.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.count.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.count.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction  count
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.countBigInt.<b>uniq</b></code>](#)<Bullet />[`CardanoTransactionUniq`](/docs/graphql-reference/enums/cardano-transaction-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.countBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.countBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.countBigInt.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.countBigInt.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.countBigInt.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.countBigInt.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.countBigInt.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.countBigInt.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.countBigInt.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.countBigInt.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.countBigInt.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.countBigInt.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.countBigInt.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.countBigInt.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.countBigInt.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.countBigInt.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.countBigInt.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>date</b></code>](#)<Bullet />[`Date`](/docs/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Calendar date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>depositValue</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction total deposit value
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValue.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValue.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValue.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValue.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValue.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValue.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValue.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValue.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValue.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValue.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValue.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValue.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValue.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValue.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValue.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValue.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValue.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValue.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValue.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>depositValueDecimal</b></code>](#)<Bullet />[`DecimalNumberAsDiv`](/docs/graphql-reference/scalars/decimal-number-as-div) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction total fee value
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValueDecimal.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValueDecimal.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValueDecimal.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValueDecimal.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValueDecimal.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValueDecimal.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValueDecimal.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValueDecimal.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValueDecimal.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValueDecimal.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValueDecimal.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValueDecimal.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValueDecimal.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValueDecimal.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValueDecimal.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValueDecimal.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValueDecimal.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.depositValueDecimal.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>feeValue</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction total fee value
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValue.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValue.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValue.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValue.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValue.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValue.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValue.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValue.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValue.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValue.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValue.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValue.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValue.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValue.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValue.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValue.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValue.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValue.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValue.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>feeValueDecimal</b></code>](#)<Bullet />[`DecimalNumberAsDiv`](/docs/graphql-reference/scalars/decimal-number-as-div) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction total fee value
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValueDecimal.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValueDecimal.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValueDecimal.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValueDecimal.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValueDecimal.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValueDecimal.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValueDecimal.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValueDecimal.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValueDecimal.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValueDecimal.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValueDecimal.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValueDecimal.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValueDecimal.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValueDecimal.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValueDecimal.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValueDecimal.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValueDecimal.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.feeValueDecimal.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>hash</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Hash hex representation
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.hash.<b>txHash</b></code>](#)<Bullet />[`StringIdSelector`](/docs/graphql-reference/inputs/string-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>includedAt</b></code>](#)<Bullet />[`DateTime`](/docs/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Included at timestamp
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>index</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction index in block, 0-based
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.index.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>inputCount</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction total input count
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCount.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCount.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCount.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCount.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCount.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCount.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCount.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCount.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCount.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCount.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCount.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCount.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCount.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCount.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCount.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCount.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCount.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>inputCountBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction total input count
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCountBigInt.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCountBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCountBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCountBigInt.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCountBigInt.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCountBigInt.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCountBigInt.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCountBigInt.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCountBigInt.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCountBigInt.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCountBigInt.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCountBigInt.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCountBigInt.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCountBigInt.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCountBigInt.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCountBigInt.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCountBigInt.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputCountBigInt.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>inputValue</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction total input value
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValue.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValue.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValue.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValue.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValue.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValue.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValue.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValue.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValue.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValue.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValue.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValue.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValue.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValue.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValue.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValue.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValue.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValue.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValue.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>inputValueDecimal</b></code>](#)<Bullet />[`DecimalNumberAsDiv`](/docs/graphql-reference/scalars/decimal-number-as-div) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction total input value as decimal
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValueDecimal.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValueDecimal.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValueDecimal.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValueDecimal.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValueDecimal.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValueDecimal.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValueDecimal.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValueDecimal.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValueDecimal.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValueDecimal.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValueDecimal.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValueDecimal.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValueDecimal.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValueDecimal.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValueDecimal.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValueDecimal.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValueDecimal.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.inputValueDecimal.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>invalidBefore</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Invalid before
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>invalidHereafter</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Invalid hereafter
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.maximum.<b>of</b></code>](#)<Bullet />[`CardanoTransactionsMeasureable!`](/docs/graphql-reference/enums/cardano-transactions-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.maximum.<b>get</b></code>](#)<Bullet />[`CardanoTransactionsMeasureable`](/docs/graphql-reference/enums/cardano-transactions-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>metadata</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Metadata
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.minimum.<b>of</b></code>](#)<Bullet />[`CardanoTransactionsMeasureable!`](/docs/graphql-reference/enums/cardano-transactions-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.minimum.<b>get</b></code>](#)<Bullet />[`CardanoTransactionsMeasureable`](/docs/graphql-reference/enums/cardano-transactions-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>mintCount</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction total mint count
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCount.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCount.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCount.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCount.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCount.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCount.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCount.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCount.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCount.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCount.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCount.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCount.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCount.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCount.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCount.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCount.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCount.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>mintCountBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction total mint count
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCountBigInt.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCountBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCountBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCountBigInt.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCountBigInt.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCountBigInt.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCountBigInt.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCountBigInt.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCountBigInt.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCountBigInt.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCountBigInt.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCountBigInt.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCountBigInt.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCountBigInt.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCountBigInt.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCountBigInt.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCountBigInt.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.mintCountBigInt.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>outputCount</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction total output count
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCount.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCount.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCount.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCount.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCount.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCount.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCount.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCount.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCount.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCount.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCount.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCount.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCount.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCount.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCount.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCount.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCount.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>outputCountBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction total output count
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCountBigInt.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCountBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCountBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCountBigInt.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCountBigInt.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCountBigInt.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCountBigInt.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCountBigInt.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCountBigInt.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCountBigInt.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCountBigInt.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCountBigInt.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCountBigInt.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCountBigInt.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCountBigInt.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCountBigInt.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCountBigInt.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputCountBigInt.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>outputValue</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction total output value
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValue.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValue.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValue.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValue.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValue.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValue.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValue.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValue.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValue.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValue.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValue.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValue.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValue.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValue.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValue.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValue.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValue.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValue.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValue.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>outputValueDecimal</b></code>](#)<Bullet />[`DecimalNumberAsDiv`](/docs/graphql-reference/scalars/decimal-number-as-div) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction total output value
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValueDecimal.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValueDecimal.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValueDecimal.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValueDecimal.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValueDecimal.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValueDecimal.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValueDecimal.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValueDecimal.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValueDecimal.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValueDecimal.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValueDecimal.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValueDecimal.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValueDecimal.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValueDecimal.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValueDecimal.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValueDecimal.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValueDecimal.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.outputValueDecimal.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>txSize</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction size
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.txSize.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>withdrawalCount</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction total withdrawal count
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCount.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCount.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCount.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCount.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCount.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCount.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCount.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCount.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCount.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCount.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCount.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCount.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCount.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCount.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCount.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCount.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCount.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>withdrawalCountBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction total withdrawal count
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCountBigInt.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCountBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCountBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCountBigInt.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCountBigInt.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCountBigInt.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCountBigInt.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCountBigInt.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCountBigInt.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCountBigInt.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCountBigInt.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCountBigInt.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCountBigInt.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCountBigInt.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCountBigInt.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCountBigInt.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCountBigInt.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalCountBigInt.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>withdrawalValue</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction total withdrawal value
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValue.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValue.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValue.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValue.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValue.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValue.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValue.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValue.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValue.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValue.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValue.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValue.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValue.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValue.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValue.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValue.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValue.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValue.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValue.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.<b>withdrawalValueDecimal</b></code>](#)<Bullet />[`DecimalNumberAsDiv`](/docs/graphql-reference/scalars/decimal-number-as-div) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction total fee value
+> ##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValueDecimal.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValueDecimal.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValueDecimal.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValueDecimal.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValueDecimal.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValueDecimal.<b>txIndex</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValueDecimal.<b>txSize</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValueDecimal.<b>inputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValueDecimal.<b>outputCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValueDecimal.<b>inputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValueDecimal.<b>outputValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValueDecimal.<b>feeValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValueDecimal.<b>withdrawalCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValueDecimal.<b>mintCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValueDecimal.<b>withdrawalValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValueDecimal.<b>depositValue</b></code>](#)<Bullet />[`FloatSelector`](/docs/graphql-reference/inputs/float-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValueDecimal.<b>outputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>CardanoTransaction.withdrawalValueDecimal.<b>inputAddress</b></code>](#)<Bullet />[`AddressSelectorIn`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+### Member of
+
+[`Cardano`](/docs/graphql-reference/objects/cardano)  <Badge class="secondary" text="object"/>
+

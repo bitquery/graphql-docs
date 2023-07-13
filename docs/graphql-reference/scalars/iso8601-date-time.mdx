@@ -1,0 +1,56 @@
+---
+id: iso8601-date-time
+title: ISO8601DateTime
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+An ISO 8601-encoded datetime
+
+
+```graphql
+scalar ISO8601DateTime
+```
+
+
+
+
+
+
+### Member of
+
+[`CoinpathEntry`](/docs/graphql-reference/objects/coinpath-entry)  <Badge class="secondary" text="object"/><Bullet />[`ConfluxBalanceChange`](/docs/graphql-reference/objects/conflux-balance-change)  <Badge class="secondary" text="object"/><Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector)  <Badge class="secondary" text="input"/><Bullet />[`DateTime`](/docs/graphql-reference/objects/date-time)  <Badge class="secondary" text="object"/><Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector)  <Badge class="secondary" text="input"/><Bullet />[`EthereumBalanceChange`](/docs/graphql-reference/objects/ethereum-balance-change)  <Badge class="secondary" text="object"/><Bullet />[`TronBalanceChange`](/docs/graphql-reference/objects/tron-balance-change)  <Badge class="secondary" text="object"/>
+

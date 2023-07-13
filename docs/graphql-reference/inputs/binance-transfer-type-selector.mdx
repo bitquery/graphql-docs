@@ -1,0 +1,87 @@
+---
+id: binance-transfer-type-selector
+title: BinanceTransferTypeSelector
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Select transfer type(s)
+
+
+```graphql
+input BinanceTransferTypeSelector {
+  is: BinanceTransferType
+  not: BinanceTransferType
+  in: [BinanceTransferType!]
+  notIn: [BinanceTransferType!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferTypeSelector.<b>is</b></code>](#)<Bullet />[`BinanceTransferType`](/docs/graphql-reference/enums/binance-transfer-type) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Transfer type is
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferTypeSelector.<b>not</b></code>](#)<Bullet />[`BinanceTransferType`](/docs/graphql-reference/enums/binance-transfer-type) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Transfer type not
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferTypeSelector.<b>in</b></code>](#)<Bullet />[`[BinanceTransferType!]`](/docs/graphql-reference/enums/binance-transfer-type) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Transfer type in the list
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceTransferTypeSelector.<b>notIn</b></code>](#)<Bullet />[`[BinanceTransferType!]`](/docs/graphql-reference/enums/binance-transfer-type) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Transfer type not in the list
+> 
+
+
+
+### Member of
+
+[`BinanceTransferFilter`](/docs/graphql-reference/inputs/binance-transfer-filter)  <Badge class="secondary" text="input"/>
+

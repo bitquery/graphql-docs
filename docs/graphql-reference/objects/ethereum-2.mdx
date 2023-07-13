@@ -1,0 +1,654 @@
+---
+id: ethereum-2
+title: Ethereum2
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Ethereum v 2.0 Baecon Chain
+
+
+```graphql
+type Ethereum2 {
+  attestations(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    blockRootHash: HashSelector
+    blockProposerIndex: [IntegerSelector!]
+    validatorIndex: [IntegerSelector!]
+    committeeIndex: [IntegerSelector!]
+    attestationSlot: [IntegerSelector!]
+    attestationEpoch: [IntegerSelector!]
+    any: [Ethereum2Filter!]
+    options: QueryOptions
+  ): [Ethereum2Attestation!]
+  attesterSlashings(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    blockRootHash: HashSelector
+    blockProposerIndex: [IntegerSelector!]
+    validatorIndex: [IntegerSelector!]
+    attestationSlot: [IntegerSelector!]
+    attestationEpoch: [IntegerSelector!]
+    any: [Ethereum2Filter!]
+    options: QueryOptions
+  ): [Ethereum2AttesterSlashing!]
+  blocks(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    blockRootHash: HashSelector
+    blockProposerIndex: [IntegerSelector!]
+    any: [Ethereum2Filter!]
+    options: QueryOptions
+  ): [Ethereum2Blocks!]
+  deposits(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    blockRootHash: HashSelector
+    blockProposerIndex: [IntegerSelector!]
+    validatorIndex: [IntegerSelector!]
+    any: [Ethereum2Filter!]
+    options: QueryOptions
+  ): [Ethereum2Deposit!]
+  proposerSlashings(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    blockRootHash: HashSelector
+    blockProposerIndex: [IntegerSelector!]
+    slashingProposerIndex: [IntegerSelector!]
+    slashingSlot: [IntegerSelector!]
+    slashingEpoch: [IntegerSelector!]
+    any: [Ethereum2Filter!]
+    options: QueryOptions
+  ): [Ethereum2ProposerSlashing!]
+  validatorUpdates(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    blockRootHash: HashSelector
+    blockProposerIndex: [IntegerSelector!]
+    epoch: [StringSelector!]
+    blockProposerPubkey: [HashSelector!]
+    stateRootHash: [HashSelector!]
+    validatorIndex: [IntegerSelector!]
+    validatorStatus: [StringSelector!]
+    validatorPubkey: [HashSelector!]
+    eth1DepositRootHash: [HashSelector!]
+    eth1DepositCount: [IntegerSelector!]
+    eth1BlockHash: [HashSelector!]
+    validatorWithdrawalCredentials: [HashSelector!]
+    validatorSlashed: [BooleanSelector!]
+    validatorBalance: [AmountSelector!]
+    validatorBalanceChange: [AmountSelector!]
+    validatorEffectiveBalance: [AmountSelector!]
+    validatorActivationEpoch: [StringSelector!]
+    validatorExitEpoch: [StringSelector!]
+    validatorWithdrawableEpoch: [StringSelector!]
+    any: [Ethereum2ValidatorUpdatesFilter!]
+    options: QueryOptions
+  ): [Ethereum2ValidatorUpdates!]
+  voluntaryExits(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    blockRootHash: HashSelector
+    blockProposerIndex: [IntegerSelector!]
+    validatorIndex: [IntegerSelector!]
+    voluntaryExitEpoch: [IntegerSelector!]
+    any: [Ethereum2Filter!]
+    options: QueryOptions
+  ): [Ethereum2VoluntaryExit!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2.<b>attestations</b></code>](#)<Bullet />[`[Ethereum2Attestation!]`](/docs/graphql-reference/objects/ethereum-2-attestation) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Attestations in block
+> ##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attestations.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attestations.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attestations.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attestations.<b>blockRootHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attestations.<b>blockProposerIndex</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attestations.<b>validatorIndex</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attestations.<b>committeeIndex</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attestations.<b>attestationSlot</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attestations.<b>attestationEpoch</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attestations.<b>any</b></code>](#)<Bullet />[`[Ethereum2Filter!]`](/docs/graphql-reference/inputs/ethereum-2-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attestations.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2.<b>attesterSlashings</b></code>](#)<Bullet />[`[Ethereum2AttesterSlashing!]`](/docs/graphql-reference/objects/ethereum-2-attester-slashing) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Attester Slashings
+> ##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attesterSlashings.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attesterSlashings.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attesterSlashings.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attesterSlashings.<b>blockRootHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attesterSlashings.<b>blockProposerIndex</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attesterSlashings.<b>validatorIndex</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attesterSlashings.<b>attestationSlot</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attesterSlashings.<b>attestationEpoch</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attesterSlashings.<b>any</b></code>](#)<Bullet />[`[Ethereum2Filter!]`](/docs/graphql-reference/inputs/ethereum-2-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.attesterSlashings.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2.<b>blocks</b></code>](#)<Bullet />[`[Ethereum2Blocks!]`](/docs/graphql-reference/objects/ethereum-2-blocks) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Blockchain Blocks
+> ##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.blocks.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.blocks.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.blocks.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.blocks.<b>blockRootHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.blocks.<b>blockProposerIndex</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.blocks.<b>any</b></code>](#)<Bullet />[`[Ethereum2Filter!]`](/docs/graphql-reference/inputs/ethereum-2-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.blocks.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2.<b>deposits</b></code>](#)<Bullet />[`[Ethereum2Deposit!]`](/docs/graphql-reference/objects/ethereum-2-deposit) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Attestations of blocks
+> ##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.deposits.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.deposits.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.deposits.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.deposits.<b>blockRootHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.deposits.<b>blockProposerIndex</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.deposits.<b>validatorIndex</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.deposits.<b>any</b></code>](#)<Bullet />[`[Ethereum2Filter!]`](/docs/graphql-reference/inputs/ethereum-2-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.deposits.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2.<b>proposerSlashings</b></code>](#)<Bullet />[`[Ethereum2ProposerSlashing!]`](/docs/graphql-reference/objects/ethereum-2-proposer-slashing) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Proposer Slashings
+> ##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.proposerSlashings.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.proposerSlashings.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.proposerSlashings.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.proposerSlashings.<b>blockRootHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.proposerSlashings.<b>blockProposerIndex</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.proposerSlashings.<b>slashingProposerIndex</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.proposerSlashings.<b>slashingSlot</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.proposerSlashings.<b>slashingEpoch</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.proposerSlashings.<b>any</b></code>](#)<Bullet />[`[Ethereum2Filter!]`](/docs/graphql-reference/inputs/ethereum-2-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.proposerSlashings.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2.<b>validatorUpdates</b></code>](#)<Bullet />[`[Ethereum2ValidatorUpdates!]`](/docs/graphql-reference/objects/ethereum-2-validator-updates) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Validator Updates
+> ##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>blockRootHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>blockProposerIndex</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>epoch</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>blockProposerPubkey</b></code>](#)<Bullet />[`[HashSelector!]`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>stateRootHash</b></code>](#)<Bullet />[`[HashSelector!]`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>validatorIndex</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>validatorStatus</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>validatorPubkey</b></code>](#)<Bullet />[`[HashSelector!]`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>eth1DepositRootHash</b></code>](#)<Bullet />[`[HashSelector!]`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>eth1DepositCount</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>eth1BlockHash</b></code>](#)<Bullet />[`[HashSelector!]`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>validatorWithdrawalCredentials</b></code>](#)<Bullet />[`[HashSelector!]`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>validatorSlashed</b></code>](#)<Bullet />[`[BooleanSelector!]`](/docs/graphql-reference/inputs/boolean-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>validatorBalance</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>validatorBalanceChange</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>validatorEffectiveBalance</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>validatorActivationEpoch</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>validatorExitEpoch</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>validatorWithdrawableEpoch</b></code>](#)<Bullet />[`[StringSelector!]`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>any</b></code>](#)<Bullet />[`[Ethereum2ValidatorUpdatesFilter!]`](/docs/graphql-reference/inputs/ethereum-2-validator-updates-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.validatorUpdates.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2.<b>voluntaryExits</b></code>](#)<Bullet />[`[Ethereum2VoluntaryExit!]`](/docs/graphql-reference/objects/ethereum-2-voluntary-exit) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Voluntary Exits
+> ##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.voluntaryExits.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.voluntaryExits.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.voluntaryExits.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.voluntaryExits.<b>blockRootHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.voluntaryExits.<b>blockProposerIndex</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.voluntaryExits.<b>validatorIndex</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.voluntaryExits.<b>voluntaryExitEpoch</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.voluntaryExits.<b>any</b></code>](#)<Bullet />[`[Ethereum2Filter!]`](/docs/graphql-reference/inputs/ethereum-2-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2.voluntaryExits.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+### Returned by
+
+[`ethereum2`](/docs/graphql-reference/queries/ethereum-2)  <Badge class="secondary" text="query"/>
+

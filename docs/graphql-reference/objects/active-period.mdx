@@ -1,0 +1,122 @@
+---
+id: active-period
+title: ActivePeriod
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+ActivePeriod
+
+
+```graphql
+type ActivePeriod {
+  billingDay: Int!
+  ends: UtilitiesDate!
+  isBlocked: Boolean!
+  isPaid: Boolean!
+  isPointsConsumed: Boolean!
+  isSpent: Boolean!
+  points: BigInt!
+  pointsRemaining: BigInt!
+  starts: UtilitiesDate!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>ActivePeriod.<b>billingDay</b></code>](#)<Bullet />[`Int!`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Billing day
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ActivePeriod.<b>ends</b></code>](#)<Bullet />[`UtilitiesDate!`](/docs/graphql-reference/objects/utilities-date) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Period ends at
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ActivePeriod.<b>isBlocked</b></code>](#)<Bullet />[`Boolean!`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Is blocked
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ActivePeriod.<b>isPaid</b></code>](#)<Bullet />[`Boolean!`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Is paid
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ActivePeriod.<b>isPointsConsumed</b></code>](#)<Bullet />[`Boolean!`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Is points consumed
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ActivePeriod.<b>isSpent</b></code>](#)<Bullet />[`Boolean!`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Is spent
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ActivePeriod.<b>points</b></code>](#)<Bullet />[`BigInt!`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Total available points
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ActivePeriod.<b>pointsRemaining</b></code>](#)<Bullet />[`BigInt!`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Remaining points
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ActivePeriod.<b>starts</b></code>](#)<Bullet />[`UtilitiesDate!`](/docs/graphql-reference/objects/utilities-date) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Period starts at
+> 
+
+
+
+### Member of
+
+[`Utilities`](/docs/graphql-reference/objects/utilities)  <Badge class="secondary" text="object"/>
+

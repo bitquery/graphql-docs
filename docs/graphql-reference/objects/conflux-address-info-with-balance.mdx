@@ -1,0 +1,127 @@
+---
+id: conflux-address-info-with-balance
+title: ConfluxAddressInfoWithBalance
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Blockchain address
+
+
+```graphql
+type ConfluxAddressInfoWithBalance {
+  address: String
+  annotation: String
+  balance(
+    in: BaseCurrencyEnum
+  ): Float
+  balances(
+    date: DateSelector
+    time: DateTimeSelector
+    currency: ConfluxCurrencySelector
+    height: BlockSelectorRange
+  ): [ConfluxBalance!]
+  smartContract: ConfluxSmartContractInfoWithAttributes
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxAddressInfoWithBalance.<b>address</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxAddressInfoWithBalance.<b>annotation</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Annotations ( tags ), if exists
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxAddressInfoWithBalance.<b>balance</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> DEPRECATED Current address balance
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxAddressInfoWithBalance.balance.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxAddressInfoWithBalance.<b>balances</b></code>](#)<Bullet />[`[ConfluxBalance!]`](/docs/graphql-reference/objects/conflux-balance) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> DEPRECATED Balances by currencies for the address
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxAddressInfoWithBalance.balances.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxAddressInfoWithBalance.balances.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxAddressInfoWithBalance.balances.<b>currency</b></code>](#)<Bullet />[`ConfluxCurrencySelector`](/docs/graphql-reference/inputs/conflux-currency-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxAddressInfoWithBalance.balances.<b>height</b></code>](#)<Bullet />[`BlockSelectorRange`](/docs/graphql-reference/inputs/block-selector-range) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxAddressInfoWithBalance.<b>smartContract</b></code>](#)<Bullet />[`ConfluxSmartContractInfoWithAttributes`](/docs/graphql-reference/objects/conflux-smart-contract-info-with-attributes) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Smart Contract if exists on the address
+> 
+
+
+
+### Member of
+
+[`Conflux`](/docs/graphql-reference/objects/conflux)  <Badge class="secondary" text="object"/>
+

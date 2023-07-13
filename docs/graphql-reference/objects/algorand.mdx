@@ -1,0 +1,605 @@
+---
+id: algorand
+title: Algorand
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Algorand Blockchain
+
+
+```graphql
+type Algorand {
+  address(
+    address: [AddressSelectorIn!]!
+  ): [AlgorandAddressInfo!]!
+  arguments(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: TxIndexSelector
+    txType: TxTypeSelector
+    txFrom: [AddressSelector!]
+    caller: [AddressSelector!]
+    reference: [AddressSelector!]
+    value: [ArgumentValueSelector!]
+    argument: [ArgumentSelector!]
+    smartContractAddress: [AddressSelector!]
+    argindex: ArgumentIndexSelector
+    any: [AlgorandArgumentFilter!]
+    options: QueryOptions
+  ): [AlgorandArguments!]
+  blocks(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    blockHash: HashSelector
+    proposer: [AddressSelector!]
+    blockReward: [AmountSelector!]
+    nextProtocol: StringIdSelector
+    currentProtocol: StringIdSelector
+    any: [AlgorandBlockFilter!]
+    options: QueryOptions
+  ): [AlgorandBlocks!]
+  coinpath(
+    sender: AddressSelector
+    receiver: AddressSelector
+    currency: [AlgorandCurrencySelector!]
+    initialAddress: AddressSelector
+    initialDate: DateSelector
+    initialTime: DateTimeSelector
+    date: DateSelector
+    time: DateTimeSelector
+    depth: IntegerLimitedSelector
+    options: CoinpathOptions
+  ): [AlgorandCoinpath!]
+  smartContractCalls(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txIndex: TxIndexSelector
+    txSender: [AddressSelector!]
+    smartContractAddress: [AddressSelector!]
+    txType: TxTypeSelector
+    any: [AlgorandSmartContractCallFilter!]
+    options: QueryOptions
+  ): [AlgorandSmartContractCalls!]
+  transactions(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txSender: [AddressSelector!]
+    txIndex: TxIndexSelector
+    txCurrency: [AlgorandCurrencySelector!]
+    txType: TxTypeSelector
+    txSubtype: TxSubtypeSelector
+    group: GroupSelector
+    any: [AlgorandTransactionFilter!]
+    options: QueryOptions
+  ): [AlgorandTransactions!]
+  transfers(
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txSender: [AddressSelector!]
+    txIndex: TxIndexSelector
+    sender: [AddressSelector!]
+    receiver: [AddressSelector!]
+    currency: [AlgorandCurrencySelector!]
+    amount: [AmountSelector!]
+    txType: TxTypeSelector
+    transferType: AlgorandTransferTypeSelector
+    any: [AlgorandTransferFilter!]
+    options: QueryOptions
+  ): [AlgorandTransfers!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Algorand.<b>address</b></code>](#)<Bullet />[`[AlgorandAddressInfo!]!`](/docs/graphql-reference/objects/algorand-address-info) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Basic information about address ( or smart contract )
+> ##### [<code style={{ fontWeight: 'normal' }}>Algorand.address.<b>address</b></code>](#)<Bullet />[`[AddressSelectorIn!]!`](/docs/graphql-reference/inputs/address-selector-in) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Algorand.<b>arguments</b></code>](#)<Bullet />[`[AlgorandArguments!]`](/docs/graphql-reference/objects/algorand-arguments) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Arguments of Smart Contract Calls and Events
+> ##### [<code style={{ fontWeight: 'normal' }}>Algorand.arguments.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.arguments.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.arguments.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.arguments.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.arguments.<b>txIndex</b></code>](#)<Bullet />[`TxIndexSelector`](/docs/graphql-reference/inputs/tx-index-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.arguments.<b>txType</b></code>](#)<Bullet />[`TxTypeSelector`](/docs/graphql-reference/inputs/tx-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.arguments.<b>txFrom</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.arguments.<b>caller</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.arguments.<b>reference</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.arguments.<b>value</b></code>](#)<Bullet />[`[ArgumentValueSelector!]`](/docs/graphql-reference/inputs/argument-value-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.arguments.<b>argument</b></code>](#)<Bullet />[`[ArgumentSelector!]`](/docs/graphql-reference/inputs/argument-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.arguments.<b>smartContractAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.arguments.<b>argindex</b></code>](#)<Bullet />[`ArgumentIndexSelector`](/docs/graphql-reference/inputs/argument-index-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.arguments.<b>any</b></code>](#)<Bullet />[`[AlgorandArgumentFilter!]`](/docs/graphql-reference/inputs/algorand-argument-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.arguments.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Algorand.<b>blocks</b></code>](#)<Bullet />[`[AlgorandBlocks!]`](/docs/graphql-reference/objects/algorand-blocks) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Blockchain Blocks
+> ##### [<code style={{ fontWeight: 'normal' }}>Algorand.blocks.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.blocks.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.blocks.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.blocks.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.blocks.<b>proposer</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.blocks.<b>blockReward</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.blocks.<b>nextProtocol</b></code>](#)<Bullet />[`StringIdSelector`](/docs/graphql-reference/inputs/string-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.blocks.<b>currentProtocol</b></code>](#)<Bullet />[`StringIdSelector`](/docs/graphql-reference/inputs/string-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.blocks.<b>any</b></code>](#)<Bullet />[`[AlgorandBlockFilter!]`](/docs/graphql-reference/inputs/algorand-block-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.blocks.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Algorand.<b>coinpath</b></code>](#)<Bullet />[`[AlgorandCoinpath!]`](/docs/graphql-reference/objects/algorand-coinpath) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Money flow using Coinpath technology
+> ##### [<code style={{ fontWeight: 'normal' }}>Algorand.coinpath.<b>sender</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.coinpath.<b>receiver</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.coinpath.<b>currency</b></code>](#)<Bullet />[`[AlgorandCurrencySelector!]`](/docs/graphql-reference/inputs/algorand-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.coinpath.<b>initialAddress</b></code>](#)<Bullet />[`AddressSelector`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.coinpath.<b>initialDate</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.coinpath.<b>initialTime</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.coinpath.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.coinpath.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.coinpath.<b>depth</b></code>](#)<Bullet />[`IntegerLimitedSelector`](/docs/graphql-reference/inputs/integer-limited-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.coinpath.<b>options</b></code>](#)<Bullet />[`CoinpathOptions`](/docs/graphql-reference/inputs/coinpath-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Algorand.<b>smartContractCalls</b></code>](#)<Bullet />[`[AlgorandSmartContractCalls!]`](/docs/graphql-reference/objects/algorand-smart-contract-calls) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Smart Contract Calls
+> ##### [<code style={{ fontWeight: 'normal' }}>Algorand.smartContractCalls.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.smartContractCalls.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.smartContractCalls.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.smartContractCalls.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.smartContractCalls.<b>txIndex</b></code>](#)<Bullet />[`TxIndexSelector`](/docs/graphql-reference/inputs/tx-index-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.smartContractCalls.<b>txSender</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.smartContractCalls.<b>smartContractAddress</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.smartContractCalls.<b>txType</b></code>](#)<Bullet />[`TxTypeSelector`](/docs/graphql-reference/inputs/tx-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.smartContractCalls.<b>any</b></code>](#)<Bullet />[`[AlgorandSmartContractCallFilter!]`](/docs/graphql-reference/inputs/algorand-smart-contract-call-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.smartContractCalls.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Algorand.<b>transactions</b></code>](#)<Bullet />[`[AlgorandTransactions!]`](/docs/graphql-reference/objects/algorand-transactions) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Blockchain Transactions
+> ##### [<code style={{ fontWeight: 'normal' }}>Algorand.transactions.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transactions.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transactions.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transactions.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transactions.<b>txSender</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transactions.<b>txIndex</b></code>](#)<Bullet />[`TxIndexSelector`](/docs/graphql-reference/inputs/tx-index-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transactions.<b>txCurrency</b></code>](#)<Bullet />[`[AlgorandCurrencySelector!]`](/docs/graphql-reference/inputs/algorand-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transactions.<b>txType</b></code>](#)<Bullet />[`TxTypeSelector`](/docs/graphql-reference/inputs/tx-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transactions.<b>txSubtype</b></code>](#)<Bullet />[`TxSubtypeSelector`](/docs/graphql-reference/inputs/tx-subtype-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transactions.<b>group</b></code>](#)<Bullet />[`GroupSelector`](/docs/graphql-reference/inputs/group-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transactions.<b>any</b></code>](#)<Bullet />[`[AlgorandTransactionFilter!]`](/docs/graphql-reference/inputs/algorand-transaction-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transactions.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Algorand.<b>transfers</b></code>](#)<Bullet />[`[AlgorandTransfers!]`](/docs/graphql-reference/objects/algorand-transfers) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Currency Transfers
+> ##### [<code style={{ fontWeight: 'normal' }}>Algorand.transfers.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transfers.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transfers.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transfers.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transfers.<b>txSender</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transfers.<b>txIndex</b></code>](#)<Bullet />[`TxIndexSelector`](/docs/graphql-reference/inputs/tx-index-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transfers.<b>sender</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transfers.<b>receiver</b></code>](#)<Bullet />[`[AddressSelector!]`](/docs/graphql-reference/inputs/address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transfers.<b>currency</b></code>](#)<Bullet />[`[AlgorandCurrencySelector!]`](/docs/graphql-reference/inputs/algorand-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transfers.<b>amount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transfers.<b>txType</b></code>](#)<Bullet />[`TxTypeSelector`](/docs/graphql-reference/inputs/tx-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transfers.<b>transferType</b></code>](#)<Bullet />[`AlgorandTransferTypeSelector`](/docs/graphql-reference/inputs/algorand-transfer-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transfers.<b>any</b></code>](#)<Bullet />[`[AlgorandTransferFilter!]`](/docs/graphql-reference/inputs/algorand-transfer-filter) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Algorand.transfers.<b>options</b></code>](#)<Bullet />[`QueryOptions`](/docs/graphql-reference/inputs/query-options) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+### Returned by
+
+[`algorand`](/docs/graphql-reference/queries/algorand)  <Badge class="secondary" text="query"/>
+

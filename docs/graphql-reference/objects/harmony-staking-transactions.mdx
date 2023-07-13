@@ -1,0 +1,402 @@
+---
+id: harmony-staking-transactions
+title: HarmonyStakingTransactions
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+StakingTransactions in Harmony blockchain
+
+
+```graphql
+type HarmonyStakingTransactions {
+  any(
+    of: HarmonyStakingTransactionsMeasureable!
+  ): String
+  blockHash: String
+  count(
+    uniq: HarmonyStakingTransactionsUniq
+  ): Int
+  countBigInt(
+    uniq: HarmonyStakingTransactionsUniq
+  ): BigInt
+  data: String
+  date: Date
+  delegatorAddress(
+    delegatorAddress: HashSelector
+  ): String
+  epoch: BigInt
+  expression(
+    get: String!
+  ): DecimalNumber
+  gas: BigInt
+  gasPrice: String
+  gasValue(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    transactionHash: HashSelector
+    ledger: BlockSelector
+    shardId: BigIntIdSelector
+    nonce: BigIntIdSelector
+    transactionType: StakingTransactionsTypeSelector
+    validatorAddress: HashSelector
+    delegatorAddress: HashSelector
+    success: Boolean
+    status: Boolean
+  ): Float
+  ledger(
+    ledger: BlockSelector
+  ): BigInt
+  maximum(
+    of: HarmonyStakingTransactionsMeasureable!
+    get: HarmonyStakingTransactionsMeasureable
+  ): String
+  minimum(
+    of: HarmonyStakingTransactionsMeasureable!
+    get: HarmonyStakingTransactionsMeasureable
+  ): String
+  nonce: BigInt
+  shardId: BigInt
+  status(
+    status: Boolean
+  ): Boolean
+  success(
+    success: Boolean
+  ): Boolean
+  time: DateTime
+  transactionHash(
+    transactionHash: HashSelector
+  ): String
+  transactionType(
+    transactionType: StakingTransactionsTypeSelector
+  ): String
+  validatorAddress(
+    validatorAddress: HashSelector
+  ): String
+  value: String
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>any</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.any.<b>of</b></code>](#)<Bullet />[`HarmonyStakingTransactionsMeasureable!`](/docs/graphql-reference/enums/harmony-staking-transactions-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>blockHash</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Hash of block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>count</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.count.<b>uniq</b></code>](#)<Bullet />[`HarmonyStakingTransactionsUniq`](/docs/graphql-reference/enums/harmony-staking-transactions-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.countBigInt.<b>uniq</b></code>](#)<Bullet />[`HarmonyStakingTransactionsUniq`](/docs/graphql-reference/enums/harmony-staking-transactions-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>data</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Data
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>date</b></code>](#)<Bullet />[`Date`](/docs/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The date this transaction was created
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>delegatorAddress</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Delegator Address
+> ##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.delegatorAddress.<b>delegatorAddress</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>epoch</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Epoch
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>gas</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Gas provided by the sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>gasPrice</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Gas price provided by the sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>gasValue</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.gasValue.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.gasValue.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.gasValue.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.gasValue.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.gasValue.<b>ledger</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.gasValue.<b>shardId</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.gasValue.<b>nonce</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.gasValue.<b>transactionType</b></code>](#)<Bullet />[`StakingTransactionsTypeSelector`](/docs/graphql-reference/inputs/staking-transactions-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.gasValue.<b>validatorAddress</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.gasValue.<b>delegatorAddress</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.gasValue.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.gasValue.<b>status</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>ledger</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Hash of the block where this transaction was in
+> ##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.ledger.<b>ledger</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.maximum.<b>of</b></code>](#)<Bullet />[`HarmonyStakingTransactionsMeasureable!`](/docs/graphql-reference/enums/harmony-staking-transactions-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.maximum.<b>get</b></code>](#)<Bullet />[`HarmonyStakingTransactionsMeasureable`](/docs/graphql-reference/enums/harmony-staking-transactions-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.minimum.<b>of</b></code>](#)<Bullet />[`HarmonyStakingTransactionsMeasureable!`](/docs/graphql-reference/enums/harmony-staking-transactions-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.minimum.<b>get</b></code>](#)<Bullet />[`HarmonyStakingTransactionsMeasureable`](/docs/graphql-reference/enums/harmony-staking-transactions-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>nonce</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> The number of transactions made by the sender prior to this one
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>shardId</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> ShardID
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>status</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Status
+> ##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.status.<b>status</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Successful of not
+> ##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.success.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>time</b></code>](#)<Bullet />[`DateTime`](/docs/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The time this transaction was created
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>transactionHash</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction hash
+> ##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.transactionHash.<b>transactionHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>transactionType</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction type
+> ##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.transactionType.<b>transactionType</b></code>](#)<Bullet />[`StakingTransactionsTypeSelector`](/docs/graphql-reference/inputs/staking-transactions-type-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>validatorAddress</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Validator Address
+> ##### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.validatorAddress.<b>validatorAddress</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>HarmonyStakingTransactions.<b>value</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Value transferred in ATTO
+> 
+
+
+
+### Member of
+
+[`Harmony`](/docs/graphql-reference/objects/harmony)  <Badge class="secondary" text="object"/>
+

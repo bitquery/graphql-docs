@@ -1,0 +1,256 @@
+---
+id: elrond-block-validator
+title: ElrondBlockValidator
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+BlockValidators in Elrond  blockchain
+
+
+```graphql
+type ElrondBlockValidator {
+  any(
+    of: ElrondBlockValidatorsMeasureable!
+  ): String
+  block(
+    height: BlockSelector
+    previousBlockHash: HashSelector
+    blockHash: HashSelector
+    shard: BigIntIdSelector
+    proposer: HashSelector
+    epoch: IntegerSelector
+    blockNonce: IntegerSelector
+    round: IntegerSelector
+    size: IntegerSelector
+    sizeTxs: IntegerSelector
+    publicKeyBitmap: StringSelector
+    stateRootHash: HashSelector
+    transactionCount: IntegerSelector
+  ): ElrondBlockDimension
+  count(
+    uniq: ElrondBlockValidatorUniq
+  ): Int
+  countBigInt(
+    uniq: ElrondBlockValidatorUniq
+  ): BigInt
+  date: Date
+  maximum(
+    of: ElrondBlockValidatorsMeasureable!
+    get: ElrondBlockValidatorsMeasureable
+  ): String
+  minimum(
+    of: ElrondBlockValidatorsMeasureable!
+    get: ElrondBlockValidatorsMeasureable
+  ): String
+  time: DateTime
+  validator: ElrondAddressHash
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.<b>any</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.any.<b>of</b></code>](#)<Bullet />[`ElrondBlockValidatorsMeasureable!`](/docs/graphql-reference/enums/elrond-block-validators-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.<b>block</b></code>](#)<Bullet />[`ElrondBlockDimension`](/docs/graphql-reference/objects/elrond-block-dimension) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Information about blocks notarized block
+> ##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.block.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.block.<b>previousBlockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.block.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.block.<b>shard</b></code>](#)<Bullet />[`BigIntIdSelector`](/docs/graphql-reference/inputs/big-int-id-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.block.<b>proposer</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.block.<b>epoch</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.block.<b>blockNonce</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.block.<b>round</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.block.<b>size</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.block.<b>sizeTxs</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.block.<b>publicKeyBitmap</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.block.<b>stateRootHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.block.<b>transactionCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.<b>count</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.count.<b>uniq</b></code>](#)<Bullet />[`ElrondBlockValidatorUniq`](/docs/graphql-reference/enums/elrond-block-validator-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.countBigInt.<b>uniq</b></code>](#)<Bullet />[`ElrondBlockValidatorUniq`](/docs/graphql-reference/enums/elrond-block-validator-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.<b>date</b></code>](#)<Bullet />[`Date`](/docs/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The date this transaction was created
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.maximum.<b>of</b></code>](#)<Bullet />[`ElrondBlockValidatorsMeasureable!`](/docs/graphql-reference/enums/elrond-block-validators-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.maximum.<b>get</b></code>](#)<Bullet />[`ElrondBlockValidatorsMeasureable`](/docs/graphql-reference/enums/elrond-block-validators-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.minimum.<b>of</b></code>](#)<Bullet />[`ElrondBlockValidatorsMeasureable!`](/docs/graphql-reference/enums/elrond-block-validators-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.minimum.<b>get</b></code>](#)<Bullet />[`ElrondBlockValidatorsMeasureable`](/docs/graphql-reference/enums/elrond-block-validators-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.<b>time</b></code>](#)<Bullet />[`DateTime`](/docs/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The time this transaction was created
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlockValidator.<b>validator</b></code>](#)<Bullet />[`ElrondAddressHash`](/docs/graphql-reference/objects/elrond-address-hash) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Hash of validator
+> 
+
+
+
+### Member of
+
+[`Elrond`](/docs/graphql-reference/objects/elrond)  <Badge class="secondary" text="object"/>
+

@@ -1,0 +1,122 @@
+---
+id: big-integer-selector
+title: BigIntegerSelector
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Select by big number
+
+
+```graphql
+input BigIntegerSelector {
+  is: BigInt
+  not: BigInt
+  in: [BigInt!]
+  notIn: [BigInt!]
+  gt: BigInt
+  lt: BigInt
+  lteq: BigInt
+  gteq: BigInt
+  between: [BigInt!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>BigIntegerSelector.<b>is</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> is
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BigIntegerSelector.<b>not</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> not
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BigIntegerSelector.<b>in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> in the list
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BigIntegerSelector.<b>notIn</b></code>](#)<Bullet />[`[BigInt!]`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> not in the list
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BigIntegerSelector.<b>gt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> greater than
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BigIntegerSelector.<b>lt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> less than
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BigIntegerSelector.<b>lteq</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> less or equal than
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BigIntegerSelector.<b>gteq</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> greater or equal than
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BigIntegerSelector.<b>between</b></code>](#)<Bullet />[`[BigInt!]`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> in range
+> 
+
+
+
+### Member of
+
+[`EverscaleBlockFilter`](/docs/graphql-reference/inputs/everscale-block-filter)  <Badge class="secondary" text="input"/><Bullet />[`EverscaleMessageFilter`](/docs/graphql-reference/inputs/everscale-message-filter)  <Badge class="secondary" text="input"/><Bullet />[`EverscaleTransactionFilter`](/docs/graphql-reference/inputs/everscale-transaction-filter)  <Badge class="secondary" text="input"/><Bullet />[`HarmonyArgumentsFilter`](/docs/graphql-reference/inputs/harmony-arguments-filter)  <Badge class="secondary" text="input"/><Bullet />[`HarmonyBlocksFilter`](/docs/graphql-reference/inputs/harmony-blocks-filter)  <Badge class="secondary" text="input"/><Bullet />[`HarmonySmartContractCallsFilter`](/docs/graphql-reference/inputs/harmony-smart-contract-calls-filter)  <Badge class="secondary" text="input"/><Bullet />[`HarmonySmartContractEventsFilter`](/docs/graphql-reference/inputs/harmony-smart-contract-events-filter)  <Badge class="secondary" text="input"/><Bullet />[`HarmonyTransactionsFilter`](/docs/graphql-reference/inputs/harmony-transactions-filter)  <Badge class="secondary" text="input"/>
+

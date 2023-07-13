@@ -1,0 +1,160 @@
+---
+id: binance-order-filter
+title: BinanceOrderFilter
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+input BinanceOrderFilter {
+  date: DateSelector
+  time: DateTimeSelector
+  height: BlockSelector
+  txHash: HashSelector
+  orderOwner: [BinanceAddressSelector!]
+  orderId: [OrderIdSelector!]
+  baseCurrency: [BinanceCurrencySelector!]
+  quoteCurrency: [BinanceCurrencySelector!]
+  quoteAmount: [AmountSelector!]
+  baseAmount: [AmountSelector!]
+  price: [AmountSelector!]
+  orderStatus: [OrderStatusSelector!]
+  orderType: [OrderTypeSelector!]
+  orderSide: [OrderSideSelector!]
+  orderTimeInForce: [OrderTimeInForceSelector!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrderFilter.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrderFilter.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrderFilter.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrderFilter.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrderFilter.<b>orderOwner</b></code>](#)<Bullet />[`[BinanceAddressSelector!]`](/docs/graphql-reference/inputs/binance-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrderFilter.<b>orderId</b></code>](#)<Bullet />[`[OrderIdSelector!]`](/docs/graphql-reference/inputs/order-id-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrderFilter.<b>baseCurrency</b></code>](#)<Bullet />[`[BinanceCurrencySelector!]`](/docs/graphql-reference/inputs/binance-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrderFilter.<b>quoteCurrency</b></code>](#)<Bullet />[`[BinanceCurrencySelector!]`](/docs/graphql-reference/inputs/binance-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrderFilter.<b>quoteAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrderFilter.<b>baseAmount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrderFilter.<b>price</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrderFilter.<b>orderStatus</b></code>](#)<Bullet />[`[OrderStatusSelector!]`](/docs/graphql-reference/inputs/order-status-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrderFilter.<b>orderType</b></code>](#)<Bullet />[`[OrderTypeSelector!]`](/docs/graphql-reference/inputs/order-type-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrderFilter.<b>orderSide</b></code>](#)<Bullet />[`[OrderSideSelector!]`](/docs/graphql-reference/inputs/order-side-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BinanceOrderFilter.<b>orderTimeInForce</b></code>](#)<Bullet />[`[OrderTimeInForceSelector!]`](/docs/graphql-reference/inputs/order-time-in-force-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+

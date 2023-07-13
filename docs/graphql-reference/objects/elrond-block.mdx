@@ -1,0 +1,256 @@
+---
+id: elrond-block
+title: ElrondBlock
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Blocks in Elrond  blockchain
+
+
+```graphql
+type ElrondBlock {
+  any(
+    of: ElrondBlocksMeasureable!
+  ): String
+  count(
+    uniq: ElrondBlockUniq
+  ): Int
+  countBigInt(
+    uniq: ElrondBlockUniq
+  ): BigInt
+  date: Date
+  epoch: Int
+  expression(
+    get: String!
+  ): DecimalNumber
+  hash: String
+  height: BigInt
+  maximum(
+    of: ElrondBlocksMeasureable!
+    get: ElrondBlocksMeasureable
+  ): String
+  minimum(
+    of: ElrondBlocksMeasureable!
+    get: ElrondBlocksMeasureable
+  ): String
+  nonce: BigInt
+  previousBlockHash: String
+  proposer: ElrondAddressHash
+  publicKeyBitmap: String
+  round: BigInt
+  shard: String
+  size: Int
+  sizeTxs: Int
+  stateRootHash: String
+  time: DateTime
+  transactionCount: BigInt
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>any</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.any.<b>of</b></code>](#)<Bullet />[`ElrondBlocksMeasureable!`](/docs/graphql-reference/enums/elrond-blocks-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>count</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.count.<b>uniq</b></code>](#)<Bullet />[`ElrondBlockUniq`](/docs/graphql-reference/enums/elrond-block-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.countBigInt.<b>uniq</b></code>](#)<Bullet />[`ElrondBlockUniq`](/docs/graphql-reference/enums/elrond-block-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>date</b></code>](#)<Bullet />[`Date`](/docs/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The date this transaction was created
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>epoch</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Epoch
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>hash</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Hash of the the block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>height</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Number of block in the blockchains
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.maximum.<b>of</b></code>](#)<Bullet />[`ElrondBlocksMeasureable!`](/docs/graphql-reference/enums/elrond-blocks-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.maximum.<b>get</b></code>](#)<Bullet />[`ElrondBlocksMeasureable`](/docs/graphql-reference/enums/elrond-blocks-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.minimum.<b>of</b></code>](#)<Bullet />[`ElrondBlocksMeasureable!`](/docs/graphql-reference/enums/elrond-blocks-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.minimum.<b>get</b></code>](#)<Bullet />[`ElrondBlocksMeasureable`](/docs/graphql-reference/enums/elrond-blocks-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>nonce</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Block Height
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>previousBlockHash</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> The block hash of this block`s parent
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>proposer</b></code>](#)<Bullet />[`ElrondAddressHash`](/docs/graphql-reference/objects/elrond-address-hash) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Proposer block hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>publicKeyBitmap</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Public Key Bitmap
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>round</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Round
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>shard</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Shard number of block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>size</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Size
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>sizeTxs</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Size Tx
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>stateRootHash</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> State root hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>time</b></code>](#)<Bullet />[`DateTime`](/docs/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The time this transaction was created
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ElrondBlock.<b>transactionCount</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Count of transactions in this block
+> 
+
+
+
+### Member of
+
+[`Elrond`](/docs/graphql-reference/objects/elrond)  <Badge class="secondary" text="object"/>
+

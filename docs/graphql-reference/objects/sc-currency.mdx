@@ -1,0 +1,87 @@
+---
+id: sc-currency
+title: ScCurrency
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Smart contract crypto currency ( token, coin, currency )
+
+
+```graphql
+type ScCurrency {
+  decimals: Int!
+  name: String
+  symbol: String!
+  tokenType: String
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>ScCurrency.<b>decimals</b></code>](#)<Bullet />[`Int!`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Decimals
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ScCurrency.<b>name</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Currency name
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ScCurrency.<b>symbol</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Currency symbol
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ScCurrency.<b>tokenType</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Token Type
+> 
+
+
+
+### Member of
+
+[`ConfluxSmartContract`](/docs/graphql-reference/objects/conflux-smart-contract)  <Badge class="secondary" text="object"/><Bullet />[`ConfluxSmartContractInfo`](/docs/graphql-reference/objects/conflux-smart-contract-info)  <Badge class="secondary" text="object"/><Bullet />[`ConfluxSmartContractInfoWithAttributes`](/docs/graphql-reference/objects/conflux-smart-contract-info-with-attributes)  <Badge class="secondary" text="object"/><Bullet />[`EosSmartContract`](/docs/graphql-reference/objects/eos-smart-contract)  <Badge class="secondary" text="object"/><Bullet />[`EosSmartContractInfo`](/docs/graphql-reference/objects/eos-smart-contract-info)  <Badge class="secondary" text="object"/><Bullet />[`EthereumSmartContract`](/docs/graphql-reference/objects/ethereum-smart-contract)  <Badge class="secondary" text="object"/><Bullet />[`EthereumSmartContractInfo`](/docs/graphql-reference/objects/ethereum-smart-contract-info)  <Badge class="secondary" text="object"/><Bullet />[`EthereumSmartContractInfoWithAttributes`](/docs/graphql-reference/objects/ethereum-smart-contract-info-with-attributes)  <Badge class="secondary" text="object"/><Bullet />[`SmartContractInfo`](/docs/graphql-reference/objects/smart-contract-info)  <Badge class="secondary" text="object"/><Bullet />[`TronSmartContract`](/docs/graphql-reference/objects/tron-smart-contract)  <Badge class="secondary" text="object"/><Bullet />[`TronSmartContractInfo`](/docs/graphql-reference/objects/tron-smart-contract-info)  <Badge class="secondary" text="object"/>
+

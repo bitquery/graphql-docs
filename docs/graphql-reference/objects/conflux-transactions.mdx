@@ -1,0 +1,867 @@
+---
+id: conflux-transactions
+title: ConfluxTransactions
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Transactions in Conflux blockchain
+
+
+```graphql
+type ConfluxTransactions {
+  amount(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txSender: [ConfluxAddressSelector!]
+    txTo: [ConfluxAddressSelector!]
+    txCreates: [ConfluxAddressSelector!]
+    txIndex: TxIndexSelector
+    success: Boolean
+    amount: [AmountSelector!]
+    gasCurrency: [EthereumCurrencySelector!]
+    blockHash: HashSelector
+  ): Float
+  any(
+    of: ConfluxTransactionsMeasureable!
+  ): String
+  block(
+    blockHash: HashSelector
+    height: BlockSelector
+    time: DateTimeSelector
+  ): BlockInfo
+  count(
+    uniq: EthereumTransactionsUniq
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txSender: [ConfluxAddressSelector!]
+    txTo: [ConfluxAddressSelector!]
+    txCreates: [ConfluxAddressSelector!]
+    txIndex: TxIndexSelector
+    success: Boolean
+    amount: [AmountSelector!]
+    gasCurrency: [EthereumCurrencySelector!]
+    blockHash: HashSelector
+  ): Int
+  countBigInt(
+    uniq: EthereumTransactionsUniq
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txSender: [ConfluxAddressSelector!]
+    txTo: [ConfluxAddressSelector!]
+    txCreates: [ConfluxAddressSelector!]
+    txIndex: TxIndexSelector
+    success: Boolean
+    amount: [AmountSelector!]
+    gasCurrency: [EthereumCurrencySelector!]
+    blockHash: HashSelector
+  ): BigInt
+  creates(
+    txCreates: [ConfluxAddressSelector!]
+  ): EthereumAddressInfo
+  currency: Currency
+  date: Date
+  error: String
+  expression(
+    get: String!
+  ): DecimalNumber
+  gas(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txSender: [ConfluxAddressSelector!]
+    txTo: [ConfluxAddressSelector!]
+    txCreates: [ConfluxAddressSelector!]
+    txIndex: TxIndexSelector
+    success: Boolean
+    amount: [AmountSelector!]
+    gasCurrency: [EthereumCurrencySelector!]
+    blockHash: HashSelector
+  ): Int
+  gasCurrency(
+    gasCurrency: [EthereumCurrencySelector!]
+  ): Currency
+  gasPrice(
+    calculate: AmountAggregateFunction
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txSender: [ConfluxAddressSelector!]
+    txTo: [ConfluxAddressSelector!]
+    txCreates: [ConfluxAddressSelector!]
+    txIndex: TxIndexSelector
+    success: Boolean
+    amount: [AmountSelector!]
+    gasCurrency: [EthereumCurrencySelector!]
+    blockHash: HashSelector
+  ): Float!
+  gasValue(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    txHash: HashSelector
+    txSender: [ConfluxAddressSelector!]
+    txTo: [ConfluxAddressSelector!]
+    txCreates: [ConfluxAddressSelector!]
+    txIndex: TxIndexSelector
+    success: Boolean
+    amount: [AmountSelector!]
+    gasCurrency: [EthereumCurrencySelector!]
+    blockHash: HashSelector
+  ): Float
+  hash(
+    txHash: [HashSelector!]
+  ): String!
+  index(
+    txIndex: [TxIndexSelector!]
+  ): Int
+  maximum(
+    of: ConfluxTransactionsMeasureable!
+    get: ConfluxTransactionsMeasureable
+  ): String
+  minimum(
+    of: ConfluxTransactionsMeasureable!
+    get: ConfluxTransactionsMeasureable
+  ): String
+  nonce: Int
+  sender(
+    txSender: [ConfluxAddressSelector!]
+  ): EthereumAddressInfo
+  success(
+    success: Boolean
+  ): Boolean
+  to(
+    txTo: [ConfluxAddressSelector!]
+  ): EthereumAddressInfo
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>amount</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.amount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.amount.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.amount.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.amount.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.amount.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.amount.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.amount.<b>txSender</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.amount.<b>txTo</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.amount.<b>txCreates</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.amount.<b>txIndex</b></code>](#)<Bullet />[`TxIndexSelector`](/docs/graphql-reference/inputs/tx-index-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.amount.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.amount.<b>amount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.amount.<b>gasCurrency</b></code>](#)<Bullet />[`[EthereumCurrencySelector!]`](/docs/graphql-reference/inputs/ethereum-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.amount.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>any</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.any.<b>of</b></code>](#)<Bullet />[`ConfluxTransactionsMeasureable!`](/docs/graphql-reference/enums/conflux-transactions-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>block</b></code>](#)<Bullet />[`BlockInfo`](/docs/graphql-reference/objects/block-info) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Block where transfer transaction is included
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.block.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.block.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.block.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>count</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.count.<b>uniq</b></code>](#)<Bullet />[`EthereumTransactionsUniq`](/docs/graphql-reference/enums/ethereum-transactions-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.count.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.count.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.count.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.count.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.count.<b>txSender</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.count.<b>txTo</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.count.<b>txCreates</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.count.<b>txIndex</b></code>](#)<Bullet />[`TxIndexSelector`](/docs/graphql-reference/inputs/tx-index-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.count.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.count.<b>amount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.count.<b>gasCurrency</b></code>](#)<Bullet />[`[EthereumCurrencySelector!]`](/docs/graphql-reference/inputs/ethereum-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.count.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.countBigInt.<b>uniq</b></code>](#)<Bullet />[`EthereumTransactionsUniq`](/docs/graphql-reference/enums/ethereum-transactions-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.countBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.countBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.countBigInt.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.countBigInt.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.countBigInt.<b>txSender</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.countBigInt.<b>txTo</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.countBigInt.<b>txCreates</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.countBigInt.<b>txIndex</b></code>](#)<Bullet />[`TxIndexSelector`](/docs/graphql-reference/inputs/tx-index-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.countBigInt.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.countBigInt.<b>amount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.countBigInt.<b>gasCurrency</b></code>](#)<Bullet />[`[EthereumCurrencySelector!]`](/docs/graphql-reference/inputs/ethereum-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.countBigInt.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>creates</b></code>](#)<Bullet />[`EthereumAddressInfo`](/docs/graphql-reference/objects/ethereum-address-info) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Created smart contract
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.creates.<b>txCreates</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>currency</b></code>](#)<Bullet />[`Currency`](/docs/graphql-reference/objects/currency) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Currency of amount
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>date</b></code>](#)<Bullet />[`Date`](/docs/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Calendar date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>error</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Error message if any
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>gas</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gas.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gas.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gas.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gas.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gas.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gas.<b>txSender</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gas.<b>txTo</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gas.<b>txCreates</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gas.<b>txIndex</b></code>](#)<Bullet />[`TxIndexSelector`](/docs/graphql-reference/inputs/tx-index-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gas.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gas.<b>amount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gas.<b>gasCurrency</b></code>](#)<Bullet />[`[EthereumCurrencySelector!]`](/docs/graphql-reference/inputs/ethereum-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gas.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>gasCurrency</b></code>](#)<Bullet />[`Currency`](/docs/graphql-reference/objects/currency) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Currency of gas
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasCurrency.<b>gasCurrency</b></code>](#)<Bullet />[`[EthereumCurrencySelector!]`](/docs/graphql-reference/inputs/ethereum-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>gasPrice</b></code>](#)<Bullet />[`Float!`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Gas price in Gwei
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasPrice.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasPrice.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasPrice.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasPrice.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasPrice.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasPrice.<b>txSender</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasPrice.<b>txTo</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasPrice.<b>txCreates</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasPrice.<b>txIndex</b></code>](#)<Bullet />[`TxIndexSelector`](/docs/graphql-reference/inputs/tx-index-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasPrice.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasPrice.<b>amount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasPrice.<b>gasCurrency</b></code>](#)<Bullet />[`[EthereumCurrencySelector!]`](/docs/graphql-reference/inputs/ethereum-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasPrice.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>gasValue</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasValue.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasValue.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasValue.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasValue.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasValue.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasValue.<b>txHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasValue.<b>txSender</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasValue.<b>txTo</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasValue.<b>txCreates</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasValue.<b>txIndex</b></code>](#)<Bullet />[`TxIndexSelector`](/docs/graphql-reference/inputs/tx-index-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasValue.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasValue.<b>amount</b></code>](#)<Bullet />[`[AmountSelector!]`](/docs/graphql-reference/inputs/amount-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasValue.<b>gasCurrency</b></code>](#)<Bullet />[`[EthereumCurrencySelector!]`](/docs/graphql-reference/inputs/ethereum-currency-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.gasValue.<b>blockHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>hash</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Hash hex representation
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.hash.<b>txHash</b></code>](#)<Bullet />[`[HashSelector!]`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>index</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction index in block, 0 based
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.index.<b>txIndex</b></code>](#)<Bullet />[`[TxIndexSelector!]`](/docs/graphql-reference/inputs/tx-index-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.maximum.<b>of</b></code>](#)<Bullet />[`ConfluxTransactionsMeasureable!`](/docs/graphql-reference/enums/conflux-transactions-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.maximum.<b>get</b></code>](#)<Bullet />[`ConfluxTransactionsMeasureable`](/docs/graphql-reference/enums/conflux-transactions-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.minimum.<b>of</b></code>](#)<Bullet />[`ConfluxTransactionsMeasureable!`](/docs/graphql-reference/enums/conflux-transactions-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.minimum.<b>get</b></code>](#)<Bullet />[`ConfluxTransactionsMeasureable`](/docs/graphql-reference/enums/conflux-transactions-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>nonce</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction nonce
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>sender</b></code>](#)<Bullet />[`EthereumAddressInfo`](/docs/graphql-reference/objects/ethereum-address-info) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Transaction sender
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.sender.<b>txSender</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Success
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.success.<b>success</b></code>](#)<Bullet />[`Boolean`](/docs/graphql-reference/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.<b>to</b></code>](#)<Bullet />[`EthereumAddressInfo`](/docs/graphql-reference/objects/ethereum-address-info) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Transaction receiver
+> ##### [<code style={{ fontWeight: 'normal' }}>ConfluxTransactions.to.<b>txTo</b></code>](#)<Bullet />[`[ConfluxAddressSelector!]`](/docs/graphql-reference/inputs/conflux-address-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+### Member of
+
+[`Conflux`](/docs/graphql-reference/objects/conflux)  <Badge class="secondary" text="object"/>
+

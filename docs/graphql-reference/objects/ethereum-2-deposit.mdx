@@ -1,0 +1,385 @@
+---
+id: ethereum-2-deposit
+title: Ethereum2Deposit
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Deposit in Ethereum v2.0 blockchain
+
+
+```graphql
+type Ethereum2Deposit {
+  amount(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    blockRootHash: HashSelector
+    blockProposerIndex: [IntegerSelector!]
+    validatorIndex: [IntegerSelector!]
+  ): Float
+  any(
+    of: Ethereum2DepositsMeasureable!
+  ): String
+  block(
+    height: BlockSelector
+    time: DateTimeSelector
+  ): Block
+  blockRoot(
+    blockRootHash: [HashSelector!]
+  ): String!
+  count(
+    uniq: Ethereum2DepositsUniq
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    blockRootHash: HashSelector
+    blockProposerIndex: [IntegerSelector!]
+  ): Int
+  countBigInt(
+    uniq: Ethereum2DepositsUniq
+    date: DateSelector
+    time: DateTimeSelector
+    height: BlockSelector
+    blockRootHash: HashSelector
+    blockProposerIndex: [IntegerSelector!]
+  ): BigInt
+  date: Date
+  depositIndex: Int!
+  eth1: Ethereum2Eth1Info!
+  expression(
+    get: String!
+  ): DecimalNumber
+  maximum(
+    of: Ethereum2DepositsMeasureable!
+    get: Ethereum2DepositsMeasureable
+  ): String
+  minimum(
+    of: Ethereum2DepositsMeasureable!
+    get: Ethereum2DepositsMeasureable
+  ): String
+  parentRoot: String!
+  proof: String!
+  proposer(
+    blockProposerIndex: [IntegerSelector!]
+  ): Ethereum2ValidatorInfo
+  signature: String!
+  stateRoot: String!
+  validator: Ethereum2ValidatorInfo!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.<b>amount</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.amount.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.amount.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.amount.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.amount.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.amount.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.amount.<b>blockRootHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.amount.<b>blockProposerIndex</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.amount.<b>validatorIndex</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.<b>any</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.any.<b>of</b></code>](#)<Bullet />[`Ethereum2DepositsMeasureable!`](/docs/graphql-reference/enums/ethereum-2-deposits-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.<b>block</b></code>](#)<Bullet />[`Block`](/docs/graphql-reference/objects/block) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Block in the blockchain
+> ##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.block.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.block.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.<b>blockRoot</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Block root hash
+> ##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.blockRoot.<b>blockRootHash</b></code>](#)<Bullet />[`[HashSelector!]`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.<b>count</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.count.<b>uniq</b></code>](#)<Bullet />[`Ethereum2DepositsUniq`](/docs/graphql-reference/enums/ethereum-2-deposits-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.count.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.count.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.count.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.count.<b>blockRootHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.count.<b>blockProposerIndex</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.countBigInt.<b>uniq</b></code>](#)<Bullet />[`Ethereum2DepositsUniq`](/docs/graphql-reference/enums/ethereum-2-deposits-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.countBigInt.<b>date</b></code>](#)<Bullet />[`DateSelector`](/docs/graphql-reference/inputs/date-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.countBigInt.<b>time</b></code>](#)<Bullet />[`DateTimeSelector`](/docs/graphql-reference/inputs/date-time-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.countBigInt.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.countBigInt.<b>blockRootHash</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.countBigInt.<b>blockProposerIndex</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.<b>date</b></code>](#)<Bullet />[`Date`](/docs/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Calendar date
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.<b>depositIndex</b></code>](#)<Bullet />[`Int!`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Deposit Index (0 based ) in block
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.<b>eth1</b></code>](#)<Bullet />[`Ethereum2Eth1Info!`](/docs/graphql-reference/objects/ethereum-2-eth-1-info) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Block Eth1 information
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.maximum.<b>of</b></code>](#)<Bullet />[`Ethereum2DepositsMeasureable!`](/docs/graphql-reference/enums/ethereum-2-deposits-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.maximum.<b>get</b></code>](#)<Bullet />[`Ethereum2DepositsMeasureable`](/docs/graphql-reference/enums/ethereum-2-deposits-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.minimum.<b>of</b></code>](#)<Bullet />[`Ethereum2DepositsMeasureable!`](/docs/graphql-reference/enums/ethereum-2-deposits-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.minimum.<b>get</b></code>](#)<Bullet />[`Ethereum2DepositsMeasureable`](/docs/graphql-reference/enums/ethereum-2-deposits-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.<b>parentRoot</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Block parent hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.<b>proof</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.<b>proposer</b></code>](#)<Bullet />[`Ethereum2ValidatorInfo`](/docs/graphql-reference/objects/ethereum-2-validator-info) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Block proposer
+> ##### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.proposer.<b>blockProposerIndex</b></code>](#)<Bullet />[`[IntegerSelector!]`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.<b>signature</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.<b>stateRoot</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Block state root hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Ethereum2Deposit.<b>validator</b></code>](#)<Bullet />[`Ethereum2ValidatorInfo!`](/docs/graphql-reference/objects/ethereum-2-validator-info) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Validator
+> 
+
+
+
+### Member of
+
+[`Ethereum2`](/docs/graphql-reference/objects/ethereum-2)  <Badge class="secondary" text="object"/>
+

@@ -1,0 +1,199 @@
+---
+id: protocol
+title: Protocol
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum Protocol {
+  ethereum
+  conflux
+  binance
+  bitcoin
+  algorand
+  libra
+  eos
+  tron
+  filecoin
+  hedera
+  solana
+  cardano
+  elrond
+  flow
+  cosmos
+  stellar
+  ripple
+  harmony
+  tezos
+  everscale
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>ethereum</b></code>](#)  
+> 
+> 
+> Ethereum
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>conflux</b></code>](#)  
+> 
+> 
+> Conflux
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>binance</b></code>](#)  
+> 
+> 
+> Binance DEX
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>bitcoin</b></code>](#)  
+> 
+> 
+> Bitcoin
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>algorand</b></code>](#)  
+> 
+> 
+> Algorand
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>libra</b></code>](#)  
+> 
+> 
+> Libra
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>eos</b></code>](#)  
+> 
+> 
+> EOS
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>tron</b></code>](#)  
+> 
+> 
+> Tron
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>filecoin</b></code>](#)  
+> 
+> 
+> Filecoin
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>hedera</b></code>](#)  
+> 
+> 
+> Hedera Hashgraph
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>solana</b></code>](#)  
+> 
+> 
+> Solana
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>cardano</b></code>](#)  
+> 
+> 
+> Cardano
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>elrond</b></code>](#)  
+> 
+> 
+> Elrond
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>flow</b></code>](#)  
+> 
+> 
+> Flow
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>cosmos</b></code>](#)  
+> 
+> 
+> Cosmos
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>stellar</b></code>](#)  
+> 
+> 
+> Stellar Ledger
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>ripple</b></code>](#)  
+> 
+> 
+> Ripple XRP Ledger
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>harmony</b></code>](#)  
+> 
+> 
+> Harmony
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>tezos</b></code>](#)  
+> 
+> 
+> Tezos
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Protocol.<b>everscale</b></code>](#)  
+> 
+> 
+> Everscale
+> 
+
+
+
+### Member of
+
+[`BlockchainNetwork`](/docs/graphql-reference/objects/blockchain-network)  <Badge class="secondary" text="object"/>
+

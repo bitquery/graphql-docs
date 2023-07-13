@@ -1,0 +1,149 @@
+---
+id: address-stat-dimension
+title: AddressStatDimension
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Address with statistics
+
+
+```graphql
+type AddressStatDimension {
+  address: String
+  annotation: String
+  balance(
+    in: BaseCurrencyEnum
+  ): Float
+  firstActive: DateTime
+  inboundTransactions: Int
+  inflows: Float
+  lastActive: DateTime
+  outboundTransactions: Int
+  outflows: Float
+  uniqueDaysWithTransfers: Int
+  uniqueReceivers: Int
+  uniqueSenders: Int
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>AddressStatDimension.<b>address</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Address
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AddressStatDimension.<b>annotation</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Annotations ( tags ), if exists
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AddressStatDimension.<b>balance</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Balance
+> ##### [<code style={{ fontWeight: 'normal' }}>AddressStatDimension.balance.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AddressStatDimension.<b>firstActive</b></code>](#)<Bullet />[`DateTime`](/docs/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> First active
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AddressStatDimension.<b>inboundTransactions</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Inbound transactions
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AddressStatDimension.<b>inflows</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Inflows
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AddressStatDimension.<b>lastActive</b></code>](#)<Bullet />[`DateTime`](/docs/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Last active
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AddressStatDimension.<b>outboundTransactions</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Outbound transactions
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AddressStatDimension.<b>outflows</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Outflows
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AddressStatDimension.<b>uniqueDaysWithTransfers</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Unique days with transfers
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AddressStatDimension.<b>uniqueReceivers</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Unique receivers
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AddressStatDimension.<b>uniqueSenders</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Unique senders
+> 
+
+
+
+### Member of
+
+[`BitcoinAddressStats`](/docs/graphql-reference/objects/bitcoin-address-stats)  <Badge class="secondary" text="object"/><Bullet />[`CardanoAddressStats`](/docs/graphql-reference/objects/cardano-address-stats)  <Badge class="secondary" text="object"/>
+

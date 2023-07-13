@@ -26,15 +26,13 @@ $ yarn build
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
 
-#### Schema to Docs
-
-To update schema, run
-
-```
-npx run download-schema
-```
-
 ### Deployment
+
+Before deployment, add API key in `.env` file.
+
+```
+API_KEY = "YOUR_API_KEY"
+```
 
 Using SSH:
 

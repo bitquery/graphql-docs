@@ -1,0 +1,94 @@
+---
+id: utilities-date
+title: UtilitiesDate
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+UtilitiesDate
+
+
+```graphql
+type UtilitiesDate {
+  date: String!
+  dayOfMonth: Int!
+  dayOfWeek: Int!
+  month: Int!
+  year: Int!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>UtilitiesDate.<b>date</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> String date representation with default format as YYYY-MM-DD
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>UtilitiesDate.<b>dayOfMonth</b></code>](#)<Bullet />[`Int!`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Day of month (1-31)
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>UtilitiesDate.<b>dayOfWeek</b></code>](#)<Bullet />[`Int!`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Day of week  (Monday is 1, and Sunday is 7)
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>UtilitiesDate.<b>month</b></code>](#)<Bullet />[`Int!`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Month number (1-12)
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>UtilitiesDate.<b>year</b></code>](#)<Bullet />[`Int!`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Year number
+> 
+
+
+
+### Member of
+
+[`ActivePeriod`](/docs/graphql-reference/objects/active-period)  <Badge class="secondary" text="object"/>
+

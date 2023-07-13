@@ -1,0 +1,192 @@
+---
+id: ethereum-network
+title: EthereumNetwork
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum EthereumNetwork {
+  ethereum
+  ethclassic
+  ethpow
+  ethclassic_reorg
+  celo_alfajores
+  celo_baklava
+  celo_rc1
+  celo_mainnet
+  bsc
+  bsc_testnet
+  goerli
+  matic
+  velas
+  velas_testnet
+  klaytn
+  avalanche
+  fantom
+  moonbeam
+  cronos
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumNetwork.<b>ethereum</b></code>](#)  
+> 
+> 
+> Ethereum Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumNetwork.<b>ethclassic</b></code>](#)  
+> 
+> 
+> Ethereum Classic
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumNetwork.<b>ethpow</b></code>](#)  
+> 
+> 
+> Ethereum PoW
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumNetwork.<b>ethclassic_reorg</b></code>](#)  
+> 
+> 
+> Ethereum Classic ( no reorg from block 10904146)
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumNetwork.<b>celo_alfajores</b></code>](#)  
+> 
+> 
+> Celo Alfajores Testnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumNetwork.<b>celo_baklava</b></code>](#)  
+> 
+> 
+> Celo Baklava Testnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumNetwork.<b>celo_rc1</b></code>](#)  
+> 
+> 
+> DEPRECATED. Use celo_mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumNetwork.<b>celo_mainnet</b></code>](#)  
+> 
+> 
+> Celo Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumNetwork.<b>bsc</b></code>](#)  
+> 
+> 
+> Binance Smart Chain Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumNetwork.<b>bsc_testnet</b></code>](#)  
+> 
+> 
+> Binance Smart Chain Testnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumNetwork.<b>goerli</b></code>](#)  
+> 
+> 
+> Goerli Ethereum Testnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumNetwork.<b>matic</b></code>](#)  
+> 
+> 
+> Matic (Polygon) Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumNetwork.<b>velas</b></code>](#)  
+> 
+> 
+> Velas Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumNetwork.<b>velas_testnet</b></code>](#)  
+> 
+> 
+> Velas Testnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumNetwork.<b>klaytn</b></code>](#)  
+> 
+> 
+> Klaytn Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumNetwork.<b>avalanche</b></code>](#)  
+> 
+> 
+> Avalanche C-chain
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumNetwork.<b>fantom</b></code>](#)  
+> 
+> 
+> Fantom Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumNetwork.<b>moonbeam</b></code>](#)  
+> 
+> 
+> Moonbeam Mainnet
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EthereumNetwork.<b>cronos</b></code>](#)  
+> 
+> 
+> Cronos Mainnet
+> 
+
+
+
+### Member of
+
+[`ethereum`](/docs/graphql-reference/queries/ethereum)  <Badge class="secondary" text="query"/><Bullet />[`ethereum`](/docs/graphql-reference/subscriptions/ethereum)  <Badge class="secondary" text="subscription"/>
+

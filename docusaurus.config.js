@@ -1,5 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+require("dotenv").config();
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
@@ -40,12 +41,19 @@ const config = {
     [
       "@graphql-markdown/docusaurus",
       {
-        schema: "./schema/v1.graphql",
-        rootPath: "./docs/v1/graphql-reference/", // docs will be generated under './docs/v1/graphql-reference'
+        schema: "https://graphql.bitquery.io",
+        rootPath: "./docs/graphql-reference/", // docs will be generated under './docs/v1/graphql-reference'
         baseURL: ".",
-        linkRoot: "/docs/v1/graphql-reference/",
+        linkRoot: "/docs/graphql-reference/",
         loaders: {
-          GraphQLFileLoader: "@graphql-tools/graphql-file-loader",
+          UrlLoader: {
+            module: "@graphql-tools/url-loader",
+            options: {
+              headers: {
+                'X-API-KEY': process.env.API_KEY
+              }
+            }
+          }
         },
       },
     ],
@@ -118,7 +126,7 @@ const config = {
             type: "doc",
             docId: "intro",
             position: "left",
-            label: "Tutorial",
+            label: "Docs",
           },
           { to: "blog", label: "News", position: "left" },
         ],

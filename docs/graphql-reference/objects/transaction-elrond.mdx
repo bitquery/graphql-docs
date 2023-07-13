@@ -1,0 +1,163 @@
+---
+id: transaction-elrond
+title: TransactionElrond
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Information about transaction
+
+
+```graphql
+type TransactionElrond {
+  data: String
+  dataOperation: String
+  fee(
+    calculate: AmountAggregateFunction
+    in: BaseCurrencyEnum
+  ): Float
+  function: String
+  hash: String
+  index: Int
+  nonce: Int
+  receiver: Address
+  receiverShard: BigInt
+  sender: Address
+  senderShard: BigInt
+  signature: String
+  status: String
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionElrond.<b>data</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Shard number of sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionElrond.<b>dataOperation</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Shard number of sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionElrond.<b>fee</b></code>](#)<Bullet />[`Float`](/docs/graphql-reference/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TransactionElrond.fee.<b>calculate</b></code>](#)<Bullet />[`AmountAggregateFunction`](/docs/graphql-reference/enums/amount-aggregate-function) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>TransactionElrond.fee.<b>in</b></code>](#)<Bullet />[`BaseCurrencyEnum`](/docs/graphql-reference/enums/base-currency-enum) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionElrond.<b>function</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Shard number of sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionElrond.<b>hash</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction hash
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionElrond.<b>index</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction index
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionElrond.<b>nonce</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Transaction nonce
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionElrond.<b>receiver</b></code>](#)<Bullet />[`Address`](/docs/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Hash of the receiver
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionElrond.<b>receiverShard</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Shard number of receiver
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionElrond.<b>sender</b></code>](#)<Bullet />[`Address`](/docs/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Hash of the sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionElrond.<b>senderShard</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Shard number of sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionElrond.<b>signature</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Shard number of sender
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>TransactionElrond.<b>status</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Shard number of sender
+> 
+
+
+
+### Member of
+
+[`ElrondCallResult`](/docs/graphql-reference/objects/elrond-call-result)  <Badge class="secondary" text="object"/><Bullet />[`ElrondEvent`](/docs/graphql-reference/objects/elrond-event)  <Badge class="secondary" text="object"/><Bullet />[`ElrondOperation`](/docs/graphql-reference/objects/elrond-operation)  <Badge class="secondary" text="object"/><Bullet />[`ElrondTransfer`](/docs/graphql-reference/objects/elrond-transfer)  <Badge class="secondary" text="object"/>
+

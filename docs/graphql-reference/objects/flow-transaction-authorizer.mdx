@@ -1,0 +1,282 @@
+---
+id: flow-transaction-authorizer
+title: FlowTransactionAuthorizer
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+TransactionAuthorizers in Flow blockchain
+
+
+```graphql
+type FlowTransactionAuthorizer {
+  any(
+    of: FlowTransactionAuthorizerMeasureable!
+  ): String
+  authorizer: Address
+  block(
+    height: BlockSelector
+    blockId: HashSelector
+  ): FlowBlockDimension!
+  collectionId: String
+  count(
+    uniq: FlowTransactionAuthorizerUniq
+  ): Int
+  countBigInt(
+    uniq: FlowTransactionAuthorizerUniq
+  ): BigInt
+  date: Date
+  expression(
+    get: String!
+  ): DecimalNumber
+  maximum(
+    of: FlowTransactionAuthorizerMeasureable!
+    get: FlowTransactionAuthorizerMeasureable
+  ): String
+  minimum(
+    of: FlowTransactionAuthorizerMeasureable!
+    get: FlowTransactionAuthorizerMeasureable
+  ): String
+  time: DateTime
+  transaction(
+    transactionId: HashSelector
+    indexInCollection: IntegerSelector
+    referenceBlockId: HashSelector
+    gasLimit: IntegerSelector
+    payer: HashSelector
+    proposer: HashSelector
+    proposalKeyId: IntegerSelector
+    proposalKeySequenceNumber: IntegerSelector
+    eventsCount: IntegerSelector
+    errorMessage: StringSelector
+    statusCode: IntegerSelector
+  ): FlowFullTransactionDimension!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.<b>any</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.any.<b>of</b></code>](#)<Bullet />[`FlowTransactionAuthorizerMeasureable!`](/docs/graphql-reference/enums/flow-transaction-authorizer-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.<b>authorizer</b></code>](#)<Bullet />[`Address`](/docs/graphql-reference/objects/address) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Account authorizing the transaction to mutate their state.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.<b>block</b></code>](#)<Bullet />[`FlowBlockDimension!`](/docs/graphql-reference/objects/flow-block-dimension) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Block information
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.block.<b>height</b></code>](#)<Bullet />[`BlockSelector`](/docs/graphql-reference/inputs/block-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.block.<b>blockId</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.<b>collectionId</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> SHA3-256 hash of the collection contents
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.<b>count</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.count.<b>uniq</b></code>](#)<Bullet />[`FlowTransactionAuthorizerUniq`](/docs/graphql-reference/enums/flow-transaction-authorizer-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.<b>countBigInt</b></code>](#)<Bullet />[`BigInt`](/docs/graphql-reference/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.countBigInt.<b>uniq</b></code>](#)<Bullet />[`FlowTransactionAuthorizerUniq`](/docs/graphql-reference/enums/flow-transaction-authorizer-uniq) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.<b>date</b></code>](#)<Bullet />[`Date`](/docs/graphql-reference/objects/date) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The date this transaction was created
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.<b>expression</b></code>](#)<Bullet />[`DecimalNumber`](/docs/graphql-reference/scalars/decimal-number) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.expression.<b>get</b></code>](#)<Bullet />[`String!`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.<b>maximum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.maximum.<b>of</b></code>](#)<Bullet />[`FlowTransactionAuthorizerMeasureable!`](/docs/graphql-reference/enums/flow-transaction-authorizer-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.maximum.<b>get</b></code>](#)<Bullet />[`FlowTransactionAuthorizerMeasureable`](/docs/graphql-reference/enums/flow-transaction-authorizer-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.<b>minimum</b></code>](#)<Bullet />[`String`](/docs/graphql-reference/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.minimum.<b>of</b></code>](#)<Bullet />[`FlowTransactionAuthorizerMeasureable!`](/docs/graphql-reference/enums/flow-transaction-authorizer-measureable) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.minimum.<b>get</b></code>](#)<Bullet />[`FlowTransactionAuthorizerMeasureable`](/docs/graphql-reference/enums/flow-transaction-authorizer-measureable) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.<b>time</b></code>](#)<Bullet />[`DateTime`](/docs/graphql-reference/objects/date-time) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> The time this transaction was created
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.<b>transaction</b></code>](#)<Bullet />[`FlowFullTransactionDimension!`](/docs/graphql-reference/objects/flow-full-transaction-dimension) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Information about transaction
+> ##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.transaction.<b>transactionId</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.transaction.<b>indexInCollection</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.transaction.<b>referenceBlockId</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.transaction.<b>gasLimit</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.transaction.<b>payer</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.transaction.<b>proposer</b></code>](#)<Bullet />[`HashSelector`](/docs/graphql-reference/inputs/hash-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.transaction.<b>proposalKeyId</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.transaction.<b>proposalKeySequenceNumber</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.transaction.<b>eventsCount</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.transaction.<b>errorMessage</b></code>](#)<Bullet />[`StringSelector`](/docs/graphql-reference/inputs/string-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>FlowTransactionAuthorizer.transaction.<b>statusCode</b></code>](#)<Bullet />[`IntegerSelector`](/docs/graphql-reference/inputs/integer-selector) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+### Member of
+
+[`Flow`](/docs/graphql-reference/objects/flow)  <Badge class="secondary" text="object"/>
+

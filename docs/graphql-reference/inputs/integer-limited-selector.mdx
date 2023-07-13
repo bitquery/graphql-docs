@@ -1,0 +1,90 @@
+---
+id: integer-limited-selector
+title: IntegerLimitedSelector
+hide_table_of_contents: false
+---
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+Select limited upper number
+
+
+```graphql
+input IntegerLimitedSelector {
+  is: Int
+  in: [Int!]
+  lt: Int
+  lteq: Int
+  between: [Int!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>IntegerLimitedSelector.<b>is</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> is
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>IntegerLimitedSelector.<b>in</b></code>](#)<Bullet />[`[Int!]`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> in the list
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>IntegerLimitedSelector.<b>lt</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> less than
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>IntegerLimitedSelector.<b>lteq</b></code>](#)<Bullet />[`Int`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> less or equal than
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>IntegerLimitedSelector.<b>between</b></code>](#)<Bullet />[`[Int!]`](/docs/graphql-reference/scalars/int) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> in range
+> 
+
+
+
