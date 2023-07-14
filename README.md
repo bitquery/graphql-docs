@@ -59,4 +59,9 @@ npx docusaurus-print-pdf -u http://localhost:3000/docs/intro
 
 ```
 
+### How to Generate Schema Docs
+
+- In the .env file, set your API key from graphQL IDE
+- in the docusaurus.config.js uncomment the ```"@graphql-markdown/docusaurus",``` code snippet
+- run npx-build docs
 

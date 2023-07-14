@@ -38,25 +38,25 @@ const config = {
 
   plugins: [
 
-    [
-      "@graphql-markdown/docusaurus",
-      {
-        schema: "https://graphql.bitquery.io",
-        rootPath: "./docs/graphql-reference/", // docs will be generated under './docs/v1/graphql-reference'
-        baseURL: ".",
-        linkRoot: "/docs/graphql-reference/",
-        loaders: {
-          UrlLoader: {
-            module: "@graphql-tools/url-loader",
-            options: {
-              headers: {
-                'X-API-KEY': process.env.API_KEY
-              }
-            }
-          }
-        },
-      },
-    ],
+    // [
+    //   "@graphql-markdown/docusaurus",
+    //   {
+    //     schema: "https://graphql.bitquery.io",
+    //     rootPath: "./docs/graphql-reference/", // docs will be generated under './docs/v1/graphql-reference'
+    //     baseURL: ".",
+    //     linkRoot: "/docs/graphql-reference/",
+    //     loaders: {
+    //       UrlLoader: {
+    //         module: "@graphql-tools/url-loader",
+    //         options: {
+    //           headers: {
+    //             'X-API-KEY': process.env.API_KEY
+    //           }
+    //         }
+    //       }
+    //     },
+    //   },
+    // ],
 
     [
       require.resolve("@cmfcmf/docusaurus-search-local"),
