@@ -2,5 +2,6 @@
 sidebar_position: 1
 ---
 
-# Basic Structure of A Query
+
+# Aggregation in V1 
 
