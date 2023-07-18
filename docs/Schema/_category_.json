@@ -1,8 +1,8 @@
 {
-  "label": "Schema",
-  "position": 5,
-  "link": {
-    "type": "generated-index",
-    "description": "Using queries in different applications"
-  }
+    "label": "Schema",
+    "position": 5,
+    "link": {
+        "type": "generated-index",
+        "description": "Understanding Schema"
+    }
 }
