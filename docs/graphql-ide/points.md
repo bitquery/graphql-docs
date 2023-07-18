@@ -10,3 +10,7 @@ Get started for free with the developer plan and use up to 100K points renewed e
 For every query you run, you can check the points in real time.
 
 ![points](/img/ide/points.png)
+
+Different plans have different limits for points available. You can always request a custom top-up of points by directly contacting us.
+
+Check pricing [here](https://bitquery.io/pricing)
