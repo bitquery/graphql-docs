@@ -31,7 +31,7 @@ We use UTC timezone and support ISO8601 Datetime format.
 
 ## How we get USD price?
 
-USD doesn't exist on blockchain. We get USD price for all cryptocurrencies trades on major exchanges using our partner [1Cryptorank](https://cryptorank.io/exchanges/dex) and we store them on hourly candle basis. 
+USD doesn't exist on blockchain. We get USD price for all cryptocurrencies trades on major exchanges using our partner [Cryptorank](https://cryptorank.io/exchanges/dex) and we store them on hourly candle basis. 
 
 We multiple this USD price to trades, transfers to get USD amounts.
 
@@ -695,12 +695,115 @@ https://ide.bitquery.io/GIBX-trades
 
 ## Liquidity in a pool token
 
+To see liquidity in pair tokens, we need to know two things, 
 
+1 - What tokens are in this pair 
+2- The balance of tokens in the Pair token contract.
 
-## Liquidity added in a pool token
+Let's take an example of WETH/USDC token pair [0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640](https://explorer.bitquery.io/ethereum/smart_contract/0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640). To see which token makes this pool token use [**this API**](https://ide.bitquery.io/tokens-in-pair-contract). As we can see, it has WETH and USDC tokens.
 
+Now we will use the balance API to get the balance of WETH and USDC tokens in our pair contract.
 
-## Liquidity removed from a pool token
+[Open this query in IDE](https://ide.bitquery.io/liquidity-of-token-pair-on-ethereum-using-balance-api)
 
+```graphql
+{
+  ethereum(network: ethereum) {
+    address(address: {is: "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"}) {
+      balances(
+        currency: {in: ["0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48", "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"]}
+      ) {
+        value
+        currency {
+          address
+          symbol
+          tokenType
+        }
+      }
+    }
+  }
+}
+
+```
+
+## Liquidity Removed and Added in a pool token
+To track liquidity details for a pair token we can track `Mint` and `Burn` events.  In the following example we are tracking lquidity add and remove for USDC/WETH token pair [0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640](https://explorer.bitquery.io/ethereum/smart_contract/0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640/events)
+
+[Open this query on IDE](https://ide.bitquery.io/Mint-and-burn-to-track-liquidity)
+
+```graphql
+{
+  ethereum {
+    mint: arguments(
+      options: {limit: 10, desc: "block.height"}
+      smartContractAddress: {is: "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"}
+      smartContractEvent: {is: "Mint"}
+    ) {
+      block {
+        height
+      }
+      transaction {
+        hash
+      }
+      amount0: any(of: argument_value, argument: {is: "amount0"})
+      owner: any(of: argument_value, argument: {is: "owner"})
+      tickUpper: any(of: argument_value, argument: {is: "tickUpper"})
+      sender: any(of: argument_value, argument: {is: "sender"})
+      amount1: any(of: argument_value, argument: {is: "amount1"})
+      tickLower: any(of: argument_value, argument: {is: "tickLower"})
+      amount: any(of: argument_value, argument: {is: "amount"})
+    }
+    burn: arguments(
+      options: {limit: 10, desc: "block.height"}
+      smartContractAddress: {is: "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"}
+      smartContractEvent: {is: "Burn"}
+    ) {
+      block {
+        height
+      }
+      transaction {
+        hash
+      }
+      amount0: any(of: argument_value, argument: {is: "amount0"})
+      owner: any(of: argument_value, argument: {is: "owner"})
+      tickUpper: any(of: argument_value, argument: {is: "tickUpper"})
+      amount1: any(of: argument_value, argument: {is: "amount1"})
+      tickLower: any(of: argument_value, argument: {is: "tickLower"})
+      amount: any(of: argument_value, argument: {is: "amount"})
+    }
+  }
+}
+
+```
 
 ## Currencies in pair token
+
+To check currency pair in a Pool token, you can use following API.
+
+[Open this query in IDE](https://ide.bitquery.io/tokens-in-pair-contract)
+
+```graphql
+{
+  ethereum(network: ethereum) {
+    dexTrades(
+      options: {limit: 1}
+      date: {after: "2023-07-01"}
+      smartContractAddress: {is: "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"}
+    ) {
+      buyCurrency {
+        address
+        symbol
+      }
+      sellCurrency {
+        address
+        symbol
+      }
+      smartContract {
+        address {
+          address
+        }
+      }
+    }
+  }
+}
+```
