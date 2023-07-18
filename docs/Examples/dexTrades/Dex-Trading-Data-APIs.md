@@ -31,7 +31,7 @@ We use UTC timezone and support ISO8601 Datetime format.
 
 ## How we get USD price?
 
-USD doesn't exist on blockchain. We get USD price for all cryptocurrencies trades on major exchanges using our partner [1Cryptorank](https://cryptorank.io/exchanges/dex) and we store them on hourly candle basis. 
+USD doesn't exist on blockchain. We get USD price for all cryptocurrencies trades on major exchanges using our partner [Cryptorank](https://cryptorank.io/exchanges/dex) and we store them on hourly candle basis. 
 
 We multiple this USD price to trades, transfers to get USD amounts.
 
