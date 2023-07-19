@@ -2,7 +2,7 @@
 
 `transactions` type allows you to retrieve all the blockchain transactions from Ethereum Blockchain.
 
-Here's an exmaple query that rerieves 10 latest transactions from ethereum blockchain:
+Here's an exmaple query that retrieves 10 latest transactions from Ethereum blockchain:
 
 ```
 query {
@@ -50,7 +50,7 @@ query {
 <details>
 <summary>Filtering Transactions</summary>
 
-Trnsactions can be filtered using following arguments:
+Transactions can be filtered using following arguments:
 
 - `amount`: Filter by amount of tokens transferred in a transaction. Available comparision operators are `between`, `gt`, `gteq`, `in`, `is`, `lt`, `lteq`, `not`, `notIn`.
 
@@ -63,7 +63,7 @@ Trnsactions can be filtered using following arguments:
 
 - `gasValue`: Filter by gas value used in the transaction. Available comparision operators are `between`, `gt`, `gteq`, `in`, `is`, `lt`, `lteq`, `not`, `notIn`.
 
-- `height`: Filter by height of Block where transaction happened. Available comparision operators are `between`, `gt`, `gteq`, `in`, `is`, `lt`, `lteq`, `not`, `notIn`.
+- `height`: Filter by height of block where transaction happened. Available comparision operators are `between`, `gt`, `gteq`, `in`, `is`, `lt`, `lteq`, `not`, `notIn`.
 
 - `options`: Filter returned data by ordering, limiting and constrainting transaction data. Available fields: `asc`, `ascByInteger`, `desc`, `descByInteger`, `limit`, `limitBy`, `offset`
 

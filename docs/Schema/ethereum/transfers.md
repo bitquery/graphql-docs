@@ -83,9 +83,7 @@ Data retrieved using `transfers` can be filtered using following arguments:
 
   Available comparision operator are `after`, `before`, `between`, `in`, `is`, `not`, `notIn`, `since`, `tiil`.
 
-- `txFrom`: Filter by address of transaction creator.
-
-  Available comparision operators are `in`, `is`, `not`, `notIn`.
+- `txFrom`: Filter by the address responsible for creating the transaction. Available comparision operators are `in`, `is`, `not`, `notIn`.
 
   Read the difference between transfers and transaction in Bitquery API here.
 
