@@ -93,4 +93,27 @@ query MyQuery {
 }
 
 ```
+## Count with Categorisation
 
+The count field is used to count the number of records in each group. Refer the example below:
+
+The query will return the number of transactions of each type that were sent on the Everscale network between two dates. The results will be sorted by the number of transactions, with the types that have the most transactions appearing at the top of the results.
+
+```
+query ($network: EverscaleNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime) {
+  everscale(network: $network) {
+    transactions(date: {since: $from, till: $till}) {
+      type
+      count: countBigInt
+    }
+  }
+}
+{
+  "limit": 10,
+  "offset": 0,
+  "network": "everscale",
+  "from": "2023-07-12",
+  "till": "2023-07-19T23:59:59",
+  "dateFormat": "%Y-%m-%d"
+}
+```
