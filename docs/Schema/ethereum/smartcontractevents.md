@@ -54,3 +54,18 @@ Smart Contract Events can be filtered using following arguments:
 - `txHash`: Filter by transaction hash of the transaction which emitted smart contract event. Available comparision operators are `is`, `in`, `not`, `notIn`.
 
 </details>
+
+`smartContractEvents` field has following subfields which returns relevant information about smart contract evevts.
+
+- `any`:
+- `arguments`: eturns details about arguments passed to smart contract events.
+- `block`: returns block details in which smart contract event happened
+- `count`: returns aggregate count of smart contract events
+- `countBigInt`:
+- `date`: returns date of smart contract event
+- `expression`: performs arithematic operation and returns value of the operation
+- `maximum`:
+- `minimum`:
+- `smartContract`: returns details of smart contract on which event happened
+- `smartContractEvent`: returns details about smart contract event like name, signature, and signature hash
+- `transaction`: returns details about transaction which emitted  smart contract event

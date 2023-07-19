@@ -85,6 +85,8 @@ Transactions can be filtered using following arguments:
 
 </details>
 
+`transactions` field has following subfield which returns relevant information about blockchain transactions.
+
 - `any`:
 - `block`: returns block details in which transaction happened
 - `count`: returns aggregate count of transactions
