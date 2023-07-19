@@ -31,7 +31,11 @@ Parameters
 }
 ```
 
-Here's another example where the count metric is used to track events
+## Count as a filter
+
+Here's another example where the count metric is used to track events.
+
+This query will return the number of times the PairCreated event has been emitted by smart contracts on the Ethereum network after a particular date. The count field in the response will contain the number of events.
 
 ```
 {
@@ -64,7 +68,9 @@ Here's another example where the count metric is used to track events
   }
 }
 ```
-This query will return the number of times the PairCreated event has been emitted by smart contracts on the Ethereum network after a particular date. The count field in the response will contain the number of events.
+
+
+Notice that the `count` field is used as a sorting field as well in the options where we order by the results by the largest to smallest count.
 
 
 > Note that this query also uses aliasing by renaming  `any()` fields as `token1Name` and so on. 
