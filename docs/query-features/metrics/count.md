@@ -74,3 +74,23 @@ Notice that the `count` field is used as a sorting field as well in the options 
 
 
 > Note that this query also uses aliasing by renaming  `any()` fields as `token1Name` and so on. 
+
+## CountBigInt
+
+COUNTBIGINT data type is often used to store large numbers, such as the number of rows in a database table. It is also used to store numbers that may exceed the size of a 32-bit integer.
+
+This might be useful in cases where the count returned is huge, like the number of transactions may exceed the size of a 32-bit integer.
+
+Here's an example of such a query:
+
+```
+query MyQuery {
+  bitcoin(network: litecoin) {
+    transactions(date: {since: "2015-05-08"}) {
+      countBigInt
+    }
+  }
+}
+
+```
+
