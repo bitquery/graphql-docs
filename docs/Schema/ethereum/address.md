@@ -1,6 +1,6 @@
 # Address
 
-The `address` parameter allows us to retrieve essential information about a specific address.
+The `address` allows us to retrieve information about a specific address.
 
 Here is an example that demonstrates how to retrieve basic information about the USDT smart contract:
 
@@ -38,7 +38,9 @@ query {
 <details>
 <summary>Filtering Addresses</summary>
 - `address`: Filter by a specific address or a list of addresses.
+
 </details>
+
 The following are available fields for the address:
 
 - `address`: Returns the address.
