@@ -1,6 +1,6 @@
 # Address Stats
 
-The `addressstats` allows us to retrieves statistics related to blockchain addresses.
+The `addressstats` field allows us to retrieves statistics related to blockchain addresses.
 
 Here is an example that demonstrates how to retrieve statistics about the USDT smart contract:
 
