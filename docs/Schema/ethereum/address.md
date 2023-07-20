@@ -4,12 +4,12 @@
 <details>
 <summary>Filtering Addresses</summary>
 
-- address
+- `address`:
 </details>
 
-- address
-- annotation
-- balance
-- balances
-- smartContract
+- `address`:
+- `annotation`:
+- `balance`:
+- `balances`:
+- `smartContract`:
 

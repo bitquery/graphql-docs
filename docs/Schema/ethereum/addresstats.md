@@ -4,9 +4,9 @@
 <details>
 <summary>Filtering Address Stats</summary>
 
-- address
-- options
+- `address`:
+- `options`:
   
 </details>
 
-- address
+- `address`:
