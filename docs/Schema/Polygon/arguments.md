@@ -6,7 +6,6 @@ The `arguments` field allows us to fetch information about arguments of smart co
 Here is an exmaple that demonstrates how to use `arguments` query:
 
 ```
-
 ```
 
 <details>
