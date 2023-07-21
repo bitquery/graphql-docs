@@ -111,8 +111,8 @@ The following are available fields for the `dexTrades`:
 - `gasPrice`: returns the gas price for the trade.
 - `gasValue`: returns the gas value for the trade.
 - `maker`: returns the maker's address of the trade.
-- `maximum`:
-- `minimum`:
+- `maximum`: returns maximum of selected [measurable fields](/v1/docs/graphql-reference/enums/ethereum-dex-trades-measureable) of `dexTradees`
+- `minimum`: returns minimum of selected [measurable fields](/v1/docs/graphql-reference/enums/ethereum-dex-trades-measureable) of `dexTradees`
 - `price`: returns the price at which the trade was executed.
 - `protocol`:  returns the name of the protocol which executed that trade.
 - `quoteAmount`: returns the quote amount for the trade.

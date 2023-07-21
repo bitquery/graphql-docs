@@ -61,11 +61,11 @@ Smart Contract Events can be filtered using following arguments:
 - `arguments`: eturns details about arguments passed to smart contract events.
 - `block`: returns block details in which smart contract event happened
 - `count`: returns aggregate count of smart contract events
-- `countBigInt`:
+- `countBigInt`: returns aggregate count of smart contract events in `BigInt` format
 - `date`: returns date of smart contract event
 - `expression`: performs arithematic operation and returns value of the operation
-- `maximum`:
-- `minimum`:
+- `maximum`: returns maximum of selected [measurable fields](/v1/docs/graphql-reference/enums/ethereum-events-measureable) of `smartContractEvents`
+- `minimum`: returns minimum of selected [measurable fields](/v1/docs/graphql-reference/enums/ethereum-events-measureable) of `smartContractEvents`
 - `smartContract`: returns details of smart contract on which event happened
 - `smartContractEvent`: returns details about smart contract event like name, signature, and signature hash
 - `transaction`: returns details about transaction which emitted  smart contract event

@@ -48,7 +48,7 @@ Blocks data can be filtered using following arguments:
 
 -   `any`:
 -   `count`: returns the aggregate count of blocks.
--   `countBigInt`:
+-   `countBigInt`: returns the aggregate count of blocks in `BigInt` format.
 -   `date`: returns the date on which the block was mined.
 -   `difficulty`: returns the block difficulty.
 -   `expression`: performs arithematic operation and returns value of the operation
@@ -56,9 +56,9 @@ Blocks data can be filtered using following arguments:
 -   `gasUsed`: returns the gas used for that block.
 -   `hash`: returns the hash of the block.
 -   `height`: returns the height of the block.
--   `maximum`:
+-   `maximum`: returns the maximum of selected [measruable fields](/v1/docs/graphql-reference/enums/ethereum-blocks-measureable) of Ethereum Blocks
 -   `miner`: returns the miner of the block.
--   `minimum`:
+-   `minimum`: returns the minimum of selected [measruable fields](/v1/docs/graphql-reference/enums/ethereum-blocks-measureable) of Ethereum Blocks
 -   `nonce`: returns the nonce of the block.
 -   `parentHash`: returns the parent hash for the block.
 -   `reward`: returns the reward given to the miner for producing the block.
