@@ -52,3 +52,28 @@ Blocks can be filtered using the following arguments:
 - `time`: Filter by selecting the date in a range, list or just date
 
 </details>
+
+- any
+- count
+- countBigInt
+- currentProtocol
+- date
+- expression
+- frac
+- hash
+- height
+- maximum
+- minimum
+- nextProtocol
+- nextProtocolApprovals
+- nextProtocolSwitchOn
+- nextProtocolVoteBefore
+- previousBlockHash
+- proposer
+- rate
+- reward
+- see
+- timestamp
+- txnRoot
+- upgradeApprove
+- upgradePropose
