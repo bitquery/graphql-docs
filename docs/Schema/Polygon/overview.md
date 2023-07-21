@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Overview
 
-Bitquery API offers access to indexed data from the Ethereum blockchain through the Polygon schema. This schema is specifically designed to enable blockchain data retrieval via GraphQL API for developers.
+Bitquery API offers access to indexed data from the Polygon blockchain through schema is specifically designed to enable blockchain data retrieval via GraphQL API for developers.
 
 The Polygon schema contains various types of queries, including block, transaction, event, transactions, transfers, and more. These queries can be used to retrieve blockchain data, such as block information, transaction details, events, token transfers, and other relevant information.
 
