@@ -6,7 +6,7 @@ The `coinpath` field allows us to retrieve detailed information about money flow
 <details>
 <summary>Filtering Options</summary>
 
-Money flow data can be filtered using following arguments:
+Coinpath data can be filtered using following arguments:
 
 - `currency`: Filter by the currency involved in the transaction.
 - `date`: Filter by the date of the transaction.
