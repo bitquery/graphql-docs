@@ -44,7 +44,7 @@ Blocks data can be filtered using following arguments:
 -   `transactionCount`: Filter by the number of transactions in the block.
 -   `uncleCount`:
 
-</detials>
+</details>
 
 -   `any`:
 -   `count`: returns the aggregate count of blocks.
