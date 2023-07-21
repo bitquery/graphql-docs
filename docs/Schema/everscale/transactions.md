@@ -1,5 +1,7 @@
 # Transactions
 
+The Everscale transactions API provides information on everscale transactions. The schema includes the following data:
+
 ```
 query ($network: EverscaleNetwork!, $limit: Int!, $offset: Int!, $hash: String!) {
   everscale(network: $network) {
