@@ -57,7 +57,7 @@ Data retrieved using `transfers` can be filtered using following arguments:
   Available comparision operator are `after`, `before`, `between`, `in`, `is`, `not`, `notIn`, `since`, `tiil`.
 
 
-- `entityId`: 
+- `entityId`: Filter by ERC-721 entity Id
 
 - `external`:
 
@@ -77,7 +77,7 @@ Data retrieved using `transfers` can be filtered using following arguments:
   
   Available comparision operators are `in`, `is`, `not`, `notIn`
 
-- `success`:
+- `success`: Filter by if transaction is successful or not
 
 - `time`: Filter by time when transfer happened. Time should be in ISO8601-encoded datetime string. Ex, June 17th, 2023 will be `2023-07-17T00:00:00Z`
 
@@ -98,16 +98,16 @@ Data retrieved using `transfers` can be filtered using following arguments:
 - `amount`: returns amount of currency transferred
 - `any`: 
 - `block`: returns block in which transfer happened
-- `count`: returns aggreate count of transfers
-- `countBigInt`:
+- `count`: returns aggregate count of transfers
+- `countBigInt`: returns aggregate coutn of transfers in `BigInt` format
 - `currency`: returns details of currency used in transfer
 - `date`: returns date of transfer
 - `entityId`: returns entity identifier for ERC-721 tokens
 - `expression`: performs arithematic operation and returns value of the operation
 - `external`: 
 - `gasValue`: returns gas value consumed to perform a particular transfer
-- `maximum`:
-- `minimum`:
+- `maximum`: returns maximum of [selected measurable](/v1/docs/graphql-reference/enums/ethereum-transfers-measureable) field of `transfers`
+- `minimum`: returns minimum of [selected measurable](/v1/docs/graphql-reference/enums/ethereum-transfers-measureable) field of `transfers`
 - `receiver`: returns receiver of a particular transfer
 - `sender`: returns sender of a particular transfer
 - `success`: returns boolean value for success of a particular transfer

@@ -28,7 +28,7 @@ Active Addresses can be filtered using the following arguments:
 -   `options`: Filter returned data by ordering, limiting, and constraining it. Available fields: `asc`, `ascByInteger`, `desc`, `descByInteger`, `limit`, `limitBy`, `offset`.
 -   `receiver`: Filter by the address of the receiver
 -   `sender`: Filter by the address of the sender
--   `success`:
+-   `success`: Filter by success of the transaction
 -   `time`: Filter by time
 -   `txFrom`:  Filter by the address that created the transaction.
 -   `txHash`: Filter by the transaction hash

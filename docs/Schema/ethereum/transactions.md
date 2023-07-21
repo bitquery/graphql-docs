@@ -90,24 +90,24 @@ Transactions can be filtered using following arguments:
 - `any`:
 - `block`: returns block details in which transaction happened
 - `count`: returns aggregate count of transactions
-- `countBigInt`:
+- `countBigInt`: returns aggregate count of transactions in `BigInt` format
 - `creates`:
 - `currency`: returns details of currency used in tranasction
 - `date`: returns date of transaction 
-- `error`:
+- `error`: returns error value
 - `expression`: performs arithematic operation and returns value of the operation
-- `feePayer`:
+- `feePayer`:  
 - `feeRatio`:
-- `gas`:
+- `gas`: returns gas value consumed in transaction 
 - `gasCurrency`: returns gas currency used in a particular transaction
 - `gasPrice`: returns gas price for a particular transaction
 - `gasValue`: returns gas value consumed to perform a particular transaction
 - `hash`: returns hash of a particular transaction
 - `index`: returns index of a transaction in a block
-- `maximum`:
-- `minimum`:
+- `maximum`: returns maximum of selected [measurable field](/v1/docs/graphql-reference/enums/ethereum-transactions-measureable) of `transactions`
+- `minimum`: returns minimum of selected [measurable field](/v1/docs/graphql-reference/enums/ethereum-transactions-measureable) of `transactions`
 - `nonce`: returns nonce of a tranasction
 - `sender`: returns address of sender of a particular transaction
-- `success`:
+- `success`: returns if transaction is success or not
 - `to`: returns address to which of a particular transaction was sent
-- `txType`:
+- `txType`: returns transaction type
