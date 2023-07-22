@@ -1,9 +1,9 @@
 
 # Smart Contract Events
 
-`smartContractEvents` type allows you to retrieve all events emitted by different smart contracts on Ethereum Blockchain.
+`smartContractEvents` type allows you to retrieve all events emitted by different smart contracts on Polygon Blockchain.
 
-Here's an exmaple query that retrieves 10 latest events from USDT smart contract from Ethereum Blockchain:
+Here's an exmaple query that retrieves 10 latest events from USDT smart contract from Polygon Blockchain:
 
 ```
 query {
