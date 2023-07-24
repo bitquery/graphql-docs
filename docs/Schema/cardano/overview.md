@@ -10,7 +10,7 @@ Bitquery provides as [explorer](https://explorer.bitquery.io/cardano) for you to
 
 Bitquery API offers access to indexed data from the Cardano blockchain.
 
-to fetch data from Algorand blockchain, you need to provide the `network` argument with the value `algorand`as shown below:
+to fetch data from Algorand blockchain, you need to provide the `network` argument with the value `cardano`as shown below:
 
 ```
 {
