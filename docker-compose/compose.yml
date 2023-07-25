@@ -17,9 +17,11 @@ x-common-logging: &common-logging
 
 services:
   nginx:
-    image: ${LC_COMPOSE_IMAGE}:${LC_COMPOSE_IMAGE_TAG} 
+    image: ${LC_COMPOSE_IMAGE}:${LC_COMPOSE_IMAGE_TAG}
     ports:
       - ${LC_COMPOSE_IPADDR}:${LC_COMPOSE_WEB_PORT}:80
+    mount:
+      - - ./config/nginx/default.conf:/etc/nginx/conf.d/default.conf
     <<: *common-network
     <<: *common-dns
     <<: *common-restart
