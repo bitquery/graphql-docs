@@ -56,4 +56,6 @@ query MyQuery {
 
 <details> 
 <summary>Filtering Coinpath</summary>
+
+
 </details>
