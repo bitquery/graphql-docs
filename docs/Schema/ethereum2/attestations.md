@@ -1,5 +1,7 @@
 # Attestations
 
+The attestations API allows you to query for attestations that have been submitted to the Ethereum 2.0 beacon chain. You can use this API to get information about the attestations themselves, such as the epoch number, slot number, and committee index. You can also get information about the block that the attestation was included in, such as the block root hash and timestamp. The below query lists the fields in the schema:
+
 ```
 query ($network: Ethereum2Network!) {
   ethereum2(network: $network) {
