@@ -79,10 +79,10 @@ voluntaryExitEpoch: This field specifies the epoch number at which the voluntary
 
 `proposer`: This field contains information about the block proposer.
 
-parentRoot: This field contains the hash of the parent block's root.
+`parentRoot`: This field contains the hash of the parent block's root.
 
-validator: This field contains information about the validator that submitted the voluntary exit.
+`validator`: This field contains information about the validator that submitted the voluntary exit.
 
-voluntaryExitEpoch: This field contains the epoch number at which the voluntary exit was submitted.
+`voluntaryExitEpoch`: This field contains the epoch number at which the voluntary exit was submitted.
 
-height: This field specifies the height of the block that the voluntary exits should be returned for.
+`height`: This field specifies the height of the block that the voluntary exits should be returned for.
