@@ -1,5 +1,7 @@
 # Blocks
 
+The Eth2 blocks API retrieves staking and validator information for a block. Here are the fields in the schema:
+
 ```
 query ($network: Ethereum2Network!, $dateFormat: String!, $from: ISO8601DateTime, $till: ISO8601DateTime) {
   ethereum2(network: $network) {
