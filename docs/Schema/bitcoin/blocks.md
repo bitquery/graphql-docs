@@ -2,7 +2,7 @@
 
 The `blocks` field allows us to retrieve details about the blocks from the Bitcoin network.
 
-Here is an exmaple that demonstrates how to retrieve blocks data:
+Here is an example that demonstrates how to retrieve blocks data:
 
 ```
 query MyQuery {

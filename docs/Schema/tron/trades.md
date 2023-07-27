@@ -2,7 +2,7 @@
 # Trades
 
 <details>
-<summary>Filterin Trades</summary>
+<summary>Filtering Trades</summary>
 
 - `amountBuy`:
 - `amountSell`:
