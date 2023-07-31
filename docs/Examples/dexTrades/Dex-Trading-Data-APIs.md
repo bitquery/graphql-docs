@@ -807,3 +807,50 @@ To check currency pair in a Pool token, you can use following API.
   }
 }
 ```
+
+
+### Avalanche C-Chain : AVAX to USDT
+
+ We will get the price of AVAX in USDT. The query below returns the 10 most recent trades between AVAX and USDT on the Avalanche C-Chain. You can find the query [here](https://ide.bitquery.io/latest-AVAX---USDT-trades)
+
+
+```
+query ($network: EthereumNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime, $baseCurrency: String) {
+  ethereum(network: $network) {
+    dexTrades(
+      baseCurrency: {is: $baseCurrency}
+      date: {since: $from, till: $till}
+      options: {desc: "block.timestamp.time", limit: 10}
+      quoteCurrency: {is: "0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e"}
+    ) {
+      quoteCurrency {
+        name
+        address
+      }
+       baseCurrency {
+        name
+        address
+      }
+      block {
+        timestamp {
+          time
+        }
+        height
+        hash
+      }
+      quoteAmount
+      quotePrice
+     
+    }
+  }
+}
+
+<!-- Parameters -->
+{
+  "network": "avalanche",
+  "baseCurrency": "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7",
+  "from": "2023-07-24",
+  "till": "2023-07-31T23:59:59",
+  "dateFormat": "%Y-%m-%d"
+}
+```
