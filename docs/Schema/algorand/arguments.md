@@ -76,5 +76,5 @@ The following are available fields for the `arguments`:
 - `smartContract`: returns information of smart contract being called
 - `transaction`: returns information of transaction where call happened
 - `txSender`: returns information of transaction sender
-- `txType`: returns transaction type in which transfer happened
+- `txType`: returns [transaction type](/v1/docs/graphql-reference/enums/algorand-tx-type) in which transfer happened
 - `value`: returns value of argument
