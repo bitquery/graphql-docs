@@ -1,7 +1,7 @@
 
 # Coinpath
 
-The `coinpath` field allows us to retrieve detailed information about money flow using coinpath technology.
+The `coinpath` field allows us to retrieve detailed information about flow of funds in the chain.
 
 <details>
 <summary>Filtering Options</summary>

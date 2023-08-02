@@ -1,8 +1,8 @@
 # Blocks
 
-The `blocks` field allows us to retrieve information about the blocks from the Ethereum blockchain.
+The `blocks` field allows us to retrieve information about the blocks from the Polygon blockchain.
 
-Here is an example that demonstrates how to retrieve 10 latest blocks from Ethereum blockchains:
+Here is an example that demonstrates how to retrieve 10 latest blocks from Polygon blockchains:
 ```
 {
   ethereum(network: matic) {

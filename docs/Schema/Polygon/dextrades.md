@@ -1,8 +1,8 @@
 # DEX Trades
 
-The `dexTrades` field allows us to retrieve dex trade data from Ethereum blockchain.
+The `dexTrades` field allows us to retrieve dex trade data from Matic blockchain.
 
-Here's an exmaple query that fetches 10 latest trades on Ethereum blockchain:
+Here's an exmaple query that fetches 10 latest trades on Matic blockchain:
 
 ```
 query {
