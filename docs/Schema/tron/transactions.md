@@ -1,6 +1,6 @@
 # Transactions
 
-The `transactions` field allows us to fetch transactions details fom Tron blockchain.
+The `transactions` field allows us to fetch transactions details from Tron blockchain.
 
 Here is an example that demonstrates how to fetch transaction data:
 
