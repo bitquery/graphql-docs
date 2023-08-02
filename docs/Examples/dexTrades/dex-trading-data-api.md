@@ -45,7 +45,7 @@ If you put this filter like `priceAsymmetry : {lt: 1}` It means only give trade
 
 ## How to calculate USD pricing with our APIs?
 
-If you see this [query](https://ide.bitquery.io/Ethereum-Trades-for-specific-time), I am using `expression` to calculate price; in some cases where we don't have Buy or sell amount, you can use this to calculate USD prices because if you have USD price in anywhere in result, you will able to derive USD prices. Additionally, we have a field called `quote price`; it is used with Base/quote currency to get the quote price per token.
+If you see this [query](https://ide.bitquery.io/Ethereum-Trades-for-specific-time), we are using `expression` to calculate price; in some cases where we don't have Buy or sell amount, you can use this to calculate USD prices because if you have USD price in anywhere in result, you will able to derive USD prices. Additionally, we have a field called `quote price`; it is used with Base/quote currency to get the quote price per token.
 
 
 ## Difference b/w protocol and exchange
