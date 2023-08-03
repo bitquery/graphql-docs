@@ -32,3 +32,7 @@ Here's another example of fields available for filtering in `transactions` metho
 ![tx](/img/ide/transactions.png)
 
 You can use any combination of fields to filter your results if they contradict each other.
+
+
+## Using maker and taker in your query
+
