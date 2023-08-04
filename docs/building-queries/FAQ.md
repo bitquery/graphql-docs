@@ -1,4 +1,4 @@
-# Glossary and Commonnly asked questions
+# Glossary and Frequently Asked Questions
 
 ## What is the difference between a transfer and a transaction on chain?
 
