@@ -18,14 +18,18 @@ query MyQuery {
 
 
 
-<details><summary>Filtering Address</summary></details>
+<details><summary>Filtering Address</summary>
+
+`address`:  Specify the address of the wallet. The `is` keyword is used to specify that the address must match the value that is provided.
+
+</details>
 
 ## Fields
 
 
 `address`
 
-The address field specifies the address of the account that you want to get the balance for. The `is` keyword is used to specify that the address must match the value that is provided.
+The address field specifies the address of the account that you want to get the balance for.
 
 `annotation`
 
