@@ -40,7 +40,7 @@ Here's an example that demonstrates how to fetch information about 10 latest blo
 
 Blocks can be filtered using the following arguments:
 
-- `any`: 
+- `any`: A catch-all filter (OR Logic) that can be used to filter the results by any of the other fields.
 - `blockHash`: Filter by block hash
 - `blockReward`: Filter by block reward
 - `currentProtocol`: Filter by current protocol of the block
@@ -53,7 +53,7 @@ Blocks can be filtered using the following arguments:
 
 </details>
 
-- `any`:
+- `any`: A catch-all filter (OR Logic) that can be used to filter the results by any of the other fields.
 - `count`: returns counts and other metrics
 - `countBigInt`: returns count and other metrics 
 - `currentProtocol`: returns current protocol version

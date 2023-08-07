@@ -38,7 +38,7 @@ Here is an exmaple that demonstrates how to use `arguments` query:
 
 Arguments can be filtered using following arguments:
 
-- `any`:
+- `any`: A catch-all filter (OR Logic) that can be used to filter the results by any of the other fields.
 - `argindex`: Filter by index of the arugment in the call
 - `argument`: Filter by specific argument of smart contract method or event
 - `caller`: Filter address of the caller
@@ -58,7 +58,7 @@ Arguments can be filtered using following arguments:
 
 The following are available fields for the `arguments`:
 
-- `any`:
+- `any`: A catch-all filter (OR Logic) that can be used to filter the results by any of the other fields.
 - `argindex`: returns argument index in smart contract call or event
 - `block`: returns information of block in which smart contract call or event happened
 - `count`: returns aggregate count of argument
