@@ -233,3 +233,105 @@ A catch-all filter (OR Logic) that can be used to filter the results by any of t
 </details>
 
 ## Fields
+
+
+-   **block**
+    
+    The block that the transfer was included in.
+    
+    -   **height**
+        -   The height of the block. 
+    -   **timestamp**
+        -   The timestamp of the block.
+    -   **hash**
+        -   The hash of the block.
+    -   **previousBlockHash**
+        -   The hash of the previous block.
+-   **transaction**
+    
+    The transaction that the transfer was part of.
+    
+    -   **signature**
+        -   The signature of the transaction.
+    -   **accountsCount**
+        -   The number of accounts that were involved in the transaction.
+    -   **error**
+        -   Whether the transaction failed.
+    -   **fee**
+        -   The fee that was paid for the transaction.
+    -   **feePayer**
+        -   The address of the account that paid the fee.
+    -   **innerInstructionsCount**
+        -   The number of instructions that were included in the transaction.
+    -   **instructionsCount**
+        -   The total number of instructions that were included in the transaction, including the inner instructions.
+    -   **recentBlockHash**
+        -   The hash of the most recent block that the transaction was included in.
+    -   **success**
+        -   Whether the transaction was successful.
+    -   **signer**
+        -   The address of the signer of the transaction.
+-   **sender**
+    
+    The address of the sender of the transfer.
+    
+    -   **address**
+        -   The address of the sender account.
+    -   **mintAccount**
+        -   Whether the sender account is a mint account.
+    -   **type**
+        -   The type of the sender account. 
+-   **receiver**
+    
+    The address of the receiver of the transfer.
+    
+    -   **address**
+        -   The address of the receiver account.
+    -   **mintAccount**
+        -   Whether the receiver account is a mint account.
+    -   **type**
+        -   The type of the receiver account. 
+-   **currency**
+    
+    The currency that was transferred.
+    
+    -   **symbol**
+        -   The symbol of the currency.
+    -   **address**
+        -   The address of the token account that was transferred.
+    -   **tokenType**
+        -   The type of the token. The supported token types are  `SPL`,  `Native`, and  `Unknown`.
+    -   **tokenId**
+        -   The token ID of the token that was transferred.
+    -   **name**
+        -   The name of the token.
+    -   **decimals**
+        -   The number of decimal places for the token.
+-   **amount**
+    
+    The amount of currency that was transferred.
+    
+-   **transferType**
+    
+    The type of transfer. Some of the supported transfer types are `mint`, `burn`, and `transfer`.
+    
+-   **instruction**
+    
+    The instruction that was used to perform the transfer.
+    
+    -   **callPath**
+        -   The call path of the instruction.
+    -   **action**
+        -   The action that was called.
+    -   **externalAction**
+        -   The external action that was called.
+    -   **external**
+        -   Whether the transfer was an external transfer.
+    -   **externalProgram**
+        -   The external program ID of the program that was used to perform the transfer.
+    -   **name**
+        -   The name of the action.
+    -   **type**
+        -   The type of the action.
+    -   **program**
+        -   The program ID of the program that was used to perform the transfer.
