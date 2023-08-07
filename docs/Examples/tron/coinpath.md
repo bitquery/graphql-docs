@@ -1,6 +1,6 @@
 # Coinpath API
 
-Our Tron Coinpath API provides comprehensive information about money flow from addresses on the Tron blockchain.
+Our Tron Coinpath API provides comprehensive information about money flow of addresses on the Tron blockchain.
 
 ## Get Money Flow of Particular Address
 

@@ -1,6 +1,6 @@
 # Smart Contract Calls API
 
-Our Tron Smart Contract Calls API provides detailed information about smart contract calls executed made on the Tron Blockchain.
+Our Tron Smart Contract Calls API provides detailed information about smart contract calls executed on the Tron Blockchain.
 
 ## Get List of Latest Smart Contract Calls
 
