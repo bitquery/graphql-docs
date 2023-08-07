@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-## Transfer API
+# Transfer API
 Transfer API is available for all blockchains that have smart contract capabilities, especially EVMs. This api helps you get token (native or non-native) transfers. Let's see a few examples.
 
 
