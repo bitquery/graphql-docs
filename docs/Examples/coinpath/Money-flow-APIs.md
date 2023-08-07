@@ -253,3 +253,82 @@ Using combination of above two queries you can check if two address ever transac
   }
 }
 ```
+
+
+## Tracing SOL movement between two addresses on Solana
+
+The query below will trace the movement of SOL between two addresses on Solana
+The query will return two objects: `inbound` and `outbound`. The `inbound` object will contain information about all inbound transactions to the specified address, and the `outbound` object will contain information about all outbound transactions from the specified address.
+
+[Open this query on IDE](https://ide.bitquery.io/solana-coinpath-example)
+
+```
+query ($network: SolanaNetwork!, $address: String!, $inboundDepth: Int!, 
+        $outboundDepth: Int!, $limit: Int!, $from: ISO8601DateTime, $till: ISO8601DateTime,
+        $currency: String!
+       ) {
+        solana(network: $network) {
+          inbound: coinpath(
+            initialAddress: {is: $address}
+            depth: {lteq: $inboundDepth}
+            options: {direction: inbound, asc: "depth", desc: "amount", limitBy: {each: "depth", limit: $limit}}
+            date: {since: $from, till: $till}
+            currency: { is: $currency }
+          ) {
+            sender {
+              address
+              annotation
+            }
+            receiver {
+              address
+              annotation
+            }
+            amount
+            currency {
+              symbol
+              name
+            }
+            depth
+            count
+          }
+          outbound: coinpath(
+            initialAddress: {is: $address}
+            depth: {lteq: $outboundDepth}
+            options: {asc: "depth", desc: "amount", limitBy: {each: "depth", limit: $limit}}
+            date: {since: $from, till: $till}
+            currency: { is: $currency }
+          ) {
+            sender {
+              address
+              annotation
+            }
+            receiver {
+              address
+              annotation
+            }
+            amount
+            currency {
+              symbol
+              name
+            }
+            depth
+            count
+          }
+        }
+      }
+      
+<!-- Parameters -->
+
+      {
+  "inboundDepth": 1,
+  "outboundDepth": 1,
+  "limit": 10,
+  "offset": 0,
+  "network": "solana",
+  "address": "4yWr7H2p8rt11QnXb2yxQF3zxSdcToReu5qSndWFEJw",
+  "currency": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+  "from": "2022-09-19",
+  "till": "2022-09-26T23:59:59",
+  "dateFormat": "%Y-%m-%d"
+}
+      ```
