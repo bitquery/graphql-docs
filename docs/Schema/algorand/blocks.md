@@ -53,27 +53,27 @@ Blocks can be filtered using the following arguments:
 
 </details>
 
-- any
-- count
-- countBigInt
-- currentProtocol
-- date
-- expression
-- frac
-- hash
-- height
-- maximum
-- minimum
-- nextProtocol
-- nextProtocolApprovals
-- nextProtocolSwitchOn
-- nextProtocolVoteBefore
-- previousBlockHash
-- proposer
-- rate
-- reward
-- see
-- timestamp
-- txnRoot
-- upgradeApprove
-- upgradePropose
+- `any`:
+- `count`: returns counts and other metrics
+- `countBigInt`: returns count and other metrics 
+- `currentProtocol`: returns current protocol version
+- `date`: returns date of the blocks
+- `expression`: performs arithematic operation on fields in the query and returns value of the operation
+- `frac`: returns value of frac field
+- `hash`: returns block hash
+- `height`: returns block height
+- `maximum`: returns maximum of selected [measurable field of Algorand blocks](/v1/docs/graphql-reference/enums/algorand-blocks-measureable)
+- `minimum`: returns minimum of selected [measurable field of Algorand blocks](/v1/docs/graphql-reference/enums/algorand-blocks-measureable)
+- `nextProtocol`: returns the next proposed protocol version
+- `nextProtocolApprovals`: returns number of blocks which approved the protocol upgrade
+- `nextProtocolSwitchOn`: returns round on which the protocol upgrade will take effect
+- `nextProtocolVoteBefore`: returns dealine round for this protocol upgrade
+- `previousBlockHash`: returns previous block hash
+- `proposer`: returns address and annotation (if available) for block proposer 
+- `rate`: returns reward rate
+- `reward`: returns reward for the block
+- `seed`: reutrns seed of the block
+- `timestamp`: returns timestamp of the block
+- `txnRoot`: returns transaction root
+- `upgradeApprove`: returns number of vote for the current proposal
+- `upgradePropose`: returns proposed upgrade
