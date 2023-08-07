@@ -2,8 +2,8 @@
 
 ## What is the difference between a transfer and a transaction on chain?
 
-https://community.bitquery.io/t/transfers-vs-transactions-what-is-the-difference/1589
-
+Please read the difference between Transfers and transactions [**here**](https://community.bitquery.io/t/transfers-vs-transactions-what-is-the-difference/1589
+).
 
  ## How to calculate the price of a token in USD?
 
