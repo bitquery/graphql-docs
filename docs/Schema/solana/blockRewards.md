@@ -50,7 +50,27 @@ query ($network: SolanaNetwork!, $date: ISO8601DateTime, $height: Int) {
   "dateFormat": "%Y-%m-%d"
 }
 ```
-<details><summary>Filtering blockRewards</summary></details>
+<details><summary>Filtering blockRewards</summary>
+
+
+`date` The date of the block rewards. 
+
+`height` The height of the block rewards. 
+
+`blockHash` The hash of the block rewards. 
+ 
+`any` This field can be used to filter the results by any of the other fields in the response (OR logic)
+
+`account` The account address that received the block rewards.
+
+`previousBlockHash` The hash of the previous block.
+
+`postBalance` The balance of the account after the block rewards were received.
+
+`parentSlot` The slot number of the parent block.
+
+`rewardType` The type of block rewards. 
+</details>
 
 
 ## Fields
