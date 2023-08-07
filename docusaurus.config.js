@@ -126,9 +126,18 @@ const config = {
             type: "doc",
             docId: "intro",
             position: "left",
-            label: "Docs",
+            label: "V1 Docs",
           },
-          { to: "blog", label: "News", position: "left" },
+          {
+            to: "https://docs.bitquery.io/",
+            label: "V2 Docs",
+            position: "left",
+          },
+          {
+            to: "blog",
+            label: "News",
+            position: "left"
+          },
         ],
       },
       footer: {
