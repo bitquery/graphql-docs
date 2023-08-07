@@ -91,7 +91,7 @@ The amount of currency that was transferred.
 
 `transferType`
 
-The type of transfer. Some of the supported transfer types are mint, burn, and transfer.
+The type of transfer. Some of the supported transfer types are create_account and transfer.
 
 `transactionIndex`
 
