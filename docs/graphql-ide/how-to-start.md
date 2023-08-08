@@ -41,6 +41,8 @@ You can enter your token, transaction, address anything and search for it. Once 
 
 We have built our [GraphQL IDE](https://graphql.bitquery.io/ide) to make it easy to work with blockchain data. Using our IDE you can create, save, test, and share your GraphQL queries.
 
+Start typing in the search bar in the IDE to find queries written by other users.
+
 You can find a lot of query examples created by our community on our IDE, I recommend checking them first, most probably someone already build the query which you are looking for.
 
 ![Queries Created and shared by Bitquery community|690x318](/img/queries-created-and-shared-by-Bitquery-community.png)
