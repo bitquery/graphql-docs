@@ -1,46 +1,47 @@
-# Transfers
+# Attributes
 
 <details>
-
 <summary></summary>
 
 - `any`:
   
-- `block`:
+- `attribute`:
   
 - `blockHash`:
   
-- `currency`:
+- `blockHeight`:
   
 - `date`:
   
-- `index`:
+- `eventType`:
+  
+- `messageIndex`:
+  
+- `messageType`:
   
 - `options`:
   
-- `receiver`:
-
-- `sender`:
-  
 - `senders`:
   
+- `success`:
+  
 - `time`:
- 
+  
 - `transactionHash`:
- 
+  
 - `transactionIndex`:
- 
+  
 - `transactionSigner`:
- 
-- `type`:
- 
-- `typeTransfer`:
- 
+  
 - `value`:
+  
+- `valueIndex`:
 
 </details>
 
 - `any`:
+  
+- `attribute`:
   
 - `block`:
   
@@ -48,34 +49,20 @@
   
 - `countBigInt`:
   
-- `currency`:
-  
 - `date`:
   
-- `delegated`:
+- `eventType`:
   
 - `expression`:
   
 - `maximum`:
   
-- `minimum`:
-  
-- `messageIndex`:
-  
-- `messageType`:
+- `message`:
   
 - `minimum`:
-  
-- `receiver`:
-  
-- `sender`:
-  
-- `senders`:
   
 - `transaction`:
   
-- `type`:
-  
 - `value`:
   
-- `valueDecimal`:
+- `valueIndex`:

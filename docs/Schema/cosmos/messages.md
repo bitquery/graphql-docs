@@ -1,7 +1,6 @@
-# Transaction
+# Messages
 
 <details>
-
 <summary></summary>
 
 - `any`:
@@ -10,29 +9,21 @@
   
 - `blockHeight`:
   
-- `code`:
-  
 - `date`:
-  
-- `fee`:
-  
-- `gasUsed`:
-  
-- `gasWanted`:
-  
-- `hash`:
   
 - `index`:
   
-- `memo`:
-  
 - `options`:
   
-- `signer`:
+- `senders`:
   
 - `success`:
   
-- `time`:
+- `transactionHash`:
+  
+- `transactionIndex`:
+  
+- `transactionSigner`:
   
 - `type`:
 
@@ -42,40 +33,26 @@
   
 - `block`:
   
-- `code`:
-  
 - `count`:
   
 - `countBigInt`:
   
 - `date`:
-
+  
 - `expression`:
-  
-- `fee`:
-  
-- `feeCurrency`:
-  
-- `feeDecimal`:
-  
-- `gasUsed`:
-  
-- `gasWanted`:
-  
-- `hash`:
   
 - `index`:
   
-- `maximum`:
+- `json`:
   
-- `memo`:
+- `maximum`:
   
 - `minimum`:
   
-- `rawTx`:
-  
-- `signer`:
+- `senders`:
   
 - `success`:
+  
+- `transaction`:
   
 - `type`:
