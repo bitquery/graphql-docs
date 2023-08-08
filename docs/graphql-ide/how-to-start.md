@@ -33,7 +33,7 @@ We have built our multi [blockchain explorer](http://explorer.bitquery.io/) to s
 You can enter your token, transaction, address anything and search for it. Once you see the relevant data you can click on the "graphql" button at the bottom right corner to check what GrpahQL query is responsible for that data. I highly recommend searching our explorer first before 
 
 
-[![Bitquey Explorer](img/explorer.jpeg)](https://vimeo.com/548729514 "Bitquery Explorer - Click to Watch!")
+[![Bitquey Explorer](/img/explorer.jpeg)](https://vimeo.com/548729514 "Bitquery Explorer - Click to Watch!")
 
 
 
@@ -50,7 +50,7 @@ You can find a lot of query examples created by our community on our IDE, I reco
 
 We also have a Query Builder on our [IDE](https://graphql.bitquery.io/ide) which is built to help you create our queries easily. This way you can create queries with simple clicks.
 
-[![Graphql API Builder](img/graphql-api-builder.jpeg)](https://vimeo.com/521756813 "Graphql API Builder - Click to Watch!")
+[![Graphql API Builder](/img/graphql-api-builder.jpeg)](https://vimeo.com/521756813 "Graphql API Builder - Click to Watch!")
 
 
 **Check our Blog** 
@@ -67,7 +67,7 @@ We have written a lot of blog posts to help you explain our APIs, please them on
 
 You can find our GrpahQL Schema on our [IDE](https://graphql.bitquery.io/ide).
 
-![graphql schema|690x309](/ide/graphql-schema.png)
+![graphql schema|690x309](/img/ide/graphql-schema.png)
 
 
 **Calling Bitquery APIs programmatically**
