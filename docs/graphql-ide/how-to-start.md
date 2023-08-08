@@ -65,9 +65,7 @@ We have written a lot of blog posts to help you explain our APIs, please them on
 
 **Schema**
 
-You can find our GrpahQL Schema on our [IDE](https://graphql.bitquery.io/ide).
-
-![graphql schema|690x309](/img/ide/graphql-schema.png)
+You can find our GraphQL Schema on our [IDE](https://graphql.bitquery.io/ide).
 
 
 **Calling Bitquery APIs programmatically**
