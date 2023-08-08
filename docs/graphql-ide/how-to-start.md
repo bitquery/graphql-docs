@@ -4,29 +4,28 @@ sidebar_position: 1
 
 # How to Start
 
-The simplest way to create and run a query is to use the IDE: https://graphql.bitquery.io/ide. You first have to register, and the IDE window will open.
+The simplest way to create and run a query is to use the IDE: https://ide.bitquery.io/. You first have to register, and the IDE window will open.
 
-Query editor is in the center of the screen, and you can use handy Ctrl-Space key combination to see all possible options that you can enter at edit point. On the empty editor, it will show the drop-down list:
+## Get your API Key
 
-![query2](/img/ide/second.png)
+To get your API key, use our IDE,
+
+![graphql schema](/ide/api-key.png)
 
 
-Note:  GraphQL API = GraphQL Query (We use these terms interchangeably.)
+## Important Links
 
-**V1 docs** - [`https://docs.bitquery.io/v1/`](https://docs.bitquery.io/v1/)
-
-**V2 Docs** - [`https://docs.bitquery.io/`](https://docs.bitquery.io/)
-
-[**Difference between v1 and v2**](v1-and-v2.md)
-
-How to call Bitquery APIs programmatically, [Read Here](https://bitquery.io/blog/graphql-with-python-javascript-and-ruby) and [here](https://community.bitquery.io/t/make-api-calls-to-bitquery-in-python-javascript-dart-golang-and-php/1004).
-
-To see the difference APIs provided by Bitquery please check [this](https://docs.google.com/presentation/d/1NET2jWidPNwuzR0_gy3SBY6_gX1n_a9KIHw4EQohDCE/edit?usp=sharing)
+- **V1 docs** - [`https://docs.bitquery.io/v1/`](https://docs.bitquery.io/v1/)
+- **V2 Docs** - [`https://docs.bitquery.io/`](https://docs.bitquery.io/)
+- [**Difference between v1 and v2**](v1-and-v2.md)
+- How to call Bitquery APIs programmatically, [Read Here](https://bitquery.io/blog/graphql-with-python-javascript-and-ruby) and [here](https://community.bitquery.io/t/make-api-calls-to-bitquery-in-python-javascript-dart-golang-and-php/1004).
+- To see the difference APIs provided by Bitquery please check [this](https://docs.google.com/presentation/d/1NET2jWidPNwuzR0_gy3SBY6_gX1n_a9KIHw4EQohDCE/edit?usp=sharing)
 
 [![Get started with Bitquery](/img/get-started-with-bitquery.jpeg)](https://www.youtube.com/watch?v=pOFVc-kgSxc "Get started with Bitquery - Click to Watch!")
 
 
-**Bitquery Explorer**
+
+## Using Bitquery Explorer to get Queries
 
 We have built our multi [blockchain explorer](http://explorer.bitquery.io/) to showcase our APIs, Therefore for beginners, I recommend first check our explorer.
 
@@ -36,8 +35,7 @@ You can enter your token, transaction, address anything and search for it. Once 
 [![Bitquey Explorer](/img/explorer.jpeg)](https://vimeo.com/548729514 "Bitquery Explorer - Click to Watch!")
 
 
-
-## Check our IDE - Examples
+## Check our IDE Explorer - Examples
 
 We have built our [GraphQL IDE](https://graphql.bitquery.io/ide) to make it easy to work with blockchain data. Using our IDE you can create, save, test, and share your GraphQL queries.
 
@@ -64,6 +62,11 @@ We have written a lot of blog posts to help you explain our APIs, please them on
 - [Create your first Blockchain GraphQL query](https://bitquery.io/blog/blockchain-graphql-query)
 
 
+## Auto Complete
+
+Use CTRL + Space to use autocomplete. 
+
+![query2](/img/ide/second.png)
 
 **Schema**
 
