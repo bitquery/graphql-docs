@@ -6,7 +6,7 @@ Coinpath® api is targeted to help build compliance solutions by providing money
 ## What is depth?
 Please check following image to understand the depth (hop).
 
-![coinpath](/static/img/depth_coinpath.png)
+![coinpath](/img/depth_coinpath.png)
 
 
 ## What is direction?

@@ -23,7 +23,7 @@ How to call Bitquery APIs programmatically, [Read Here](https://bitquery.io/blog
 
 To see the difference APIs provided by Bitquery please check [this](https://docs.google.com/presentation/d/1NET2jWidPNwuzR0_gy3SBY6_gX1n_a9KIHw4EQohDCE/edit?usp=sharing)
 
-[![Get started with Bitquery](img/get-started-with-bitquery.jpeg)](https://www.youtube.com/watch?v=pOFVc-kgSxc "Get started with Bitquery - Click to Watch!")
+[![Get started with Bitquery](/img/get-started-with-bitquery.jpeg)](https://www.youtube.com/watch?v=pOFVc-kgSxc "Get started with Bitquery - Click to Watch!")
 
 
 **Bitquery Explorer**
