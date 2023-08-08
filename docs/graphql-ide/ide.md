@@ -8,15 +8,6 @@ sidebar_position: 2
 ![IDE Diagram](/img/ide-diagram.png)
 
 
-## Query builder
-
-
-## Widgets 
-TODO 
-
-
-## Account
-
 
 ## How IDE can help build query?
 
