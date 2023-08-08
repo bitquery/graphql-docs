@@ -157,7 +157,7 @@ To check transaction in a block use following query. You can use `in: ["block1",
 To get transactions for a user, you can use the following query. As you can see, we are using the `any` operator, which is basically how you add OR conditions in filters.
 
 
-https://ide.bitquery.io/Ethereum-transaction-of-an-address
+[Access the query here](https://ide.bitquery.io/Ethereum-transaction-of-an-address)
 
 ```graphql
 {
@@ -207,3 +207,22 @@ https://ide.bitquery.io/Ethereum-transaction-of-an-address
 
 ```
 
+## Get Daily Transaction Count on Solana
+
+[Access the query here](https://ide.bitquery.io/Get-daily-Solana-transaction-volume-for-the-last-10-days)
+
+```
+# Get count of transaction per day on Solana for last 10 days in descending.
+# Change limit to get more or less.
+
+query get_per_day_transaction_count_of_solana_for_last_ten_days{
+  solana(network: solana) {
+    transactions(options: {desc: "date.date", limit: 10}) {
+      date {
+        date
+      }
+      count
+    }
+  }
+}
+```
