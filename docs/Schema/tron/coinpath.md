@@ -1,7 +1,7 @@
 
 # Coinpath
 
-The `coinapth` field allows us to retrieve detailed information about money flow using coinpath technology from Tron network.
+The `coinpath` field allows us to retrieve detailed information about money flow using coinpath technology from Tron network.
 
 
 <details>
