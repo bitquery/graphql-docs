@@ -380,6 +380,44 @@ https://ide.bitquery.io/Summary-of-tokens-received-by-an-address
 
 ```
 
+## Latest Filecoin Transfers
+
+The query below allows gets the latest Filecoin transfers made on the Filecoin network ordered by descending order of block height and limited to 10 responses between the two dates `from` and `till`
+
+[Access query here](https://ide.bitquery.io/latest-filecoin-transfers)
+
+```
+
+  query ($network: FilecoinNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601DateTime, $till: ISO8601DateTime) {
+  filecoin(network: $network) {
+    blocks(
+      options: {desc: "height", limit: $limit, offset: $offset}
+      date: {since: $from, till: $till}
+    ) {
+      timestamp {
+        time(format: "%Y-%m-%d %H:%M:%S")
+      }
+      height
+      count
+      messageCount
+      reward
+      minerTips
+    }
+  }
+}
+
+<!-- Parameters -->
+{
+
+  "limit": 10,
+  "offset": 0,
+  "network": "filecoin",
+  "from": "2023-02-22",
+  "till": "2023-03-01T23:59:59",
+  "dateFormat": "%Y-%m-%d"
+}
+```
+
 
 ## NFT Transfers
 
