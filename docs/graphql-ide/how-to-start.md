@@ -10,7 +10,7 @@ The simplest way to create and run a query is to use the IDE: https://ide.bitque
 
 To get your API key, use our IDE,
 
-![graphql schema](/ide/api-key.png)
+![graphql schema](/img/api-key.png)
 
 
 ## Important Links
