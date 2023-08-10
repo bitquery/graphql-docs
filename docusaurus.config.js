@@ -120,6 +120,7 @@ const config = {
         logo: {
           alt: "Bitquery.io",
           src: "img/bitquery_logo_w.jpg",
+          
         },
         items: [
           {
@@ -134,8 +135,8 @@ const config = {
             position: "left",
           },
           {
-            to: "blog",
-            label: "News",
+            to: "https://community.bitquery.io",
+            label: "Forum",
             position: "left"
           },
         ],
@@ -155,8 +156,8 @@ const config = {
                 to: "docs/intro",
               },
               {
-                label: "News",
-                to: "blog",
+                label: "Blog",
+                to: "https://bitquery.io/blog",
               },
             ],
           },
