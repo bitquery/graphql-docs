@@ -37,7 +37,6 @@ const config = {
   },
 
   plugins: [
-
     // [
     //   "@graphql-markdown/docusaurus",
     //   {
@@ -89,13 +88,11 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl:
-            "https://github.com/bitquery/graphql-docs/tree/main",
+          editUrl: "https://github.com/bitquery/graphql-docs/tree/main",
         },
         blog: {
           showReadingTime: true,
-          editUrl:
-            "https://github.com/bitquery/graphql-docs/tree/main",
+          editUrl: "https://github.com/bitquery/graphql-docs/tree/main",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -119,8 +116,8 @@ const config = {
         title: "Blockchain Data Platform",
         logo: {
           alt: "Bitquery.io",
-          src: "img/bitquery_logo_w.jpg",
-          
+          src: "img/logoBitqueryDark.png",
+          srcDark: "img/logoBitqueryWhite.png",
         },
         items: [
           {
@@ -137,7 +134,7 @@ const config = {
           {
             to: "https://community.bitquery.io",
             label: "Forum",
-            position: "left"
+            position: "left",
           },
         ],
       },
