@@ -26,7 +26,7 @@ const FeatureList = [
     Svg: require('@site/static/img/BitqueryBW.svg').default,
     description: (
       <>
-Complete historical (archival) and real-time indexed blockchain data.
+Complete historical (archival) and real-time indexed blockchain data through APIs, SQL and Cloud infra.
       </>
     ),
   },
