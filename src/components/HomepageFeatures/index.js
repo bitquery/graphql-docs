@@ -4,31 +4,29 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Blockchain Data Platform',
+    title: 'Build Multi-chain Apps',
     Svg: require('@site/static/img/BitqueryBW.svg').default,
     description: (
       <>
-        Subscribe on the real-time data and build winning blockchain
-          applications.
+      Unified APIs to query blockchains using our <a href='https://ide.bitquery.io/'>GraphQL IDE</a> and build multi-chain apps faster than ever.
       </>
     ),
   },
   {
-    title: 'GraphQL API',
+    title: 'Blockchain GraphQL API',
     Svg: require('@site/static/img/BitqueryBW.svg').default,
     description: (
       <>
-        Build effective GraphQL queries to any blockchain data in minutes and embed them in your applications.
-        Now with Websockets and subscription features!
+        Query <a href='https://account.bitquery.io/user/system_status'>40+ blockchains</a> data such as trades, transfers, balance, nfts, tokens, and more using powerful, unified Graphql APIs.
       </>
     ),
   },
   {
-    title: 'Cloud Data Sets',
+    title: 'Historical and Real time data',
     Svg: require('@site/static/img/BitqueryBW.svg').default,
     description: (
       <>
-        Develop cloud applications using precise comprehensive archive datasets of all major blockchain networks.
+Complete historical (archival) and real-time indexed blockchain data through APIs, SQL and Cloud infra.
       </>
     ),
   },

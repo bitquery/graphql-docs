@@ -30,8 +30,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Tutorial`}
-      description="Using GraphQL, Cloud Storage and IDE">
+      title={`Blockchain API Documentation (V1 Graphql Docs)`}
+      description="Blockchain APIs documentation for querying transactions, balances, transfers, NFTs, tokens, Dex trades, Smart contract calls, events, and much more. We support 40+ blockchains, including Bitcoin, Etheruem, Solana, Polygon, Arbitrum, Optimism, etc.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
