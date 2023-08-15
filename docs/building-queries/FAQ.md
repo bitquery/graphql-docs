@@ -5,7 +5,7 @@
 Please read the difference between Transfers and transactions [**here**](https://community.bitquery.io/t/transfers-vs-transactions-what-is-the-difference/1589
 ).
 
- ## How to calculate the price of a token in USD?
+## How to calculate the price of a token in USD?
 
 We can calculate price of a token in USD using `buyAmountUSD` and `sellAmount` fields.
 
@@ -79,4 +79,48 @@ query ($from: ISO8601DateTime!, $to: ISO8601DateTime!, $limit: Int) {
   "to": "2023-05-17T12:21:59.000Z",
   "limit": 10
 }
+```
+
+ ## How to use priceAsymmetry to filter anomalies and outliers in Trades ?
+
+ The priceAsymmetry metric is being used to filter outliers of anomalies. This means that trades that have a price asymmetry that is greater than 1 will be excluded from the results. This helps to ensure that the results are more accurate and reliable, as it removes any trades that may have been caused by anomalies.
+
+priceAsymmetry measures how close the trade’s prices are to each other. If the price asymmetry is less than 0.01, then the difference between the prices is less than 1%.
+However, the value of 0.01 might be too small and could omit a lot of trades. To improve your anomaly filtering mechanism, , add another filter like `tradeAmountUsd: {gt: 100}` filter to only include trades with a trade amount of more than 100 USD.
+
+
+Here’s an example query for [WETH trades](https://ide.bitquery.io/PriceAsymmetry-and-TradeAmountUSD)
+
+
+```
+query ($baseAddress: String, $interval: Int) {
+  ethereum(network: ethereum) {
+    dexTrades(
+      baseCurrency: {is: $baseAddress}
+      date: {since: "2023-07-30", till: "2023-07-30"}
+      options: {limit: 500, desc: "timeInterval.minute"}
+      quoteCurrency: {is: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"}
+      tradeAmountUsd: {gt: 100}
+      priceAsymmetry: {lt: 1}
+    ) {
+      timeInterval {
+        minute(count: $interval)
+      }
+      sellCurrency: quoteCurrency {
+        address
+      }
+      high: quotePrice(calculate: maximum)
+      low: quotePrice(calculate: minimum)
+      open: minimum(of: date, get: quote_price)
+      close: maximum(of: date, get: quote_price)
+    }
+  }
+}
+
+{
+  "interval": 5,
+  "baseAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
+}
+
+
 ```
