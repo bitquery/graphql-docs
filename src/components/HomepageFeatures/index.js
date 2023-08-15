@@ -8,8 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/BitqueryBW.svg').default,
     description: (
       <>
-        Subscribe on the real-time data and build winning blockchain
-          applications.
+       Real time blockchain data APIs through Grpahql subscription (Webhook).
       </>
     ),
   },
@@ -18,8 +17,7 @@ const FeatureList = [
     Svg: require('@site/static/img/BitqueryBW.svg').default,
     description: (
       <>
-        Build effective GraphQL queries to any blockchain data in minutes and embed them in your applications.
-        Now with Websockets and subscription features!
+        Query blockchains data such as trades, transfers, balance, nfts, tokens, and more using powerful, unified Graphql APIs.
       </>
     ),
   },
@@ -28,7 +26,7 @@ const FeatureList = [
     Svg: require('@site/static/img/BitqueryBW.svg').default,
     description: (
       <>
-        Develop cloud applications using precise comprehensive archive datasets of all major blockchain networks.
+Access blockchain data through cloud infra such as AWS s3, Snowflake, Microsoft Azure, Google Bigquery, and more.
       </>
     ),
   },
