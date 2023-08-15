@@ -1,4 +1,4 @@
-## Staking Data Examples
+# Staking Data Examples
 
 ## Get Staking Data for a Stake Address on Cardano
 
