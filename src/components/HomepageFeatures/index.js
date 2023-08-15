@@ -4,29 +4,29 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Blockchain Data Platform',
+    title: 'Build Multi-chain Apps',
     Svg: require('@site/static/img/BitqueryBW.svg').default,
     description: (
       <>
-       Real time blockchain data APIs through Grpahql subscription (Webhook).
+      Unified APIs to query blockchains using our <a href='https://ide.bitquery.io/'>GraphQL IDE</a> and build multi-chain apps faster than ever.
       </>
     ),
   },
   {
-    title: 'GraphQL API',
+    title: 'Blockchain GraphQL API',
     Svg: require('@site/static/img/BitqueryBW.svg').default,
     description: (
       <>
-        Query blockchains data such as trades, transfers, balance, nfts, tokens, and more using powerful, unified Graphql APIs.
+        Query <a href='https://account.bitquery.io/user/system_status'>40+ blockchains</a> data such as trades, transfers, balance, nfts, tokens, and more using powerful, unified Graphql APIs.
       </>
     ),
   },
   {
-    title: 'Cloud Data Sets',
+    title: 'Historical and Real time data',
     Svg: require('@site/static/img/BitqueryBW.svg').default,
     description: (
       <>
-Access blockchain data through cloud infra such as AWS s3, Snowflake, Microsoft Azure, Google Bigquery, and more.
+Complete historical (archival) and real-time indexed blockchain data.
       </>
     ),
   },
