@@ -1,5 +1,7 @@
 # Blocks
 
+Ripple Blocks API helps you get information on Blocks in the network. Below are the fields in the API: 
+
 ```
 query ($network: RippleNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime) {
   ripple(network: $network) {
