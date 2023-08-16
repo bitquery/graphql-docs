@@ -73,6 +73,7 @@ query ($network: RippleNetwork!) {
 - `block`: The block number of the transaction that created the RippleState object.
 - `balance`: The balance of the RippleState object.
 - `any`: A catch-all filter (OR Logic) that can be used to filter the results by any of the other fields.
+
 </details>
 
 ## Fields

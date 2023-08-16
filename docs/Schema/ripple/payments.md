@@ -113,6 +113,7 @@ query ($network: RippleNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime)
 - **amountIssuer** - This field allows you to filter the results by the issuer of the amount.
 - **amountCurrency** - This field allows you to filter the results by the currency of the amount.
 - **amount** - This field allows you to filter the results by the amount.
+
 </details>
 
 ## Fields

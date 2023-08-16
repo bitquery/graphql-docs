@@ -101,7 +101,8 @@ query ($network: RippleNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
 
 - **amount** - This field allows you to filter the results to escrows that have a specific amount.
 
-- **account** - This field allows you to filter the results by a specific a
+- **account** - This field allows you to filter the results by a specific address
+
 </details>
 
 ## Fields
