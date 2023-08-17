@@ -5,7 +5,7 @@ The offers query can be used to get information about all of the offers that hav
 ```
 query MyQuery {
   ripple(network: ripple) {
-    offers(account: {is: "rocwwPiFPgytt5Yhe3ctdZTnWw92Resy5"}) {
+    offers(transactionHash: {is: "hash of the tx"}) {
       transaction {
         hash
         index
@@ -54,7 +54,37 @@ query MyQuery {
 
 ```
 
-<details><summary></summary></details>
+<details><summary>Filtering Offers</summary>
+
+- `options`: This field specifies the options for the query, such as the order of the results and the number of results to return.
+
+- `date`: This field specifies the date range for the offers.
+
+- `transactionHash`: This field specifies the transaction hash of the offers.
+  transaction hash.
+- `transactionType`: This field specifies the type of transaction for the offers.
+- `transactionSender`: This field specifies the address of the sender of the transactions.
+- `transactionIndex`: This field specifies the index of the transaction in the ledger.
+- `time`: This field specifies the timestamp of the transactions.
+- `takerPaysCurrencySymbol`: This field specifies the symbol of the currency that the taker pays.
+- `takerPaysAmount`: This field specifies the amount of the currency that the taker pays.
+- `takerGetsCurrencySymbol`: This field specifies the symbol of the currency that the taker receives.
+- `takerGetsAmount`: This field specifies the amount of the currency that the taker receives.
+- `sequence`: This field specifies the sequence number of the transactions.
+- `prevTxnId`: This field specifies the previous transaction ID of the transactions.
+- `prevLedgerSequence`: This field specifies the previous ledger sequence of the transactions.
+- `preTakerPaysAmount`: This field specifies the amount of the currency that the taker pays before fees.
+- `preTakerGetsAmount`: This field specifies the amount of the currency that the taker receives before fees.
+- `operation`: This field specifies the operation type of the transactions.
+- `flags`: This field specifies the flags of the transactions.
+- `expiration`: This field specifies the expiration time of the transactions.
+- `bookNode`: This field specifies the book node of the transactions.
+- `bookDirectory`: This field specifies the book directory of the transactions.
+- `block`: This field specifies the block number of the transactions.
+- `any`: A catch-all field ( OR Logic) that can be used to filter on any other field in the payments API.
+- `account`: This field specifies the account that created the transactions.
+
+</details>
 
 ## Fields
 

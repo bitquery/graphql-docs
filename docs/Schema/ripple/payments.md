@@ -109,7 +109,7 @@ query ($network: RippleNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime)
 - **deliveredAmount** - This field allows you to filter the results by the amount that was delivered.
 - **date** - This field allows you to filter the results by date. The date can be specified in the format `YYYY-MM-DD`.
 - **block** - This field allows you to filter the results by block number.
-- **any** - A catch-all field that can be used to filter on any other field in the payments API.
+- **any** - A catch-all field ( OR Logic) that can be used to filter on any other field in the payments API.
 - **amountIssuer** - This field allows you to filter the results by the issuer of the amount.
 - **amountCurrency** - This field allows you to filter the results by the currency of the amount.
 - **amount** - This field allows you to filter the results by the amount.
