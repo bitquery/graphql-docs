@@ -24,4 +24,4 @@ Bitquery supports following networks:
 - `crypto_mainnet`: Crypto.org mainnet
 - `crypto_testnet`: Crypto.org testnet
 
-Let's dive in and explroe the Ethereum data available through Bitquery API.
+Let's dive in and explore the Cosmos data available through Bitquery API.
