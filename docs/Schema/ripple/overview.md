@@ -1,6 +1,6 @@
 # Overview
 
-Bitquery's Ripple APIs give you information on the network's blocks, transactions, addresses, offers, payments and so on.
+Bitquery's Ripple APIs give you information on the XRP's blocks, transactions, addresses, offers, payments and so on.
 To get started, visit the [Ripple Explorer](https://explorer.bitquery.io/ripple)
 
 ![explorer](/img/ide/ripple.png)
