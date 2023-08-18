@@ -81,7 +81,7 @@ query MyQuery {
 - `bookNode`: This field specifies the book node of the transactions.
 - `bookDirectory`: This field specifies the book directory of the transactions.
 - `block`: This field specifies the block number of the transactions.
-- `any`: A catch-all field ( OR Logic) that can be used to filter on any other field in the payments API.
+- `any`: A catch-all field ( OR Logic) that can be used to filter on any other field in the offers API.
 - `account`: This field specifies the account that created the transactions.
 
 </details>
