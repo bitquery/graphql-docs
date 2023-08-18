@@ -56,7 +56,7 @@ query ($address: String!, $network: RippleNetwork!) {
   - `desc`: The field to sort the results by in descending order.
   - `descByInteger`: The field to sort the results by in descending order, treating the values as integers.
   - `limit`: The maximum number of results to return.
-  - `limitBy`: A field that can be used to limit the results by a specific value. For example, `limitBy: {each: "balance"}` would limit the results to the 10 wallets with the highest balance.
+  - `limitBy`: A field that can be used to limit the results by a specific value.
   - `offset`: The number of results to skip before returning the results.
 
 </details>
