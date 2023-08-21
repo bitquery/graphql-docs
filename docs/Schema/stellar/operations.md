@@ -51,7 +51,7 @@ query ($network: StellarNetwork!, $hash: String!) {
 
 - **success**
 
-  A boolean value that indicates whether the operation was successful.
+  A true/false value that indicates whether the operation was successful.
 
 - **sourceAccount**
 
