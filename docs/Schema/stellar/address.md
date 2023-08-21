@@ -1,91 +1,27 @@
 # Address
 
-Stellar Address API helps you get information on Addresses in the network. Below are the fields in the API:
+Stellar Address API helps you get information on Address balance in the network. Below are the fields in the API:
 
 ```
-
-query ($address: String!, $network: StellarNetwork!) {
-
-stellar(network: $network) {
-
-addressStats(address: {is: $address}) {
-
-address {
-
-address {
-
-address
-
-annotation
-
+query ($network: StellarNetwork!) {
+  stellar(network: $network) {
+    address(
+      address: {is: "GDBRKQ43BSDBSCXKPD42RNK3BXDPOYBL6NI6IFSEW2FG7DBNN55435D5"}
+    ) {
+      address
+      annotation
+      balance
+      tokenBalances {
+        assetIssuer
+        assetType
+        balance
+        assetCode
+      }
+    }
+  }
 }
-
-balance
-
-daysWithReceived
-
-daysWithSent
-
-daysWithTransactions
-
-daysWithTransfers
-
-firstTransferAt {
-
-time
-
-}
-
-firstTxAt {
-
-time
-
-}
-
-receiveAmount
-
-receiveFromCount
-
-receiveFromCurrencies
-
-receiveTxCount
-
-sendToCount
-
-sendToCurrencies
-
-sendTxCount
-
-sendAmount
-
-lastTransferAt {
-
-time
-
-}
-
-lastTxAt {
-
-time
-
-}
-
-}
-
-}
-
-}
-
-}
-
 {
-
-
-
-"network": "stellar",
-
-"address": "GDG4MD4RNOOKIQEV4YIYKKUODPDYIP3MBMXNBKNJ773L44RDLQYXK3YG"
-
+  "network": "stellar"
 }
 
 ```
@@ -93,62 +29,31 @@ time
 <details>
 <summary>Filtering Address</summary>
 
-- `address`: The address of the wallet. You can use the `is` operator to filter for wallets that match the specified address.
+**address**
 
-- `options`: A set of options that control the pagination and sorting of the results.
-
-- `asc`: The field to sort the results by in ascending order.
-
-- `ascByInteger`: The field to sort the results by in ascending order, treating the values as integers.
-
-- `desc`: The field to sort the results by in descending order.
-
-- `descByInteger`: The field to sort the results by in descending order, treating the values as integers.
-
-- `limit`: The maximum number of results to return.
-
-- `limitBy`: A field that can be used to limit the results by a specific value.
-
-- `offset`: The number of results to skip before returning the result
+    The Stellar address of the account.
 
 </details>
 
-- **address** : This field contains the following subfields:
+## Fields
 
-- **address** : The Stellar address.
+- **address**
 
-- **annotation** : An optional annotation that can be set by the user.
+  The Stellar address of the account.
 
-- **balance** : The current balance of the address in XLM.
+- **annotation**
 
-- **daysWithReceived** : The number of days since the address was created that it has received funds.
+  The annotation for the address that contains additional information.
 
-- **daysWithSent** : The number of days since the address was created that it has sent funds.
+- **balance**
 
-- **daysWithTransactions** : The number of days since the address was created that it has had any transactions.
+  The balance of the account in XLM. This is the total amount of XLM that the account holds.
 
-- **daysWithTransfers** : The number of days since the address was created that it has had any transfers.
+- **tokenBalances**
 
-- **firstTransferAt** : The timestamp of the first transfer to or from the address.
+  An array of objects that represent the balances of the account in other assets. Each object has the following fields:
 
-- **firstTxAt** : The timestamp of the first transaction to or from the address.
-
-- **receiveAmount** : The total amount of funds received by the address.
-
-- **receiveFromCount** : The number of unique addresses that have sent funds to the address.
-
-- **receiveFromCurrencies** : The currencies that have been received by the address.
-
-- **receiveTxCount** : The number of transactions in which the address received funds.
-
-- **sendToCount** : The number of unique addresses that the address has sent funds to.
-
-- **sendToCurrencies** : The currencies that the address has sent funds to.
-
-- **sendTxCount** : The number of transactions in which the address sent funds.
-
-- **sendAmount** : The total amount of funds sent by the address.
-
-- **lastTransferAt** : The timestamp of the most recent transfer to or from the address.
-
-- **lastTxAt** : The timestamp of the most recent transaction to or from the address.
+  - **assetIssuer** The Stellar address of the asset issuer.
+  - **assetType** The type of the asset. This can be either `native` (for XLM) or `credit_alphanum4` (for other assets).
+  - **balance** The balance of the account in the asset.
+  - **assetCode** The symb of the asset.
