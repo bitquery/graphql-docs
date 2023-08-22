@@ -105,6 +105,7 @@ query ($network: StellarNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
   A catch-all field ( OR logic) that can be used to filter for transactions that match any of the other fields.
 
 - **date**
+
   The date of the transaction.
 
   </details>
