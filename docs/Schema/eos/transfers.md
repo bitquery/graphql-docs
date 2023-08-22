@@ -1,4 +1,6 @@
-# Transfers
+# EOS Transfers API
+
+Bitquery's EOS transfers API gives you information including sender, receiver, currency details. Below are the fields in the schema:
 
 ```
 
