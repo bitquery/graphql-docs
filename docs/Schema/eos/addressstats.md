@@ -1,4 +1,4 @@
-# Address Stats
+# EOS Address Stats API
 
 ```
 query MyQuery {
