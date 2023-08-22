@@ -106,6 +106,8 @@ query ($network: StellarNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
 
 - **date**
       The date of the transaction.
+
+      
   </details>
 
 ## Fields
