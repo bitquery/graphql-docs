@@ -1,8 +1,8 @@
-# Transaction Envelope Signatures
+# Transaction Payload Signatures
 
 <details>
 
-<summary>Filtering Transaction Envelope Signatures</summary>
+<summary>Filtering Transaction Payload Signatures</summary>
 
 -   address
 -   any
@@ -27,6 +27,8 @@
 
 </details>
 
+### Returned Transaction Payload Signatures Information
+
 -   address
 -   any
 -   block
@@ -40,4 +42,4 @@
 -   minimum
 -   signature
 -   time
--   transaction
+-   transactions
