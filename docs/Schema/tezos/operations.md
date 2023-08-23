@@ -25,7 +25,7 @@ You can filter the operations using the following fields:
 -   `transactionHash`: filter by the hash of the transaction.
 -   `transactionSource`: filter by the source of the transaction.
 
-</detials>
+</details>
 
 ### Returned Operations Infromation
 
