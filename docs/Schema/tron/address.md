@@ -1,6 +1,6 @@
 # Address
 
-The `address` feild allows us to retrieve details about address or smart contract from Tron blockchain.
+The `address` field allows us to retrieve details about address or smart contract from Tron blockchain.
 
 Here is an example that demonstrates use `address` query:
 
