@@ -79,11 +79,10 @@ query ($address: String!, $network: StellarNetwork!) {
 
 </details>
 
-- **address** : This field contains the following subfields:
 
 - **address** : The Stellar address.
 
-- **annotation** : An optional annotation that can be set by the user.
+- **annotation** : An optional annotation with any information on the address.
 
 - **balance** : The current balance of the address in XLM.
 
