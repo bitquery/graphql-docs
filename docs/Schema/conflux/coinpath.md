@@ -1,6 +1,6 @@
 # Conflux Coinpath API
 
-The EOS Coinpath API allows you to get the money flow for an address on the Conflux blockchain. You can track any levels of fund movement with this API. This is a very useful API for crypto investigations.
+The Conflux Coinpath API allows you to get the money flow for an address on the Conflux blockchain. You can track any levels of fund movement with this API. This is a very useful API for crypto investigations.
 
 ```
  query ($network: ConfluxNetwork!, $address: String!,  $currency: String!, $from: ISO8601DateTime, $till: ISO8601DateTime) {
