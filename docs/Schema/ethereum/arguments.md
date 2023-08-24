@@ -1,7 +1,7 @@
 
 # Arguments
 
-The `arguments` field allows us to fetch information about arguments of smart contract calls and evetns.
+The `arguments` field allows us to fetch information about arguments of smart contract calls and events.
 
 Here is an exmaple that demonstrates how to use `arguments` query:
 

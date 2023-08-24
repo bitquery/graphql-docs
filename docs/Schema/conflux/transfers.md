@@ -1,5 +1,7 @@
 # Conflux Transfers API
 
+Bitquery's conflux transfers API gives you information on the asset transfers on conflux. The following are the fields in the schema:
+
 ```
 query ($network: ConfluxNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601DateTime, $till: ISO8601DateTime) {
   conflux(network: $network) {
