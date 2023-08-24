@@ -47,6 +47,7 @@ query {
   }
 }
 ```
+
 <details>
 <summary>Filtering Transactions</summary>
 
@@ -54,7 +55,7 @@ Transactions can be filtered using following arguments:
 
 - `amount`: Filter by amount of tokens transferred in a transaction. Available comparision operators are `between`, `gt`, `gteq`, `in`, `is`, `lt`, `lteq`, `not`, `notIn`.
 
-- `any`:
+- `any`: A catch-all filter (OR logic) that can be used to select blocks that match any of the other filters.
 - `date`: Filter by date on which transaction happened. Date should be in ISO8601-encoded datetime string. Ex, June 17th, 2023 will be `2023-07-17T00:00:00Z`. Available comparision operator are `after`, `before`, `between`, `in`, `is`, `not`, `notIn`, `since`, `tiil`.
 
 - `feePayer`:
@@ -67,21 +68,16 @@ Transactions can be filtered using following arguments:
 
 - `options`: Filter returned data by ordering, limiting and constrainting transaction data. Available fields: `asc`, `ascByInteger`, `desc`, `descByInteger`, `limit`, `limitBy`, `offset`
 
-
 - `success`:
-  
 - `time`: Filter by time when transaction happened. Time should be in ISO8601-encoded datetime string. Ex, June 17th, 2023 will be `2023-07-17T00:00:00Z`. Available comparision operator are `after`, `before`, `between`, `in`, `is`, `not`, `notIn`, `since`, `tiil`.
 
 - `txCreates`:
-  
 - `txHash`: Filter by transaction hash of the transaction. Available comparision operators are `is`, `in`, `not`, `notIn`.
 
 - `txIndex`: Filter by index of transaction in the block. Available comparision operators are `is`, `in`, `not`, `notIn`.
 
 - `txSender`: Filter by address of transaction sender. Available comparision operators are `is`, `in`, `not`, `notIn`.
 - `txTo`: Filter by address transaction is sent to. Available comparision operators are `is`, `in`, `not`, `notIn`.
-  
-- `txType`:
 
 </details>
 
@@ -93,12 +89,12 @@ Transactions can be filtered using following arguments:
 - `countBigInt`: returns aggregate count of transactions in `BigInt` format
 - `creates`:
 - `currency`: returns details of currency used in tranasction
-- `date`: returns date of transaction 
+- `date`: returns date of transaction
 - `error`: returns error value
 - `expression`: performs arithematic operation and returns value of the operation
-- `feePayer`:  
+- `feePayer`:
 - `feeRatio`:
-- `gas`: returns gas value consumed in transaction 
+- `gas`: returns gas value consumed in transaction
 - `gasCurrency`: returns gas currency used in a particular transaction
 - `gasPrice`: returns gas price for a particular transaction
 - `gasValue`: returns gas value consumed to perform a particular transaction

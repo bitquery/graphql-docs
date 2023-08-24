@@ -46,7 +46,28 @@ query ($network: ConfluxNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
 
 ```
 
-<details><summary>Filtering Transactions</summary></details>
+<details><summary>Filtering Transactions</summary>
+
+- **options**
+  - **asc** or **desc** The field to sort the results by in ascending or descending
+  - **limit** The maximum number of transactions to return.
+  - **offset** The offset from the beginning of the results.
+- **time** : A filter that can be used to select transactions created within a specified time range.
+- **height**
+  - The height of the block in which the transaction was included.
+- **date**
+  - The date of the transaction.
+- **any** : A catch-all filter ( OR logic) that can be used to select transactions that match any of the other filters. This is useful if you want to combine multiple filters to narrow down the results.
+- **success**
+  - A boolean value indicating whether the transaction was successful.
+- **scheduled**
+  - A boolean value indicating whether the transaction was scheduled.
+- **txIndex**
+  - The transaction index in the block.
+- **txHash**
+  - The hash of the transaction.
+
+</details>
 
 ## Fields
 
