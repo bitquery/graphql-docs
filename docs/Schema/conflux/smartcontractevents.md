@@ -34,7 +34,22 @@ query ($network: ConfluxNetwork!, $hash: String!) {
 }
 ```
 
-<details><summary>Filtering Events</summary></details>
+<details><summary>Filtering Events</summary>
+
+Smart contract events can be filtered using the following arguments:
+
+- `any`: A catch-all filter (OR Logic) that can be used to filter the results by any of the other fields.
+- `date`: filter by date of smart contract events
+- `height`: filter by block height where transaction is included
+- `options`: filter returned data by ordering, limiting, and constraining it
+- `smartContractAddress`: filter by smart contract address
+- `smartContractEvent`: filter by name of the smart contract event
+- `time`: filter by time of the smart contract event
+- `txFrom`: filter by transaction from address
+- `txHash`: filter by transaction hash
+- `txTo`: filter by transaction to address
+
+</details>
 
 ## Fields
 
