@@ -2,8 +2,7 @@
 
 ## What is the difference between a transfer and a transaction on chain?
 
-Please read the difference between Transfers and transactions [**here**](https://community.bitquery.io/t/transfers-vs-transactions-what-is-the-difference/1589
-).
+Please read the difference between Transfers and transactions [**here**](https://community.bitquery.io/t/transfers-vs-transactions-what-is-the-difference/1589).
 
 ## How to calculate the price of a token in USD?
 
@@ -81,16 +80,14 @@ query ($from: ISO8601DateTime!, $to: ISO8601DateTime!, $limit: Int) {
 }
 ```
 
- ## How to use priceAsymmetry to filter anomalies and outliers in Trades ?
+## How to use priceAsymmetry to filter anomalies and outliers in Trades ?
 
- The priceAsymmetry metric is being used to filter outliers of anomalies. This means that trades that have a price asymmetry that is greater than 1 will be excluded from the results. This helps to ensure that the results are more accurate and reliable, as it removes any trades that may have been caused by anomalies.
+The priceAsymmetry metric is being used to filter outliers of anomalies. This means that trades that have a price asymmetry that is greater than 1 will be excluded from the results. This helps to ensure that the results are more accurate and reliable, as it removes any trades that may have been caused by anomalies.
 
 priceAsymmetry measures how close the trade’s prices are to each other. If the price asymmetry is less than 0.01, then the difference between the prices is less than 1%.
 However, the value of 0.01 might be too small and could omit a lot of trades. To improve your anomaly filtering mechanism, , add another filter like `tradeAmountUsd: {gt: 100}` filter to only include trades with a trade amount of more than 100 USD.
 
-
 Here’s an example query for [WETH trades](https://ide.bitquery.io/PriceAsymmetry-and-TradeAmountUSD)
-
 
 ```
 query ($baseAddress: String, $interval: Int) {
@@ -122,5 +119,84 @@ query ($baseAddress: String, $interval: Int) {
   "baseAddress": "0x6982508145454ce325ddbe47a25d4ec3d2311933"
 }
 
+
+```
+
+## How to calculate marketcap of a token ?
+
+`Market capitalization = Latest token price * Total supply`
+
+**Query to get latest price**
+
+Below query gets the latest price of the RWT token.
+
+```
+{
+ ethereum(network: bsc) {
+   dexTrades(
+     options: {desc: ["block.height", "tradeIndex"], limit: 1}
+     baseCurrency: {is: "0xec1f55b5be7ee8c24ee26b6cc931ce4d7fd5955c"}
+   ) {
+     quotePrice
+     block {
+       timestamp {
+         time(format: "%Y-%m-%d %H:%M:%S")
+       }
+       height
+     }
+     tradeIndex
+     protocol
+     exchange {
+       fullName
+     }
+     smartContract {
+       address {
+         address
+         annotation
+       }
+     }
+     baseAmount
+     baseCurrency {
+       address
+       symbol
+     }
+     quoteAmount
+     quoteCurrency {
+       address
+       symbol
+     }
+     transaction {
+       hash
+     }
+   }
+ }
+}
+
+```
+
+**Query to get supply**
+
+The total supply of the token can be calculated by adding the minted amounts for all transfers and subtracting the burned amounts for all transfers.
+Below query gets `mint` and `burn` for the RWT token.
+
+```
+{
+ethereum(network: bsc) {
+  transfers(date: {since: null, till: null}, amount: {gt: 0}) {
+    minted: amount(
+      calculate: sum
+      sender: {is: "0x0000000000000000000000000000000000000000"}
+    )
+    burned: amount(
+      calculate: sum
+      receiver: {is: "0x0000000000000000000000000000000000000000"}
+    )
+    currency(currency: {is: "0xec1f55b5be7ee8c24ee26b6cc931ce4d7fd5955c"}) {
+      symbol
+      name
+    }
+  }
+}
+}
 
 ```
