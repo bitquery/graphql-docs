@@ -139,9 +139,7 @@ query ($address: String!, $currency: String!, $from: ISO8601DateTime, $till: ISO
 
 ```
 
-<details><summary>Filtering Coinpath</summary></details>
-
-## Fields
+<details><summary>Filtering Coinpath</summary>
 
 - **initialAddress** The address of the account whose coinpath you want to retrieve.
 - **currency** The currency you want to filter the results by.
@@ -152,6 +150,12 @@ query ($address: String!, $currency: String!, $from: ISO8601DateTime, $till: ISO
     or descending order.
   - **limitBy** The field to limit the results by.
   - **date** The date range of the transactions to return.
+
+</details>
+
+## Fields
+
+- **initialAddress** The address of the account whose coinpath you want to retrieve.
 - **sender**
   - **address** The address of the sender of the transaction.
   - **annotation** Any additional information about the address.

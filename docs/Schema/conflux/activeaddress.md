@@ -1,6 +1,5 @@
 # Conflux Active Address API
 
-
 ```
 query ($network: ConfluxNetwork!) {
   conflux(network: $network) {
@@ -17,6 +16,13 @@ query ($network: ConfluxNetwork!) {
 }
 
 ```
+
 <details><summary> Filtering Active Address</summary></details>
 
 ## Fields
+
+`address`
+The address of the wallet
+
+`annotation`
+Any information about the address

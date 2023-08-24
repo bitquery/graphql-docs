@@ -72,7 +72,7 @@ query ( $date: ISO8601DateTime) {
   - **height** : The block number.
 - **sender** : The address that sent the tokens.
   - **address** : The EOS account address of the sender.
-  - **annotation** : An optional annotation that was set by the sender.
+  - **annotation** : An optional annotation for the address.
 - **receiver** : The address that received the tokens.
   - **address** : The EOS account address of the receiver.
   - **annotation** : Any information about the address
