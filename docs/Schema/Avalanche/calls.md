@@ -1,6 +1,6 @@
 # Avalanche Calls API
 
 <details>
-<summary> Filtering </summary>
+<summary> Filtering Calls</summary>
 
  </details>
