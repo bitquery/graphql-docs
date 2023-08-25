@@ -126,7 +126,7 @@ query ($baseAddress: String, $interval: Int) {
 
 `Market capitalization = Latest token price * Total supply`
 
-Above, we have already shown how to get the USD price of an asset; now, let's just get the supply. 
+Above, we have already shown how to get the USD price of an asset; now, let's get the supply. 
 
 **Query to get supply**
 
