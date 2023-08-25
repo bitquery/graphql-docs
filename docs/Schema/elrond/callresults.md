@@ -1,5 +1,7 @@
 # MultiversX CallResults API
 
+The MultiversX CallResults API allows you to query information about call results on the MultiversX blockchain. A call result is a record of a function call that was made to a smart contract. The API can be used to get information about the sender, receiver, value, type, and other details of a call result.
+
 Below are the fields in the schema:
 
 ```
