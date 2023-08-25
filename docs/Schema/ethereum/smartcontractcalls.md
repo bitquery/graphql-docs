@@ -3,7 +3,7 @@
 
 `smartContractCalls` type allows you to retrieve smart contract calls made to any smart contract on Ethereum Blockchain.
 
-Here's an example query that retrieves 10 latest smart contract calls amde to USDT smart contract on Ethereum blockchain.
+Here's an example query that retrieves 10 latest smart contract calls made to USDT smart contract on Ethereum blockchain.
 
 ```
 {
