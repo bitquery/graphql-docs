@@ -1,6 +1,6 @@
 # Smart contract event API
 
-Our Smart contract event API allows you access to parsed smart contract events and arguments for all the blockchains we support.
+Our Smart contract event API allows you access parsed smart contract events and arguments for all the blockchains we support.
 
 ## All Smart contract event for a blockchain
 
