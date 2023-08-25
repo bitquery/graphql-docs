@@ -43,10 +43,10 @@ query ($network: ElrondNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime)
 
 ## Fields
 
-`shard`: The shard on which the block was mined.
-`epoch`: The epoch number of the block.
-`hash`: The hash of the block.
-`height`: The height of the block.
-`previousBlockHash`: The hash of the previous block.
-`publicKeyBitmap`: The public key bitmap of the block.
-`proposer`: The address of the block proposer.
+- `shard`: The shard on which the block was mined.
+- `epoch`: The epoch number of the block.
+- `hash`: The hash of the block.
+- `height`: The height of the block.
+- `previousBlockHash`: The hash of the previous block.
+- `publicKeyBitmap`: The public key bitmap of the block.
+- `proposer`: The address of the block proposer.
