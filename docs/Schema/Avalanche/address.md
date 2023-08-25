@@ -1,6 +1,6 @@
 # Address
 
-Avalanch Address API provides information about an address on the Avalanche blockchain. Below are the fields in the schema:
+Avalanche Address API provides information about an address on the Avalanche blockchain. Below are the fields in the schema:
 
 ```
 query ($network: EthereumNetwork!) {
