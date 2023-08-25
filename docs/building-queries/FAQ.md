@@ -122,81 +122,58 @@ query ($baseAddress: String, $interval: Int) {
 
 ```
 
-## How to calculate marketcap of a token ?
+## How to calculate the marketcap of a token ?
 
 `Market capitalization = Latest token price * Total supply`
 
-**Query to get latest price**
-
-Below query gets the latest price of the RWT token.
-
-```
-{
- ethereum(network: bsc) {
-   dexTrades(
-     options: {desc: ["block.height", "tradeIndex"], limit: 1}
-     baseCurrency: {is: "0xec1f55b5be7ee8c24ee26b6cc931ce4d7fd5955c"}
-   ) {
-     quotePrice
-     block {
-       timestamp {
-         time(format: "%Y-%m-%d %H:%M:%S")
-       }
-       height
-     }
-     tradeIndex
-     protocol
-     exchange {
-       fullName
-     }
-     smartContract {
-       address {
-         address
-         annotation
-       }
-     }
-     baseAmount
-     baseCurrency {
-       address
-       symbol
-     }
-     quoteAmount
-     quoteCurrency {
-       address
-       symbol
-     }
-     transaction {
-       hash
-     }
-   }
- }
-}
-
-```
+Above, we have already shown how to get the USD price of an asset; now, let's just get the supply. 
 
 **Query to get supply**
 
-The total supply of the token can be calculated by adding the minted amounts for all transfers and subtracting the burned amounts for all transfers.
-Below query gets `mint` and `burn` for the RWT token.
+`Total supply =  Initial Supply + Minted supply - Burned supply`
+
+In the following query, we will get the initial supply from the contract attributed and then use transfer API to get mint and burns by checking how many tokens were sent or received from the dead address.
+
+[Open this query on IDE](https://ide.bitquery.io/Supply-of-Drip-token).
+
 
 ```
 {
-ethereum(network: bsc) {
-  transfers(date: {since: null, till: null}, amount: {gt: 0}) {
-    minted: amount(
-      calculate: sum
-      sender: {is: "0x0000000000000000000000000000000000000000"}
-    )
-    burned: amount(
-      calculate: sum
-      receiver: {is: "0x0000000000000000000000000000000000000000"}
-    )
-    currency(currency: {is: "0xec1f55b5be7ee8c24ee26b6cc931ce4d7fd5955c"}) {
-      symbol
-      name
+  ethereum(network: bsc) {
+    address(address: {is: "0x20f663cea80face82acdfa3aae6862d246ce0333"}) {
+      annotation
+      address
+      smartContract {
+        attributes {
+          name
+          value
+        }
+        contractType
+        currency {
+          symbol
+          name
+          decimals
+          tokenType
+        }
+      }
+    }
+    transfers(date: {since: null, till: null}, amount: {gt: 0}) {
+      minted: amount(
+        calculate: sum
+        sender: {is: "0x0000000000000000000000000000000000000000"}
+      )
+      burned: amount(
+        calculate: sum
+        receiver: {is: "0x0000000000000000000000000000000000000000"}
+      )
+      currency(currency: {is: "0x20f663cea80face82acdfa3aae6862d246ce0333"}) {
+        symbol
+        name
+      }
     }
   }
 }
-}
 
 ```
+
+Note: In many cases token attributes shown as null in those cases you should find other ways to get supply of the token.
