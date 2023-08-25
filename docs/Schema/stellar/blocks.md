@@ -42,7 +42,7 @@ query ($network: StellarNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
 - **date** : This field can be used to filter the blocks by the date of the block.
 - **baseReserve** : This field can be used to filter the blocks by the base reserve of the ledger at the time of the block.
 - **baseFee** : This field can be used to filter the blocks by the base fee of the ledger at the time of the block.
-- **any** : A catch-all field ( OR Logic) that can be used to filter on any other field in the payments API.
+- **any** : A catch-all field ( OR Logic) that can be used to filter on any other field in the blocks API.
 
 </details>
 

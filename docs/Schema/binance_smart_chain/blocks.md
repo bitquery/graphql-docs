@@ -32,7 +32,7 @@ Here is an example that demonstrates how to retrieve 10 latest blocks from Ether
 
 Blocks data can be filtered using following arguments:
 
--   `any`:
+-   `any`: A catch-all field ( OR Logic) that can be used to filter on any other field in the blocks API.
 -   `blockHash`: Filter by block hash.
 -   `blockReward`: Filter by block reward given to the block producer.
 -   `date`: Filter by the date on which the block was mined.
@@ -42,7 +42,7 @@ Blocks data can be filtered using following arguments:
 -   `size`: Filter by the size of the block.
 -   `time`: Filter by when the block was mined.
 -   `transactionCount`: Filter by the number of transactions in the block.
--   `uncleCount`:
+
 
 </details>
 
