@@ -32,14 +32,16 @@ query ($network: ElrondNetwork!, $limit: Int!, $offset: Int!, $blockHash: String
 
 ```
 
-<details><summary>Fitlering Notarized Blocks</summary>
+<details>
+
+<summary>Filtering Notarized Blocks</summary>
 
 - `any`: A catch-all field ( OR Logic) that can be used to filter on any other field in the blocks API.
 - `blockHash`: Filter by block hash.
 - `date`: Filter by the date on which the block was mined.
 - `height`: Filter by the height of the block.
 - `miner`: Filter by the miner who mined the block.
-- `options`: Filter returned data by ordering, limiting, and constraining it. Available fields: `asc`, `ascByInteger`, `desc`, `descByInteger`, `limit`, `limitBy`, `offset`.
+- `options`: Filter returned data by ordering, limiting, and constraining it .Available fields: `asc`, `ascByInteger`, `desc`, `descByInteger`, `limit`, `limitBy`, `offset`.
 - `size`: Filter by the size of the block.
 - `time`: Filter by when the block was mined
 - `previousBlockHash`: Filter by the hash of the previous block.
