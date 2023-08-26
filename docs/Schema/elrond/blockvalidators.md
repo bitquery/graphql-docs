@@ -35,7 +35,9 @@ query ($network: ElrondNetwork!, $limit: Int!, $offset: Int!, $blockHash: String
 
 ```
 
-<details><summary>Filtering Block Validators</summary>
+<details>
+
+<summary>Filtering Block Validators</summary>
 
 - `any`: A catch-all field ( OR Logic) that can be used to filter on any other field in the blocks API.
 - `blockHash`: Filter by block hash.
@@ -48,6 +50,7 @@ query ($network: ElrondNetwork!, $limit: Int!, $offset: Int!, $blockHash: String
 - `previousBlockHash`: Filter by the hash of the previous block.
 - `publicKeyBitmap`: Filter by the public key bitmap of the block.
 - `proposer`: Filter by the address of the block proposer.
+
 </details>
 
 ## Fields
