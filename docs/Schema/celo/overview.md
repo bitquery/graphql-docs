@@ -4,15 +4,17 @@ sidebar_position: 1
 
 # Overview
 
-Bitquery API offers access to indexed data from the Ethereum blockchain through the binance smart chain schema. This schema is specifically designed to enable blockchain data retrieval via GraphQL API for developers.
+Bitquery API offers access to indexed data from the Celo blockchain to enable blockchain data retrieval via GraphQL API for developers.
 
-The BNB schema contains various types of queries, including block, transaction, event, transactions, transfers, and more. These queries can be used to retrieve blockchain data, such as block information, transaction details, events, token transfers, and other relevant information.
+The Celo schema contains various types of queries, including block, transaction, event, transactions, transfers, and more. These queries can be used to retrieve blockchain data, such as block information, transaction details, events, token transfers, and other relevant information.
 
-To retrieve data from the Ethereum blockchain, you need to provide the `network` argument with the value `bsc` as shown below:
+You can access data from RC1, Celo Alfajores, and Baklava RC1.
+
+To retrieve data from the Ethereum blockchain, you need to provide the `network` argument with the value `celo_mainnet` as shown below:
 
 ```
 query {
-  ethereum(network: bsc){
+  ethereum(network: celo_mainnet){
     __typename
   }
 }
