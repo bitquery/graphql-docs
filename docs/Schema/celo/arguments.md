@@ -6,7 +6,7 @@ Here is an exmaple that demonstrates how to use `arguments` query:
 
 ```
 {
-  ethereum(network: bsc) {
+  ethereum(network: celo_mainnet) {
     arguments(
       smartContractEvent: {is: "PairCreated"}
       options: {desc: "block.height", limit: 6}
@@ -21,6 +21,7 @@ Here is an exmaple that demonstrates how to use `arguments` query:
     }
   }
 }
+
 
 ```
 
