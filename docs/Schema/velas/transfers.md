@@ -1,14 +1,14 @@
-# BNB Transfers API
+# Transfers
 
-The `transfers` API allows you to retrieve currency or token transfers from BNB Blockchain.
+Bitquery `transfers` API allows you to retrieve currency or token transfers from velas Blockchain.
 
 Here's an example query that retrieves the first 10 transfers of USDT tokens between June 17th and June 18th, 2023. The results are sorted based on the timestamp of each transfer in descending order.
 
 ```
 query {
-  ethereum(network: bsc) {
+  ethereum(network: velas) {
     transfers(
-      currency: { is: "0xdac17f958d2ee523a2206206994597c13d831ec7" }
+      currency: { is: "0x01445c31581c354b7338ac35693ab2001b50b9ae" }
       date: { between: ["2023-07-17T00:00:00Z", "2023-07-18T00:00:00Z"] }
       options: { desc: "block.timestamp.iso8601", limit: 10 }
     ) {

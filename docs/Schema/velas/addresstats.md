@@ -1,4 +1,4 @@
-#  BNB Address Stats API
+# Address Stats
 
 The `addressstats` field allows us to retrieves statistics related to blockchain addresses.
 
@@ -6,8 +6,8 @@ Here is an example that demonstrates how to retrieve statistics about the USDT s
 
 ```
 {
-  ethereum (network: bsc){
-    addressStats(address: {is: "0x55d398326f99059ff775485246999027b3197955"}) {
+  ethereum (network: velas){
+    addressStats(address: {is: "0x01445c31581c354b7338ac35693ab2001b50b9ae"}) {
       address {
         balance
         callTxCount

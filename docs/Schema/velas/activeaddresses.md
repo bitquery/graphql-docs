@@ -1,12 +1,12 @@
-# BNB Active Addresses API
+# Active Addresses
 
-The `activeAddresses` field allows us to retrieve details about the active addresses from the BNB blockchain.
+The `activeAddresses` field allows us to retrieve details about the active addresses from the velas blockchain.
 
-Here is an example that demonstrates how to retrieve the number of active addresses from the BNB blockchain:
+Here is an example that demonstrates how to retrieve the number of active addresses from the velas blockchain:
 
 ```
 query MyQuery {
-  ethereum (network: bsc){
+  ethereum (network: velas){
     activeAddresses(date: {after: "2023-07-17T00:00:00Z"}) {
       count(uniq: address)
     }
@@ -22,7 +22,7 @@ Active Addresses can be filtered using the following arguments:
 -   `amount`: Filtered by the amount of tokens.
 -   `currency`: Filtered by the currency the address holds.
 -   `date`: Filter by date
--   `entityId`: Filter by ERC721 entity id.
+-   `entityId`: Filter by entity id.
 -   `external`:
 -   `height`: Filter by block height.
 -   `options`: Filter returned data by ordering, limiting, and constraining it. Available fields: `asc`, `ascByInteger`, `desc`, `descByInteger`, `limit`, `limitBy`, `offset`.

@@ -1,4 +1,4 @@
-# BNB Address API
+# Address
 
 The `address` allows us to retrieve information about a specific address.
 
@@ -6,8 +6,8 @@ Here is an example that demonstrates how to retrieve basic information about the
 
 ```
 query {
-  ethereum(network: bsc) {
-    address(address: {is: "0x55d398326f99059ff775485246999027b3197955"}) {
+  ethereum(network: velas) {
+    address(address: {is: "0x01445c31581c354b7338ac35693ab2001b50b9ae"}) {
       smartContract {
         attributes {
           address {

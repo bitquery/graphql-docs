@@ -1,15 +1,15 @@
 
-# BNB Smart Contract Events API
+# Smart Contract Events
 
-`smartContractEvents` type allows you to retrieve all events emitted by different smart contracts on BNB Blockchain.
+`smartContractEvents` type allows you to retrieve all events emitted by different smart contracts on Ethereum Blockchain.
 
-Here's an example query that retrieves 10 latest events from USDT smart contract from BNB Blockchain:
+Here's an exmaple query that retrieves 10 latest events from USDT smart contract from Ethereum Blockchain:
 
 ```
 query {
-  ethereum(network:bsc) {
+  ethereum {
     smartContractEvents(
-      smartContractAddress: {is: "0x55d398326f99059ff775485246999027b3197955"}
+      smartContractAddress: {is: "0x01445c31581c354b7338ac35693ab2001b50b9ae"}
       options: {desc: "block.timestamp.iso8601", limit: 10}
       date: {after: "2023-07-17T00:00:00Z"}
     ) {

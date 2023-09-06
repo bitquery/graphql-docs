@@ -1,5 +1,5 @@
 
-# BNB Smart Contract Calls API
+# Smart Contract Calls
 
 `smartContractCalls` type allows you to retrieve smart contract calls made to any smart contract on Ethereum Blockchain.
 

@@ -1,5 +1,5 @@
 
-# BNB Coinpath API
+# Coinpath
 
 The `coinpath` field allows us to retrieve detailed information about money flow using coinpath technology.
 

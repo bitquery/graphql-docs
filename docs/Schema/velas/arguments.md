@@ -1,4 +1,4 @@
-# BNB Arguments API
+# Arguments
 
 The `arguments` field allows us to fetch information about arguments of smart contract calls and evetns.
 
@@ -6,7 +6,7 @@ Here is an exmaple that demonstrates how to use `arguments` query:
 
 ```
 {
-  ethereum(network: bsc) {
+  ethereum(network: velas) {
     arguments(
       smartContractEvent: {is: "PairCreated"}
       options: {desc: "block.height", limit: 6}

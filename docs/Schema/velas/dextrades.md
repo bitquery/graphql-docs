@@ -1,8 +1,8 @@
-# BNB DEX Trades API
+# DEX Trades
 
-The `dexTrades` API allows us to retrieve dex trade data from BNB blockchain.
+The `dexTrades` field allows us to retrieve dex trade data from Ethereum blockchain.
 
-Here's an exmaple query that fetches 10 latest trades on BNB blockchain:
+Here's an exmaple query that fetches 10 latest trades on Ethereum blockchain:
 
 ```
 query {

@@ -1,11 +1,11 @@
-# BNB Blocks API
+# Blocks
 
-The `blocks` field allows us to retrieve information about the blocks from the BNB blockchain.
+The `blocks` field allows us to retrieve information about the blocks from the velas blockchain.
 
-Here is an example that demonstrates how to retrieve 10 latest blocks from BNB blockchains:
+Here is an example that demonstrates how to retrieve 10 latest blocks from velas blockchains:
 ```
 {
-  ethereum (network: bsc){
+  ethereum (network: velas){
     blocks(
       options: {limit: 10, desc: "timestamp.iso8601"}
       date: {after: "2023-07-18T00:00:00Z"}
@@ -56,9 +56,9 @@ Blocks data can be filtered using following arguments:
 -   `gasUsed`: returns the gas used for that block.
 -   `hash`: returns the hash of the block.
 -   `height`: returns the height of the block.
--   `maximum`: returns the maximum of selected [measruable fields](/v1/docs/graphql-reference/enums/ethereum-blocks-measureable) of Ethereum Blocks
+-   `maximum`: returns the maximum of selected [measurable fields](/v1/docs/graphql-reference/enums/ethereum-blocks-measureable) of Ethereum Blocks
 -   `miner`: returns the miner of the block.
--   `minimum`: returns the minimum of selected [measruable fields](/v1/docs/graphql-reference/enums/ethereum-blocks-measureable) of Ethereum Blocks
+-   `minimum`: returns the minimum of selected [measurable fields](/v1/docs/graphql-reference/enums/ethereum-blocks-measureable) of Ethereum Blocks
 -   `nonce`: returns the nonce of the block.
 -   `parentHash`: returns the parent hash for the block.
 -   `reward`: returns the reward given to the miner for producing the block.
@@ -67,6 +67,4 @@ Blocks data can be filtered using following arguments:
 -   `timestamp`: returns the timestamp when the block was mined.
 -   `totalDifficulty`: returns the total difficulty.
 -   `transactionCount`: returns the number of transactions included in the block.
--   `transactionCountBigInt`:
--   `uncleCount`:
--   `uncleCountBigInt`:
+

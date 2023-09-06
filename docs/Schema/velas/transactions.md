@@ -1,12 +1,12 @@
-# BNB Transactions API
+# Transactions
 
-`transactions` type allows you to retrieve all the blockchain transactions from Ethereum Blockchain.
+Bitquery `transactions` API allows you to retrieve all the blockchain transactions from velas Blockchain.
 
 Here's an example query that retrieves 10 latest transactions from Ethereum blockchain:
 
 ```
 query {
-  ethereum (network: bsc){
+  ethereum (network: velas){
     transactions(
       date: { after: "2023-07-17T00:00:00Z" }
       options: { desc: "block.timestamp.iso8601", limit: 10 }
