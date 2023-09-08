@@ -1,13 +1,13 @@
 
 # Smart Contract Calls
 
-`smartContractCalls` type allows you to retrieve smart contract calls made to any smart contract on velas Blockchain.
+`smartContractCalls` type allows you to retrieve smart contract calls made to any smart contract on Ethereum Blockchain.
 
-Here's an example query that retrieves 10 latest smart contract calls amde to USDT smart contract on velas blockchain.
+Here's an example query that retrieves 10 latest smart contract calls amde to USDT smart contract on Ethereum blockchain.
 
 ```
 {
-  ethereum (network: velas){
+  ethereum (network: cronos){
     smartContractCalls(
       smartContractAddress: {is: "0x55d398326f99059ff775485246999027b3197955"}
       options: {limit: 10, desc: "block.timestamp.iso8601"}

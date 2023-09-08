@@ -1,14 +1,14 @@
 
 # Smart Contract Events
 
-`smartContractEvents` type allows you to retrieve all events emitted by different smart contracts on velas Blockchain.
+`smartContractEvents` type allows you to retrieve all events emitted by different smart contracts on cronos Blockchain.
 
-Here's an exmaple query that retrieves 10 latest events from USDT smart contract from velas Blockchain:
+Here's an exmaple query that retrieves 10 latest events from USDT smart contract from cronos Blockchain:
 
 ```
 query {
-  ethereum {
-    smartContractEvents (network:velas)(
+  ethereum  (network: cronos) {
+    smartContractEvents(
       smartContractAddress: {is: "0x01445c31581c354b7338ac35693ab2001b50b9ae"}
       options: {desc: "block.timestamp.iso8601", limit: 10}
       date: {after: "2023-07-17T00:00:00Z"}
