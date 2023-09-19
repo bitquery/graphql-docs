@@ -1,4 +1,8 @@
-## Get Chainlink Oracle Data
+---
+sidebar_position: 1
+---
+
+# Get Chainlink Oracle Data
 
 Identify the Chainlink price feed contract address for the ERC-20 token you are interested in. You can find this information on the Chainlink documentation website: https://docs.chain.link/data-feeds/price-feeds/addresses
 
