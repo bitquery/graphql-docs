@@ -79,3 +79,5 @@ To call our APIs programmatically, you will need API keys, which you can get it 
 
 **Community**
 If you still don't question our GraphQL APIs please ask them on this forum, and always provide complete details.
+
+Check our [Youtube Channel](https://www.youtube.com/@bitquery) for video tutorials.
