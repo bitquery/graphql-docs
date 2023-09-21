@@ -111,3 +111,11 @@ Transactions can be filtered using following arguments:
 - `success`: returns if transaction is success or not
 - `to`: returns address to which of a particular transaction was sent
 - `txType`: returns transaction type
+
+
+
+:::info
+
+Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your API keys, Read _[our guide](/docs/graphql-ide/how-to-start/)_ on getting started.
+
+:::

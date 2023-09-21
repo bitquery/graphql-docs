@@ -83,3 +83,11 @@ Smart Contract Calls can be filtered using following arguments:
 - `smartContractMethod`: returns details of method to which the call was made
 - `success`: returns if calls is successful or not
 - `transaction`: returns details of the transaction in which smart contract call was executed
+
+
+
+:::info
+
+Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your API keys, Read _[our guide](/docs/graphql-ide/how-to-start/)_ on getting started.
+
+:::

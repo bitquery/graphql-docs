@@ -112,3 +112,10 @@ Data retrieved using `transfers` can be filtered using following arguments:
 - `sender`: returns sender of a particular transfer
 - `success`: returns boolean value for success of a particular transfer
 - `transaction`: returns details of transaction in which a particular transfer 
+
+
+:::info
+
+Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your API keys, Read _[our guide](/docs/graphql-ide/how-to-start/)_ on getting started.
+
+:::

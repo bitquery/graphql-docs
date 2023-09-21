@@ -36,3 +36,11 @@ The following are available fields for the `coinpath`:
 - `sender`: returns information about the sender.
 - `transaction`:  returns transaction details.
 - `transactions`: returns attributes of transactions.
+
+
+
+:::info
+
+Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your API keys, Read _[our guide](/docs/graphql-ide/how-to-start/)_ on getting started.
+
+:::

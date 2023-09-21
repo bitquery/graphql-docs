@@ -69,3 +69,10 @@ Smart Contract Events can be filtered using following arguments:
 - `smartContract`: returns details of smart contract on which event happened
 - `smartContractEvent`: returns details about smart contract event like name, signature, and signature hash
 - `transaction`: returns details about transaction which emitted  smart contract event
+
+
+:::info
+
+Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your API keys, Read _[our guide](/docs/graphql-ide/how-to-start/)_ on getting started.
+
+:::
