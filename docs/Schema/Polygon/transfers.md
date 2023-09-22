@@ -1,8 +1,10 @@
 ---
 title: Polygon Token Transfer API
+description: PP Get real time and historical Token Transfer details for tokens on the Polygon blockchain using our Transfer API, including transfers for individual addresses.
+keywords: [polygon api, polygon python api, polygon transfers, polygon transactions, polygon nft api, polygon scan api, polygon matic api, polygon api docs, polygon crypto api, polygon blockchain api,matic network api]
 ---
 
-<head>
+<!-- <head>
 <meta name="title" content="Polygon Token Transfer API"/>
 <meta name="description" content="Get real time and historical Token Transfer details for tokens on the Polygon blockchain using our Transfer API, including transfers for individual addresses."/>
 <meta name="keywords" content="polygon api, polygon python api, polygon transfers, polygon transactions, polygon nft api, polygon scan api, polygon matic api, polygon api docs, polygon crypto api, polygon blockchain api,matic network api"/>
@@ -10,16 +12,14 @@ title: Polygon Token Transfer API
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="language" content="English"/>
 
-<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Polygon Token Transfer API" />
 <meta property="og:description" content="Get real time and historical Token Transfer details for tokens on the Polygon blockchain using our Transfer API, including transfers for individual addresses." />
 
-<!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Polygon Token Transfer API" />
 <meta property="twitter:description" content="Get real time and historical Token Transfer details for tokens on the Polygon blockchain using our Transfer API, including transfers for individual addresses." />
-</head>
+</head> -->
 
 
 ## Transfers
