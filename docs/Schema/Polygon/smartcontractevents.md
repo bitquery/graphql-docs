@@ -1,5 +1,29 @@
+---
+title: Polygon Smart Contract Events API
+---
 
-# Smart Contract Events
+
+<head>
+<meta name="title" content="Polygon Smart Contract Events API"/>
+<meta name="description" content="Get decoded real time and historical Polygon smart contract events with decoded arguments details"/>
+<meta name="keywords" content="polygon api, polygon python api, polygon nft api, polygon scan api, polygon matic api, polygon api docs, polygon crypto api, polygon blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Polygon Smart Contract Events API" />
+<meta property="og:description" content="Get decoded real time and historical Polygon smart contract events with decoded arguments details" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Polygon Smart Contract Events API" />
+<meta property="twitter:description" content="Get decoded real time and historical Polygon smart contract events with decoded arguments details" />
+</head>
+
+
+## Smart Contract Events
 
 `smartContractEvents` type allows you to retrieve all events emitted by different smart contracts on Polygon Blockchain.
 
@@ -31,6 +55,9 @@ query {
 }
 
 ```
+
+Read **[this](/docs/Examples/smartcontractEvents/smart-contract-events-api.md)**, to learn more about our Smart Contract Event APIs.
+
 
 <details>
 <summary>Filtering Transactions</summary>

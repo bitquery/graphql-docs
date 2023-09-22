@@ -1,3 +1,27 @@
+---
+title:  Polygon Address Balance and Activity Summary
+---
+
+
+<head>
+<meta name="title" content="Polygon Token, Smart contract Details API"/>
+<meta name="description" content="Get Polygon (Matic) Token supply and other attributes. Also, get Smart Contract property details of the Polygon blockchain."/>
+<meta name="keywords" content="polygon api, polygon python api, polygon nft api, polygon scan api, polygon matic api, polygon api docs, polygon crypto api, polygon blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Polygon Token, Smart contract Details API" />
+<meta property="og:description" content="Get Polygon (Matic) Token supply and other attributes. Also, get Smart Contract property details of the Polygon blockchain." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Polygon Token, Smart contract Details API" />
+<meta property="twitter:description" content="Get Polygon (Matic) Token supply and other attributes. Also, get Smart Contract property details of the Polygon blockchain." />
+</head>
+
 # Address Stats
 
 The `addressstats` field allows us to retrieves statistics related to blockchain addresses.

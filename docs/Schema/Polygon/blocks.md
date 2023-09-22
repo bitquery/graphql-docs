@@ -1,3 +1,27 @@
+---
+title:  Polygon Blocks API
+---
+
+
+<head>
+<meta name="title" content="Polygon Blocks API"/>
+<meta name="description" content= "Get latest or historical blocks on Polygon (Matic) blockchain. Get all transactions, Fees and miner and other details."/>
+<meta name="keywords" content="polygon api, polygon balance, polygon balance history, polygon python api, polygon nft api, polygon scan api, polygon matic api, polygon api docs, polygon crypto api, polygon blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Polygon Blocks API" />
+<meta property="og:description" content="Get latest or historical blocks on Polygon (Matic) blockchain. Get all transactions, Fees and miner and other details." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Polygon Blocks API" />
+<meta property="twitter:description" content="Get latest or historical blocks on Polygon (Matic) blockchain. Get all transactions, Fees and miner and other details." />
+</head>
+
 # Blocks
 
 The `blocks` field allows us to retrieve information about the blocks from the Polygon blockchain.
@@ -46,7 +70,7 @@ Blocks data can be filtered using following arguments:
 
 </details>
 
--   `any`:
+-   `any`: Used for `or` condition
 -   `count`: returns the aggregate count of blocks.
 -   `countBigInt`: returns the aggregate count of blocks in `BigInt` format.
 -   `date`: returns the date on which the block was mined.

@@ -1,4 +1,29 @@
-# Transactions
+---
+title: Polygon Transaction API
+---
+
+
+<head>
+<meta name="title" content="Polygon Transaction API"/>
+<meta name="description" content="Get real-time and historical Polygon (Matic) blockchain transaction details with fees details."/>
+<meta name="keywords" content="polygon api, polygon python api, polygon transactions, polygon nft api, polygon scan api, polygon matic api, polygon api docs, polygon crypto api, polygon blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Polygon Transaction API" />
+<meta property="og:description" content="Get real-time and historical Polygon (Matic) blockchain transaction details with fees details." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Polygon Transaction API" />
+<meta property="twitter:description" content="Get real-time and historical Polygon (Matic) blockchain transaction details with fees details." />
+</head>
+
+
+## Transactions
 
 `transactions` type allows you to retrieve all the blockchain transactions from Ethereum Blockchain.
 
@@ -47,6 +72,9 @@ query {
   }
 }
 ```
+
+Read **[this](/docs/Examples/Transactions/transaction-api.md)** to learn more about our Transactions API.
+
 <details>
 <summary>Filtering Transactions</summary>
 
