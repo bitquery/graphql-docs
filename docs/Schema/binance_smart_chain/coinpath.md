@@ -38,7 +38,7 @@ Coinpath data can be filtered using following arguments:
 - `receiver`: Filter by the receiver's address.
 - `sender`: Filter by the sender's address.
 - `time`: Filter by the time of the transaction.
-  
+
 </details>
 
 The following are available fields for the `coinpath`:
@@ -54,5 +54,5 @@ The following are available fields for the `coinpath`:
 - `minimum`: returns minimum of selected [coinpath measurable fields](/v1/docs/graphql-reference/objects/ethereum-coinpath)
 - `receiver`: returns information about the receiver.
 - `sender`: returns information about the sender.
-- `transaction`:  returns transaction details.
+- `transaction`: returns transaction details.
 - `transactions`: returns attributes of transactions.
