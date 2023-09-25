@@ -1,4 +1,24 @@
-# BNB Blocks API
+---
+title: BNB Blocks API
+---
+
+<head>
+<meta name="title" content="BNB Blocks API"/>
+<meta name="description" content="Get information on blocks on the BNB blockchain. Also, get information on blocks for tokens or NFTs on the BNB blockchain."/>
+<meta name="keywords" content="BNB api, BNB python api, BNB nft api, BNB scan api, BNB matic api, BNB api docs, BNB crypto api, BNB blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="BNB Blocks API" />
+<meta property="og:description" content="Get information on blocks on the BNB   blockchain. Also, get information on blocks for tokens or NFTs on the BNB blockchain." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="BNB Blocks API" />
+<meta property="twitter:description" content="Get information on blocks on the BNB blockchain. Also, get information on blocks for tokens or NFTs on the BNB blockc
 
 The `blocks` field allows us to retrieve information about the blocks from the BNB blockchain.
 
