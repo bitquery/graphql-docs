@@ -18,7 +18,8 @@ title: BNB Blocks API
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="BNB Blocks API" />
-<meta property="twitter:description" content="Get information on blocks on the BNB blockchain. Also, get information on blocks for tokens or NFTs on the BNB blockc
+<meta property="twitter:description" content="Get blocks information on the BNB blockchain. Also, get blocks information for tokens or NFTs on the BNB blockchain." />
+</head>
 
 The `blocks` field allows us to retrieve information about the blocks from the BNB blockchain.
 

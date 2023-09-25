@@ -1,5 +1,25 @@
+---
+title: BNB Coinpath API
+---
 
-# BNB Coinpath API
+<head>
+<meta name="title" content="BNB Coinpath API"/>
+<meta name="description" content="Track flow of funds up to any depth on the BNB blockchain. Also, get information on blocks for tokens or NFTs on the BNB blockchain."/>
+<meta name="keywords" content="BNB api, BNB python api, BNB nft api, BNB scan api, BNB matic api, BNB api docs, BNB crypto api, BNB blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="BNB Coinpath API" />
+<meta property="og:description" content="Track flow of funds up to any depth on the BNB blockchain. Also, get information on blocks for tokens or NFTs on the BNB blockchain." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="BNB Coinpath API" />
+<meta property="twitter:description" content="Track flow of funds up to any depth on the BNB blockchain. Also, get blocks information for tokens or NFTs on the BNB blockchain." />
+</head>
 
 The `coinpath` field allows us to retrieve detailed information about money flow using coinpath technology.
 
