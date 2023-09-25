@@ -104,7 +104,7 @@ const config = {
           filename: "sitemap.xml",
         },
         gtag: {
-          trackingID: 'G-HM9CPME5Z9',
+          trackingID: 'G-ZWB80TDH9J',
           anonymizeIP: true,
         },
       }),
