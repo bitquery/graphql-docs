@@ -23,7 +23,7 @@ title: BNB DEX Trades API
 
 The `dexTrades` API allows us to retrieve dex trade data from BNB blockchain.
 
-Here's an exmaple query that fetches 10 latest trades on BNB blockchain:
+Here's an example query that fetches 10 latest trades on BNB blockchain:
 
 ```
 query {
