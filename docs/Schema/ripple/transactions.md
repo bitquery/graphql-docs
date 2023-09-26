@@ -1,4 +1,25 @@
-# Transactions
+---
+title: Ripple Transactions API
+---
+
+<head>
+<meta name="title" content="Ripple Transactions API"/>
+<meta name="description" content="Get information on transaction details and wallets on the Ripple blockchain. Also, get information on blocks for tokens or NFTs on the Ripple blockchain."/>
+<meta name="keywords" content="Ripple api, Ripple python api, Ripple nft api, Ripple scan api, Ripple matic api, Ripple api docs, Ripple crypto api, Ripple blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ripple Transactions API" />
+<meta property="og:description" content="Get information on transaction details and wallets on the Ripple blockchain. Also, get information on blocks for tokens or NFTs on the Ripple blockchain." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Ripple Transactions API" />
+<meta property="twitter:description" content="Get information on transaction details and wallets on Ripple blockchain. Also, get blocks information for tokens or NFTs on the Ripple blockchain." />
+</head>
 
 The Transactions API gives you information about transactions on the XRP Ledger. The following are the fields in the schema:
 
