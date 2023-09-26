@@ -1,4 +1,25 @@
-# Outputs
+---
+title: Bitcoin Outputs API
+---
+
+<head>
+<meta name="title" content="Bitcoin Outputs API"/>
+<meta name="description" content="Get information on wallet outputs and fund flow on the Bitcoin blockchain. Also, get information on blocks for tokens or NFTs on the Bitcoin blockchain."/>
+<meta name="keywords" content="Bitcoin api, Bitcoin python api, Bitcoin nft api, Bitcoin scan api, Bitcoin matic api, Bitcoin api docs, Bitcoin crypto api, Bitcoin blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Bitcoin Outputs API" />
+<meta property="og:description" content="Get information on wallet outputs and fund flow on the Bitcoin blockchain. Also, get information on blocks for tokens or NFTs on the Bitcoin blockchain." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Bitcoin Outputs API" />
+<meta property="twitter:description" content="Get information on wallet outputs and fund flow on Bitcoin blockchain. Also, get blocks information for tokens or NFTs on the Bitcoin blockchain." />
+</head>
 
 The `outputs` field allows us to fetch details about transaction outputs from Bitcoin network.
 
