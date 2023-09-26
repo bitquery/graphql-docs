@@ -1,4 +1,25 @@
-# Coinpath
+---
+title: Ripple Coinpath API
+---
+
+<head>
+<meta name="title" content="Ripple Coinpath API"/>
+<meta name="description" content="Track flow of funds up to any depth on the Ripple blockchain. Also, get information on blocks for tokens or NFTs on the Ripple blockchain."/>
+<meta name="keywords" content="Ripple api, Ripple python api, Ripple nft api, Ripple scan api, Ripple matic api, Ripple api docs, Ripple crypto api, Ripple blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ripple Coinpath API" />
+<meta property="og:description" content="Track flow of funds up to any depth on the Ripple blockchain. Also, get information on blocks for tokens or NFTs on the Ripple blockchain." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Ripple Coinpath API" />
+<meta property="twitter:description" content="Track flow of funds up to any depth on the Ripple blockchain. Also, get blocks information for tokens or NFTs on the Ripple blockchain." />
+</head>
 
 The `coinpath` API allows us to retrieve detailed information about flow of funds on the XRP network.
 

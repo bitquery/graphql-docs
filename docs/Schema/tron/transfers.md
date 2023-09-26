@@ -1,5 +1,25 @@
+---
+title: Tron Transfers API
+---
 
-# Transfers
+<head>
+<meta name="title" content="Tron Transfers API"/>
+<meta name="description" content="Get information on transfer details and wallets on the Tron blockchain. Also, get information on blocks for tokens or NFTs on the Tron blockchain."/>
+<meta name="keywords" content="Tron api, Tron python api, Tron nft api, Tron scan api, Tron matic api, Tron api docs, Tron crypto api, Tron blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tron Transfers API" />
+<meta property="og:description" content="Get information on transfer details and wallets on the Tron blockchain. Also, get information on blocks for tokens or NFTs on the Tron blockchain." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Tron Transfers API" />
+<meta property="twitter:description" content="Get information on transfer details and wallets on Tron blockchain. Also, get blocks information for tokens or NFTs on the Tron blockchain." />
+</head>
 
 The `transfers` field allows us to fetch token transfer details from Tron blockchain.
 
