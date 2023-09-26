@@ -1,4 +1,25 @@
-# NFToken Offers
+---
+title: Ripple NFToken API
+---
+
+<head>
+<meta name="title" content="Ripple NFToken API"/>
+<meta name="description" content="Get information on Ripple NFToken including taker, LedgerSequence, amount and invoice."/>
+<meta name="keywords" content="Ripple api, Ripple python api, Ripple nft api, Ripple scan api, Ripple   api, Ripple api docs, Ripple crypto api, Ripple blockchain api,  network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ripple NFToken API" />
+<meta property="og:description" content="Get information on Ripple NFToken including taker, LedgerSequence, amount and invoice." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Ripple NFToken API" />
+<meta property="twitter:description" content="Get information on Ripple NFToken including taker, LedgerSequence, amount and invoice." />
+</head>
 
 NFTokens are NFTs on Ripple
 
@@ -7,13 +28,13 @@ NFTokens are NFTs on Ripple
 > object](https://xrpl.org/nftokenpage.html) alongside other `NFToken`
 > objects
 
-Bitquery's NFTokenOffers API contains info about NFTs on XRP that have offers to buy/sell/transfer an NFT.
+Bitquery's NFTokenNFToken API contains info about NFTs on XRP that have NFToken to buy/sell/transfer an NFT.
 Below are the fields in the schema of the API:
 
 ```
 query ($network: RippleNetwork!, $limit: Int!, $offset: Int!) {
   ripple(network: $network) {
-    nftokenOffers(options: {asc: "timestamp.time", limit: $limit, offset: $offset}) {
+    nftokenNFToken(options: {asc: "timestamp.time", limit: $limit, offset: $offset}) {
       block
       transaction {
         index
@@ -68,7 +89,7 @@ query ($network: RippleNetwork!, $limit: Int!, $offset: Int!) {
 
 ```
 
-<details><summary>Filtering NFtoken Offers</summary>
+<details><summary>Filtering NFtoken NFToken</summary>
 
 - `transactionType`: The type of transaction that created the offer.
 - `transactionSender`: The account that created the offer.
