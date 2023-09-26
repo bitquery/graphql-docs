@@ -1,5 +1,25 @@
+---
+title: Bitcoin Coinpath API
+---
 
-# Coinpath
+<head>
+<meta name="title" content="Bitcoin Coinpath API"/>
+<meta name="description" content="Track flow of funds up to any depth on the Bitcoin blockchain. Also, get information on blocks for tokens or NFTs on the Bitcoin blockchain."/>
+<meta name="keywords" content="Bitcoin api, Bitcoin python api, Bitcoin nft api, Bitcoin scan api, Bitcoin matic api, Bitcoin api docs, Bitcoin crypto api, Bitcoin blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Bitcoin Coinpath API" />
+<meta property="og:description" content="Track flow of funds up to any depth on the Bitcoin blockchain. Also, get information on blocks for tokens or NFTs on the Bitcoin blockchain." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Bitcoin Coinpath API" />
+<meta property="twitter:description" content="Track flow of funds up to any depth on the Bitcoin blockchain. Also, get blocks information for tokens or NFTs on the Bitcoin blockchain." />
+</head>
 
 The `coinpath` field allows us to retrieve detailed information about money flow using coinpath technology from Bitcoin.
 
@@ -17,7 +37,7 @@ Coinpath data can be filtered using following arguments:
 - `receiver`: Filter by the receiver's address.
 - `sender`: Filter by the sender's address.
 - `time`: Filter by the time of the transaction.
-  
+
 </details>
 
 The following are available fields for the `coinpath`:
@@ -33,5 +53,5 @@ The following are available fields for the `coinpath`:
 - `minimum`: returns minimum of selected [coinpath measurable fields](/v1/docs/graphql-reference/enums/coinpath-measureable)
 - `receiver`: returns information about the receiver.
 - `sender`: returns information about the sender.
-- `transaction`:  returns transaction details.
+- `transaction`: returns transaction details.
 - `transactions`: returns attributes of transactions.
