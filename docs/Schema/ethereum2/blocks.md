@@ -1,4 +1,25 @@
-# Blocks
+---
+title: ETH2 Blocks API
+---
+
+<head>
+<meta name="title" content="ETH2 Blocks API"/>
+<meta name="description" content="Get information on blocks on the ETH2 blockchain. Also, get information on blocks for tokens or NFTs on the ETH2 blockchain."/>
+<meta name="keywords" content="ETH2 api, ETH2 python api, ETH2 nft api, ETH2 scan api, ETH2 matic api, ETH2 api docs, ETH2 crypto api, ETH2 blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ETH2 Blocks API" />
+<meta property="og:description" content="Get information on blocks on the ETH2   blockchain. Also, get information on blocks for tokens or NFTs on the ETH2 blockchain." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="ETH2 Blocks API" />
+<meta property="twitter:description" content="Get blocks information on the ETH2 blockchain. Also, get blocks information for tokens or NFTs on the ETH2 blockchain." />
+</head>
 
 The Eth2 blocks API retrieves staking and validator information for a block. Here are the fields in the schema:
 
@@ -64,10 +85,10 @@ query ($network: Ethereum2Network!, $dateFormat: String!, $from: ISO8601DateTime
 `options`: Allows you to specify additional options for the query. For example, you could use options=include_signatures=true to include the signatures of the validators that signed the block.
 
 `time`: This field is the time that the block was proposed.
+
 </details>
 
-
-###  Fields
+### Fields
 
 `date`: This field contains the date of the block.
 

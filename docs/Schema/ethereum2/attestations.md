@@ -1,4 +1,25 @@
-# Attestations
+---
+title: ETH2 Attestations API
+---
+
+<head>
+<meta name="title" content="ETH2 Attestations API"/>
+<meta name="description" content="Get information on Attestations on the ETH2 blockchain. Also, get information on epochs, block root and  validator information on the ETH2 blockchain."/>
+<meta name="keywords" content="ETH2 api, ETH2 python api, ETH2 nft api, ETH2 scan api, ETH2 matic api, ETH2 api docs, ETH2 crypto api, ETH2 blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ETH2 Attestations API" />
+<meta property="og:description" content="Get information on Attestations on the ETH2   blockchain. Also, get information on epochs, block root and  validator information on the ETH2 blockchain." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="ETH2 Attestations API" />
+<meta property="twitter:description" content="Get Attestations information on the ETH2 blockchain. Also, get information on epochs, block root and  validator information on the ETH2 blockchain." />
+</head>
 
 The attestations API allows you to query for attestations that have been submitted to the Ethereum 2.0 beacon chain. You can use this API to get information about the attestations themselves, such as the epoch number, slot number, and committee index. You can also get information about the block that the attestation was included in, such as the block root hash and timestamp. The below query lists the fields in the schema:
 
@@ -74,6 +95,7 @@ query ($network: Ethereum2Network!) {
 `time`: This field specifies the time of the attestations that should be returned.
 
 `validatorIndex`: This field specifies the index of the validator for the attestations that should be returned.
+
 </details>
 
 ### Fields
@@ -113,4 +135,3 @@ query ($network: Ethereum2Network!) {
 `time`: This field contains the time of the block.
 
 `attestationEpoch`: This field specifies the epoch number of the attestations that should be returned.
-
