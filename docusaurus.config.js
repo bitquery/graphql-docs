@@ -108,7 +108,7 @@ const config = {
           anonymizeIP: true,
         },
           googleTagManager: {
-            containerId: 'GTM-12345',
+            containerId: 'GTM-5GC69JH6',
           },
       }),
     ],
