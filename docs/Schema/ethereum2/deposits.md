@@ -1,4 +1,25 @@
-# Deposits
+---
+title: ETH2 Deposits API
+---
+
+<head>
+<meta name="title" content="ETH2 Deposits API"/>
+<meta name="description" content="Get information on Deposits on the ETH2 blockchain. Also, get information on epochs, block root and  validator information on the ETH2 blockchain."/>
+<meta name="keywords" content="ETH2 api, ETH2 python api, ETH2 nft api, ETH2 scan api, ETH2 matic api, ETH2 api docs, ETH2 crypto api, ETH2 blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ETH2 Deposits API" />
+<meta property="og:description" content="Get information on Deposits on the ETH2   blockchain. Also, get information on epochs, block root and  validator information on the ETH2 blockchain." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="ETH2 Deposits API" />
+<meta property="twitter:description" content="Get Deposits information on the ETH2 blockchain. Also, get information on epochs, block root and  validator information on the ETH2 blockchain." />
+</head>
 
 The deposits API allows you to query for deposits that have been made to the Ethereum 2.0 beacon chain. You can use this API to get information about the deposits themselves, such as the amount of ETH that was deposited, the validator that made the deposit, and the block that the deposit was included in. Below are the fields in the schema: 
 
