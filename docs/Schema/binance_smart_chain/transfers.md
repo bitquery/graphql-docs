@@ -1,6 +1,27 @@
-# Transfers
+---
+title: BNB Transfers API
+---
 
-`transfers` type allows you to retrieve currency or token transfers from Ethereum Blockchain.
+<head>
+<meta name="title" content="BNB Transfers API"/>
+<meta name="description" content="Get information on transfer details and wallets on the BNB blockchain. Also, get information on blocks for tokens or NFTs on the BNB blockchain."/>
+<meta name="keywords" content="BNB api, BNB python api, BNB nft api, BNB scan api, BNB matic api, BNB api docs, BNB crypto api, BNB blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="BNB Transfers API" />
+<meta property="og:description" content="Get information on transfer details and wallets on the BNB blockchain. Also, get information on blocks for tokens or NFTs on the BNB blockchain." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="BNB Transfers API" />
+<meta property="twitter:description" content="Get information on transfer details and wallets on BNB blockchain. Also, get blocks information for tokens or NFTs on the BNB blockchain." />
+</head>
+
+The `transfers` API allows you to retrieve currency or token transfers from BNB Blockchain.
 
 Here's an example query that retrieves the first 10 transfers of USDT tokens between June 17th and June 18th, 2023. The results are sorted based on the timestamp of each transfer in descending order.
 

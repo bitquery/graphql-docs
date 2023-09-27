@@ -1,5 +1,25 @@
+---
+title: BNB Smart Contract Calls API
+---
 
-# Smart Contract Calls
+<head>
+<meta name="title" content="BNB Smart Contract Calls API"/>
+<meta name="description" content="Get information on smart contract calls and arguments passed on the BNB blockchain. Also, get information on blocks for tokens or NFTs on the BNB blockchain."/>
+<meta name="keywords" content="BNB api, BNB python api, BNB nft api, BNB scan api, BNB matic api, BNB api docs, BNB crypto api, BNB blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="BNB Smart Contract Calls API" />
+<meta property="og:description" content="Get information on smart contract calls and arguments passed on the BNB blockchain. Also, get information on blocks for tokens or NFTs on the BNB blockchain." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="BNB Smart Contract Calls API" />
+<meta property="twitter:description" content="Get information on smart contract calls and arguments passed on BNB blockchain. Also, get blocks information for tokens or NFTs on the BNB blockchain." />
+</head>
 
 `smartContractCalls` type allows you to retrieve smart contract calls made to any smart contract on Ethereum Blockchain.
 

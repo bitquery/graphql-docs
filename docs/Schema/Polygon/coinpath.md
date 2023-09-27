@@ -1,7 +1,112 @@
+---
+title:  Polygon Coinpath® API
+---
 
-# Coinpath
+
+<head>
+<meta name="title" content="Polygon Coinpath® - Money Flow API"/>
+<meta name="description" content= "Trace tokens on Polygon blockchain and learn about source, destination and involved parties in the transactions."/>
+<meta name="keywords" content="polygon api, polygon compliance, polygon money tracking, polygon balance, polygon balance history, polygon python api, polygon nft api, polygon scan api, polygon matic api, polygon api docs, polygon crypto api, polygon blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Polygon Coinpath® - Money Flow API" />
+<meta property="og:description" content="Trace tokens on the Polygon blockchain and learn about the transactions source, destination, and involved parties." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Polygon Blocks API" />
+<meta property="twitter:description" content="Trace tokens on the Polygon blockchain and learn about the transactions' source, destination, and involved parties." />
+</head>
+
+## Coinpath
 
 The `coinpath` API allows us to retrieve detailed information about flow of funds in the chain.
+
+```
+{
+  ethereum(network: matic) {
+    inbound: coinpath(
+      initialAddress: {is: "0xaa5e8d18aae59d1db33d59ccdbb865d2127dd68d"}
+      currency: {is: "MATIC"}
+      depth: {lteq: 1}
+      options: {direction: inbound, asc: "depth", desc: "amount", limitBy: {each: "depth", limit: 10}}
+      date: {since: "2023-09-15", till: "2023-09-22"}
+    ) {
+      sender {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      receiver {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      amount
+      currency {
+        symbol
+      }
+      depth
+      count
+    }
+    outbound: coinpath(
+      initialAddress: {is: "0xaa5e8d18aae59d1db33d59ccdbb865d2127dd68d"}
+      currency: {is: "MATIC"}
+      depth: {lteq: 1}
+      options: {asc: "depth", desc: "amount", limitBy: {each: "depth", limit: 10}}
+      date: {since: "2023-09-15", till: "2023-09-22"}
+    ) {
+      sender {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      receiver {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      amount
+      currency {
+        symbol
+      }
+      depth
+      count
+    }
+  }
+}
+
+```
+
+Check more examples of Coinpath APIs **[here](/docs/Examples/coinpath/money-flow-api.md)**.
 
 <details>
 <summary>Filtering Options</summary>
@@ -36,3 +141,11 @@ The following are available fields for the `coinpath`:
 - `sender`: returns information about the sender.
 - `transaction`:  returns transaction details.
 - `transactions`: returns attributes of transactions.
+
+
+
+:::info
+
+Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your API keys, Read _[our guide](/docs/graphql-ide/how-to-start/)_ on getting started.
+
+:::

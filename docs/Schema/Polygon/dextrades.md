@@ -1,4 +1,30 @@
-# DEX Trades
+---
+title:  Polygon DEX Trade API
+---
+
+
+<head>
+<meta name="title" content="Polygon DEX Trade API"/>
+<meta name="description" content= "Get Real-time and historical trades, price, OHLC details on DEXs on the Polygon blockchain, such as QuickSwap, Sushiswap, Uniswap, etc."/>
+<meta name="keywords" content="polygon api, Quickswap api, polygon trades, polygon token price, polygon compliance, polygon money tracking, polygon balance, polygon balance history, polygon python api, polygon nft api, polygon scan api, polygon matic api, polygon api docs, polygon crypto api, polygon blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Polygon DEX Trade API" />
+<meta property="og:description" content="Get Real-time and historical trades on DEXs on the Polygon blockchain, such as QuickSwap, Sushiswap, Uniswap, etc." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Polygon DEX Trade API" />
+<meta property="twitter:description" content="Get Real-time and historical trades on DEXs on the Polygon blockchain, such as QuickSwap, Sushiswap, Uniswap, etc." />
+</head>
+
+
+
+## DEX Trades
 
 The `dexTrades` field allows us to retrieve dex trade data from Matic blockchain.
 
@@ -57,6 +83,8 @@ query {
   }
 }
 ```
+
+Read **[this](/docs/Examples/dexTrades/dex-trading-data-api.md)** to learn more about DEXTrade APIs.
 
 <details>
 <summary>Filtering DEX Trades</summary>
@@ -128,3 +156,10 @@ The following are available fields for the `dexTrades`:
 - `tradeIndex`: returns the index of the trade in the transaction.
 - `transaction`:  returns information about the transaction in which the trade was executed.
   
+
+
+:::info
+
+Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your API keys, Read _[our guide](/docs/graphql-ide/how-to-start/)_ on getting started.
+
+:::

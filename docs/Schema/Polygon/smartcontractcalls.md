@@ -1,5 +1,29 @@
+---
+title: Polygon Smart Contract Call API
+---
 
-# Smart Contract Calls
+
+<head>
+<meta name="title" content="Polygon Smart Contract Call API"/>
+<meta name="description" content="Get decoded smart contract calls details with arguments from the Polygon blockchain."/>
+<meta name="keywords" content="polygon api, polygon python api, polygon nft api, polygon scan api, polygon matic api, polygon api docs, polygon crypto api, polygon blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Polygon Smart Contract Call API" />
+<meta property="og:description" content="Get decoded smart contract calls details with arguments from the Polygon blockchain." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Polygon Smart Contract Call API" />
+<meta property="twitter:description" content="Get decoded smart contract calls details with arguments from the Polygon blockchain." />
+</head>
+
+
+## Smart Contract Calls
 
 `smartContractCalls` type allows you to retrieve smart contract calls made to any smart contract on Polygon Blockchain.
 
@@ -44,6 +68,8 @@ Here's an example query that retrieves 10 latest smart contract calls amde to US
 
 ```
 
+Read **[this](/docs/Examples/smartcontractCalls/smart-contract-calls-api.md)** to learn more about our Smart contract calls API.
+
 <details>
 <summary>Filtering Smart Contract Calls</summary>
 
@@ -83,3 +109,11 @@ Smart Contract Calls can be filtered using following arguments:
 - `smartContractMethod`: returns details of method to which the call was made
 - `success`: returns if calls is successful or not
 - `transaction`: returns details of the transaction in which smart contract call was executed
+
+
+
+:::info
+
+Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your API keys, Read _[our guide](/docs/graphql-ide/how-to-start/)_ on getting started.
+
+:::

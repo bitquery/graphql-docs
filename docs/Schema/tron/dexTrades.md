@@ -1,4 +1,25 @@
-# DEX Trades
+---
+title: Tron DEX Trades API
+---
+
+<head>
+<meta name="title" content="Tron DEX Trades API"/>
+<meta name="description" content="Get information on dex trades, liquidity pools, trade pairs and more on the Tron blockchain. Also, get information on dex trades, liquidity pools, trade pairs and more for tokens or NFTs on the Tron blockchain."/>
+<meta name="keywords" content="Tron api, Tron python api, Tron nft api, Tron scan api, Tron api, Tron api docs, Tron crypto api, Tron blockchain api,tron network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tron DEX Trades API" />
+<meta property="og:description" content="Get information on dex trades, liquidity pools, trade pairs and more on the Tron blockchain." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Tron DEX Trades API" />
+<meta property="twitter:description" content="Get information on dex trades, liquidity pools, trade pairs and more on the Tron blockchain." />
+</head>
 
 The `dexTrades` field allows us to fetch dex trades from Tron network.
 

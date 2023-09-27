@@ -1,4 +1,25 @@
-# Escrows
+---
+title: Ripple Escrows API
+---
+
+<head>
+<meta name="title" content="Ripple Escrows API"/>
+<meta name="description" content="Get information on Ripple Escrows including account, flags, amount and invoice."/>
+<meta name="keywords" content="Ripple api, Ripple python api, Ripple nft api, Ripple scan api, Ripple   api, Ripple api docs, Ripple crypto api, Ripple blockchain api,  network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ripple Escrows API" />
+<meta property="og:description" content="Get information on Ripple Escrows including account, flags, amount and invoice." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Ripple Escrows API" />
+<meta property="twitter:description" content="Get information on Ripple Escrows including account, flags, amount and invoice." />
+</head>
 
 Escrows are that send XRP when certain conditions are met. You can track escrows with Bitquery APIs in detail. The transactions where escrows happen will have ` "type": "EscrowFinish"` in the transaction detail.
 Below are the fields in the API:

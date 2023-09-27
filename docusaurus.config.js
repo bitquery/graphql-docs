@@ -7,12 +7,12 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Blockchain Graphql API (V1  API Docs)",
+  title: "Bitquery",
   tagline:
-    "How to query data and build applications on Bitquery blockchain data platform",
+    "Real time and historical data from 40+ blockchains",
   favicon: "img/favicon.ico",
   // ...
-  trailingSlash: true,
+  trailingSlash: false,
   // ...
   // Set the production url of your site here
   url: "https://docs.bitquery.io",
@@ -103,6 +103,10 @@ const config = {
           ignorePatterns: ["/docs/v1/graphql-reference/**"],
           filename: "sitemap.xml",
         },
+        gtag: {
+          trackingID: 'G-ZWB80TDH9J',
+          anonymizeIP: true,
+        },
       }),
     ],
   ],
@@ -135,6 +139,11 @@ const config = {
           {
             to: "https://community.bitquery.io",
             label: "Forum",
+            position: "left",
+          },
+          {
+            to: "https://bitquery.io/forms/api",
+            label: "Book Demo",
             position: "left",
           },
         ],

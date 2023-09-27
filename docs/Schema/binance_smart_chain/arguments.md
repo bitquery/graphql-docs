@@ -1,11 +1,48 @@
+---
+title: BNB Arguments API
+---
 
-# Arguments
+<head>
+<meta name="title" content="BNB Arguments API"/>
+<meta name="description" content="Get event and call arguments on the BNB blockchain. Also, get event and call arguments for tokens or NFTs on the BNB blockchain."/>
+<meta name="keywords" content="BNB api, BNB python api, BNB nft api, BNB scan api, BNB matic api, BNB api docs, BNB crypto api, BNB blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="BNB Arguments API" />
+<meta property="og:description" content="Get event and call arguments on the BNB   blockchain. Also, get event and call arguments for tokens or NFTs on the BNB blockchain." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="BNB Arguments API" />
+<meta property="twitter:description" content="Get event and call arguments on the BNB blockchain. Also, get event and call arguments for tokens or NFTs on the BNB blockchain." />
+</head>
+
 
 The `arguments` field allows us to fetch information about arguments of smart contract calls and evetns.
 
 Here is an exmaple that demonstrates how to use `arguments` query:
 
 ```
+{
+  ethereum(network: bsc) {
+    arguments(
+      smartContractEvent: {is: "PairCreated"}
+      options: {desc: "block.height", limit: 6}
+    ) {
+      block {
+        height
+      }
+      argument {
+        name
+        type
+      }
+    }
+  }
+}
 
 ```
 
@@ -16,7 +53,7 @@ Here is an exmaple that demonstrates how to use `arguments` query:
 - `argument`: Filter by specific argument for smart contract method or event
 - `argumentType`: Filter by argument type for smart contract method or event
 - `callDepth`: Filter by call depth
-- `caller`: Filter by address of the caller 
+- `caller`: Filter by address of the caller
 - `date`: Filter by selecting time in range, list or just time
 - `external`:
 - `height`: Filter by height of the block
@@ -45,7 +82,7 @@ The following are available fields for the `arguments`:
 - `date`: returns date on which smart contract call or event happened
 - `expression`: performs arithematic operation on fields in the query and returns value of the operation
 - `external`:
-- `index`: 
+- `index`:
 - `maximum`:
 - `minimum`:
 - `number`:

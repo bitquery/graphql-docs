@@ -1,4 +1,25 @@
-# Smart Contract Events
+---
+title: Tron Smart Contract Events API
+---
+
+<head>
+<meta name="title" content="Tron Smart Contract Events API"/>
+<meta name="description" content="Get information on smart contract events and arguments passed on the Tron blockchain. Also, get information on blocks for tokens or NFTs on the Tron blockchain."/>
+<meta name="keywords" content="Tron api, Tron python api, Tron nft api, Tron scan api, Tron api, Tron api docs, Tron crypto api, Tron blockchain api, network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tron Smart Contract Events API" />
+<meta property="og:description" content="Get information on smart contract events and arguments passed on the Tron blockchain. Also, get information on blocks for tokens or NFTs on the Tron blockchain." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Tron Smart Contract Events API" />
+<meta property="twitter:description" content="Get information on smart contract events and arguments passed on Tron blockchain. Also, get blocks information for tokens or NFTs on the Tron blockchain." />
+</head>
 
 The `smartContractEvents` field allows us to fetch information about the smart contract events from Tron blockchain.
 

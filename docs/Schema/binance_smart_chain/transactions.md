@@ -1,8 +1,29 @@
-# Transactions
+---
+title: BNB Transactions API
+---
+
+<head>
+<meta name="title" content="BNB Transactions API"/>
+<meta name="description" content="Get information on transaction details and wallets on the BNB blockchain. Also, get information on blocks for tokens or NFTs on the BNB blockchain."/>
+<meta name="keywords" content="BNB api, BNB python api, BNB nft api, BNB scan api, BNB matic api, BNB api docs, BNB crypto api, BNB blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="BNB Transactions API" />
+<meta property="og:description" content="Get information on transaction details and wallets on the BNB blockchain. Also, get information on blocks for tokens or NFTs on the BNB blockchain." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="BNB Transactions API" />
+<meta property="twitter:description" content="Get information on transaction details and wallets on BNB blockchain. Also, get blocks information for tokens or NFTs on the BNB blockchain." />
+</head>
 
 `transactions` type allows you to retrieve all the blockchain transactions from Ethereum Blockchain.
 
-Here's an exmaple query that retrieves 10 latest transactions from Ethereum blockchain:
+Here's an example query that retrieves 10 latest transactions from Ethereum blockchain:
 
 ```
 query {
