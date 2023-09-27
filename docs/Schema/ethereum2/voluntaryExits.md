@@ -1,4 +1,25 @@
-# Voluntary Exits
+---
+title: ETH2 Voluntary Exits API
+---
+
+<head>
+<meta name="title" content="ETH2 Voluntary Exits API"/>
+<meta name="description" content="Get information on Voluntary Exits on the ETH2 blockchain. Also, get information on epochs, block root, deposits and validator information on the ETH2 blockchain."/>
+<meta name="keywords" content="ETH2 api, ETH2 python api, ETH2 nft api, ETH2 scan api, ETH2 matic api, ETH2 api docs, ETH2 crypto api, ETH2 blockchain api,matic network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="ETH2 Voluntary Exits API" />
+<meta property="og:description" content="Get information on Voluntary Exits on the ETH2 blockchain. Also, get information on epochs, block root, deposits and validator information on the ETH2 blockchain." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="ETH2 Voluntary Exits API" />
+<meta property="twitter:description" content="Get Voluntary Exits information on the ETH2 blockchain. Also, get information on epochs, block root, deposits and validator information on the ETH2 blockchain." />
+</head>
 
 ```
 query ($network: Ethereum2Network!) {

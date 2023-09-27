@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Overview
+# BNB API Overview
 
 Bitquery API offers access to indexed data from the BNB blockchain via GraphQL API for developers.
 

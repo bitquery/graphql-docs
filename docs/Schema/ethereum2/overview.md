@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Overview
+# Ethereum Beacon Chain API Overview
 
 Bitquery provides APIs to access Eth2 data. You can get info on the ethereum's staking model. It uses the Proof-of-stake, a consensus method that blockchain networks utilize to reach distributed consensus. 
 

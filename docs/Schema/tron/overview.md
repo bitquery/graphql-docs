@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Overview
+# Tron API Overview
 
 Bitquery's Tron API offers access to indexed data from the Tron network including shards, block, transaction, event, transactions, transfers, and more. These queries can be used to retrieve blockchain data, such as shard information, transaction details, events, token transfers, and other relevant information.
 

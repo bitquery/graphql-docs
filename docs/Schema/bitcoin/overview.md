@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 ---
-# Overview
+# Bitcoin API Overview
 
 Bitquery API offers access to indexed data from the Bitcoin blockchain through the bitcoin schema. This schema is specifically designed to enable blockchain data retrieval via GraphQL API for developers.
 
