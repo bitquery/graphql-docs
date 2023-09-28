@@ -538,49 +538,6 @@ For example, if there is a swap A <-> B, using Base/Quote, it will give two resu
 }
 ```
 
-## OHLC Data API
-
-Using our APIs, you can also get [OHLC](https://en.wikipedia.org/wiki/Open-high-low-close_chart) data. Let's see an example.
-In this example, we are getting OHLC prices by aggregating price data at run time. Additionally, we are using `priceAsymmetry` and `tradeAmountUsd` to filter out trades with abnormal prices.
-
-[Open this query on IDE](https://ide.bitquery.io/Uniswap-OHLC-data-5-minute-candle--WETHUSDT)
-
-```graphql
-{
-	ethereum(network: ethereum) {
-		dexTrades(
-			options: { limit: 10, asc: "timeInterval.minute" }
-			date: { is: "2023-05-23" }
-			exchangeName: { is: "Uniswap" }
-			baseCurrency: { is: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2" }
-			quoteCurrency: { is: "0xdac17f958d2ee523a2206206994597c13d831ec7" }
-			priceAsymmetry: { lt: 1 }
-			tradeAmountUsd: { gt: 500 }
-		) {
-			timeInterval {
-				minute(count: 5)
-			}
-			baseCurrency {
-				symbol
-				address
-			}
-			baseAmount
-			quoteCurrency {
-				symbol
-				address
-			}
-			quoteAmount
-			trades: count
-			quotePrice
-			maximum_price: quotePrice(calculate: maximum)
-			minimum_price: quotePrice(calculate: minimum)
-			open_price: minimum(of: block, get: quote_price)
-			close_price: maximum(of: block, get: quote_price)
-		}
-	}
-}
-```
-
 ## Latest USD price of a token
 
 As we already know, USD doesn't exist on the blockchain. Additionally, there will be tokens that do not have pairs with USDT or other stablecoins. In this case, getting USD prices becomes [price index problem](https://bitquery.io/blog/dex-price-index). However, we have USD pricing for several tokens, and actually, you can derive the USD price of tokens using it.
