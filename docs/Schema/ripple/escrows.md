@@ -5,7 +5,7 @@ title: Ripple Escrows API
 <head>
 <meta name="title" content="Ripple Escrows API"/>
 <meta name="description" content="Get information on Ripple Escrows including account, flags, amount and invoice."/>
-<meta name="keywords" content="Ripple api, Ripple python api, Ripple nft api, Ripple scan api, Ripple   api, Ripple api docs, Ripple crypto api, Ripple blockchain api,  network api"/>
+<meta name="keywords" content="Ripple api, Ripple python api, Ripple nft api, Ripple scan api, Ripple api, Ripple api docs, Ripple crypto api, Ripple blockchain api, ripple network api"/>
 <meta name="robots" content="index, follow"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="language" content="English"/>

@@ -1,4 +1,32 @@
-# Checks
+---
+title: "Ripple Checks API"
+---
+
+<head>
+<meta name="title" content="Ripple Checks API"/>
+
+<meta name="description" content="Explore Ripple's Checks API to retrieve details on deferred payments with Bitquery. Filter checks by type, sender, date, and more."/>
+
+<meta name="keywords" content="Ripple Developer, XRP Developer Ripple Developer Tools,  Ripple API, Ripple Smart Contracts, Ripple Developer Documentation, Ripple Developer Resources, XRP Development Tutorials XRP Explorer, XRP API"/>
+
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+
+<meta property="og:title" content="Ripple Checks API" />
+
+<meta property="og:description" content="Explore Ripple's Checks API to retrieve details on deferred payments with Bitquery. Filter checks by type, sender, date, and more."/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+
+<meta property="twitter:title" content="Ripple Checks API" />
+
+<meta property="twitter:description" content="Explore Ripple's Checks API to retrieve details on deferred payments with Bitquery. Filter checks by type, sender, date, and more." />
+</head>
 
 Checks are a feature in Ripple network that allow users to `create deferred payments that can be canceled or cashed by the intended recipients.`
 

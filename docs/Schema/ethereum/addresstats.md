@@ -1,4 +1,32 @@
-# Address Stats
+---
+title: "Ethereum Addresses Stats API"
+---
+
+<head>
+<meta name="title" content="Ethereum Addresses Stats API"/>
+
+<meta name="description" content="Explore comprehensive address statistics, including counts, aggregates, and historical data. Get insights into transfers, balances, fees, and more."/>
+
+<meta name="keywords" content="Address Stats, ERC721, NFT, NFTs, Token Balance, ERC20, USDT Balance, USDC Balance, ETH Balance, Ethereum, Ethereum Address"/>
+
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+
+<meta property="og:title" content="Ethereum Addresses Stats API" />
+
+<meta property="og:description" content="Explore comprehensive address statistics, including counts, aggregates, and historical data. Get insights into transfers, balances, fees, and more." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+
+<meta property="twitter:title" content="Ethereum Addresses Stats API" />
+
+<meta property="twitter:description" content="Explore comprehensive address statistics, including counts, aggregates, and historical data. Get insights into transfers, balances, fees, and more." />
+</head>
 
 The `addressstats` field allows us to retrieves statistics related to blockchain addresses.
 

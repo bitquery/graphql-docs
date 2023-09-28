@@ -1,6 +1,6 @@
 ---
 title: Polygon Token Transfer API
-description: PP Get real time and historical Token Transfer details for tokens on the Polygon blockchain using our Transfer API, including transfers for individual addresses.
+description: Get real time and historical Token Transfer details for tokens on the Polygon blockchain using our Transfer API, including transfers for individual addresses.
 keywords: [polygon api, polygon python api, polygon transfers, polygon transactions, polygon nft api, polygon scan api, polygon matic api, polygon api docs, polygon crypto api, polygon blockchain api,matic network api]
 ---
 

@@ -1,4 +1,32 @@
-# Active Addresses
+---
+title: "Ethereum Active Addresses API"
+---
+
+<head>
+<meta name="title" content="Ethereum Active Addresses API"/>
+
+<meta name="description" content="Access Historical & Current Ethereum Addresses"/>
+
+<meta name="keywords" content="Ethereum, Ethereum Active Address, Ethereum Address, Ethereum Addresses, ERC20 Addresses, Token Holders, NFT holders"/>
+
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+
+<meta property="og:title" content="Ethereum Active Addresses API" />
+
+<meta property="og:description" content="Access Historical & Current Ethereum Addresses" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+
+<meta property="twitter:title" content="Ethereum Active Addresses API" />
+
+<meta property="twitter:description" content="Access Historical & Current Ethereum Addresses" />
+</head>
 
 The `activeAddresses` field allows us to retrieve details about the active addresses from the Ethereum blockchain.
 
@@ -30,7 +58,7 @@ Active Addresses can be filtered using the following arguments:
 -   `sender`: Filter by the address of the sender
 -   `success`: Filter by success of the transaction
 -   `time`: Filter by time
--   `txFrom`:  Filter by the address that created the transaction.
+-   `txFrom`: Filter by the address that created the transaction.
 -   `txHash`: Filter by the transaction hash
 
 </details>

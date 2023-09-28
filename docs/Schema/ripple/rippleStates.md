@@ -1,4 +1,25 @@
-# rippleStates
+---
+title: Ripple States API
+---
+
+<head>
+<meta name="title" content="Ripple States API"/>
+<meta name="description" content="Explore Ripple's RippleState objects effortlessly with Bitquery's rippleStates API. Get insights into balances, accounts, and more."/>
+<meta name="keywords" content="Ripple api, Ripple python api, Ripple nft api, Ripple scan api, Ripple api, Ripple api docs, Ripple crypto api, Ripple blockchain api, ripple network api"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ripple States API" />
+<meta property="og:description" content="Explore Ripple's RippleState objects effortlessly with Bitquery's rippleStates API. Get insights into balances, accounts, and more." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Ripple States API" />
+<meta property="twitter:description" content="Explore Ripple's RippleState objects effortlessly with Bitquery's rippleStates API. Get insights into balances, accounts, and more." />
+</head>
 
 A `RippleState` object connects two accounts in a single currency.There can only be one RippleState object per currency for any given pair of accounts. Bitquery's rippleStates API gives you information this object.
 

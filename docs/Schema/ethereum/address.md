@@ -1,4 +1,32 @@
-# Address
+---
+title: "Ethereum Addresses API"
+---
+
+<head>
+<meta name="title" content="Ethereum Addresses API"/>
+
+<meta name="description" content="Explore specific address details, such as the USDT token balance, using Bitquery's address query. Discover balance, attributes, and more information effortlessly."/>
+
+<meta name="keywords" content="Token Balance, ERC20, USDT Balance, USDC Balance, ETH Balance, Ethereum, Ethereum Address"/>
+
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+
+<meta property="og:title" content="Ethereum Addresses API" />
+
+<meta property="og:description" content="Explore specific address details, such as the USDT token balance, using Bitquery's address query. Discover balance, attributes, and more information effortlessly." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+
+<meta property="twitter:title" content="Ethereum Addresses API" />
+
+<meta property="twitter:description" content="Explore specific address details, such as the USDT token balance, using Bitquery's address query. Discover balance, attributes, and more information effortlessly." />
+</head>
 
 The `address` allows us to retrieve information about a specific address.
 

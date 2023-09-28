@@ -1,4 +1,32 @@
-# Transactions
+---
+title: "Avalanche Transactions API"
+---
+
+<head>
+<meta name="title" content="Avalanche Transactions API"/>
+
+<meta name="description" content="Access detailed Avalanche transaction data with diverse fields and attributes for comprehensive analysis."/>
+
+<meta name="keywords" content="Avalanche Transactions, Avalanche transaction history, Avalanche transaction explorer, Avalanche transaction API, AVAX transaction tracking AVAX, AVAX wallet transactions"/>
+
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+
+<meta property="og:title" content="Avalanche Transactions API" />
+
+<meta property="og:description" content="Access detailed Avalanche transaction data with diverse fields and attributes for comprehensive analysis."/>
+
+
+<meta property="twitter:card" content="summary_large_image" />
+
+<meta property="twitter:title" content="Avalanche Transactions API" />
+
+<meta property="twitter:description" content="Access detailed Avalanche transaction data with diverse fields and attributes for comprehensive analysis." />
+</head>
 
 Avalanche Transactions API is used to get information about transactions, such as the sender, the recipient, the amount, the fee, and the timestamp. Here are the fields in the schema:
 

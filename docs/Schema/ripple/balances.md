@@ -1,4 +1,32 @@
-# Balances
+---
+title: "Ripple Balances API"
+---
+
+<head>
+<meta name="title" content="Ripple Balances API"/>
+
+<meta name="description" content="Access XRP Ledger account balances with the Balances API. Query balance history, transaction details, and currency info. Technical account data retrieval."/>
+
+<meta name="keywords" content="Ripple network, XRP Ledger, Ripple API, XRP transactions, Ripple blockchain, Account balances, Transaction history, Transaction hash, Token ID, Token type, Block number, Current balance, Account owner, Transaction flags"/>
+
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+
+<meta property="og:title" content="Ripple Balances API" />
+
+<meta property="og:description" content="Access XRP Ledger account balances with the Balances API. Query balance history, transaction details, and currency info. Technical account data retrieval."/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+
+<meta property="twitter:title" content="Ripple Balances API" />
+
+<meta property="twitter:description" content="Access XRP Ledger account balances with the Balances API. Query balance history, transaction details, and currency info. Technical account data retrieval." />
+</head>
 
 The Balances API gives you information about the balances of an account on the XRP Ledger. The following are the fields in the schema:
 

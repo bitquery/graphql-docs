@@ -1,5 +1,32 @@
+---
+title: "Ethereum Arguments API"
+---
 
-# Arguments
+<head>
+<meta name="title" content="Ethereum Arguments API"/>
+
+<meta name="description" content="Query arguments of smart contract calls and events effortlessly with the arguments API. Filter by type, depth, caller, and more."/>
+
+<meta name="keywords" content="Address Stats, Smart Contracts, ERC721, NFT, NFTs, Token Balance, ERC20, USDT, USDC Balance, ETH Balance, Ethereum, Ethereum Address"/>
+
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+
+<meta property="og:title" content="Ethereum Arguments API" />
+
+<meta property="og:description" content="Query arguments of smart contract calls and events effortlessly with the arguments API. Filter by type, depth, caller, and more." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+
+<meta property="twitter:title" content="Ethereum Arguments API" />
+
+<meta property="twitter:description" content="Query arguments of smart contract calls and events effortlessly with the arguments API. Filter by type, depth, caller, and more." />
+</head>
 
 The `arguments` field allows us to fetch information about arguments of smart contract calls and events.
 

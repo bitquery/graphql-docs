@@ -1,4 +1,32 @@
-# Transfers
+---
+title: "Avalanche Transfers API"
+---
+
+<head>
+<meta name="title" content="Avalanche Transfers API"/>
+
+<meta name="description" content="Access Avalanche Transfers data with the Avalanche Transfers API. Retrieve sender, recipient, amount, currency, and timestamp info. Explore query options and filter by various fields."/>
+
+<meta name="keywords" content="Avalanche token transfers, Avalanche transfers, Token transfer data, Avalanche blockchain, Token transaction history, Transfer API, Avalanche network, AVAX token transfers, AVAX transfers, Token transfer data, AVAX blockchain, Token transaction history, Transfer API, AVAX network"/>
+
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+
+<meta property="og:title" content="Avalanche Transfers API" />
+
+<meta property="og:description" content="Access Avalanche Transfers data with the Avalanche Transfers API. Retrieve sender, recipient, amount, currency, and timestamp info. Explore query options and filter by various fields."/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+
+<meta property="twitter:title" content="Avalanche Transfers API" />
+
+<meta property="twitter:description" content="Access Avalanche Transfers data with the Avalanche Transfers API. Retrieve sender, recipient, amount, currency, and timestamp info. Explore query options and filter by various fields." />
+</head>
 
 The Avalanche Transfers API can be used to get information about transfers, such as the sender, the recipient, the amount, the currency, and the timestamp. Below are the fields in the schema:
 
