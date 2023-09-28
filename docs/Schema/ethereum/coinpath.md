@@ -1,5 +1,32 @@
+---
+title: "Ethereum Coinpath API"
+---
 
-# Coinpath
+<head>
+<meta name="title" content="Ethereum Coinpath API"/>
+
+<meta name="description" content="Retrieve detailed money flow information using the coinpath API. Filter by currency, date, sender, receiver, and more. Explore transaction details."/>
+
+<meta name="keywords" content="Ethereum,Blockchain, Crypto transactions, Coinpath, Money flow, Token transactions, Transaction details, Transaction count, Crypto analytics, Crypto data analysis, Ethereum blockchain, Token flow analysis, Ethereum technology,Ethereum development, Ethereum transactions, Cryptocurrency tracking"/>
+
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+
+<meta property="og:title" content="Ethereum Coinpath API" />
+
+<meta property="og:description" content="Retrieve detailed money flow information using the coinpath API. Filter by currency, date, sender, receiver, and more. Explore transaction details."/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+
+<meta property="twitter:title" content="Ethereum Coinpath API" />
+
+<meta property="twitter:description" content="Retrieve detailed money flow information using the coinpath API. Filter by currency, date, sender, receiver, and more. Explore transaction details." />
+</head>
 
 The `coinpath` field allows us to retrieve detailed information about money flow using coinpath technology.
 

@@ -1,13 +1,13 @@
 ---
-title: "Ethereum Addresses Stats API"
+title: "Ripple Addresses Stats API"
 ---
 
 <head>
-<meta name="title" content="Ethereum Addresses Stats API"/>
+<meta name="title" content="Ripple Addresses Stats API"/>
 
 <meta name="description" content="Explore comprehensive address statistics, including counts, aggregates, and historical data. Get insights into transfers, balances, fees, and more."/>
 
-<meta name="keywords" content="Address Stats, ERC721, NFT, NFTs, Token Balance, ERC20, USDT Balance, USDC Balance, ETH Balance, Ethereum, Ethereum Address"/>
+<meta name="keywords" content="Address Stats, NFT, NFTs, Token Balance, XRP, USDT Balance, USDC Balance, XRP Balance, Ripple, Ripple Address"/>
 
 <meta name="robots" content="index, follow"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -16,17 +16,18 @@ title: "Ethereum Addresses Stats API"
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 
-<meta property="og:title" content="Ethereum Addresses Stats API" />
+<meta property="og:title" content="Ripple Addresses Stats API" />
 
 <meta property="og:description" content="Explore comprehensive address statistics, including counts, aggregates, and historical data. Get insights into transfers, balances, fees, and more." />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 
-<meta property="twitter:title" content="Ethereum Addresses Stats API" />
+<meta property="twitter:title" content="Ripple Addresses Stats API" />
 
 <meta property="twitter:description" content="Explore comprehensive address statistics, including counts, aggregates, and historical data. Get insights into transfers, balances, fees, and more." />
 </head>
+
 
 The `addressstats` field allows us to retrieves statistics related to blockchain addresses.
 
@@ -34,18 +35,14 @@ Here is an example that demonstrates how to retrieve statistics about the USDT s
 
 ```
 {
-  ethereum {
-    addressStats(address: {is: "0xdac17f958d2ee523a2206206994597c13d831ec7"}) {
+  ripple {
+    addressStats(address: {is: "rUTEn2jLLv4ESmrUqQmhZfEfDN3LorhgvZ"}) {
       address {
         balance
-        callTxCount
-        calledTxCount
         daysWithReceived
         daysWithSent
         daysWithTransactions
         daysWithTransfers
-        feeAmount
-        otherTxCount
         receiveAmount
         receiveFromCurrencies
         receiveTxCount

@@ -1,4 +1,32 @@
-# Avalanche Coinpath API
+---
+title: "Avalanche Coinpath API"
+---
+
+<head>
+<meta name="title" content="Avalanche Coinpath API"/>
+
+<meta name="description" content="Trace fund flows in AVAX blockchain addresses, monitor transactions, and conduct crypto investigations with depth and currency filters."/>
+
+<meta name="keywords" content="Avalanche address analysis, Avalanche transaction monitoring, Crypto fund tracing, Transaction depth, Avalanche address tracking, Avalanche money flow, AVAX "/>
+
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+
+<meta property="og:title" content="Avalanche Coinpath API" />
+
+<meta property="og:description" content="Trace fund flows in AVAX blockchain addresses, monitor transactions, and conduct crypto investigations with depth and currency filters."/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+
+<meta property="twitter:title" content="Avalanche Coinpath API" />
+
+<meta property="twitter:description" content="Trace fund flows in AVAX blockchain addresses, monitor transactions, and conduct crypto investigations with depth and currency filters." />
+</head>
 
 The Avalanche Coinpath API allows you to get the money flow for an address on the Avalanche blockchain. You can track any levels of fund movement with this API. This is a very useful API for crypto investigations.
 

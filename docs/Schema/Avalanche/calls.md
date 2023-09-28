@@ -1,6 +1,34 @@
-# Avalanche Calls API
+---
+title: "Avalanche Calls API"
+---
 
-Avalanche smartContractCalls API allows you to retrieve smart contract calls made to any smart contract on Avalanche network.Below are the fields in the schema:
+<head>
+<meta name="title" content="Avalanche Calls API"/>
+
+<meta name="description" content="Access Avalanche network's smart contract call data, analyze blockchain transactions, and track caller addresses, methods, and execution details."/>
+
+<meta name="keywords" content="avalanche smart contracts, Avalanche blockchain calls, Smart contract methods, Contract call history, Smart contract arguments, Avalanche API, Avalanche contract interaction, Avalanche contract ABI, ABI"/>
+
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+
+<meta property="og:title" content="Avalanche Calls API" />
+
+<meta property="og:description" content="Access Avalanche network's smart contract call data, analyze blockchain transactions, and track caller addresses, methods, and execution details."/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+
+<meta property="twitter:title" content="Avalanche Calls API" />
+
+<meta property="twitter:description" content="Access Avalanche network's smart contract call data, analyze blockchain transactions, and track caller addresses, methods, and execution details." />
+</head>
+
+Avalanche Smart Contract Calls API allows you to retrieve smart contract calls made to any smart contract on Avalanche network.Below are the fields in the schema:
 
 ```
 query ($network: EthereumNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime) {

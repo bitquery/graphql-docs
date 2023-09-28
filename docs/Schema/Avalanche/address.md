@@ -1,4 +1,32 @@
-# Address
+---
+title: "Avalanche Address API"
+---
+
+<head>
+<meta name="title" content="Avalanche Address API"/>
+
+<meta name="description" content="Avalanche Address API offers detailed data on Avalanche blockchain addresses, including balance, transactions, rewards, and more. Explore the Avalanche network efficiently"/>
+
+<meta name="keywords" content="Avalanche Address API, Avalanche blockchain address, Address information, Address balance, Transaction count, Address rewards, Avalanche address explorer, Avalanche burn address, Avalanche crypto address, Avalanche C-Chain address"/>
+
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+
+<meta property="og:title" content="Avalanche Address API" />
+
+<meta property="og:description" content="Avalanche Address API offers detailed data on Avalanche blockchain addresses, including balance, transactions, rewards, and more. Explore the Avalanche network efficiently"/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+
+<meta property="twitter:title" content="Avalanche Address API" />
+
+<meta property="twitter:description" content="Avalanche Address API offers detailed data on Avalanche blockchain addresses, including balance, transactions, rewards, and more. Explore the Avalanche network efficiently" />
+</head>
 
 Avalanche Address API provides information about an address on the Avalanche blockchain. Below are the fields in the schema:
 

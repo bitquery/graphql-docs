@@ -1,7 +1,34 @@
-# Blocks
+---
+title: "Avalanche Blocks API"
+---
+
+<head>
+<meta name="title" content="Avalanche Blocks API"/>
+
+<meta name="description" content="Avalanche Blocks API: Explore Avalanche chain blocks with timestamp, height, miner address, reward, and more. Get in-depth Avalanche blocks data using Bitquery's API"/>
+
+<meta name="keywords" content="avalanche blocks,avalanche block size, avalanche average block time, avalanche blockchain, Avalanche C-Chain, Avalanche block rewards, Avalanche block explorer, Avalanche consensus protocol"/>
+
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+
+<meta property="og:title" content="Avalanche Blocks API" />
+
+<meta property="og:description" content="Avalanche Blocks API: Explore Avalanche chain blocks with timestamp, height, miner address, reward, and more. Get in-depth Avalanche blocks data using Bitquery's API"/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+
+<meta property="twitter:title" content="Avalanche Blocks API" />
+
+<meta property="twitter:description" content="Avalanche Blocks API: Explore Avalanche chain blocks with timestamp, height, miner address, reward, and more. Get in-depth Avalanche blocks data using Bitquery's API" />
+</head>
 
 Bitquery's Avalanche blocks API provides information on blocks in the Avalanche chain. Below are the fields in the schema:
-
 
 ```
 query ($network: EthereumNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601DateTime, $till: ISO8601DateTime) {

@@ -1,4 +1,32 @@
-# Transactions
+---
+title: "Ethereum Transactions API"
+---
+
+<head>
+<meta name="title" content="Ethereum Transactions API"/>
+
+<meta name="description" content="Explore Ethereum transactions. Get insights into the Ethereum blockchain. Monitor Ethereum network activity effortlessly."/>
+
+<meta name="keywords" content="Ethereum transactions API, ETH transactions API, Ethereum transactions, Ethereum transactions per second, Pending Ethereum transactions, Latest Ethereum transactions, ETH scan, ETH Scan API"/>
+
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+
+<meta property="og:title" content="Ethereum Transactions API" />
+
+<meta property="og:description" content="Explore Ethereum transactions. Get insights into the Ethereum blockchain. Monitor Ethereum network activity effortlessly."/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+
+<meta property="twitter:title" content="Ethereum Transactions API" />
+
+<meta property="twitter:description" content="Explore Ethereum transactions. Get insights into the Ethereum blockchain. Monitor Ethereum network activity effortlessly." />
+</head>
 
 `transactions` type allows you to retrieve all the blockchain transactions from Ethereum Blockchain.
 

@@ -1,24 +1,31 @@
 ---
-title: Ripple Blocks API
+title: "Ripple Blocks API"
 ---
 
 <head>
 <meta name="title" content="Ripple Blocks API"/>
-<meta name="description" content="Get information on blocks on the Ripple blockchain. Also, get information on blocks for tokens or NFTs on the Ripple blockchain."/>
-<meta name="keywords" content="Ripple api, Ripple python api, Ripple nft api, Ripple scan api, Ripple matic api, Ripple api docs, Ripple crypto api, Ripple blockchain api,matic network api"/>
+
+<meta name="description" content="Access real-time Ripple blockchain data with our Blocks API. Monitor blocks, explore the XRP blocks effortlessly"/>
+
+<meta name="keywords" content="Ripple Developer, XRP Developer Ripple Developer Tools,  Ripple API, Ripple Smart Contracts, Ripple Developer Documentation, Ripple Developer Resources, XRP Development Tutorials XRP Explorer, XRP API"/>
+
 <meta name="robots" content="index, follow"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="language" content="English"/>
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
+
 <meta property="og:title" content="Ripple Blocks API" />
-<meta property="og:description" content="Get information on blocks on the Ripple   blockchain. Also, get information on blocks for tokens or NFTs on the Ripple blockchain." />
+
+<meta property="og:description" content="Access real-time Ripple blockchain data with our Blocks API. Monitor blocks, explore the XRP blocks effortlessly"/>
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
+
 <meta property="twitter:title" content="Ripple Blocks API" />
-<meta property="twitter:description" content="Get blocks information on the Ripple blockchain. Also, get blocks information for tokens or NFTs on the Ripple blockchain." />
+
+<meta property="twitter:description" content="Access real-time Ripple blockchain data with our Blocks API. Monitor blocks, explore the XRP blocks effortlessly" />
 </head>
 
 Ripple Blocks API helps you get information on Blocks in the network. Below are the fields in the API: 

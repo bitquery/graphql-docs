@@ -5,7 +5,7 @@ title: Ripple Transfers API
 <head>
 <meta name="title" content="Ripple Transfers API"/>
 <meta name="description" content="Get information on transfer details and wallets on the Ripple blockchain. Also, get information on blocks for tokens or NFTs on the Ripple blockchain."/>
-<meta name="keywords" content="Ripple api, Ripple python api, Ripple nft api, Ripple scan api, Ripple matic api, Ripple api docs, Ripple crypto api, Ripple blockchain api,matic network api"/>
+<meta name="keywords" content="Ripple api, Ripple python api, Ripple nft api, Ripple scan api, Ripple api, Ripple api docs, Ripple crypto api, Ripple blockchain api, ripple network api"/>
 <meta name="robots" content="index, follow"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="language" content="English"/>
