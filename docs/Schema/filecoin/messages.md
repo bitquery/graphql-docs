@@ -1,4 +1,32 @@
-# Messages
+---
+title: "Filecoin Messages API"
+---
+
+<head>
+<meta name="title" content="Filecoin Messages API"/>
+
+<meta name="description" content="Track Filecoin's network state changes with the Messages API. Filter messages by date, sender, receiver, and more"/>
+
+<meta name="keywords" content="filecoin, filecoin explorer, filecoin marketcap, filecoin api, filecoin data"/>
+
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+
+<meta property="og:title" content="Filecoin Messages API" />
+
+<meta property="og:description" content="Track Filecoin's network state changes with the Messages API. Filter messages by date, sender, receiver, and more"/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+
+<meta property="twitter:title" content="Filecoin Messages API" />
+
+<meta property="twitter:description" content="Track Filecoin's network state changes with the Messages API. Filter messages by date, sender, receiver, and more" />
+</head>
 
 According to the [official Filecoin documentation](https://docs.filecoin.io/basics/the-blockchain/blocks-and-tipsets/),
 

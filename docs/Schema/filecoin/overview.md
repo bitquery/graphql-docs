@@ -11,3 +11,8 @@ Bitquery's filecoin data includes an explorer for easy-viewing and extensive API
 
 ![filecoin explorer](/img/ide/filecoin.png)
 
+:::info
+
+Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your API keys, Read _[our guide](/docs/graphql-ide/how-to-start/)_ on getting started.
+
+:::

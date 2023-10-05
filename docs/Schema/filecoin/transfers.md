@@ -1,4 +1,32 @@
-# Transfers
+---
+title: "Filecoin Transfers API"
+---
+
+<head>
+<meta name="title" content="Filecoin Transfers API"/>
+
+<meta name="description" content="Discover Filecoin blockchain transfers with the Transfers API. Filter by date, sender, receiver, and more. Explore now!"/>
+
+<meta name="keywords" content="filecoin, filecoin explorer, filecoin marketcap, filecoin api, filecoin data"/>
+
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+
+<meta property="og:title" content="Filecoin Transfers API" />
+
+<meta property="og:description" content="Discover Filecoin blockchain transfers with the Transfers API. Filter by date, sender, receiver, and more. Explore now!"/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+
+<meta property="twitter:title" content="Filecoin Transfers API" />
+
+<meta property="twitter:description" content="Discover Filecoin blockchain transfers with the Transfers API. Filter by date, sender, receiver, and more. Explore now!" />
+</head>
 
 The Transfers API allows you to query information about transfers on the Filecoin blockchain.
 

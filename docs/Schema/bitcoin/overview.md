@@ -17,4 +17,12 @@ query {
 }
 ```
 
+You can use the `bitcoin` API to retrieve data from the following UTXO blockchains. If you wish to switch your network to a different blockchain, the available options are:
+- `litecoin` 
+- `dogecoin`
+- `dash`
+- `zcash`
+- `bitcash`
+- `bitcoinsv`
+
 Let's dive in and explore the Bitcoin data available through Bitquery API.

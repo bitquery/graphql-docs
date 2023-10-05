@@ -1,4 +1,32 @@
-# Blocks
+---
+title: "Filecoin Blocks API"
+---
+
+<head>
+<meta name="title" content="Filecoin Blocks API"/>
+
+<meta name="description" content="Access Filecoin blocks data with the Blocks API. Query blocks by height, timestamp, and more. Explore now!"/>
+
+<meta name="keywords" content="filecoin, filecoin explorer, filecoin marketcap, filecoin api, filecoin data"/>
+
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+
+<meta property="og:title" content="Filecoin Blocks API" />
+
+<meta property="og:description" content="Access Filecoin blocks data with the Blocks API. Query blocks by height, timestamp, and more. Explore now!"/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+
+<meta property="twitter:title" content="Filecoin Blocks API" />
+
+<meta property="twitter:description" content="Access Filecoin blocks data with the Blocks API. Query blocks by height, timestamp, and more. Explore now!" />
+</head>
 
 The Filecoin Blocks API allows you to query information about blocks on the Filecoin blockchain.
 
