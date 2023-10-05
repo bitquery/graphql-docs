@@ -4,7 +4,8 @@ title: Bitcoin Coinpath API
 
 <head>
 <meta name="title" content="Bitcoin Coinpath API"/>
-<meta name="description" content="Track flow of funds up to any depth on the Bitcoin blockchain. Also, get information on blocks for tokens or NFTs on the Bitcoin blockchain."/>
+<meta name="description" content="Track money flow using Bitquery's coinpath technology with the Bitcoin API, and filter data by date, depth, sender, receiver, and more for detailed information."/>
+
 <meta name="keywords" content="Bitcoin api, Bitcoin python api, Bitcoin nft api, Bitcoin scan api, Bitcoin matic api, Bitcoin api docs, Bitcoin crypto api, Bitcoin blockchain api,matic network api"/>
 <meta name="robots" content="index, follow"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -13,12 +14,12 @@ title: Bitcoin Coinpath API
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Bitcoin Coinpath API" />
-<meta property="og:description" content="Track flow of funds up to any depth on the Bitcoin blockchain. Also, get information on blocks for tokens or NFTs on the Bitcoin blockchain." />
+<meta property="og:description" content="Track money flow using Bitquery's coinpath technology with the Bitcoin API, and filter data by date, depth, sender, receiver, and more for detailed information." />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Bitcoin Coinpath API" />
-<meta property="twitter:description" content="Track flow of funds up to any depth on the Bitcoin blockchain. Also, get blocks information for tokens or NFTs on the Bitcoin blockchain." />
+<meta property="twitter:description" content="Track money flow using Bitquery's coinpath technology with the Bitcoin API, and filter data by date, depth, sender, receiver, and more for detailed information." />
 </head>
 
 The `coinpath` field allows us to retrieve detailed information about money flow using coinpath technology from Bitcoin.

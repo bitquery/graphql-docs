@@ -4,7 +4,7 @@ title: Bitcoin Transactions API
 
 <head>
 <meta name="title" content="Bitcoin Transactions API"/>
-<meta name="description" content="Get information on transaction details and wallets on the Bitcoin blockchain. Also, get information on blocks for tokens or NFTs on the Bitcoin blockchain."/>
+<meta name="description" content="Get information on transaction details and wallets on the Bitcoin blockchain. Also, get information on transactions for tokens on the Bitcoin blockchain."/>
 <meta name="keywords" content="Bitcoin api, Bitcoin python api, Bitcoin nft api, Bitcoin scan api, Bitcoin matic api, Bitcoin api docs, Bitcoin crypto api, Bitcoin blockchain api,matic network api"/>
 <meta name="robots" content="index, follow"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -13,12 +13,12 @@ title: Bitcoin Transactions API
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Bitcoin Transactions API" />
-<meta property="og:description" content="Get information on transaction details and wallets on the Bitcoin blockchain. Also, get information on blocks for tokens or NFTs on the Bitcoin blockchain." />
+<meta property="og:description" content="Get information on transaction details and wallets on the Bitcoin blockchain. Also, get information on transactions for tokens on the Bitcoin blockchain." />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Bitcoin Transactions API" />
-<meta property="twitter:description" content="Get information on transaction details and wallets on Bitcoin blockchain. Also, get blocks information for tokens or NFTs on the Bitcoin blockchain." />
+<meta property="twitter:description" content="Get information on transaction details and wallets on Bitcoin blockchain. Also, get transactions information for tokens on the Bitcoin blockchain." />
 </head>
 
 The `transactions` allows us to fetch details about transactions from Bitcoins network.
