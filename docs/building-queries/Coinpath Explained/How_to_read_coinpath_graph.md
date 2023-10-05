@@ -34,3 +34,146 @@ Take a look at this image below
   - For simplicity, we have set both inbound and outbound levels to 1, which means we are tracking only the immediate transfers of USDT
   - The address has 3 inbound transfers of values 9.99972k USDT, 21.9968k USDT and 19.4366k USDT
   - There is only 1 outbound transfer of 51.4306k USDT
+
+  ## Understanding Transaction and Transactions in Coinpath
+
+  The `transaction` and `transactions` are two different dimensions used to group results differently. We will look at one example for each case and see how it differs.
+
+  Take the below [example](https://ide.bitquery.io/Group-coinpath-by-transacton):
+
+  ```
+  query ($network: EthereumNetwork!, $address: String!, $inboundDepth: Int!,$limit: Int!, $currency: String!, $from: ISO8601DateTime, $till: ISO8601DateTime) {
+  ethereum(network: $network) {
+    inbound: coinpath(
+      initialAddress: {is: $address}
+      currency: {is: $currency}
+      depth: {lteq: $inboundDepth}
+      options: {direction: inbound, asc: "depth", desc: "amount", limitBy: {each: "depth", limit: $limit}}
+      date: {since: $from, till: $till}
+    ) {
+      transaction {
+        hash
+        time {
+          time
+        }
+        value
+      }
+
+      sender {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      receiver {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      amount
+      currency {
+        symbol
+      }
+      depth
+      count
+    }
+  }
+  }
+
+  {
+  "inboundDepth": 1,
+  "outboundDepth": 1,
+  "limit": 10,
+  "offset": 0,
+  "network": "ethereum",
+  "address": "0xbd3afb0bb76683ecb4225f9dbc91f998713c3b01",
+  "currency": "ETH",
+  "from": "2023-09-20",
+  "till": "2023-09-27T23:59:59",
+  "dateFormat": "%Y-%m-%d"
+  }
+
+  ```
+
+  Here the `transaction{}` field will return the full transaction object for each transaction, including the sender, receiver details. So the results are grouped by individual transactions.
+
+Now, take this [query](https://ide.bitquery.io/Group-coinpath-by-sender--receiver),
+
+```
+query ($network: EthereumNetwork!, $address: String!, $inboundDepth: Int!,$limit: Int!, $currency: String!, $from: ISO8601DateTime, $till: ISO8601DateTime) {
+  ethereum(network: $network) {
+    inbound: coinpath(
+      initialAddress: {is: $address}
+      currency: {is: $currency}
+      depth: {lteq: $inboundDepth}
+      options: {direction: inbound, asc: "depth", desc: "amount", limitBy: {each: "depth", limit: $limit}}
+      date: {since: $from, till: $till}
+    ) {
+      transactions {
+        amount
+        height
+        timestamp
+        txHash
+        txValue
+      }
+
+      sender {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      receiver {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      amount
+      currency {
+        symbol
+      }
+      depth
+      count
+    }
+  }
+}
+{
+  "inboundDepth": 1,
+  "outboundDepth": 1,
+  "limit": 10,
+  "offset": 0,
+  "network": "ethereum",
+  "address": "0xbd3afb0bb76683ecb4225f9dbc91f998713c3b01",
+  "currency": "ETH",
+  "from": "2023-09-20",
+  "till": "2023-09-27T23:59:59",
+  "dateFormat": "%Y-%m-%d"
+}
+
+```
+
+Here, the results uses the `sender.address` and `receiver.address` fields to group the results. This means that the query will return a list of all transactions sent by and received by each address.
+
+The choice of which dimension to use will depend on your specific needs. If you need detailed information about each transaction, then you should use the `transaction` dimension. If you need to identify the most active senders and receivers, or track the flow of funds between different addresses, then you should use the `transactions` dimension.
