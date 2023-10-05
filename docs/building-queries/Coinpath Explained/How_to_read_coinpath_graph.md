@@ -15,7 +15,7 @@ Taking the Money Flow as a DAG Multigraph(directed acyclic multi graph)
 - **Edge labels:** Edges in a DAG Multigraph can be labeled with additional information. In the context of Money Flow, edges are labeled with the amount of money transferred, the timestamp of the transaction, and other relevant information.
 
 Take a look at this image below
-[Example](/img/diagrams/DAG.png)
+![Example](/img/diagrams/DAG.png)
 
 - Address 1 on the diagram is the originating address,
 - It has 2 outbound transfers to Addresses 2 and one transfer to address 3.
@@ -25,11 +25,11 @@ Take a look at this image below
 - Note, that Address 2 is present in money flow graph twice,
   on level 1 and level 3.
 
-  ### Reading a Coinpath Graph Example
+### Reading a Coinpath Graph Example
 
   Let's take this graph for a wallet [address](https://explorer.bitquery.io/ethereum/address/0xa3612cd978b28a36a906ccebfe0c48c2b170b168/graph)
 
-  [graph](/img/diagrams/moneyflow.png)
+  ![graph](/img/diagrams/moneyflow.png)
 
   - For simplicity, we have set both inbound and outbound levels to 1, which means we are tracking only the immediate transfers of USDT
   - The address has 3 inbound transfers of values 9.99972k USDT, 21.9968k USDT and 19.4366k USDT
@@ -177,4 +177,3 @@ query ($network: EthereumNetwork!, $address: String!, $inboundDepth: Int!,$limit
 Here, the results uses the `sender.address` and `receiver.address` fields to group the results. This means that the query will return a list of all transactions sent by and received by each address.
 
 The choice of which dimension to use will depend on your specific needs. If you need detailed information about each transaction, then you should use the `transaction` dimension. If you need to identify the most active senders and receivers, or track the flow of funds between different addresses, then you should use the `transactions` dimension.
-
