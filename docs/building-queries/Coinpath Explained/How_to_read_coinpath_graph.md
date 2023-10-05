@@ -177,3 +177,4 @@ query ($network: EthereumNetwork!, $address: String!, $inboundDepth: Int!,$limit
 Here, the results uses the `sender.address` and `receiver.address` fields to group the results. This means that the query will return a list of all transactions sent by and received by each address.
 
 The choice of which dimension to use will depend on your specific needs. If you need detailed information about each transaction, then you should use the `transaction` dimension. If you need to identify the most active senders and receivers, or track the flow of funds between different addresses, then you should use the `transactions` dimension.
+
