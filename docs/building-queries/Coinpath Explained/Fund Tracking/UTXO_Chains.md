@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Coinpath for UTXO Networks
 
-UTXOs are the basic unit of value on UTXO chains, and they represent the amount of cryptocurrency that can be spent in a single transaction.
+UTXOs are the basic unit of value on UTXO chains, and they represent the amount of tokens that can be spent in a single transaction.
 
 Coinpath also uses a proportional input-output amount attribution formula to split the amounts between inputs and outputs in a transaction. This formula takes into account the amount of each input and output, as well as the total amount of all inputs.
 
