@@ -84,6 +84,17 @@ query ($from: ISO8601DateTime!, $to: ISO8601DateTime!, $limit: Int) {
 
 The priceAsymmetry metric is being used to filter outliers of anomalies. This means that trades that have a price asymmetry that is greater than 1 will be excluded from the results. This helps to ensure that the results are more accurate and reliable, as it removes any trades that may have been caused by anomalies.
 
+**Calculation:**
+
+The price asymmetry metric is calculated as follows:
+
+```
+priceAsymmetry = abs(val1 - val2) * 2 / (val1 + val2)
+
+```
+
+where:
+
 priceAsymmetry measures how close the trade’s prices are to each other. If the price asymmetry is less than 0.01, then the difference between the prices is less than 1%.
 However, the value of 0.01 might be too small and could omit a lot of trades. To improve your anomaly filtering mechanism, , add another filter like `tradeAmountUsd: {gt: 100}` filter to only include trades with a trade amount of more than 100 USD.
 
@@ -126,7 +137,7 @@ query ($baseAddress: String, $interval: Int) {
 
 `Market capitalization = Latest token price * Total supply`
 
-Above, we have already shown how to get the USD price of an asset; now, let's get the supply. 
+Above, we have already shown how to get the USD price of an asset; now, let's get the supply.
 
 **Query to get supply**
 
@@ -135,7 +146,6 @@ Above, we have already shown how to get the USD price of an asset; now, let's ge
 In the following query, we will get the initial supply from the contract attributed and then use transfer API to get mint and burns by checking how many tokens were sent or received from the dead address.
 
 [Open this query on IDE](https://ide.bitquery.io/Supply-of-Drip-token).
-
 
 ```
 {
