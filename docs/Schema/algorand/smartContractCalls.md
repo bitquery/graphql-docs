@@ -1,4 +1,11 @@
-# Smart Contract Calls
+---
+sidebar_position: 1
+title: Algorand Smart Contract Calls API
+description: Explore Algorand smart contract with Bitquery's Algorand Smart Contract Calls API. Try now for free! 
+image: /img/social-preview/algorand-social.png
+keywords: [algorand, algorand crypto, algorand explorer, algorand nft, algorand stats, algorand tvl, algorand staking, algorand block explorer]
+---
+
 
 The `smartContractCalls` field allows you to retrieve smart contract calls made to any smart contract on Algorand blockchain.
 

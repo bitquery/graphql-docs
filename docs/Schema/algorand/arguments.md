@@ -1,5 +1,9 @@
-
-# Arguments
+---
+title: Algorand Arguments API
+description: Explore algorand smart contract call and event arguments using Algorand Arguments API.
+image: /img/social-preview/algorand-social.png
+keywords: [algorand, algorand crypto, algorand explorer, algorand nft, algorand stats, algorand tvl, algorand staking, algorand block explorer]
+---
 
 The `arguments` field allows us to fetch information about arguments of smart contract calls and events.
 

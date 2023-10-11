@@ -1,7 +1,11 @@
+---
+title: Algorand Coinpath API
+description: Explore money flow in the Algorand blockchain with the Coinpath API, offering detailed insights and advanced filters like currency, date, and more.
+image: /img/social-preview/algorand-social.png
+keywords: [algorand, algorand crypto, algorand explorer, algorand nft, algorand stats, algorand tvl, algorand staking, algorand block explorer]
+---
 
-# Coinpath
-
-The `coinpath` field allows us to retrieve detailed information about money flow using coinpath technology from Algorand.
+The Coinpath API allows us to retrieve detailed information about money flow using coinpath technology from Algorand.
 
 <details>
 <summary>Filtering Options</summary>

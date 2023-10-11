@@ -1,4 +1,9 @@
-# Blocks
+---
+title: Algorand Blocks API
+description: Easily get Algorand block details with the Algorand Blocks API, with in-depth data on block height, timestamp, and more.
+image: /img/social-preview/algorand-social.png
+keywords: [algorand, algorand crypto, algorand explorer, algorand nft, algorand stats, algorand tvl, algorand staking, algorand block explorer]
+---
 
 The `blocks` field allows us to retrieve details about blocks from Algorand blockchain.
 

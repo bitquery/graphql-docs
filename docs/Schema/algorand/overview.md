@@ -1,8 +1,10 @@
 ---
 sidebar_position: 1
+title: Algorand API Overview
+description: Explore Algorand with Bitquery's Algorand API. Get data for blocks, transactions, addresses and much more. 
+image: /img/social-preview/algorand-social.png
+keywords: [algorand, algorand crypto, algorand explorer, algorand nft, algorand stats, algorand tvl, algorand staking, algorand block explorer]
 ---
-
-# Overview
 
 Bitquery API offers access to indexed data from the Algorand blockchain.
 

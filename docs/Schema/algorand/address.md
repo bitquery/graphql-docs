@@ -1,4 +1,9 @@
-# Address
+---
+title: Algorand Address API
+description: Get in-depth information about Algorand addresses with the Algorand Address API.
+image: /img/social-preview/algorand-social.png
+keywords: [algorand, algorand explorer, algorand nft, algorand stats]
+---
 
 The `address` field allows us to fetch information about a specific address or a list of addresses from the Algorand blockchain.
 

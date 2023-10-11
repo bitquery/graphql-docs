@@ -1,4 +1,10 @@
-# Transfers
+---
+sidebar_position: 1
+title: Algorand Transfers API
+description: Discover Algorand transfer details, including sender, recipient, amount, fee, and timestamp, using the Algorand Transfers API. Explore now! 
+image: /img/social-preview/algorand-social.png
+keywords: [algorand, algorand crypto, algorand explorer, algorand nft, algorand stats, algorand tvl, algorand staking, algorand block explorer]
+---
 
 The `transfers` field allows us to fetch details about token transfers from the Algorand blockchain.
 

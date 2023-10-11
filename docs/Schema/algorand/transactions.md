@@ -1,4 +1,10 @@
-# Transactions
+---
+sidebar_position: 1
+title: Algorand Transactions API
+description: Discover Algorand transaction details, including sender, recipient, amount, fee, and timestamp, using the Algorand Transactions API. Explore now! 
+image: /img/social-preview/algorand-social.png
+keywords: [algorand, algorand crypto, algorand explorer, algorand nft, algorand stats, algorand tvl, algorand staking, algorand block explorer]
+---
 
 The Algorand Transactions API can be used to get information about transactions, such as the sender, the recipient, the amount, the fee, and the timestamp. Here are the fields in the schema.
 
