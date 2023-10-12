@@ -4,7 +4,7 @@ This tutorial will help you build a TradingView chart app with blockchain data f
 
 ### Price Index for DEX Tokens
 
-The tutorial uses the token ADVT, which is not traded against USDT. As a result, we obtain the WETH<>ADVT price and use it to calculate the token's price in USDT. However, if your chosen token is traded against USDT, you can accomplish this in a single query.
+The tutorial uses the token ADVT, which is not traded against USDT. As a result, we obtain the WETH - ADVT price and use it to calculate the token's price in USDT. However, if your chosen token is traded against USDT, you can accomplish this in a single query.
 
 Query 1: Get ADVT price against WETH
 
@@ -96,7 +96,7 @@ const [WETHprice, setWETHprice] = useState(null);
 
 We use two functions to fetch the data.
 
-The **fetchMyQueryData** function uses the axios library to fetch the WETH<>USDT price from the Bitquery API.
+The **fetchMyQueryData** function uses the axios library to fetch the WETH -USDT price from the Bitquery API.
 
 ```react
 const fetchMyQueryData = async () => {
@@ -149,7 +149,7 @@ const fetchMyQueryData = async () => {
   };
 ```
 
-The **fetchMyQueryData** function is called immediately after the component is mounted. This ensures that the WETH<>USDT price is fetched before the chart is created.
+The **fetchMyQueryData** function is called immediately after the component is mounted. This ensures that the WETH- USDT price is fetched before the chart is created.
 
 The useEffect hook is used to call the **fetchData** function whenever the tradingData or WETHprice state variables change. This ensures that the chart is updated whenever the trading data changes.
 
@@ -206,7 +206,7 @@ Get your API here https://account.bitquery.io/user/api_key
 
 #### Calculate token prices
 
-Add another useEffect hook to calculate the prices of the DEX tokens based on the WETH<>USDT price and the retrieved trading data:
+Add another useEffect hook to calculate the prices of the DEX tokens based on the WETH-USDT price and the retrieved trading data:
 
 ```js
 useEffect(() => {
