@@ -105,10 +105,10 @@ The following are available fields for the `transactions`:
 -   `inputCountBigInt`: returns input count as `BigInt`
 -   `inputValue`: returns total input value of transactions
 -   `inputValueDecimal`: returns input value as decimal
--   `maximum`: returns maximum for selected [measurable field of Dash transaction](/v1/docs/graphql-reference/enums/Dash-transactions-measureable)
+-   `maximum`: returns maximum for selected measurable fields of Dash transactions
 -   `minedValue`: returns total mined value of transaction
 -   `minedValueDecimal`: returns mined value as decimal
--   `minimum`: returns minimum for selected [measurable field of Dash transaction](/v1/docs/graphql-reference/enums/Dash-transactions-measureable)
+-   `minimum`: returns minimum for selected measurable fields of Dash transactions
 -   `outputCount`: returns total output count of transaction
 -   `outputCountBigInt`: returns output count as `BigInt`
 -   `outputValue`: returns total output value of transaction

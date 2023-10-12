@@ -82,8 +82,8 @@ The following fields are available for the `blocks`:
 - `difficulty`: returns difficulty
 - `expression`: performs arithematic operation on fields in the query and returns value of the operation
 - `height`: returns height of the block
-- `maximum`: returns maximum of selected [measurable fields](/v1/docs/graphql-reference/enums/Dash-blocks-measureable) of Dash Blocks
+- `maximum`: returns maximum of selected measurable fields of Dash blocks
 - `medianTime`: returns median timestamp for block
-- `minimum`: returns maximum of selected [measurable fields](/v1/docs/graphql-reference/enums/Dash-blocks-measureable) of Dash Blocks
+- `minimum`: returns maximum of selected measurable fields of Dash blocks
 - `timestamp`: returns block timestamp
 - `transactionCount`: returns number of transactions in block

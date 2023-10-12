@@ -91,8 +91,8 @@ The following are available fields for the `outputs`:
 -   `countBigInt`: returns count as BigInt
 -   `date`: returns date of transaction
 -   `expression`: performs arithematic operation on fields in the query and returns value of the operation
--   `maximum`: returns maximum for selected [measurable field of Dogecoin outputs](/v1/docs/graphql-reference/enums/Dogecoin-outputs-measureable)
--   `minimum`: returns minimum for selected [measurable field of Dogecoin outputs](/v1/docs/graphql-reference/enums/Dogecoin-outputs-measureable)
+-   `maximum`: returns maximum for selected measurable fields of Dogecoin outputs
+-   `minimum`: returns minimum for selected measurable fields of Dogecoin outputs
 -   `outputAddress`: returns output address
 -   `outptuDirection`: returns guessed direction of output
 -   `outputIndex`: returns index of output in transaction
