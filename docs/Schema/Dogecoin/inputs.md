@@ -89,8 +89,8 @@ The following are available fields for the `inputs`:
 -   `inputIndex`: returns input index
 -   `inputScript`: returns input script
 -   `inputScriptType`: returns input script types and attributes
--   `maximum`: returns maximum for [selected measurable fields of Dogecoin inputs](/v1/docs/graphql-reference/enums/Dogecoin-inputs-measureable)
--   `minimum`: returns minimum for [selected measurable fields of Dogecoin inputs](/v1/docs/graphql-reference/enums/Dogecoin-inputs-measureable)
+-   `maximum`: returns maximum for measurable fields of Dogecoin inputs
+-   `minimum`: returns minimum for measurable fields of Dogecoin inputs
 -   `outputTransaction`: returns output transaction for this input
 -   `transaction`: returns information about transaction of this input
 -   `value`: returns input value
