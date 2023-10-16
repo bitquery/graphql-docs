@@ -226,3 +226,42 @@ query get_per_day_transaction_count_of_solana_for_last_ten_days{
   }
 }
 ```
+
+## Get Cronos-Bridged and Crypto.org Transactions
+The below query gets complete information on Cronos or Crypto.org transaction using the `hash`.
+You can find the query [here](https://ide.bitquery.io/Cronos-Bridged-Tx-Info)
+
+```
+query ($network: CosmosNetwork!, $hash: String!) {
+  cosmos(network: $network) {
+    transactions(hash: {is: $hash}) {
+      block {
+        height
+        timestamp {
+          time
+        }
+      }
+      code
+      fee
+      feeCurrency {
+        name
+        symbol
+      }
+      gasUsed
+      gasWanted
+      index
+      signer {
+        address
+        annotation
+      }
+      type
+      success
+      memo
+      rawTx
+    }
+  }
+}
+
+```
+
+The `rawTx` field contains complete information encoded including Source Channel,Receiver Address,Memo,auth_info,signer and so on.
