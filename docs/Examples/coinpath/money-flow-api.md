@@ -42,11 +42,15 @@ In 2019, Upbit exchange was hacked and tweeted out the [hackers address](https:/
 {
   ethereum(network: ethereum) {
     outbound: coinpath(
-      initialAddress: {is: "0xa09871aeadf4994ca12f5c0b6056bbd1d343c029"}
-      currency: {is: "ETH"}
-      depth: {lteq: 2}
-      options: {asc: "depth", desc: "amount", limitBy: {each: "depth", limit: 10}}
-      date: {since: "2018-03-01", till: "2021-01-31"}
+      initialAddress: { is: "0xa09871aeadf4994ca12f5c0b6056bbd1d343c029" }
+      currency: { is: "ETH" }
+      depth: { lteq: 2 }
+      options: {
+        asc: "depth"
+        desc: "amount"
+        limitBy: { each: "depth", limit: 10 }
+      }
+      date: { since: "2018-03-01", till: "2021-01-31" }
     ) {
       sender {
         address
@@ -90,7 +94,6 @@ In 2019, Upbit exchange was hacked and tweeted out the [hackers address](https:/
     }
   }
 }
-
 ```
 
 ## Source of funds from an address
@@ -103,11 +106,16 @@ To check the source of funds, you can use the following API. You can increase de
 {
   ethereum(network: ethereum) {
     inbound: coinpath(
-      initialAddress: {is: "0xa09871aeadf4994ca12f5c0b6056bbd1d343c029"}
-      currency: {is: "ETH"}
-      depth: {lteq: 2}
-      options: {direction: inbound, asc: "depth", desc: "amount", limitBy: {each: "depth", limit: 10}}
-      date: {since: "2018-03-01", till: "2021-01-31"}
+      initialAddress: { is: "0xa09871aeadf4994ca12f5c0b6056bbd1d343c029" }
+      currency: { is: "ETH" }
+      depth: { lteq: 2 }
+      options: {
+        direction: inbound
+        asc: "depth"
+        desc: "amount"
+        limitBy: { each: "depth", limit: 10 }
+      }
+      date: { since: "2018-03-01", till: "2021-01-31" }
     ) {
       sender {
         address
@@ -163,12 +171,17 @@ Using combination of above two queries you can check if two address ever transac
 {
   ethereum(network: ethereum) {
     inbound: coinpath(
-      initialAddress: {is: "0xa09871aeadf4994ca12f5c0b6056bbd1d343c029"}
-      sender: {is: "0xb3a9b79f4d5dc2cdcdc00da22869502cbf65a0a5"}
-      currency: {is: "ETH"}
-      depth: {lteq: 1}
-      options: {direction: inbound, asc: "depth", desc: "amount", limitBy: {each: "depth", limit: 10}}
-      date: {since: "2019-11-20", till: "2019-11-30"}
+      initialAddress: { is: "0xa09871aeadf4994ca12f5c0b6056bbd1d343c029" }
+      sender: { is: "0xb3a9b79f4d5dc2cdcdc00da22869502cbf65a0a5" }
+      currency: { is: "ETH" }
+      depth: { lteq: 1 }
+      options: {
+        direction: inbound
+        asc: "depth"
+        desc: "amount"
+        limitBy: { each: "depth", limit: 10 }
+      }
+      date: { since: "2019-11-20", till: "2019-11-30" }
     ) {
       sender {
         address
@@ -196,13 +209,13 @@ Using combination of above two queries you can check if two address ever transac
       currency {
         symbol
       }
-      transaction{
+      transaction {
         value
         hash
       }
-      block{
+      block {
         height
-        timestamp{
+        timestamp {
           time(format: "%y-%m-%d")
         }
       }
@@ -210,12 +223,16 @@ Using combination of above two queries you can check if two address ever transac
       count
     }
     outbound: coinpath(
-      initialAddress: {is: "0xa09871aeadf4994ca12f5c0b6056bbd1d343c029"}
-      receiver: {is: "0xb3a9b79f4d5dc2cdcdc00da22869502cbf65a0a5"}
-      currency: {is: "ETH"}
-      depth: {lteq: 2}
-      options: {asc: "depth", desc: "amount", limitBy: {each: "depth", limit: 10}}
-      date: {since: "2019-11-20", till: "2019-11-30"}
+      initialAddress: { is: "0xa09871aeadf4994ca12f5c0b6056bbd1d343c029" }
+      receiver: { is: "0xb3a9b79f4d5dc2cdcdc00da22869502cbf65a0a5" }
+      currency: { is: "ETH" }
+      depth: { lteq: 2 }
+      options: {
+        asc: "depth"
+        desc: "amount"
+        limitBy: { each: "depth", limit: 10 }
+      }
+      date: { since: "2019-11-20", till: "2019-11-30" }
     ) {
       sender {
         address
@@ -372,3 +389,66 @@ query ($network: CardanoNetwork!, $address: String!, $from: ISO8601DateTime, $ti
 
 ```
 
+## Get Transactions from Multiple Addresses to a Final Destination Address
+
+You can get the trasactions to a final destination addresses from an initial addresses no matter how many hops happen.
+Below is an example on how to use it. You can access the query [here](https://ide.bitquery.io/Ethereum-inbound-coinpath-from-one-address-to-another)
+
+```
+query ($network: EthereumNetwork!, $address: String!, $inboundDepth: Int!, $limit: Int!, $currency: String!, $from: ISO8601DateTime, $till: ISO8601DateTime) {
+  ethereum(network: $network) {
+    inbound: coinpath(
+      initialAddress: {is: $address}
+      currency: {is: $currency}
+      depth: {lteq: $inboundDepth}
+      options: {direction: inbound, asc: "depth", desc: "amount", limitBy: {each: "depth", limit: $limit}}
+      date: {since: $from, till: $till}
+      finalAddress: {is: "0xa910f92acdaf488fa6ef02174fb86208ad7722ba"}
+    ) {
+      sender {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      receiver {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      amount
+      currency {
+        symbol
+      }
+      depth
+      count
+    }
+  }
+}
+{
+  "inboundDepth": 3,
+  "limit": 10,
+  "offset": 0,
+  "network": "ethereum",
+  "address": "0xbfba2df39ae248e3dfdefa7a92ac3df9be260bf7",
+  "currency": "ETH",
+  "from": "2018-10-01",
+  "till": "2023-10-11T23:59:59",
+  "dateFormat": "%Y-%m"
+}
+```
+
+This field can be used to filter the results of the query to only include coinpaths that end at a specific address. For example, the query in the example above will only return coinpaths that end at the address `0xa910f92acdaf488fa6ef02174fb86208ad7722ba`.
+
+The `finalAddress` field can also be used to calculate the total amount of funds that were sent to a specific address. To do this, you can use the count field to count the number of coinpaths that end at the address, and the amount field to sum the amount of funds that were sent in each coinpath.
