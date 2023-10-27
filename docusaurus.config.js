@@ -12,7 +12,7 @@ const config = {
     "Real time and historical data from 40+ blockchains",
   favicon: "img/favicon.ico",
   // ...
-  trailingSlash: true,
+  trailingSlash: false,
   // ...
   // Set the production url of your site here
   url: "https://docs.bitquery.io",
