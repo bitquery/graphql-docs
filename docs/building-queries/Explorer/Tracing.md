@@ -1,0 +1,16 @@
+---
+sidebar_position: 2
+---
+
+# Tracing Transactions on Explorer
+
+There is a Tracing tab added to every transaction in ETH, BSC, and Arbitrum. 
+
+**Usage:**
+
+1.  Go to the Explorer and select a transaction
+2.  Click on the Tracing tab
+3.  Press Expand All to view the entire tree of traces . You can also see corresponding icons (money, transfer, return, etc.) displayed next to each trace item.
+
+![tracing](/img/tracing.png)
+
