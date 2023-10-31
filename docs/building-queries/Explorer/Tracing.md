@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Tracing Transactions on Explorer
 
-There is a Tracing tab added to every transaction in ETH, BSC, and Arbitrum. 
+There is a `Tracing` tab available for every transaction in ETH, BSC, and Arbitrum. 
 
 **Usage:**
 
