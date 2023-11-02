@@ -24,4 +24,4 @@ Below the Transaction trace, you will see a `Money Flow Diagram` indicating the 
 ![flow](/img/flow.png)
 
 
-If you click on `Get History API` at the bottom you will be taken to the IDE with the corresponsing [Events API](https://docs.bitquery.io/docs/examples/events/events_api/) query prewritten.
+If you click on `Get History API` at the bottom you will be taken to the IDE with the corresponsing [Events API](https://docs.bitquery.io/docs/examples/events/events_api/) query prewritten. The Tracing feature can be used to investigate a wide range of financial crimes and identify bottlenecks in the financial system.
