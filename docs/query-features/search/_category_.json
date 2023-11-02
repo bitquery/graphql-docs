@@ -1,0 +1,9 @@
+{
+    "label": "Search",
+    "position": 10,
+    "link": {
+        "type": "generated-index",
+        "description": "Search"
+    }
+    
+}
