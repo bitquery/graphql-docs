@@ -20,3 +20,5 @@ There is a `Tracing` tab available for every transaction in ETH, BSC, and Arbitr
 
 Below the Transaction trace, you will see a `Money Flow Diagram` indicating the flow of funds (tokens) from one address to another that occured in that transaction.
 
+
+![flow](/img/flow.png)
