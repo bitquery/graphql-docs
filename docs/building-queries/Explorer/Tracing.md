@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Tracing Transactions on Explorer
 
-There is a `Tracing` tab available for every transaction in ETH, BSC, and Arbitrum.
+There is a `Tracing` tab available for every transaction in ETH, BSC, and Arbitrum. This feature shows the entire tree of traces, with icons next to each trace item to indicate what type of transaction it was, making any complicated fund flow easy to visualize.
 
 **Usage:**
 
