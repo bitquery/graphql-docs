@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Tracing Transactions on Explorer
 
-There is a `Tracing` tab available for every transaction in ETH, BSC, and Arbitrum. This feature shows the entire tree of traces, with icons next to each trace item to indicate what type of transaction it was, making any complicated fund flow easy to visualize.
+There is a `Tracing` tab available for every transaction in ETH, BSC, and Arbitrum. This feature shows the entire tree of traces, with icons next to each trace item to indicate what type of transaction occured.
 
 **Usage:**
 
@@ -18,7 +18,7 @@ There is a `Tracing` tab available for every transaction in ETH, BSC, and Arbitr
 
 ## Money Flow Trace
 
-Below the Transaction trace, you will see a `Money Flow Diagram` indicating the flow of funds (tokens) from one address to another that occured in that transaction.
+Below the Transaction trace, you will see a `Money Flow Diagram` indicating the flow of funds (tokens) from one address to another that occured in that transaction, making any complicated fund movements easy to visualize.
 
 
 ![flow](/img/flow.png)
