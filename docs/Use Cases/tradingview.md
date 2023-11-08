@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Build a tradingview chart app for blockchain data
 
 This tutorial will help you build a TradingView chart app with blockchain data from Bitquery.
