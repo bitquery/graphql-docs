@@ -120,7 +120,6 @@ const config = {
       // Replace with your project's social card
       image: "img/heroImage4.png",
       navbar: {
-        title: "Blockchain Data Platform",
         logo: {
           alt: "Bitquery.io",
           src: "img/logoBitqueryDark.png",
@@ -149,6 +148,11 @@ const config = {
             label: "Book Demo",
             position: "left",
           },
+          {
+            to: "https://ide.bitquery.io",
+            label: "Get your free API key",
+            position: "right"
+          }
         ],
       },
       footer: {
