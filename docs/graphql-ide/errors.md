@@ -16,7 +16,7 @@ This error typically arises due to incorrect query construction involving limits
 
 #### Resolution Steps:
 
-- **Review Query Parameters:** Ensure that the query adheres to the specified limits, sorting criteria, and filters as required in a standard [query](/docs/start/first-query.md).
+- **Review Query Parameters:** Ensure that the query adheres to the specified limits, sorting criteria, and filters as required in a standard [query](/docs/start/first-query).
 - **Validate Syntax:** Double-check the syntax of the query to identify any mistakes or discrepancies.
 - **Consult Documentation:** Refer to Bitquery documentation for similar examples.
 - **Escalation:** If the issue persists or requires further assistance, consider filing a detailed ticket on [Bitquery Support](https://support.bitquery.io/) for help and resolution.
