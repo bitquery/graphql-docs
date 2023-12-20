@@ -16,7 +16,7 @@ This error typically arises due to incorrect query construction involving limits
 
 #### Resolution Steps:
 
-- **Review Query Parameters:** Ensure that the query adheres to the specified limits, sorting criteria, and filters as required in a standard [query](/docs/start/first-query).
+- **Review Query Parameters:** Ensure that the query adheres to the specified limits, sorting criteria, and filters as required in a standard [query](/docs/graphql-ide/how-to-start).
 - **Validate Syntax:** Double-check the syntax of the query to identify any mistakes or discrepancies.
 - **Consult Documentation:** Refer to Bitquery documentation for similar examples.
 - **Escalation:** If the issue persists or requires further assistance, consider filing a detailed ticket on [Bitquery Support](https://support.bitquery.io/) for help and resolution.
@@ -51,7 +51,7 @@ This is an issue with indexing the token, please create a ticket at [support.bit
 
 #### Resolution Steps:
 
-This error occurs due to excessive data retrieved in a single query. Limit results using 'limit' option or narrow the query range using 'since' and 'till' on `time` field. Read more on limits [here](/docs/graphql/limits) and on filters [here](/docs/graphql/filters).
+This error occurs due to excessive data retrieved in a single query. Limit results using 'limit' option or narrow the query range using 'since' and 'till' on `time` field. Read more on limits [here](/docs/query-features/filtering/limits) and on filters [here](/docs/query-features/filtering/options).
 
 ### Too many simultaneous queries
 
