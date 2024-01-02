@@ -16,7 +16,7 @@ In this section we see how to use Bitquery APIs to get information across multip
 
 Retrieve address balances across multiple blockchains in one query.
 
-[Query Example](https://ide.bitquery.io/Query-to-check-balance-on-multiple-blockchains_3)
+[You can run the query here](https://ide.bitquery.io/Query-to-check-balance-on-multiple-blockchains_3)
 
 ```
 query ($address: String!) {
@@ -456,7 +456,7 @@ query ($address: String!) {
 
 Gain in-depth insights into token trades spanning various blockchains.
 
--   [Query Example](https://ide.bitquery.io/Cross-chain-Trades)
+  [Link to query](https://ide.bitquery.io/Cross-chain-Trades)
     
 ```
 query ($limit: Int!, $offset: Int!, $from: ISO8601DateTime, $till: ISO8601DateTime, $address: String!) {
