@@ -1,4 +1,4 @@
-# Cross-Chain Capabilities with Bitquery's API
+# Cross-Chain API
 
 In this section we see how to use Bitquery APIs to get information across multiple chains in one go.
 
@@ -14,7 +14,7 @@ In this section we see how to use Bitquery APIs to get information across multip
 
 ## Balance of a Wallet
 
-Retrieve address balances across multiple blockchains in one query.
+Use this query to retrieve address balances across multiple blockchains in one query. Set the wallet address in the `address` filter.
 
 [You can run the query here](https://ide.bitquery.io/Query-to-check-balance-on-multiple-blockchains_3)
 
@@ -237,7 +237,7 @@ query ($address: String!) {
 
 ## Token Transfers Tracking 
 
-Monitor token movements across different chains for any address.
+With this query you can track token transfers across different chains for any address.  Set the wallet whose movements you want to track in the `address` filter.  Using the  `any` clause, we get transfers were the address was either a sender or reciever.
 
 [You can find the query here](https://ide.bitquery.io/Cross-chain-transfers)
 
@@ -454,7 +454,7 @@ query ($address: String!) {
 
 ## Cross-Chain Trade Insights
 
-Gain in-depth insights into token trades spanning various blockchains.
+The below query gives you insights into token trades spanning various blockchains. Simply set the wallet address in the  `address` parameter. Adjust the `from ` and `to` periods accordingly.
 
   [Link to query](https://ide.bitquery.io/Cross-chain-Trades)
     
@@ -586,9 +586,9 @@ fragment TradeInfo on EthereumDexTrades {
 
 ## Universal Token Tracking
 
-Keep track of tokens across diverse blockchain networks.
+The below query gives you stats on tokens across chains including sender/receiver count, first and last date of token transfers and the average amount transferred. 
 
--   [Query Example](https://ide.bitquery.io/multi-chain-token-tracing)
+[You can run the query here](https://ide.bitquery.io/multi-chain-token-tracing)
     
 
 ```
