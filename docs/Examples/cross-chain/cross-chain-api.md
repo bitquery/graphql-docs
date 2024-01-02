@@ -450,6 +450,7 @@ query ($address: String!) {
 }
 ```
     
+<a name="cross-chain-trade"></a>
 
 ## Cross-Chain Trade Insights
 
@@ -581,6 +582,8 @@ fragment TradeInfo on EthereumDexTrades {
 
 ```
 
+<a name="universal-token-tracking"></a>
+
 ## Universal Token Tracking
 
 Keep track of tokens across diverse blockchain networks.
@@ -588,3 +591,131 @@ Keep track of tokens across diverse blockchain networks.
 -   [Query Example](https://ide.bitquery.io/multi-chain-token-tracing)
     
 
+```
+query ($from: ISO8601DateTime, $till: ISO8601DateTime) {
+  ethereum: ethereum {
+    transfers(
+      currency: {is: "0xdac17f958d2ee523a2206206994597c13d831ec7"}
+      amount: {gt: 0}
+      date: {since: $from, till: $till}
+    ) {
+      currency {
+        symbol
+        address
+        decimals
+        name
+        tokenType
+      }
+      median: amount(calculate: median)
+      average: amount(calculate: average)
+      amount
+      count
+      days: count(uniq: dates)
+      sender_count: count(uniq: senders)
+      receiver_count: count(uniq: receivers)
+      min_date: minimum(of: date)
+      max_date: maximum(of: date)
+    }
+  }
+  
+  bsc: ethereum(network: bsc) {
+    transfers(
+      currency: {is: "0x55d398326f99059fF775485246999027B3197955"}
+      amount: {gt: 0}
+      date: {since: $from, till: $till}
+    ) {
+      currency {
+        symbol
+        address
+        decimals
+        name
+        tokenType
+      }
+      median: amount(calculate: median)
+      average: amount(calculate: average)
+      amount
+      count
+      days: count(uniq: dates)
+      sender_count: count(uniq: senders)
+      receiver_count: count(uniq: receivers)
+      min_date: minimum(of: date)
+      max_date: maximum(of: date)
+    }
+  }
+  
+  celo: ethereum(network: celo_mainnet) {
+    transfers(
+      currency: {is: "0xf6d198cd2a85bb2f3021cdbdab6b878474079be7 "}
+      amount: {gt: 0}
+      date: {since: $from, till: $till}
+    ) {
+      currency {
+        symbol
+        address
+        decimals
+        name
+        tokenType
+      }
+      median: amount(calculate: median)
+      average: amount(calculate: average)
+      amount
+      count
+      days: count(uniq: dates)
+      sender_count: count(uniq: senders)
+      receiver_count: count(uniq: receivers)
+      min_date: minimum(of: date)
+      max_date: maximum(of: date)
+    }
+  }
+   matic: ethereum(network: matic) {
+    transfers(
+      currency: {is: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F "}
+      amount: {gt: 0}
+      date: {since: $from, till: $till}
+    ) {
+      currency {
+        symbol
+        address
+        decimals
+        name
+        tokenType
+      }
+      median: amount(calculate: median)
+      average: amount(calculate: average)
+      amount
+      count
+      days: count(uniq: dates)
+      sender_count: count(uniq: senders)
+      receiver_count: count(uniq: receivers)
+      min_date: minimum(of: date)
+      max_date: maximum(of: date)
+    }
+  }
+  
+  avalanche: ethereum(network: avalanche) {
+    transfers(
+      currency: {is: "0x9702230a8ea53601f5cd2dc00fdbc13d4df4a8c7 "}
+      amount: {gt: 0}
+      date: {since: $from, till: $till}
+    ) {
+      currency {
+        symbol
+        address
+        decimals
+        name
+        tokenType
+      }
+      median: amount(calculate: median)
+      average: amount(calculate: average)
+      amount
+      count
+      days: count(uniq: dates)
+      sender_count: count(uniq: senders)
+      receiver_count: count(uniq: receivers)
+      min_date: minimum(of: date)
+      max_date: maximum(of: date)
+    }
+  }
+}
+
+```
