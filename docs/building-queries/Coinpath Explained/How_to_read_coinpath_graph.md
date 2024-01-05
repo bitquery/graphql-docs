@@ -185,13 +185,13 @@ For example, the provided query demonstrates how to retrieve all outbound paths,
 By modifying these filters and parameters, you can explore different transaction paths and analyze specific sender-receiver relationships.
 
 ```
-query ($network: EthereumNetwork!, $inboundDepth: Int!, $limit: Int!, $currency: String!) {
+query ($network: EthereumNetwork!, $outboundDepth: Int!, $limit: Int!, $currency: String!) {
   ethereum(network: $network) {
     outbound: coinpath(
       initialAddress: {is: "0xa910f92acdaf488fa6ef02174fb86208ad7722ba"}
       finalAddress: {is: "0x5265754ebfcfa800051df99ebaf6b4b41a5e0bb1"}
       currency: {is: $currency}
-      depth: {lteq: $inboundDepth}
+      depth: {lteq: $outboundDepth}
       options: {direction: outbound, asc: "depth", desc: "amount", limitBy: {each: "depth", limit: $limit}}
     ) {
       sender {
@@ -231,6 +231,62 @@ query ($network: EthereumNetwork!, $inboundDepth: Int!, $limit: Int!, $currency:
   "inboundDepth": 3,
   "outboundDepth": 3,
   "limit": 100,
+  "offset": 0,
+  "network": "ethereum",
+  "currency": "ETH",
+  "dateFormat": "%Y-%m"
+}
+```
+
+The below query on the other hand, gets direct transfers from `0xa910f92acdaf488fa6ef02174fb86208ad7722ba` to `0x5265754ebfcfa800051df99ebaf6b4b41a5e0bb1` irrespective of what depth you mention.
+
+```
+query ($network: EthereumNetwork!, $outboundDepth: Int!, $limit: Int!, $currency: String!) {
+  ethereum(network: $network) {
+    inbound: coinpath(
+      sender: {is: "0xa910f92acdaf488fa6ef02174fb86208ad7722ba"}
+      receiver: {is: "0x5265754ebfcfa800051df99ebaf6b4b41a5e0bb1"}
+      currency: {is: $currency}
+      depth: {lteq: $outboundDepth}
+      options: {direction: outbound, asc: "depth", desc: "amount", limitBy: {each: "depth", limit: $limit}}
+    ) {
+      sender {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      receiver {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      amount(in: USD)
+      currency {
+        symbol
+        name
+      }
+      depth
+      count
+    }
+  }
+}
+
+{
+  "inboundDepth": 3,
+  "outboundDepth": 3,
+  "limit": 10,
   "offset": 0,
   "network": "ethereum",
   "currency": "ETH",
