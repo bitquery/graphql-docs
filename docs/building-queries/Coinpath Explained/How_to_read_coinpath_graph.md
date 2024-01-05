@@ -177,3 +177,63 @@ query ($network: EthereumNetwork!, $address: String!, $inboundDepth: Int!,$limit
 Here, the results uses the `sender.address` and `receiver.address` fields to group the results. This means that the query will return a list of all transactions sent by and received by each address.
 
 The choice of which dimension to use will depend on your specific needs. If you need detailed information about each transaction, then you should use the `transaction` dimension. If you need to identify the most active senders and receivers, or track the flow of funds between different addresses, then you should use the `transactions` dimension.
+
+## Understanding finalAddress and sender, receiver in Coinpath
+
+By using the `finalAddress` with `initialAddress` filters, you can trace a path or graph. On the other hand, using the `sender` and `receiver` filters allows you to focus on direct transfers.
+For example, the provided query demonstrates how to retrieve all outbound paths, including loops, from `0xa910f92acdaf488fa6ef02174fb86208ad7722ba` to `0x5265754ebfcfa800051df99ebaf6b4b41a5e0bb1` in the Ethereum network.
+By modifying these filters and parameters, you can explore different transaction paths and analyze specific sender-receiver relationships.
+
+```
+query ($network: EthereumNetwork!, $inboundDepth: Int!, $limit: Int!, $currency: String!) {
+  ethereum(network: $network) {
+    outbound: coinpath(
+      initialAddress: {is: "0xa910f92acdaf488fa6ef02174fb86208ad7722ba"}
+      finalAddress: {is: "0x5265754ebfcfa800051df99ebaf6b4b41a5e0bb1"}
+      currency: {is: $currency}
+      depth: {lteq: $inboundDepth}
+      options: {direction: outbound, asc: "depth", desc: "amount", limitBy: {each: "depth", limit: $limit}}
+    ) {
+      sender {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      receiver {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      amount(in: USD)
+      currency {
+        symbol
+        name
+      }
+      depth
+      count
+    }
+  }
+}
+
+{
+  "inboundDepth": 3,
+  "outboundDepth": 3,
+  "limit": 100,
+  "offset": 0,
+  "network": "ethereum",
+  "currency": "ETH",
+  "dateFormat": "%Y-%m"
+}
+```
