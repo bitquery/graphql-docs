@@ -38,3 +38,45 @@ query MyQuery {
 
 
 ```
+
+For example, the below query searches all chains using token name "SPECTRE AI" . You can run the query [here](https://ide.bitquery.io/SPECTRE-AI-String-search)
+
+
+```
+query MyQuery {
+  search(string: "SPECTRE AI") {
+    network {
+      network
+      protocol
+    }
+    subject {
+      ... on Address {
+        address
+        annotation
+      }
+      ... on Currency {
+        address
+        name
+        symbol
+        properties
+      }
+      ... on MessageHash {
+        __typename
+        messageHash
+      }
+      ... on SmartContract {
+        address
+        annotation
+        contractType
+        protocol
+      }
+      ... on TransactionHash {
+        __typename
+        hash
+      }
+    }
+  }
+}
+
+
+```
