@@ -102,3 +102,28 @@ This query retrieves the latest 10 transfers on the Tron network for the currenc
 ```
 
 This query retrieves transfers on the Tron network that occurred at block height 53420256, providing details such as transfer amount, block timestamp, currency address and name, receiver address, sender address, and transaction hash.
+
+## Tron Transfers Both Inflow and Outflow
+
+The following query is used to fetch the total incoming and outgoing transfers for a specific address on the Tron network.
+
+For both incoming and outgoing transfers, the total value of transfers and the currency name are returned.You can run the query [here](https://ide.bitquery.io/Tron-Transfer-API)
+
+```
+query MyQuery {
+  tron(network: tron) {
+    incoming_txs: transfers(receiver: {is: "TMfXyeQPYfgrG4NqpoTnksGPCUJBYmEedQ"}) {
+      total_value: amount(calculate: sum)
+      currency {
+        name
+      }
+    }
+    outgoing_txs: transfers(sender: {is: "TMfXyeQPYfgrG4NqpoTnksGPCUJBYmEedQ"}) {
+      total_value: amount(calculate: sum)
+      currency {
+        name
+      }
+    }
+  }
+}
+```
