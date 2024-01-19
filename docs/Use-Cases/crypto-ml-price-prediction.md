@@ -12,16 +12,16 @@ We will use the Bitquery API for fetching Ethereum-based decentralized exchange 
 
 You need to have these libraries and packages installed to process the next part of the tutorial. Use the snippet below to install the following:
 
-import pandas as pd  
+```
+import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
-from sklearn.model_selection import train_test_split  
-from sklearn.ensemble import RandomForestRegressor  
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
 
-    pip install graphql-core
-
-
+pip install graphql-core
+```
 
 This command installs the graphql-core package, which is a Python library for working with GraphQL queries and responses. It is used to make GraphQL requests to the Bitquery API for fetching cryptocurrency trading data.
 
@@ -36,7 +36,6 @@ First, we need to obtain historical trading data for our cryptocurrency. We'll u
     'Content-Type': 'application/json',
     'X-API-KEY':'your key here'
     }
-
 
 **Replace with actual values for $baseAddress and $interval**
 
@@ -87,9 +86,6 @@ First, we need to obtain historical trading data for our cryptocurrency. We'll u
     print(json_data)
     else:
     print(f"Error: {response.status_code}, {response.text}")
-
-
-
 
 The output of this step would be JSON Data in the format as shown below:
 
@@ -187,7 +183,6 @@ Now, let's apply our trained model to predict recent cryptocurrency prices. We'l
     }
     }
     }
-
 
 Now, follow the same steps to normalize the data as we did to get the training dataset. After obtaining the dataset, preprocess the features as discussed earlier. Now, do feature engineering for the testing data to obtain the ‘avg’ as we targeted.
 
