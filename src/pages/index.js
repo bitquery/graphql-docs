@@ -30,7 +30,7 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Bitquery Documentation`}
+      title={`Bitquery V1 API Documentation`}
       description="Blockchain APIs documentation for querying transactions, balances, transfers, NFTs, tokens, Dex trades, Smart contract calls, events, and much more. We support 40+ blockchains, including Bitcoin, Ethereum, Solana, Polygon, Arbitrum, Optimism, etc.">
       <HomepageHeader />
       <main>
