@@ -4,7 +4,7 @@ Our Smart contract call API allows you access to parsed smart contract calls and
 
 ## All Smart contract calls for a blockchain
 
-You can use our SmartContractCalls to get contract calls for any blockchain. In the following example, we are getting smart contract calls for Etheruem with details like arguments, transaction, caller, and [calldepth](https://community.bitquery.io/t/bitquery-trace-api/1556).
+You can use our SmartContractCalls to get contract calls for any blockchain. In the following example, we are getting smart contract calls for Ethereum with details like arguments, transaction, caller, and [calldepth](https://community.bitquery.io/t/bitquery-trace-api/1556).
 
 [Open this query on IDE](https://ide.bitquery.io/Smart-contract-calls-on-Ethereum)
 
