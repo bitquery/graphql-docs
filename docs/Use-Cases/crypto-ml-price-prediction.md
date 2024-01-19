@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+description: In this tutorial, we'll explore how to use GraphQL to retrieve historical trading data and use machine learning with Python to build a simple cryptocurrency price prediction model.
 ---
 
 # Building an ML Model With Crypto Price Data

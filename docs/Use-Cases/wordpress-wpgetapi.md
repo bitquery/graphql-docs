@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+description: In this tutorial, we'll use WPGetAPI plugin to show blockchain data on Wordpress sites.
 ---
 
 # Step-by-step guide on using the Bitquery API with WPGetAPI on WordPress
