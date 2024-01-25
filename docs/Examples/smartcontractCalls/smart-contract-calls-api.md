@@ -12,8 +12,8 @@ You can use our SmartContractCalls to get contract calls for any blockchain. In 
 {
   ethereum(network: ethereum) {
     smartContractCalls(
-      options: {desc: "block.height", limit: 10, offset: 0}
-      date: {since: "2023-07-25", till: "2023-07-25"}
+      options: { desc: "block.height", limit: 10, offset: 0 }
+      date: { since: "2023-07-25", till: "2023-07-25" }
       external: true
     ) {
       block {
@@ -51,16 +51,15 @@ You can use our SmartContractCalls to get contract calls for any blockchain. In 
 
 ## All Smart contract call for a specific contract
 
-
 [Open this query on IDE](https://ide.bitquery.io/Calls-for-a-specific-ethereum-smart-contract)
 
 ```graphql
 {
   ethereum(network: ethereum) {
     smartContractCalls(
-      options: {desc: "block.timestamp.time", limit: 10, offset: 0}
-      date: {since: "2023-07-18", till: "2023-07-23"}
-      smartContractAddress: {is: "0x1a0ad011913a150f69f6a19df447a0cfd9551054"}
+      options: { desc: "block.timestamp.time", limit: 10, offset: 0 }
+      date: { since: "2023-07-18", till: "2023-07-23" }
+      smartContractAddress: { is: "0x1a0ad011913a150f69f6a19df447a0cfd9551054" }
     ) {
       block {
         timestamp {
@@ -87,10 +86,9 @@ You can use our SmartContractCalls to get contract calls for any blockchain. In 
     }
   }
 }
-
 ```
 
-## List of calls of a smart contract 
+## List of calls of a smart contract
 
 To check the list of methods (calls) done on a smart contract you can use following api.
 
@@ -100,9 +98,14 @@ To check the list of methods (calls) done on a smart contract you can use follow
 {
   ethereum(network: ethereum) {
     smartContractCalls(
-      options: {desc: "block.timestamp.time", limit: 10, offset: 0, limitBy: {each: "smartContractMethod.name", limit: 1}}
-      date: {since: "2023-07-18", till: "2023-07-25"}
-      smartContractAddress: {is: "0x3fc91a3afd70395cd496c647d5a6cc9d4b2b7fad"}
+      options: {
+        desc: "block.timestamp.time"
+        limit: 10
+        offset: 0
+        limitBy: { each: "smartContractMethod.name", limit: 1 }
+      }
+      date: { since: "2023-07-18", till: "2023-07-25" }
+      smartContractAddress: { is: "0x3fc91a3afd70395cd496c647d5a6cc9d4b2b7fad" }
     ) {
       block {
         timestamp {
@@ -134,7 +137,6 @@ To check the list of methods (calls) done on a smart contract you can use follow
 ## Specific method call from a specific contract
 
 To check the specific method call from a specific smart contract you can use the api below.
-
 
 [Open this query on IDE](https://ide.bitquery.io/specific-smart-contract-call-by-a-specific-contact-on-ethereum)
 
@@ -175,11 +177,9 @@ To check the specific method call from a specific smart contract you can use the
 
 ```
 
-
 ## Method calls by specific address
 
 To check method calls by a specific [smart contract address](https://explorer.bitquery.io/ethereum/smart_contract/0x1a0ad011913a150f69f6a19df447a0cfd9551054/calls_contracts), you can use following API.
-
 
 [Open this query on IDE](https://ide.bitquery.io/calls-details-for-ethereum-smart-contract-call)
 
@@ -187,9 +187,9 @@ To check method calls by a specific [smart contract address](https://explorer.bi
 {
   ethereum(network: ethereum) {
     smartContractCalls(
-      options: {desc: "block.timestamp.time", limit: 10, offset: 0}
-      date: {since: "2023-07-18", till: "2023-07-20"}
-      caller: {is: "0x1a0ad011913a150f69f6a19df447a0cfd9551054"}
+      options: { desc: "block.timestamp.time", limit: 10, offset: 0 }
+      date: { since: "2023-07-18", till: "2023-07-20" }
+      caller: { is: "0x1a0ad011913a150f69f6a19df447a0cfd9551054" }
     ) {
       block {
         timestamp {
@@ -222,15 +222,14 @@ To check method calls by a specific [smart contract address](https://explorer.bi
 }
 ```
 
-
 ## Smart contract arguments API
 
 ```graphql
 {
   ethereum(network: bsc) {
     arguments(
-      options: {desc: ["block.height", "transaction.hash"], limit: 10}
-      smartContractAddress: {is: "0x3fc91a3afd70395cd496c647d5a6cc9d4b2b7fad"}
+      options: { desc: ["block.height", "transaction.hash"], limit: 10 }
+      smartContractAddress: { is: "0x3fc91a3afd70395cd496c647d5a6cc9d4b2b7fad" }
     ) {
       block {
         height
@@ -259,12 +258,10 @@ To check method calls by a specific [smart contract address](https://explorer.bi
     }
   }
 }
-
 ```
 
-
-
 ## Arguments Filtering
+
 To filter specific argument, please use following API.
 
 ```
@@ -308,3 +305,64 @@ To filter specific argument, please use following API.
 ```
 
 Our v1 APIs support Argument Filtering, however we would rather suggest using V2 APIs for this. They are much more powerful in arguments, allowing argument aggregation and filtering.
+
+## Blacklist Calls on a Token
+
+To restrict certain addresses from performing specific actions within your smart contract, you can utilize the blacklist functionality. The query below utilizes the `smartContractMethod: {is: "blacklist"}` to fetch transactions where an address was blacklisted. 
+You can run the query [here](https://ide.bitquery.io/PEPE-Blacklist-calls)
+
+```
+query ($network: EthereumNetwork!, $address: String!, $limit: Int!, $offset: Int!) {
+  ethereum(network: $network) {
+    smartContractCalls(
+      options: {limit: $limit, offset: $offset}
+      smartContractAddress: {is: $address}
+    ) {
+      smartContract {
+        address {
+          address
+          annotation
+        }
+        contractType
+      }
+      smartContractMethod(smartContractMethod: {is: "blacklist"}) {
+        name
+        signature
+      }
+      amount
+      date {
+        date
+      }
+      transaction {
+        hash
+        txFrom {
+          address
+          annotation
+        }
+      }
+      block {
+        timestamp {
+          time
+        }
+      }
+      caller {
+        address
+        annotation
+      }
+      success
+      gasValue
+      external
+    }
+  }
+}
+{
+  "limit": 30,
+  "offset": 0,
+  "network": "ethereum",
+  "address": "0x6982508145454Ce325dDbE47a25d4ec3d2311933",
+  "dateFormat": "%Y-%m-%d"
+}
+
+
+
+```
