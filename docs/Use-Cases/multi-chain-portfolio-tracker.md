@@ -3,6 +3,32 @@ sidebar_position: 4
 description: In this tutorial, we'll see how to build a multi-chain portfolio tracker.
 ---
 
+<head>
+<meta name="title" content="How to Build Multichain Portfolio Tracker"/>
+
+<meta name="description" content="In this tutorial, we'll walk through building a dashboard to track balances across multiple Ethereum Virtual Machine (EVM) compatible blockchains using Bitquery and Streamlit. "/>
+
+<meta name="keywords" content="wallet balance, multi chain balance, cross chain portfolio"/>
+
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+
+<meta property="og:title" content="How to Build Multichain Portfolio Tracker" />
+
+<meta property="og:description" content="In this tutorial, we'll walk through building a dashboard to track balances across multiple Ethereum Virtual Machine (EVM) compatible blockchains using Bitquery and Streamlit." />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+
+<meta property="twitter:title" content="How to Build Multichain Portfolio Tracker" />
+
+<meta property="twitter:description" content="In this tutorial, we'll walk through building a dashboard to track balances across multiple Ethereum Virtual Machine (EVM) compatible blockchains using Bitquery and Streamlit." />
+</head>
+
 # How to Build Multichain Portfolio Tracker
 
 In this tutorial, we'll walk through building a dashboard to track balances across multiple Ethereum Virtual Machine (EVM) compatible blockchains using Streamlit. We'll utilize the Bitquery API to retrieve wallet balance data from various chains.
@@ -23,7 +49,7 @@ pip install streamlit requests
 Once installed, import the necessary libraries at the beginning of your Python script:
 
 ```
-import streamlit as st  
+import streamlit as st
 import requests
 ```
 
@@ -35,18 +61,18 @@ The headers dictionary is created to specify the content type of the request as 
 
 ```
 
-BITQUERY_API_URL = "https://graphql.bitquery.io/"  
+BITQUERY_API_URL = "https://graphql.bitquery.io/"
 BITQUERY_API_KEY = "<YOUR_BITQUERY_API_KEY>"
 
-headers = {  
-'Content-Type': 'application/json',  
-'X-API-KEY': BITQUERY_API_KEY  
+headers = {
+'Content-Type': 'application/json',
+'X-API-KEY': BITQUERY_API_KEY
 }
 
 In our case, we're interested in Ethereum, Binance Smart Chain (BSC), Cronos, Celo, Matic, Velas, Moonbeam, Fantom, Avalanche, and Klaytn. We define a function get_cross_chain_data(address) to query balance data for a given wallet address across multiple chains using GraphQL.
 
-def get_cross_chain_data(address):  
-query = """  
+def get_cross_chain_data(address):
+query = """
 query ($address: String!) {
   ethereum: ethereum {
     address(address: {is: $address}) {
@@ -180,12 +206,12 @@ query ($address: String!) {
   }
 }
 
-"""  
-variables = {  
-"address": address,  
+"""
+variables = {
+"address": address,
 }
 
-response = requests.post(BITQUERY_API_URL, json={"query": query, "variables": variables}, headers=headers)  
+response = requests.post(BITQUERY_API_URL, json={"query": query, "variables": variables}, headers=headers)
 return response.json()
 
 ```
@@ -204,14 +230,14 @@ Below is the code for building the streamlit table:
 
 ```python
 
-def main():  
+def main():
     st.title("Cross-Chain Wallet Data Viewer")
 
-    user_address = st.text_input("Enter the wallet address:")  
-    if user_address:  
+    user_address = st.text_input("Enter the wallet address:")
+    if user_address:
     result = get_cross_chain_data(user_address)
 
-    if 'data' in result:  
+    if 'data' in result:
     ethereum_data = result['data']['ethereum']['address']
 
 ```
@@ -224,21 +250,21 @@ balances_data = ethereum_data[0]['balances'] if ethereum_data else []
 
 # Creating a list of dictionaries for each token
 
-token_data_list = []  
-for token_info in balances_data:  
-token_data = {  
-'Symbol': token_info['currency']['symbol'],  
-'Balance': token_info['value'],  
-'USD Value': token_info['usdValue'],  
-'Token Type': token_info['currency']['tokenType'],  
-}  
+token_data_list = []
+for token_info in balances_data:
+token_data = {
+'Symbol': token_info['currency']['symbol'],
+'Balance': token_info['value'],
+'USD Value': token_info['usdValue'],
+'Token Type': token_info['currency']['tokenType'],
+}
 token_data_list.append(token_data)
 
 # Displaying the table
 
 st.table(token_data_list)
 
-if **name** == "**main**":  
+if **name** == "**main**":
 main()
 
 ```
