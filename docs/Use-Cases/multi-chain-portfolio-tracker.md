@@ -3,7 +3,7 @@ sidebar_position: 4
 description: In this tutorial, we'll see how to build a multi-chain portfolio tracker.
 ---
 
-# How to Build Multichain EVM DeFi Portfolio Tracker
+# How to Build Multichain Portfolio Tracker
 
 In this tutorial, we'll walk through building a dashboard to track balances across multiple Ethereum Virtual Machine (EVM) compatible blockchains using Streamlit. We'll utilize the Bitquery API to retrieve wallet balance data from various chains.
 
