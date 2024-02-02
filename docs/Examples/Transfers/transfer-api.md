@@ -468,6 +468,50 @@ query ($network: SolanaNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
 }
 ```
 
-## NFT Transfers
+## Celo NFT Transfers
+
+The below query gets transfers for ChinChilla Gang (GANG) NFT and CeloPunks NFT collection on Celo network by mentioning the curency smart contract in the `  currency: {in:}` filter. You can use it to retrieve the most recent transfers for specific NFT collections
+You can find the query [here](https://ide.bitquery.io/Celo-NFT-Transfers)
+
+```
+query MyQuery {
+  ethereum(network: celo_mainnet) {
+    transfers(
+      currency: {in: ["0xc8DF51073CD581902b4fb50131d31f29343131F0","0x9f46B8290A6D41B28dA037aDE0C3eBe24a5D1160"]}
+      options: {limit: 10, desc: "block.height"}
+    ) {
+      currency {
+        address
+        name
+        symbol
+        tokenType
+      }
+      amount
+      sender {
+        address
+      }
+      receiver {
+        address
+      }
+      transaction {
+        gas
+        gasPrice
+        gasValue
+        hash
+      }
+      block {
+        height
+        timestamp {
+          iso8601
+        }
+      }
+    }
+  }
+}
+
+
+```
+
+## Detailed NFT Transfers
 
 NFT transfers are much better supported on our V2 APIs (Streaming APIs). Therefore please check [streaming APIs](https://bitquery.io/products/streaming).
