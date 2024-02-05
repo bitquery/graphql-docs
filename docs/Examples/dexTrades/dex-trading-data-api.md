@@ -108,7 +108,7 @@ To get trades from the Ethereum blockchain for a specific time, please use the f
 }
 ```
 
-## Trades for am DEX Exchange
+## Trades for an DEX Exchange
 
 To get trades for specific exchange you can you use `exchangeName` (Not recommended) or `exchangeAddress` (recommended). In the following example we are getting, Uniswap's trades. To showcase, we have used both exchangeName and exchangeAddress. In exchange address we have entered factory address of Uniswap v1, v2 and V3 because Uniswap is one exchange with 3 different version deployemnt.
 
