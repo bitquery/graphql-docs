@@ -8,8 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Blockchain Data API (V1 Docs)",
-  tagline:
-    "Real time and historical data from 40+ blockchains",
+  tagline: "Real time and historical data from 40+ blockchains",
   favicon: "img/favicon.ico",
   // ...
   trailingSlash: false,
@@ -80,6 +79,17 @@ const config = {
         },
       },
     ],
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          {
+            to: "/docs/building-queries/Coinpath-Explained/Overview",
+            from: "/docs/building-queries/Coinpath%20Explained/Overview",
+          },
+        ],
+      },
+    ],
   ],
   presets: [
     [
@@ -104,12 +114,12 @@ const config = {
           filename: "sitemap.xml",
         },
         gtag: {
-          trackingID: 'G-ZWB80TDH9J',
+          trackingID: "G-ZWB80TDH9J",
           anonymizeIP: true,
         },
-          googleTagManager: {
-            containerId: 'GTM-5GC69JH6',
-          },
+        googleTagManager: {
+          containerId: "GTM-5GC69JH6",
+        },
       }),
     ],
   ],
@@ -151,8 +161,8 @@ const config = {
           {
             to: "https://ide.bitquery.io",
             label: "Get your free API key",
-            position: "right"
-          }
+            position: "right",
+          },
         ],
       },
       footer: {
