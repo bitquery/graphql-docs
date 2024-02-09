@@ -163,6 +163,11 @@ const config = {
             label: "Get your free API key",
             position: "right",
           },
+          {
+            to: "/blog/",
+            label: "New Releases",
+            position: "left",
+          },
         ],
       },
       footer: {
