@@ -135,7 +135,7 @@ Above, we have already shown how to get the USD price of an asset; now, let's ge
 
 In the following query, we will get the initial supply from the contract attributed and then use transfer API to get mint and burns by checking how many tokens were sent or received from the dead address.
 
-[Open this query on IDE](https://ide.bitquery.io/Supply-of-Drip-token).
+[Open this query on IDE](https://ide.bitquery.io/Total-supply-of-FTC-token).
 
 ```
 {
