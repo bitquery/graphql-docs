@@ -18,4 +18,10 @@ query MyQuery {
 
 ```
 
-Let's dive in and explore the elrond data available through Bitquery API.
+Let's dive in and explore the Tron data available through Bitquery API.
+
+:::info
+
+Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your API keys, Read _[our guide](/docs/graphql-ide/how-to-start/)_ on getting started.
+
+:::
