@@ -3,6 +3,7 @@
 To get transactions from different blockchains, you can use our Transaction API. Let's see some examples.
 
 ## Bitcoin Transaction
+
 Let' see an example to get transactions from the Bitcoin blockchain.
 
 [Open this query on IDE](https://ide.bitquery.io/Latest-Transaction-on-Bitcoin)
@@ -11,8 +12,8 @@ Let' see an example to get transactions from the Bitcoin blockchain.
 {
   bitcoin(network: bitcoin) {
     transactions(
-      options: {desc: ["block.height", "index"], limit: 10, offset: 0}
-      date: {since: "2023-07-13", till: "2023-07-20"}
+      options: { desc: ["block.height", "index"], limit: 10, offset: 0 }
+      date: { since: "2023-07-13", till: "2023-07-20" }
     ) {
       block {
         timestamp {
@@ -42,11 +43,10 @@ Let' see an example to get transactions from the Bitcoin blockchain.
     }
   }
 }
-
 ```
 
-
 ## Ethereum Transaction API
+
 Let's see another example on how to get transactions from Ethereum blockchain.
 
 [Open this query on IDE](https://ide.bitquery.io/Ethereum-Transaction-API)
@@ -55,8 +55,8 @@ Let's see another example on how to get transactions from Ethereum blockchain.
 {
   ethereum(network: ethereum) {
     transactions(
-      options: {desc: "block.height", limit: 10, offset: 0}
-      date: {since: "2023-07-10", till: "2023-07-12"}
+      options: { desc: "block.height", limit: 10, offset: 0 }
+      date: { since: "2023-07-10", till: "2023-07-12" }
     ) {
       block {
         timestamp {
@@ -95,22 +95,20 @@ Let's see another example on how to get transactions from Ethereum blockchain.
     }
   }
 }
-
 ```
 
-
 ## Transaction in a block
+
 To check transaction in a block use following query. You can use `in: ["block1","block2"]` if you want to get transactions from multiple blockchains.
 
 [Open this query on IDE](https://ide.bitquery.io/Transaction-in-ethereum-block)
-
 
 ```graphql
 {
   ethereum(network: ethereum) {
     transactions(
-      options: {desc: "block.height", limit: 10, offset: 0}
-      height: {is: 17680897}
+      options: { desc: "block.height", limit: 10, offset: 0 }
+      height: { is: 17680897 }
     ) {
       block {
         timestamp {
@@ -149,13 +147,11 @@ To check transaction in a block use following query. You can use `in: ["block1",
     }
   }
 }
-
 ```
 
 ## Transaction for a user
 
 To get transactions for a user, you can use the following query. As you can see, we are using the `any` operator, which is basically how you add OR conditions in filters.
-
 
 [Access the query here](https://ide.bitquery.io/Ethereum-transaction-of-an-address)
 
@@ -163,9 +159,13 @@ To get transactions for a user, you can use the following query. As you can see,
 {
   ethereum(network: ethereum) {
     transactions(
-      options: {desc: "block.height", limit: 10, offset: 0}
-      date: {since: "2023-01-01"}
-      any: [{txSender: {is: "0xa0c68c638235ee32657e8f720a23cec1bfc77c77"}}, {txTo: {is: "0xa0c68c638235ee32657e8f720a23cec1bfc77c77"}}, {txCreates: {is: "0xa0c68c638235ee32657e8f720a23cec1bfc77c77"}}]
+      options: { desc: "block.height", limit: 10, offset: 0 }
+      date: { since: "2023-01-01" }
+      any: [
+        { txSender: { is: "0xa0c68c638235ee32657e8f720a23cec1bfc77c77" } }
+        { txTo: { is: "0xa0c68c638235ee32657e8f720a23cec1bfc77c77" } }
+        { txCreates: { is: "0xa0c68c638235ee32657e8f720a23cec1bfc77c77" } }
+      ]
     ) {
       block {
         timestamp {
@@ -204,7 +204,6 @@ To get transactions for a user, you can use the following query. As you can see,
     }
   }
 }
-
 ```
 
 ## Get Daily Transaction Count on Solana
@@ -228,6 +227,7 @@ query get_per_day_transaction_count_of_solana_for_last_ten_days{
 ```
 
 ## Get Cronos-Bridged and Crypto.org Transactions
+
 The below query gets complete information on Cronos or Crypto.org transaction using the `hash`.
 You can find the query [here](https://ide.bitquery.io/Cronos-Bridged-Tx-Info)
 
@@ -265,3 +265,19 @@ query ($network: CosmosNetwork!, $hash: String!) {
 ```
 
 The `rawTx` field contains complete information encoded including Source Channel,Receiver Address,Memo,auth_info,signer and so on.
+
+## Get Daily Unique Senders/ Receivers
+
+In the below query , we are querying for the distinct count of senders and receivers who made transactions on a specific date by using the `uniq` filter and aliasing `uniq: senders` and `uniq: receivers`.
+
+```
+query MyQuery {
+  ethereum(network: ethereum) {
+    transactions(date: {is: "2024-01-01"}) {
+      Unique_senders:count(uniq: senders)
+      Unique_receivers:count(uniq: receivers)
+    }
+  }
+}
+
+```

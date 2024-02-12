@@ -60,51 +60,47 @@ To get trades from the Ethereum blockchain for a specific time, please use the f
 
 ```graphql
 {
-	ethereum(network: ethereum) {
-		dexTrades(
-			options: {
-				desc: ["block.height", "tradeIndex"]
-				limit: 10
-				offset: 0
-			}
-			time: { since: "2023-07-17T00:00:00", till: "2023-07-17T23:59:59" }
-		) {
-			block {
-				timestamp {
-					time(format: "%Y-%m-%d %H:%M:%S")
-				}
-				height
-			}
-			tradeIndex
-			protocol
-			exchange {
-				fullName
-			}
-			smartContract {
-				address {
-					address
-					annotation
-				}
-			}
-			buyAmount
-			buyCurrency {
-				address
-				symbol
-			}
-			buy_amount_usd: buyAmount(in: USD)
-			sellAmount
-			sellCurrency {
-				address
-				symbol
-			}
-			sell_amount_usd: sellAmount(in: USD)
-			transaction {
-				hash
-			}
-			PriceInUSD1: expression(get: "buy_amount_usd / buyAmount")
-			PriceInUSD2: expression(get: "sell_amount_usd / buyAmount")
-		}
-	}
+  ethereum(network: ethereum) {
+    dexTrades(
+      options: { desc: ["block.height", "tradeIndex"], limit: 10, offset: 0 }
+      time: { since: "2023-07-17T00:00:00", till: "2023-07-17T23:59:59" }
+    ) {
+      block {
+        timestamp {
+          time(format: "%Y-%m-%d %H:%M:%S")
+        }
+        height
+      }
+      tradeIndex
+      protocol
+      exchange {
+        fullName
+      }
+      smartContract {
+        address {
+          address
+          annotation
+        }
+      }
+      buyAmount
+      buyCurrency {
+        address
+        symbol
+      }
+      buy_amount_usd: buyAmount(in: USD)
+      sellAmount
+      sellCurrency {
+        address
+        symbol
+      }
+      sell_amount_usd: sellAmount(in: USD)
+      transaction {
+        hash
+      }
+      PriceInUSD1: expression(get: "buy_amount_usd / buyAmount")
+      PriceInUSD2: expression(get: "sell_amount_usd / buyAmount")
+    }
+  }
 }
 ```
 
@@ -116,60 +112,56 @@ To get trades for specific exchange you can you use `exchangeName` (Not recommen
 
 ```graphql
 {
-	ethereum(network: ethereum) {
-		dexTrades(
-			options: {
-				desc: ["block.height", "tradeIndex"]
-				limit: 10
-				offset: 0
-			}
-			date: { since: "2023-07-10", till: "2023-07-11" }
-			exchangeName: { is: "Uniswap" }
-			exchangeAddress: {
-				in: [
-					"0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f"
-					"0xc0a47dFe034B400B47bDaD5FecDa2621de6c4d95"
-					"0x1f98431c8ad98523631ae4a59f267346ea31f984"
-				]
-			}
-		) {
-			block {
-				timestamp {
-					time(format: "%Y-%m-%d %H:%M:%S")
-				}
-				height
-			}
-			tradeIndex
-			protocol
-			exchange {
-				fullName
-				address {
-					address
-				}
-			}
-			smartContract {
-				address {
-					address
-					annotation
-				}
-			}
-			buyAmount
-			buy_amount_usd: buyAmount(in: USD)
-			buyCurrency {
-				address
-				symbol
-			}
-			sellAmount
-			sell_amount_usd: sellAmount(in: USD)
-			sellCurrency {
-				address
-				symbol
-			}
-			transaction {
-				hash
-			}
-		}
-	}
+  ethereum(network: ethereum) {
+    dexTrades(
+      options: { desc: ["block.height", "tradeIndex"], limit: 10, offset: 0 }
+      date: { since: "2023-07-10", till: "2023-07-11" }
+      exchangeName: { is: "Uniswap" }
+      exchangeAddress: {
+        in: [
+          "0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f"
+          "0xc0a47dFe034B400B47bDaD5FecDa2621de6c4d95"
+          "0x1f98431c8ad98523631ae4a59f267346ea31f984"
+        ]
+      }
+    ) {
+      block {
+        timestamp {
+          time(format: "%Y-%m-%d %H:%M:%S")
+        }
+        height
+      }
+      tradeIndex
+      protocol
+      exchange {
+        fullName
+        address {
+          address
+        }
+      }
+      smartContract {
+        address {
+          address
+          annotation
+        }
+      }
+      buyAmount
+      buy_amount_usd: buyAmount(in: USD)
+      buyCurrency {
+        address
+        symbol
+      }
+      sellAmount
+      sell_amount_usd: sellAmount(in: USD)
+      sellCurrency {
+        address
+        symbol
+      }
+      transaction {
+        hash
+      }
+    }
+  }
 }
 ```
 
@@ -181,53 +173,49 @@ Using `protocol` filter you can get trades for any protocol such as Uniswap v3. 
 
 ```graphql
 {
-	ethereum(network: ethereum) {
-		dexTrades(
-			options: {
-				desc: ["block.height", "tradeIndex"]
-				limit: 10
-				offset: 0
-			}
-			date: { since: "2023-07-10", till: "2023-07-11" }
-			protocol: { is: "Uniswap v3" }
-		) {
-			block {
-				timestamp {
-					time(format: "%Y-%m-%d %H:%M:%S")
-				}
-				height
-			}
-			tradeIndex
-			protocol
-			exchange {
-				fullName
-				address {
-					address
-				}
-			}
-			smartContract {
-				address {
-					address
-					annotation
-				}
-			}
-			buyAmount
-			buy_amount_usd: buyAmount(in: USD)
-			buyCurrency {
-				address
-				symbol
-			}
-			sellAmount
-			sell_amount_usd: sellAmount(in: USD)
-			sellCurrency {
-				address
-				symbol
-			}
-			transaction {
-				hash
-			}
-		}
-	}
+  ethereum(network: ethereum) {
+    dexTrades(
+      options: { desc: ["block.height", "tradeIndex"], limit: 10, offset: 0 }
+      date: { since: "2023-07-10", till: "2023-07-11" }
+      protocol: { is: "Uniswap v3" }
+    ) {
+      block {
+        timestamp {
+          time(format: "%Y-%m-%d %H:%M:%S")
+        }
+        height
+      }
+      tradeIndex
+      protocol
+      exchange {
+        fullName
+        address {
+          address
+        }
+      }
+      smartContract {
+        address {
+          address
+          annotation
+        }
+      }
+      buyAmount
+      buy_amount_usd: buyAmount(in: USD)
+      buyCurrency {
+        address
+        symbol
+      }
+      sellAmount
+      sell_amount_usd: sellAmount(in: USD)
+      sellCurrency {
+        address
+        symbol
+      }
+      transaction {
+        hash
+      }
+    }
+  }
 }
 ```
 
@@ -239,62 +227,58 @@ You can use `txSender` to see the trades where transaction sender is specific ad
 
 ```graphql
 {
-	ethereum(network: ethereum) {
-		dexTrades(
-			options: {
-				desc: ["block.height", "tradeIndex"]
-				limit: 10
-				offset: 0
-			}
-			date: { since: "2023-07-10", till: "2023-07-19" }
-			txSender: { is: "0x5D53F622b9F69e03ea0A960EDc65B6457A1aB235" }
-		) {
-			block {
-				timestamp {
-					time(format: "%Y-%m-%d %H:%M:%S")
-				}
-				height
-			}
-			tradeIndex
-			protocol
-			exchange {
-				fullName
-				address {
-					address
-				}
-			}
-			smartContract {
-				address {
-					address
-					annotation
-				}
-			}
-			baseAmount
-			base_amount_usd: baseAmount(in: USD)
-			baseCurrency {
-				address
-				symbol
-			}
-			quoteAmount
-			quote_amount_usd: quoteAmount(in: USD)
-			quoteCurrency {
-				address
-				symbol
-			}
-			maker {
-				address
-			}
-			taker {
-				address
-			}
-			transaction {
-				hash
-				txFrom {
-					address
-				}
-			}
-		}
-	}
+  ethereum(network: ethereum) {
+    dexTrades(
+      options: { desc: ["block.height", "tradeIndex"], limit: 10, offset: 0 }
+      date: { since: "2023-07-10", till: "2023-07-19" }
+      txSender: { is: "0x5D53F622b9F69e03ea0A960EDc65B6457A1aB235" }
+    ) {
+      block {
+        timestamp {
+          time(format: "%Y-%m-%d %H:%M:%S")
+        }
+        height
+      }
+      tradeIndex
+      protocol
+      exchange {
+        fullName
+        address {
+          address
+        }
+      }
+      smartContract {
+        address {
+          address
+          annotation
+        }
+      }
+      baseAmount
+      base_amount_usd: baseAmount(in: USD)
+      baseCurrency {
+        address
+        symbol
+      }
+      quoteAmount
+      quote_amount_usd: quoteAmount(in: USD)
+      quoteCurrency {
+        address
+        symbol
+      }
+      maker {
+        address
+      }
+      taker {
+        address
+      }
+      transaction {
+        hash
+        txFrom {
+          address
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -306,62 +290,58 @@ https://ide.bitquery.io/Trades-for-SHIB-token
 
 ```graphql
 {
-	ethereum(network: ethereum) {
-		dexTrades(
-			options: {
-				desc: ["block.height", "tradeIndex"]
-				limit: 10
-				offset: 0
-			}
-			date: { since: "2023-07-10", till: "2023-07-11" }
-			baseCurrency: { is: "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce" }
-		) {
-			block {
-				timestamp {
-					time(format: "%Y-%m-%d %H:%M:%S")
-				}
-				height
-			}
-			tradeIndex
-			protocol
-			exchange {
-				fullName
-				address {
-					address
-				}
-			}
-			smartContract {
-				address {
-					address
-					annotation
-				}
-			}
-			baseAmount
-			base_amount_usd: baseAmount(in: USD)
-			baseCurrency {
-				address
-				symbol
-			}
-			quoteAmount
-			quote_amount_usd: quoteAmount(in: USD)
-			quoteCurrency {
-				address
-				symbol
-			}
-			maker {
-				address
-			}
-			taker {
-				address
-			}
-			transaction {
-				hash
-				txFrom {
-					address
-				}
-			}
-		}
-	}
+  ethereum(network: ethereum) {
+    dexTrades(
+      options: { desc: ["block.height", "tradeIndex"], limit: 10, offset: 0 }
+      date: { since: "2023-07-10", till: "2023-07-11" }
+      baseCurrency: { is: "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce" }
+    ) {
+      block {
+        timestamp {
+          time(format: "%Y-%m-%d %H:%M:%S")
+        }
+        height
+      }
+      tradeIndex
+      protocol
+      exchange {
+        fullName
+        address {
+          address
+        }
+      }
+      smartContract {
+        address {
+          address
+          annotation
+        }
+      }
+      baseAmount
+      base_amount_usd: baseAmount(in: USD)
+      baseCurrency {
+        address
+        symbol
+      }
+      quoteAmount
+      quote_amount_usd: quoteAmount(in: USD)
+      quoteCurrency {
+        address
+        symbol
+      }
+      maker {
+        address
+      }
+      taker {
+        address
+      }
+      transaction {
+        hash
+        txFrom {
+          address
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -373,34 +353,34 @@ To get all pairs for a give token you can use following api.
 
 ```graphql
 {
-	ethereum(network: ethereum) {
-		dexTrades(
-			baseCurrency: { is: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2" }
-			options: {
-				desc: "count"
-				limit: 10
-				offset: 0
-				limitBy: { each: "smartContract.address.address", limit: 1 }
-			}
-		) {
-			baseCurrency {
-				symbol
-				name
-				address
-			}
-			quoteCurrency {
-				symbol
-				name
-				address
-			}
-			smartContract {
-				address {
-					address
-				}
-			}
-			count
-		}
-	}
+  ethereum(network: ethereum) {
+    dexTrades(
+      baseCurrency: { is: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2" }
+      options: {
+        desc: "count"
+        limit: 10
+        offset: 0
+        limitBy: { each: "smartContract.address.address", limit: 1 }
+      }
+    ) {
+      baseCurrency {
+        symbol
+        name
+        address
+      }
+      quoteCurrency {
+        symbol
+        name
+        address
+      }
+      smartContract {
+        address {
+          address
+        }
+      }
+      count
+    }
+  }
 }
 ```
 
@@ -412,65 +392,61 @@ https://ide.bitquery.io/Trades-for-a-trading-pair-on-Ethereum
 
 ```graphql
 {
-	ethereum(network: ethereum) {
-		dexTrades(
-			options: {
-				desc: ["block.height", "tradeIndex"]
-				limit: 10
-				offset: 0
-			}
-			date: { since: "2023-07-10", till: "2023-07-19" }
-			buyCurrency: { is: "0x5026f006b85729a8b14553fae6af249ad16c9aab" }
-			quoteCurrency: { is: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2" }
-		) {
-			block {
-				timestamp {
-					time(format: "%Y-%m-%d %H:%M:%S")
-				}
-				height
-			}
-			tradeIndex
-			protocol
-			exchange {
-				fullName
-				address {
-					address
-				}
-			}
-			smartContract {
-				address {
-					address
-					annotation
-				}
-			}
-			baseAmount
-			base_amount_usd: baseAmount(in: USD)
-			baseCurrency {
-				address
-				symbol
-			}
-			quoteAmount
-			quote_amount_usd: quoteAmount(in: USD)
-			quotePrice
-			priceInUSD: expression(get: "quote_amount_usd/baseAmount")
-			quoteCurrency {
-				address
-				symbol
-			}
-			maker {
-				address
-			}
-			taker {
-				address
-			}
-			transaction {
-				hash
-				txFrom {
-					address
-				}
-			}
-		}
-	}
+  ethereum(network: ethereum) {
+    dexTrades(
+      options: { desc: ["block.height", "tradeIndex"], limit: 10, offset: 0 }
+      date: { since: "2023-07-10", till: "2023-07-19" }
+      buyCurrency: { is: "0x5026f006b85729a8b14553fae6af249ad16c9aab" }
+      quoteCurrency: { is: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2" }
+    ) {
+      block {
+        timestamp {
+          time(format: "%Y-%m-%d %H:%M:%S")
+        }
+        height
+      }
+      tradeIndex
+      protocol
+      exchange {
+        fullName
+        address {
+          address
+        }
+      }
+      smartContract {
+        address {
+          address
+          annotation
+        }
+      }
+      baseAmount
+      base_amount_usd: baseAmount(in: USD)
+      baseCurrency {
+        address
+        symbol
+      }
+      quoteAmount
+      quote_amount_usd: quoteAmount(in: USD)
+      quotePrice
+      priceInUSD: expression(get: "quote_amount_usd/baseAmount")
+      quoteCurrency {
+        address
+        symbol
+      }
+      maker {
+        address
+      }
+      taker {
+        address
+      }
+      transaction {
+        hash
+        txFrom {
+          address
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -483,58 +459,52 @@ For example, if there is a swap A <-> B, using Base/Quote, it will give two resu
 
 ```graphql
 {
-	ethereum(network: ethereum) {
-		dexTrades(
-			options: {
-				desc: ["block.height", "tradeIndex"]
-				limit: 10
-				offset: 0
-			}
-			date: { since: "2023-07-10", till: "2023-07-19" }
-			smartContractAddress: {
-				is: "0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852"
-			}
-		) {
-			block {
-				timestamp {
-					time(format: "%Y-%m-%d %H:%M:%S")
-				}
-				height
-			}
-			tradeIndex
-			protocol
-			exchange {
-				fullName
-				address {
-					address
-				}
-			}
-			smartContract {
-				address {
-					address
-					annotation
-				}
-			}
-			buyAmount
-			buy_amount_usd: buyAmount(in: USD)
-			buyCurrency {
-				address
-				symbol
-			}
-			sellAmount
-			sell_amount_usd: sellAmount(in: USD)
-			sellCurrency {
-				address
-				symbol
-			}
-			transaction {
-				hash
-				txFrom {
-					address
-				}
-			}
-		}
-	}
+  ethereum(network: ethereum) {
+    dexTrades(
+      options: { desc: ["block.height", "tradeIndex"], limit: 10, offset: 0 }
+      date: { since: "2023-07-10", till: "2023-07-19" }
+      smartContractAddress: { is: "0x0d4a11d5eeaac28ec3f61d100daf4d40471f1852" }
+    ) {
+      block {
+        timestamp {
+          time(format: "%Y-%m-%d %H:%M:%S")
+        }
+        height
+      }
+      tradeIndex
+      protocol
+      exchange {
+        fullName
+        address {
+          address
+        }
+      }
+      smartContract {
+        address {
+          address
+          annotation
+        }
+      }
+      buyAmount
+      buy_amount_usd: buyAmount(in: USD)
+      buyCurrency {
+        address
+        symbol
+      }
+      sellAmount
+      sell_amount_usd: sellAmount(in: USD)
+      sellCurrency {
+        address
+        symbol
+      }
+      transaction {
+        hash
+        txFrom {
+          address
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -548,40 +518,36 @@ This is a very effective way to get the USD price for assets that are traded aga
 
 ```graphql
 {
-	ethereum(network: ethereum) {
-		dexTrades(
-			options: {
-				desc: ["block.height", "tradeIndex"]
-				limit: 1
-				offset: 0
-			}
-			buyCurrency: { is: "0x409b46013c78c63cf376f17466aef87895617451" }
-			sellCurrency: { is: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2" }
-		) {
-			block {
-				timestamp {
-					time(format: "%Y-%m-%d %H:%M:%S")
-				}
-				height
-			}
-			tradeIndex
-			protocol
-			exchange {
-				fullName
-			}
-			buyAmount
-			buyCurrency {
-				symbol
-			}
-			buy_amount_usd: buyAmount(in: USD)
-			sellAmount
-			sellCurrency {
-				symbol
-			}
-			sell_amount_usd: sellAmount(in: USD)
-			priceInUSD: expression(get: "sell_amount_usd / buyAmount")
-		}
-	}
+  ethereum(network: ethereum) {
+    dexTrades(
+      options: { desc: ["block.height", "tradeIndex"], limit: 1, offset: 0 }
+      buyCurrency: { is: "0x409b46013c78c63cf376f17466aef87895617451" }
+      sellCurrency: { is: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2" }
+    ) {
+      block {
+        timestamp {
+          time(format: "%Y-%m-%d %H:%M:%S")
+        }
+        height
+      }
+      tradeIndex
+      protocol
+      exchange {
+        fullName
+      }
+      buyAmount
+      buyCurrency {
+        symbol
+      }
+      buy_amount_usd: buyAmount(in: USD)
+      sellAmount
+      sellCurrency {
+        symbol
+      }
+      sell_amount_usd: sellAmount(in: USD)
+      priceInUSD: expression(get: "sell_amount_usd / buyAmount")
+    }
+  }
 }
 ```
 
@@ -593,36 +559,36 @@ To get latest pairs of an exchange, we can use Event APIs, let's get latest pair
 
 ```graphql
 {
-	ethereum(network: bsc) {
-		arguments(
-			options: { desc: ["block.height"], limit: 10 }
-			smartContractAddress: {
-				in: ["0xbcfccbde45ce874adcb698cc183debcf17952812"]
-			}
-			smartContractEvent: { is: "PairCreated" }
-			date: { after: "2023-07-17" }
-		) {
-			block {
-				height
-			}
-			transaction {
-				hash
-			}
-			pair: any(of: argument_value, argument: { is: "pair" })
-			token0: any(of: argument_value, argument: { is: "token0" })
-			token0Name: any(
-				of: argument_value
-				argument: { is: "token0" }
-				as: token_name
-			)
-			token1: any(of: argument_value, argument: { is: "token1" })
-			token1Name: any(
-				of: argument_value
-				argument: { is: "token1" }
-				as: token_name
-			)
-		}
-	}
+  ethereum(network: bsc) {
+    arguments(
+      options: { desc: ["block.height"], limit: 10 }
+      smartContractAddress: {
+        in: ["0xbcfccbde45ce874adcb698cc183debcf17952812"]
+      }
+      smartContractEvent: { is: "PairCreated" }
+      date: { after: "2023-07-17" }
+    ) {
+      block {
+        height
+      }
+      transaction {
+        hash
+      }
+      pair: any(of: argument_value, argument: { is: "pair" })
+      token0: any(of: argument_value, argument: { is: "token0" })
+      token0Name: any(
+        of: argument_value
+        argument: { is: "token0" }
+        as: token_name
+      )
+      token1: any(of: argument_value, argument: { is: "token1" })
+      token1Name: any(
+        of: argument_value
+        argument: { is: "token1" }
+        as: token_name
+      )
+    }
+  }
 }
 ```
 
@@ -634,57 +600,51 @@ https://ide.bitquery.io/GIBX-trades
 
 ```graphql
 {
-	ethereum(network: bsc) {
-		dexTrades(
-			options: {
-				desc: ["block.height", "tradeIndex"]
-				limit: 10
-				offset: 0
-			}
-			date: { since: "2023-07-11", till: "2023-07-17" }
-			exchangeAddress: {
-				is: "0x97bCD9BB482144291D77ee53bFa99317A82066E8"
-			}
-		) {
-			block {
-				timestamp {
-					time(format: "%Y-%m-%d %H:%M:%S")
-				}
-				height
-			}
-			tradeIndex
-			protocol
-			exchange {
-				fullName
-			}
-			smartContract {
-				address {
-					address
-					annotation
-				}
-			}
-			exchange {
-				address {
-					address
-				}
-			}
-			buyAmount
-			buy_amount_usd: buyAmount(in: USD)
-			buyCurrency {
-				address
-				symbol
-			}
-			sellAmount
-			sell_amount_usd: sellAmount(in: USD)
-			sellCurrency {
-				address
-				symbol
-			}
-			transaction {
-				hash
-			}
-		}
-	}
+  ethereum(network: bsc) {
+    dexTrades(
+      options: { desc: ["block.height", "tradeIndex"], limit: 10, offset: 0 }
+      date: { since: "2023-07-11", till: "2023-07-17" }
+      exchangeAddress: { is: "0x97bCD9BB482144291D77ee53bFa99317A82066E8" }
+    ) {
+      block {
+        timestamp {
+          time(format: "%Y-%m-%d %H:%M:%S")
+        }
+        height
+      }
+      tradeIndex
+      protocol
+      exchange {
+        fullName
+      }
+      smartContract {
+        address {
+          address
+          annotation
+        }
+      }
+      exchange {
+        address {
+          address
+        }
+      }
+      buyAmount
+      buy_amount_usd: buyAmount(in: USD)
+      buyCurrency {
+        address
+        symbol
+      }
+      sellAmount
+      sell_amount_usd: sellAmount(in: USD)
+      sellCurrency {
+        address
+        symbol
+      }
+      transaction {
+        hash
+      }
+    }
+  }
 }
 ```
 
@@ -703,25 +663,25 @@ Now we will use the balance API to get the balance of WETH and USDC tokens in ou
 
 ```graphql
 {
-	ethereum(network: ethereum) {
-		address(address: { is: "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640" }) {
-			balances(
-				currency: {
-					in: [
-						"0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
-						"0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
-					]
-				}
-			) {
-				value
-				currency {
-					address
-					symbol
-					tokenType
-				}
-			}
-		}
-	}
+  ethereum(network: ethereum) {
+    address(address: { is: "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640" }) {
+      balances(
+        currency: {
+          in: [
+            "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+            "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+          ]
+        }
+      ) {
+        value
+        currency {
+          address
+          symbol
+          tokenType
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -733,49 +693,45 @@ To track liquidity details for a pair token we can track `Mint` and `Burn` event
 
 ```graphql
 {
-	ethereum {
-		mint: arguments(
-			options: { limit: 10, desc: "block.height" }
-			smartContractAddress: {
-				is: "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
-			}
-			smartContractEvent: { is: "Mint" }
-		) {
-			block {
-				height
-			}
-			transaction {
-				hash
-			}
-			amount0: any(of: argument_value, argument: { is: "amount0" })
-			owner: any(of: argument_value, argument: { is: "owner" })
-			tickUpper: any(of: argument_value, argument: { is: "tickUpper" })
-			sender: any(of: argument_value, argument: { is: "sender" })
-			amount1: any(of: argument_value, argument: { is: "amount1" })
-			tickLower: any(of: argument_value, argument: { is: "tickLower" })
-			amount: any(of: argument_value, argument: { is: "amount" })
-		}
-		burn: arguments(
-			options: { limit: 10, desc: "block.height" }
-			smartContractAddress: {
-				is: "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
-			}
-			smartContractEvent: { is: "Burn" }
-		) {
-			block {
-				height
-			}
-			transaction {
-				hash
-			}
-			amount0: any(of: argument_value, argument: { is: "amount0" })
-			owner: any(of: argument_value, argument: { is: "owner" })
-			tickUpper: any(of: argument_value, argument: { is: "tickUpper" })
-			amount1: any(of: argument_value, argument: { is: "amount1" })
-			tickLower: any(of: argument_value, argument: { is: "tickLower" })
-			amount: any(of: argument_value, argument: { is: "amount" })
-		}
-	}
+  ethereum {
+    mint: arguments(
+      options: { limit: 10, desc: "block.height" }
+      smartContractAddress: { is: "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640" }
+      smartContractEvent: { is: "Mint" }
+    ) {
+      block {
+        height
+      }
+      transaction {
+        hash
+      }
+      amount0: any(of: argument_value, argument: { is: "amount0" })
+      owner: any(of: argument_value, argument: { is: "owner" })
+      tickUpper: any(of: argument_value, argument: { is: "tickUpper" })
+      sender: any(of: argument_value, argument: { is: "sender" })
+      amount1: any(of: argument_value, argument: { is: "amount1" })
+      tickLower: any(of: argument_value, argument: { is: "tickLower" })
+      amount: any(of: argument_value, argument: { is: "amount" })
+    }
+    burn: arguments(
+      options: { limit: 10, desc: "block.height" }
+      smartContractAddress: { is: "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640" }
+      smartContractEvent: { is: "Burn" }
+    ) {
+      block {
+        height
+      }
+      transaction {
+        hash
+      }
+      amount0: any(of: argument_value, argument: { is: "amount0" })
+      owner: any(of: argument_value, argument: { is: "owner" })
+      tickUpper: any(of: argument_value, argument: { is: "tickUpper" })
+      amount1: any(of: argument_value, argument: { is: "amount1" })
+      tickLower: any(of: argument_value, argument: { is: "tickLower" })
+      amount: any(of: argument_value, argument: { is: "amount" })
+    }
+  }
 }
 ```
 
@@ -787,29 +743,27 @@ To check currency pair in a Pool token, you can use following API.
 
 ```graphql
 {
-	ethereum(network: ethereum) {
-		dexTrades(
-			options: { limit: 1 }
-			date: { after: "2023-07-01" }
-			smartContractAddress: {
-				is: "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
-			}
-		) {
-			buyCurrency {
-				address
-				symbol
-			}
-			sellCurrency {
-				address
-				symbol
-			}
-			smartContract {
-				address {
-					address
-				}
-			}
-		}
-	}
+  ethereum(network: ethereum) {
+    dexTrades(
+      options: { limit: 1 }
+      date: { after: "2023-07-01" }
+      smartContractAddress: { is: "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640" }
+    ) {
+      buyCurrency {
+        address
+        symbol
+      }
+      sellCurrency {
+        address
+        symbol
+      }
+      smartContract {
+        address {
+          address
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -855,4 +809,21 @@ Check query [here](https://ide.bitquery.io/Ethereum-24H-Trading-Value-of-a-Pool-
     }
   }
 }
+```
+
+## Total Unique Tokens Traded in a Day
+
+This query below will return the count of unique tokens bought and sold in all DEXs on the Ethereum network on
+a particular date. To achieve this we will be using the `uniq` filter and aliasing `count(uniq: buy_currency)` and `count(uniq: sell_currency)`
+
+```
+query MyQuery {
+  ethereum(network: ethereum) {
+    dexTrades(date: {is: "2024-01-01"}) {
+      Unique_tokens_bought: count(uniq: buy_currency)
+      Unique_tokend_sold: count(uniq: sell_currency)
+    }
+  }
+}
+
 ```
