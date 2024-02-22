@@ -1,0 +1,69 @@
+# Solana Instructions Data
+
+## Recent Solana Instructions
+
+The below query allows you to retrieve a set of instructions from the Solana blockchain network. These instructions form the building blocks of transactions and smart contracts on the network.
+The fields within the instructions `{}` specify the data that the query will return for each instruction. This includes details about the action, block, transaction, program, log, external action, external program, and raw data associated with each instruction.
+
+You can run the query [here](https://ide.bitquery.io/Solana-Instructions)
+
+```
+query ($network: SolanaNetwork!, $limit: Int!, $offset: Int!) {
+  solana(network: $network) {
+    instructions(
+      options: {limit: $limit, offset: $offset, desc: "block.timestamp.time"}
+      date: {is: "2024-01-01"}
+    ) {
+      action {
+        name
+        type
+      }
+      block {
+        hash
+        timestamp {
+          time
+        }
+      }
+      transaction {
+        signature
+        success
+      }
+      program {
+        name
+        parsed
+        parsedName
+        id
+      }
+      log {
+        consumed
+        instruction
+        logs
+        result
+        totalGas
+      }
+      externalAction {
+        name
+        type
+      }
+      externalProgram {
+        id
+        parsed
+        name
+        parsedName
+      }
+      data {
+        hex
+        base58
+      }
+    }
+  }
+}
+{
+  "limit": 100,
+  "offset": 0,
+  "network": "solana"
+}
+
+```
+
+This will return the last 100 instructions from the Solana network on a particular day. You can adjust the limit and offset and period parameters as needed to retrieve different sets of instructions.
