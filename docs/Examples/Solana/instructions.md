@@ -67,3 +67,67 @@ query ($network: SolanaNetwork!, $limit: Int!, $offset: Int!) {
 ```
 
 This will return the last 100 instructions from the Solana network on a particular day. You can adjust the limit and offset and period parameters as needed to retrieve different sets of instructions.
+
+## Find Transactions based on Program
+
+The below query find all instructions, corresponding transactions and program logs for a specific program on the Solana blockchain.
+You can run the query [here](https://ide.bitquery.io/Solana-compactupdatevotestate-Action_2)
+
+```
+query ($network: SolanaNetwork!, $limit: Int!, $offset: Int!) {
+  solana(network: $network) {
+    instructions(
+      options: {limit: $limit, offset: $offset, desc: "block.timestamp.time"}
+      date: {is: "2024-01-01"}
+      parsedActionName: {is: "compactupdatevotestate"}
+    ) {
+      action {
+        name
+        type
+      }
+      block {
+        hash
+        timestamp {
+          time
+        }
+      }
+      transaction {
+        signature
+        success
+      }
+      program {
+        name
+        parsed
+        parsedName
+        id
+      }
+      log {
+        consumed
+        instruction
+        logs
+        result
+        totalGas
+      }
+      externalAction {
+        name
+        type
+      }
+      externalProgram {
+        id
+        parsed
+        name
+        parsedName
+      }
+      data {
+        hex
+        base58
+      }
+    }
+  }
+}
+{
+  "limit": 100,
+  "offset": 0,
+  "network": "solana"
+}
+```
