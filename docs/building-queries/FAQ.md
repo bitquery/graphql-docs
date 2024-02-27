@@ -1,12 +1,15 @@
 # Glossary and Frequently Asked Questions
 
-## What is the difference between a transfer and a transaction on chain?
+## What is a maker and taker in a DEX Trade?
+To put it simply, the maker is the party that provides liquidity to the market and  the taker is the one who accepts the maker's offer and completes the trade.
+
+## What is the difference between a transfer and a transaction on the chain?
 
 Please read the difference between Transfers and transactions [**here**](https://community.bitquery.io/t/transfers-vs-transactions-what-is-the-difference/1589).
 
 ## How to calculate the price of a token in USD?
 
-We can calculate price of a token in USD using `buyAmountUSD` and `sellAmount` fields.
+We can calculate the price of a token in USD using `buyAmountUSD` and `sellAmount` fields.
 
 The USD price is then calculated by dividing the `buyAmountUSD` field by the `sellAmount` field. This gives us the USD price of the sell currency in terms of the buy currency.
 
