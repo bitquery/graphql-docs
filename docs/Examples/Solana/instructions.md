@@ -131,3 +131,33 @@ query ($network: SolanaNetwork!, $limit: Int!, $offset: Int!) {
   "network": "solana"
 }
 ```
+## Recent Solana Transactions
+
+The query provided retrieves the latest transactions on the Solana blockchain following block number `251356591`. It details the count of instructions within each transaction, identifies the account that initiated the transaction, and lists the unique signature that distinguishes the transaction. Additionally, it specifies the number of inner instructions, which are instructions nested within other instructions, among other transaction-related information. You can run the query [here](https://ide.bitquery.io/Recent-Solana-Transactions)
+
+```
+query MyQuery {
+  solana(network: solana) {
+    transactions(
+      options: {limit: 10, desc: "block.timestamp.time"}
+      height: {gt: 251356591}
+    ) {
+      block {
+        timestamp {
+          time
+        }
+        hash
+      }
+      transactionFee
+      transactionIndex
+      signature
+      success
+      signer
+      feePayer
+      accountsCount
+      instructionsCount
+      innerInstructionsCount
+    }
+  }
+}
+```
