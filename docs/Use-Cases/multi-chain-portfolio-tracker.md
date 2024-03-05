@@ -3,32 +3,6 @@ sidebar_position: 4
 description: In this tutorial, we'll see how to build a multi-chain portfolio tracker.
 ---
 
-<head>
-<meta name="title" content="How to Build Multichain Portfolio Tracker"/>
-
-<meta name="description" content="In this tutorial, we'll walk through building a dashboard to track balances across multiple Ethereum Virtual Machine (EVM) compatible blockchains using Bitquery and Streamlit. "/>
-
-<meta name="keywords" content="wallet balance, multi chain balance, cross chain portfolio"/>
-
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-
-<meta property="og:title" content="How to Build Multichain Portfolio Tracker" />
-
-<meta property="og:description" content="In this tutorial, we'll walk through building a dashboard to track balances across multiple Ethereum Virtual Machine (EVM) compatible blockchains using Bitquery and Streamlit." />
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-
-<meta property="twitter:title" content="How to Build Multichain Portfolio Tracker" />
-
-<meta property="twitter:description" content="In this tutorial, we'll walk through building a dashboard to track balances across multiple Ethereum Virtual Machine (EVM) compatible blockchains using Bitquery and Streamlit." />
-</head>
-
 # How to Build Multichain Portfolio Tracker
 
 In this tutorial, we'll walk through building a dashboard to track balances across multiple Ethereum Virtual Machine (EVM) compatible blockchains using Streamlit. We'll utilize the Bitquery API to retrieve wallet balance data from various chains.
