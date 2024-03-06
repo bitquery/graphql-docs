@@ -8,7 +8,7 @@ Create and run your first query on Bitquery IDE by visiting [https://graphql.bit
 
 ## Create an account
 
-To continue, you must first [register](/docs/ide/login) an account to access the IDE window.
+To continue, you must first [register](https://account.bitquery.io/auth/signup) an account to access the IDE window.
 
 **Registration Process**:
 
