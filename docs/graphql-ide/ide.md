@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# IDE
+# How to use the IDE ?
 
 ## What is Bitquery IDE?
 
