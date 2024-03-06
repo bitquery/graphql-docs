@@ -89,8 +89,8 @@ We also have a Query Builder on our [IDE](https://graphql.bitquery.io/ide) which
 
 [![Get started with Bitquery](/img/get-started-with-bitquery.jpeg)](https://www.youtube.com/watch?v=pOFVc-kgSxc "Get started with Bitquery - Click to Watch!")
 
-**Check our Blog**
-We have written a lot of blog posts to help you explain our APIs, please them on the [Bitquery blog](https://bitquery.io/blog). Additionally, read these blogs if you are new to Bitquery.
+**Check our Blogs**
+We have written blog posts to help you explain our APIs, please them on the [Bitquery blog](https://bitquery.io/blog). Additionally, read these blogs if you are new to Bitquery.
 
 - [Make API calls to Bitquery in Python, JavaScript, Dart, Golang and PHP](https://community.bitquery.io/t/make-api-calls-to-bitquery-in-python-javascript-dart-golang-and-php/1004)
 
