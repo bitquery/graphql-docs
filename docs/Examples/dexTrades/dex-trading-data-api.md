@@ -219,6 +219,48 @@ Using `protocol` filter you can get trades for any protocol such as Uniswap v3. 
 }
 ```
 
+## Price of multiple tokens in 1 API call
+If you want to get prices of multiple DEX tokens against a sell currency (ex - WETH) you can use follow query.
+
+```
+{
+  ethereum(network: ethereum) {
+    dexTrades(
+      options: {desc: ["block.height", "tradeIndex"], limit: 1000, offset: 0, limitBy: {each: "buyCurrency.address", limit: 1}}
+      date: {after: "2024-03-01"}
+      sellCurrency: {is: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"}
+    ) {
+      block {
+        timestamp {
+          time(format: "%Y-%m-%d %H:%M:%S")
+        }
+        height
+      }
+      tradeIndex
+      protocol
+      exchange {
+        fullName
+      }
+      buyAmount
+      buyCurrency {
+        symbol
+        address
+        name
+      }
+      buy_amount_usd: buyAmount(in: USD)
+      sellAmount
+      sellCurrency {
+        symbol
+        address
+        name
+      }
+      sell_amount_usd: sellAmount(in: USD)
+      priceInUSD: expression(get: "sell_amount_usd / buyAmount")
+    }
+  }
+}
+```
+
 ## Trades of a wallet address
 
 You can use `txSender` to see the trades where transaction sender is specific address.
