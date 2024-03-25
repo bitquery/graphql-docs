@@ -1,4 +1,4 @@
-# DEX Pools API
+# Pools API
 
 In this section, we will look at some examples regarding DEX Pools data.
 
