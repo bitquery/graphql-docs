@@ -43,3 +43,23 @@ The following GraphQL query retrieves data on the latest 50 PairCreated events o
 - `timestamp`: Returns the block timestamp in a specified format.
 - `token0`: Returns the `token0` address associated with the event.
 - `token0Name`: Returns the name of the `token0` token, using the `as` parameter to specify the field name.
+
+## FDV of a Token
+
+Fully Diluted Valuation (FDV) of a crypto token is a metric that projects the total market capitalization of a cryptocurrency if all its tokens were to be in circulation. It is calculated using the formula: `Token Price x Total Supply`.
+
+Investors use FDV to assess possible inflationary impact on the value of their holdings.  A high FDV relative to the current market cap may indicate that a significant amount of tokens is yet to enter circulation, which could lead to dilution of value for current token holders if demand does not increase proportionately with the increase in supply. 
+
+Conversely, a closer parity between FDV and market cap might suggest that most of the tokens are already in circulation, potentially providing a more stable investment outlook.
+
+While you cannot calculate FDV on the IDE directly, you can retrieve the data needed easily and calculate the final value in your local system.
+
+To calculate supply, we will use the formula,
+
+`Total supply = Initial Supply + Minted supply - Burned supply` . You can find a sample query to calculate total supply [here](https://ide.bitquery.io/Total-supply-of-FTC-token)
+
+
+To get the latest price, you can use our DEXTrades API. Here's an [example](https://ide.bitquery.io/Latest-price-of-ERUTA).
+
+Once you have both values, you can multiply and get the FDV.
+
