@@ -34,7 +34,7 @@ Replace ADDRESS_HERE with the desired Bitcoin address you wish to query. This wi
 
   
 
-## Get Balance of Address in USD[​](https://docs.bitquery.io/v1/docs/Examples/cosmos/address#get-balance-of-address-in-usd)
+## Get Balance of Address in USD
 
   
 ```
