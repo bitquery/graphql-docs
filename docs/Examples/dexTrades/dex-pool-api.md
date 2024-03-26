@@ -56,7 +56,7 @@ While you cannot calculate FDV on the IDE directly, you can retrieve the data ne
 
 To calculate supply, we will use the formula,
 
-`Total supply = Initial Supply + Minted supply - Burned supply` . You can find a sample query to calculate total supply [here](https://ide.bitquery.io/Total-supply-of-FTC-token)
+`Total supply = Initial Supply + Minted supply - Burned supply` . You can find a sample query to [calculate total supply here](https://ide.bitquery.io/Total-supply-of-FTC-token)
 
 
 To get the latest price, you can use our DEXTrades API. Here's an [example](https://ide.bitquery.io/Latest-price-of-ERUTA).
