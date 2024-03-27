@@ -5,8 +5,8 @@ Our Bitcoin Blocks API provides all the information related to blocks produced o
 ## Retrieve the 10 Most Recent Blocks
 
 ```
-query ($network: BitcoinNetwork!) {
-  bitcoin(network: $network) {
+query  {
+  bitcoin(network: bitcoin) {
     blocks(options: {desc: "height", limit: 10}, date: {after: "2023-10-10"}) {
       timestamp {
         time(format: "%Y-%m-%d %H:%M:%S")
@@ -19,6 +19,7 @@ query ($network: BitcoinNetwork!) {
   }
 }
 
+
 ```
 
 This query retrieves details about the 10 most recent blocks on the Cosmos blockchain. It includes information like block hash, height, difficulty, block size, and timestamp for each block. The results are ordered by block heights in descending order.
@@ -26,8 +27,8 @@ This query retrieves details about the 10 most recent blocks on the Cosmos block
 ## Get the Blocks with maximum Transactions
 
 ```
-query ($network: BitcoinNetwork!) {
-  bitcoin(network: $network) {
+query  {
+  bitcoin(network: bitcoin) {
     blocks(options: {limit: 10, desc: "transactionCount"}) {
       timestamp {
         time(format: "%Y-%m-%d %H:%M:%S")
