@@ -23,7 +23,7 @@ title: Bitcoin Address Stats API
 
 The `addressstats` field allows us to retrieves statistics related to blockchain addresses.
 
-Here is an example that demonstrates how to retrieve statistics about a specific address:
+Here is an example that demonstrates how to retrieve statistics about a specific address; there is a balance field, too; please avoid using it; if you require a BTC balance, then please use [this API](https://docs.bitquery.io/v1/docs/Examples/bitcoin%20/bitcoin-address-api).
 
 ```
 {
@@ -32,7 +32,6 @@ Here is an example that demonstrates how to retrieve statistics about a specific
       address {
         address
         annotation
-        balance
         inboundTransactions
         inflows
         outboundTransactions
