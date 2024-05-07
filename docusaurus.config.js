@@ -228,7 +228,6 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-    clientModules: [require.resolve("./reb2bScript.js")],
 };
 
 module.exports = config;
