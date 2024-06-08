@@ -169,7 +169,7 @@ Now, let's apply our trained model to predict recent cryptocurrency prices. We'l
     baseCurrency: {is: $baseAddress}
     date: {since: "2024-01-01", till: "2024-01-02"}
     options: {limit: 1000, desc: "timeInterval.minute"}
-    quoteCurrency: {is: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"}
+    quoteCurrency: {is: "0xdAC17F958D2ee523a2206206994597C13D831ec7"}
     priceAsymmetry: {lt: 1}
     ) {
     timeInterval {
