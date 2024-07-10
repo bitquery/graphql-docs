@@ -6,7 +6,7 @@ sidebar_position: 5
 
 ## What is Query Builder?
 
-The Query Builder is a tool that allows developers to create queries efficiently. It offers an interactive tool that showcases the entire schema while allwoing the input of field values for query creation.
+The Query Builder is a tool that allows developers to create queries efficiently. It offers an interactive tool that showcases the entire schema while allowing the input of field values for query creation.
 
 ## How to Use the Query Builder to Create Queries?
 
