@@ -14,7 +14,6 @@ x-common-logging: &common-logging
       max-size: "100m"
       max-file: "3"
 
-
 services:
   nginx:
     image: ${LC_COMPOSE_IMAGE}:${LC_COMPOSE_IMAGE_TAG}
@@ -22,11 +21,7 @@ services:
       - ${LC_COMPOSE_IPADDR}:${LC_COMPOSE_WEB_PORT}:80
     volumes:
       - ./config/nginx/default.conf:/etc/nginx/conf.d/default.conf
-    <<: *common-network
-    <<: *common-dns
-    <<: *common-restart
-    <<: *common-logging 
-
+    <<: [*common-network, *common-dns, *common-restart, *common-logging]
 
 networks:
   common:
