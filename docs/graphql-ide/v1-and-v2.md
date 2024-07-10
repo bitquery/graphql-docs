@@ -74,4 +74,4 @@ We are very excited to see enable more features in our Streaming APIs. Here are 
 * **More blockchains** — We are adding Optimism and going to add more blockchains with high throughput.
 * [**Data in the cloud** ](https://bitquery.io/products/streaming)— This is our new product, which uses streaming internally, using which we will allow complete historical and Real-time data through AWS, Snowflake, Google, and other Cloud vendors.
 
-If you have questions about our APIs, please check out [Telegram](https://t.me/bloxy_info), [Discord](https://discord.gg/EEBVTQnb2E), and the [forum](https://community.bitquery.io/).
+If you have questions about our APIs, please check out [Telegram](https://t.me/bloxy_info), and the [forum](https://community.bitquery.io/).
