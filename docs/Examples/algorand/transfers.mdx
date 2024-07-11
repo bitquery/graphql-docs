@@ -1,62 +1,24 @@
-# Algorand Transaction API
+# Algorand Transfers API
 
-Our Algorand Transaction API provides detailed information about Algorand Transactions. Below are some examples of `transactions` API:
+Our Algorand Transfers API provides detailed information about Algorand Transfers. Below are some examples of `transfers` API:
 
-import VideoPlayer from "/src/components/HomepageFeatures/videoplayer.js";
+import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
 
-## Get Latest Transactions
+## Get Transfers of a specific Asset on Algorand
 
-The query retrieves the latest 10 transactions from the Algorand blockchain, providing details such as the block height, timestamp, currency address and name, fee, group, transaction hash, index, sender's address, subtype, and type of each transaction.
-
-```
-{
-  algorand {
-    transactions(
-      date: {after: "2023-08-05"}
-      options: {desc: "block.timestamp.iso8601", limit: 10}
-    ) {
-      block {
-        height
-        timestamp {
-          iso8601
-        }
-      }
-      currency {
-        address
-        name
-      }
-      fee
-      group
-      hash
-      index
-      sender {
-        address
-      }
-      subtype
-      type
-    }
-  }
-}
-```
-
-## Get all the transactions in a specific timeframe
-
-This query retrieves all the transactions in a specific date range on Algorand network using Bitquery Transactions API.
-You can find the query [here](https://ide.bitquery.io/All-Transactions-on-Algorand#).
+This query gives you the transfers of a specific Asset in a given timeframe on Algorand network.
+You can find the query [here](https://ide.bitquery.io/All-the-transfers-of-an-asset-on-Algorand-Mainnet-in-a-specific-timeframe).
 
 ```
 query MyQuery {
   algorand(network: algorand) {
-    transactions(
+    transfers(
       options: {desc: "block.height", limit: 10, offset: 0}
-      date: {since: "2024-07-08", till: "2024-07-09"}
+      currency: {is: 31566704}
+      date: { since: "2024-07-01", till: "2024-07-09" }
     ) {
-      block {
-        height
-        timestamp {
-          time(format: "%Y-%m-%d %H:%M:%S")
-        }
-      }
+      amount
+      amount_usd: amount(in: USD)
       currency {
         tokenType
         tokenId
@@ -65,109 +27,70 @@ query MyQuery {
         decimals
         address
       }
-      fee
-      firstRound
-      poolerror
-      note
-      lastRound
-      index
-      hash
-      group
-      genesisId
-      genesisHash
-      subtype
-      type
+      receiver {
+        address
+        annotation
+      }
       sender {
         address
         annotation
       }
-    }
-  }
-}
-
-```
-
-## Get Daily Transaction Count of Algorand network
-
-This query retrieves the number of transactions happened each day in the last 10 days on Algorand network using Bitquery Transactions API.
-You can find the query [here](https://ide.bitquery.io/Daily-Transaction-Count-for-last-10-days#).
-
-```
-query MyQuery {
-  algorand(network: algorand) {
-    transactions(options: {desc: "date.date", limit: 10}) {
-      date{
-        date
-      }
-      count
-    }
-  }
-}
-
-```
-
-## Get Daily Unique Senders of Transactions on Algorand network
-
-This query retrieves the number of unique senders of transactions on date `2024-07-08` using this filter `(date: {is: "2024-07-08"})` on Algorand network using Bitquery Transactions API.
-You can find the query [here](https://ide.bitquery.io/Daily-Unique-Txn-Senders-on-algorand#).
-
-```
-query MyQuery {
-  algorand(network: algorand) {
-    transactions(date: {is: "2024-07-08"}){
-      Unique_senders:count(uniq: senders)
-    }
-  }
-}
-
-```
-
-## Get Count of Transactions by a Particular Address
-
-The query retrieves the count of all transactions sent by the specified Algorand address ("ADDRESS_HERE") from the Algorand blockchain.
-
-```
-{
-  algorand {
-    transactions(
-      txSender: {is: "ADDRESS_HERE"}
-    ) {
-      count
-    }
-  }
-}
-```
-
-## Get Information about a Particular Transaction
-
-The query retrieves details of a specific transaction with the given transaction hash ("TXN_HASH_HERE") from the Algorand blockchain, including the block height, timestamp, currency address and name, sender's address, subtype, and type of the transaction.
-
-```
-{
-  algorand {
-    transactions(
-      txHash: {is: "TXN_HASH_HERE"}
-    ) {
-      block {
+      block{
         height
         timestamp {
-          iso8601
+          time(format: "%Y-%m-%d %H:%M:%S")
         }
       }
-      currency {
-        address
-        name
+      transferType
+      transaction {
+        hash
+      }
+    }
+  }
+}
+```
+
+## Get transfers where sender/receiver of an asset is a particular address
+
+This query gives you the transfers of a specific Asset sent to or from a particular address in a given timeframe on Algorand network.
+You can find the query [here](https://ide.bitquery.io/traansfers-where-a-currency-is-sent-from-or-sent-to-a-particular-address).
+
+```
+query MyQuery {
+  algorand(network: algorand) {
+    transfers(
+      date: {since: "2024-07-01", till: "2024-07-09"}
+      currency: {is: 849191641}
+      any: [{sender: {in: ["OLP2LMN4NDMT6FKRFCMV5J7U3LTUFXKOHOMGWYBMIA675FSRVWT4C5HWVI"]}}, {receiver: {in: ["OLP2LMN4NDMT6FKRFCMV5J7U3LTUFXKOHOMGWYBMIA675FSRVWT4C5HWVI"]}}]
+    ) {
+      block {
+        timestamp {
+          time(format: "%Y-%m-%d %H:%M:%S")
+        }
+        height
       }
       sender {
         address
+        annotation
       }
-      subtype
-      type
+      receiver {
+        address
+        annotation
+      }
+      currency {
+        address
+        symbol
+      }
+      amount
+      amount_usd: amount(in: USD)
+      transaction {
+        hash
+      }
     }
   }
 }
 ```
 
-## Video Tutorial | How to get Algorand Transactions Data using Bitquery API v1
+## Video Tutorial | How to get Algorand Transfers Data using Bitquery API v1
 
-<VideoPlayer url="https://www.youtube.com/watch?v=O3WC0QOk5Pw" />
+<VideoPlayer url="https://www.youtube.com/watch?v=Wu4RVrFMJ4Y" />

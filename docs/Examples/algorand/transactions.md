@@ -1,8 +1,12 @@
-# Algorand Transaction API
+# Algorand Transactions API
 
 Our Algorand Transaction API provides detailed information about Algorand Transactions. Below are some examples of `transactions` API:
 
+import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
+
 ## Get Latest Transactions
+
+The query retrieves the latest 10 transactions from the Algorand blockchain, providing details such as the block height, timestamp, currency address and name, fee, group, transaction hash, index, sender's address, subtype, and type of each transaction.
 
 ```
 {
@@ -35,9 +39,92 @@ Our Algorand Transaction API provides detailed information about Algorand Transa
 }
 ```
 
-The query retrieves the latest 10 transactions from the Algorand blockchain, providing details such as the block height, timestamp, currency address and name, fee, group, transaction hash, index, sender's address, subtype, and type of each transaction.
+## Get all the transactions in a specific timeframe
+
+This query retrieves all the transactions in a specific date range on Algorand network using Bitquery Transactions API.
+You can find the query [here](https://ide.bitquery.io/All-Transactions-on-Algorand#).
+
+```
+query MyQuery {
+  algorand(network: algorand) {
+    transactions(
+      options: {desc: "block.height", limit: 10, offset: 0}
+      date: {since: "2024-07-08", till: "2024-07-09"}
+    ) {
+      block {
+        height
+        timestamp {
+          time(format: "%Y-%m-%d %H:%M:%S")
+        }
+      }
+      currency {
+        tokenType
+        tokenId
+        symbol
+        name
+        decimals
+        address
+      }
+      fee
+      firstRound
+      poolerror
+      note
+      lastRound
+      index
+      hash
+      group
+      genesisId
+      genesisHash
+      subtype
+      type
+      sender {
+        address
+        annotation
+      }
+    }
+  }
+}
+
+```
+
+## Get Daily Transaction Count of Algorand network
+
+This query retrieves the number of transactions happened each day in the last 10 days on Algorand network using Bitquery Transactions API.
+You can find the query [here](https://ide.bitquery.io/Daily-Transaction-Count-for-last-10-days#).
+
+```
+query MyQuery {
+  algorand(network: algorand) {
+    transactions(options: {desc: "date.date", limit: 10}) {
+      date{
+        date
+      }
+      count
+    }
+  }
+}
+
+```
+
+## Get Daily Unique Senders of Transactions on Algorand network
+
+This query retrieves the number of unique senders of transactions on date `2024-07-08` using this filter `(date: {is: "2024-07-08"})` on Algorand network using Bitquery Transactions API.
+You can find the query [here](https://ide.bitquery.io/Daily-Unique-Txn-Senders-on-algorand#).
+
+```
+query MyQuery {
+  algorand(network: algorand) {
+    transactions(date: {is: "2024-07-08"}){
+      Unique_senders:count(uniq: senders)
+    }
+  }
+}
+
+```
 
 ## Get Count of Transactions by a Particular Address
+
+The query retrieves the count of all transactions sent by the specified Algorand address ("ADDRESS_HERE") from the Algorand blockchain.
 
 ```
 {
@@ -51,9 +138,9 @@ The query retrieves the latest 10 transactions from the Algorand blockchain, pro
 }
 ```
 
-The query retrieves the count of all transactions sent by the specified Algorand address ("ADDRESS_HERE") from the Algorand blockchain.
-
 ## Get Information about a Particular Transaction
+
+The query retrieves details of a specific transaction with the given transaction hash ("TXN_HASH_HERE") from the Algorand blockchain, including the block height, timestamp, currency address and name, sender's address, subtype, and type of the transaction.
 
 ```
 {
@@ -81,4 +168,6 @@ The query retrieves the count of all transactions sent by the specified Algorand
 }
 ```
 
-The query retrieves details of a specific transaction with the given transaction hash ("TXN_HASH_HERE") from the Algorand blockchain, including the block height, timestamp, currency address and name, sender's address, subtype, and type of the transaction.
+## Video Tutorial | How to get Algorand Transactions Data using Bitquery API v1
+
+<VideoPlayer url="https://www.youtube.com/watch?v=O3WC0QOk5Pw" />
