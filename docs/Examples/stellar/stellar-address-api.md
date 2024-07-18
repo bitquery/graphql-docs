@@ -1,7 +1,11 @@
 # Stellar Address API
 
+This API allows you to retrieve detailed information about Stellar wallet addresses, including their balances and token holdings.
+
 
 ## Latest Balance of a Wallet
+
+In the below query we will retrieve the latest balance of a specific Stellar wallet address. 
 
 ```
 query MyQuery {
