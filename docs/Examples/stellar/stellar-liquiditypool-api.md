@@ -1,9 +1,9 @@
-
 # Stellar Liquidity Pools API
 
 ## Latest Pool Effects for a Particular Pool
 
 You can run the query [here](https://ide.bitquery.io/Latest-XLMAqua-Pool-Updates)
+
 ```
 query MyQuery {
   stellar(network: stellar) {
@@ -14,7 +14,7 @@ query MyQuery {
     ) {
       amount
       liquidityPoolId
-      liquidityPoolDetails
+      liquidityPoolDetails 
       operation {
         name
       }
