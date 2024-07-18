@@ -1,5 +1,7 @@
 # Stellar Liquidity Pools API
 
+A successful operation will yield zero or more effects. These effects represent specific changes that occur in the ledger
+
 ## Latest Pool Effects for a Particular Pool
 
 You can run the query [here](https://ide.bitquery.io/Latest-XLMAqua-Pool-Updates)
