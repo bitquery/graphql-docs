@@ -2,6 +2,8 @@
 
 Ripple Payments API provides all details regarding payments on Ripple Blockchain. Below are some examples of `payments` API:
 
+import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
+
 ## Get Latest Payments on Ripple
 
 We are using the below query to get the latest payments on Ripple Blockchain. You can find the query [here](https://ide.bitquery.io/Latest-payments-on-ripple-blockchain).
@@ -94,3 +96,7 @@ query ($network: RippleNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
   "dateFormat": "%Y-%m-%d"
 }
 ```
+
+## Video Tutorial | How to get payments data on Ripple Blockchain
+
+<VideoPlayer url="https://youtu.be/wTpMKEcjBqs" />
