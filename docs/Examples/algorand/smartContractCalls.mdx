@@ -1,0 +1,120 @@
+# Algorand Smart Contract Calls API
+
+Our Algorand Smart Contract Calls API provides detailed information about smart contract calls executed on the Algorand Blockchain.
+
+import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
+
+## Get Count of Smart Contract Calls in Latest Block
+
+The query retrieves the latest block and provides the count of unique smart contract calls made within that block.
+
+You can check the query [here](https://ide.bitquery.io/Get-Count-of-Smart-Contract-Calls-in-Latest-Block_1).
+
+```
+{
+  algorand {
+    smartContractCalls(
+      date: {after: "2023-08-05"}
+      options: {desc: "block.timestamp.iso8601", limit: 1}
+    ) {
+      block {
+        timestamp {
+          iso8601
+        }
+      }
+      count(uniq: calls)
+    }
+  }
+}
+```
+
+## Get Latest Created Assets on Algorand
+
+The query retrieves information about the latest 10 smart contract calls on the Algorand blockchain with the transaction type "acfg" including the timestamp of the block, the smart contract address, the transaction hash, the sender's address, and the transaction type.
+`acfg` stands for asset config here.
+You can find the query [here](https://ide.bitquery.io/Track-latest-assets-created-on-Algorand-network_1#).
+
+```
+{
+  algorand(network: algorand) {
+    smartContractCalls(
+      options: {desc: "block.timestamp.iso8601", limit: 10}
+      txType: {is: acfg}
+    ) {
+      block {
+        timestamp {
+          iso8601
+        }
+      }
+      smartContract {
+        address {
+          address
+        }
+      }
+      transaction {
+        hash
+      }
+      txSender {
+        address
+      }
+      txType
+    }
+  }
+}
+
+```
+
+# Get Count of each transaction type since Genesis Block
+
+The query retrieves the number of times each txn type has been called since the genesis block (first block) of Algorand Mainnet.
+You can find the query [here](https://ide.bitquery.io/Count-of-each-trxn-type-called-till-now-on-Algorand-network#).
+
+```
+query MyQuery {
+  algorand(network: algorand) {
+    smartContractCalls(options: {desc: "count"}) {
+      txType
+      count
+    }
+  }
+}
+
+```
+
+## Get Latest Smart Contract Calls with Transaction Type
+
+The query retrieves information about the latest 10 smart contract calls on the Algorand blockchain with the transaction type "pay," including the timestamp of the block, the smart contract address, the transaction hash, the sender's address, and the transaction type.
+
+```
+{
+  algorand {
+    smartContractCalls(
+      date: {after: "2023-08-05"}
+      options: {desc: "block.timestamp.iso8601", limit: 10}
+      txType: {is: pay}
+    ) {
+      block {
+        timestamp {
+          iso8601
+        }
+      }
+      smartContract {
+        address {
+          address
+        }
+      }
+      transaction {
+        hash
+      }
+      txSender {
+        address
+      }
+      txType
+    }
+  }
+}
+```
+
+## Video Tutorial | How to get Newly Created Tokens on Algorand
+
+<VideoPlayer url="https://www.youtube.com/watch?v=O3WC0QOk5Pw" />
