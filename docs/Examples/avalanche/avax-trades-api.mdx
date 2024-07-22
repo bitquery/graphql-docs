@@ -1,0 +1,79 @@
+# AVAX Trades API
+
+
+## DEX Trades for AVAX
+
+[This](https://ide.bitquery.io/AVAX-Price-on-Avalanche) API returns the latest trades where AVAX is purchased
+
+```
+query MyQuery {
+  ethereum(network: avalanche) {
+    dexTrades(
+      buyCurrency: {is: "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7"}
+      options: {limit: 10}
+      time: {since: "2024-07-01T00:00:00Z"}
+    ) {
+      buyCurrency {
+        address
+        name
+        symbol
+      }
+      date {
+        date
+      }
+      exchange {
+        fullName
+        address {
+          address
+        }
+      }
+      sellCurrency {
+        address
+        name
+        symbol
+      }
+      transaction {
+        hash
+      }
+      PriceAgainstSellCurrency: price
+      quoteAmount(in: USD)
+    }
+  }
+}
+
+```
+
+## OHLC of the AVAX/USDC Pair
+
+This query retrieves the Open, High, Low, and Close (OHLC) prices in USD for a specific token pair traded on DEXes over a defined time period and interval. You can use the `buyCurrency` and `sellCurrency` to input the contract addresses of the currencies to filter the trades where the currencies in question were involved.
+
+You can find the query [here](https://ide.bitquery.io/OHLC-of-AVAX-USDC-Pair).
+
+```
+query MyQuery {
+  ethereum(network: avalanche) {
+    dexTrades(
+      buyCurrency: {is: "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7"}
+      sellCurrency: {is: "0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e"}
+      options: {limit: 10}
+      time: {since: "2024-07-20T00:00:00Z", till: "2024-07-21T00:00:00Z"}
+    ) {
+      buyCurrency {
+        address
+        name
+        symbol
+      }
+      sellCurrency {
+        address
+        name
+        symbol
+      }
+      high: price(calculate: maximum)
+      low: price(calculate: minimum)
+      open: price(time: {is: "2024-07-20T00:00:01Z"})
+      close: price(time: {is: "2024-07-21T00:00:00Z"})
+      volume: tradeAmount(in: USD, calculate: sum)
+    }
+  }
+}
+```

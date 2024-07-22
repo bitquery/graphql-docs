@@ -1,0 +1,125 @@
+# Analysis of a Zcash Address
+
+In this section, we will see some example queries that could be useful when investigating a particular address. For this section 
+we will use `t1UYsZVJkLPeMjxEtACvSxfWuNmddpWfxzs` as an example.
+
+## Get Address Details Using Address Stats
+
+For this sub-section, we will see how we can use `addressStats` for getting the following data.
+
+[This](https://ide.bitquery.io/Address-Stats-for-Zcash) query returns the details mentioned below.
+
+```
+query MyQuery {
+  bitcoin(network: zcash) {
+    addressStats(address: {is: "t1UYsZVJkLPeMjxEtACvSxfWuNmddpWfxzs"}) {
+      address {
+        address
+        balance(in: USD)
+        firstActive {
+          time
+        }
+        lastActive {
+          time
+        }
+        outboundTransactions
+        uniqueDaysWithTransfers
+        uniqueReceivers
+        uniqueSenders
+        inboundTransactions
+      }
+    }
+  }
+}
+
+```
+
+<details><summary>Address Details</summary>
+
+`balance`: Balance of the address
+
+`firstAcive`: Timestamp of the first transaction  where the address is involved
+
+`lastActive`: Timestamp of the latest transaction where the address is involved
+
+`outboundTransactions`: Number of transaction where address is sender
+
+`inboundTransactions`: Number of transaction where address is reciever
+
+`uniqueReceivers`: Unique number of addresses from which inbound transaction happened
+
+`uniqueSenders`: Unique number of addresses to which outbound transaction happened
+
+`uniqueDaysWithTransfers`: Unique days on which any transaction happened
+
+</details>
+
+## Inbound Transaction Details
+
+[This](https://ide.bitquery.io/Inbound-Transactions-Zcash) query returns a list of inbound transactions, where the mentioned address is at the recieving end.
+It contains details such as 
+
+- Timestamp
+- Input Value
+- Output Value
+- Fee Value
+- Transaction Hash 
+- Transaction Index 
+
+```
+query MyQuery {
+  bitcoin(network: zcash) {
+    transactions(
+      outputAddress: {is: "t1UYsZVJkLPeMjxEtACvSxfWuNmddpWfxzs"}
+      options: {limit: 100}
+    ) {
+      block {
+        timestamp {
+          time
+        }
+      }
+      feeValue
+      hash
+      index
+      outputValue
+      inputValue
+    }
+  }
+}
+
+```
+
+## Outbound Transaction Details
+
+[This](https://ide.bitquery.io/Outbound-Transactions-Zcash) query returns a list of outbound transactions, where the mentioned address is the sender.
+It contains details such as 
+
+- Timestamp
+- Input Value
+- Output Value
+- Fee Value
+- Transaction Hash 
+- Transaction Index 
+
+```
+query MyQuery {
+  bitcoin(network: zcash) {
+    transactions(
+      inputAddress: {is: "t1UYsZVJkLPeMjxEtACvSxfWuNmddpWfxzs"}
+      options: {limit: 100}
+    ) {
+      block {
+        timestamp {
+          time
+        }
+      }
+      feeValue
+      hash
+      index
+      outputValue
+      inputValue
+    }
+  }
+}
+
+```
