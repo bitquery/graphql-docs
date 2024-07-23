@@ -2,6 +2,8 @@
 
 Ripple Transfers API provides all details regarding transfers on Ripple Blockchain. Below are some examples of `transfers` API:
 
+import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
+
 ## Get Transfers for a currency on Ripple
 
 We are using the below query to get all types of transfers for a specific currency `CNY`. You can find the query [here](https://ide.bitquery.io/All-types-of-transfers-for-tokens).
@@ -164,3 +166,7 @@ query ($network: RippleNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
   "dateFormat": "%Y-%m-%d"
 }
 ```
+
+## Video Tutorial | How to get Transfers data on Ripple Blockchain
+
+<VideoPlayer url="https://www.youtube.com/watch?v=ttZfqNsEoqI" />
