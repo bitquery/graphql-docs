@@ -65,3 +65,7 @@ query ($network: RippleNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
   "dateFormat": "%Y-%m-%d"
 }
 ```
+
+## Video Tutorial | How to get Trades of a currency on Ripple Blockchain
+
+<VideoPlayer url="https://www.youtube.com/watch?v=SXuebEC9skY" />
