@@ -1,7 +1,10 @@
 # Hedera Messages API
 
+In this section we will see how to get information on messages on Hedera.
+
 ## Latest Messages
 
+This query retrieves the latest messages on the Hedera network.
 
 ```
 query MyQuery {
