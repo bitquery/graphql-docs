@@ -84,3 +84,31 @@ query MyQuery {
 }
 
 ```
+
+## Top Transaction Failures on Hedera
+
+This query retrieves the top transaction failures on the Hedera network and helps in identifying the most common reasons for transaction failures.
+
+```
+query MyQuery {
+  hedera(network: hedera) {
+    transactions(
+      date: {since: "2024-01-01"}
+      success: false
+      options: {desc: "count", limit: 10}
+    ) {
+      count
+      result {
+        name
+        id
+      }
+    }
+  }
+}
+
+
+```
+
+- **count**: Indicates the number of failed transactions for this specific error.
+- **result.name**: Describes the error that caused the transaction to fail, such as "INSUFFICIENT_BALANCE".
+- **result.id**: The unique identifier for the error.
