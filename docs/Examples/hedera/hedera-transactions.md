@@ -112,3 +112,39 @@ query MyQuery {
 - **count**: Indicates the number of failed transactions for this specific error.
 - **result.name**: Describes the error that caused the transaction to fail, such as "INSUFFICIENT_BALANCE".
 - **result.id**: The unique identifier for the error.
+
+## Latest Smart Contract Calls on Hedera
+
+Smart contracts calls in Hedera help you identify the calls made during the transaction including details on whether the tx was a swap or transfer and so on. The `memo` field will have details about the transaction for example ` "memo": "HashPack swap DOVU to HBAR",`
+The below query gets the latest calls for a particular date.
+You can run the query [here](https://ide.bitquery.io/latest-Hedera-Calls)
+
+```
+query MyQuery {
+  hedera(network: hedera) {
+    calls(
+      date: {since: "2024-01-01"}
+      success: true
+      options: {desc: "consensusTimestamp.time", limit: 100}
+    ) {
+      transactionFee
+      memo
+      smartContractEntity {
+        num
+        id
+      }
+      result {
+        name
+        id
+      }
+      consensusTimestamp {
+        time
+      }
+      feeCurrency {
+        name
+      }
+    }
+  }
+}
+
+```
