@@ -26,3 +26,95 @@ This will give you the top tokens based on the count of inputs by fetching the i
 
 
 ```
+
+## Latest Inputs to an Address
+
+To find the latest inputs (incoming transactions) to a specific Hedera address, you can use the following GraphQL query. It fetches the latest 10 inputs (transactions) to the address `0.0.6187183`, sorted by the most recent timestamp.
+
+```
+query MyQuery {
+  hedera(network: hedera) {
+    inputs(
+      options: {limit: 10, desc: "time.time"}
+      transferEntity:{is:"0.0.6187183"}
+    ) {
+      amount
+      currency {
+        name
+      }
+      memo
+      feeCurrency {
+        name
+      }
+      success
+      time {
+        time
+      }
+      transactionHash
+      transferEntity {
+        num
+        id
+      }
+      payerAccount {
+        id
+        num
+      }
+      nodeAccount {
+        id
+        num
+      }
+      result {
+        id
+        name
+      }
+    }
+  }
+}
+
+```
+
+## Latest Outputs to an Address
+
+To find the latest outputs (outputs transactions) to a specific Hedera address, you can use the following GraphQL query. It fetches the latest 10 inputs (transactions) to the address `0.0.6187183`, sorted by the most recent timestamp.
+
+```
+query MyQuery {
+  hedera(network: hedera) {
+    outputs(
+      options: {limit: 10, desc: "time.time"}
+      transferEntity:{is:"0.0.6187183"}
+    ) {
+      amount
+      currency {
+        name
+      }
+      memo
+      feeCurrency {
+        name
+      }
+      success
+      time {
+        time
+      }
+      transactionHash
+      transferEntity {
+        num
+        id
+      }
+      payerAccount {
+        id
+        num
+      }
+      nodeAccount {
+        id
+        num
+      }
+      result {
+        id
+        name
+      }
+    }
+  }
+}
+
+```
