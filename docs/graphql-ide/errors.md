@@ -55,7 +55,7 @@ This error occurs due to excessive data retrieved in a single query. Limit resul
 
 ### Too many simultaneous queries
 
-This is likely an infrastructure issue. Contact support via Telegram for assistance.
+This happens when you hit the number of requests for your plan. Please contact the support team. 
 
 
 ### 500 Internal Server Error
@@ -74,7 +74,7 @@ The error with status 500 is a generic internal server error that could result f
 
 ### ActiveRecord::ActiveRecordError: Response code: 500 DB::Exception: Too many simultaneous queries
 
-If you see this text `DB::Exception: Too many simultaneous queries`, this is an issue with the instance in the backend server, please reach out to support on telegram.
+If you see this text `DB::Exception: Too many simultaneous queries`, this happens when you hit the number of requests for your plan. Please contact the support team.
 
 
 ### ActiveRecord::ActiveRecordError: Response code: 500: Estimated query execution time is too long.
