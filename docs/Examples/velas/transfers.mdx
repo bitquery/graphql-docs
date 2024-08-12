@@ -1,0 +1,51 @@
+# Velas Transfers API
+
+In this section we will see how to get information on Transfers on Velas.
+
+import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
+
+## Latest Transfers on Velas network
+
+This query retrieves the latest Transfers of specific currency `0xc4acd115f1ceebd4a88273423d6cf77c4a1c7559` on Velas network.
+You can run the query [here](https://ide.bitquery.io/Transfers-of-a-currency-on-velas#)
+
+```
+{
+  ethereum(network: velas) {
+    transfers(
+      currency: {is: "0xc4acd115f1ceebd4a88273423d6cf77c4a1c7559"}
+      date: {between: ["2024-07-10T00:00:00Z", "2024-08-11T00:00:00Z"]}
+      options: {desc: "block.timestamp.iso8601", limit: 10}
+    ) {
+      amount
+      block {
+        timestamp {
+          iso8601
+        }
+      }
+      currency {
+        address
+        name
+        symbol
+      }
+      gasValue
+      receiver {
+        address
+        annotation
+      }
+      sender {
+        address
+        annotation
+      }
+      transaction {
+        hash
+      }
+    }
+  }
+}
+
+```
+
+## Video Tutorial | Velas APIs- Overview
+
+<VideoPlayer url="https://www.youtube.com/watch?v=gErkV_Yqqk8" />

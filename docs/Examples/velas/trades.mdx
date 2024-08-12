@@ -1,0 +1,71 @@
+# Velas Trades API
+
+In this section we will see how to get information on DEX Trades on Velas.
+
+import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
+
+## Latest Trades on Velas network
+
+This query retrieves the latest Trades on Velas network.
+You can run the query [here](https://ide.bitquery.io/latest-trades-on-velas#)
+
+```
+{
+  ethereum(network: velas) {
+    dexTrades(
+      date: {after: "2024-08-05T00:00:00Z"}
+      options: {limit: 10, desc: "block.timestamp.iso8601"}
+    ) {
+      baseCurrency {
+        address
+        name
+        symbol
+      }
+      baseAmount(in: USD)
+      buyAmount
+      block {
+        timestamp {
+          iso8601
+        }
+      }
+      buyCurrency {
+        address
+        name
+        symbol
+      }
+      exchange {
+        fullName
+        fullNameWithId
+        address {
+          address
+          annotation
+        }
+      }
+      quoteCurrency {
+        address
+        name
+        symbol
+      }
+      quoteAmount(in: USD)
+      sellAmount
+      quotePrice
+      sellCurrency {
+        address
+        name
+        symbol
+      }
+      transaction {
+        hash
+        txFrom {
+          address
+          annotation
+        }
+      }
+    }
+  }
+}
+```
+
+## Video Tutorial | Velas APIs- Overview
+
+<VideoPlayer url="https://www.youtube.com/watch?v=gErkV_Yqqk8" />

@@ -1,0 +1,40 @@
+# Velas Events API
+
+In this section we will see how to get information on Events on Velas.
+
+import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
+
+## Latest emitted Events on Velas network
+
+This query retrieves the latest emitted events on Velas network.
+You can run the query [here](https://ide.bitquery.io/latest-emitted-events-on-velas#)
+
+```
+{
+  ethereum(network: velas) {
+    smartContractEvents(
+      options: {desc: "block.timestamp.iso8601", limit: 10}
+      date: {after: "2024-08-01T00:00:00Z"}
+    ) {
+      block {
+        timestamp {
+          iso8601
+        }
+      }
+      smartContractEvent {
+        name
+        signature
+        signatureHash
+      }
+      transaction {
+        hash
+      }
+    }
+  }
+}
+
+```
+
+## Video Tutorial | Velas APIs- Overview
+
+<VideoPlayer url="https://www.youtube.com/watch?v=gErkV_Yqqk8" />

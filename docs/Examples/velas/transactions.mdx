@@ -1,0 +1,56 @@
+# Velas Transactions API
+
+In this section we will see how to get information on Transactions on Velas.
+
+import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
+
+## Latest Transactions on Velas network
+
+This query retrieves the latest Transactions on Velas network.
+You can run the query [here](https://ide.bitquery.io/Latest-transactions-on-velas_3#)
+
+```
+{
+  ethereum(network: velas) {
+    transactions(
+      date: {after: "2024-08-10T00:00:00Z"}
+      options: {desc: "block.timestamp.iso8601", limit: 10}
+    ) {
+      amount
+      block {
+        timestamp {
+          iso8601
+        }
+      }
+      currency {
+        address
+        name
+        symbol
+      }
+      gas
+      gasCurrency {
+        address
+        name
+        symbol
+      }
+      gasPrice
+      gasValue
+      hash
+      nonce
+      sender {
+        address
+        annotation
+      }
+      to {
+        address
+        annotation
+      }
+    }
+  }
+}
+
+```
+
+## Video Tutorial | Velas APIs- Overview
+
+<VideoPlayer url="https://www.youtube.com/watch?v=gErkV_Yqqk8" />

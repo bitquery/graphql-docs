@@ -1,0 +1,52 @@
+# Velas Calls API
+
+In this section we will see how to get information on smart contract calls on Velas.
+
+import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
+
+## Latest Smart contract calls made on Velas network
+
+This query retrieves the latest Smart contract calls made on Velas network.
+You can run the query [here](https://ide.bitquery.io/Latest-smart-contract-calls-made-on-velas#)
+
+```
+{
+  ethereum(network: velas) {
+    smartContractCalls(
+      options: {limit: 10, desc: "block.timestamp.iso8601"}
+      date: {after: "2024-08-01T00:00:00Z"}
+    ) {
+      block {
+        timestamp {
+          iso8601
+        }
+      }
+      amount
+      arguments {
+        argument
+        argumentType
+        index
+        value
+      }
+      callDepth
+      gasValue
+      smartContract {
+        address {
+          address
+          annotation
+        }
+      }
+      smartContractMethod {
+        name
+        signature
+        signatureHash
+      }
+    }
+  }
+}
+
+```
+
+## Video Tutorial | Velas APIs- Overview
+
+<VideoPlayer url="https://www.youtube.com/watch?v=gErkV_Yqqk8" />
