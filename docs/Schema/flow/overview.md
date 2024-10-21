@@ -1,4 +1,4 @@
-# Overview of Flow API
+# Overview
 
 Flow is a layer 1 blockchain for creating and trading non-fungible tokens (NFTs), decentralized applications (dApps), and games.
 ![flow explorer](/img/filecoin.png)
