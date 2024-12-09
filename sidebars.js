@@ -284,6 +284,13 @@ const sidebars = {
         },
         {
           type: "category",
+          label: "Coinpath",
+          items: [
+            "Examples/coinpath/money-flow-api",
+          ],
+        },
+        {
+          type: "category",
           label: "Miscellaneous",
           items: [
             {
@@ -310,13 +317,7 @@ const sidebars = {
                 "Examples/Transfers/transfer-api",
               ],
             },
-            {
-              type: "category",
-              label: "Coinpath",
-              items: [
-                "Examples/coinpath/money-flow-api",
-              ],
-            },
+           
           ],
         },
       ],
