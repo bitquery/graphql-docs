@@ -97,8 +97,8 @@ Smart Contract Calls can be filtered using following arguments:
 - `date`: returns date on smart contract call was executed
 - `expression`: performs arithematic operation and returns value of the operation
 - `gasValue`: returns gas consumed by a particular smart contract call
-- `maximum`: returns maximum of selected [measurable fields](/v1/docs/graphql-reference/enums/ethereum-calls-measureable) of `smartContractCalls`
-- `minimum`: returns minimum of selected [measurable fields](/v1/docs/graphql-reference/enums/ethereum-calls-measureable) of `smartContractCalls`
+- `maximum`: returns maximum of selected measurable fields) of `smartContractCalls`
+- `minimum`: returns minimum of selected measurable fields) of `smartContractCalls`
 - `smartContract`: returns details of smart contract
 - `smartContractMethod`: returns details of method to which the call was made
 - `success`: returns if calls is successful or not

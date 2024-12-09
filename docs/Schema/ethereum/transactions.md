@@ -128,8 +128,8 @@ Transactions can be filtered using following arguments:
 - `gasValue`: returns gas value consumed to perform a particular transaction
 - `hash`: returns hash of a particular transaction
 - `index`: returns index of a transaction in a block
-- `maximum`: returns maximum of selected [measurable field](/v1/docs/graphql-reference/enums/ethereum-transactions-measureable) of `transactions`
-- `minimum`: returns minimum of selected [measurable field](/v1/docs/graphql-reference/enums/ethereum-transactions-measureable) of `transactions`
+- `maximum`: returns maximum of selected measurable field of `transactions`
+- `minimum`: returns minimum of selected measurable field of `transactions`
 - `nonce`: returns nonce of a tranasction
 - `sender`: returns address of sender of a particular transaction
 - `success`: returns if transaction is success or not

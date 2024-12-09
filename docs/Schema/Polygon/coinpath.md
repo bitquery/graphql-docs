@@ -135,8 +135,8 @@ The following are available fields for the `coinpath`:
 - `countBigInt`: returns the aggregate count of transactions in BigInt format.
 - `currency`: returns details of the currency used in the transaction.
 - `depth`: returns depth information.
-- `maximum`: returns maximum of selected [coinpath measurable fields](/v1/docs/graphql-reference/objects/ethereum-coinpath)
-- `minimum`: returns minimum of selected [coinpath measurable fields](/v1/docs/graphql-reference/objects/ethereum-coinpath)
+- `maximum`: returns maximum of selected coinpath measurable fields
+- `minimum`: returns minimum of selected coinpath measurable fields
 - `receiver`: returns information about the receiver.
 - `sender`: returns information about the sender.
 - `transaction`:  returns transaction details.

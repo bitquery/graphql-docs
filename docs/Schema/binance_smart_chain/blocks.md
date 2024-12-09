@@ -77,9 +77,9 @@ Blocks data can be filtered using following arguments:
 - `gasUsed`: returns the gas used for that block.
 - `hash`: returns the hash of the block.
 - `height`: returns the height of the block.
-- `maximum`: returns the maximum of selected [measruable fields](/v1/docs/graphql-reference/enums/ethereum-blocks-measureable) of Ethereum Blocks
+- `maximum`: returns the maximum of selected measurable fields of Ethereum Blocks
 - `miner`: returns the miner of the block.
-- `minimum`: returns the minimum of selected [measruable fields](/v1/docs/graphql-reference/enums/ethereum-blocks-measureable) of Ethereum Blocks
+- `minimum`: returns the minimum of selected measurable fields of Ethereum Blocks
 - `nonce`: returns the nonce of the block.
 - `parentHash`: returns the parent hash for the block.
 - `reward`: returns the reward given to the miner for producing the block.

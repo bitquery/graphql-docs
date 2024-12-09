@@ -69,8 +69,8 @@ The following are available fields for the `arguments`:
 - `genesisHash64`: returns value of genesis hash
 - `gensisId`: returns valeu of gensis Id
 - `lastRound`: returns value of last round
-- `maximum`: returns maximum of [measurable arguments](/v1/docs/graphql-reference/enums/algorand-arguments-measureable/)
-- `minimum`: returns minimum of [measurable arguments](/v1/docs/graphql-reference/enums/algorand-arguments-measureable/)
+- `maximum`: returns maximum of measurable arguments
+- `minimum`: returns minimum of measurable arguments
 - `note`: returns value of note field
 - `poolerror`: returns value of pool error field
 - `smartContract`: returns information of smart contract being called
