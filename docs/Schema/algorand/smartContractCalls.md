@@ -44,11 +44,11 @@ Here's an exmaple that demonstrates how to use `smartContractCalls` query:
 -   `genesisHash64`: returns genesis hash
 -   `gensisId`: returns genesis block ID
 -   `lastRound`: returns last round of transaction
--   `maximum`: returns maximum of selected [measurable field of Algorand Calls](/v1/docs/graphql-reference/enums/algorand-calls-measureable)
--   `minimum`: returns minimum of selected [measurable field of Algorand Calls](/v1/docs/graphql-reference/enums/algorand-calls-measureable)
+-   `maximum`: returns maximum of selected measurable field of Algorand Calls
+-   `minimum`: returns minimum of selected measurable field of Algorand Calls
 -   `note`: returns value of note field
 -   `poolerror`: returns value of pool error field
 -   `smartContract`: returns information of smart contract being called
 -   `transaction`: returns information of transaction where call was executed
 -   `txSender`: returns information of transaction sender
--   `txType`: returns [transaction type](/v1/docs/graphql-reference/enums/algorand-tx-type) in which transfer happened
+-   `txType`: returns transaction type in which transfer happened

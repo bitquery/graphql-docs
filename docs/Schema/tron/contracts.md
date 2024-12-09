@@ -88,8 +88,8 @@ The following fields are available for the `contracts`:
 -   `energyUsageTotal`: returns total energy usage
 -   `expression`: performs arithematic operation on fields in the query and returns value of the operation
 -   `fee`: returns fee consumed 
--   `maximum`: returns maximum for selected [measurable field](/v1/docs/graphql-reference/enums/tron-contracts-measureable) of Tron contracts
--   `minimum`: returns maximum for selected [measurable field](/v1/docs/graphql-reference/enums/tron-contracts-measureable) of Tron contracts
+-   `maximum`: returns maximum for selected measurable field of Tron contracts
+-   `minimum`: returns maximum for selected measurable field of Tron contracts
 -   `netUsage`: returns net usages
 -   `success`: returns is call was successful or not
 -   `txHash`: returns transaction hash

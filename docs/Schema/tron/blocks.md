@@ -72,7 +72,7 @@ Here is an example that demonstrates how to retrieve blocks data:
 - `expression`: performs arithematic operation on fields in the query and returns value of the operation
 - `hash`: returns block hash
 - `height`: returns block height
-- `maximum`: returns maximum of selected [measurable field of Tron Blocks](/v1/docs/graphql-reference/enums/tron-blocks-measureable)
+- `maximum`: returns maximum of selected measurable field of Tron Blocks
 - `minimum`: returns minimum of selected measurable field of Tron Blocks
 - `parentBlockHash`: returns parent block hash for the block
 - `timestamp`: returns timestamp of the block

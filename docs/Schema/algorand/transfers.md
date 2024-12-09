@@ -72,9 +72,9 @@ Transfer data can be filtered using the following arguments
 -   `expression`: performs arithematic operation on fields in the query and returns value of the operation
 -   `firstRound`: returns first round for the transfer
 -   `lastRound`: returns last round for the transfer
--   `maximum`: returns maximum for selected [measurable field of Algorand transfers](/v1/docs/graphql-reference/enums/algorand-transfers-measureable)
+-   `maximum`: returns maximum for selected measurable field of Algorand transfers
 -   `memo`: returns value of memo field
--   `minimum`: returns minimum for selected [measurable field of Algorand transfers](/v1/docs/graphql-reference/enums/algorand-transfers-measureable)
+-   `minimum`: returns minimum for selected measurable field of Algorand transfers
 -   `receiver`: returns address and annotation for receiver of the transfer
 -   `sender`: returns address and annotation for sender of the transfer
 -   `transaction`: returns details of transaction in which transfer occurred 

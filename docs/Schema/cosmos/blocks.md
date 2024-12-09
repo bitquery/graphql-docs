@@ -48,8 +48,8 @@ Blocks data can be filtered using following arguments:
 -   `expression`: performs arithematic operation on fields in the query and returns value of the operation
 -   `hash`: returns block hash
 -   `header`: returns block header
--   `maximum`: returns maximum for selected [measurable field of Cosmos blocks](/v1/docs/graphql-reference/enums/cosmos-block-measurable)
+-   `maximum`: returns maximum for selected measurable field of Cosmos blocks
 -   `metadata`: returns metadata of block
--   `minimum`: returns minimum for selected [measurable field of Cosmos blocks](/v1/docs/graphql-reference/enums/cosmos-block-measurable)
+-   `minimum`: returns minimum for selected measurable field of Cosmos blocks
 -   `proposer`: returns address and annotation (if available) of block proposer
 -   `timestamp`: returns block timestamp
