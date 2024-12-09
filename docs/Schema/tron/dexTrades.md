@@ -127,8 +127,8 @@ The following fields are available for the `dexTrades`:
 -   `logsCount`: returns logs count
 -   `logsCountBigInt`: returns logs count as `BigInt`
 -   `maker`: returns address info of trade maker side 
--   `maximum`: returns maximum for selected [measurable field of Tron DEX trades](/v1/docs/graphql-reference/enums/tron-dex-trades-measureable)
--   `minimum`: returns minimum for selected [measurable field of Tron DEX trades](/v1/docs/graphql-reference/enums/tron-dex-trades-measureable)
+-   `maximum`: returns maximum for selected measurable field of Tron DEX trades
+-   `minimum`: returns minimum for selected measurable field of Tron DEX trades
 -   `netFee`: returns net fee for the trade 
 -   `netUsage`: returns net usage for the trade
 -   `price`: returns price of the trade
