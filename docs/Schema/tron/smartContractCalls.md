@@ -101,8 +101,8 @@ The following fields are available for `smartContractCalls`:
 - `expression`: performs arithematic operation on fields in the query and returns value of the operation
 - `external`: returns if calls is external or internal
 - `fee`: returns fee consumed by smart contract call
-- `maximum`: returns maximum for selected [measurable field of Tron calls](/v1/docs/graphql-reference/enums/tron-calls-measureable)
-- `minimum`: returns minimum for selected [measurable field of Tron calls](/v1/docs/graphql-reference/enums/tron-calls-measureable)
+- `maximum`: returns maximum for selected measurable field of Tron calls
+- `minimum`: returns minimum for selected measurable field of Tron calls
 - `netUsage`: returns net energy usage of smart contract call
 - `smartContract`: returns details of smart contract being called
 - `smartContractMethod`: returns details of smart contract method being called

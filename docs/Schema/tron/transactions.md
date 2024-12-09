@@ -91,8 +91,8 @@ Here is an example that demonstrates how to fetch transaction data:
 -   `internalTransactionsCountBigInt`: returns internal transactions count as `BigInt`
 -   `logsCount`: returns logs count
 -   `logcCountBigInt`: returns logs count as `BigInt`
--   `maximum`: returns maximum for selected [measurable field of Tron transactions](/v1/docs/graphql-reference/enums/tron-transactions-measureable)
--   `minimum`: returns minimum for selected [measurable field of Tron transactions](/v1/docs/graphql-reference/enums/tron-transactions-measureable)
+-   `maximum`: returns maximum for selected measurable field of Tron transactions
+-   `minimum`: returns minimum for selected measurable field of Tron transactions
 -   `netFee`: returns net fee for transaction
 -   `netUsage`: returns net usage for transaction
 -   `refBlockHash`: returns ref block hash as hex
