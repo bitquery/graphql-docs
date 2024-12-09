@@ -1,4 +1,4 @@
-# Bitquery Trace API
+# Ethereum Trace API
 
 ## What is Ethereum Trace?
 
