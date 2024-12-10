@@ -1,10 +1,11 @@
 # Inputs and Outputs API
 
+In this section we will see examples to get details about inputs and outputs of a transaction from Bitcoin network.
+
 import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
 
 ## Get the UTXO Input and Outputs for a specific address
 
-  
 ```
 query ($network: BitcoinNetwork!) {
   bitcoin(network: $network) {
@@ -40,15 +41,11 @@ query ($network: BitcoinNetwork!) {
 }
 
 ```
-  
 
 In this query we have used two of API sets named “inputs” and “outputs” for getting the spent and received bitcoin currency for the address “bc1p4kufll9uhnpkgzuc65slcxd2qaw2hl9xecket3h8yyu4awglcsqslqaztd” with filtering out by block, date and it provides the transaction hash, block height and amount.
 
-  
-
 ## Getting Miners Block Rewards per Day
 
-  
 ```
 query ($network: BitcoinNetwork!, $dateFormat: String!, $from: ISO8601DateTime, $till: ISO8601DateTime) {
 
@@ -86,10 +83,11 @@ reward: value
 
 count(uniq: blocks)
 
-}}}  
+}}}
 ```
+
 We can get the miner Block reward per day by using the outputs API and using the filters of outputDirection set to mining and we get parameters such as miner address, miner rewards in the whole day and blocks they mined. Yo can try running the example query [here](https://ide.bitquery.io/bitcoin-miners-rewards).
 
 ## Video Tutorial to Get Daily Miner Rewards Info
 
-<VideoPlayer url="https://youtu.be/3RC7Mxitfzg"/>
+<VideoPlayer url="https://youtu.be/3RC7Mxitfzg" />
