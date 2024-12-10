@@ -1,5 +1,6 @@
-
 # Inputs and Outputs API
+
+import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
 
 ## Get the UTXO Input and Outputs for a specific address
 
@@ -87,4 +88,8 @@ count(uniq: blocks)
 
 }}}  
 ```
-We can get the miner Blovk reward per day by using the outputs API and using the filters of outputDirection set to mining and we get parameters such as miner address, miner rewards in the whole day and blocks they mined.
+We can get the miner Block reward per day by using the outputs API and using the filters of outputDirection set to mining and we get parameters such as miner address, miner rewards in the whole day and blocks they mined. Yo can try running the example query [here](https://ide.bitquery.io/bitcoin-miners-rewards).
+
+## Video Tutorial to Get Daily Miner Rewards Info
+
+<VideoPlayer url="https://youtu.be/3RC7Mxitfzg"/>
