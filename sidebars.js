@@ -97,7 +97,6 @@ const sidebars = {
             "Schema/Cronos/transactions",
             "Schema/Cronos/transfers",
           ],
-          
         },
         {
           type: "category",
@@ -196,6 +195,59 @@ const sidebars = {
             "Schema/Dogecoin/transactions",
           ],
         },
+        {
+          type: "category",
+          label: "Tron",
+          items: [
+            "Schema/tron/address",
+            "Schema/tron/arguments",
+            "Schema/tron/blocks",
+            "Schema/tron/coinpath",
+            "Schema/tron/contracts",
+            "Schema/tron/dexTrades",
+            "Schema/tron/overview",
+            "Schema/tron/smartContractCalls",
+            "Schema/tron/smartContractEvents",
+            "Schema/tron/transactions",
+            "Schema/tron/transfers",
+          ],
+        },
+        {
+          type: "category",
+          label: "Solana",
+          items: [
+            "Schema/solana/address",
+            "Schema/solana/blockRewards",
+            "Schema/solana/blocks",
+            "Schema/solana/coinpath",
+            "Schema/solana/instructionAccounts",
+            "Schema/solana/instructions",
+            "Schema/solana/overview",
+            "Schema/solana/transactions",
+            "Schema/solana/transfers",
+          ],
+        },
+        {
+          type: "category",
+          label: "Ripple",
+          items: [
+            "Schema/ripple/accountRoots",
+            "Schema/ripple/address",
+            "Schema/ripple/addressStats",
+            "Schema/ripple/balances",
+            "Schema/ripple/blocks",
+            "Schema/ripple/checks",
+            "Schema/ripple/coinpath",
+            "Schema/ripple/escrows",
+            "Schema/ripple/nftokenOffers",
+            "Schema/ripple/offers",
+            "Schema/ripple/overview",
+            "Schema/ripple/payments",
+            "Schema/ripple/rippleStates",
+            "Schema/ripple/transactions",
+            "Schema/ripple/transfers",
+          ],
+        },
       ],
     },
     {
@@ -238,9 +290,7 @@ const sidebars = {
             {
               type: "category",
               label: "Avalanche",
-              items: [
-                "Examples/avalanche/avax-trades-api",
-              ],
+              items: ["Examples/avalanche/avax-trades-api"],
             },
             {
               type: "category",
@@ -281,16 +331,12 @@ const sidebars = {
             {
               type: "category",
               label: "Filecoin",
-              items: [
-                "Examples/filecoin/messages",
-              ],
+              items: ["Examples/filecoin/messages"],
             },
             {
               type: "category",
               label: "Flow",
-              items: [
-                "Examples/Input_Output/IO_examples",
-              ],
+              items: ["Examples/Input_Output/IO_examples"],
             },
             {
               type: "category",
@@ -306,9 +352,7 @@ const sidebars = {
             {
               type: "category",
               label: "Solana",
-              items: [
-                "Examples/Solana/instructions",
-              ],
+              items: ["Examples/Solana/instructions"],
             },
             {
               type: "category",
@@ -353,9 +397,7 @@ const sidebars = {
             {
               type: "category",
               label: "Zcash",
-              items: [
-                "Examples/Zcash/address-api",
-              ],
+              items: ["Examples/Zcash/address-api"],
             },
           ],
         },
@@ -366,25 +408,19 @@ const sidebars = {
             {
               type: "category",
               label: "Polygon (Matic)",
-              items: [
-                "Examples/address/specific-queries",
-              ],
+              items: ["Examples/address/specific-queries"],
             },
             {
               type: "category",
               label: "Staking (Beacon Chain)",
-              items: [
-                "Examples/Beacon Chain Examples/eth2_examples",
-              ],
+              items: ["Examples/Beacon Chain Examples/eth2_examples"],
             },
           ],
         },
         {
           type: "category",
           label: "Coinpath",
-          items: [
-            "Examples/coinpath/money-flow-api",
-          ],
+          items: ["Examples/coinpath/money-flow-api"],
         },
         {
           type: "category",
@@ -410,17 +446,13 @@ const sidebars = {
             {
               type: "category",
               label: "Transfers",
-              items: [
-                "Examples/Transfers/transfer-api",
-              ],
+              items: ["Examples/Transfers/transfer-api"],
             },
-           
           ],
         },
       ],
     },
-    
-    
+
     {
       type: "category",
       label: "Use Cases",
@@ -446,9 +478,7 @@ const sidebars = {
         title: "API Blog",
         description: "Latest insights and updates on APIs.",
       },
-      items: [
-        "API-Blog/dogecoin-wallet-auditing",
-      ],
+      items: ["API-Blog/dogecoin-wallet-auditing"],
     },
   ],
 };
