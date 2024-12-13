@@ -267,6 +267,21 @@ const sidebars = {
         },
         {
           type: "category",
+          label: "Tezos",
+          items: [
+            "Schema/tezos/address",
+            "Schema/tezos/arguments",
+            "Schema/tezos/balanceUpdates",
+            "Schema/tezos/blocks",
+            "Schema/tezos/coinpath",
+            "Schema/tezos/operations",
+            "Schema/tezos/transactions",
+            "Schema/tezos/transfers",
+          ],
+        },
+        
+        {
+          type: "category",
           label: "Tron",
           items: [
             "Schema/tron/address",
