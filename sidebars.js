@@ -436,6 +436,13 @@ const sidebars = {
             },
             {
               type: "category",
+              label: "Dogecoin",
+              items: [
+                "Examples/Dogecoin/get-latest-price",
+              ],
+            },
+            {
+              type: "category",
               label: "Velas",
               items: [
                 "Examples/velas/calls",
