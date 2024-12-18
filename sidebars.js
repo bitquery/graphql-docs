@@ -58,6 +58,76 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "Query Features",
+      link: {
+        type: "generated-index",
+        title: "Query Features Documentation",
+        description: "Detailed features available for building queries.",
+      },
+      items: [
+        {
+          type: "category",
+          label: "Aggregation",
+          items: [
+            "query-features/aggregation/aggregation",
+            "query-features/aggregation/count",
+            "query-features/aggregation/sum",
+          ],
+        },
+        {
+          type: "category",
+          label: "Arguments",
+          items: [
+            "query-features/arguments/argument",
+            "query-features/arguments/EVM_arguments",
+            "query-features/arguments/Other_Chains_arguments",
+          ],
+        },
+        {
+          type: "category",
+          label: "Expressions",
+          items: [
+            "query-features/expressions/overview",
+          ],
+        },
+        {
+          type: "category",
+          label: "Filtering",
+          items: [
+            "query-features/filtering/fields",
+            "query-features/filtering/limits",
+            "query-features/filtering/options",
+            "query-features/filtering/sorting",
+          ],
+        },
+        {
+          type: "category",
+          label: "Fragments",
+          items: [
+            "query-features/fragments/overview",
+          ],
+        },
+        {
+          type: "category",
+          label: "Search",
+          items: [
+            "query-features/search/search",
+          ],
+        },
+        {
+          type: "category",
+          label: "Utilities",
+          items: [
+            "query-features/utilities/utilities",
+          ],
+        },
+        "query-features/aliases",
+        "query-features/Metrics",
+      ],
+    },
+    
+    {
+      type: "category",
       label: "Schema",
       link: {
         type: "generated-index",
