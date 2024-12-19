@@ -5,14 +5,14 @@
 The below query allows you to retrieve a set of instructions from the Solana blockchain network. These instructions form the building blocks of transactions and smart contracts on the network.
 The fields within the instructions `{}` specify the data that the query will return for each instruction. This includes details about the action, block, transaction, program, log, external action, external program, and raw data associated with each instruction.
 
-You can run the query [here](https://ide.bitquery.io/Solana-Instructions)
+You can run the query [here](https://ide.bitquery.io/Solana-Instructions_6)
 
 ```
 query ($network: SolanaNetwork!, $limit: Int!, $offset: Int!) {
   solana(network: $network) {
     instructions(
       options: {limit: $limit, offset: $offset, desc: "block.timestamp.time"}
-      date: {is: "2024-01-01"}
+      date: {since: "2024-12-19"}
     ) {
       action {
         name
@@ -71,14 +71,14 @@ This will return the last 100 instructions from the Solana network on a particul
 ## Find Transactions based on Program
 
 The below query find all instructions, corresponding transactions and program logs for a specific program on the Solana blockchain.
-You can run the query [here](https://ide.bitquery.io/Solana-compactupdatevotestate-Action_2)
+You can run the query [here](https://ide.bitquery.io/Solana-compactupdatevotestate-Action_4)
 
 ```
 query ($network: SolanaNetwork!, $limit: Int!, $offset: Int!) {
   solana(network: $network) {
     instructions(
-      options: {limit: $limit, offset: $offset, desc: "block.timestamp.time"}
-      date: {is: "2024-01-01"}
+      options: {limit: $limit, offset: $offset, desc: "block.height"}
+      date: {since: "2024-12-19"}
       parsedActionName: {is: "compactupdatevotestate"}
     ) {
       action {
@@ -86,6 +86,7 @@ query ($network: SolanaNetwork!, $limit: Int!, $offset: Int!) {
         type
       }
       block {
+        height
         hash
         timestamp {
           time
@@ -125,6 +126,7 @@ query ($network: SolanaNetwork!, $limit: Int!, $offset: Int!) {
     }
   }
 }
+
 {
   "limit": 100,
   "offset": 0,
