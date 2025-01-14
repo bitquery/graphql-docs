@@ -1,4 +1,4 @@
-# Solana Transfers Data
+# Solana Transfers API
 
 ## Recent transfers to/from a wallet address
 
