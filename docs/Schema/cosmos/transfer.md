@@ -99,13 +99,13 @@ Here's an example that demostrates how to fetch 10 latest transfers:
 
 -   `expression`: performs arithematic operation on fields in the query and returns value of the operation
 
--   `maximum`: returns maximum for selected [measurable field of Cosmos Transfer](/v1/docs/graphql-reference/enums/cosmos-transfers-measurable)
+-   `maximum`: returns maximum for selected measurable field of Cosmos Transfer
 
 -   `messageIndex`: returns index of message in the transaction
 
 -   `messageType`: returns type of message
 
--   `minimum`: returns minimum for selected [measurable field of Cosmos Transfer](/v1/docs/graphql-reference/enums/cosmos-transfers-measurable)
+-   `minimum`: returns minimum for selected measurable field of Cosmos Transfer
 
 -   `receiver`: returns receiver address of the transfer
 

@@ -68,9 +68,9 @@ Attributes can be filtered using following arguments:
 -   `date`: returns date of the transaction
 -   `eventType`: returns event type
 -   `expression`: performs arithematic operation on fields in the query and returns value of the operation
--   `maximum`: returns maximum for selected [measurable field of cosmos attributes](/v1/docs/graphql-reference/enums/cosmos-attributes-measurable)
+-   `maximum`: returns maximum for selected measurable field of cosmos attributes
 -   `message`: returns message info
--   `minimum`:returns minimum for selected [measurable field of cosmos attributes](/v1/docs/graphql-reference/enums/cosmos-attributes-measurable)
+-   `minimum`:returns minimum for selected measurable field of cosmos attributes
 -   `transaction`: returns transaction info where message is included
 -   `value`: returns value of attribute
 -   `valueIndex`: returns index of attribute

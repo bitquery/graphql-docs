@@ -127,8 +127,8 @@ Data retrieved using `transfers` can be filtered using following arguments:
 - `expression`: performs arithematic operation and returns value of the operation
 - `external`: 
 - `gasValue`: returns gas value consumed to perform a particular transfer
-- `maximum`: returns maximum of [selected measurable](/v1/docs/graphql-reference/enums/ethereum-transfers-measureable) field of `transfers`
-- `minimum`: returns minimum of [selected measurable](/v1/docs/graphql-reference/enums/ethereum-transfers-measureable) field of `transfers`
+- `maximum`: returns maximum of selected measurable field of `transfers`
+- `minimum`: returns minimum of selected measurable field of `transfers`
 - `receiver`: returns receiver of a particular transfer
 - `sender`: returns sender of a particular transfer
 - `success`: returns boolean value for success of a particular transfer

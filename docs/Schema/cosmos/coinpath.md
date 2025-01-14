@@ -24,8 +24,8 @@ The coinpath API provides detailed information about the money flow using coinpa
 -   `countBigInt`: returns count and other metrics
 -   `currency`: returns currency of transfer
 -   `depth`: returns 1- based hop depth of the graph
--   `maximum`: returns maximum for selected [measurable field of Cosmos coinpath](/v1/docs/graphql-reference/enums/cosmos-coinpath-measurable)
--   `minimum`: returns minimum for selected [measurable field of Cosmos coinpath](/v1/docs/graphql-reference/enums/cosmos-coinpath-measurable)
+-   `maximum`: returns maximum for selected measurable field of Cosmos coinpath
+-   `minimum`: returns minimum for selected measurable field of Cosmos coinpath
 -   `receiver`: returns receiver address
 -   `sender`: returns sender address
 -   `transaction`: returns message of transfer happened

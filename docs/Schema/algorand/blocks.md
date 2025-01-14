@@ -62,8 +62,8 @@ Blocks can be filtered using the following arguments:
 - `frac`: returns value of frac field
 - `hash`: returns block hash
 - `height`: returns block height
-- `maximum`: returns maximum of selected [measurable field of Algorand blocks](/v1/docs/graphql-reference/enums/algorand-blocks-measureable)
-- `minimum`: returns minimum of selected [measurable field of Algorand blocks](/v1/docs/graphql-reference/enums/algorand-blocks-measureable)
+- `maximum`: returns maximum of selected measurable field of Algorand blocks
+- `minimum`: returns minimum of selected measurable field of Algorand blocks
 - `nextProtocol`: returns the next proposed protocol version
 - `nextProtocolApprovals`: returns number of blocks which approved the protocol upgrade
 - `nextProtocolSwitchOn`: returns round on which the protocol upgrade will take effect

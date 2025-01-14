@@ -2,14 +2,12 @@
 
 The Transactions API schema returns a list of transactions that occurred on the Cardano blockchain within a specified date range. The schema includes the following fields:
 
-
-
 ```
-query ($network: CardanoNetwork!,  $from: ISO8601DateTime, $till: ISO8601DateTime) {
-  cardano(network: $network) {
+query {
+  cardano(network: cardano) {
     transactions(
-      options: {desc: ["block.height", "index"], limit:10}
-      date: {since: $from, till: $till}
+      options: {desc: ["block.height", "index"], limit: 10}
+      date: {since: "2023-07-17", till: "2023-07-24T23:59:59"}
     ) {
       block {
         timestamp {
@@ -34,16 +32,8 @@ query ($network: CardanoNetwork!,  $from: ISO8601DateTime, $till: ISO8601DateTim
     }
   }
 }
-<!-- Parameters -->
-{
-  "network": "cardano",
-  "from": "2023-07-17",
-  "till": "2023-07-24T23:59:59",
-  "dateFormat": "%Y-%m-%d"
-}
+
 ```
-
-
 
 `block`: The block in which the transaction was included.
 
@@ -130,4 +120,5 @@ The total amount of ADA withdrawn from the transaction.
 
 `inputAddress`
 The address of the input that sent the funds.
+
 </details>

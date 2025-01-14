@@ -88,8 +88,8 @@ Here is an example that demonstrates how to fetch transfers from a particular bl
 - `expression`: performs arithematic operation on fields in the query and returns value of the operation
 - `external`: returns if transfer is external or internal
 - `fee`: returns fee consumed for transfer
-- `maximum`: returns maximum of selected measurable field of [Tron Transfers](/v1/docs/graphql-reference/enums/tron-transfers-measureable)
-- `minimum`: returns minimum of selected measurable field of [Tron Transfers](/v1/docs/graphql-reference/enums/tron-transfers-measureable)
+- `maximum`: returns maximum of selected measurable field of Tron Transfers
+- `minimum`: returns minimum of selected measurable field of Tron Transfers
 - `netUsage`: 
 - `receiver`: returns address of transfer receiver
 - `sender`: returns address of transfer sender
