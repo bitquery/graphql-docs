@@ -34,7 +34,7 @@ Now navigate to the tab with the endpoint. Set
 
   ```
   Content-Type: application/json
-  Authorization: your API key
+  Authorization: 'Bearer ory_at_...' 
   ```
 
   ![headers](/img/wpgetapi/headers.png)

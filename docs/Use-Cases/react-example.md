@@ -11,7 +11,7 @@ Below is a step-by-step tutorial on how to create a React application that displ
 
 - Basic understanding of React and JavaScript.
 - Node.js and npm installed on your machine.
-- An API key from Bitquery. Sign up [here](https://account.bitquery.io/auth/signup) to get an API key.
+- An Access Token from Bitquery. Sign up [here](https://account.bitquery.io/auth/signup).
 
 ### Step 1: Setting Up Your React Component
 
@@ -44,7 +44,7 @@ const response = await fetch("https://graphql.bitquery.io", {
     method: 'POST',
     headers: {
       "Content-Type": "application/json",
-      "X-API-KEY": "******"
+      "Authorization': 'Bearer ory_at_..."
     },
     body: JSON.stringify({
       query: `query ($network: EthereumNetwork!, $isdate: ISO8601DateTime) {

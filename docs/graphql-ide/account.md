@@ -14,10 +14,6 @@ The "Messages" section provides notifications from the system regarding any acco
 
 The "Billing" section serves as your hub for all things related to account billing. Here, you can find billing details and manage your billing. Furthermore, it provides a overview of your points consumption and API calls made during the current billing cycle, keeping you informed about your usage within your allocated points limit.
 
-## API key
-
-The "API Key" section allows you to control of your API keys. Here, you can easily create new keys or deactivate previous ones, helping you effortlessly access management.
-
 ## API Usage
 
 The "API Usage" section is your comprehensive dashboard for tracking your API activity. It provides insights into your API calls and points consumption, giving you a clear picture of your usage patterns. You can also access historical data, viewing your overall API usage and points consumed since your account's inception, as well as detailed metrics for the last 24 hours.  
