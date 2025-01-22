@@ -90,8 +90,7 @@ query ($network: EthereumNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Da
     }
 }
 headers = {
-    'Content-Type': 'application/json',
-    'X-API-KEY': 'your key',
+    'Content-Type': 'application/json'
     'Authorization': 'Bearer ory_at_...'
 }
 

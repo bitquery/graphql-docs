@@ -141,7 +141,7 @@ const fetchMyQueryData = async () => {
         {
           headers: {
             'Content-Type': 'application/json',
-            'X-API-KEY': 'YOUR KEY'
+           'Authorization': 'Bearer ory_at_...'
           }
         }
       );
@@ -193,7 +193,7 @@ useEffect(() => {
           {
             headers: {
               'Content-Type': 'application/json',
-              'X-API-KEY': 'YOUR KEY'
+             Authorization': 'Bearer ory_at_...
             }
           }
         );

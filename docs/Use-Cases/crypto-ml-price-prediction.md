@@ -35,7 +35,7 @@ First, we need to obtain historical trading data for our cryptocurrency. We'll u
     graphql_endpoint = "https://graphql.bitquery.io/"
     headers = {
     'Content-Type': 'application/json',
-    'X-API-KEY':'your key here'
+    'Authorization': 'Bearer ory_at_...'
     }
 
 **Replace with actual values for $baseAddress and $interval**
