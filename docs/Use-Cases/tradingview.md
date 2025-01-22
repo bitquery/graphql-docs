@@ -206,7 +206,7 @@ useEffect(() => {
   }, []);
 ```
 
-Get your API here https://account.bitquery.io/user/api_key
+Get your Access Token here https://account.bitquery.io/user/api_v2/access_tokens
 
 #### Calculate token prices
 
