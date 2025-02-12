@@ -38,6 +38,8 @@ This query retrieves the latest 10 transfers of a specific currency ("TR7NHqjeKQ
 
 ## Get latest transfers by receivers
 
+In this query we use the `reciever` filter to get all transfers sent to an address on Tron. You can run it [here](https://ide.bitquery.io/tron-transactions-by-receiver)
+
 ```
 {
   tron {

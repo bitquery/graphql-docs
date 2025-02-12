@@ -71,7 +71,7 @@ Use CTRL + Space to use autocomplete.
 You can find our GraphQL Schema on our [IDE](https://graphql.bitquery.io/ide).
 
 **Calling Bitquery APIs programmatically**
-To call our APIs programmatically, you will need API keys, which you can get it by signing up on our [GraphQL IDE](https://graphql.bitquery.io/ide), to learn more read [this](https://bitquery.io/blog/graphql-with-python-javascript-and-ruby) article.
+To call our APIs programmatically, you will need Access Token, which you can get it by signing up on our [GraphQL IDE](https://graphql.bitquery.io/ide), to learn more read [this](https://bitquery.io/blog/graphql-with-python-javascript-and-ruby) article.
 
 ## Query Builder
 

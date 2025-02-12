@@ -141,7 +141,7 @@ const fetchMyQueryData = async () => {
         {
           headers: {
             'Content-Type': 'application/json',
-            'X-API-KEY': 'YOUR KEY'
+           'Authorization': 'Bearer ory_at_...'
           }
         }
       );
@@ -193,7 +193,7 @@ useEffect(() => {
           {
             headers: {
               'Content-Type': 'application/json',
-              'X-API-KEY': 'YOUR KEY'
+             Authorization': 'Bearer ory_at_...
             }
           }
         );
@@ -206,7 +206,7 @@ useEffect(() => {
   }, []);
 ```
 
-Get your API here https://account.bitquery.io/user/api_key
+Get your Access Token here https://account.bitquery.io/user/api_v2/access_tokens
 
 #### Calculate token prices
 

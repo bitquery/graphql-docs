@@ -28,14 +28,14 @@ Should you wish to save or share your queries, follow these steps:
 3. Select the desired visibility setting for your query.
 4. Click "Save" to save your query for future use or sharing.
 
-## How do you get my API key using Bitquery IDE?
+## How do you get my OAuth Token using Bitquery IDE?
 
-You can get your API keys from your account dashboard under the "API Keys" section. Here's how:
+You can get your Access Token from your account dashboard under the "Access Tokens" section. Here's how:
 
 1. Click the rightmost person icon in the navbar of IDE to access the dropdown menu.
 2. Choose "Account" to access your dashboard.
-3. Navigate to the "API Keys" section.
-4. Copy your API Key for integration into your application.
+3. Navigate to the "Access Tokens" section.
+4. Copy your Access Tokens for integration into your application.
 
 ## Can I buy Bitquery subscriptions using IDE?
 
@@ -55,4 +55,4 @@ You can find which queries have consumed substantial points within the "Queries"
 
 ## What if I don't want to use IDE?
 
-If the IDE isn't your preferred route, you can still directly access our API from your application using your API key.
+If the IDE isn't your preferred route, you can still directly access our API from your application using your Access Token.
