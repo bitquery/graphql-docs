@@ -37,3 +37,41 @@ query MyQuery {
   }
 }
 ```
+
+## Top Transfers of a token
+
+This query retrieves the top 10 transfers for this token `4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R`. Try the query [here](https://ide.bitquery.io/v1-top-transfers-of-a-solana-token_1).
+
+```
+query MyQuery {
+  solana {
+    transfers(
+      currency: {is: "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R"}
+      options: {desc: "amount", limit: 10}
+      date: {after: "2025-02-10"}
+    ) {
+      amount
+      block {
+        height
+        hash
+      }
+      currency {
+        symbol
+        name
+        decimals
+        address
+      }
+      receiver {
+        address
+      }
+      sender {
+        address
+      }
+      transaction {
+        signature
+      }
+    }
+  }
+}
+
+```
