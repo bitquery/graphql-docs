@@ -164,8 +164,8 @@ const config = {
             position: "right",
           },
           {
-            to: "/blog/",
-            label: "New Releases",
+            to: "https://lite.bitquery.io/",
+            label: "Moneyflow Lite",
             position: "left",
           },
         ],
