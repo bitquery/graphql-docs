@@ -159,8 +159,8 @@ const config = {
             position: "left",
           },
           {
-            to: "https://ide.bitquery.io",
-            label: "Get your free API key",
+            to: "https://account.bitquery.io/user/api_v2/access_tokens",
+            label: "Get your free Access Token",
             position: "right",
           },
           {
