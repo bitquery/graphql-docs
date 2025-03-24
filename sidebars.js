@@ -259,7 +259,6 @@ const sidebars = {
             "Schema/Dogecoin/coinpath",
             "Schema/Dogecoin/inputs",
             "Schema/Dogecoin/omnitransactions",
-            "Schema/Dogecoin/omnitransfers",
             "Schema/Dogecoin/outputs",
             "Schema/Dogecoin/overview",
             "Schema/Dogecoin/transactions",
