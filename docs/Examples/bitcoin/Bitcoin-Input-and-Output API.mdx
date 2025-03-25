@@ -102,42 +102,27 @@ The `properties` field inside the `currency` object will contain **parsed datum*
 
 ```
 query ($network: BitcoinNetwork!, $dateFormat: String!, $from: ISO8601DateTime, $till: ISO8601DateTime) {
-
-bitcoin(network: $network) {
-
-outputs(
-
-options: {asc: "date.date"}
-
-date: {since: $from, till: $till}
-
-txIndex: {is: 0}
-
-outputDirection: {is: mining}
-
-outputScriptType: {notIn: ["nulldata", "nonstandard"]}
-
-) {
-
-address: outputAddress {
-
-address
-
-annotation
-
+  bitcoin(network: $network) {
+    outputs(
+      options: {asc: "date.date"}
+      date: {since: $from, till: $till}
+      txIndex: {is: 0}
+      outputDirection: {is: mining}
+      outputScriptType: {notIn: ["nulldata", "nonstandard"]}
+    ) {
+      address: outputAddress {
+        address
+        annotation
+      }
+      date {
+        date(format: $dateFormat)
+      }
+      reward: value
+      count(uniq: blocks)
+    }
+  }
 }
 
-date {
-
-date(format: $dateFormat)
-
-}
-
-reward: value
-
-count(uniq: blocks)
-
-}}}
 ```
 
 We can get the miner Block reward per day by using the outputs API and using the filters of outputDirection set to mining and we get parameters such as miner address, miner rewards in the whole day and blocks they mined. Yo can try running the example query [here](https://ide.bitquery.io/bitcoin-miners-rewards).
