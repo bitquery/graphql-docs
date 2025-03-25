@@ -1,6 +1,5 @@
 # Inputs and Outputs
 
-
 ## Getting Spend Volume of a Token
 
 ```
@@ -40,3 +39,4 @@ query MyQuery {
 }
 
 ```
+

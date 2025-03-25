@@ -498,7 +498,6 @@ const sidebars = {
                 "Examples/tron/dexTrades",
                 "Examples/tron/smartContractCalls",
                 "Examples/tron/smartContractEvents",
-                "Examples/tron/trades",
                 "Examples/tron/transaction",
                 "Examples/tron/transfers",
               ],

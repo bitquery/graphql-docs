@@ -44,6 +44,60 @@ query ($network: BitcoinNetwork!) {
 
 In this query we have used two of API sets named “inputs” and “outputs” for getting the spent and received bitcoin currency for the address “bc1p4kufll9uhnpkgzuc65slcxd2qaw2hl9xecket3h8yyu4awglcsqslqaztd” with filtering out by block, date and it provides the transaction hash, block height and amount.
 
+## Get Parsed Datum of a Cardano Transaction UTXO
+
+This query fetches output data for a given transaction hash on the Cardano blockchain, which includes parsed datum (included in the properties field).
+You can run the query [here](https://ide.bitquery.io/DATUM-of-cardano-tx-utxo)
+
+```
+query ($network: CardanoNetwork!, $hash: String!, $limit: Int!, $offset: Int!) {
+  cardano(network: $network) {
+    outputs(
+      txHash: {is: $hash}
+      options: {asc: "outputIndex", limit: $limit, offset: $offset}
+    ) {
+      outputIndex
+      address: outputAddress {
+        address
+        annotation
+      }
+      value
+      value_usd: value(in: USD)
+      currency {
+        symbol
+        tokenType
+        tokenId
+        properties
+        name
+        decimals
+        address
+      }
+      outputDirection
+      date {
+        date
+      }
+      transaction {
+        hash
+      }
+      valueDecimal
+    }
+  }
+}
+{
+  "limit": 10,
+  "offset": 0,
+  "network": "cardano",
+  "hash": "6c83cf62225ecdf0cbb57e11718a8ec079f490b7f05d97f5a6d2214fb00be182"
+}
+
+```
+
+The `properties` field inside the `currency` object will contain **parsed datum** in YAML-like format:
+
+```
+"properties": "---\nassetName: 494e4459\nfingerprint: asset1u8caujpkc0km4vlwxnd8f954lxphrc8l55ef3j\npolicyId: 533bb94a8850ee3ccbe483106489399112b74c905342cb1792a797a0\n",
+```
+
 ## Getting Miners Block Rewards per Day
 
 ```
