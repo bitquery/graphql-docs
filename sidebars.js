@@ -86,9 +86,7 @@ const sidebars = {
         {
           type: "category",
           label: "Expressions",
-          items: [
-            "query-features/expressions/overview",
-          ],
+          items: ["query-features/expressions/overview"],
         },
         {
           type: "category",
@@ -103,29 +101,23 @@ const sidebars = {
         {
           type: "category",
           label: "Fragments",
-          items: [
-            "query-features/fragments/overview",
-          ],
+          items: ["query-features/fragments/overview"],
         },
         {
           type: "category",
           label: "Search",
-          items: [
-            "query-features/search/search",
-          ],
+          items: ["query-features/search/search"],
         },
         {
           type: "category",
           label: "Utilities",
-          items: [
-            "query-features/utilities/utilities",
-          ],
+          items: ["query-features/utilities/utilities"],
         },
         "query-features/aliases",
         "query-features/Metrics",
       ],
     },
-    
+
     {
       type: "category",
       label: "Schema",
@@ -348,7 +340,7 @@ const sidebars = {
             "Schema/tezos/transfers",
           ],
         },
-        
+
         {
           type: "category",
           label: "Tron",
@@ -472,7 +464,10 @@ const sidebars = {
             {
               type: "category",
               label: "Solana",
-              items: ["Examples/Solana/instructions"],
+              items: [
+                "Examples/Solana/instructions",
+                "Examples/Solana/transfers",
+              ],
             },
             {
               type: "category",
@@ -505,9 +500,7 @@ const sidebars = {
             {
               type: "category",
               label: "Dogecoin",
-              items: [
-                "Examples/Dogecoin/get-latest-price",
-              ],
+              items: ["Examples/Dogecoin/get-latest-price"],
             },
             {
               type: "category",

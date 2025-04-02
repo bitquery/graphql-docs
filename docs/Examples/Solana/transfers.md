@@ -75,3 +75,43 @@ query MyQuery {
 }
 
 ```
+
+## Historical Balance of a Wallet Address using transfers
+
+You can use the below query to calculate the balance of an address by subtracting all the outgoing transfer amount in USD from incoming transfers amount in USD. Test the query [here](https://ide.bitquery.io/solana-money-sent-and-recieved-by-an-address_5)
+
+```
+{
+  solana {
+    sent: transfers(
+      time: {till: "2025-01-01T00:00:00"}
+      currency: {in: ["Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB", "SOL"]}
+      senderAddress: {is: "8J88dokAnQBPJ5UopmTGNUHrciRXC5bqHqvK5ktKvFAA"}
+    ) {
+      USDAmount:amount(in:USD)
+      Amount: amount
+      currency {
+        name
+        decimals
+        symbol
+        address
+      }
+    }
+    recieved: transfers(
+      time: {till: "2025-01-01T00:00:00"}
+      currency: {in: ["Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB", "SOL"]}
+      receiverAddress: {is: "8J88dokAnQBPJ5UopmTGNUHrciRXC5bqHqvK5ktKvFAA"}
+    ) {
+      USDAmount:amount(in:USD)
+      Amount: amount
+      currency {
+        name
+        decimals
+        symbol
+        address
+      }
+    }
+  }
+}
+
+```
