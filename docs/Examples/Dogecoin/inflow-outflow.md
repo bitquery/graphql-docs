@@ -68,4 +68,15 @@ query (
     }
   }
 }
+{
+  "inboundDepth": 1,
+  "outboundDepth": 1,
+  "limit": 100,
+  "offset": 0,
+  "network": "dogecoin",
+  "address": "DJVeRemZM842GmvT6WR3PzVkqhqCEUGsDH",
+  "from": null,
+  "till": null,
+  "dateFormat": "%Y-%m"
+}
 ```
