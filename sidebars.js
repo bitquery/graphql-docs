@@ -500,7 +500,10 @@ const sidebars = {
             {
               type: "category",
               label: "Dogecoin",
-              items: ["Examples/Dogecoin/get-latest-price"],
+              items: [
+                "Examples/Dogecoin/get-latest-price",
+                "Examples/Dogecoin/inflow-outflow",
+              ],
             },
             {
               type: "category",
