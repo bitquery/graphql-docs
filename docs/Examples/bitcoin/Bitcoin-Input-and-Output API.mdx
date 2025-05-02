@@ -4,6 +4,23 @@ In this section we will see examples to get details about inputs and outputs of 
 
 import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
 
+## Get the Bitcoin Price on a Given date
+
+[THis](https://ide.bitquery.io/btc-price-in-2016) query returns price of the Bitcoin on a given date. 
+For this example the date is `2016-01-01`.
+
+```
+query MyQuery {
+  bitcoin {
+    outputs(date: {is: "2016-01-01"}) {
+      value
+      usd: value(in: USD)
+      expression(get: "usd/value")
+    }
+  }
+}
+```
+
 ## Get the UTXO Input and Outputs for a specific address
 
 ```
