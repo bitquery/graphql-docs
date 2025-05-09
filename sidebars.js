@@ -186,6 +186,7 @@ const sidebars = {
             "Schema/bitcoin/addressstats",
             "Schema/bitcoin/blocks",
             "Schema/bitcoin/coinpath",
+
             "Schema/bitcoin/inputs",
             "Schema/bitcoin/omnitransactions",
             "Schema/bitcoin/omnitransfers",
@@ -408,6 +409,7 @@ const sidebars = {
               items: [
                 "Examples/bitcoin/Bitcoin-Blocks-API",
                 "Examples/bitcoin/Bitcoin-Coinpath-API",
+                "Examples/bitcoin/bitcoin-fee-api",
                 "Examples/bitcoin/Bitcoin-Input-and-Output API",
                 "Examples/bitcoin/Bitcoin-OmniTransactions-and-OmniTransfers API",
                 "Examples/bitcoin/Bitcoin-Transaction-API",
