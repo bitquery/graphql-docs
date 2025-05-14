@@ -4,15 +4,14 @@ This Bitquery API allows you to query Bitcoin transaction fees using GraphQL. Yo
 
 ## Get Bitcoin Transactions and Fees of an Account
 
-Below query will get you bitcoin transactions for a account along with the transaction fees. You can try out the query [here](https://ide.bitquery.io/bitcoin-trxn-fees-for-a-account_1#).
+Below query will get you bitcoin transactions for a account along with the transaction fees. You can try out the query [here](https://ide.bitquery.io/bitcoin-trxn-fees-for-a-account_2).
 
 ```
-query MyQuery {
+qquery MyQuery {
   bitcoin(network: bitcoin) {
     transactions(
       options: {limit: 10, desc: ["block.height"]}
       date: {is: "2025-05-08"}
-      txHash: {is: "333754d38b681b94145ecd52086ece2c5ffee47963ff1d7a73e4973ec34e1396"}
       inputAddress: {is: "bc1qrtjvr4d8qtstw5334mspp7rmrzl55uj3dcwj09"}
     ) {
       block {
@@ -38,19 +37,17 @@ query MyQuery {
     }
   }
 }
-
 ```
 
 ## Get Total fees paid by an account on Bitcoin network
 
-Below query will get you total fees paid by an account on Bitcoin network. You can try out the query [here](https://ide.bitquery.io/aggregate-fees-for-an-account#).
+Below query will get you total fees paid by an account on Bitcoin network. You can try out the query [here](https://ide.bitquery.io/Get-Total-fees-paid-by-an-account-on-Bitcoin-network).
 
 ```
 query MyQuery {
   bitcoin(network: bitcoin) {
     transactions(
       date: {is: "2025-05-08"}
-      txHash: {is: "333754d38b681b94145ecd52086ece2c5ffee47963ff1d7a73e4973ec34e1396"}
       inputAddress: {is: "bc1qrtjvr4d8qtstw5334mspp7rmrzl55uj3dcwj09"}
     ) {
       total_fees_in_usd: feeValue(calculate:sum in:USD)
