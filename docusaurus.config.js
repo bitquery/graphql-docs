@@ -108,7 +108,7 @@ const config = {
           customCss: require.resolve("./src/css/custom.css"),
         },
         sitemap: {
-          changefreq: "weekly",
+          changefreq: "daily",
           priority: 1,
           ignorePatterns: ["/docs/v1/graphql-reference/**"],
           filename: "sitemap.xml",
