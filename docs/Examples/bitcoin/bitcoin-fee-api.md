@@ -2,6 +2,8 @@
 
 This Bitquery API allows you to query Bitcoin transaction fees using GraphQL. You can retrieve detailed fee information for specific addresses, calculate total fees paid by an account, and convert fee values to USD. The examples below demonstrate how to use the API for common fee-related queries.
 
+import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
+
 ## Get Bitcoin Transactions and Fees of an Account
 
 Below query will get you bitcoin transactions for a account along with the transaction fees. You can try out the query [here](https://ide.bitquery.io/bitcoin-trxn-fees-for-a-account_2).
@@ -56,3 +58,7 @@ query MyQuery {
   }
 }
 ```
+
+## Video Tutorial | How to get Bitcoin Transaction Fees data using Bitquery APIs
+
+<VideoPlayer url="https://www.youtube.com/watch?v=OR_7gQT71D4" />
