@@ -570,7 +570,7 @@ const sidebars = {
             {
               type: "category",
               label: "Transfers",
-              items: ["Examples/Transfers/transfer-api"],
+              items: ["Examples/Transfers/transfer-api","Examples/cross-chain/cross-chain-api"],
             },
           ],
         },
