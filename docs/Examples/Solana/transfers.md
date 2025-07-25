@@ -38,6 +38,45 @@ query MyQuery {
 }
 ```
 
+## Transfers of a wallet for a specific timeperiod
+
+Below API can give you transfers of a wallet for a specific timeperiod. Here, we have used the wallet address `7g9JL79igx2rSe8MTMrPDUfEY4FmySqB4gokKpaHQYkD` and timperiod is mentioned in `since` and `till` fields. You can change these values according to you and test the API for different wallet address and different timeperiod altogether.
+Test the API [here](https://ide.bitquery.io/Transfers-of-a-wallet-for-a-specific-timeperiod).
+
+```
+query MyQuery {
+  solana {
+    transfers(
+      time:{since:"2025-07-24T14:00:00Z" till:"2025-07-24T16:00:00Z"}
+      any: [{senderAddress: {is: "7g9JL79igx2rSe8MTMrPDUfEY4FmySqB4gokKpaHQYkD"}}, {receiverAddress: {is: "7g9JL79igx2rSe8MTMrPDUfEY4FmySqB4gokKpaHQYkD"}}]
+      options: {desc: "block.timestamp.iso8601", limit: 100}
+    ) {
+      amount
+      block {
+        timestamp {
+          iso8601
+        }
+      }
+      currency {
+        name
+        symbol
+        decimals
+        address
+      }
+      receiver {
+        address
+      }
+      sender {
+        address
+      }
+      transaction {
+        signature
+      }
+    }
+  }
+}
+```
+
 ## Top Transfers of a token
 
 This query retrieves the top 10 transfers for this token `4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R`. Try the query [here](https://ide.bitquery.io/v1-top-transfers-of-a-solana-token_1).
@@ -114,4 +153,105 @@ You can use the below query to calculate the balance of an address by subtractin
   }
 }
 
+```
+
+## Get Transaction details for a specific signature
+
+Below API can be used to give transfer details for a specific signature. Here we have queried for transaction signature `4p2Qbd3vH5xXDHLQRfEivHjAcoWTxad5ZcWjZmiHVtf1CnnvQC28Z2sLXgb8Bo7ivjNVmwYAE34phFPgcvKVph6k`, you can look up the transfers contained by any other signature as well. Test the query [here](https://ide.bitquery.io/get-historical-transaction-detail-on-Solana).
+
+```
+query MyQuery {
+  solana(network: solana) {
+    transfers(
+      date: {is: "2025-07-19"}
+      options: {limit: 1000, desc: ["transaction.transactionIndex", "block.height"]}
+      signature: {is: "4p2Qbd3vH5xXDHLQRfEivHjAcoWTxad5ZcWjZmiHVtf1CnnvQC28Z2sLXgb8Bo7ivjNVmwYAE34phFPgcvKVph6k"}
+    ) {
+      amount
+      block {
+        hash
+        height
+        timestamp {
+          time
+        }
+      }
+      instruction {
+        program {
+          name
+          id
+        }
+      }
+      receiver {
+        mintAccount
+        type
+        address
+      }
+      sender {
+        type
+        mintAccount
+        address
+      }
+      transaction {
+        signer
+        signature
+        transactionIndex
+      }
+      currency {
+        name
+        address
+        symbol
+      }
+    }
+  }
+}
+```
+
+## Get transfers data for a specific time period
+
+Below API can give you transfers data for a specific time period, you can change the UTC timestmaps mentioned in `where` clause as per you needs. But try to keep the duration small as Solana processes lot of transfers and the API might throw `memory limit exceeded error`. Test the API [here](https://ide.bitquery.io/get-transfers-data-for-a-particular-time-period).
+
+```
+query MyQuery {
+  solana(network: solana) {
+    transfers(
+      time: {since: "2025-07-19T01:00:00Z", till: "2025-07-19T01:15:00Z"}
+      options: {limit: 10, desc: ["transaction.transactionIndex", "block.height"]}
+    ) {
+      amount
+      block {
+        hash
+        height
+        timestamp {
+          time
+        }
+      }
+      instruction {
+        program {
+          name
+          id
+        }
+      }
+      receiver {
+        mintAccount
+        type
+        address
+      }
+      sender {
+        type
+        mintAccount
+        address
+      }
+      transaction {
+        signer
+        signature
+        transactionIndex
+      }
+      currency {
+        name
+        address
+        symbol
+      }
+    }
+  }
+}
 ```

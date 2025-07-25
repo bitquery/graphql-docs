@@ -469,6 +469,8 @@ const sidebars = {
               items: [
                 "Examples/Solana/instructions",
                 "Examples/Solana/transfers",
+                "Examples/Solana/transactions-api",
+                "Examples/Solana/address-api",
               ],
             },
             {
@@ -570,7 +572,10 @@ const sidebars = {
             {
               type: "category",
               label: "Transfers",
-              items: ["Examples/Transfers/transfer-api","Examples/cross-chain/cross-chain-api"],
+              items: [
+                "Examples/Transfers/transfer-api",
+                "Examples/cross-chain/cross-chain-api",
+              ],
             },
           ],
         },
