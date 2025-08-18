@@ -87,6 +87,10 @@ const config = {
             to: "/docs/building-queries/Coinpath-Explained/Overview",
             from: "/docs/building-queries/Coinpath%20Explained/Overview",
           },
+          {
+            to: "/docs/examples/Bitcoin/",
+            from: "/docs/category/examples/Bitcoin",
+          },
         ],
       },
     ],

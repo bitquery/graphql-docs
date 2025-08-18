@@ -406,6 +406,11 @@ const sidebars = {
             {
               type: "category",
               label: "Bitcoin",
+              link: {
+                type: "doc",
+                id: "Examples/bitcoin/index",
+              },
+
               items: [
                 "Examples/bitcoin/Bitcoin-Blocks-API",
                 "Examples/bitcoin/Bitcoin-Coinpath-API",
