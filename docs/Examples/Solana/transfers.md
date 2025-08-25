@@ -1,5 +1,7 @@
 # Solana Transfers API
 
+This API provides near real-time and historical data. For streaming real-time data, check our [Solana Streaming API docs](https://docs.bitquery.io/docs/examples/Solana/)
+
 ## Recent transfers to/from a wallet address
 
 This below query will get you the recent 100 transfers to/from a wallet address. We have used `any` keyword to use this OR functionality.
@@ -36,6 +38,102 @@ query MyQuery {
     }
   }
 }
+```
+
+## Historical Inflow/Outflow from a Wallet
+
+This query retrieves historical transfer data for a specific wallet address, showing both incoming (inflow) and outgoing (outflow) transactions at a particular block height.
+
+You can run the query [here](https://ide.bitquery.io/outflowinflow-of-an-address-on-Solana)
+
+```
+{
+  solana(network: solana) {
+    outflow: transfers(
+      options: {limit: 10, asc: ["block.height", "transaction.transactionIndex"]}
+      height: {is: 347789961}
+      senderAddress: {is: "CsVdJ8WH8Q9eHSTRpwtwN3TYApm24QnLKYUMNxJ3DaED"}
+    ) {
+      currency {
+        tokenId
+        symbol
+        name
+        address
+      }
+      instruction {
+        program {
+          name
+          id
+        }
+        externalAction {
+          type
+          name
+        }
+      }
+      sender {
+        address
+        type
+        mintAccount
+      }
+      receiver {
+        type
+        mintAccount
+        address
+      }
+      transaction {
+        signature
+        signer
+        transactionIndex
+      }
+      block {
+        height
+      }
+    }
+
+    inflow: transfers(
+      options: {limit: 10, asc: ["block.height", "transaction.transactionIndex"]}
+      height: {is: 347789961}
+      receiverAddress: {is: "CsVdJ8WH8Q9eHSTRpwtwN3TYApm24QnLKYUMNxJ3DaED"}
+    ) {
+      currency {
+        tokenId
+        symbol
+        name
+        address
+      }
+      instruction {
+        program {
+          name
+          id
+        }
+        externalAction {
+          type
+          name
+        }
+      }
+      sender {
+        address
+        type
+        mintAccount
+      }
+      receiver {
+        type
+        mintAccount
+        address
+      }
+      transaction {
+        signature
+        signer
+        transactionIndex
+      }
+      block {
+        height
+      }
+    }
+  }
+}
+
+
 ```
 
 ## Transfers of a wallet for a specific timeperiod
