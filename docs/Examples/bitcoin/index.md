@@ -16,28 +16,28 @@ This section contains Bitcoin API/Streams examples and guides, organized into ca
 
 ## Blocks
 
-- [Blocks API](https://docs.bitquery.io/docs/examples/bitcoin/bitcoin-blocks-api)
+- [Blocks API](https://docs.bitquery.io/v1/docs/examples/bitcoin/bitcoin-blocks-api)
 
 ## Address
 
-- [Address API](https://docs.bitquery.io/docs/examples/bitcoin/bitcoin-address-api)
+- [Address API](https://docs.bitquery.io/v1/docs/examples/bitcoin/bitcoin-address-api)
 
 ## Coinpath
 
-- [Coinpath API](https://docs.bitquery.io/docs/examples/bitcoin/bitcoin-coinpath-api)
+- [Coinpath API](https://docs.bitquery.io/v1/docs/examples/bitcoin/bitcoin-coinpath-api)
 
 ## Fees
 
-- [Fee API](https://docs.bitquery.io/docs/examples/bitcoin/bitcoin-fee-api)
+- [Fee API](https://docs.bitquery.io/v1/docs/examples/bitcoin/bitcoin-fee-api)
 
 ## Inputs and Outputs
 
-- [Inputs and Outputs API](https://docs.bitquery.io/docs/examples/bitcoin/bitcoin-input-and-output-api)
+- [Inputs and Outputs API](https://docs.bitquery.io/v1/docs/examples/bitcoin/bitcoin-input-and-output-api)
 
 ## Omni Layer
 
-- [OmniTransactions and OmniTransfers API](https://docs.bitquery.io/docs/examples/bitcoin/bitcoin-omnitransactions-and-omnitransfers-api)
+- [OmniTransactions and OmniTransfers API](https://docs.bitquery.io/v1/docs/Examples/bitcoin/Bitcoin-OmniTransactions-and-OmniTransfers%20API)
 
 ## Transactions
 
-- [Transaction API](https://docs.bitquery.io/docs/examples/bitcoin/bitcoin-transaction-api)
+- [Transaction API](https://docs.bitquery.io/v1/docs/examples/bitcoin/bitcoin-transaction-api)
