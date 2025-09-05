@@ -23,11 +23,14 @@ query MyQuery {
 
 ## Get the UTXO Input and Outputs for a specific address
 
+[Run Query](https://ide.bitquery.io/bitcoin-inputs-and-outputs-for-address)
+
 ```
-query ($network: BitcoinNetwork!) {
-  bitcoin(network: $network) {
+{
+  bitcoin(network: bitcoin) {
     spendvolumes: inputs(
       inputAddress: {is: "bc1p4kufll9uhnpkgzuc65slcxd2qaw2hl9xecket3h8yyu4awglcsqslqaztd"}
+      height: {between: [822372, 822376]}
     ) {
       date {
         date
@@ -39,8 +42,14 @@ query ($network: BitcoinNetwork!) {
       transaction {
         hash
       }
+      inputAddress {
+        annotation
+        address
+      }
+      value
     }
     recievevolumes: outputs(
+      height: {between: [822372, 822376]}
       outputAddress: {is: "bc1p4kufll9uhnpkgzuc65slcxd2qaw2hl9xecket3h8yyu4awglcsqslqaztd"}
     ) {
       date {
@@ -53,13 +62,19 @@ query ($network: BitcoinNetwork!) {
       block {
         height
       }
+      outputAddress {
+        annotation
+        address
+      }
+      value
     }
   }
 }
 
+
 ```
 
-In this query we have used two of API sets named “inputs” and “outputs” for getting the spent and received bitcoin currency for the address “bc1p4kufll9uhnpkgzuc65slcxd2qaw2hl9xecket3h8yyu4awglcsqslqaztd” with filtering out by block, date and it provides the transaction hash, block height and amount.
+In this query we have used two of API sets named “inputs” and “outputs” for getting the spent and received bitcoin currency for the address “bc1p4kufll9uhnpkgzuc65slcxd2qaw2hl9xecket3h8yyu4awglcsqslqaztd” with filtering out by block height within a specific number range, and it provides the transaction hash, block height and amount.
 
 ## Get Parsed Datum of a Cardano Transaction UTXO
 

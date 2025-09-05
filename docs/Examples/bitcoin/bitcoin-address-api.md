@@ -1,9 +1,39 @@
-
 # BTC Balance API
 
 Our Input/Output APIs provides all the details regarding any address on Bitcoin Blockchain. To get the balance simply get all inputs and outputs and subtract (outputs - inputs). If will give you bitcoin balance. You can also get bitcoin balance in USD as we also getting usd values inputs and outputs. Remember we actually multiple usd value of bitcoin at the time of transaction as we also have historical usd price of bitcoin.
 
-## Bitcoin balance api
+## Bitcoin Balance API
+
+### Using Balance Cube
+
+[Run Query](https://ide.bitquery.io/Bitcoin-balance_5)
+
+```
+{
+  bitcoin(network: bitcoin) {
+    addressStats(address: {is: "bc1q6xra3s8c5c4vr8m5f9htkuc3neyn4zykv5seua"}) {
+      address {
+        balance
+        inboundTransactions
+        firstActive {
+          time
+        }
+        address
+        annotation
+        outflows
+        lastActive {
+          time
+        }
+        uniqueSenders
+        uniqueReceivers
+      }
+    }
+  }
+}
+
+```
+
+### Using Inputs and Outputs
 
 ```
 {
@@ -32,14 +62,11 @@ Our Input/Output APIs provides all the details regarding any address on Bitcoin 
 
 ```
 
-Try this api [here](https://ide.bitquery.io/Bitcoin-balance-using-input-outputs)
-
-  
+Try this API [here](https://ide.bitquery.io/Bitcoin-balance-using-input-outputs)
 
 ## Get Balance of Multiple Addresses
 
-To get addresses of multiple bitcoin addresses just by providing them in the parameters. 
-
+To get addresses of multiple bitcoin addresses just by providing them in the parameters.
 
 ```
 {
@@ -73,13 +100,13 @@ To get addresses of multiple bitcoin addresses just by providing them in the par
 
 
 ```
-  
-Try api for getting balance of multiple bitcoin addresses [here].(https://ide.bitquery.io/BTC-balance-api-for-multiple-addresses)
+
+Try API for getting balance of multiple bitcoin addresses [here].(https://ide.bitquery.io/BTC-balance-API-for-multiple-addresses)
 
 ## Get the age of the Address
 
-To get the age of the bitcoin wallet, you can use the following api.
-  
+To get the age of the bitcoin wallet, you can use the following API.
+
 ```
 
 query ($network: BitcoinNetwork!) {
@@ -102,11 +129,12 @@ query ($network: BitcoinNetwork!) {
 }
 
 ```
+
 Replace ADDRESS_HERE with the desired Bitcoin Address you want to query. This query fetches the first and last date, time of the transaction of the wallet in different formats you would need.
 
 ## Get net inflow and outflow of bitcoin from an address
 
-To get inflows and outflow of a bitcoin address, use following api.
+To get inflows and outflow of a bitcoin address, use following API.
 
 ```
 {
@@ -158,4 +186,4 @@ To get inflows and outflow of a bitcoin address, use following api.
 
 ```
 
-Try this api to get inputs and outputs of a bitcoin address here.[https://ide.bitquery.io/Input-and-outputs-of-a-bitcoin-address]
+Try this API to get inputs and outputs of a bitcoin address here.[https://ide.bitquery.io/Input-and-outputs-of-a-bitcoin-address]

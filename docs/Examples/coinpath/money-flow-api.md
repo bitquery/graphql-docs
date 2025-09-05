@@ -2,37 +2,37 @@
 
 Coinpath® api is targeted to help build compliance solutions by providing money tracking capabilities. This API is supported for [all blockchains we support](https://account.bitquery.io/admin/accounts) and tokens built on them.
 
-## What is depth?
+## What Is Depth?
 
 Please check following image to understand the depth (hop).
 
 ![coinpath](/img/depth_coinpath.png)
 
-## What is direction?
+## What Is Direction?
 
 It;s direction of fund flow, inbound (Incoming) or outbound (Outgoing).
 
-## minimumTxAmount
+## Minimum Tx Amount
 
 It's a `parameter` available inside `Options`, which allow you to filter transaction based on amount.
 
-## maximumAddressTxCount
+## Maximum Address Tx Count
 
 If defined > 0, then it will not try to expand an addresses for the next depth, having more that this count of transactions. Use to stop on exchange-type addresses and not expand them
 
-## maximumTotalTxCount
+## Maximum Total Tx Count
 
 Do not extend the next depth in case total tx count on prev hop exceed this metric. Used to prevent hanging on the calculatomg for a long time
 
-## complexityLimit
+## Complexity Limit
 
 If the initial count of transactions for the address under coinpath is exceeding this value, do not proceed and return an error. Works for the same reason as the previous parameter.
 
-## seed
+## Seed
 
 A random number which can be used to prevent caching of results. Needed omly if blockchain data expected to be modified during coipath calculations
 
-## Destination of funds from an address
+## Destination Of Funds From An Address
 
 In 2019, Upbit exchange was hacked and tweeted out the [hackers address](https://explorer.bitquery.io/ethereum/address/0xa09871aeadf4994ca12f5c0b6056bbd1d343c029/graph?from=2018-03-01&till=2021-01-31), using the following API you can track destination of fund over multiple hops (depth).
 
@@ -96,7 +96,7 @@ In 2019, Upbit exchange was hacked and tweeted out the [hackers address](https:/
 }
 ```
 
-## Source of funds from an address
+## Source Of Funds From An Address
 
 To check the source of funds, you can use the following API. You can increase depth based on your requirements.
 
@@ -161,7 +161,7 @@ To check the source of funds, you can use the following API. You can increase de
 }
 ```
 
-## Relation between two addresses
+## Relation Between Two Addresses On Ethereum
 
 Using combination of above two queries you can check if two address ever transacted in the past.
 
@@ -267,7 +267,7 @@ Using combination of above two queries you can check if two address ever transac
 }
 ```
 
-## Tracing SOL movement between two addresses on Solana
+## Tracing SOL Movement Between Two Addresses On Solana
 
 The query below will trace the movement of SOL between two addresses on Solana
 The query will return two objects: `inbound` and `outbound`. The `inbound` object will contain information about all inbound transactions to the specified address, and the `outbound` object will contain information about all outbound transactions from the specified address.
@@ -345,7 +345,7 @@ query ($network: SolanaNetwork!, $address: String!, $inboundDepth: Int!,
 }
 ```
 
-## Getting inflows ( fund moving in) to a Cardano Wallet /Address
+## Getting Inflows ( Fund Moving In) To A Cardano Wallet /Address
 
 We get the details of tokens moving in to a wallet using the using the `outputs` function and setting the `outputAddress:` as the address of the wallet to which funds are moving in. Below is the sample query that gets token movements into a cardano wallet between two dates. Here's the [query on IDE](https://ide.bitquery.io/All-inflows-into-Cardano-wallet)
 
@@ -389,7 +389,7 @@ query ($network: CardanoNetwork!, $address: String!, $from: ISO8601DateTime, $ti
 
 ```
 
-## Get Transactions from Multiple Addresses to a Final Destination Address
+## Get Transactions From Multiple Addresses To A Final Destination Address
 
 You can get the trasactions to a final destination addresses from an initial addresses no matter how many hops happen.
 Below is an example on how to use it. You can access the query [here](https://ide.bitquery.io/Ethereum-inbound-coinpath-from-one-address-to-another)
