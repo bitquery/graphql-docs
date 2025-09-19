@@ -420,7 +420,7 @@ This query retrieves all transfers within a specific time window across the enti
 
 **Important Notes:**
 
-- Keep time ranges small (15 minutes or less) to avoid memory limits
+- Keep time ranges small (1 day or less) to avoid memory limits
 - Use this for network analysis and trending
 - Consider using pagination for larger datasets
 
