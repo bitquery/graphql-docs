@@ -67,7 +67,7 @@ The error with status 500 is a generic internal server error that could result f
 #### Resolution Steps:
 
 - **Review Query and Syntax:** Double-check the query and its syntax for any errors or discrepancies.
-- **Check Server Status:** Verify the [server status](https://account.bitquery.io/user/system_status) to ensure it is operational and not experiencing downtime.
+- **Check Server Status:** Verify the [server status](https://app-status.bitquery.io/) to ensure it is operational and not experiencing downtime.
 - **Escalation:** Contact support on the [telegram channel](https://t.me/Bloxy_info).
 
 

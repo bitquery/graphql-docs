@@ -29,7 +29,7 @@ GraphQL subscriptions are very useful for building notification services.
 
 ## 3. New blockchains
 
-V1 APIs support [40+ blockchains](https://account.bitquery.io/user/system_status). However, Streaming APIs currently have Ethereum, Binance Smart Chain, and **Arbitrum.**
+V1 APIs support [40+ blockchains](https://app-status.bitquery.io/). However, Streaming APIs currently have Ethereum, Binance Smart Chain, and **Arbitrum.**
 
 We are adding Optimism and slowly migrating more chains from V1 API in which Real timeliness becomes critical for a better user experience.
 

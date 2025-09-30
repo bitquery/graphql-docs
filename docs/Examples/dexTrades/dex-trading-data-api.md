@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # DEX Trading Data APIs
 
-Our DEX trading APIs provides DEX data for 100s of DEXs from [40+ blockchains](https://account.bitquery.io/user/system_status). Let's see some of example of getting DEX data.
+Our DEX trading APIs provides DEX data for 100s of DEXs from [40+ blockchains](https://app-status.bitquery.io/). Let's see some of example of getting DEX data.
 
 ## Buy/Sell Currency vs Base/Quote Currency
 

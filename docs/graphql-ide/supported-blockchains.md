@@ -18,4 +18,4 @@ Bitquery supports 40+ blockchains, including EVM-based blockchains like Ethereum
 
 ## System status
 
-To check the status of each blockchain service, you can visit the following link: [https://account.bitquery.io/user/system_status](https://account.bitquery.io/user/system_status)
+To check the status of each blockchain service, you can visit the following link: [https://app-status.bitquery.io/](https://app-status.bitquery.io/)

@@ -17,7 +17,7 @@ const FeatureList = [
     Svg: require('@site/static/img/BitqueryBW.svg').default,
     description: (
       <>
-        Query <a href='https://account.bitquery.io/user/system_status'>40+ blockchains</a> data such as trades, transfers, balance, nfts, tokens, and more using powerful, unified Graphql APIs.
+        Query <a href='https://app-status.bitquery.io/'>40+ blockchains</a> data such as trades, transfers, balance, nfts, tokens, and more using powerful, unified Graphql APIs.
       </>
     ),
   },
