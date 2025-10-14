@@ -1,6 +1,6 @@
 ---
-title: "Coinpath® API - Money Flow Tracking, Fund Tracing, Transaction Paths"
-description: "Track money flow, trace funds across multiple hops, analyze transaction paths, and build compliance solutions with Coinpath® API. Support for all major blockchains including Ethereum, Bitcoin, Solana, and more."
+title: "Coinpath® API - Money Flow Tracking, Fund Tracing, Bundle Detection"
+description: "Track money flow, trace funds across multiple hops, detect token bundling, analyze funding patterns, and build compliance solutions with Coinpath® API. Support for all major blockchains including Ethereum, Bitcoin, Solana, and more."
 ---
 
 # Coinpath® API - Money Flow Tracking, Fund Tracing, Transaction Paths
@@ -18,18 +18,18 @@ Follow the steps here to create one: [How to generate Bitquery API token ➤](ht
 :::
 
 <head>
-<title>Coinpath® API - Money Flow Tracking, Fund Tracing, Transaction Paths</title>
+<title>Coinpath® API - Money Flow Tracking, Fund Tracing, Bundle Detection</title>
 <meta
   name="title"
-  content="Coinpath® API - Money Flow Tracking, Fund Tracing, Transaction Paths"
+  content="Coinpath® API - Money Flow Tracking, Fund Tracing, Bundle Detection"
 />
 <meta
   name="description"
-  content="Track money flow, trace funds across multiple hops, analyze transaction paths, and build compliance solutions with Coinpath® API. Support for all major blockchains including Ethereum, Bitcoin, Solana, and more."
+  content="Track money flow, trace funds across multiple hops, detect token bundling, analyze funding patterns, and build compliance solutions with Coinpath® API. Support for all major blockchains including Ethereum, Bitcoin, Solana, and more."
 />
 <meta
   name="keywords"
-  content="Coinpath API,money flow tracking,fund tracing,transaction path analysis,blockchain compliance,crypto forensics,AML compliance,fund flow analysis,inbound outbound tracking,blockchain money tracking,Ethereum fund tracking,Bitcoin transaction tracing,Solana coinpath,multi-hop analysis,address relationship,wallet tracking,blockchain forensics,crypto investigation,on-chain analysis,transaction graph,address clustering,fund destination,source of funds"
+  content="Coinpath API,money flow tracking,fund tracing,bundle detection,token bundling,sybil attack detection,wash trading,funding history,transaction path analysis,blockchain compliance,crypto forensics,AML compliance,fund flow analysis,inbound outbound tracking,blockchain money tracking,Ethereum fund tracking,Bitcoin transaction tracing,Solana coinpath,multi-hop analysis,address relationship,wallet tracking,blockchain forensics,crypto investigation,on-chain analysis,transaction graph,address clustering,fund destination,source of funds,bot detection,coordinated funding,wallet funding patterns"
 />
 <meta name="robots" content="index, follow" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -38,16 +38,16 @@ Follow the steps here to create one: [How to generate Bitquery API token ➤](ht
 <meta property="og:type" content="website" />
 <meta
   property="og:title"
-  content="Coinpath® API - Money Flow Tracking, Fund Tracing, Transaction Paths"
+  content="Coinpath® API - Money Flow Tracking, Fund Tracing, Bundle Detection"
 />
 <meta
   property="og:description"
-  content="Track money flow and trace funds across blockchain networks for compliance and forensic analysis"
+  content="Track money flow, detect token bundling, analyze funding patterns across blockchain networks for compliance and forensic analysis"
 />
 
 <meta property="twitter:card" content="summary_large_image"/>
-<meta property="twitter:title" content="Coinpath® API - Money Flow Tracking, Fund Tracing, Transaction Paths"/>
-<meta property="twitter:description" content="Track money flow and trace funds across blockchain networks for compliance and forensic analysis"/>
+<meta property="twitter:title" content="Coinpath® API - Money Flow Tracking, Fund Tracing, Bundle Detection"/>
+<meta property="twitter:description" content="Track money flow, detect token bundling, analyze funding patterns for compliance and forensic analysis"/>
 </head>
 
 ---
@@ -76,7 +76,12 @@ Follow the steps here to create one: [How to generate Bitquery API token ➤](ht
 - [Cardano Wallet Inflows](#getting-inflows--fund-moving-in-to-a-cardano-wallet-address)
 - [Ethereum Multi-Hop Tracking](#get-transactions-from-multiple-addresses-to-a-final-destination-address)
 
----
+### 4. Funding History & Bundle Detection
+
+- [Get First Transfer to an Address (Who Funded First?)](#get-first-transfer-to-an-address-who-funded-first)
+- [Get Recent Transfers Before Specific Block](#get-recent-transfers-before-specific-block)
+- [Find Relation Between Creator of a Token and Buyer](#find-relation-between-creator-of-a-token-and-buyer)
+
 
 ## Understanding Coinpath Concepts
 
@@ -543,15 +548,256 @@ The `finalAddress` field can also be used to calculate the total amount of funds
 
 ---
 
+## Funding History of Address
+
+Detect bundled tokens and hidden funding patterns by analyzing the complete funding history of an address. This section helps identify suspicious wallet behaviors, token bundling schemes, and coordinated funding activities often used to manipulate markets or hide fund origins. **Bundle Detection**: Identify wallets funded by the same source to detect token bundling
+
+### Get First Transfer to an Address (Who Funded First?)
+
+Identify the original funding source of a wallet address. This is critical for detecting bundled tokens where multiple wallets are funded from the same source address to create artificial trading volume or manipulate token launches.
+
+:::info Performance Note
+These queries search across the entire blockchain history to find the earliest transfer. Depending on the address age and blockchain size, the query may take additional time to execute. For faster results, consider adding date filters if you have an approximate time range.
+:::
+
+#### Solana
+
+[Run Query](https://ide.bitquery.io/Find-earliest-funding-of-an-address-using-Coinpath)
+
+```
+query MyQuery {
+  solana(network: solana) {
+    transfers(
+      receiverAddress: {is: "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"}
+      options: {limit: 1, asc: "block.timestamp.time"}
+    ) {
+      block {
+        timestamp {
+          time
+        }
+        height
+      }
+      currency {
+        tokenType
+        tokenId
+        symbol
+        name
+        decimals
+        address
+      }
+      sender {
+        type
+        mintAccount
+        address
+      }
+      receiver {
+        type
+        mintAccount
+        address
+      }
+    }
+  }
+}
+```
+
+#### Ethereum
+
+[Run Query](https://ide.bitquery.io/Find-earliest-funding-of-an-address-using-Coinpath-ethereum)
+
+```
+query MyQuery {
+  ethereum(network: ethereum) {
+    transfers(
+      receiver: {is: "0x116763c54E8F269B471768c791d197037a79653D"}
+      options: {limit: 1, asc: "block.timestamp.time"}
+    ) {
+      block {
+        timestamp {
+          time
+        }
+        height
+      }
+      currency {
+        tokenType
+        tokenId
+        symbol
+        name
+        decimals
+        address
+      }
+      receiver {
+        smartContract {
+          contractType
+        }
+        annotation
+        address
+      }
+      sender {
+        annotation
+        address
+        smartContract {
+          contractType
+        }
+      }
+      success
+    }
+  }
+}
+```
+
+### Get Recent Transfers Before Specific Block
+
+Track recent funding activity before trading begins on a DEX. This helps detect just-in-time wallet funding patterns common in bot operations and coordinated pump schemes.
+
+#### Solana
+
+[Run Query](https://ide.bitquery.io/Find-recent-funding-of-an-address-using-Coinpath-Solana)
+
+```
+query MyQuery {
+  solana(network: solana) {
+    transfers(
+      receiverAddress: {is: "CreQJ2t94QK5dsxUZGXfPJ8Nx7wA9LHr5chxjSMkbNft"}
+      options: {limit: 1, asc: "block.timestamp.time"}
+      height: {lteq: 353744732}
+    ) {
+      block {
+        timestamp {
+          time
+        }
+        height
+      }
+      currency {
+        tokenType
+        tokenId
+        symbol
+        name
+        decimals
+        address
+      }
+      sender {
+        type
+        mintAccount
+        address
+      }
+      receiver {
+        type
+        mintAccount
+        address
+      }
+    }
+  }
+}
+
+```
+
+#### Ethereum
+
+[Run Query](https://ide.bitquery.io/Find-recent-funding-of-an-address-using-Coinpath-ethereum)
+
+```
+query MyQuery {
+  ethereum(network: ethereum) {
+    transfers(
+      receiver: {is: "0x116763c54E8F269B471768c791d197037a79653D"}
+      options: {limit: 1, desc: "block.timestamp.time"}
+      height: {lteq: 21662204}
+    ) {
+      block {
+        timestamp {
+          time
+        }
+        height
+      }
+      currency {
+        tokenType
+        tokenId
+        symbol
+        name
+        decimals
+        address
+      }
+      receiver {
+        smartContract {
+          contractType
+        }
+        annotation
+        address
+      }
+      sender {
+        annotation
+        address
+        smartContract {
+          contractType
+        }
+      }
+      success
+    }
+  }
+}
+
+
+```
+
+Use this to find:
+
+- Wallets funded right before token launches
+- Coordinated funding timing patterns
+- Source addresses funding multiple trading wallets
+
+### Find Relation Between Creator of a Token and Buyer
+
+#### Solana
+
+[Run Query](https://ide.bitquery.io/Find-relation-between-pumpfun-creator-and-buyer_2)
+
+```
+{
+  solana(network: solana) {
+    coinpath(
+      initialAddress: {is: "F3oHfZ4MniLiygXTkwugUgQ9zn1vgZiH4rtMtcbPbxTC"}
+      depth: {lteq: 2}
+      options: {direction: inbound, asc: "block.timestamp.time", desc: "amount", limitBy: {each: "depth", limit: 10}}
+      date: {since: "2025-10-01"}
+      finalAddress: {is: "3YJmmFMwq5z6YBMVusJjsiowqT4S3BCWUGo61wbvjqwd"}
+    ) {
+      sender {
+        address
+        annotation
+      }
+      receiver {
+        address
+        annotation
+      }
+      amount
+      currency {
+        symbol
+        name
+      }
+      depth
+      count
+      block {
+        timestamp {
+          time
+        }
+        height
+      }
+    }
+  }
+}
+`
+
+```
+
 ## Related Resources
 
 You may also be interested in:
 
 - [Cross-Chain API ➤](https://docs.bitquery.io/docs/Examples/cross-chain/cross-chain-api/)
-- [DEX Trades API ➤](https://docs.bitquery.io/docs/Examples/dexTrades/)
-- [Blockchain Address API Examples ➤](https://docs.bitquery.io/docs/Examples/address/Blockchain-Address-API-Examples/)
-- [Transaction API ➤](https://docs.bitquery.io/docs/Examples/Transactions/)
-- [Transfers API ➤](https://docs.bitquery.io/docs/Examples/Transfers/)
+- [Solana DEX Trades API ➤](https://docs.bitquery.io/docs/blockchain/Solana/solana-dextrades/)
+- [Blockchain Address API Examples ➤](https://docs.bitquery.io/docs/blockchain/Ethereum/balances/balance-api/)
+- [Transaction API ➤](https://docs.bitquery.io/docs/blockchain/Ethereum/transactions/transaction-api/)
+- [Transfers API ➤](https://docs.bitquery.io/docs/blockchain/Ethereum/transfers/erc20-token-transfer-api/)
 
 ## Need Help?
 
