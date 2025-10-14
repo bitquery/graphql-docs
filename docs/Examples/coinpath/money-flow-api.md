@@ -1,6 +1,84 @@
-# Coinpath® API
+---
+title: "Coinpath® API - Money Flow Tracking, Fund Tracing, Transaction Paths"
+description: "Track money flow, trace funds across multiple hops, analyze transaction paths, and build compliance solutions with Coinpath® API. Support for all major blockchains including Ethereum, Bitcoin, Solana, and more."
+---
 
-Coinpath® api is targeted to help build compliance solutions by providing money tracking capabilities. This API is supported for [all blockchains we support](https://account.bitquery.io/admin/accounts) and tokens built on them.
+# Coinpath® API - Money Flow Tracking, Fund Tracing, Transaction Paths
+
+Track money flow and fund movements across blockchain networks with Coinpath® API. Get transaction paths, trace funds across multiple hops (depth), analyze inbound and outbound flows, and build compliance solutions.
+
+Coinpath® API supports all blockchains we support on the [v1 endpoint](https://ide.bitquery.io/?endpoint=https://graphql.bitquery.io) and tokens built on them, enabling comprehensive money tracking capabilities for compliance, fraud detection, and forensic analysis.
+
+The graphQL APIs below are examples of data points you can get with Coinpath®. If you have questions about other compliance use cases, reach out to [support](https://t.me/Bloxy_info).
+
+:::note
+To query data via GraphQL **outside the Bitquery IDE**, you need to generate an API access token.
+
+Follow the steps here to create one: [How to generate Bitquery API token ➤](https://docs.bitquery.io/docs/authorisation/how-to-generate/)
+:::
+
+<head>
+<title>Coinpath® API - Money Flow Tracking, Fund Tracing, Transaction Paths</title>
+<meta
+  name="title"
+  content="Coinpath® API - Money Flow Tracking, Fund Tracing, Transaction Paths"
+/>
+<meta
+  name="description"
+  content="Track money flow, trace funds across multiple hops, analyze transaction paths, and build compliance solutions with Coinpath® API. Support for all major blockchains including Ethereum, Bitcoin, Solana, and more."
+/>
+<meta
+  name="keywords"
+  content="Coinpath API,money flow tracking,fund tracing,transaction path analysis,blockchain compliance,crypto forensics,AML compliance,fund flow analysis,inbound outbound tracking,blockchain money tracking,Ethereum fund tracking,Bitcoin transaction tracing,Solana coinpath,multi-hop analysis,address relationship,wallet tracking,blockchain forensics,crypto investigation,on-chain analysis,transaction graph,address clustering,fund destination,source of funds"
+/>
+<meta name="robots" content="index, follow" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="English" />
+
+<meta property="og:type" content="website" />
+<meta
+  property="og:title"
+  content="Coinpath® API - Money Flow Tracking, Fund Tracing, Transaction Paths"
+/>
+<meta
+  property="og:description"
+  content="Track money flow and trace funds across blockchain networks for compliance and forensic analysis"
+/>
+
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:title" content="Coinpath® API - Money Flow Tracking, Fund Tracing, Transaction Paths"/>
+<meta property="twitter:description" content="Track money flow and trace funds across blockchain networks for compliance and forensic analysis"/>
+</head>
+
+---
+
+### Table of Contents
+
+### 1. Understanding Coinpath Concepts
+
+- [What Is Depth (Hops)?](#what-is-depth)
+- [What Is Direction?](#what-is-direction)
+- [Minimum Transaction Amount](#minimum-tx-amount)
+- [Maximum Address Transaction Count](#maximum-address-tx-count)
+- [Maximum Total Transaction Count](#maximum-total-tx-count)
+- [Complexity Limit](#complexity-limit)
+- [Seed Parameter](#seed)
+
+### 2. Fund Flow Tracking
+
+- [Destination of Funds from an Address](#destination-of-funds-from-an-address)
+- [Source of Funds to an Address](#source-of-funds-from-an-address)
+- [Relation Between Two Addresses on Ethereum](#relation-between-two-addresses-on-ethereum)
+- [Tracing SOL Movement on Solana](#tracing-sol-movement-between-two-addresses-on-solana)
+
+### 3. Multi-Chain Examples
+
+- [Cardano Wallet Inflows](#getting-inflows--fund-moving-in-to-a-cardano-wallet-address)
+- [Ethereum Multi-Hop Tracking](#get-transactions-from-multiple-addresses-to-a-final-destination-address)
+
+---
+
+## Understanding Coinpath Concepts
 
 ## What Is Depth?
 
@@ -10,31 +88,35 @@ Please check following image to understand the depth (hop).
 
 ## What Is Direction?
 
-It;s direction of fund flow, inbound (Incoming) or outbound (Outgoing).
+It's the direction of fund flow: **inbound** (incoming funds) or **outbound** (outgoing funds). This parameter determines whether you're tracking money coming into an address or money going out of an address.
 
 ## Minimum Tx Amount
 
-It's a `parameter` available inside `Options`, which allow you to filter transaction based on amount.
+A `parameter` available inside `Options` that allows you to filter transactions based on amount. This helps focus on significant fund movements and exclude dust transactions from your analysis.
 
 ## Maximum Address Tx Count
 
-If defined > 0, then it will not try to expand an addresses for the next depth, having more that this count of transactions. Use to stop on exchange-type addresses and not expand them
+If defined > 0, the API will not expand addresses for the next depth if they have more than this count of transactions. Use this to stop on exchange-type addresses and prevent unnecessary expansion of high-volume wallets.
 
 ## Maximum Total Tx Count
 
-Do not extend the next depth in case total tx count on prev hop exceed this metric. Used to prevent hanging on the calculatomg for a long time
+Prevents extending to the next depth if the total transaction count on the previous hop exceeds this metric. Used to prevent long computation times and optimize query performance.
 
 ## Complexity Limit
 
-If the initial count of transactions for the address under coinpath is exceeding this value, do not proceed and return an error. Works for the same reason as the previous parameter.
+If the initial count of transactions for the address under coinpath exceeds this value, the query will not proceed and returns an error. This prevents timeouts and ensures efficient resource usage.
 
 ## Seed
 
-A random number which can be used to prevent caching of results. Needed omly if blockchain data expected to be modified during coipath calculations
+A random number used to prevent caching of results. Only needed if blockchain data is expected to be modified during coinpath calculations.
+
+---
+
+## Fund Flow Tracking
 
 ## Destination Of Funds From An Address
 
-In 2019, Upbit exchange was hacked and tweeted out the [hackers address](https://explorer.bitquery.io/ethereum/address/0xa09871aeadf4994ca12f5c0b6056bbd1d343c029/graph?from=2018-03-01&till=2021-01-31), using the following API you can track destination of fund over multiple hops (depth).
+Track where funds are going from a specific address across multiple hops. In 2019, Upbit exchange was hacked and tweeted out the [hacker's address](https://explorer.bitquery.io/ethereum/address/0xa09871aeadf4994ca12f5c0b6056bbd1d343c029/graph?from=2018-03-01&till=2021-01-31). Using the following API, you can track the destination of funds over multiple hops (depth) for compliance and forensic analysis.
 
 [Open this query on IDE](https://ide.bitquery.io/destination-of-funds-for-upbit-hackers)
 
@@ -98,7 +180,7 @@ In 2019, Upbit exchange was hacked and tweeted out the [hackers address](https:/
 
 ## Source Of Funds From An Address
 
-To check the source of funds, you can use the following API. You can increase depth based on your requirements.
+Track where funds came from to a specific address using inbound direction. This API helps identify the origin of funds across multiple transaction hops. You can increase the depth parameter based on your compliance or investigation requirements.
 
 [Open this query on IDE](https://ide.bitquery.io/All-inbound-transactions-to-Upbit-hacker-address)
 
@@ -163,7 +245,7 @@ To check the source of funds, you can use the following API. You can increase de
 
 ## Relation Between Two Addresses On Ethereum
 
-Using combination of above two queries you can check if two address ever transacted in the past.
+Analyze the relationship between two Ethereum addresses by combining inbound and outbound coinpath queries. This helps determine if two addresses have ever transacted directly or through intermediary hops, useful for fraud detection and compliance screening.
 
 [Open this query on IDE](https://ide.bitquery.io/Relation-between-two-ethereum-addresses)
 
@@ -267,10 +349,13 @@ Using combination of above two queries you can check if two address ever transac
 }
 ```
 
+---
+
+## Multi-Chain Examples
+
 ## Tracing SOL Movement Between Two Addresses On Solana
 
-The query below will trace the movement of SOL between two addresses on Solana
-The query will return two objects: `inbound` and `outbound`. The `inbound` object will contain information about all inbound transactions to the specified address, and the `outbound` object will contain information about all outbound transactions from the specified address.
+Track Solana (SOL) token movements between addresses using Coinpath API. The query below traces the movement of SOL with customizable depth parameters. The query returns two objects: `inbound` and `outbound`. The `inbound` object contains all incoming transactions to the specified address, while the `outbound` object contains all outgoing transactions from the address.
 
 [Open this query on IDE](https://ide.bitquery.io/solana-coinpath-example)
 
@@ -345,9 +430,11 @@ query ($network: SolanaNetwork!, $address: String!, $inboundDepth: Int!,
 }
 ```
 
-## Getting Inflows ( Fund Moving In) To A Cardano Wallet /Address
+## Getting Inflows (Funds Moving In) To A Cardano Wallet/Address
 
-We get the details of tokens moving in to a wallet using the using the `outputs` function and setting the `outputAddress:` as the address of the wallet to which funds are moving in. Below is the sample query that gets token movements into a cardano wallet between two dates. Here's the [query on IDE](https://ide.bitquery.io/All-inflows-into-Cardano-wallet)
+Track all incoming token transfers to a Cardano wallet address. Get details of tokens moving into a wallet using the `outputs` function with `outputAddress` set to the target wallet address. The query below retrieves all token movements into a Cardano wallet between specified dates.
+
+[Open this query on IDE](https://ide.bitquery.io/All-inflows-into-Cardano-wallet)
 
 ```
 query ($network: CardanoNetwork!, $address: String!, $from: ISO8601DateTime, $till: ISO8601DateTime) {
@@ -391,8 +478,9 @@ query ($network: CardanoNetwork!, $address: String!, $from: ISO8601DateTime, $ti
 
 ## Get Transactions From Multiple Addresses To A Final Destination Address
 
-You can get the trasactions to a final destination addresses from an initial addresses no matter how many hops happen.
-Below is an example on how to use it. You can access the query [here](https://ide.bitquery.io/Ethereum-inbound-coinpath-from-one-address-to-another)
+Track multi-hop transaction paths from an initial address to a final destination address, regardless of how many intermediate addresses are involved. Use the `finalAddress` parameter to filter coinpaths that end at a specific target address. This is particularly useful for tracking fund flows in money laundering investigations and compliance monitoring.
+
+[Open this query on IDE](https://ide.bitquery.io/Ethereum-inbound-coinpath-from-one-address-to-another)
 
 ```
 query ($network: EthereumNetwork!, $address: String!, $inboundDepth: Int!, $limit: Int!, $currency: String!, $from: ISO8601DateTime, $till: ISO8601DateTime) {
@@ -452,3 +540,19 @@ query ($network: EthereumNetwork!, $address: String!, $inboundDepth: Int!, $limi
 This field can be used to filter the results of the query to only include coinpaths that end at a specific address. For example, the query in the example above will only return coinpaths that end at the address `0xa910f92acdaf488fa6ef02174fb86208ad7722ba`.
 
 The `finalAddress` field can also be used to calculate the total amount of funds that were sent to a specific address. To do this, you can use the count field to count the number of coinpaths that end at the address, and the amount field to sum the amount of funds that were sent in each coinpath.
+
+---
+
+## Related Resources
+
+You may also be interested in:
+
+- [Cross-Chain API ➤](https://docs.bitquery.io/docs/Examples/cross-chain/cross-chain-api/)
+- [DEX Trades API ➤](https://docs.bitquery.io/docs/Examples/dexTrades/)
+- [Blockchain Address API Examples ➤](https://docs.bitquery.io/docs/Examples/address/Blockchain-Address-API-Examples/)
+- [Transaction API ➤](https://docs.bitquery.io/docs/Examples/Transactions/)
+- [Transfers API ➤](https://docs.bitquery.io/docs/Examples/Transfers/)
+
+## Need Help?
+
+If you have questions about Coinpath API or need assistance with compliance and forensic analysis use cases, reach out to our [support team](https://t.me/Bloxy_info).
