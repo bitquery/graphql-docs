@@ -82,7 +82,6 @@ Follow the steps here to create one: [How to generate Bitquery API token ➤](ht
 - [Get Recent Transfers Before Specific Block](#get-recent-transfers-before-specific-block)
 - [Find Relation Between Creator of a Token and Buyer](#find-relation-between-creator-of-a-token-and-buyer)
 
-
 ## Understanding Coinpath Concepts
 
 ## What Is Depth?
@@ -747,19 +746,46 @@ Use this to find:
 
 ### Find Relation Between Creator of a Token and Buyer
 
+Discover direct and indirect funding relationships between a token creator and buyer addresses.
+
+**Key Capabilities:**
+
+- **Multi-Level Tracking**: Adjust `depth` parameter to track 2, 3, 4, 5, or more levels deep
+- **Indirect Connection Detection**: Find relationships even when addresses don't transact directly
+- **Bundle Detection**: Identify if creator funded buyer through intermediary wallets
+
+**How It Works:**
+
+- Set `initialAddress` as the token creator/deployer address
+- Set `finalAddress` as the buyer/trader address you want to investigate
+- Adjust `depth: {lteq: 2}` to any number (e.g., 4 or 5) to find deeper indirect connections
+- The query traces all funding paths from creator to buyer
+
+**Use Cases:**
+
+- Detect if token creator funded early buyers (pump scheme indicator)
+- Find multi-hop funding paths used to hide creator-buyer relationships
+- Identify bundled wallets in memecoin launches
+- Uncover wash trading between creator-controlled wallets
+
 #### Solana
 
 [Run Query](https://ide.bitquery.io/Find-relation-between-pumpfun-creator-and-buyer_2)
 
-```
+```graphql
 {
   solana(network: solana) {
     coinpath(
-      initialAddress: {is: "F3oHfZ4MniLiygXTkwugUgQ9zn1vgZiH4rtMtcbPbxTC"}
-      depth: {lteq: 2}
-      options: {direction: inbound, asc: "block.timestamp.time", desc: "amount", limitBy: {each: "depth", limit: 10}}
-      date: {since: "2025-10-01"}
-      finalAddress: {is: "3YJmmFMwq5z6YBMVusJjsiowqT4S3BCWUGo61wbvjqwd"}
+      initialAddress: { is: "F3oHfZ4MniLiygXTkwugUgQ9zn1vgZiH4rtMtcbPbxTC" }
+      depth: { lteq: 2 }
+      options: {
+        direction: inbound
+        asc: "block.timestamp.time"
+        desc: "amount"
+        limitBy: { each: "depth", limit: 10 }
+      }
+      date: { since: "2025-10-01" }
+      finalAddress: { is: "3YJmmFMwq5z6YBMVusJjsiowqT4S3BCWUGo61wbvjqwd" }
     ) {
       sender {
         address
@@ -785,9 +811,61 @@ Use this to find:
     }
   }
 }
-`
-
 ```
+
+#### Ethereum
+
+[Run Query](https://ide.bitquery.io/Find-relation-between-token-buyer-and-token-creator-ethereum)
+
+```graphql
+{
+  ethereum(network: ethereum) {
+    coinpath(
+      initialAddress: { is: "0xD77EAac88EBcfA6151fAb133Fb1c2C0149F01D5f" }
+      depth: { lteq: 2 }
+      options: {
+        direction: inbound
+        asc: "block.timestamp.time"
+        desc: "amount"
+        limitBy: { each: "depth", limit: 10 }
+      }
+      date: { since: "2025-10-01" }
+      finalAddress: { is: "0x05ff6964d21e5dae3b1010d5ae0465b3c450f381" }
+    ) {
+      sender {
+        address
+        annotation
+        amountOut
+        amountIn
+      }
+      receiver {
+        address
+        annotation
+        amountOut
+        amountIn
+      }
+      amount
+      currency {
+        symbol
+        name
+      }
+      depth
+      count
+      block {
+        timestamp {
+          time
+        }
+        height
+      }
+      transaction {
+        hash
+      }
+    }
+  }
+}
+```
+
+---
 
 ## Related Resources
 
