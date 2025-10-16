@@ -6,7 +6,7 @@ import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js
 
 ## Get the Bitcoin Price on a Given date
 
-[THis](https://ide.bitquery.io/btc-price-in-2016) query returns price of the Bitcoin on a given date. 
+[THis](https://ide.bitquery.io/btc-price-in-2016) query returns price of the Bitcoin on a given date.
 For this example the date is `2016-01-01`.
 
 ```
@@ -16,6 +16,38 @@ query MyQuery {
       value
       usd: value(in: USD)
       expression(get: "usd/value")
+    }
+  }
+}
+```
+
+## Get Bitcoin Balance on a given height
+
+Below query gives you balance of a bitcoin address at a specific Block height.
+Run [here](https://ide.bitquery.io/bitcoin-balance-on-a-given-block-height).
+
+```
+{
+  bitcoin(network: bitcoin) {
+    inputs(
+      height: {lteq: 919195}
+      inputAddress: {is: "bc1ppu6akjngyvpxwz0w38n4evcygwh08tjtmcc0dx6ft2zzgkxtd97stwehcq"}
+    ) {
+      count
+      value
+      value_usd: value(in: USD)
+      min_date: minimum(of: date)
+      max_date: maximum(of: date)
+    }
+    outputs(
+      height: {lteq: 919195}
+      outputAddress: {is: "bc1ppu6akjngyvpxwz0w38n4evcygwh08tjtmcc0dx6ft2zzgkxtd97stwehcq"}
+    ) {
+      count
+      value
+      value_usd: value(in: USD)
+      min_date: minimum(of: date)
+      max_date: maximum(of: date)
     }
   }
 }
