@@ -101,6 +101,89 @@ query MyQuery {
 }
 ```
 
+## SOL Balance of an address at a specific height
+
+This query calculates the SOL balance of a wallet at a specific block height by fetching all native SOL (represented by "-" in Bitquery v1) sent and received transactions up to that height. `received - sent` is the balance of the address.
+
+[Run query](https://ide.bitquery.io/sol_balance-of-an-address-at-a-specific-block-height-using-transfers)
+
+```
+{
+  solana {
+    sent: transfers(
+      currency: {is : "-"}
+      height:{lteq:370674688}
+      senderAddress: {is: "Df8Rmm7nPZAkENidu36LdMb7A92UBV9pGagLUftPkjnq"}
+    ) {
+      amount
+    }
+    recieved: transfers(
+      currency: {is: "-"}
+      height:{lteq:370674688}
+      receiverAddress: {is: "Df8Rmm7nPZAkENidu36LdMb7A92UBV9pGagLUftPkjnq"}
+    ) {
+     amount
+    }
+  }
+}
+```
+
+## Token Transfers to a Specific Wallet (for Bubble Map)
+
+This query retrieves all incoming transfers of a specific token (e.g., USDT) to a given Solana wallet on a particular date. It includes sender and receiver details, transaction signatures, block data, and transfer amounts in USD — useful for visualizing wallet inflows using a Bubble Map.
+
+[Run query](https://ide.bitquery.io/map-query-working_1)
+
+```
+query TransfersForBubbleMap($since: ISO8601DateTime!, $currency: String, $limit: Int = 1000, $offset: Int = 0) {
+  solana {
+    transfers(
+      date: {is: $since}
+      options: {limit: $limit, offset: $offset, desc: ["date.date", "block.height"]}
+      currency: {is: $currency}
+      receiverAddress: {is: "CapuXNQoDviLvU1PxFiizLgPNQCxrsag1uMeyk6zLVps"}
+    ) {
+
+      amount (in:USD)
+      currency {
+        symbol
+        address
+        decimals
+      }
+      sender {
+        address
+      }
+      receiver {
+        address
+      }
+      transaction {
+        signature
+        transactionIndex
+      }
+      block {
+        height
+        timestamp {
+          iso8601
+        }
+      }
+      date {
+        date
+      }
+    }
+  }
+}
+```
+
+```
+{
+  "since": "2025-09-24",
+  "till": "2025-09-24",
+  "currency": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+  "limit": 100,
+  "offset": 0
+}
+```
+
 ## Find the Sender of a Token to An Address
 
 This query identifies all senders who have transferred a specific token to a particular wallet address. This is useful for tracking token sources.
