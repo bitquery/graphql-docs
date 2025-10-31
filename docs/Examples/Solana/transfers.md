@@ -132,6 +132,8 @@ This query calculates the SOL balance of a wallet at a specific block height by 
 
 This query retrieves all incoming transfers of a specific token (e.g., USDT) to a given Solana wallet on a particular date. It includes sender and receiver details, transaction signatures, block data, and transfer amounts in USD — useful for visualizing wallet inflows using a Bubble Map.
 
+You can check out this [guide on how to build Solana BubbleMaps using Bitquery](https://bitquery.io/blog/solana-bubblemaps-bitquery-zero-rpc).
+
 [Run query](https://ide.bitquery.io/map-query-working_1)
 
 ```
