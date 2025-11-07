@@ -128,6 +128,46 @@ This query calculates the SOL balance of a wallet at a specific block height by 
 }
 ```
 
+## Currency Sent and Received by an address between a time period
+
+Below API will give you details on the aggreated currency sent and received by an address in a timeperiod.
+Try the API [here](https://ide.bitquery.io/currency-sent-and-received-by-an-address-between-a-time_1).
+
+```
+query ($network: SolanaNetwork!, $address: String!, $from: ISO8601DateTime, $till: ISO8601DateTime, $limit: Int!, $offset: Int!) {
+  solana(network: $network) {
+    transfers(
+      date: {since: $from, till: $till}
+      any: [{receiverAddress: {is: $address}}, {senderAddress: {is: $address}}]
+      options: {limit: $limit, offset: $offset, desc: ["count_in", "count_out"],
+        asc: "currency.symbol"}
+    ) {
+      sum_in: amount(calculate: sum, receiverAddress: {is: $address})
+      sum_out: amount(calculate: sum, senderAddress: {is: $address})
+      count_in: countBigInt(receiverAddress: {is: $address})
+      count_out: countBigInt(senderAddress: {is: $address})
+      currency {
+        address
+        symbol
+        tokenType
+      }
+    }
+  }
+}
+```
+
+```
+{
+  "limit": 10,
+  "offset": 0,
+  "network": "solana",
+  "address": "DoPnWi3csUodvLqu6VCLWg3EJwLccky9CD4C9ejL6Zgu",
+  "from": "2025-06-18",
+  "till": "2025-06-25T23:59:59",
+  "dateFormat": "%Y-%m-%d"
+}
+```
+
 ## Token Transfers to a Specific Wallet (for Bubble Map)
 
 This query retrieves all incoming transfers of a specific token (e.g., USDT) to a given Solana wallet on a particular date. It includes sender and receiver details, transaction signatures, block data, and transfer amounts in USD — useful for visualizing wallet inflows using a Bubble Map.
