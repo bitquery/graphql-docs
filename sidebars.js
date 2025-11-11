@@ -528,7 +528,7 @@ const sidebars = {
             {
               type: "category",
               label: "Zcash",
-              items: ["Examples/Zcash/address-api"],
+              items: ["Examples/Zcash/address-api","Examples/Zcash/zenzec-api"],
             },
           ],
         },
