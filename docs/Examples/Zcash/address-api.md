@@ -79,6 +79,7 @@ Follow the steps here to create one: [How to generate Bitquery API token ➤](ht
 - [Balance of an Address using Inputs and Outputs ➤](#balance-of-an-address-using-inputs-and-outputs)
 - [Inbound Transaction Details ➤](#inbound-transaction-details)
 - [Outbound Transaction Details ➤](#outbound-transaction-details)
+- [ZCash Find Trace of an Address ➤](#zcash-find-trace-of-an-address)
 
 ---
 
@@ -214,6 +215,61 @@ query MyQuery {
       index
       outputValue
       inputValue
+    }
+  }
+}
+```
+
+</details>
+
+
+## ZCash Find Trace of an Address
+
+Trace the flow of funds for a Zcash address by following the coinpath. This query tracks inbound transactions to a specific address, showing the sender and receiver addresses, transaction details, block information, and the depth of the money flow path. Useful for investigating fund movements and understanding transaction relationships.
+
+[Try Zcash Address Trace Query ➤](https://ide.bitquery.io/ZCash-Find-Trace-of-an-Address)
+
+<details>
+  <summary>Click to expand GraphQL query</summary>
+
+```graphql
+query MyQuery {
+  bitcoin(network: zcash) {
+    coinpath(
+      options: {limit: 10, desc: "block.height", direction: inbound}
+      sender: {is: "t1QYB8sG7UEf74EZRPMo5KwXEiMUD7uCzhu"}
+      depth: {lteq: 2}
+    ) {
+      amount
+      currency {
+        name
+        decimals
+      }
+      receiver {
+        address
+        type
+      }
+      sender {
+        address
+        type
+      }
+      transaction {
+        hash
+        index
+        valueOut
+        valueIn
+      }
+      block {
+        timestamp {
+          time
+        }
+        height
+      }
+      depth
+      transactions {
+        amount
+        txHash
+      }
     }
   }
 }
