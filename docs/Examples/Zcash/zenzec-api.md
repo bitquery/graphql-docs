@@ -20,7 +20,7 @@ Follow the steps here to create one: [How to generate Bitquery API token ➤](ht
 
 :::
 
-:::warning
+:::note
 
 **Different Endpoint Required**
 
