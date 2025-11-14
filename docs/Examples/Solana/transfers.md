@@ -128,6 +128,77 @@ This query calculates the SOL balance of a wallet at a specific block height by 
 }
 ```
 
+## Pumpfun Token Migrations on a specific date
+
+Below API retrieves pump fun token migraions on a specific date.
+
+Try the query [here](https://ide.bitquery.io/pumpfun-transfers-type-v1-to-pumpfun-migrations_1).
+
+```
+{
+  solana {
+    transfers(
+      options: {limit: 500}
+      date: {is: "2024-10-18"}
+      currency:{not:"SOL"}
+      externalProgramId: {is: "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"}
+      transferType: {in: transfer}
+      receiverAddress: {is: "39azUYFWPz3VHgKCf3VChUwbpURdCHRxjWVowf5jUJjg"}
+    ) {
+      block {
+        height
+        timestamp {
+          iso8601
+        }
+      }
+      instruction {
+        action {
+          name
+        }
+        callPath
+        external
+        externalAction {
+          name
+          type
+        }
+        program {
+          name
+          id
+        }
+        externalProgram {
+          id
+          name
+        }
+      }
+      currency {
+        name
+        symbol
+        address
+      }
+      date {
+        date
+      }
+      amount
+      sender {
+        address
+        mintAccount
+        type
+      }
+      receiver {
+        address
+        mintAccount
+        type
+      }
+      transaction {
+        signature
+        signer
+      }
+      transferType
+    }
+  }
+}
+```
+
 ## Currency Sent and Received by an address between a time period
 
 Below API will give you details on the aggreated currency sent and received by an address in a timeperiod.
