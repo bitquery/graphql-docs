@@ -33,9 +33,7 @@ A successful trade operation on the Stellar network will yield zero or more effe
 New to Bitquery? Here's how to get started:
 
 1. **[Create a free account](https://ide.bitquery.io/)** - Get instant access to our GraphQL IDE
-2. **[Generate your API key](https://docs.bitquery.io/docs/authorisation/how-to-generate/)** - Required for API access
-3. **[Run your first query](https://docs.bitquery.io/docs/start/first-query/)** - Learn the basics in 5 minutes
-4. **[Explore examples](https://docs.bitquery.io/docs/start/starter-queries/)** - Copy-paste ready queries
+2. **[Generate your Access token](https://docs.bitquery.io/docs/authorisation/how-to-generate/)** - Required for API access
 
 Need help crafting a query or subscription? Message us on [support](https://t.me/Bloxy_info).
 
