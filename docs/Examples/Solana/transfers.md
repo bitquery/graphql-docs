@@ -128,7 +128,150 @@ This query calculates the SOL balance of a wallet at a specific block height by 
 }
 ```
 
-## Pumpfun Token Migrations on a specific date
+## Historical Pump.fun Token creations on a specific date
+
+This query retrieves all pump.fun token creations on a specific date on Solana.
+Try the query [here](https://ide.bitquery.io/Historical-pump-fun-created-coins#).
+
+```
+{
+  solana {
+    transfers(
+      options: {limit: 100}
+      date: {is: "2025-11-17"}
+      parsedActionName: {is: "mintTo"}
+      callPath: {is: "4-11"}
+      externalProgramId: {is: "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"}
+    ) {
+      block {
+        height
+        timestamp {
+          iso8601
+        }
+      }
+      instruction {
+        action {
+          name
+        }
+        callPath
+        external
+        externalAction {
+          name
+          type
+        }
+        program {
+          name
+          id
+        }
+        externalProgram {
+          id
+          name
+        }
+      }
+      currency {
+        name
+        symbol
+        address
+      }
+      date {
+        date
+      }
+      amount
+      sender {
+        address
+        mintAccount
+        type
+      }
+      receiver {
+        address
+        mintAccount
+        type
+      }
+      transaction {
+        signature
+        signer
+      }
+      transferType
+    }
+  }
+}
+```
+
+## Historical Pump.fun Token creations by a Dev on a specific date
+
+This query retrieves all pump.fun token creations by a Dev on a specific date on Solana.
+Try the query [here](https://ide.bitquery.io/Historical-Pumpfun-created-coins-by-creator#).
+
+```
+{
+  solana {
+    transfers(
+      options:{limit:100}
+      date: {is: "2025-11-17"}
+      parsedActionName: {is: "mintTo"}
+      signer:{
+        is:"5TaPtQ9DE1YMUfiyLv7CCNx1CEh88nWx3sPmNRz9zL75"
+      }
+      callPath:{
+        is:"4-11"
+      }
+      externalProgramId: {is: "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"}
+    ) {
+      block {
+        height
+        timestamp {
+          iso8601
+        }
+      }
+      instruction {
+        action {
+          name
+        }
+        callPath
+        external
+        externalAction {
+          name
+          type
+        }
+        program {
+          name
+          id
+        }
+        externalProgram {
+          id
+          name
+        }
+      }
+      currency {
+        name
+        symbol
+        address
+      }
+      date {
+        date
+      }
+      amount
+      sender {
+        address
+        mintAccount
+        type
+      }
+      receiver {
+        address
+        mintAccount
+        type
+      }
+      transaction {
+        signature
+        signer
+      }
+      transferType
+    }
+  }
+}
+```
+
+## Historical Pumpfun Token Migrations on a specific date
 
 Below API retrieves pump fun token migraions on a specific date.
 
