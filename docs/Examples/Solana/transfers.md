@@ -128,6 +128,34 @@ This query calculates the SOL balance of a wallet at a specific block height by 
 }
 ```
 
+## Holding Period of a Token by a Wallet
+
+This query calculates how long a wallet has been holding a specific token by looking at the first and last transfer block heights for that token into the wallet. It is useful for analyzing token holding behavior, vesting, or eligibility for airdrops and loyalty programs.
+
+The query returns:
+- **first**: minimum block height at which the wallet first received the token  
+- **last**: maximum block height at which the wallet most recently received the token  
+- **period**: the difference between `last` and `first` block heights, representing the *holding period in blocks* (you can convert this to time using block timestamps if needed)
+
+Update `receiverAddress` with the target wallet and `currency` with the token mint address you want to analyze.
+
+[Run Query](https://ide.bitquery.io/find-holding-period-of-a-token-on-Solana)
+
+```
+query MyQuery {
+  solana(network: solana) {
+    transfers(
+      receiverAddress: {is: "FwTau1HAZcjexdph4xvkLxATcKAabS1F1vPE6Ut3Gem9"}
+      currency: {is: "6fHw6vUNrvuvjK2oadJm8Qkz152jef6wVDbdK2wNGiDT"}
+    ) {
+      first:minimum(of: height)
+      last:maximum(of: height)
+      period:expression(get:"last-first")
+    }
+  }
+}
+```
+
 ## Pumpfun Token Migrations on a specific date
 
 Below API retrieves pump fun token migraions on a specific date.
