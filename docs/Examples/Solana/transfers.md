@@ -128,150 +128,35 @@ This query calculates the SOL balance of a wallet at a specific block height by 
 }
 ```
 
-## Historical Pump.fun Token creations on a specific date
+## Holding Period of a Token by a Wallet
 
-This query retrieves all pump.fun token creations on a specific date on Solana.
-Try the query [here](https://ide.bitquery.io/Historical-pump-fun-created-coins#).
+This query calculates how long a wallet has been holding a specific token by looking at the first and last transfer block heights for that token into the wallet. It is useful for analyzing token holding behavior, vesting, or eligibility for airdrops and loyalty programs.
+
+The query returns:
+- **first**: minimum block height at which the wallet first received the token  
+- **last**: maximum block height at which the wallet most recently received the token  
+- **period**: the difference between `last` and `first` block heights, representing the *holding period in blocks* (you can convert this to time using block timestamps if needed)
+
+Update `receiverAddress` with the target wallet and `currency` with the token mint address you want to analyze.
+
+[Run Query](https://ide.bitquery.io/find-holding-period-of-a-token-on-Solana)
 
 ```
-{
-  solana {
+query MyQuery {
+  solana(network: solana) {
     transfers(
-      options: {limit: 100}
-      date: {is: "2025-11-17"}
-      parsedActionName: {is: "mintTo"}
-      callPath: {is: "4-11"}
-      externalProgramId: {is: "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"}
+      receiverAddress: {is: "FwTau1HAZcjexdph4xvkLxATcKAabS1F1vPE6Ut3Gem9"}
+      currency: {is: "6fHw6vUNrvuvjK2oadJm8Qkz152jef6wVDbdK2wNGiDT"}
     ) {
-      block {
-        height
-        timestamp {
-          iso8601
-        }
-      }
-      instruction {
-        action {
-          name
-        }
-        callPath
-        external
-        externalAction {
-          name
-          type
-        }
-        program {
-          name
-          id
-        }
-        externalProgram {
-          id
-          name
-        }
-      }
-      currency {
-        name
-        symbol
-        address
-      }
-      date {
-        date
-      }
-      amount
-      sender {
-        address
-        mintAccount
-        type
-      }
-      receiver {
-        address
-        mintAccount
-        type
-      }
-      transaction {
-        signature
-        signer
-      }
-      transferType
+      first:minimum(of: height)
+      last:maximum(of: height)
+      period:expression(get:"last-first")
     }
   }
 }
 ```
 
-## Historical Pump.fun Token creations by a Dev on a specific date
-
-This query retrieves all pump.fun token creations by a Dev on a specific date on Solana.
-Try the query [here](https://ide.bitquery.io/Historical-Pumpfun-created-coins-by-creator#).
-
-```
-{
-  solana {
-    transfers(
-      options:{limit:100}
-      date: {is: "2025-11-17"}
-      parsedActionName: {is: "mintTo"}
-      signer:{
-        is:"5TaPtQ9DE1YMUfiyLv7CCNx1CEh88nWx3sPmNRz9zL75"
-      }
-      callPath:{
-        is:"4-11"
-      }
-      externalProgramId: {is: "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P"}
-    ) {
-      block {
-        height
-        timestamp {
-          iso8601
-        }
-      }
-      instruction {
-        action {
-          name
-        }
-        callPath
-        external
-        externalAction {
-          name
-          type
-        }
-        program {
-          name
-          id
-        }
-        externalProgram {
-          id
-          name
-        }
-      }
-      currency {
-        name
-        symbol
-        address
-      }
-      date {
-        date
-      }
-      amount
-      sender {
-        address
-        mintAccount
-        type
-      }
-      receiver {
-        address
-        mintAccount
-        type
-      }
-      transaction {
-        signature
-        signer
-      }
-      transferType
-    }
-  }
-}
-```
-
-## Historical Pumpfun Token Migrations on a specific date
+## Pumpfun Token Migrations on a specific date
 
 Below API retrieves pump fun token migraions on a specific date.
 
