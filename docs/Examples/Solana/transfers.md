@@ -133,9 +133,10 @@ This query calculates the SOL balance of a wallet at a specific block height by 
 This query calculates how long a wallet has been holding a specific token by looking at the first and last transfer block heights for that token into the wallet. It is useful for analyzing token holding behavior, vesting, or eligibility for airdrops and loyalty programs.
 
 The query returns:
-- **first**: minimum block height at which the wallet first received the token  
-- **last**: maximum block height at which the wallet most recently received the token  
-- **period**: the difference between `last` and `first` block heights, representing the *holding period in blocks* (you can convert this to time using block timestamps if needed)
+
+- **first**: minimum block height at which the wallet first received the token
+- **last**: maximum block height at which the wallet most recently received the token
+- **period**: the difference between `last` and `first` block heights, representing the _holding period in blocks_ (you can convert this to time using block timestamps if needed)
 
 Update `receiverAddress` with the target wallet and `currency` with the token mint address you want to analyze.
 
@@ -156,9 +157,72 @@ query MyQuery {
 }
 ```
 
+## Get Pumpfun Token Created by a Wallet From Historical Data
+
+[Run query](https://ide.bitquery.io/get-historical-created-token-and-creator)
+
+```graphql
+{
+  solana {
+    transfers(
+      options: { limit: 100, desc: "block.height" }
+      date: { is: "2025-12-08" }
+      externalProgramId: { is: "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P" }
+      currency: { is: "9TXP4iVTcP7cChVhbUCQfvkSPKJrmHh1jxMkJgGqLzDP" }
+      transferType: { is: mint }
+    ) {
+      block {
+        height
+        timestamp {
+          iso8601
+        }
+      }
+      instruction {
+        action {
+          name
+        }
+        callPath
+        external
+        externalAction {
+          name
+          type
+        }
+        program {
+          name
+          id
+        }
+        externalProgram {
+          id
+          name
+        }
+      }
+      currency {
+        name
+        symbol
+        address
+      }
+      date {
+        date
+      }
+      amount
+      receiver {
+        address
+        mintAccount
+        type
+      }
+      transaction {
+        signature
+        signer
+      }
+      transferType
+    }
+  }
+}
+```
+
 ## Pumpfun Token Migrations on a specific date
 
-Below API retrieves pump fun token migraions on a specific date.
+Below API retrieves pump fun token migrations on a specific date.
 
 Try the query [here](https://ide.bitquery.io/pumpfun-transfers-type-v1-to-pumpfun-migrations_1).
 
