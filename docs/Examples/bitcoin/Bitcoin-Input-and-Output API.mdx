@@ -191,6 +191,53 @@ query ($network: BitcoinNetwork!, $dateFormat: String!, $from: ISO8601DateTime, 
 
 We can get the miner Block reward per day by using the outputs API and using the filters of outputDirection set to mining and we get parameters such as miner address, miner rewards in the whole day and blocks they mined. Yo can try running the example query [here](https://ide.bitquery.io/bitcoin-miners-rewards).
 
+## Get Miners Activity in a Specific Timeframe
+
+This query returns the activity count of miners within a specific date range. You can run this query [here](https://ide.bitquery.io/get-miners-activity-in-a-specific-timeframe).
+
+```
+query MyQuery {
+  bitcoin(network: bitcoin) {
+    outputs(
+      outputDirection: {is: mining}
+      date: {since: "2025-01-01", till: "2025-01-10"}
+      outputScriptType: {notIn: ["nulldata", "nonstandard"]}
+    ) {
+      outputAddress {
+        address
+      }
+      count
+    }
+  }
+}
+```
+
+## Get Miners First Activity
+
+This query returns the first mining activity for specific miner addresses, showing when each miner first received a block reward. You can run this query [here](https://ide.bitquery.io/get-miners-first-activity).
+
+```
+query MyQuery {
+  bitcoin(network: bitcoin) {
+    outputs(
+      outputDirection: {is: mining}
+      options: {asc: "block.timestamp.iso8601", limitBy: {each: "outputAddress.address", limit: 1}}
+      outputAddress: {in: ["1K6KoYC69NnafWJ7YgtrpwJxBLiijWqwa6", "1KGG9kvV5zXiqyQAMfY32sGt9eFLMmgpgX"]}
+      outputScriptType: {notIn: ["nulldata", "nonstandard"]}
+    ) {
+      outputAddress {
+        address
+      }
+      block {
+        timestamp {
+          iso8601
+        }
+      }
+    }
+  }
+}
+```
+
 ## Video Tutorial to Get Daily Miner Rewards Info
 
 <VideoPlayer url="https://youtu.be/3RC7Mxitfzg" />
