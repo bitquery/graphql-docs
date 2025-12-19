@@ -101,33 +101,6 @@ query MyQuery {
 }
 ```
 
-## SOL Balance of an address at a specific height
-
-This query calculates the SOL balance of a wallet at a specific block height by fetching all native SOL (represented by "-" in Bitquery v1) sent and received transactions up to that height. `received - sent` is the balance of the address.
-
-[Run query](https://ide.bitquery.io/sol_balance-of-an-address-at-a-specific-block-height-using-transfers)
-
-```
-{
-  solana {
-    sent: transfers(
-      currency: {is : "-"}
-      height:{lteq:370674688}
-      senderAddress: {is: "Df8Rmm7nPZAkENidu36LdMb7A92UBV9pGagLUftPkjnq"}
-    ) {
-      amount
-    }
-    recieved: transfers(
-      currency: {is: "-"}
-      height:{lteq:370674688}
-      receiverAddress: {is: "Df8Rmm7nPZAkENidu36LdMb7A92UBV9pGagLUftPkjnq"}
-    ) {
-     amount
-    }
-  }
-}
-```
-
 ## Holding Period of a Token by a Wallet
 
 This query calculates how long a wallet has been holding a specific token by looking at the first and last transfer block heights for that token into the wallet. It is useful for analyzing token holding behavior, vesting, or eligibility for airdrops and loyalty programs.
@@ -319,22 +292,57 @@ query MyQuery {
 }
 ```
 
-## Currency Sent and Received by an address between a time period
+## Currency Sent and Received by an address
 
-Below API will give you details on the aggreated currency sent and received by an address in a timeperiod.
-Try the API [here](https://ide.bitquery.io/currency-sent-and-received-by-an-address-between-a-time_1).
+Below API will give you details on the aggreated currency sent and received by an address.
+Try the API [here](https://ide.bitquery.io/currency-sent-and-received-by-an-address#).
 
 ```
-query ($network: SolanaNetwork!, $address: String!, $from: ISO8601DateTime, $till: ISO8601DateTime, $limit: Int!, $offset: Int!) {
-  solana(network: $network) {
+query ($address: String!) {
+  solana {
     transfers(
-      date: {since: $from, till: $till}
       any: [{receiverAddress: {is: $address}}, {senderAddress: {is: $address}}]
-      options: {limit: $limit, offset: $offset, desc: ["count_in", "count_out"],
-        asc: "currency.symbol"}
+      options: {desc: "balance"}
     ) {
       sum_in: amount(calculate: sum, receiverAddress: {is: $address})
       sum_out: amount(calculate: sum, senderAddress: {is: $address})
+      balance: expression(get: "sum_in - sum_out")
+      count_in: countBigInt(receiverAddress: {is: $address})
+      count_out: countBigInt(senderAddress: {is: $address})
+      currency {
+        address
+        symbol
+        tokenType
+      }
+    }
+  }
+}
+
+```
+
+```
+{
+  "address": "DoPnWi3csUodvLqu6VCLWg3EJwLccky9CD4C9ejL6Zgu"
+}
+```
+
+## Balance of an address on a specific date
+
+This query calculates the balance of a wallet at a specific date by fetching all transfers sent and received transactions up to that height. `received - sent` is the balance of the address.
+
+[Run query](https://ide.bitquery.io/balance-on-a-specific-date#)
+
+```
+query ($address: String!, $date: ISO8601DateTime!) {
+  solana {
+    transfers(
+      date:{till:$date}
+      any: [{receiverAddress: {is: $address}}, {senderAddress: {is: $address}}]
+      options: {desc: "balance"}
+    ) {
+      sum_in: amount(calculate: sum, receiverAddress: {is: $address})
+      sum_out: amount(calculate: sum, senderAddress: {is: $address})
+      balance: expression(get: "sum_in - sum_out")
       count_in: countBigInt(receiverAddress: {is: $address})
       count_out: countBigInt(senderAddress: {is: $address})
       currency {
@@ -349,13 +357,8 @@ query ($network: SolanaNetwork!, $address: String!, $from: ISO8601DateTime, $til
 
 ```
 {
-  "limit": 10,
-  "offset": 0,
-  "network": "solana",
-  "address": "DoPnWi3csUodvLqu6VCLWg3EJwLccky9CD4C9ejL6Zgu",
-  "from": "2025-06-18",
-  "till": "2025-06-25T23:59:59",
-  "dateFormat": "%Y-%m-%d"
+  "date":"2025-12-09",
+  "address": "DoPnWi3csUodvLqu6VCLWg3EJwLccky9CD4C9ejL6Zgu"
 }
 ```
 
