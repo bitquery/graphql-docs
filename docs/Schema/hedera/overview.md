@@ -20,8 +20,7 @@ To use the API, specify the network parameter with the Hedera network name. For 
 
 Supported networks:
 
--   `hedera`: Hedera Mainnet
--   `hedera_testnets`: Hedera Testnet
+- `hedera`: Hedera Mainnet
 
 Let's dive in and explore the Hedera data available through Bitquery API.
 

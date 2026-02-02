@@ -257,19 +257,6 @@ const sidebars = {
             "Schema/Dogecoin/transactions",
           ],
         },
-        {
-          type: "category",
-          label: "Harmony",
-          items: [
-            "Schema/harmony/arguments",
-            "Schema/harmony/blocks",
-            "Schema/harmony/smartContractCalls",
-            "Schema/harmony/smartContractEvents",
-            "Schema/harmony/stakingTransactions",
-            "Schema/harmony/transactions",
-            "Schema/harmony/transfers",
-          ],
-        },
 
         {
           type: "category",
@@ -325,20 +312,6 @@ const sidebars = {
             "Schema/ripple/rippleStates",
             "Schema/ripple/transactions",
             "Schema/ripple/transfers",
-          ],
-        },
-        {
-          type: "category",
-          label: "Tezos",
-          items: [
-            "Schema/tezos/address",
-            "Schema/tezos/arguments",
-            "Schema/tezos/balanceUpdates",
-            "Schema/tezos/blocks",
-            "Schema/tezos/coinpath",
-            "Schema/tezos/operations",
-            "Schema/tezos/transactions",
-            "Schema/tezos/transfers",
           ],
         },
 
@@ -421,41 +394,11 @@ const sidebars = {
                 "Examples/bitcoin/bitcoin-address-api",
               ],
             },
-            {
-              type: "category",
-              label: "Cosmos",
-              items: [
-                "Examples/cosmos/address",
-                "Examples/cosmos/attributes",
-                "Examples/cosmos/blocks",
-                "Examples/cosmos/coinpath",
-                "Examples/cosmos/messages",
-                "Examples/cosmos/transactions",
-                "Examples/cosmos/transfers",
-              ],
-            },
-
-            {
-              type: "category",
-              label: "Hedera",
-              items: [
-                "Examples/hedera/hedera-address",
-                "Examples/hedera/hedera-api-video",
-                "Examples/hedera/hedera-io",
-                "Examples/hedera/hedera-messages",
-                "Examples/hedera/hedera-transactions",
-              ],
-            },
 
             {
               type: "category",
               label: "Filecoin",
               items: ["Examples/filecoin/messages"],
-            },
-            {
-              type: "category",
-              label: "Flow",
-              items: ["Examples/Input_Output/IO_examples"],
             },
             {
               type: "category",
@@ -528,7 +471,10 @@ const sidebars = {
             {
               type: "category",
               label: "Zcash",
-              items: ["Examples/Zcash/address-api","Examples/Zcash/zenzec-api"],
+              items: [
+                "Examples/Zcash/address-api",
+                "Examples/Zcash/zenzec-api",
+              ],
             },
           ],
         },
@@ -540,11 +486,6 @@ const sidebars = {
               type: "category",
               label: "Polygon (Matic)",
               items: ["Examples/address/specific-queries"],
-            },
-            {
-              type: "category",
-              label: "Staking (Beacon Chain)",
-              items: ["Examples/Beacon Chain Examples/eth2_examples"],
             },
           ],
         },

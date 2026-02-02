@@ -9,7 +9,6 @@ In this section we see how to use Bitquery APIs to get information across multip
 3. [Cross-Chain Trade Insights](#cross-chain-trade)
 4. [Universal Token Tracking](#universal-token-tracking)
 
-
 <a name="balance-of-a-Wallet"></a>
 
 ## Balance of a Wallet
@@ -166,14 +165,6 @@ query ($address: String!) {
       }
     }
   }
-  bitcoinsv: bitcoin(network: bitcoinsv) {
-    addressStats(address: {is: $address}) {
-      address {
-        balance
-        balanceInUSD: balance(in: USD)
-      }
-    }
-  }
   bitcash: bitcoin(network: bitcash) {
     addressStats(address: {is: $address}) {
       address {
@@ -232,12 +223,12 @@ query ($address: String!) {
   "address": "0xb3eaf12a04d9e9df7efa681a92043ef4371ed6fe"
 }
 ```
-    
+
 <a name="token-transfers-tracking"></a>
 
-## Token Transfers Tracking 
+## Token Transfers Tracking
 
-With this query you can track token transfers across different chains for any address.  Set the wallet whose movements you want to track in the `address` filter.  Using the  `any` clause, we get transfers were the address was either a sender or reciever.
+With this query you can track token transfers across different chains for any address. Set the wallet whose movements you want to track in the `address` filter. Using the `any` clause, we get transfers were the address was either a sender or reciever.
 
 [You can find the query here](https://ide.bitquery.io/Cross-chain-transfers)
 
@@ -449,15 +440,15 @@ query ($address: String!) {
   }
 }
 ```
-    
+
 <a name="cross-chain-trade"></a>
 
 ## Cross-Chain Trade Insights
 
-The below query gives you insights into token trades spanning various blockchains. Simply set the wallet address in the  `address` parameter. Adjust the `from ` and `to` periods accordingly.
+The below query gives you insights into token trades spanning various blockchains. Simply set the wallet address in the `address` parameter. Adjust the `from ` and `to` periods accordingly.
 
-  [Link to query](https://ide.bitquery.io/Cross-chain-Trades)
-    
+[Link to query](https://ide.bitquery.io/Cross-chain-Trades)
+
 ```
 query ($limit: Int!, $offset: Int!, $from: ISO8601DateTime, $till: ISO8601DateTime, $address: String!) {
   ethereum: ethereum {
@@ -586,10 +577,9 @@ fragment TradeInfo on EthereumDexTrades {
 
 ## Universal Token Tracking
 
-The below query gives you stats on tokens across chains including sender/receiver count, first and last date of token transfers and the average amount transferred. 
+The below query gives you stats on tokens across chains including sender/receiver count, first and last date of token transfers and the average amount transferred.
 
 [You can run the query here](https://ide.bitquery.io/multi-chain-token-tracing)
-    
 
 ```
 query ($from: ISO8601DateTime, $till: ISO8601DateTime) {
@@ -617,7 +607,7 @@ query ($from: ISO8601DateTime, $till: ISO8601DateTime) {
       max_date: maximum(of: date)
     }
   }
-  
+
   bsc: ethereum(network: bsc) {
     transfers(
       currency: {is: "0x55d398326f99059fF775485246999027B3197955"}
@@ -642,7 +632,7 @@ query ($from: ISO8601DateTime, $till: ISO8601DateTime) {
       max_date: maximum(of: date)
     }
   }
-  
+
   celo: ethereum(network: celo_mainnet) {
     transfers(
       currency: {is: "0xf6d198cd2a85bb2f3021cdbdab6b878474079be7 "}
@@ -691,7 +681,7 @@ query ($from: ISO8601DateTime, $till: ISO8601DateTime) {
       max_date: maximum(of: date)
     }
   }
-  
+
   avalanche: ethereum(network: avalanche) {
     transfers(
       currency: {is: "0x9702230a8ea53601f5cd2dc00fdbc13d4df4a8c7 "}

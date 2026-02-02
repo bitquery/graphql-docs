@@ -16,6 +16,6 @@ to fetch data from Algorand blockchain, you need to provide the `network` argume
 }
 ```
 
-You can also fetch data from Algorand Testnet (`algorand_testnet`) and Algorand Betanet (`algorand_betanet`).
+You can also fetch data from Algorand Betanet (`algorand_betanet`).
 
 Let's dive in and explore the Algorand data available through Bitquery API.

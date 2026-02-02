@@ -14,7 +14,7 @@ Creating precise queries using the Query Builder is a straightforward process. F
 
 1. Select Blockchain: Choose the blockchain network you intend to query, such as Ethereum, Bitcoin, or others of your preference.
 
-2. Network Selection: Select specific network from the available options. This could be the `ethereum`, `bsc`, or various other mainnets and testnets.
+2. Network Selection: Select specific network from the available options. This could be the `ethereum`, `bsc`, or various other mainnets.
 
 3. Schema Exploration: Dive into the schema provided, showcasing an array of fields such as `address`, `block`, and `transaction`. Each field offers unique data points.
 
