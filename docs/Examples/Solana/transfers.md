@@ -9,6 +9,7 @@ keywords:
   - Solana transaction monitoring
   - Solana transfer history
   - Solana balance tracking
+  - Solana token holders
   - Solana transfer analytics
   - Solana transfer data
   - Solana transfer queries
@@ -359,6 +360,38 @@ query ($address: String!, $date: ISO8601DateTime!) {
 {
   "date":"2025-12-09",
   "address": "DoPnWi3csUodvLqu6VCLWg3EJwLccky9CD4C9ejL6Zgu"
+}
+```
+
+## Token holders
+
+This query returns all holders of a specific token with their balances. It aggregates transfers by receiver (holder) for the given token: each row is a wallet address that holds the token, with total received (`sum_in`), total sent (`sum_out`), and current balance (`sum_in - sum_out`). Results are sorted by balance descending and limited to the top 10,000 holders. Use `date: { since: "..." }` to compute balances from a given date onward.
+
+You can run the query [here](https://ide.bitquery.io/solana-holders_1).
+
+```
+{
+  solana(network: solana) {
+    transfers(
+      date: { since: "2026-02-19" }
+      currency: { is: "943YczGfS95e1ZnUSMd5DPQrGXaKBS2zGR76htycpump" }
+      options: { limit: 10000, desc: "balance" }
+    ) {
+      sum_in: amount(calculate: sum)
+      sum_out: amount(calculate: sum)
+      balance: expression(get: "sum_in - sum_out")
+      count_in: countBigInt
+      count_out: countBigInt
+      currency {
+        address
+        symbol
+        tokenType
+      }
+      receiver {
+        address
+      }
+    }
+  }
 }
 ```
 
