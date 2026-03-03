@@ -116,9 +116,6 @@ A random number used to prevent caching of results. Only the Coinpath API is sub
 
 1. **Add the `seed` parameter** — Set it to a random number for every query. This forces a new session for each request and avoids the error.
 2. **Run queries sequentially** — Sync queries so that those with the same set of parameters run one after the other instead of in parallel.
-
-Use a seed when blockchain data is expected to change during coinpath calculations, or when you run parallel queries with identical parameters.
-
 ---
 
 ## Fund Flow Tracking
