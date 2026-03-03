@@ -112,7 +112,12 @@ If the initial count of transactions for the address under coinpath exceeds this
 
 ## Seed
 
-A random number used to prevent caching of results. Only needed if blockchain data is expected to be modified during coinpath calculations.
+A random number used to prevent caching of results. Only the Coinpath API is subject to session management that caches results of intermediate stages. Caching issues may occur if two Coinpath queries with the same parameters are run in parallel. To avoid that, you can:
+
+1. **Add the `seed` parameter** — Set it to a random number for every query. This forces a new session for each request and avoids the error.
+2. **Run queries sequentially** — Sync queries so that those with the same set of parameters run one after the other instead of in parallel.
+
+Use a seed when blockchain data is expected to change during coinpath calculations, or when you run parallel queries with identical parameters.
 
 ---
 
