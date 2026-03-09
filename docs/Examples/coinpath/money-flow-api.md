@@ -134,6 +134,7 @@ Track where funds are going from a specific address across multiple hops. In 201
       currency: { is: "ETH" }
       depth: { lteq: 2 }
       options: {
+        seed: 110
         asc: "depth"
         desc: "amount"
         limitBy: { each: "depth", limit: 10 }
@@ -198,6 +199,7 @@ Track where funds came from to a specific address using inbound direction. This 
       currency: { is: "ETH" }
       depth: { lteq: 2 }
       options: {
+        seed: 110
         direction: inbound
         asc: "depth"
         desc: "amount"
@@ -264,6 +266,7 @@ Analyze the relationship between two Ethereum addresses by combining inbound and
       currency: { is: "ETH" }
       depth: { lteq: 1 }
       options: {
+        seed: 110
         direction: inbound
         asc: "depth"
         desc: "amount"
@@ -316,6 +319,7 @@ Analyze the relationship between two Ethereum addresses by combining inbound and
       currency: { is: "ETH" }
       depth: { lteq: 2 }
       options: {
+        seed: 110
         asc: "depth"
         desc: "amount"
         limitBy: { each: "depth", limit: 10 }
@@ -374,7 +378,7 @@ query ($network: SolanaNetwork!, $address: String!, $inboundDepth: Int!,
           inbound: coinpath(
             initialAddress: {is: $address}
             depth: {lteq: $inboundDepth}
-            options: {direction: inbound, asc: "depth", desc: "amount", limitBy: {each: "depth", limit: $limit}}
+            options: {seed: 110, direction: inbound, asc: "depth", desc: "amount", limitBy: {each: "depth", limit: $limit}}
             date: {since: $from, till: $till}
             currency: { is: $currency }
           ) {
@@ -397,7 +401,7 @@ query ($network: SolanaNetwork!, $address: String!, $inboundDepth: Int!,
           outbound: coinpath(
             initialAddress: {is: $address}
             depth: {lteq: $outboundDepth}
-            options: {asc: "depth", desc: "amount", limitBy: {each: "depth", limit: $limit}}
+            options: {seed: 110, asc: "depth", desc: "amount", limitBy: {each: "depth", limit: $limit}}
             date: {since: $from, till: $till}
             currency: { is: $currency }
           ) {
@@ -495,7 +499,7 @@ query ($network: EthereumNetwork!, $address: String!, $inboundDepth: Int!, $limi
       initialAddress: {is: $address}
       currency: {is: $currency}
       depth: {lteq: $inboundDepth}
-      options: {direction: inbound, asc: "depth", desc: "amount", limitBy: {each: "depth", limit: $limit}}
+      options: {seed: 110, direction: inbound, asc: "depth", desc: "amount", limitBy: {each: "depth", limit: $limit}}
       date: {since: $from, till: $till}
       finalAddress: {is: "0xa910f92acdaf488fa6ef02174fb86208ad7722ba"}
     ) {
@@ -781,6 +785,7 @@ Discover direct and indirect funding relationships between a token creator and b
       initialAddress: { is: "F3oHfZ4MniLiygXTkwugUgQ9zn1vgZiH4rtMtcbPbxTC" }
       depth: { lteq: 2 }
       options: {
+        seed: 110
         direction: inbound
         asc: "block.timestamp.time"
         desc: "amount"
@@ -826,6 +831,7 @@ Discover direct and indirect funding relationships between a token creator and b
       initialAddress: { is: "0xD77EAac88EBcfA6151fAb133Fb1c2C0149F01D5f" }
       depth: { lteq: 2 }
       options: {
+        seed: 110
         direction: inbound
         asc: "block.timestamp.time"
         desc: "amount"
