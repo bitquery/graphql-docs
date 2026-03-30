@@ -1,0 +1,34 @@
+[
+  {
+    "from": "/docs/building-queries/Coinpath-Explained/Fund Tracking/EVM_Chains",
+    "to": "/docs/building-queries/Coinpath-Explained/Fund-Tracking/EVM_Chains"
+  },
+  {
+    "from": "/docs/building-queries/Coinpath-Explained/Fund Tracking/Ledger_Based_Chains",
+    "to": "/docs/building-queries/Coinpath-Explained/Fund-Tracking/Ledger_Based_Chains"
+  },
+  {
+    "from": "/docs/building-queries/Coinpath-Explained/Fund Tracking/UTXO_Chains",
+    "to": "/docs/building-queries/Coinpath-Explained/Fund-Tracking/UTXO_Chains"
+  },
+  {
+    "from": "/docs/building-queries/Coinpath-Explained/Fund%20Tracking/EVM_Chains",
+    "to": "/docs/building-queries/Coinpath-Explained/Fund-Tracking/EVM_Chains"
+  },
+  {
+    "from": "/docs/building-queries/Coinpath-Explained/Fund%20Tracking/Ledger_Based_Chains",
+    "to": "/docs/building-queries/Coinpath-Explained/Fund-Tracking/Ledger_Based_Chains"
+  },
+  {
+    "from": "/docs/building-queries/Coinpath-Explained/Fund%20Tracking/UTXO_Chains",
+    "to": "/docs/building-queries/Coinpath-Explained/Fund-Tracking/UTXO_Chains"
+  },
+  {
+    "from": "/docs/Examples/Beacon Chain Examples/eth2_examples",
+    "to": "/docs/Examples/Beacon-Chain-Examples/eth2_examples"
+  },
+  {
+    "from": "/docs/Examples/Beacon%20Chain%20Examples/eth2_examples",
+    "to": "/docs/Examples/Beacon-Chain-Examples/eth2_examples"
+  }
+]

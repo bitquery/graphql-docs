@@ -1,0 +1,10 @@
+[
+  {
+    "fromPrefix": "building-queries/Coinpath-Explained/Fund Tracking",
+    "toPrefix": "building-queries/Coinpath-Explained/Fund-Tracking"
+  },
+  {
+    "fromPrefix": "Examples/Beacon Chain Examples",
+    "toPrefix": "Examples/Beacon-Chain-Examples"
+  }
+]

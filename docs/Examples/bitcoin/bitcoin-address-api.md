@@ -1,3 +1,13 @@
+---
+title: Bitcoin Address API — balances and UTXO activity
+description: Query Bitcoin addresses for balance, inputs, outputs, and USD values using Bitquery GraphQL—address stats and UTXO-based balance derivation.
+keywords:
+  - Bitcoin address API
+  - BTC balance API
+  - Bitcoin GraphQL
+  - UTXO Bitcoin API
+---
+
 # BTC Balance API
 
 Our Input/Output APIs provides all the details regarding any address on Bitcoin Blockchain. To get the balance simply get all inputs and outputs and subtract (outputs - inputs). If will give you bitcoin balance. You can also get bitcoin balance in USD as we also getting usd values inputs and outputs. Remember we actually multiple usd value of bitcoin at the time of transaction as we also have historical usd price of bitcoin.
