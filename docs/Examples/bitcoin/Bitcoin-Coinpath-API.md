@@ -1,16 +1,28 @@
+---
+title: Bitcoin Coinpath API
+description: Track Bitcoin (BTC) fund flows between addresses with GraphQL coinpath queries—depth, direction, and transaction paths on the Bitcoin network.
+keywords:
+  - Bitcoin coinpath
+  - Bitcoin fund tracing
+  - BTC transaction path
+  - Bitcoin GraphQL API
+---
+
 # Coinpath API
 
-Our Bitcoin Coinpath API provides comprehensive information about money flow of addresses on the Cosmos blockchain.
+Our Bitcoin Coinpath API provides comprehensive information about money flow of addresses on the **Bitcoin** blockchain.
 
-## Explore Destination of Funds from a Specific Address
+## Explore 
+
+[Run API](https://ide.bitquery.io/Destination-of-Funds-from-a-Specific-Address-on-Bitcoin)
 
 ```
-query ($network: BitcoinNetwork!) {
-  bitcoin(network: $network) {
+{
+  bitcoin(network: bitcoin) {
     coinpath(
       initialAddress: {is: "bc1p4kufll9uhnpkgzuc65slcxd2qaw2hl9xecket3h8yyu4awglcsqslqaztd"}
       date: {after: "2023-10-10"}
-      options: {limit: 10, desc: "block.height"}
+      options: {limit: 10, asc: "block.height", seed: 10}
     ) {
       amount(in: USD)
       block {
@@ -24,6 +36,10 @@ query ($network: BitcoinNetwork!) {
       }
       transaction {
         hash
+      }
+      currency {
+        name
+        address
       }
     }
   }
