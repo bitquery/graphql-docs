@@ -9,6 +9,18 @@
 .cache-loader
 
 # Misc
+# Local SEO exports (Search Console, spreadsheets) — do not commit
+seo/
+
+# Local SEO runbook — do not commit
+SEO-MEASUREMENT.md
+
+# Local SEO verify script (optional; not committed)
+scripts/verify-static-seo-local.sh
+
+# Optional local Cursor rule (team enforces paths via yarn lint:doc-paths instead)
+.cursor/rules/docs-directory-paths.mdc
+
 .env
 .DS_Store
 .env.local

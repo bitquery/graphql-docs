@@ -1,0 +1,5 @@
+# Bitquery V1 documentation — allow indexing; sitemap lists all doc URLs.
+User-agent: *
+Allow: /
+
+Sitemap: https://docs.bitquery.io/v1/sitemap.xml

@@ -1,6 +1,16 @@
+---
+title: Bitcoin Coinpath API
+description: Track Bitcoin (BTC) fund flows between addresses with GraphQL coinpath queries—depth, direction, and transaction paths on the Bitcoin network.
+keywords:
+  - Bitcoin coinpath
+  - Bitcoin fund tracing
+  - BTC transaction path
+  - Bitcoin GraphQL API
+---
+
 # Coinpath API
 
-Our Bitcoin Coinpath API provides comprehensive information about money flow of addresses on the Cosmos blockchain.
+Our Bitcoin Coinpath API provides comprehensive information about money flow of addresses on the **Bitcoin** blockchain.
 
 ## Explore Destination of Funds from a Specific Address
 
