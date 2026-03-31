@@ -46,9 +46,9 @@ const sidebars = {
               type: "category",
               label: "Fund Tracking",
               items: [
-                "building-queries/Coinpath-Explained/Fund-Tracking/EVM_Chains",
-                "building-queries/Coinpath-Explained/Fund-Tracking/Ledger_Based_Chains",
-                "building-queries/Coinpath-Explained/Fund-Tracking/UTXO_Chains",
+                "building-queries/Coinpath-Explained/Fund Tracking/EVM_Chains",
+                "building-queries/Coinpath-Explained/Fund Tracking/Ledger_Based_Chains",
+                "building-queries/Coinpath-Explained/Fund Tracking/UTXO_Chains",
               ],
             },
             "building-queries/Coinpath-Explained/How_to_read_coinpath_graph",

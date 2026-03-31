@@ -10,8 +10,6 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
-    "lint:doc-paths": "node scripts/normalize-doc-paths.js",
-    "regenerate:doc-space-redirects": "node scripts/regenerate-space-redirects.js",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids"
   },

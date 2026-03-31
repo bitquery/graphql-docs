@@ -1,6 +1,6 @@
 ---
 title: Bitcoin API Documentation
-description: Bitcoin (BTC) GraphQL examples—blocks, addresses, coinpath, fees, transactions, inputs/outputs, and Omni. Query the Bitcoin network with Bitquery APIs and streams.
+description: Collection of Bitcoin APIs, Streams
 slug: /examples/Bitcoin/
 keywords:
   - Bitcoin API
@@ -16,23 +16,23 @@ This section contains Bitcoin API/Streams examples and guides, organized into ca
 
 ## Blocks
 
-- [Blocks API](https://docs.bitquery.io/v1/docs/Examples/bitcoin/Bitcoin-Blocks-API)
+- [Blocks API](https://docs.bitquery.io/v1/docs/examples/bitcoin/bitcoin-blocks-api)
 
 ## Address
 
-- [Address API](https://docs.bitquery.io/v1/docs/Examples/bitcoin/bitcoin-address-api)
+- [Address API](https://docs.bitquery.io/v1/docs/examples/bitcoin/bitcoin-address-api)
 
 ## Coinpath
 
-- [Coinpath API](https://docs.bitquery.io/v1/docs/Examples/bitcoin/Bitcoin-Coinpath-API)
+- [Coinpath API](https://docs.bitquery.io/v1/docs/examples/bitcoin/bitcoin-coinpath-api)
 
 ## Fees
 
-- [Fee API](https://docs.bitquery.io/v1/docs/Examples/bitcoin/bitcoin-fee-api)
+- [Fee API](https://docs.bitquery.io/v1/docs/examples/bitcoin/bitcoin-fee-api)
 
 ## Inputs and Outputs
 
-- [Inputs and Outputs API](https://docs.bitquery.io/v1/docs/Examples/bitcoin/Bitcoin-Input-and-Output%20API)
+- [Inputs and Outputs API](https://docs.bitquery.io/v1/docs/examples/bitcoin/bitcoin-input-and-output-api)
 
 ## Omni Layer
 
@@ -40,4 +40,4 @@ This section contains Bitcoin API/Streams examples and guides, organized into ca
 
 ## Transactions
 
-- [Transaction API](https://docs.bitquery.io/v1/docs/Examples/bitcoin/Bitcoin-Transaction-API)
+- [Transaction API](https://docs.bitquery.io/v1/docs/examples/bitcoin/bitcoin-transaction-api)

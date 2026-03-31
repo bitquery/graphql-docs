@@ -2,9 +2,6 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 require("dotenv").config();
 
-/** Space-in-folder → hyphen renames; built by scripts/regenerate-space-redirects.js */
-const docSpaceRedirects = require("./scripts/doc-space-redirects.generated.json");
-
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
@@ -39,8 +36,6 @@ const config = {
   },
 
   plugins: [
-    // Dev-only: client-redirects run at postBuild only; this mirrors legacy URLs during `yarn start`
-    require("./plugins/dev-legacy-redirects.js"),
     // [
     //   "@graphql-markdown/docusaurus",
     //   {
@@ -88,7 +83,6 @@ const config = {
       "@docusaurus/plugin-client-redirects",
       {
         redirects: [
-          ...docSpaceRedirects,
           {
             to: "/docs/building-queries/Coinpath-Explained/Overview",
             from: "/docs/building-queries/Coinpath%20Explained/Overview",
@@ -96,31 +90,6 @@ const config = {
           {
             to: "/docs/examples/Bitcoin",
             from: "/docs/category/Bitcoin",
-          },
-          // Legacy Bitcoin example URLs (wrong folder casing or slug) → canonical paths from sitemap
-          {
-            to: "/docs/Examples/bitcoin/Bitcoin-Blocks-API",
-            from: "/docs/examples/bitcoin/bitcoin-blocks-api",
-          },
-          {
-            to: "/docs/Examples/bitcoin/bitcoin-address-api",
-            from: "/docs/examples/bitcoin/bitcoin-address-api",
-          },
-          {
-            to: "/docs/Examples/bitcoin/Bitcoin-Coinpath-API",
-            from: "/docs/examples/bitcoin/bitcoin-coinpath-api",
-          },
-          {
-            to: "/docs/Examples/bitcoin/bitcoin-fee-api",
-            from: "/docs/examples/bitcoin/bitcoin-fee-api",
-          },
-          {
-            to: "/docs/Examples/bitcoin/Bitcoin-Input-and-Output API",
-            from: "/docs/examples/bitcoin/bitcoin-input-and-output-api",
-          },
-          {
-            to: "/docs/Examples/bitcoin/Bitcoin-Transaction-API",
-            from: "/docs/examples/bitcoin/bitcoin-transaction-api",
           },
         ],
       },
@@ -143,10 +112,9 @@ const config = {
           customCss: require.resolve("./src/css/custom.css"),
         },
         sitemap: {
-          // Hints only—engines may ignore; weekly is realistic for mostly static docs
-          changefreq: "weekly",
-          priority: 0.7,
-          ignorePatterns: ["/docs/graphql-reference/**"],
+          changefreq: "daily",
+          priority: 1,
+          ignorePatterns: ["/docs/v1/graphql-reference/**"],
           filename: "sitemap.xml",
         },
         gtag: {
