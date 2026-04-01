@@ -8,7 +8,7 @@ keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
 
 Our Cosmos Attribtues API provides all the details regarding event attributes from Cosmos network.
 
-## Get Attributes of Recent Events
+## Get Recent Cosmos Event Attributes
 
 ```
 {
@@ -43,7 +43,7 @@ Our Cosmos Attribtues API provides all the details regarding event attributes fr
 
 The query retrieves event attribute information from the Cosmos blockchain, including attribute names, block height and timestamp, event types, message senders and types, transaction hash, signer's address, and attribute values. The results are sorted based on block timestamp in descending order.
 
-## Filter Attributes by Event Type
+## Filter Cosmos Event Attributes by Event Type
 
 ```
 {
@@ -81,7 +81,7 @@ The query retrieves event attribute details from the Cosmos blockchain, specific
 
 The query provides information about attribute names, block height, block timestamp, event type, message senders and types, transaction hash, signer's address, and attribute values. This offers insights into recent `proposal_vote` event attributes on the Cosmos network.
 
-## Get Count of Attributes
+## Count Cosmos Event Attributes
 
 ```
 {

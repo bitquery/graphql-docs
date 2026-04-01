@@ -6,7 +6,7 @@ keywords: [inputs outputs API examples, GraphQL queries, Bitquery]
 
 # Inputs and Outputs
 
-## Getting Spend Volume of a Token
+## Aggregate FlowToken Daily Volumes from Flow Inputs and Outputs
 
 ```
 query MyQuery {

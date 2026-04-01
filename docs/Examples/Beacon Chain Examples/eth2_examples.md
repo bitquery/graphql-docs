@@ -9,7 +9,7 @@ sidebar_position: 1
 
 Our ETH2 APIs provides extensive data on Beacon Chain. Let's look at some of the examples. 
 
-### Get Historical Validator Statuses 
+### Get Daily Ethereum Beacon Chain Validator Status Counts
 
 You can get the daily stats of validator statuses (active_exiting, active_ongoing, active_slashed, pending_queued and so on) using the below query. Access it on the [IDE](https://ide.bitquery.io/Validator-Counts-Daily-For-all-status)
 
@@ -28,7 +28,7 @@ query MyQuery {
 ```
 
 
-###  ETH2 Deposits
+### List Largest Ethereum Beacon Chain Validator Deposits by Amount
 
 In ETH2, the validators are decided based on the amount they stake. The below example, gets top validators based on the amount deposited.
 
@@ -81,7 +81,7 @@ This query returns:
 
     - The maximum date (end) on which the validator made a deposit.
 
-###  ETH2 Validator token unlock
+### Track Ethereum Beacon Chain Validator Balance Changes Over Time
 
 The below returns a list of validator updates for a given validator index `$index`, sorted by ascending date. Each validator update includes the date of the update, the change in validator balance, and the maximum validator balance after the update. 
 
@@ -115,7 +115,7 @@ query ($network: Ethereum2Network!, $dateFormat: String!, $index: Int!, $from: I
 ```
 
 
-### Beacon Chain Attestor Slashings
+### List Ethereum Beacon Chain Attester Slashings for a Validator Index
 
 The below query returns a list of attester slashings for a given validator index `$index`, sorted by ascending date. Each attester slashing includes the date of the slashing, the parent root hash, the ETH1 deposit count, the ETH1 deposit root hash, the ETH1 block hash, the state root hash, and the validator's public key and index.
 

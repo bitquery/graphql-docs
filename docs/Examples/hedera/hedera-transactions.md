@@ -9,7 +9,7 @@ keywords: [Hedera API examples, Hedera GraphQL queries, Bitquery]
 
 In this section we will see how to get information on transactions on Hedera.
 
-## Latest Transactions
+## List Latest Hedera Consensus Transactions on a Calendar Date
 
 This query retrieves the latest transactions on the Hedera network.
 You can run the query [here](https://ide.bitquery.io/Latest-Hedera-Transactions)
@@ -48,7 +48,7 @@ query MyQuery {
 
 ```
 
-## Latest Transactions From an Address
+## List Latest Hedera Transactions Paid From a Payer Account
 
 This query retrieves the latest transactions from a specific address on the Hedera network.
 
@@ -92,7 +92,7 @@ query MyQuery {
 
 ```
 
-## Top Transaction Failures on Hedera
+## Rank Hedera Failed Transactions by Error Result Count
 
 This query retrieves the top transaction failures on the Hedera network and helps in identifying the most common reasons for transaction failures.
 
@@ -120,7 +120,7 @@ query MyQuery {
 - **result.name**: Describes the error that caused the transaction to fail, such as "INSUFFICIENT_BALANCE".
 - **result.id**: The unique identifier for the error.
 
-## Latest Smart Contract Calls on Hedera
+## List Latest Hedera Smart Contract Calls With Memos Since a Date
 
 Smart contracts calls in Hedera help you identify the calls made during the transaction including details on whether the tx was a swap or transfer and so on. The `memo` field will have details about the transaction for example ` "memo": "HashPack swap DOVU to HBAR",`
 The below query gets the latest calls for a particular date.

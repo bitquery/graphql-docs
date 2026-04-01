@@ -6,6 +6,8 @@ keywords: [Dogecoin API examples, Dogecoin GraphQL queries, Bitquery]
 
 # Tranfers of an Address on DogeCoin Network
 
+## Dogecoin Address Inbound and Outbound Coinpath Depth and Amounts
+
 Doge Coin is one of the most famous meme coin in the cryptocurrency space. Using [this](https://ide.bitquery.io/zFB1y4MP5B) query, we can get the transfers of Doge Coin to a particular address.
 
 ```graphql

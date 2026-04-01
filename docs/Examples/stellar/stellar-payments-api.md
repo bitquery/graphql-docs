@@ -8,7 +8,7 @@ keywords: [Stellar API examples, Stellar GraphQL queries, Bitquery]
 
 This API enables you to access and analyze payment transactions on the Stellar network, providing detailed information about each payment, including amounts, currencies, issuers, timestamps, and paths.
 
-## Latest Payments on Stellar
+## Get Latest Stellar Payment Transactions
 
 Below is the query to get the latest payment transactions on the Stellar network. This query provides details about the amount transferred, the currency and issuer involved, sender and receiver addresses, and the transaction path.
 You can run the query [here](https://ide.bitquery.io/Latest-Payments-on-Stellar)

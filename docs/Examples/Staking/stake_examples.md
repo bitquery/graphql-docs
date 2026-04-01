@@ -28,7 +28,7 @@ query MyQuery {
 
 ```
 
-## Get Latest staked NFT on Ethereum
+## Get Latest BSC StakeNFT Events From the YieldFarming Contract
 
 The query below retrieves the latest 10 transactions on the Ethereum blockchain which called the `StakeNFT` event on the `YieldFarming` smart contract address
 You can access the query [here](https://ide.bitquery.io/latest-Staked-NFT_1)
@@ -58,7 +58,7 @@ You can access the query [here](https://ide.bitquery.io/latest-Staked-NFT_1)
 
 ```
 
-## Staking Rewards for every Block on Solana
+## Get Recent Solana Staking Rewards per Block Sorted by Height
 
 The query below retrieves the staking rewards for every block on the Solana blockchain. The query limits the results to the 10 most recent blocks and sorts the results by `block height` in `descending` order.
 You can access the query [here](https://ide.bitquery.io/staking-rewards-on-solana)

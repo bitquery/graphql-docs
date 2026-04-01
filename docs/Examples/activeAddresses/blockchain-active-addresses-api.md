@@ -10,7 +10,7 @@ Use our activeAddresses API to get active address for any blockchain, currency, 
 
 
 
-## Active addresses for blockchain
+## Get Active Ethereum Addresses Count Since a Date
 
 To get active addresses for the complete blockchain, you can use the following query. In the following query, we re getting active addresses since 1st Jan 2023. Also, using date will optimize the api and produce results quickly.
 
@@ -27,7 +27,7 @@ To get active addresses for the complete blockchain, you can use the following q
 
 ```
 
-## Active addresses for currencies
+## Query Active Ethereum Addresses for USDT Token Activity
 
 You can also get active addresses for specific currencies. In the following example we are getting active addresses for [USDT](https://explorer.bitquery.io/ethereum/token/0xdac17f958d2ee523a2206206994597c13d831ec7)
 

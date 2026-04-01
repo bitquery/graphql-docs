@@ -8,7 +8,7 @@ keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
 
 Our Cosmos Messages API provides all the information related to messages generated on Cosmos Blockchain.
 
-## Retrieve Messages within a Specific Block
+## Get Cosmos Messages in a Specific Block
 
 ```
 {
@@ -32,7 +32,7 @@ Our Cosmos Messages API provides all the information related to messages generat
 
 This query retrieves messages from a specific block with the height of 16494924 in the Cosmos blockchain. It includes the index of the message, the JSON content of the message body, sender(s) of the message, success status of the associated transaction, the transaction hash, the address of the transaction signer, and the type of the message.
 
-## Count Types of Messages Sent by a Specific Address
+## Get Latest Cosmos Messages from a Transaction Signer
 
 ```
 {
@@ -66,7 +66,7 @@ This query retrieves messages from a specific block with the height of 16494924 
 
 This query retrieves messages from the Cosmos blockchain where transactions signed by the address "cosmos1alprdufsxvxauwcsh08hjpzsqc8elwlq3evztg". The query includes information such as the block height and timestamp, message index, JSON content of the message, sender(s) of the message, success status of the transaction, transaction hash, the address of the transaction signer, and the type of the message. The result is limited to the latest 10 messages.
 
-## Explore Messages of a Specific Type
+## Count Unique Cosmos Message Types in a Block
 
 ```
 {

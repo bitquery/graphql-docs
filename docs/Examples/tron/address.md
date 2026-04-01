@@ -8,7 +8,7 @@ keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
 
 Our Tron Address API provides all details regarding any address on Tron Blockchain. If given address is a smart contract API also details of that smart contract too.
 
-## Get Address Balance
+## Get Tron Address TRX Balance in USD With Annotation
 
 ```
 {
@@ -26,7 +26,7 @@ Replace `ADDRESS_HERE` with the actual Tron address you want to query. This will
 
 Removing `in` argument will give you balance of TRX tokens for given Tron address.
 
-## Get TRX Token Balance History of Address
+## Get Tron TRX Balance History for an Address
 
 ```
 {
@@ -47,7 +47,7 @@ Removing `in` argument will give you balance of TRX tokens for given Tron addres
 
 Replace `ADDRESS_HERE` with the Tron address you want to query. This query will provide the change in balance of the given address for a selected currency. It allows you to obtain the balance history for a particular currency using a single query.
 
-## Get Claimable Rewards of Address
+## Get Tron Address Claimable Voting Rewards
 
 ```
 {
@@ -61,7 +61,7 @@ Replace `ADDRESS_HERE` with the Tron address you want to query. This query will 
 
 Replace `ADDRESS_HERE` with the Tron address you want to query. This query will provide the claimable voting reward of the given Tron address.
 
-## Get Smart Contract Details from Address
+## Get Tron Smart Contract Metadata From an Address
 
 ```
 {

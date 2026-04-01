@@ -8,7 +8,7 @@ keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 
 Our Bitcoin Coinpath API provides comprehensive information about money flow of addresses on the **Bitcoin** blockchain.
 
-## Explore 
+## Explore Bitcoin Coinpath Flow from a Seed Address
 
 [Run API](https://ide.bitquery.io/Destination-of-Funds-from-a-Specific-Address-on-Bitcoin)
 
@@ -45,7 +45,7 @@ Our Bitcoin Coinpath API provides comprehensive information about money flow of 
 
 This query retrieves a list of coinpath transactions initiated from a specific initial address (bc1p4kufll9uhnpkgzuc65slcxd2qaw2hl9xecket3h8yyu4awglcsqslqaztd) after a certain date (2023-10-10). The query limits the results to 10 transactions and orders them by timestamp in descending order. For each transaction, it provides details such as the transferred amount in USD, block height, timestamp, currency information, sender and receiver addresses, transaction hash, and value.
 
-## Get Money Flow With Particular Receiver Address
+## Bitcoin Coinpath Inflows to a Specific Receiver Address
 
 ```
 query ($network: BitcoinNetwork!) {
@@ -76,7 +76,7 @@ query ($network: BitcoinNetwork!) {
 
 This query allows you to retrieve the money flow details where the receiver is a particular address (bc1p4kufll9uhnpkgzuc65slcxd2qaw2hl9xecket3h8yyu4awglcsqslqaztd) after October 10, 2023. The results are ordered in descending order based on block heights and are limited to the top 10 entries.
 
-## Investigate Relationship Between Two Addresses
+## Bitcoin Coinpath Between Initial and Receiver Addresses
 
 ```
 query ($network: BitcoinNetwork!) {

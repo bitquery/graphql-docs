@@ -6,7 +6,7 @@ keywords: [Solana API examples, Solana GraphQL queries, Bitquery]
 
 # Solana Address API
 
-## Latest Balance of an address
+## Get Latest Solana Address Balance
 
 This below query will get you the latest balance of an address.
 You can run the query [here](https://ide.bitquery.io/address-balance-api).
@@ -23,7 +23,7 @@ query MyQuery {
 }
 ```
 
-## Latest Balance of multiple addresses
+## Query Multiple Solana Address Balances
 
 This below query will get you the latest balance of multiple addresses. You can specify any other addresses as well. And you can test the API with as many addresses as you like.
 You can run the query [here](https://ide.bitquery.io/latest-balances-of-multiple-addresses).

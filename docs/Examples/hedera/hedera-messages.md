@@ -9,7 +9,7 @@ keywords: [Hedera API examples, Hedera GraphQL queries, Bitquery]
 
 In this section we will see how to get information on messages on Hedera.
 
-## Latest Messages
+## List Latest Hedera Consensus Service Messages on a Date
 
 This query retrieves the latest messages on the Hedera network.
 

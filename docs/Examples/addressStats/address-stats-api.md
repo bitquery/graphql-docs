@@ -7,6 +7,8 @@ keywords: [address stats API examples, GraphQL queries, Bitquery]
 # Address Stats API
 
 
+## Get Balance, Transfers, and Transaction Stats for an Ethereum Address
+
 The Address Stats API provides comprehensive statistical data for a specific Ethereum address. In the below qeurey we are getting information for `0x21a31ee1afc51d94c2efccaa2092ad1028285549` by specifiying it in `address` filter.
 ```
 {

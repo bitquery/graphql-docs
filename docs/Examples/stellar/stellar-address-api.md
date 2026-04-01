@@ -9,7 +9,7 @@ keywords: [Stellar API examples, Stellar GraphQL queries, Bitquery]
 This API allows you to retrieve detailed information about Stellar wallet addresses, including their balances and token holdings.
 
 
-## Latest Balance of a Wallet
+## Get Stellar Wallet Balance
 
 In the below query we will retrieve the latest balance of a specific Stellar wallet address. 
 

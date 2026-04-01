@@ -6,7 +6,7 @@ keywords: [Solana API examples, Solana GraphQL queries, Bitquery]
 
 # Solana Instructions Data
 
-## Recent Solana Instructions
+## Recent Solana Instructions with Actions, Programs, and Logs
 
 The below query allows you to retrieve a set of instructions from the Solana blockchain network. These instructions form the building blocks of transactions and smart contracts on the network.
 The fields within the instructions `{}` specify the data that the query will return for each instruction. This includes details about the action, block, transaction, program, log, external action, external program, and raw data associated with each instruction.
@@ -74,7 +74,7 @@ query ($network: SolanaNetwork!, $limit: Int!, $offset: Int!) {
 
 This will return the last 100 instructions from the Solana network on a particular day. You can adjust the limit and offset and period parameters as needed to retrieve different sets of instructions.
 
-## Find Transactions based on Program
+## Find Solana Instructions by Parsed Action Name
 
 The below query find all instructions, corresponding transactions and program logs for a specific program on the Solana blockchain.
 You can run the query [here](https://ide.bitquery.io/Solana-compactupdatevotestate-Action_4)
@@ -139,7 +139,7 @@ query ($network: SolanaNetwork!, $limit: Int!, $offset: Int!) {
   "network": "solana"
 }
 ```
-## Recent Solana Transactions
+## Recent Solana Transactions After Block Height with Fee and Signer
 
 The query provided retrieves the latest transactions on the Solana blockchain following block number `286563743` after the timestamp of `2024-12-18T06:30:00Z`. It details the count of instructions within each transaction, identifies the account that initiated the transaction, and lists the unique signature that distinguishes the transaction. Additionally, it specifies the number of inner instructions, which are instructions nested within other instructions, among other transaction-related information. You can run the query [here](https://ide.bitquery.io/Recent-Solana-Transactions_1)
 

@@ -10,7 +10,7 @@ Using our APIs, you can also get [OHLC](https://en.wikipedia.org/wiki/Open-high-
 
 The OHLC API allows you to retrieve OHLC data for a given asset pair and time period.
 
-## OHLC Hourly Data for a Token Pair
+## Get Ethereum DEX OHLC for DAI and Quote in Ten Minute Intervals
 
 This query gets OHLC data for the period from 5pm to 6pm UTC on July 9, 2023,, where the base currency is DAI (0xd0b3a986fff305854a7238a8e099cce1ced01a3d) and the quote currency is USDC (0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2) in 10 minute intervals.
 
@@ -55,7 +55,7 @@ This query gets OHLC data for the period from 5pm to 6pm UTC on July 9, 2023,, w
 
 The `timeInterval` field indicates time interval for which the data is aggregated.
 
-## Filtering Outliers in OHLC
+## Get Uniswap Ethereum WETH USDT OHLC With Outlier Trade Filters
 
 In this example, we are getting OHLC prices by aggregating price data at run time. Additionally, we are using `priceAsymmetry` and `tradeAmountUsd` to filter out trades with abnormal prices. Read more about priceAsymmetry [here](https://docs.bitquery.io/v1/docs/building-queries/FAQ#how-to-use-priceasymmetry-to-filter-anomalies-and-outliers-in-trades-)
 

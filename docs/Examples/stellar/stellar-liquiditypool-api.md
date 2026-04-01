@@ -8,7 +8,7 @@ keywords: [Stellar API examples, Stellar GraphQL queries, Bitquery]
 
 This API allows you to access and analyze effects from Stellar's liquidity pools. Effects are specific changes that occur within the ledger due to operations performed on the liquidity pools.
 
-## Latest Pool Effects for a Particular Pool
+## Get Latest Stellar Liquidity Pool Effects for One Pool
 
 The below query gets the latest effects for a specific liquidity pool, including details about the operation, the transaction, and the pool itself.
 
@@ -45,7 +45,7 @@ query MyQuery {
 
 ```
 
-## Latest Liquidity Pool Deposits
+## Get Latest Stellar Liquidity Pool Deposit Effects
 
 The query below fetches the most recent deposit effects into all liquidity pools. This query provides details about the deposit operation, including the amount, pool details, transaction hash, and currency.
 You can run the query [here](https://ide.bitquery.io/Latest-Pool-Deposits)

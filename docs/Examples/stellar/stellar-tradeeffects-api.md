@@ -21,7 +21,7 @@ New to Bitquery? Here's how to get started:
 
 Need help crafting a query or subscription? Message us on [support](https://t.me/Bloxy_info).
 
-### Trades of a Token on Stellar
+### Get Stellar Trade Effects for a Token by Buy Currency
 
 This query retrieves trade effects for a specific token on the Stellar network. The `priceAmount` field represents the sell asset per buy asset ratio, providing you with accurate pricing information for each trade.
 
@@ -76,7 +76,7 @@ query {
 }
 ```
 
-### Latest Trade Effects on Stellar
+### Get Latest Stellar Trade Effects with Full Trade Details
 
 This query retrieves the most recent trade effects on the Stellar network, providing comprehensive information about each trade including seller addresses, operation details, and complete currency information.
 

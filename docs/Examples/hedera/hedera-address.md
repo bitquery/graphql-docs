@@ -8,7 +8,7 @@ keywords: [Hedera API examples, Hedera GraphQL queries, Bitquery]
 
 In this section we will see how to get information on wallets on Hedera.
 
-## Latest Balance of an Address
+## Get Latest Hedera Account Balance in HBAR
 
 This query retrieves the latest balance of an address on Hedera.
 

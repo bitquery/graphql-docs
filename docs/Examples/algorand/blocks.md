@@ -8,7 +8,7 @@ keywords: [Algorand API examples, Algorand GraphQL queries, Bitquery]
 
 Pur Alogrand Blocks API provides all details regarding blocks generated on Algorand Blockchain. Below are some examples of `blocks` API:
 
-## Get Latest Blocks by A Proposer
+## Get Latest Algorand Blocks by Proposer Address
 
 ```
 {
@@ -36,7 +36,7 @@ Pur Alogrand Blocks API provides all details regarding blocks generated on Algor
 
 Replace `PROPOSER_ADDRESS_HERE` with the actual Algorand address of the proposer you want to query. This query will return the details of the 10 latest blocks from the Algorand blockchain, produced by the specified proposer address after the date "2023-08-05". The retrieved block information includes block height, hash, current protocol version, proposer address, reward, seed, and timestamp.
 
-## Get Total Reward Earned By Proposer
+## Sum Algorand Block Rewards for a Proposer
 
 ```
 {

@@ -8,7 +8,7 @@ keywords: [DEX API examples, DEX GraphQL queries, Bitquery]
 
 In this section, we will look at some examples regarding DEX Pools data.
 
-## Latest Pair Created
+## List Latest Ethereum PairCreated Events With Token Zero Addresses
 
 The following GraphQL query retrieves data on the latest 50 PairCreated events on the Ethereum network, along with their associated block timestamp, token0 address and name. It uses the ethereum network and the arguments from the query above to filter events based on specific criteria.
 

@@ -10,7 +10,7 @@ This Bitquery API allows you to query Bitcoin transaction fees using GraphQL. Yo
 
 import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
 
-## Get Bitcoin Transactions and Fees of an Account
+## List Bitcoin Transactions with Per-Tx Fees and USD Fees
 
 Below query will get you bitcoin transactions for a account along with the transaction fees. You can try out the query [here](https://ide.bitquery.io/bitcoin-trxn-fees-for-a-account_2).
 
@@ -47,7 +47,7 @@ qquery MyQuery {
 }
 ```
 
-## Get Total fees paid by an account on Bitcoin network
+## Sum Total Bitcoin Fees Paid by an Address on One Day
 
 Below query will get you total fees paid by an account on Bitcoin network. You can try out the query [here](https://ide.bitquery.io/Get-Total-fees-paid-by-an-account-on-Bitcoin-network).
 

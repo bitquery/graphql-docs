@@ -6,7 +6,7 @@ keywords: [Solana API examples, Solana GraphQL queries, Bitquery]
 
 # Solana Transactions API
 
-## Transactions in a specific timeperiod
+## Get Solana Transactions by Date Range
 
 This below query will get you the transactions for a specific timeperiod. You can change the timeperiod values as per your need.
 You can run the query [here](https://ide.bitquery.io/transactions-in-a-specific-timeperiod).
@@ -39,7 +39,7 @@ query MyQuery {
 
 ```
 
-## Transactions of an address for a specific timeperiod
+## Get Solana Address Transactions by Date Range
 
 This below query will get you the transactions of an address for a specific timeperiod. You can change the address and timeperiod values as per your need.
 You can run the query [here](https://ide.bitquery.io/transactions-of-an-address-in-a-specific-timeperiod).

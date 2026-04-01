@@ -12,7 +12,7 @@ keywords: [UTXO API examples, Bitcoin GraphQL queries, Bitquery]
 
 
 
-## All inputs and outputs of a transaction 
+## List Bitcoin Transaction Inputs and Outputs With Scripts and Values 
 
 To check all inputs and outputs of a Bitcoin transaction, you can use the following query. Additionally, there are filters like `inputScriptType` , `inputAddress`, `inputValue`, which you can use to get transactions based on your requirements.
 

@@ -8,7 +8,7 @@ keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
 
 Our Cosmos Transfers API provides all the information about token transfers happened on Cosmos Blockchain.
 
-## Get Transfers by a Specific Signer, Arranged by Timestamp and Value
+## Get Cosmos Transfers by Signer Sorted by Time and Value
 
 ```
 {
@@ -45,7 +45,7 @@ Our Cosmos Transfers API provides all the information about token transfers happ
 
 This query retrieves the latest transfers involving a specific transaction signer's address. It orders the results by both the timestamp and the value of the transfers in descending order, limiting the output to the top 10 transfers. For each transfer, it provides information such as the block height, timestamp, currency details, receiver's address, sender's address, transaction hash, transfer type, and transfer value.
 
-## Fetch the Most Recent Transfer of a Specific Currency
+## Get Recent Cosmos Transfers for a Specific Currency
 
 ```
 {

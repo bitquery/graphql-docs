@@ -10,14 +10,14 @@ In this section we see how to use Bitquery APIs to get information across multip
 
 # Table of Contents
 
-1. [Balance of a Wallet](#balance-of-a-Wallet)
-2. [Token Transfers](#token-transfers-tracking)
-3. [Cross-Chain Trade Insights](#cross-chain-trade)
-4. [Universal Token Tracking](#universal-token-tracking)
+1. [Get Multi-Chain Wallet Balance Across Networks](#get-multi-chain-wallet-balance-across-networks)
+2. [Track Token Transfers Across Multiple Chains](#track-token-transfers-across-multiple-chains)
+3. [Get Multi-Chain DEX Trade Insights for One Wallet](#get-multi-chain-dex-trade-insights-for-one-wallet)
+4. [Aggregate Multi-Chain USDT Transfer Metrics by Network](#aggregate-multi-chain-usdt-transfer-metrics-by-network)
 
-<a name="balance-of-a-Wallet"></a>
+<a name="get-multi-chain-wallet-balance-across-networks"></a>
 
-## Balance of a Wallet
+## Get Multi-Chain Wallet Balance Across Networks
 
 Use this query to retrieve address balances across multiple blockchains in one query. Set the wallet address in the `address` filter.
 
@@ -230,9 +230,9 @@ query ($address: String!) {
 }
 ```
 
-<a name="token-transfers-tracking"></a>
+<a name="track-token-transfers-across-multiple-chains"></a>
 
-## Token Transfers Tracking
+## Track Token Transfers Across Multiple Chains
 
 With this query you can track token transfers across different chains for any address. Set the wallet whose movements you want to track in the `address` filter. Using the `any` clause, we get transfers were the address was either a sender or reciever.
 
@@ -447,9 +447,9 @@ query ($address: String!) {
 }
 ```
 
-<a name="cross-chain-trade"></a>
+<a name="get-multi-chain-dex-trade-insights-for-one-wallet"></a>
 
-## Cross-Chain Trade Insights
+## Get Multi-Chain DEX Trade Insights for One Wallet
 
 The below query gives you insights into token trades spanning various blockchains. Simply set the wallet address in the `address` parameter. Adjust the `from ` and `to` periods accordingly.
 
@@ -579,9 +579,9 @@ fragment TradeInfo on EthereumDexTrades {
 
 ```
 
-<a name="universal-token-tracking"></a>
+<a name="aggregate-multi-chain-usdt-transfer-metrics-by-network"></a>
 
-## Universal Token Tracking
+## Aggregate Multi-Chain USDT Transfer Metrics by Network
 
 The below query gives you stats on tokens across chains including sender/receiver count, first and last date of token transfers and the average amount transferred.
 

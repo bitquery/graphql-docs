@@ -7,7 +7,7 @@ sidebar_position: 2
 
 # Specific Queries on Address and Balances
 
-## Get Native and Token Balance for a Matic Address
+## Get Native MATIC and Token Balances on Polygon for an Address
 
 This is a query that retrieves the native balance and token balances for an Ethereum address on the Matic network.
 The native balance is the balance of the account in its native currency, which is MATIC in this case. The token balances are the balances of the account in other currencies.

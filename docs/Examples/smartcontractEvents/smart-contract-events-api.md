@@ -8,7 +8,7 @@ keywords: [smart contract API examples, GraphQL queries, Bitquery]
 
 Our Smart contract event API allows you access parsed smart contract events and arguments for all the blockchains we support.
 
-## All Smart contract event for a blockchain
+## Get Recent Ethereum Smart Contract Events with Parsed Arguments
 
 [Open this query on IDE](https://ide.bitquery.io/Smart-contract-event-API_1_1)
 
@@ -50,7 +50,7 @@ Our Smart contract event API allows you access parsed smart contract events and 
 }
 ```
 
-## All Smart contract event for a specific contract
+## Get Ethereum Smart Contract Events for One Pool Contract Address
 
 To check specific smart contract events, you need to mention the smart contract address. For example, in the following query, we are getting [AAVE's V3 Pool smart contract](https://explorer.bitquery.io/ethereum/smart_contract/0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2/events) events.
 
@@ -97,7 +97,7 @@ To check specific smart contract events, you need to mention the smart contract 
 }
 ```
 
-## Specific Smart contract event from a contract
+## Get Ethereum Repay Events from Aave V3 Pool Smart Contract
 
 We can also get specific event for a given smart contract using our SmartContractEvent API. For example in the following query are getting `Repay` event from the [AAVE's V3 Pool smart contract](https://explorer.bitquery.io/ethereum/smart_contract/0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2/events).
 
@@ -145,7 +145,7 @@ We can also get specific event for a given smart contract using our SmartContrac
 }
 ```
 
-## Get Latest Uniswap V2 Factory contract PairCreated Events
+## Get Latest Ethereum Uniswap V2 PairCreated Events from Factory Contract
 
 Using `smartContractEvents` API, we can filter `PairCreated` event emitted from Uniswap V2 Factory smart contract. [0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f](https://explorer.bitquery.io/ethereum/smart_contract/0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f) is Uniswap V2 Factory Contract. Here is [the query](https://ide.bitquery.io/Ethereum-Get-List-of-Pairs-Created-on-Uniswap) which you can check in the IDE.
 
@@ -177,7 +177,7 @@ Using `smartContractEvents` API, we can filter `PairCreated` event emitted from 
 
 To get events from Uniswap V2, we are filtering using address of the factory smart contract using `smartContractAddress` field. As we want to get `PairCreated` event, we used `smartContractEvent` field and passed name of the event to it. Lastly, we want latest event so we put those in desceding order uisng timestamp when event was emitted.
 
-## Smart contract arguments API
+## Get BSC PancakeSwap PairCreated Event Arguments from Factory Address
 
 We have an `arguments` API, which provides parsed smart contracts. Let's get the latest pair created from PancakeSwap by getting `PairCreated` events as shown below. Additionally, you can write another API in a different way using `any`; here is [an example](https://ide.bitquery.io/Latest-Pair-Created-on-Pancake-Swap_1_1_1).
 

@@ -9,7 +9,7 @@ keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
 
 Our Ton Arguments API provides all details regarding smart contract or event arguments on Tron Blockchain.
 
-## Get Arguments For Latest Smart Contract Calls and Events
+## List Latest Tron Smart Contract Events and Call Arguments
 
 ```
 {
@@ -44,7 +44,7 @@ Our Ton Arguments API provides all details regarding smart contract or event arg
 
 This query will return list of 10 latest arguments for smart contract calls from Tron Blockchain.
 
-## Filter arguments by event name
+## Filter Tron Arguments by Transfer Event Name
 
 ```
 {
@@ -80,7 +80,7 @@ This query will return list of 10 latest arguments for smart contract calls from
 
 This query will return the arguments where name of event is `Transfer`.
 
-## Filter Arguments by Block Height
+## Filter Tron Transfer Arguments After a Minimum Block Height
 
 ```
 {

@@ -9,7 +9,7 @@ keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
 
 Our Tron DEX Trade API provides comprehensive information about DEX Trades from Tron blockchain.
 
-## Get USDT Trade from Tron blockchain
+## Get Recent Tron DEX USDT Trades in a Date Range
 
 ```
 {
@@ -68,7 +68,7 @@ Our Tron DEX Trade API provides comprehensive information about DEX Trades from 
 
 This query retrieves the latest 10 decentralized exchange (DEX) trades on the Tron network that involve the base currency "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t" and occurred between July 10, 2023, and July 11, 2023. The query includes trade timestamps, trade index, protocol used, exchange name and address, smart contract address with annotation, base and quote amounts and currencies, amounts in USD, maker and taker addresses, and transaction hashes.
 
-## Get All Trading Pair for USDT on Tron blockchain
+## List Tron USDT Quote Pairs and Trade Counts per Liquidity Pool
 
 ```
 {

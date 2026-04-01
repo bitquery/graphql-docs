@@ -8,7 +8,7 @@ keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
 
 Our Cosmos Address API provides all the details regarding any address on Cosmos Blockchain.
 
-## Get Balance of Address
+## Get Cosmos Address Balance
 
 ```
 {
@@ -22,7 +22,7 @@ Our Cosmos Address API provides all the details regarding any address on Cosmos 
 
 Replace `ADDRESS_HERE` with the desired Cosmos address you wish to query. This will return the balance of the native currency associated with the given Cosmos address.
 
-## Get Balance of Address in USD
+## Get Cosmos Address Balance in USD
 
 ```
 {
@@ -36,7 +36,7 @@ Replace `ADDRESS_HERE` with the desired Cosmos address you wish to query. This w
 
 Replace `ADDRESS_HERE` with the desired Cosmos address you want to query. This query will provide the balance of the native currency associated with the given Cosmos address, displayed in USD. The `in` operator is utilized to specify the desired currency for balance conversion.
 
-## Get Balance of Multiple Addresses
+## Get Cosmos Balances for Multiple Addresses
 
 ```
 {
@@ -54,7 +54,7 @@ Replace `ADDRESS_HERE` with the desired Cosmos addresses you want to query. This
 
 
 
-## Delegated Tokens and Rewards by a Cosmos address
+## Get Staking Rewards and Delegated Tokens for a Cosmos Address
 
 Use [this query](https://ide.bitquery.io/cosmos-staking-reward-and-delegation0_7) to get rewards and delegated data for cosmos address.
 

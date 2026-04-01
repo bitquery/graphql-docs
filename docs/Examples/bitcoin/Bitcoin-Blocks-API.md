@@ -8,7 +8,7 @@ keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 
 Our Bitcoin Blocks API provides all the information related to blocks produced on Bitcoin network.
 
-## Retrieve the 10 Most Recent Blocks
+## Retrieve Ten Most Recent Bitcoin Blocks with Height and Stats
 
 ```
 query  {
@@ -30,7 +30,7 @@ query  {
 
 This query retrieves details about the 10 most recent blocks on the Bitcoin blockchain. It includes information like block hash, height, difficulty, block size, and timestamp for each block. The results are ordered by block heights in descending order.
 
-## Get the Blocks with maximum Transactions
+## Get Top Bitcoin Blocks Ranked by Transaction Count
 
 ```
 query  {

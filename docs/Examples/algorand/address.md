@@ -8,7 +8,7 @@ keywords: [Algorand API examples, Algorand GraphQL queries, Bitquery]
 
 Our Algorand Address API provides all details regarding any address on Algorand Blockchain. If given address is a smart contract, API also provides details of that smart contract too. Below are some examples of `address` API:
 
-## Get Balance of An Address
+## Get Algorand Address Balance
 
 ```
 {
@@ -27,7 +27,7 @@ Our Algorand Address API provides all details regarding any address on Algorand 
 
 Replace `ADDRESS_HERE` with the actual Algorand address you want to query. This query will return the balance of the address in the Algorand blockchain along with the address itself. The `is` operator is used to filter for a single specific address, ensuring that only data related to that exact address is returned.
 
-## Get Balance of Multiple Addresses
+## Get Algorand Balances for Multiple Addresses
 
 ```
 {
@@ -44,7 +44,7 @@ Replace `ADDRESS_HERE` with the actual Algorand address you want to query. This 
 
 Replace addresses in the array with the actual Algorand addresses you want to query. This query will retrieve the balances of these addresses from the Algorand blockchain. The `in` operator allows you to filter multiple addresses at once by specifying a list of addresses to retrieve their information.
 
-## Get Bytecode & Source of Smart Contract
+## Get Algorand Smart Contract Bytecode and Source
 
 ```
 {

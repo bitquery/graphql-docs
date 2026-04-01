@@ -9,7 +9,7 @@ keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
 
 Our Tron Smart Contract Calls API provides detailed information about smart contract calls executed on the Tron Blockchain.
 
-## Get List of Latest Smart Contract Calls
+## List Latest Tron Smart Contract Calls With Energy Usage and Methods
 
 ```
 {
@@ -48,7 +48,7 @@ Our Tron Smart Contract Calls API provides detailed information about smart cont
 
 This query retrieves the latest 10 smart contract calls on the Tron network that occurred after July 31, 2023, providing details such as call amount, arguments, block height and timestamp, energy usage, net usage, smart contract address, method name and signature, and transaction hash.
 
-## Filter Smart Contract Calls By Contract Address
+## Filter Tron Smart Contract Calls by USDT Contract Address
 
 ```
 {
@@ -91,7 +91,7 @@ This query retrieves the latest 10 smart contract calls on the Tron network that
 
 This query retrieves the latest 10 smart contract calls on the Tron network that occurred after July 31, 2023, for a specific smart contract address "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t". It provides details such as call amount, arguments, block height and timestamp, energy usage, net usage for the specified smart contract, smart contract address, method name and signature, and transaction hash.
 
-## Filter Smart Contract Calls By Method Name
+## Filter Tron USDT Contract Calls by transfer Method Name
 
 ```
 {

@@ -8,7 +8,7 @@ keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
 
 Our Tron Transaction API provides detailed information about transactions from Tron Blockchain.
 
-## Get List Of Transaction In A Particular Block
+## List Tron Transactions at Block Height With Fees Energy and Logs
 
 ```
 {
@@ -30,7 +30,7 @@ Our Tron Transaction API provides detailed information about transactions from T
 
 This query retrieves details of a specific Tron blockchain transaction at height 53420256, including energy fee, total energy usage, transaction fee, transaction hash, number of logs, net fee, net usage, transaction result, and transaction signatures.
 
-## Get Count of Transaction In The Block
+## Count Tron Transactions at a Specific Block Height
 
 ```
 {
