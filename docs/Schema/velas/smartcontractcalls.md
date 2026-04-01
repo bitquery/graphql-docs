@@ -4,21 +4,6 @@ description: "Query Velas smart contract calls data using Bitquery GraphQL API. 
 keywords: ["Velas API", "Velas Smart Contract Calls", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Velas Smart Contract Calls API"/>
-<meta name="description" content="Query Velas smart contract calls data using Bitquery GraphQL API. Get contract calls, methods, inputs, and execution context."/>
-<meta name="keywords" content="Velas API, Velas Smart Contract Calls, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Velas Smart Contract Calls API" />
-<meta property="og:description" content="Query Velas smart contract calls data using Bitquery GraphQL API. Get contract calls, methods, inputs, and execution context." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Velas Smart Contract Calls API" />
-<meta property="twitter:description" content="Query Velas smart contract calls data using Bitquery GraphQL API. Get contract calls, methods, inputs, and execution context." />
-</head>
-
 # Smart Contract Calls
 
 `smartContractCalls` type allows you to retrieve smart contract calls made to any smart contract on velas Blockchain.

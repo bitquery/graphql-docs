@@ -4,21 +4,6 @@ description: "Query Cosmos attributes data using Bitquery GraphQL API. Get event
 keywords: ["Cosmos API", "Cosmos Attributes", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Cosmos Attributes API"/>
-<meta name="description" content="Query Cosmos attributes data using Bitquery GraphQL API. Get event and message attributes for filtering and display."/>
-<meta name="keywords" content="Cosmos API, Cosmos Attributes, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Cosmos Attributes API" />
-<meta property="og:description" content="Query Cosmos attributes data using Bitquery GraphQL API. Get event and message attributes for filtering and display." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Cosmos Attributes API" />
-<meta property="twitter:description" content="Query Cosmos attributes data using Bitquery GraphQL API. Get event and message attributes for filtering and display." />
-</head>
-
 # Attributes
 
 The `attributes` field allows us to retrieve information about the attributes from cosmos networks.

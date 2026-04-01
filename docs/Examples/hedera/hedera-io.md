@@ -4,21 +4,6 @@ description: "Example GraphQL queries for Hedera transfers and account balances.
 keywords: [Hedera API examples, Hedera GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Hedera Inputs & Outputs API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for Hedera transfers and account balances. Get inputs, outputs, and token movements."/>
-<meta name="keywords" content="Hedera API examples, Hedera GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Hedera Inputs & Outputs API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for Hedera transfers and account balances. Get inputs, outputs, and token movements." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Hedera Inputs & Outputs API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for Hedera transfers and account balances. Get inputs, outputs, and token movements." />
-</head>
-
 # Hedera Inputs & Outputs API
 
 

@@ -4,21 +4,6 @@ description: "Query Filecoin address data using Bitquery GraphQL API. Get addres
 keywords: ["Filecoin API", "Filecoin Address", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Filecoin Address API"/>
-<meta name="description" content="Query Filecoin address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."/>
-<meta name="keywords" content="Filecoin API, Filecoin Address, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Filecoin Address API" />
-<meta property="og:description" content="Query Filecoin address data using Bitquery GraphQL API. Get address balances, annotations, and related activity." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Filecoin Address API" />
-<meta property="twitter:description" content="Query Filecoin address data using Bitquery GraphQL API. Get address balances, annotations, and related activity." />
-</head>
-
 # Address
 
 The Address API allows you to query information about addresses on the Filecoin blockchain.

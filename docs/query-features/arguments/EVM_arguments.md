@@ -5,21 +5,6 @@ description: "Query transaction and event arguments on Ethereum and EVM chains w
 keywords: [Bitquery, GraphQL, EVM, arguments, smart contract events]
 ---
 
-<head>
-<meta name="title" content="EVM Arguments in Bitquery GraphQL API"/>
-<meta name="description" content="Query transaction and event arguments on Ethereum and EVM chains with smartContractEvent and argument filters."/>
-<meta name="keywords" content="Bitquery, GraphQL, EVM, arguments, smart contract events"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="EVM Arguments in Bitquery GraphQL API" />
-<meta property="og:description" content="Query transaction and event arguments on Ethereum and EVM chains with smartContractEvent and argument filters." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="EVM Arguments in Bitquery GraphQL API" />
-<meta property="twitter:description" content="Query transaction and event arguments on Ethereum and EVM chains with smartContractEvent and argument filters." />
-</head>
-
 # EVM Arguments
 
 You can use the `arguments` method with EVM chains to get arguments and values of transactions, trades and calls.

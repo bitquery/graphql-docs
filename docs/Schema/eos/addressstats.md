@@ -4,21 +4,6 @@ description: "Query EOS address stats data using Bitquery GraphQL API. Get aggre
 keywords: ["EOS API", "EOS Address Stats", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="EOS Address Stats API"/>
-<meta name="description" content="Query EOS address stats data using Bitquery GraphQL API. Get aggregate address statistics and activity metrics."/>
-<meta name="keywords" content="EOS API, EOS Address Stats, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="EOS Address Stats API" />
-<meta property="og:description" content="Query EOS address stats data using Bitquery GraphQL API. Get aggregate address statistics and activity metrics." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="EOS Address Stats API" />
-<meta property="twitter:description" content="Query EOS address stats data using Bitquery GraphQL API. Get aggregate address statistics and activity metrics." />
-</head>
-
 # EOS Address Stats API
 
 ```

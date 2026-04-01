@@ -4,21 +4,6 @@ description: "Query Stellar effect arguments data using Bitquery GraphQL API. Ge
 keywords: ["Stellar API", "Stellar Effect Arguments", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Stellar Effect Arguments API"/>
-<meta name="description" content="Query Stellar effect arguments data using Bitquery GraphQL API. Get arguments and parameters for Stellar effects."/>
-<meta name="keywords" content="Stellar API, Stellar Effect Arguments, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Stellar Effect Arguments API" />
-<meta property="og:description" content="Query Stellar effect arguments data using Bitquery GraphQL API. Get arguments and parameters for Stellar effects." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Stellar Effect Arguments API" />
-<meta property="twitter:description" content="Query Stellar effect arguments data using Bitquery GraphQL API. Get arguments and parameters for Stellar effects." />
-</head>
-
 # Effects Arguments
 
 <details><summary>Filtering Transfers</summary></details>

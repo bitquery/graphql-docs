@@ -12,21 +12,6 @@ keywords:
   ]
 ---
 
-<head>
-<meta name="title" content="Integrate Bitquery GraphQL API in Your Application"/>
-<meta name="description" content="Generate language-specific code snippets from the Bitquery IDE, copy your query, and call the GraphQL API with your access token from any stack."/>
-<meta name="keywords" content="Bitquery integration, GraphQL client, REST alternative, code snippet, API in app"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Integrate Bitquery GraphQL API in Your Application" />
-<meta property="og:description" content="Generate language-specific code snippets from the Bitquery IDE, copy your query, and call the GraphQL API with your access token from any stack." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Integrate Bitquery GraphQL API in Your Application" />
-<meta property="twitter:description" content="Generate language-specific code snippets from the Bitquery IDE, copy your query, and call the GraphQL API with your access token from any stack." />
-</head>
-
 # Use it in Your Application
 
 You can write any API and use it any application built on any language.To get the code, simply write your query and on the right side, you will see a ```</>``` symbol.

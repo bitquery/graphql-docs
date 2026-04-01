@@ -4,21 +4,6 @@ description: "Query Cardano inputs outputs data using Bitquery GraphQL API. Get 
 keywords: ["Cardano API", "Cardano Inputs and Outputs", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Cardano Inputs and Outputs API"/>
-<meta name="description" content="Query Cardano inputs outputs data using Bitquery GraphQL API. Get transaction inputs, outputs, and UTXO-style movements."/>
-<meta name="keywords" content="Cardano API, Cardano Inputs and Outputs, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Cardano Inputs and Outputs API" />
-<meta property="og:description" content="Query Cardano inputs outputs data using Bitquery GraphQL API. Get transaction inputs, outputs, and UTXO-style movements." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Cardano Inputs and Outputs API" />
-<meta property="twitter:description" content="Query Cardano inputs outputs data using Bitquery GraphQL API. Get transaction inputs, outputs, and UTXO-style movements." />
-</head>
-
 # Inputs and Outputs
 
 The Inputs and Outputs API schema returns information about the inputs and outputs of a transaction. The schema includes the following fields:

@@ -4,21 +4,6 @@ description: "Query Cosmos messages data using Bitquery GraphQL API. Get chain m
 keywords: ["Cosmos API", "Cosmos Messages", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Cosmos Messages API"/>
-<meta name="description" content="Query Cosmos messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls."/>
-<meta name="keywords" content="Cosmos API, Cosmos Messages, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Cosmos Messages API" />
-<meta property="og:description" content="Query Cosmos messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Cosmos Messages API" />
-<meta property="twitter:description" content="Query Cosmos messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls." />
-</head>
-
 # Messages
 
 The `messages` field allows us to retrieve detaild information about messages from Cosmos blockchain.

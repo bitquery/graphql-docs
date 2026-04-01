@@ -4,21 +4,6 @@ description: "Example GraphQL queries for EVM smart contract calls. Get methods,
 keywords: [smart contract API examples, GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Smart Contract Calls API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for EVM smart contract calls. Get methods, arguments, call depth, and callers."/>
-<meta name="keywords" content="smart contract API examples, GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Smart Contract Calls API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for EVM smart contract calls. Get methods, arguments, call depth, and callers." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Smart Contract Calls API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for EVM smart contract calls. Get methods, arguments, call depth, and callers." />
-</head>
-
 # Smart contract call API
 
 Our Smart contract call API allows you access to parsed smart contract calls and arguments for all the blockchains we support.

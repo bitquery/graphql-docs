@@ -13,21 +13,6 @@ keywords:
   ]
 ---
 
-<head>
-<meta name="title" content="How to Use the Bitquery GraphQL IDE"/>
-<meta name="description" content="Learn the Bitquery GraphQL IDE: visual query builder, writing queries, saving and sharing, access tokens, billing, and API usage from your dashboard."/>
-<meta name="keywords" content="Bitquery IDE, GraphQL IDE, query builder, save queries, OAuth token, API dashboard"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="How to Use the Bitquery GraphQL IDE" />
-<meta property="og:description" content="Learn the Bitquery GraphQL IDE: visual query builder, writing queries, saving and sharing, access tokens, billing, and API usage from your dashboard." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="How to Use the Bitquery GraphQL IDE" />
-<meta property="twitter:description" content="Learn the Bitquery GraphQL IDE: visual query builder, writing queries, saving and sharing, access tokens, billing, and API usage from your dashboard." />
-</head>
-
 # How to use the IDE ?
 
 ## What is Bitquery IDE?

@@ -12,21 +12,6 @@ keywords:
   ]
 ---
 
-<head>
-<meta name="title" content="Bitquery GraphQL V1 vs V2 APIs — Endpoints & Features"/>
-<meta name="description" content="Compare Bitquery V1 and V2 Streaming APIs: endpoints, real-time data, WebSockets, supported chains, NFTs, traces, and when to use each API."/>
-<meta name="keywords" content="Bitquery V1 vs V2, Streaming API, GraphQL endpoint, WebSocket subscriptions, blockchain API migration"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Bitquery GraphQL V1 vs V2 APIs — Endpoints & Features" />
-<meta property="og:description" content="Compare Bitquery V1 and V2 Streaming APIs: endpoints, real-time data, WebSockets, supported chains, NFTs, traces, and when to use each API." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Bitquery GraphQL V1 vs V2 APIs — Endpoints & Features" />
-<meta property="twitter:description" content="Compare Bitquery V1 and V2 Streaming APIs: endpoints, real-time data, WebSockets, supported chains, NFTs, traces, and when to use each API." />
-</head>
-
 # Difference between Bitquery GraphQL V1 and V2 APIs
 
 Today we will explain the difference between our V1 and V2 APIs. Let’s start with naming; we call our V2 APIs as Streaming APIs. Additionally, there is also a difference in the endpoint.

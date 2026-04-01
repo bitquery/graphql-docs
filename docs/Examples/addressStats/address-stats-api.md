@@ -4,21 +4,6 @@ description: "Example GraphQL queries for EVM address statistics. Get balance, s
 keywords: [address stats API examples, GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Address Stats API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for EVM address statistics. Get balance, send/receive amounts, and transaction counts."/>
-<meta name="keywords" content="address stats API examples, GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Address Stats API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for EVM address statistics. Get balance, send/receive amounts, and transaction counts." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Address Stats API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for EVM address statistics. Get balance, send/receive amounts, and transaction counts." />
-</head>
-
 # Address Stats API
 
 

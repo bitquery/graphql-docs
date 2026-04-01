@@ -5,21 +5,6 @@ description: "Access Stellar blockchain data through Bitquery's GraphQL API. Que
 keywords: [Stellar API, Stellar GraphQL, Stellar blockchain data, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Stellar API — Blockchain Data Schema | Bitquery"/>
-<meta name="description" content="Access Stellar blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more."/>
-<meta name="keywords" content="Stellar API, Stellar GraphQL, Stellar blockchain data, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Stellar API — Blockchain Data Schema | Bitquery" />
-<meta property="og:description" content="Access Stellar blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Stellar API — Blockchain Data Schema | Bitquery" />
-<meta property="twitter:description" content="Access Stellar blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more." />
-</head>
-
 # Overview
 
 Bitquery's Stellar APIs give you information on the network's blocks, transactions, addresses, operations, payments and so on.

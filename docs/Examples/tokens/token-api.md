@@ -4,21 +4,6 @@ description: "Example GraphQL queries for token prices, holders, supply, and DEX
 keywords: [token API examples, GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Token API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for token prices, holders, supply, and DEX trades. Works across supported EVM chains."/>
-<meta name="keywords" content="token API examples, GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Token API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for token prices, holders, supply, and DEX trades. Works across supported EVM chains." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Token API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for token prices, holders, supply, and DEX trades. Works across supported EVM chains." />
-</head>
-
 # Token API
 Bitquery's flexible GraphQL APIs will help you get all sorts of token related data. We will show example of USDT on Ethereum but you can actually use same APIs to get data for any token on all chains supported by Bitquery.
 

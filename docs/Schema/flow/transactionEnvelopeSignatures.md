@@ -4,21 +4,6 @@ description: "Query Flow signatures data using Bitquery GraphQL API. Get envelop
 keywords: ["Flow API", "Flow Transaction Envelope Signatures", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Flow Transaction Envelope Signatures API"/>
-<meta name="description" content="Query Flow signatures data using Bitquery GraphQL API. Get envelope signatures and signing accounts."/>
-<meta name="keywords" content="Flow API, Flow Transaction Envelope Signatures, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Flow Transaction Envelope Signatures API" />
-<meta property="og:description" content="Query Flow signatures data using Bitquery GraphQL API. Get envelope signatures and signing accounts." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Flow Transaction Envelope Signatures API" />
-<meta property="twitter:description" content="Query Flow signatures data using Bitquery GraphQL API. Get envelope signatures and signing accounts." />
-</head>
-
 # Transaction Envelope Signatures
 
 The Flow Transaction Envelope Signatures API provides details about envelope signatures of transaction from the Flow Blockchain.

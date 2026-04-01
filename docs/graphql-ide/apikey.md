@@ -12,21 +12,6 @@ keywords:
   ]
 ---
 
-<head>
-<meta name="title" content="Bitquery API Access Token — Create, Generate & Use OAuth Tokens"/>
-<meta name="description" content="Create Bitquery applications, generate OAuth2 access tokens for V1 and V2 GraphQL APIs, use Bearer authentication, and revoke tokens securely."/>
-<meta name="keywords" content="Bitquery API key, access token, OAuth2, Bearer token, GraphQL authentication"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Bitquery API Access Token — Create, Generate & Use OAuth Tokens" />
-<meta property="og:description" content="Create Bitquery applications, generate OAuth2 access tokens for V1 and V2 GraphQL APIs, use Bearer authentication, and revoke tokens securely." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Bitquery API Access Token — Create, Generate & Use OAuth Tokens" />
-<meta property="twitter:description" content="Create Bitquery applications, generate OAuth2 access tokens for V1 and V2 GraphQL APIs, use Bearer authentication, and revoke tokens securely." />
-</head>
-
 # Getting the Access Token
 
 Update: We now use Access Token for both V1 and V2 APIs. You can access the token [here](https://account.bitquery.io/user/api_v2/access_tokens).

@@ -4,21 +4,6 @@ description: "Example GraphQL queries for Cosmos blocks. Get heights, proposers,
 keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Cosmos Blocks API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for Cosmos blocks. Get heights, proposers, timestamps, and block counts."/>
-<meta name="keywords" content="Cosmos API examples, Cosmos GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Cosmos Blocks API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for Cosmos blocks. Get heights, proposers, timestamps, and block counts." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Cosmos Blocks API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for Cosmos blocks. Get heights, proposers, timestamps, and block counts." />
-</head>
-
 # Blocks API
 
 Our Cosmos Blocks API provides all the information related to blocks produced on Cosmos network.

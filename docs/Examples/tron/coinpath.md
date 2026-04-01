@@ -4,21 +4,6 @@ description: "Example GraphQL queries for Tron coinpath and fund flows. Trace se
 keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Tron Coinpath API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for Tron coinpath and fund flows. Trace sender, receiver, depth, and amounts."/>
-<meta name="keywords" content="Tron API examples, Tron GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Tron Coinpath API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for Tron coinpath and fund flows. Trace sender, receiver, depth, and amounts." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Tron Coinpath API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for Tron coinpath and fund flows. Trace sender, receiver, depth, and amounts." />
-</head>
-
 # Coinpath API
 
 

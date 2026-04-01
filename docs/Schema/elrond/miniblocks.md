@@ -4,21 +4,6 @@ description: "Query Elrond miniblocks data using Bitquery GraphQL API. Get minib
 keywords: ["Elrond API", "Elrond Miniblocks", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Elrond Miniblocks API"/>
-<meta name="description" content="Query Elrond miniblocks data using Bitquery GraphQL API. Get miniblock headers, shards, and ordering."/>
-<meta name="keywords" content="Elrond API, Elrond Miniblocks, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Elrond Miniblocks API" />
-<meta property="og:description" content="Query Elrond miniblocks data using Bitquery GraphQL API. Get miniblock headers, shards, and ordering." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Elrond Miniblocks API" />
-<meta property="twitter:description" content="Query Elrond miniblocks data using Bitquery GraphQL API. Get miniblock headers, shards, and ordering." />
-</head>
-
 # MultiversX Miniblocks API
 
 MultiversX uses a concept called mini-blocks to handle cross-shard transactions. A mini-block is a small block that contains only cross-shard transactions. These mini-blocks are then aggregated into regular blocks, which are mined on each shard.

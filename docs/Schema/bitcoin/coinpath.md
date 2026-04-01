@@ -6,7 +6,7 @@ description: "Track flow of funds up to any depth on the Bitcoin blockchain. Als
 <head>
 <meta name="title" content="Bitcoin Coinpath API"/>
 <meta name="description" content="Track flow of funds up to any depth on the Bitcoin blockchain. Also, get information on blocks for tokens or NFTs on the Bitcoin blockchain."/>
-<meta name="keywords" content="Bitcoin api, Bitcoin python api, Bitcoin nft api, Bitcoin scan api, Bitcoin matic api, Bitcoin api docs, Bitcoin crypto api, Bitcoin blockchain api,matic network api"/>
+<meta name="keywords" content="Bitcoin coinpath, Bitcoin GraphQL, fund flow, UTXO tracking, Bitquery, Bitcoin blockchain API, money flow, transaction tracing"/>
 <meta name="robots" content="index, follow"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="language" content="English"/>
@@ -60,7 +60,7 @@ The following are available fields for the `coinpath`:
 ## Related Resources
 
 - [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
-- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/Examples/bitcoin)
+- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/examples/Bitcoin)
 - [Coinpath (Bitcoin)](https://docs.bitquery.io/v1/docs/Schema/bitcoin/coinpath)
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

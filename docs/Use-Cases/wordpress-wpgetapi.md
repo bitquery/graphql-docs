@@ -5,21 +5,6 @@ description: "Connect WordPress to the Bitquery GraphQL endpoint with the WPGetA
 keywords: [WordPress, WPGetAPI, Bitquery API, GraphQL, blockchain, DEX]
 ---
 
-<head>
-<meta name="title" content="WordPress Integration with Bitquery API via WPGetAPI"/>
-<meta name="description" content="Connect WordPress to the Bitquery GraphQL endpoint with the WPGetAPI plugin: POST queries, JSON body, and shortcodes for on-site blockchain data."/>
-<meta name="keywords" content="WordPress, WPGetAPI, Bitquery API, GraphQL, blockchain, DEX"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="WordPress Integration with Bitquery API via WPGetAPI" />
-<meta property="og:description" content="Connect WordPress to the Bitquery GraphQL endpoint with the WPGetAPI plugin: POST queries, JSON body, and shortcodes for on-site blockchain data." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="WordPress Integration with Bitquery API via WPGetAPI" />
-<meta property="twitter:description" content="Connect WordPress to the Bitquery GraphQL endpoint with the WPGetAPI plugin: POST queries, JSON body, and shortcodes for on-site blockchain data." />
-</head>
-
 # Step-by-step guide on using the Bitquery API with WPGetAPI on WordPress
 
 **Prerequisites:**
@@ -137,5 +122,5 @@ Finally set
 - [Bitquery documentation home](https://docs.bitquery.io/v1/docs/intro)
 - [How to start with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
-- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/Examples/bitcoin)
+- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/examples/Bitcoin)
 - [Coinpath explained — overview](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)

@@ -4,21 +4,6 @@ description: "Query Velas address stats data using Bitquery GraphQL API. Get agg
 keywords: ["Velas API", "Velas Address Stats", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Velas Address Stats API"/>
-<meta name="description" content="Query Velas address stats data using Bitquery GraphQL API. Get aggregate address statistics and activity metrics."/>
-<meta name="keywords" content="Velas API, Velas Address Stats, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Velas Address Stats API" />
-<meta property="og:description" content="Query Velas address stats data using Bitquery GraphQL API. Get aggregate address statistics and activity metrics." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Velas Address Stats API" />
-<meta property="twitter:description" content="Query Velas address stats data using Bitquery GraphQL API. Get aggregate address statistics and activity metrics." />
-</head>
-
 # Address Stats
 
 The `addressstats` field allows us to retrieves statistics related to blockchain addresses.

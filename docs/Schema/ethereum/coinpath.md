@@ -8,7 +8,7 @@ description: "Retrieve detailed money flow information using the coinpath API. F
 
 <meta name="description" content="Retrieve detailed money flow information using the coinpath API. Filter by currency, date, sender, receiver, and more. Explore transaction details."/>
 
-<meta name="keywords" content="Ethereum,Blockchain, Crypto transactions, Coinpath, Money flow, Token transactions, Transaction details, Transaction count, Crypto analytics, Crypto data analysis, Ethereum blockchain, Token flow analysis, Ethereum technology,Ethereum development, Ethereum transactions, Cryptocurrency tracking"/>
+<meta name="keywords" content="Ethereum coinpath, Ethereum GraphQL, fund flow, token flow, Bitquery, money flow, blockchain analytics, ERC-20 tracing, transaction graph"/>
 
 <meta name="robots" content="index, follow"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>

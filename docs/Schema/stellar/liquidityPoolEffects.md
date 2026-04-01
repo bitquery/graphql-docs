@@ -4,21 +4,6 @@ description: "Query Stellar liquidity pool effects data using Bitquery GraphQL A
 keywords: ["Stellar API", "Stellar Liquidity Pool Effects", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Stellar Liquidity Pool Effects API"/>
-<meta name="description" content="Query Stellar liquidity pool effects data using Bitquery GraphQL API. Get liquidity pool changes, reserves, and shares."/>
-<meta name="keywords" content="Stellar API, Stellar Liquidity Pool Effects, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Stellar Liquidity Pool Effects API" />
-<meta property="og:description" content="Query Stellar liquidity pool effects data using Bitquery GraphQL API. Get liquidity pool changes, reserves, and shares." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Stellar Liquidity Pool Effects API" />
-<meta property="twitter:description" content="Query Stellar liquidity pool effects data using Bitquery GraphQL API. Get liquidity pool changes, reserves, and shares." />
-</head>
-
 # Liquidity PoolEffects
 
 Liquidity pools on Stellar support AMMs. Bitquery's LiquidityPoolEffects API gives you effects information regarding liquidity pools. The following are the fields in the schema:

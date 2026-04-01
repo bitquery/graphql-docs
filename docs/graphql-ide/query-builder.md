@@ -12,21 +12,6 @@ keywords:
   ]
 ---
 
-<head>
-<meta name="title" content="Bitquery GraphQL Query Builder — Visual Blockchain Queries"/>
-<meta name="description" content="Build Bitquery GraphQL queries visually: pick blockchain and network, explore schema fields, set filters, select data fields, and run queries in the IDE."/>
-<meta name="keywords" content="Bitquery query builder, visual GraphQL, blockchain query builder, schema explorer, IDE"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Bitquery GraphQL Query Builder — Visual Blockchain Queries" />
-<meta property="og:description" content="Build Bitquery GraphQL queries visually: pick blockchain and network, explore schema fields, set filters, select data fields, and run queries in the IDE." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Bitquery GraphQL Query Builder — Visual Blockchain Queries" />
-<meta property="twitter:description" content="Build Bitquery GraphQL queries visually: pick blockchain and network, explore schema fields, set filters, select data fields, and run queries in the IDE." />
-</head>
-
 # Query Builder
 
 ## What is Query Builder?
@@ -59,4 +44,4 @@ Simplify your query creation process and access the data you need from various b
 - [Getting started with the IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Supported blockchains](https://docs.bitquery.io/v1/docs/graphql-ide/supported-blockchains)
 - [Basic structure of a GraphQL query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
-- [Bitcoin examples](https://docs.bitquery.io/v1/docs/Examples/bitcoin)
+- [Bitcoin examples](https://docs.bitquery.io/v1/docs/examples/Bitcoin)

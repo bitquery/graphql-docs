@@ -879,7 +879,7 @@ Discover direct and indirect funding relationships between a token creator and b
 
 You may also be interested in:
 
-- [Cross-Chain API ➤](https://docs.bitquery.io/docs/Examples/cross-chain/cross-chain-api/)
+- [Cross-Chain API ➤](https://docs.bitquery.io/v1/docs/examples/cross-chain/cross-chain-api)
 - [Solana DEX Trades API ➤](https://docs.bitquery.io/docs/blockchain/Solana/solana-dextrades/)
 - [Blockchain Address API Examples ➤](https://docs.bitquery.io/docs/blockchain/Ethereum/balances/balance-api/)
 - [Transaction API ➤](https://docs.bitquery.io/docs/blockchain/Ethereum/transactions/transaction-api/)

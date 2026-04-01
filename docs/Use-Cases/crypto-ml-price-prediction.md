@@ -5,21 +5,6 @@ description: "Learn how to fetch historical DEX trading data with GraphQL from t
 keywords: [machine learning, cryptocurrency, GraphQL, Bitquery API, DEX, Python]
 ---
 
-<head>
-<meta name="title" content="Crypto Price Prediction with Machine Learning — Bitquery API Use Case"/>
-<meta name="description" content="Learn how to fetch historical DEX trading data with GraphQL from the Bitquery API and build a Python Random Forest model for cryptocurrency price prediction."/>
-<meta name="keywords" content="machine learning, cryptocurrency, GraphQL, Bitquery API, DEX, Python"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Crypto Price Prediction with Machine Learning — Bitquery API Use Case" />
-<meta property="og:description" content="Learn how to fetch historical DEX trading data with GraphQL from the Bitquery API and build a Python Random Forest model for cryptocurrency price prediction." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Crypto Price Prediction with Machine Learning — Bitquery API Use Case" />
-<meta property="twitter:description" content="Learn how to fetch historical DEX trading data with GraphQL from the Bitquery API and build a Python Random Forest model for cryptocurrency price prediction." />
-</head>
-
 # Building an ML Model With Crypto Price Data
 
 Cryptocurrency markets are known for their volatility, making them a fascinating domain for data science and predictive modeling. In this tutorial, we'll explore how to use GraphQL to retrieve historical trading data and use machine learning with Python to build a simple cryptocurrency price prediction model.
@@ -240,5 +225,5 @@ Thus, we have built an ML model with blockchain data using BitQuery DEX API to f
 - [Bitquery documentation home](https://docs.bitquery.io/v1/docs/intro)
 - [How to start with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
-- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/Examples/bitcoin)
+- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/examples/Bitcoin)
 - [Coinpath explained — overview](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)

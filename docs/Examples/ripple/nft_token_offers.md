@@ -4,21 +4,6 @@ description: "Example GraphQL queries for XRPL NFT token offers. Filter by sende
 keywords: [Ripple API examples, XRP GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Ripple NFT Token Offers API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for XRPL NFT token offers. Filter by sender, amounts, and operations."/>
-<meta name="keywords" content="Ripple API examples, XRP GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Ripple NFT Token Offers API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for XRPL NFT token offers. Filter by sender, amounts, and operations." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Ripple NFT Token Offers API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for XRPL NFT token offers. Filter by sender, amounts, and operations." />
-</head>
-
 # Ripple NFT Token Offers API
 
 Ripple NFT Token Offers API provides all details regarding NFT Token offers on Ripple Blockchain. Below are some examples of `nftokenOffers` API:

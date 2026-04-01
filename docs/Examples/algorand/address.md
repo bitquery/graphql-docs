@@ -4,21 +4,6 @@ description: "Example GraphQL queries for Algorand addresses. Get balances, asse
 keywords: [Algorand API examples, Algorand GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Algorand Address API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for Algorand addresses. Get balances, assets, and smart contract bytecode."/>
-<meta name="keywords" content="Algorand API examples, Algorand GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Algorand Address API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for Algorand addresses. Get balances, assets, and smart contract bytecode." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Algorand Address API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for Algorand addresses. Get balances, assets, and smart contract bytecode." />
-</head>
-
 # Algorand Address API
 
 Our Algorand Address API provides all details regarding any address on Algorand Blockchain. If given address is a smart contract, API also provides details of that smart contract too. Below are some examples of `address` API:

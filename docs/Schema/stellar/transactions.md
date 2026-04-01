@@ -4,21 +4,6 @@ description: "Query Stellar transactions data using Bitquery GraphQL API. Get tr
 keywords: ["Stellar API", "Stellar Transactions", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Stellar Transactions API"/>
-<meta name="description" content="Query Stellar transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."/>
-<meta name="keywords" content="Stellar API, Stellar Transactions, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Stellar Transactions API" />
-<meta property="og:description" content="Query Stellar transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Stellar Transactions API" />
-<meta property="twitter:description" content="Query Stellar transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
-</head>
-
 # Transactions
 
 > Transactions comprise a bundle of between 1-100 operations and are

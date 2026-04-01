@@ -4,21 +4,6 @@ description: "Query Cardano coinpath data using Bitquery GraphQL API. Get fund f
 keywords: ["Cardano API", "Cardano Coinpath", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Cardano Coinpath API"/>
-<meta name="description" content="Query Cardano coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."/>
-<meta name="keywords" content="Cardano API, Cardano Coinpath, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Cardano Coinpath API" />
-<meta property="og:description" content="Query Cardano coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Cardano Coinpath API" />
-<meta property="twitter:description" content="Query Cardano coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
-</head>
-
 # Coinpath
 
 Coinpath APIs are a set of money-tracing APIs that help you track funds from one address to another. 

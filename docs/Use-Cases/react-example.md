@@ -5,21 +5,6 @@ description: "Build a React app that shows top DEX gainers and losers using hook
 keywords: [React, GraphQL, Bitquery API, DEX, Ethereum, JavaScript]
 ---
 
-<head>
-<meta name="title" content="React App with Bitquery GraphQL API — Tutorial"/>
-<meta name="description" content="Build a React app that shows top DEX gainers and losers using hooks, async data fetching, and the Bitquery GraphQL API for Ethereum trading data."/>
-<meta name="keywords" content="React, GraphQL, Bitquery API, DEX, Ethereum, JavaScript"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="React App with Bitquery GraphQL API — Tutorial" />
-<meta property="og:description" content="Build a React app that shows top DEX gainers and losers using hooks, async data fetching, and the Bitquery GraphQL API for Ethereum trading data." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="React App with Bitquery GraphQL API — Tutorial" />
-<meta property="twitter:description" content="Build a React app that shows top DEX gainers and losers using hooks, async data fetching, and the Bitquery GraphQL API for Ethereum trading data." />
-</head>
-
 # Using Bitquery APIs with ReactJS to get Top Gainers and Losers
 
 Below is a step-by-step tutorial on how to create a React application that displays the top gainers and losers on a particular date using React hooks, async/await for fetching data, and Bitquery V1 APIs for price information.

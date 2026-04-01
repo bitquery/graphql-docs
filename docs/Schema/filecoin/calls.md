@@ -4,21 +4,6 @@ description: "Query Filecoin calls data using Bitquery GraphQL API. Get contract
 keywords: ["Filecoin API", "Filecoin Calls", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Filecoin Calls API"/>
-<meta name="description" content="Query Filecoin calls data using Bitquery GraphQL API. Get contract or system calls, inputs, and results."/>
-<meta name="keywords" content="Filecoin API, Filecoin Calls, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Filecoin Calls API" />
-<meta property="og:description" content="Query Filecoin calls data using Bitquery GraphQL API. Get contract or system calls, inputs, and results." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Filecoin Calls API" />
-<meta property="twitter:description" content="Query Filecoin calls data using Bitquery GraphQL API. Get contract or system calls, inputs, and results." />
-</head>
-
 # Calls
 
 In Filecoin, calls are used to invoke methods on actors and transfer FIL. Bitquery's Calls API provides you the following information:

@@ -4,21 +4,6 @@ description: "Query Flow authorizers data using Bitquery GraphQL API. Get author
 keywords: ["Flow API", "Flow Transaction Authorizers", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Flow Transaction Authorizers API"/>
-<meta name="description" content="Query Flow authorizers data using Bitquery GraphQL API. Get authorizers and payer roles for transactions."/>
-<meta name="keywords" content="Flow API, Flow Transaction Authorizers, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Flow Transaction Authorizers API" />
-<meta property="og:description" content="Query Flow authorizers data using Bitquery GraphQL API. Get authorizers and payer roles for transactions." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Flow Transaction Authorizers API" />
-<meta property="twitter:description" content="Query Flow authorizers data using Bitquery GraphQL API. Get authorizers and payer roles for transactions." />
-</head>
-
 # Transaction Authorizers
 
 The Flow Transaction Authorizers API provides information about transaction authorizers from the Flow Blcockhain.

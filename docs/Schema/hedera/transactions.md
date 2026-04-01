@@ -4,21 +4,6 @@ description: "Query Hedera transactions data using Bitquery GraphQL API. Get tra
 keywords: ["Hedera API", "Hedera Transactions", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Hedera Transactions API"/>
-<meta name="description" content="Query Hedera transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."/>
-<meta name="keywords" content="Hedera API, Hedera Transactions, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Hedera Transactions API" />
-<meta property="og:description" content="Query Hedera transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Hedera Transactions API" />
-<meta property="twitter:description" content="Query Hedera transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
-</head>
-
 # Transactions
 
 The Transactions API offers insights into transactions on the Hedera Blockchain.

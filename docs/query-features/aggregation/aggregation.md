@@ -5,21 +5,6 @@ description: "Group and aggregate blockchain data with sum, count, average, maxi
 keywords: [Bitquery, GraphQL, aggregation, calculate, sum, count]
 ---
 
-<head>
-<meta name="title" content="Aggregation in Bitquery GraphQL API"/>
-<meta name="description" content="Group and aggregate blockchain data with sum, count, average, maximum, minimum, and median on Bitquery V1 GraphQL."/>
-<meta name="keywords" content="Bitquery, GraphQL, aggregation, calculate, sum, count"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Aggregation in Bitquery GraphQL API" />
-<meta property="og:description" content="Group and aggregate blockchain data with sum, count, average, maximum, minimum, and median on Bitquery V1 GraphQL." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Aggregation in Bitquery GraphQL API" />
-<meta property="twitter:description" content="Group and aggregate blockchain data with sum, count, average, maximum, minimum, and median on Bitquery V1 GraphQL." />
-</head>
-
 # Aggregation in V1 
 
 Aggregation is a way to group data and calculate aggregate values. The API supports a variety of aggregation functions, including `sum`, `count`, `average`, `maximum`, and `minimum`.

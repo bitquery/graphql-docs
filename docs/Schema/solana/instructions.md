@@ -4,21 +4,6 @@ description: "Query Solana instructions data using Bitquery GraphQL API. Get pro
 keywords: ["Solana API", "Solana Instructions", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Solana Instructions API"/>
-<meta name="description" content="Query Solana instructions data using Bitquery GraphQL API. Get program instructions, programs, and instruction-level data."/>
-<meta name="keywords" content="Solana API, Solana Instructions, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Solana Instructions API" />
-<meta property="og:description" content="Query Solana instructions data using Bitquery GraphQL API. Get program instructions, programs, and instruction-level data." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Solana Instructions API" />
-<meta property="twitter:description" content="Query Solana instructions data using Bitquery GraphQL API. Get program instructions, programs, and instruction-level data." />
-</head>
-
 # Instructions
 
 The Solana instructions API allows you to query information about instructions that have been executed on the Solana blockchain. This information includes the program that executed the instruction, the accounts that were affected by the instruction, the data that was passed to the instruction, and the log message that was produced by the instruction. The schema includes the following fields:

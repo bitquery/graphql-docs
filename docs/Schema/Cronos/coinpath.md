@@ -4,21 +4,6 @@ description: "Query Cronos coinpath data using Bitquery GraphQL API. Get fund fl
 keywords: ["Cronos API", "Cronos Coinpath", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Cronos Coinpath API"/>
-<meta name="description" content="Query Cronos coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."/>
-<meta name="keywords" content="Cronos API, Cronos Coinpath, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Cronos Coinpath API" />
-<meta property="og:description" content="Query Cronos coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Cronos Coinpath API" />
-<meta property="twitter:description" content="Query Cronos coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
-</head>
-
 # Coinpath
 
 The `coinpath` field allows us to retrieve detailed information about money flow using coinpath technology.

@@ -4,21 +4,6 @@ description: "Query Filecoin transfers data using Bitquery GraphQL API. Get asse
 keywords: ["Filecoin API", "Filecoin Transfers", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Filecoin Transfers API"/>
-<meta name="description" content="Query Filecoin transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."/>
-<meta name="keywords" content="Filecoin API, Filecoin Transfers, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Filecoin Transfers API" />
-<meta property="og:description" content="Query Filecoin transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Filecoin Transfers API" />
-<meta property="twitter:description" content="Query Filecoin transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
-</head>
-
 # Transfers
 
 The Transfers API allows you to query information about transfers on the Filecoin blockchain.

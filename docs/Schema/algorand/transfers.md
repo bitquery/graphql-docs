@@ -4,21 +4,6 @@ description: "Query Algorand transfers data using Bitquery GraphQL API. Get asse
 keywords: ["Algorand API", "Algorand Transfers", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Algorand Transfers API"/>
-<meta name="description" content="Query Algorand transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."/>
-<meta name="keywords" content="Algorand API, Algorand Transfers, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Algorand Transfers API" />
-<meta property="og:description" content="Query Algorand transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Algorand Transfers API" />
-<meta property="twitter:description" content="Query Algorand transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
-</head>
-
 # Transfers
 
 The `transfers` field allows us to fetch details about token transfers from the Algorand blockchain.

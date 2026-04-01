@@ -12,21 +12,6 @@ keywords:
   ]
 ---
 
-<head>
-<meta name="title" content="Bitquery API Points — Pricing, Consumption & Query Cost"/>
-<meta name="description" content="Understand Bitquery API points: how query cost is calculated from complexity and data volume, plans, free tier, and how to optimize usage and billing."/>
-<meta name="keywords" content="Bitquery points, API pricing, query cost, billing, GraphQL limits"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Bitquery API Points — Pricing, Consumption & Query Cost" />
-<meta property="og:description" content="Understand Bitquery API points: how query cost is calculated from complexity and data volume, plans, free tier, and how to optimize usage and billing." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Bitquery API Points — Pricing, Consumption & Query Cost" />
-<meta property="twitter:description" content="Understand Bitquery API points: how query cost is calculated from complexity and data volume, plans, free tier, and how to optimize usage and billing." />
-</head>
-
 # What are Points?
 
 At Bitquery we use points system to calculate the cost for a query. Each query will use different number of points, based on the complexity and size of the query requested. For a comprehensive understanding of the points system, please refer to [our detailed post](https://community.bitquery.io/t/introducing-points/874).

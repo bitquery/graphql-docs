@@ -5,21 +5,6 @@ description: "Access Conflux blockchain data through Bitquery's GraphQL API. Que
 keywords: [Conflux API, Conflux GraphQL, Conflux blockchain data, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Conflux API — Blockchain Data Schema | Bitquery"/>
-<meta name="description" content="Access Conflux blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more."/>
-<meta name="keywords" content="Conflux API, Conflux GraphQL, Conflux blockchain data, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Conflux API — Blockchain Data Schema | Bitquery" />
-<meta property="og:description" content="Access Conflux blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Conflux API — Blockchain Data Schema | Bitquery" />
-<meta property="twitter:description" content="Access Conflux blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more." />
-</head>
-
 # Overview
 
 Bitquery provides APIs to access Conflux data. You can get info on the conflux  chain which uses the Tree-Graph consensus, a consensus method with parallel-processing to reach distributed consensus. 

@@ -4,21 +4,6 @@ description: "Query EOS transfers data using Bitquery GraphQL API. Get asset tra
 keywords: ["EOS API", "EOS Transfers", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="EOS Transfers API"/>
-<meta name="description" content="Query EOS transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."/>
-<meta name="keywords" content="EOS API, EOS Transfers, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="EOS Transfers API" />
-<meta property="og:description" content="Query EOS transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="EOS Transfers API" />
-<meta property="twitter:description" content="Query EOS transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
-</head>
-
 # EOS Transfers API
 
 Bitquery's EOS transfers API gives you information including sender, receiver, currency details. Below are the fields in the schema:

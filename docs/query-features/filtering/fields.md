@@ -5,21 +5,6 @@ description: "Use method filters, date, time, uniq counts, and field combination
 keywords: [Bitquery, GraphQL, filters, fields, uniq, transactions]
 ---
 
-<head>
-<meta name="title" content="Filter Fields in Bitquery GraphQL API"/>
-<meta name="description" content="Use method filters, date, time, uniq counts, and field combinations to narrow Bitquery blockchain and DEX queries."/>
-<meta name="keywords" content="Bitquery, GraphQL, filters, fields, uniq, transactions"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Filter Fields in Bitquery GraphQL API" />
-<meta property="og:description" content="Use method filters, date, time, uniq counts, and field combinations to narrow Bitquery blockchain and DEX queries." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Filter Fields in Bitquery GraphQL API" />
-<meta property="twitter:description" content="Use method filters, date, time, uniq counts, and field combinations to narrow Bitquery blockchain and DEX queries." />
-</head>
-
 # Fields
 
 Each method for every API will have different set of fields as filters. For example, the blocks method will have the following fields as filters:

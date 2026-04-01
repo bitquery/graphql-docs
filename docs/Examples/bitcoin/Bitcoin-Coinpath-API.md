@@ -4,21 +4,6 @@ description: "Example GraphQL queries for Bitcoin coinpath and fund flow data. T
 keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Bitcoin Coinpath API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for Bitcoin coinpath and fund flow data. Track transfers between addresses, depth, direction, and transaction paths."/>
-<meta name="keywords" content="Bitcoin API examples, Bitcoin GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Bitcoin Coinpath API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for Bitcoin coinpath and fund flow data. Track transfers between addresses, depth, direction, and transaction paths." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Bitcoin Coinpath API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for Bitcoin coinpath and fund flow data. Track transfers between addresses, depth, direction, and transaction paths." />
-</head>
-
 # Coinpath API
 
 Our Bitcoin Coinpath API provides comprehensive information about money flow of addresses on the **Bitcoin** blockchain.

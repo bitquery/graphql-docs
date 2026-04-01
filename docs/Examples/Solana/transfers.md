@@ -4,21 +4,6 @@ description: "Example GraphQL queries for Solana transfer data. Get SPL and SOL 
 keywords: [Solana API examples, Solana GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Solana Transfers API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for Solana transfer data. Get SPL and SOL transfers, wallet activity, and token movements."/>
-<meta name="keywords" content="Solana API examples, Solana GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Solana Transfers API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for Solana transfer data. Get SPL and SOL transfers, wallet activity, and token movements." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Solana Transfers API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for Solana transfer data. Get SPL and SOL transfers, wallet activity, and token movements." />
-</head>
-
 # Solana Historical Transfers API
 
 The Solana Historical Transfers API provides comprehensive access to token transfer data on the Solana blockchain, including SPL token transfers, SOL transfers, and detailed transaction information. This API enables real-time monitoring and historical analysis of all transfer activities across the Solana network.
@@ -65,7 +50,7 @@ For real-time transfer monitoring, you can convert GraphQL queries to subscripti
 
 Learn more about [WebSocket subscriptions](https://docs.bitquery.io/docs/subscriptions/websockets/) and [real-time Solana data streams](https://docs.bitquery.io/docs/streams/real-time-solana-data/).
 
-For streaming real-time data, check our [Solana Streaming API docs](https://docs.bitquery.io/docs/examples/Solana/)
+For streaming real-time data, check our [Solana Streaming API docs](https://docs.bitquery.io/v1/docs/examples/Solana)
 
 ## Recent transfers to/from a wallet address
 

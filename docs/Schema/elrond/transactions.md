@@ -4,21 +4,6 @@ description: "Query Elrond transactions data using Bitquery GraphQL API. Get tra
 keywords: ["Elrond API", "Elrond Transactions", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Elrond Transactions API"/>
-<meta name="description" content="Query Elrond transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."/>
-<meta name="keywords" content="Elrond API, Elrond Transactions, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Elrond Transactions API" />
-<meta property="og:description" content="Query Elrond transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Elrond Transactions API" />
-<meta property="twitter:description" content="Query Elrond transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
-</head>
-
 # MultiversX Transaction API
 
 he MultiversX Transactions API allows you to query information about transactions on the MultiversX blockchain. You can use this API to get information about the sender, receiver, amount, currency, and other details of a transaction.

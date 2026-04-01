@@ -1,6 +1,18 @@
 ---
 sidebar_position: 4
-description: In this tutorial, we'll see how to build a multi-chain portfolio tracker.
+title: "Multi-Chain EVM Portfolio Tracker with Streamlit & Bitquery — Tutorial"
+description: "Build a Streamlit dashboard that fetches wallet token balances and USD values across Ethereum, BSC, Polygon, Avalanche, and other EVM chains using the Bitquery GraphQL API."
+keywords:
+  [
+    Streamlit,
+    portfolio tracker,
+    multi-chain,
+    EVM,
+    Bitquery API,
+    wallet balances,
+    GraphQL,
+    cross-chain,
+  ]
 ---
 
 # How to Build Multichain Portfolio Tracker
@@ -250,3 +262,11 @@ Once the user runs the script, Streamlit will launch a local web server, and the
 ![](/img/multichain_portfolio.gif)
 
 That's it! You've successfully built a Multichain EVM DeFi Portfolio Tracker using Streamlit and the Bitquery API. Feel free to customize the dashboard further to suit your needs or add additional features as per your requirements.
+
+## Related Resources
+
+- [Introduction](https://docs.bitquery.io/v1/docs/intro)
+- [Network selection](https://docs.bitquery.io/v1/docs/building-queries/network-selection)
+- [Basic structure of a GraphQL query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Bitquery API FAQ](https://docs.bitquery.io/v1/docs/building-queries/FAQ)

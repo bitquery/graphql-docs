@@ -5,21 +5,6 @@ description: "Control result size with limit and limitBy options in Bitquery Gra
 keywords: [Bitquery, GraphQL, limit, limitBy, pagination]
 ---
 
-<head>
-<meta name="title" content="Limits and LimitBy in Bitquery GraphQL API"/>
-<meta name="description" content="Control result size with limit and limitBy options in Bitquery GraphQL for DEX trades and aggregated queries."/>
-<meta name="keywords" content="Bitquery, GraphQL, limit, limitBy, pagination"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Limits and LimitBy in Bitquery GraphQL API" />
-<meta property="og:description" content="Control result size with limit and limitBy options in Bitquery GraphQL for DEX trades and aggregated queries." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Limits and LimitBy in Bitquery GraphQL API" />
-<meta property="twitter:description" content="Control result size with limit and limitBy options in Bitquery GraphQL for DEX trades and aggregated queries." />
-</head>
-
 # Limits
 
 You can limit of the number of results retrieved using the `limit` or `limitby` filter both of which work differently.

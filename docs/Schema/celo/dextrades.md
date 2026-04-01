@@ -4,21 +4,6 @@ description: "Query Celo DEX trades data using Bitquery GraphQL API. Get DEX swa
 keywords: ["Celo API", "Celo DEX Trades", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Celo DEX Trades API"/>
-<meta name="description" content="Query Celo DEX trades data using Bitquery GraphQL API. Get DEX swaps, pools, amounts, and trader addresses."/>
-<meta name="keywords" content="Celo API, Celo DEX Trades, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Celo DEX Trades API" />
-<meta property="og:description" content="Query Celo DEX trades data using Bitquery GraphQL API. Get DEX swaps, pools, amounts, and trader addresses." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Celo DEX Trades API" />
-<meta property="twitter:description" content="Query Celo DEX trades data using Bitquery GraphQL API. Get DEX swaps, pools, amounts, and trader addresses." />
-</head>
-
 # DEX Trades
 
 The `dexTrades` field allows us to retrieve dex trade data from Ethereum blockchain.

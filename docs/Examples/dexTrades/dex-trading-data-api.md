@@ -5,21 +5,6 @@ keywords: [DEX API examples, DEX GraphQL queries, Bitquery]
 sidebar_position: 1
 ---
 
-<head>
-<meta name="title" content="DEX Trading Data API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for DEX trades across EVM chains. Get swaps, liquidity, prices, and DEX analytics."/>
-<meta name="keywords" content="DEX API examples, DEX GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="DEX Trading Data API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for DEX trades across EVM chains. Get swaps, liquidity, prices, and DEX analytics." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="DEX Trading Data API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for DEX trades across EVM chains. Get swaps, liquidity, prices, and DEX analytics." />
-</head>
-
 # DEX Trading Data APIs
 
 Our DEX trading APIs provides DEX data for 100s of DEXs from [40+ blockchains](https://app-status.bitquery.io/). Let's see some of example of getting DEX data.

@@ -13,24 +13,9 @@ keywords:
   ]
 ---
 
-<head>
-<meta name="title" content="Bitquery V1 API Documentation — Blockchain Data for 40+ Chains"/>
-<meta name="description" content="Overview of the Bitquery V1 GraphQL API for historical and real-time blockchain data across 40+ networks, with guides for queries, schemas, and integration."/>
-<meta name="keywords" content="Bitquery, GraphQL API, blockchain data, V1 API, cryptocurrency data, multi-chain API"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Bitquery V1 API Documentation — Blockchain Data for 40+ Chains" />
-<meta property="og:description" content="Overview of the Bitquery V1 GraphQL API for historical and real-time blockchain data across 40+ networks, with guides for queries, schemas, and integration." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Bitquery V1 API Documentation — Blockchain Data for 40+ Chains" />
-<meta property="twitter:description" content="Overview of the Bitquery V1 GraphQL API for historical and real-time blockchain data across 40+ networks, with guides for queries, schemas, and integration." />
-</head>
-
 # Overview
 
-Bitquery 's infrastructure provides you access to historical and real-time blockchain data through various interfaces such as GraphQL APIs. In this documentation
+Bitquery's infrastructure provides you access to historical and real-time blockchain data through various interfaces such as GraphQL APIs. In this documentation
 we will show you how to get blockchain data from 40+ chains via graphQL.
 
 
@@ -59,4 +44,4 @@ We highly encourage you to dig into our docs first; however, you can contact us 
 - [How to use the Bitquery GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/ide)
 - [Basic structure of a GraphQL query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
 - [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
-- [Bitcoin examples](https://docs.bitquery.io/v1/docs/Examples/bitcoin)
+- [Bitcoin examples](https://docs.bitquery.io/v1/docs/examples/Bitcoin)

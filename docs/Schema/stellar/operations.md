@@ -4,21 +4,6 @@ description: "Query Stellar operations data using Bitquery GraphQL API. Get chai
 keywords: ["Stellar API", "Stellar Operations", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Stellar Operations API"/>
-<meta name="description" content="Query Stellar operations data using Bitquery GraphQL API. Get chain operations, types, and operation details."/>
-<meta name="keywords" content="Stellar API, Stellar Operations, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Stellar Operations API" />
-<meta property="og:description" content="Query Stellar operations data using Bitquery GraphQL API. Get chain operations, types, and operation details." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Stellar Operations API" />
-<meta property="twitter:description" content="Query Stellar operations data using Bitquery GraphQL API. Get chain operations, types, and operation details." />
-</head>
-
 # Operations
 
 An operation is a command that tells the Stellar network to do something, such as send money, or create an account. A transaction is a group of operations that are submitted to the Stellar network together.

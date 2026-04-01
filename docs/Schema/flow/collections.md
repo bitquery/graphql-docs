@@ -4,21 +4,6 @@ description: "Query Flow collections data using Bitquery GraphQL API. Get NFT co
 keywords: ["Flow API", "Flow Collections", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Flow Collections API"/>
-<meta name="description" content="Query Flow collections data using Bitquery GraphQL API. Get NFT collections, IDs, and collection metadata."/>
-<meta name="keywords" content="Flow API, Flow Collections, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Flow Collections API" />
-<meta property="og:description" content="Query Flow collections data using Bitquery GraphQL API. Get NFT collections, IDs, and collection metadata." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Flow Collections API" />
-<meta property="twitter:description" content="Query Flow collections data using Bitquery GraphQL API. Get NFT collections, IDs, and collection metadata." />
-</head>
-
 # Collections
 
 The Flow Collections API provides information about collections from the Flow Blockchain. A collection is batch of transactions that have been includes in a block.

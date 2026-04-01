@@ -4,21 +4,6 @@ description: "Query Conflux transfers data using Bitquery GraphQL API. Get asset
 keywords: ["Conflux API", "Conflux Transfers", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Conflux Transfers API"/>
-<meta name="description" content="Query Conflux transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."/>
-<meta name="keywords" content="Conflux API, Conflux Transfers, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Conflux Transfers API" />
-<meta property="og:description" content="Query Conflux transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Conflux Transfers API" />
-<meta property="twitter:description" content="Query Conflux transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
-</head>
-
 # Conflux Transfers API
 
 Bitquery's conflux transfers API gives you information on the asset transfers on conflux. The following are the fields in the schema:

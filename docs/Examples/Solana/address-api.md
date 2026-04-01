@@ -4,21 +4,6 @@ description: "Example GraphQL queries for Solana addresses. Get balances, annota
 keywords: [Solana API examples, Solana GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Solana Address API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for Solana addresses. Get balances, annotations, and multi-address lookups."/>
-<meta name="keywords" content="Solana API examples, Solana GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Solana Address API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for Solana addresses. Get balances, annotations, and multi-address lookups." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Solana Address API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for Solana addresses. Get balances, annotations, and multi-address lookups." />
-</head>
-
 # Solana Address API
 
 ## Latest Balance of an address

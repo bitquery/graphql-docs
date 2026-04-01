@@ -5,21 +5,6 @@ description: "Search addresses, tokens, and hashes across chains with the Bitque
 keywords: [Bitquery, GraphQL, search, address, multi-chain]
 ---
 
-<head>
-<meta name="title" content="Search API in Bitquery GraphQL"/>
-<meta name="description" content="Search addresses, tokens, and hashes across chains with the Bitquery search method and typed subject results."/>
-<meta name="keywords" content="Bitquery, GraphQL, search, address, multi-chain"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Search API in Bitquery GraphQL" />
-<meta property="og:description" content="Search addresses, tokens, and hashes across chains with the Bitquery search method and typed subject results." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Search API in Bitquery GraphQL" />
-<meta property="twitter:description" content="Search addresses, tokens, and hashes across chains with the Bitquery search method and typed subject results." />
-</head>
-
 # Search
 
 The Search method allows you to identify the type of object that was found and the network that it belongs to by typing a string. You can for example type an address and to check which network the address belongs. Each result also has a `subject` field, which has a `__typename` subfield which tells you the type of the object found ( e.g. `Address`).

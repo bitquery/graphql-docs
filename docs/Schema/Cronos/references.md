@@ -4,21 +4,6 @@ description: "Query Cronos schema references data using Bitquery GraphQL API. Ge
 keywords: ["Cronos API", "Cronos References", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Cronos References API"/>
-<meta name="description" content="Query Cronos schema references data using Bitquery GraphQL API. Get reference data and lookup tables for this network schema."/>
-<meta name="keywords" content="Cronos API, Cronos References, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Cronos References API" />
-<meta property="og:description" content="Query Cronos schema references data using Bitquery GraphQL API. Get reference data and lookup tables for this network schema." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Cronos References API" />
-<meta property="twitter:description" content="Query Cronos schema references data using Bitquery GraphQL API. Get reference data and lookup tables for this network schema." />
-</head>
-
 # References
 
 <details>

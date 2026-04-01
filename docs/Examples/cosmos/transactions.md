@@ -4,21 +4,6 @@ description: "Example GraphQL queries for Cosmos transactions. Get fees, gas, si
 keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Cosmos Transactions API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for Cosmos transactions. Get fees, gas, signers, and raw transaction data."/>
-<meta name="keywords" content="Cosmos API examples, Cosmos GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Cosmos Transactions API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for Cosmos transactions. Get fees, gas, signers, and raw transaction data." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Cosmos Transactions API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for Cosmos transactions. Get fees, gas, signers, and raw transaction data." />
-</head>
-
 # Transactions API
 
 Our Cosmos Transactions API provides information related to transactions created on Cosmos Blockchain.

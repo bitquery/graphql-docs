@@ -4,21 +4,6 @@ description: "Query Flow event fields data using Bitquery GraphQL API. Get event
 keywords: ["Flow API", "Flow Event Fields", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Flow Event Fields API"/>
-<meta name="description" content="Query Flow event fields data using Bitquery GraphQL API. Get event field definitions and typed values."/>
-<meta name="keywords" content="Flow API, Flow Event Fields, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Flow Event Fields API" />
-<meta property="og:description" content="Query Flow event fields data using Bitquery GraphQL API. Get event field definitions and typed values." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Flow Event Fields API" />
-<meta property="twitter:description" content="Query Flow event fields data using Bitquery GraphQL API. Get event field definitions and typed values." />
-</head>
-
 # Event Fields
 
 The Flow Event Fields API provides information about events from the Flow Blockchain.

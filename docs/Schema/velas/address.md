@@ -4,21 +4,6 @@ description: "Query Velas address data using Bitquery GraphQL API. Get address b
 keywords: ["Velas API", "Velas Address", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Velas Address API"/>
-<meta name="description" content="Query Velas address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."/>
-<meta name="keywords" content="Velas API, Velas Address, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Velas Address API" />
-<meta property="og:description" content="Query Velas address data using Bitquery GraphQL API. Get address balances, annotations, and related activity." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Velas Address API" />
-<meta property="twitter:description" content="Query Velas address data using Bitquery GraphQL API. Get address balances, annotations, and related activity." />
-</head>
-
 # Address
 
 The `address` allows us to retrieve information about a specific address.

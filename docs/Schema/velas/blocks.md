@@ -4,21 +4,6 @@ description: "Query Velas blocks data using Bitquery GraphQL API. Get block heig
 keywords: ["Velas API", "Velas Blocks", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Velas Blocks API"/>
-<meta name="description" content="Query Velas blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."/>
-<meta name="keywords" content="Velas API, Velas Blocks, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Velas Blocks API" />
-<meta property="og:description" content="Query Velas blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Velas Blocks API" />
-<meta property="twitter:description" content="Query Velas blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata." />
-</head>
-
 # Blocks
 
 The `blocks` field allows us to retrieve information about the blocks from the velas blockchain.

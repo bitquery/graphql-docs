@@ -5,21 +5,6 @@ description: "Combine limit, offset, ascending and descending sort in the option
 keywords: [Bitquery, GraphQL, options, limit, offset, sorting]
 ---
 
-<head>
-<meta name="title" content="Options Filter in Bitquery GraphQL API"/>
-<meta name="description" content="Combine limit, offset, ascending and descending sort in the options argument for Bitquery GraphQL queries."/>
-<meta name="keywords" content="Bitquery, GraphQL, options, limit, offset, sorting"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Options Filter in Bitquery GraphQL API" />
-<meta property="og:description" content="Combine limit, offset, ascending and descending sort in the options argument for Bitquery GraphQL queries." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Options Filter in Bitquery GraphQL API" />
-<meta property="twitter:description" content="Combine limit, offset, ascending and descending sort in the options argument for Bitquery GraphQL queries." />
-</head>
-
 # Options
 
 The options filter contains most of the sorting and result limiting features as shown in the screenshot.

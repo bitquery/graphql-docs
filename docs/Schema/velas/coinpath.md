@@ -4,21 +4,6 @@ description: "Query Velas coinpath data using Bitquery GraphQL API. Get fund flo
 keywords: ["Velas API", "Velas Coinpath", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Velas Coinpath API"/>
-<meta name="description" content="Query Velas coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."/>
-<meta name="keywords" content="Velas API, Velas Coinpath, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Velas Coinpath API" />
-<meta property="og:description" content="Query Velas coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Velas Coinpath API" />
-<meta property="twitter:description" content="Query Velas coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
-</head>
-
 # Coinpath
 
 The `coinpath` field allows us to retrieve detailed information about money flow using coinpath technology.

@@ -5,21 +5,6 @@ keywords: [transfer API examples, GraphQL queries, Bitquery]
 sidebar_position: 1
 ---
 
-<head>
-<meta name="title" content="Transfer API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for token and native transfers on EVM chains. Filter by address, contract, and time."/>
-<meta name="keywords" content="transfer API examples, GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Transfer API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for token and native transfers on EVM chains. Filter by address, contract, and time." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Transfer API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for token and native transfers on EVM chains. Filter by address, contract, and time." />
-</head>
-
 # Transfer API
 
 Transfer API is available for all blockchains that have smart contract capabilities, especially EVMs. This api helps you get token (native or non-native) transfers. Let's see a few examples.

@@ -5,21 +5,6 @@ description: "Use count and countBigInt in Bitquery queries for transactions, ev
 keywords: [Bitquery, GraphQL, count, countBigInt, aggregation]
 ---
 
-<head>
-<meta name="title" content="Count Aggregation in Bitquery GraphQL API"/>
-<meta name="description" content="Use count and countBigInt in Bitquery queries for transactions, events, and grouped results with sorting and filters."/>
-<meta name="keywords" content="Bitquery, GraphQL, count, countBigInt, aggregation"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Count Aggregation in Bitquery GraphQL API" />
-<meta property="og:description" content="Use count and countBigInt in Bitquery queries for transactions, events, and grouped results with sorting and filters." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Count Aggregation in Bitquery GraphQL API" />
-<meta property="twitter:description" content="Use count and countBigInt in Bitquery queries for transactions, events, and grouped results with sorting and filters." />
-</head>
-
 # Count
 
 

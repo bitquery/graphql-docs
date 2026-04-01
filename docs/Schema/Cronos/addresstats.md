@@ -4,21 +4,6 @@ description: "Query Cronos address stats data using Bitquery GraphQL API. Get ag
 keywords: ["Cronos API", "Cronos Address Stats", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Cronos Address Stats API"/>
-<meta name="description" content="Query Cronos address stats data using Bitquery GraphQL API. Get aggregate address statistics and activity metrics."/>
-<meta name="keywords" content="Cronos API, Cronos Address Stats, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Cronos Address Stats API" />
-<meta property="og:description" content="Query Cronos address stats data using Bitquery GraphQL API. Get aggregate address statistics and activity metrics." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Cronos Address Stats API" />
-<meta property="twitter:description" content="Query Cronos address stats data using Bitquery GraphQL API. Get aggregate address statistics and activity metrics." />
-</head>
-
 # Address Stats
 
 The `addressstats` field allows us to retrieves statistics related to blockchain addresses.

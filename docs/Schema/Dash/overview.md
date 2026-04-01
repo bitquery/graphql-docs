@@ -5,21 +5,6 @@ description: "Access Dash blockchain data through Bitquery's GraphQL API. Query 
 keywords: [Dash API, Dash GraphQL, Dash blockchain data, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Dash API — Blockchain Data Schema | Bitquery"/>
-<meta name="description" content="Access Dash blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more."/>
-<meta name="keywords" content="Dash API, Dash GraphQL, Dash blockchain data, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Dash API — Blockchain Data Schema | Bitquery" />
-<meta property="og:description" content="Access Dash blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Dash API — Blockchain Data Schema | Bitquery" />
-<meta property="twitter:description" content="Access Dash blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more." />
-</head>
-
 # Dash API Overview
 
 Bitquery API offers access to indexed data from the Dash blockchain through the Dash schema. This schema is specifically designed to enable blockchain data retrieval via GraphQL API for developers.

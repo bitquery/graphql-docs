@@ -4,21 +4,6 @@ description: "Example GraphQL queries for Cosmos event attributes. Filter by eve
 keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Cosmos Event Attributes API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for Cosmos event attributes. Filter by event type and time ranges."/>
-<meta name="keywords" content="Cosmos API examples, Cosmos GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Cosmos Event Attributes API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for Cosmos event attributes. Filter by event type and time ranges." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Cosmos Event Attributes API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for Cosmos event attributes. Filter by event type and time ranges." />
-</head>
-
 # Attributes API
 
 Our Cosmos Attribtues API provides all the details regarding event attributes from Cosmos network.

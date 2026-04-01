@@ -4,21 +4,6 @@ description: "Query Hedera messages data using Bitquery GraphQL API. Get chain m
 keywords: ["Hedera API", "Hedera Messages", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Hedera Messages API"/>
-<meta name="description" content="Query Hedera messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls."/>
-<meta name="keywords" content="Hedera API, Hedera Messages, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Hedera Messages API" />
-<meta property="og:description" content="Query Hedera messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Hedera Messages API" />
-<meta property="twitter:description" content="Query Hedera messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls." />
-</head>
-
 # Messages
 
 The Messages API provides information about blockchain messages on the Hedera Blockchain.

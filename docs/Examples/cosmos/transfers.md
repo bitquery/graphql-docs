@@ -4,21 +4,6 @@ description: "Example GraphQL queries for Cosmos transfers. Get transfers by sig
 keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Cosmos Transfers API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for Cosmos transfers. Get transfers by signer, currency, value, and time."/>
-<meta name="keywords" content="Cosmos API examples, Cosmos GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Cosmos Transfers API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for Cosmos transfers. Get transfers by signer, currency, value, and time." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Cosmos Transfers API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for Cosmos transfers. Get transfers by signer, currency, value, and time." />
-</head>
-
 # Transfers API
 
 Our Cosmos Transfers API provides all the information about token transfers happened on Cosmos Blockchain.

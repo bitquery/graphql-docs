@@ -4,21 +4,6 @@ description: "Query Cosmos blocks data using Bitquery GraphQL API. Get block hei
 keywords: ["Cosmos API", "Cosmos Blocks", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Cosmos Blocks API"/>
-<meta name="description" content="Query Cosmos blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."/>
-<meta name="keywords" content="Cosmos API, Cosmos Blocks, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Cosmos Blocks API" />
-<meta property="og:description" content="Query Cosmos blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Cosmos Blocks API" />
-<meta property="twitter:description" content="Query Cosmos blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata." />
-</head>
-
 # Blocks
 
 The `blocks` field allows us to fetch details about the blocks from Cosmos blockchain.

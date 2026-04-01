@@ -4,21 +4,6 @@ description: "Query Harmony transfers data using Bitquery GraphQL API. Get asset
 keywords: ["Harmony API", "Harmony Transfers", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Harmony Transfers API"/>
-<meta name="description" content="Query Harmony transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."/>
-<meta name="keywords" content="Harmony API, Harmony Transfers, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Harmony Transfers API" />
-<meta property="og:description" content="Query Harmony transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Harmony Transfers API" />
-<meta property="twitter:description" content="Query Harmony transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
-</head>
-
 # Transfers
 
 The Harmony Transfers API provides information about token transfers from the Harmony Blockchain.

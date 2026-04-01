@@ -4,21 +4,6 @@ description: "Query Harmony transactions data using Bitquery GraphQL API. Get tr
 keywords: ["Harmony API", "Harmony Transactions", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Harmony Transactions API"/>
-<meta name="description" content="Query Harmony transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."/>
-<meta name="keywords" content="Harmony API, Harmony Transactions, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Harmony Transactions API" />
-<meta property="og:description" content="Query Harmony transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Harmony Transactions API" />
-<meta property="twitter:description" content="Query Harmony transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
-</head>
-
 # Transactions
 
 The Harmony Transactions API provides information about transaction form the Harmony blockchain.

@@ -4,21 +4,6 @@ description: "Example GraphQL queries for Cosmos addresses. Get balances, transf
 keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Cosmos Address API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for Cosmos addresses. Get balances, transfers, and signer activity."/>
-<meta name="keywords" content="Cosmos API examples, Cosmos GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Cosmos Address API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for Cosmos addresses. Get balances, transfers, and signer activity." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Cosmos Address API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for Cosmos addresses. Get balances, transfers, and signer activity." />
-</head>
-
 # Cosmos Address API
 
 Our Cosmos Address API provides all the details regarding any address on Cosmos Blockchain.

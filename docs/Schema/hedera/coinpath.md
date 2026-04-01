@@ -4,21 +4,6 @@ description: "Query Hedera coinpath data using Bitquery GraphQL API. Get fund fl
 keywords: ["Hedera API", "Hedera Coinpath", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Hedera Coinpath API"/>
-<meta name="description" content="Query Hedera coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."/>
-<meta name="keywords" content="Hedera API, Hedera Coinpath, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Hedera Coinpath API" />
-<meta property="og:description" content="Query Hedera coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Hedera Coinpath API" />
-<meta property="twitter:description" content="Query Hedera coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
-</head>
-
 # Coinpath
 
 The Coinpath API offers information related to the flow of funds on the Hedera Blockchain.

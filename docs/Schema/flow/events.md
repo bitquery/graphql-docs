@@ -4,21 +4,6 @@ description: "Query Flow events data using Bitquery GraphQL API. Get on-chain ev
 keywords: ["Flow API", "Flow Events", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Flow Events API"/>
-<meta name="description" content="Query Flow events data using Bitquery GraphQL API. Get on-chain events, types, and payloads."/>
-<meta name="keywords" content="Flow API, Flow Events, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Flow Events API" />
-<meta property="og:description" content="Query Flow events data using Bitquery GraphQL API. Get on-chain events, types, and payloads." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Flow Events API" />
-<meta property="twitter:description" content="Query Flow events data using Bitquery GraphQL API. Get on-chain events, types, and payloads." />
-</head>
-
 # Events
 
 The Flow Events API provides information about events emiited on the Flow Blockchain.

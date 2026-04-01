@@ -5,21 +5,6 @@ description: "Rename GraphQL response fields with aliases in Bitquery queries fo
 keywords: [Bitquery, GraphQL, aliases, field renaming, DEX]
 ---
 
-<head>
-<meta name="title" content="GraphQL Aliases in Bitquery API"/>
-<meta name="description" content="Rename GraphQL response fields with aliases in Bitquery queries for clearer DEX trade and token data."/>
-<meta name="keywords" content="Bitquery, GraphQL, aliases, field renaming, DEX"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="GraphQL Aliases in Bitquery API" />
-<meta property="og:description" content="Rename GraphQL response fields with aliases in Bitquery queries for clearer DEX trade and token data." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="GraphQL Aliases in Bitquery API" />
-<meta property="twitter:description" content="Rename GraphQL response fields with aliases in Bitquery queries for clearer DEX trade and token data." />
-</head>
-
 # Aliases
 
 

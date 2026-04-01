@@ -4,21 +4,6 @@ description: "Query Celo active addresses data using Bitquery GraphQL API. Get a
 keywords: ["Celo API", "Celo Active Addresses", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Celo Active Addresses API"/>
-<meta name="description" content="Query Celo active addresses data using Bitquery GraphQL API. Get active address counts and time-bucketed activity."/>
-<meta name="keywords" content="Celo API, Celo Active Addresses, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Celo Active Addresses API" />
-<meta property="og:description" content="Query Celo active addresses data using Bitquery GraphQL API. Get active address counts and time-bucketed activity." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Celo Active Addresses API" />
-<meta property="twitter:description" content="Query Celo active addresses data using Bitquery GraphQL API. Get active address counts and time-bucketed activity." />
-</head>
-
 # Active Addresses
 
 The `activeAddresses` field allows us to retrieve details about the active addresses from the Celo blockchain.

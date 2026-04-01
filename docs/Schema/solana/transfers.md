@@ -4,21 +4,6 @@ description: "Query Solana transfers data using Bitquery GraphQL API. Get asset 
 keywords: ["Solana API", "Solana Transfers", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Solana Transfers API"/>
-<meta name="description" content="Query Solana transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."/>
-<meta name="keywords" content="Solana API, Solana Transfers, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Solana Transfers API" />
-<meta property="og:description" content="Query Solana transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Solana Transfers API" />
-<meta property="twitter:description" content="Query Solana transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
-</head>
-
 # Transfers
 
 The transfers API allows you to get a information on transfers that have occurred on the Solana blockchain.Below are the fields in the schema:

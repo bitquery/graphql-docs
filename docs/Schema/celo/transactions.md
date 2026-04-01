@@ -4,21 +4,6 @@ description: "Query Celo transactions data using Bitquery GraphQL API. Get trans
 keywords: ["Celo API", "Celo Transactions", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Celo Transactions API"/>
-<meta name="description" content="Query Celo transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."/>
-<meta name="keywords" content="Celo API, Celo Transactions, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Celo Transactions API" />
-<meta property="og:description" content="Query Celo transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Celo Transactions API" />
-<meta property="twitter:description" content="Query Celo transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
-</head>
-
 # Transactions
 
 Celo `Transactions` API allows you to retrieve all the blockchain transactions from Celo Blockchain.

@@ -4,21 +4,6 @@ description: "Query EOS smart contract calls data using Bitquery GraphQL API. Ge
 keywords: ["EOS API", "EOS Smart Contract Calls", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="EOS Smart Contract Calls API"/>
-<meta name="description" content="Query EOS smart contract calls data using Bitquery GraphQL API. Get contract calls, methods, inputs, and execution context."/>
-<meta name="keywords" content="EOS API, EOS Smart Contract Calls, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="EOS Smart Contract Calls API" />
-<meta property="og:description" content="Query EOS smart contract calls data using Bitquery GraphQL API. Get contract calls, methods, inputs, and execution context." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="EOS Smart Contract Calls API" />
-<meta property="twitter:description" content="Query EOS smart contract calls data using Bitquery GraphQL API. Get contract calls, methods, inputs, and execution context." />
-</head>
-
 # EOS Smart Contract Calls API
 
 According to the official documentation, EOS smart contracts include definition for

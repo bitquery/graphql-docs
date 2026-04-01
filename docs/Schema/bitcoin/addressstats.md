@@ -24,7 +24,7 @@ description: "Get address balance and history on the Bitcoin blockchain. Also, g
 
 The `addressstats` field allows us to retrieves statistics related to blockchain addresses.
 
-Here is an example that demonstrates how to retrieve statistics about a specific address; there is a balance field, too; please avoid using it; if you require a BTC balance, then please use [this API](https://docs.bitquery.io/v1/docs/Examples/bitcoin%20/bitcoin-address-api).
+Here is an example that demonstrates how to retrieve statistics about a specific address; there is a balance field, too; please avoid using it; if you require a BTC balance, then please use [this API](https://docs.bitquery.io/v1/docs/examples/Bitcoin/bitcoin-address-api).
 
 ```
 {
@@ -60,7 +60,7 @@ Here is an example that demonstrates how to retrieve statistics about a specific
 ## Related Resources
 
 - [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
-- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/Examples/bitcoin)
+- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/examples/Bitcoin)
 - [Coinpath (Bitcoin)](https://docs.bitquery.io/v1/docs/Schema/bitcoin/coinpath)
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

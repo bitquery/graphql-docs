@@ -4,21 +4,6 @@ description: "Query Flow inputs data using Bitquery GraphQL API. Get transaction
 keywords: ["Flow API", "Flow Inputs", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Flow Inputs API"/>
-<meta name="description" content="Query Flow inputs data using Bitquery GraphQL API. Get transaction inputs, authorizers, and signatures context."/>
-<meta name="keywords" content="Flow API, Flow Inputs, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Flow Inputs API" />
-<meta property="og:description" content="Query Flow inputs data using Bitquery GraphQL API. Get transaction inputs, authorizers, and signatures context." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Flow Inputs API" />
-<meta property="twitter:description" content="Query Flow inputs data using Bitquery GraphQL API. Get transaction inputs, authorizers, and signatures context." />
-</head>
-
 # Inputs
 
 The Flow Inputs API provides information about transaction inputs from the Flow Blockchain.

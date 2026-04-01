@@ -12,21 +12,6 @@ keywords:
   ]
 ---
 
-<head>
-<meta name="title" content="Getting Started with Bitquery GraphQL IDE"/>
-<meta name="description" content="Create a Bitquery account, open the GraphQL IDE, and run your first blockchain query with autocomplete, examples, and the query builder."/>
-<meta name="keywords" content="Bitquery IDE, GraphQL tutorial, first query, blockchain GraphQL, account signup"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Getting Started with Bitquery GraphQL IDE" />
-<meta property="og:description" content="Create a Bitquery account, open the GraphQL IDE, and run your first blockchain query with autocomplete, examples, and the query builder." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Getting Started with Bitquery GraphQL IDE" />
-<meta property="twitter:description" content="Create a Bitquery account, open the GraphQL IDE, and run your first blockchain query with autocomplete, examples, and the query builder." />
-</head>
-
 # Running your First Query
 
 Create and run your first query on Bitquery IDE by visiting [https://ide.bitquery.io/](https://ide.bitquery.io/).

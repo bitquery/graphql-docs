@@ -4,21 +4,6 @@ description: "Answers to common Bitquery API questions: DEX maker/taker, transfe
 keywords: [Bitquery, FAQ, GraphQL API, DEX, token price, market cap]
 ---
 
-<head>
-<meta name="title" content="Bitquery API FAQ — Frequently Asked Questions"/>
-<meta name="description" content="Answers to common Bitquery API questions: DEX maker/taker, transfers vs transactions, USD price, priceAsymmetry, and token market cap."/>
-<meta name="keywords" content="Bitquery, FAQ, GraphQL API, DEX, token price, market cap"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Bitquery API FAQ — Frequently Asked Questions" />
-<meta property="og:description" content="Answers to common Bitquery API questions: DEX maker/taker, transfers vs transactions, USD price, priceAsymmetry, and token market cap." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Bitquery API FAQ — Frequently Asked Questions" />
-<meta property="twitter:description" content="Answers to common Bitquery API questions: DEX maker/taker, transfers vs transactions, USD price, priceAsymmetry, and token market cap." />
-</head>
-
 # Glossary and Frequently Asked Questions
 
 ## What is a maker and taker in a DEX Trade?
@@ -208,4 +193,4 @@ Note: In many cases token attributes shown as null in those cases you should fin
 - [Basic structure of a query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
 - [Expressions overview](https://docs.bitquery.io/v1/docs/query-features/expressions/overview)
 - [Metrics in Bitquery GraphQL API](https://docs.bitquery.io/v1/docs/query-features/Metrics)
-- [Bitcoin examples](https://docs.bitquery.io/v1/docs/Examples/bitcoin)
+- [Bitcoin examples](https://docs.bitquery.io/v1/docs/examples/Bitcoin)

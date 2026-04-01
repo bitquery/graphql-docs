@@ -4,21 +4,6 @@ description: "Example GraphQL queries for EVM transaction traces. Inspect intern
 keywords: [Ethereum API examples, trace GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Ethereum Trace API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for EVM transaction traces. Inspect internal calls, gas, and execution trees."/>
-<meta name="keywords" content="Ethereum API examples, trace GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Ethereum Trace API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for EVM transaction traces. Inspect internal calls, gas, and execution trees." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Ethereum Trace API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for EVM transaction traces. Inspect internal calls, gas, and execution trees." />
-</head>
-
 # Ethereum Trace API
 
 ## What is Ethereum Trace?

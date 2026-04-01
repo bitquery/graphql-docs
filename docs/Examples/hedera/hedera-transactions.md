@@ -4,21 +4,6 @@ description: "Example GraphQL queries for Hedera consensus transactions. Get fee
 keywords: [Hedera API examples, Hedera GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Hedera Transactions API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for Hedera consensus transactions. Get fees, timestamps, and transaction types."/>
-<meta name="keywords" content="Hedera API examples, Hedera GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Hedera Transactions API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for Hedera consensus transactions. Get fees, timestamps, and transaction types." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Hedera Transactions API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for Hedera consensus transactions. Get fees, timestamps, and transaction types." />
-</head>
-
 # Hedera Transactions API
 
 

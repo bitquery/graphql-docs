@@ -4,21 +4,6 @@ description: "Query EOS transactions data using Bitquery GraphQL API. Get transa
 keywords: ["EOS API", "EOS Transactions", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="EOS Transactions API"/>
-<meta name="description" content="Query EOS transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."/>
-<meta name="keywords" content="EOS API, EOS Transactions, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="EOS Transactions API" />
-<meta property="og:description" content="Query EOS transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="EOS Transactions API" />
-<meta property="twitter:description" content="Query EOS transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
-</head>
-
 # EOS Transactions API
 
 Bitquery's EOS Transactions API gives you information on cpuUsageUs, status of transaction and, netUsage details. Below are the fields in the schema:

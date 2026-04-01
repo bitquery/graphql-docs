@@ -4,21 +4,6 @@ description: "Query Flow transactions data using Bitquery GraphQL API. Get trans
 keywords: ["Flow API", "Flow Transactions", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Flow Transactions API"/>
-<meta name="description" content="Query Flow transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."/>
-<meta name="keywords" content="Flow API, Flow Transactions, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Flow Transactions API" />
-<meta property="og:description" content="Query Flow transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Flow Transactions API" />
-<meta property="twitter:description" content="Query Flow transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
-</head>
-
 # Transactions
 
 The Flow Transaction API provides information about transactions from the Flow Blockchain.

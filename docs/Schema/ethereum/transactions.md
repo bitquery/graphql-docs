@@ -31,7 +31,7 @@ description: "Explore Ethereum transactions. Get insights into the Ethereum bloc
 
 `transactions` type allows you to retrieve all the blockchain transactions from Ethereum Blockchain.
 
-Here's an exmaple query that retrieves 10 latest transactions from Ethereum blockchain:
+Here's an example query that retrieves 10 latest transactions from Ethereum blockchain:
 
 ```
 query {

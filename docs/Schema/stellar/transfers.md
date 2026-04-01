@@ -4,21 +4,6 @@ description: "Query Stellar transfers data using Bitquery GraphQL API. Get asset
 keywords: ["Stellar API", "Stellar Transfers", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Stellar Transfers API"/>
-<meta name="description" content="Query Stellar transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."/>
-<meta name="keywords" content="Stellar API, Stellar Transfers, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Stellar Transfers API" />
-<meta property="og:description" content="Query Stellar transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Stellar Transfers API" />
-<meta property="twitter:description" content="Query Stellar transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
-</head>
-
 # Transfers
 
 Bitquery's Stellar transfers API provides you the following information:

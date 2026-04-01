@@ -4,21 +4,6 @@ description: "Query Hedera GraphQL arguments data using Bitquery GraphQL API. Ge
 keywords: ["Hedera API", "Hedera Arguments", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Hedera Arguments API"/>
-<meta name="description" content="Query Hedera GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."/>
-<meta name="keywords" content="Hedera API, Hedera Arguments, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Hedera Arguments API" />
-<meta property="og:description" content="Query Hedera GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Hedera Arguments API" />
-<meta property="twitter:description" content="Query Hedera GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema." />
-</head>
-
 # Arguments 
 
 The Arguments API provides you with information about event arguments. It offers valuable information about various aspects, such as the specific values of event arguments, their corresponding types, and even the transaction where the event originally occurred.

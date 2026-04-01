@@ -4,21 +4,6 @@ description: "Query Conflux address data using Bitquery GraphQL API. Get address
 keywords: ["Conflux API", "Conflux Address", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Conflux Address API"/>
-<meta name="description" content="Query Conflux address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."/>
-<meta name="keywords" content="Conflux API, Conflux Address, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Conflux Address API" />
-<meta property="og:description" content="Query Conflux address data using Bitquery GraphQL API. Get address balances, annotations, and related activity." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Conflux Address API" />
-<meta property="twitter:description" content="Query Conflux address data using Bitquery GraphQL API. Get address balances, annotations, and related activity." />
-</head>
-
 # Conflux Address API
 
 The Address API schema returns information about a wallet. The schema includes the following fields:

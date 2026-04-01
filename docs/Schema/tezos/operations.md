@@ -4,21 +4,6 @@ description: "Query Tezos operations data using Bitquery GraphQL API. Get chain 
 keywords: ["Tezos API", "Tezos Operations", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Tezos Operations API"/>
-<meta name="description" content="Query Tezos operations data using Bitquery GraphQL API. Get chain operations, types, and operation details."/>
-<meta name="keywords" content="Tezos API, Tezos Operations, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Tezos Operations API" />
-<meta property="og:description" content="Query Tezos operations data using Bitquery GraphQL API. Get chain operations, types, and operation details." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Tezos Operations API" />
-<meta property="twitter:description" content="Query Tezos operations data using Bitquery GraphQL API. Get chain operations, types, and operation details." />
-</head>
-
 # Operations
 
 The Tezos Operations API provides information about operations from the Tezos Blockchain.

@@ -293,7 +293,7 @@ You can query multiple addresses at once by using `{in: ["address1", "address2",
 
 Check out our other Zcash examples:
 
-- [UTXO Input/Output API ➤](https://docs.bitquery.io/docs/Examples/Transactions/input-output-api/)
-- [Transaction API ➤](https://docs.bitquery.io/docs/Examples/Transactions/transaction-api/)
+- [UTXO Input/Output API ➤](https://docs.bitquery.io/v1/docs/examples/Transactions/input-output-api)
+- [Transaction API ➤](https://docs.bitquery.io/v1/docs/examples/Transactions/transaction-api)
 
 :::

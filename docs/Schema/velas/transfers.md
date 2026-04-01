@@ -4,21 +4,6 @@ description: "Query Velas transfers data using Bitquery GraphQL API. Get asset t
 keywords: ["Velas API", "Velas Transfers", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Velas Transfers API"/>
-<meta name="description" content="Query Velas transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."/>
-<meta name="keywords" content="Velas API, Velas Transfers, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Velas Transfers API" />
-<meta property="og:description" content="Query Velas transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Velas Transfers API" />
-<meta property="twitter:description" content="Query Velas transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
-</head>
-
 # Transfers
 
 Bitquery `transfers` API allows you to retrieve currency or token transfers from velas Blockchain.

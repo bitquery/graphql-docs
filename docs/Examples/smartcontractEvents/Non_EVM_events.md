@@ -4,21 +4,6 @@ description: "Example GraphQL queries for events on non-EVM chains like Flow. Ge
 keywords: [smart contract API examples, GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Non-EVM Smart Contract Events API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for events on non-EVM chains like Flow. Get mint, burn, and custom event data."/>
-<meta name="keywords" content="smart contract API examples, GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Non-EVM Smart Contract Events API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for events on non-EVM chains like Flow. Get mint, burn, and custom event data." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Non-EVM Smart Contract Events API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for events on non-EVM chains like Flow. Get mint, burn, and custom event data." />
-</head>
-
 # Events on Non-EVM Chains
 
 Our Smart contract event API allows you access parsed smart contract events and arguments for all the blockchains we support. In this section let's focus on examples for chain other than ones on EVM.

@@ -4,21 +4,6 @@ description: "Query Cosmos transfer data using Bitquery GraphQL API. Get transfe
 keywords: ["Cosmos API", "Cosmos Transfer", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Cosmos Transfer API"/>
-<meta name="description" content="Query Cosmos transfer data using Bitquery GraphQL API. Get transfers, denoms, senders, receivers, and transaction context."/>
-<meta name="keywords" content="Cosmos API, Cosmos Transfer, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Cosmos Transfer API" />
-<meta property="og:description" content="Query Cosmos transfer data using Bitquery GraphQL API. Get transfers, denoms, senders, receivers, and transaction context." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Cosmos Transfer API" />
-<meta property="twitter:description" content="Query Cosmos transfer data using Bitquery GraphQL API. Get transfers, denoms, senders, receivers, and transaction context." />
-</head>
-
 # Transfers
 
 The Transfers API returns information about token transfers on Cosmos network.

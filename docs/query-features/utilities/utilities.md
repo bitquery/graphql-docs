@@ -5,21 +5,6 @@ description: "Check account billing, points, and API usage metrics with the Bitq
 keywords: [Bitquery, GraphQL, utilities, API usage, billing, metrics]
 ---
 
-<head>
-<meta name="title" content="Utilities API in Bitquery GraphQL"/>
-<meta name="description" content="Check account billing, points, and API usage metrics with the Bitquery utilities root query."/>
-<meta name="keywords" content="Bitquery, GraphQL, utilities, API usage, billing, metrics"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Utilities API in Bitquery GraphQL" />
-<meta property="og:description" content="Check account billing, points, and API usage metrics with the Bitquery utilities root query." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Utilities API in Bitquery GraphQL" />
-<meta property="twitter:description" content="Check account billing, points, and API usage metrics with the Bitquery utilities root query." />
-</head>
-
 # Utilities
 
 Utilities method helps understand your API consumption. It provides information on your account, such as your active period, billing day, and points remaining. It also provides metrics on your API usage, such as the number of SQL requests you have made and the cost of those requests.

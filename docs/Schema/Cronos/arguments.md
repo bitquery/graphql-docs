@@ -4,21 +4,6 @@ description: "Query Cronos GraphQL arguments data using Bitquery GraphQL API. Ge
 keywords: ["Cronos API", "Cronos Arguments", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Cronos Arguments API"/>
-<meta name="description" content="Query Cronos GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."/>
-<meta name="keywords" content="Cronos API, Cronos Arguments, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Cronos Arguments API" />
-<meta property="og:description" content="Query Cronos GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Cronos Arguments API" />
-<meta property="twitter:description" content="Query Cronos GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema." />
-</head>
-
 # Arguments
 
 The `arguments` field allows us to fetch information about arguments of smart contract calls and evetns.

@@ -4,21 +4,6 @@ description: "Example GraphQL queries for EVM smart contract events. Get logs, t
 keywords: [smart contract API examples, GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Smart Contract Events API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for EVM smart contract events. Get logs, topics, arguments, and transaction hashes."/>
-<meta name="keywords" content="smart contract API examples, GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Smart Contract Events API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for EVM smart contract events. Get logs, topics, arguments, and transaction hashes." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Smart Contract Events API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for EVM smart contract events. Get logs, topics, arguments, and transaction hashes." />
-</head>
-
 # Smart contract event API
 
 Our Smart contract event API allows you access parsed smart contract events and arguments for all the blockchains we support.

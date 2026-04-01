@@ -4,21 +4,6 @@ description: "Query Solana block rewards data using Bitquery GraphQL API. Get bl
 keywords: ["Solana API", "Solana Block Rewards", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Solana Block Rewards API"/>
-<meta name="description" content="Query Solana block rewards data using Bitquery GraphQL API. Get block reward distributions, validators, and amounts."/>
-<meta name="keywords" content="Solana API, Solana Block Rewards, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Solana Block Rewards API" />
-<meta property="og:description" content="Query Solana block rewards data using Bitquery GraphQL API. Get block reward distributions, validators, and amounts." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Solana Block Rewards API" />
-<meta property="twitter:description" content="Query Solana block rewards data using Bitquery GraphQL API. Get block reward distributions, validators, and amounts." />
-</head>
-
 # Block Rewards
 
 The BlockRewards API returns information about rewards on the Solana network. Solana implements a proof of stake reward scheme for validator nodes. Rewards are paid every epoch.

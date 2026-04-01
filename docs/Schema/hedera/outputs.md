@@ -4,21 +4,6 @@ description: "Query Hedera outputs data using Bitquery GraphQL API. Get transact
 keywords: ["Hedera API", "Hedera Outputs", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Hedera Outputs API"/>
-<meta name="description" content="Query Hedera outputs data using Bitquery GraphQL API. Get transaction outputs, amounts, and recipients."/>
-<meta name="keywords" content="Hedera API, Hedera Outputs, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Hedera Outputs API" />
-<meta property="og:description" content="Query Hedera outputs data using Bitquery GraphQL API. Get transaction outputs, amounts, and recipients." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Hedera Outputs API" />
-<meta property="twitter:description" content="Query Hedera outputs data using Bitquery GraphQL API. Get transaction outputs, amounts, and recipients." />
-</head>
-
 # Outputs
 
 The Outputs API provides information about transaction outputs on the Hedera Blockchain.

@@ -5,24 +5,9 @@ description: "Learn how Bitquery models blockchain data as cubes with dimensions
 keywords: [Bitquery, GraphQL, cube, dimensions, metrics, query architecture]
 ---
 
-<head>
-<meta name="title" content="Understanding Bitquery Query Architecture — Cubes, Dimensions & Metrics"/>
-<meta name="description" content="Learn how Bitquery models blockchain data as cubes with dimensions, metrics, and filters, and how GraphQL maps to ClickHouse analytics."/>
-<meta name="keywords" content="Bitquery, GraphQL, cube, dimensions, metrics, query architecture"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Understanding Bitquery Query Architecture — Cubes, Dimensions & Metrics" />
-<meta property="og:description" content="Learn how Bitquery models blockchain data as cubes with dimensions, metrics, and filters, and how GraphQL maps to ClickHouse analytics." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Understanding Bitquery Query Architecture — Cubes, Dimensions & Metrics" />
-<meta property="twitter:description" content="Learn how Bitquery models blockchain data as cubes with dimensions, metrics, and filters, and how GraphQL maps to ClickHouse analytics." />
-</head>
-
 # Basic Structure of A Query
 
-Bitquery Architechture
+Bitquery Architecture
 Let’s understand how we built our infrastructure to enable scalable analytical processing. In the simplest form, we are using Clickhouse (An OLAP database) at our data warehouse and built a GraphQL layer on top of it, and glued them together using a library called Activecube, which we have written from scratch and open-sourced. This library transforms GraphQL queries to Clickhouse queries.
 
 ![under the hood](/img/under-the-hood.jpeg)

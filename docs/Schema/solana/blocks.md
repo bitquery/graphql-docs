@@ -4,21 +4,6 @@ description: "Query Solana blocks data using Bitquery GraphQL API. Get block hei
 keywords: ["Solana API", "Solana Blocks", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Solana Blocks API"/>
-<meta name="description" content="Query Solana blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."/>
-<meta name="keywords" content="Solana API, Solana Blocks, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Solana Blocks API" />
-<meta property="og:description" content="Query Solana blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Solana Blocks API" />
-<meta property="twitter:description" content="Query Solana blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata." />
-</head>
-
 # Blocks
 
 The Blocks API returns information about blocks on the Solana network. The fields in the schema include: 

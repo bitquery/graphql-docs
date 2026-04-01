@@ -4,21 +4,6 @@ description: "Query Cronos DEX trades data using Bitquery GraphQL API. Get DEX s
 keywords: ["Cronos API", "Cronos DEX Trades", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Cronos DEX Trades API"/>
-<meta name="description" content="Query Cronos DEX trades data using Bitquery GraphQL API. Get DEX swaps, pools, amounts, and trader addresses."/>
-<meta name="keywords" content="Cronos API, Cronos DEX Trades, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Cronos DEX Trades API" />
-<meta property="og:description" content="Query Cronos DEX trades data using Bitquery GraphQL API. Get DEX swaps, pools, amounts, and trader addresses." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Cronos DEX Trades API" />
-<meta property="twitter:description" content="Query Cronos DEX trades data using Bitquery GraphQL API. Get DEX swaps, pools, amounts, and trader addresses." />
-</head>
-
 # DEX Trades
 
 The `dexTrades` field allows us to retrieve dex trade data from Ethereum blockchain.

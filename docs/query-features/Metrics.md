@@ -5,21 +5,6 @@ description: "Use the IDE metrics API and utilities metrics to inspect query cos
 keywords: [Bitquery, metrics, API usage, query cost, GraphQL]
 ---
 
-<head>
-<meta name="title" content="Metrics in Bitquery GraphQL API"/>
-<meta name="description" content="Use the IDE metrics API and utilities metrics to inspect query cost, points, SQL requests, and chain-specific usage."/>
-<meta name="keywords" content="Bitquery, metrics, API usage, query cost, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Metrics in Bitquery GraphQL API" />
-<meta property="og:description" content="Use the IDE metrics API and utilities metrics to inspect query cost, points, SQL requests, and chain-specific usage." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Metrics in Bitquery GraphQL API" />
-<meta property="twitter:description" content="Use the IDE metrics API and utilities metrics to inspect query cost, points, SQL requests, and chain-specific usage." />
-</head>
-
 # Metrics
 
 The IDE Builder provides a metrics API that you can use to get details on your usage. 

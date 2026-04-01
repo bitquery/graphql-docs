@@ -4,21 +4,6 @@ description: "Query Hedera inputs data using Bitquery GraphQL API. Get transacti
 keywords: ["Hedera API", "Hedera Inputs", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Hedera Inputs API"/>
-<meta name="description" content="Query Hedera inputs data using Bitquery GraphQL API. Get transaction inputs, authorizers, and signatures context."/>
-<meta name="keywords" content="Hedera API, Hedera Inputs, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Hedera Inputs API" />
-<meta property="og:description" content="Query Hedera inputs data using Bitquery GraphQL API. Get transaction inputs, authorizers, and signatures context." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Hedera Inputs API" />
-<meta property="twitter:description" content="Query Hedera inputs data using Bitquery GraphQL API. Get transaction inputs, authorizers, and signatures context." />
-</head>
-
 # Inputs
 
 The Inputs API provides information about transaction inputs on the Hedera Blockchain.

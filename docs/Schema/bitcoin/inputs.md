@@ -100,7 +100,7 @@ The following are available fields for the `inputs`:
 ## Related Resources
 
 - [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
-- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/Examples/bitcoin)
+- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/examples/Bitcoin)
 - [Coinpath (Bitcoin)](https://docs.bitquery.io/v1/docs/Schema/bitcoin/coinpath)
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

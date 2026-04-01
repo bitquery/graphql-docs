@@ -4,21 +4,6 @@ description: "Example GraphQL queries for Dogecoin transfers and address flows. 
 keywords: [Dogecoin API examples, Dogecoin GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Dogecoin Transfers API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for Dogecoin transfers and address flows. Get inbound and outbound transfer paths."/>
-<meta name="keywords" content="Dogecoin API examples, Dogecoin GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Dogecoin Transfers API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for Dogecoin transfers and address flows. Get inbound and outbound transfer paths." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Dogecoin Transfers API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for Dogecoin transfers and address flows. Get inbound and outbound transfer paths." />
-</head>
-
 # Tranfers of an Address on DogeCoin Network
 
 Doge Coin is one of the most famous meme coin in the cryptocurrency space. Using [this](https://ide.bitquery.io/zFB1y4MP5B) query, we can get the transfers of Doge Coin to a particular address.

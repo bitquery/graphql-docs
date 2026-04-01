@@ -4,21 +4,6 @@ description: "Query Elrond transfers data using Bitquery GraphQL API. Get asset 
 keywords: ["Elrond API", "Elrond Transfers", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Elrond Transfers API"/>
-<meta name="description" content="Query Elrond transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."/>
-<meta name="keywords" content="Elrond API, Elrond Transfers, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Elrond Transfers API" />
-<meta property="og:description" content="Query Elrond transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Elrond Transfers API" />
-<meta property="twitter:description" content="Query Elrond transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
-</head>
-
 # MultiversX Transfers API
 
 The MultiversX Transfers API gets information about the sender, receiver, amount, currency, and other details related to transfers on the network. Below are the fields in the schema:

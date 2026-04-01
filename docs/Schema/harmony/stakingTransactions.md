@@ -4,21 +4,6 @@ description: "Query Harmony staking data using Bitquery GraphQL API. Get staking
 keywords: ["Harmony API", "Harmony Staking Transactions", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Harmony Staking Transactions API"/>
-<meta name="description" content="Query Harmony staking data using Bitquery GraphQL API. Get staking delegations, validators, and staking-related transactions."/>
-<meta name="keywords" content="Harmony API, Harmony Staking Transactions, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Harmony Staking Transactions API" />
-<meta property="og:description" content="Query Harmony staking data using Bitquery GraphQL API. Get staking delegations, validators, and staking-related transactions." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Harmony Staking Transactions API" />
-<meta property="twitter:description" content="Query Harmony staking data using Bitquery GraphQL API. Get staking delegations, validators, and staking-related transactions." />
-</head>
-
 # Staking Transactions
 
 The Harmony Staking Transaction API provides details about staking transactions from the Harmony blockchain.

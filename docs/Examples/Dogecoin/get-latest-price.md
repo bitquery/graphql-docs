@@ -4,21 +4,6 @@ description: "Example GraphQL queries for Dogecoin USD price from on-chain data.
 keywords: [Dogecoin API examples, Dogecoin GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Dogecoin Price API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for Dogecoin USD price from on-chain data. Get latest price and block context."/>
-<meta name="keywords" content="Dogecoin API examples, Dogecoin GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Dogecoin Price API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for Dogecoin USD price from on-chain data. Get latest price and block context." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Dogecoin Price API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for Dogecoin USD price from on-chain data. Get latest price and block context." />
-</head>
-
 # Get Latest Price of Doge Coin in USD
 
 Doge Coin is one of the most famous meme coin in the cryptocurrency space. Using [this](https://ide.bitquery.io/dogecoin-price-in-use_1) query, we can get the latest price of Doge Coin in `USD`.

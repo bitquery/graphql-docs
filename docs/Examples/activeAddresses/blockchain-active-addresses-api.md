@@ -4,21 +4,6 @@ description: "Example GraphQL queries for active addresses by chain or token. Co
 keywords: [active addresses API examples, GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Active Addresses API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for active addresses by chain or token. Count unique addresses over time."/>
-<meta name="keywords" content="active addresses API examples, GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Active Addresses API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for active addresses by chain or token. Count unique addresses over time." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Active Addresses API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for active addresses by chain or token. Count unique addresses over time." />
-</head>
-
 # Active address API
 
 Use our activeAddresses API to get active address for any blockchain, currency, block etc.

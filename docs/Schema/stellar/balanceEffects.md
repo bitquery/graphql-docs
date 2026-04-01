@@ -4,21 +4,6 @@ description: "Query Stellar balance effects data using Bitquery GraphQL API. Get
 keywords: ["Stellar API", "Stellar Balance Effects", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Stellar Balance Effects API"/>
-<meta name="description" content="Query Stellar balance effects data using Bitquery GraphQL API. Get balance changes, trust lines, and liabilities."/>
-<meta name="keywords" content="Stellar API, Stellar Balance Effects, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Stellar Balance Effects API" />
-<meta property="og:description" content="Query Stellar balance effects data using Bitquery GraphQL API. Get balance changes, trust lines, and liabilities." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Stellar Balance Effects API" />
-<meta property="twitter:description" content="Query Stellar balance effects data using Bitquery GraphQL API. Get balance changes, trust lines, and liabilities." />
-</head>
-
 # BalanceEffects
 
 The Stellar BalanceEffects API allows you to get information about the balance changes of an account.Below are the fields in the API:

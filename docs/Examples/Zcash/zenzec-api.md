@@ -150,7 +150,7 @@ query LatestTrades {
 **Need More Solana Token Data?**
 
 Check out our other Solana examples:
-- [Solana Transfers API ➤](https://docs.bitquery.io/docs/Examples/Solana/transfers)
-- [Solana DEX Trades API ➤](https://docs.bitquery.io/docs/Examples/dexTrades/)
+- [Solana Transfers API ➤](https://docs.bitquery.io/v1/docs/examples/Solana/transfers)
+- [Solana DEX Trades API ➤](https://docs.bitquery.io/v1/docs/examples/dexTrades/dex-trading-data-api)
 
 :::

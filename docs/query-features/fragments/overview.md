@@ -5,21 +5,6 @@ description: "Reuse query fragments for balance history and other patterns to re
 keywords: [Bitquery, GraphQL, fragments, reuse, queries]
 ---
 
-<head>
-<meta name="title" content="GraphQL Fragments in Bitquery API"/>
-<meta name="description" content="Reuse query fragments for balance history and other patterns to reduce duplication in Bitquery GraphQL."/>
-<meta name="keywords" content="Bitquery, GraphQL, fragments, reuse, queries"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="GraphQL Fragments in Bitquery API" />
-<meta property="og:description" content="Reuse query fragments for balance history and other patterns to reduce duplication in Bitquery GraphQL." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="GraphQL Fragments in Bitquery API" />
-<meta property="twitter:description" content="Reuse query fragments for balance history and other patterns to reduce duplication in Bitquery GraphQL." />
-</head>
-
 # Fragments
 
 A fragment spread is a way to reuse a fragment definition in another fragment or query. This can be useful for reducing code duplication and making your queries more readable.

@@ -5,21 +5,6 @@ keywords: [address API examples, GraphQL queries, Bitquery]
 sidebar_position: 1
 ---
 
-<head>
-<meta name="title" content="Blockchain Address API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for addresses across chains. Get transactions, balances, transfers, and coinpath."/>
-<meta name="keywords" content="address API examples, GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Blockchain Address API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for addresses across chains. Get transactions, balances, transfers, and coinpath." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Blockchain Address API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for addresses across chains. Get transactions, balances, transfers, and coinpath." />
-</head>
-
 # Address API
 
 Our APIs can provide all sorts of details for any address on the blockchain. Let's see some examples.

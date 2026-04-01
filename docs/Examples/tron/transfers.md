@@ -4,24 +4,9 @@ description: "Example GraphQL queries for Tron token transfers. Get latest trans
 keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
 ---
 
-<head>
-<meta name="title" content="Tron Transfers API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for Tron token transfers. Get latest transfers, TRC-20 flows, and inflow/outflow totals."/>
-<meta name="keywords" content="Tron API examples, Tron GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Tron Transfers API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for Tron token transfers. Get latest transfers, TRC-20 flows, and inflow/outflow totals." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Tron Transfers API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for Tron token transfers. Get latest transfers, TRC-20 flows, and inflow/outflow totals." />
-</head>
-
 # Transfer API
 
-Our Tron Transfers API rpovides detailed information about token transfers made on the Tron blockchain.
+Our Tron Transfers API provides detailed information about token transfers made on the Tron blockchain.
 
 ## Get latest transfer for a token
 

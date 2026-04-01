@@ -4,21 +4,6 @@ description: "Query Flow address data using Bitquery GraphQL API. Get address ba
 keywords: ["Flow API", "Flow Address", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Flow Address API"/>
-<meta name="description" content="Query Flow address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."/>
-<meta name="keywords" content="Flow API, Flow Address, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Flow Address API" />
-<meta property="og:description" content="Query Flow address data using Bitquery GraphQL API. Get address balances, annotations, and related activity." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Flow Address API" />
-<meta property="twitter:description" content="Query Flow address data using Bitquery GraphQL API. Get address balances, annotations, and related activity." />
-</head>
-
 # Address
 
 The Flow Address API offers basic information about addresses from the Flow Blockchain.

@@ -4,21 +4,6 @@ description: "Query Tezos GraphQL arguments data using Bitquery GraphQL API. Get
 keywords: ["Tezos API", "Tezos Arguments", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Tezos Arguments API"/>
-<meta name="description" content="Query Tezos GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."/>
-<meta name="keywords" content="Tezos API, Tezos Arguments, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Tezos Arguments API" />
-<meta property="og:description" content="Query Tezos GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Tezos Arguments API" />
-<meta property="twitter:description" content="Query Tezos GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema." />
-</head>
-
 # Arguments
 
 The Arguments API provides you with information about arguments.

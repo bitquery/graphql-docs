@@ -12,21 +12,6 @@ keywords:
   ]
 ---
 
-<head>
-<meta name="title" content="Bitquery API Common Errors — Troubleshooting GraphQL & ClickHouse"/>
-<meta name="description" content="Interpret Bitquery GraphQL API errors including ClickHouse 400, parse errors, memory limits, rate limits, timeouts, and 403/500 responses with resolution steps."/>
-<meta name="keywords" content="Bitquery errors, GraphQL troubleshooting, ClickHouse error, API rate limit, query memory limit"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Bitquery API Common Errors — Troubleshooting GraphQL & ClickHouse" />
-<meta property="og:description" content="Interpret Bitquery GraphQL API errors including ClickHouse 400, parse errors, memory limits, rate limits, timeouts, and 403/500 responses with resolution steps." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Bitquery API Common Errors — Troubleshooting GraphQL & ClickHouse" />
-<meta property="twitter:description" content="Interpret Bitquery GraphQL API errors including ClickHouse 400, parse errors, memory limits, rate limits, timeouts, and 403/500 responses with resolution steps." />
-</head>
-
 # Common Errors and What to Do
 
 This section will guide you through the interpretation of common error messages encountered within Bitquery APIs. It will help you decide when to escalate issues by filing a ticket at [Bitquery Support](https://support.bitquery.io/).

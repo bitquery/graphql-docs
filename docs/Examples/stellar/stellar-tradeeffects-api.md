@@ -5,21 +5,6 @@ keywords: [Stellar API examples, Stellar GraphQL queries, Bitquery]
 slug: /blockchain/Stellar/trade-effects-api
 ---
 
-<head>
-<meta name="title" content="Stellar Trades API Examples — Bitquery GraphQL"/>
-<meta name="description" content="Example GraphQL queries for Stellar DEX trades and trade effects. Get prices, sellers, buyers, and assets."/>
-<meta name="keywords" content="Stellar API examples, Stellar GraphQL queries, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Stellar Trades API Examples — Bitquery GraphQL" />
-<meta property="og:description" content="Example GraphQL queries for Stellar DEX trades and trade effects. Get prices, sellers, buyers, and assets." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Stellar Trades API Examples — Bitquery GraphQL" />
-<meta property="twitter:description" content="Example GraphQL queries for Stellar DEX trades and trade effects. Get prices, sellers, buyers, and assets." />
-</head>
-
 # Stellar Trades API 
 
 

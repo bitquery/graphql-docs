@@ -5,21 +5,6 @@ description: "Build candlestick charts for DEX token data using Bitquery GraphQL
 keywords: [TradingView, Lightweight Charts, Bitquery API, DEX, Ethereum, React, blockchain charts]
 ---
 
-<head>
-<meta name="title" content="TradingView Charts with Bitquery API — Integration Guide"/>
-<meta name="description" content="Build candlestick charts for DEX token data using Bitquery GraphQL, React, Lightweight Charts, and Ethereum dexTrades—includes WETH pricing and OHLC aggregation."/>
-<meta name="keywords" content="TradingView, Lightweight Charts, Bitquery API, DEX, Ethereum, React, blockchain charts"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="TradingView Charts with Bitquery API — Integration Guide" />
-<meta property="og:description" content="Build candlestick charts for DEX token data using Bitquery GraphQL, React, Lightweight Charts, and Ethereum dexTrades—includes WETH pricing and OHLC aggregation." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="TradingView Charts with Bitquery API — Integration Guide" />
-<meta property="twitter:description" content="Build candlestick charts for DEX token data using Bitquery GraphQL, React, Lightweight Charts, and Ethereum dexTrades—includes WETH pricing and OHLC aggregation." />
-</head>
-
 # Build a tradingview chart app for blockchain data
 
 This tutorial will help you build a TradingView chart app with blockchain data from Bitquery.

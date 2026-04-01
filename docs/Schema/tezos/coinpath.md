@@ -4,21 +4,6 @@ description: "Query Tezos coinpath data using Bitquery GraphQL API. Get fund flo
 keywords: ["Tezos API", "Tezos Coinpath", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Tezos Coinpath API"/>
-<meta name="description" content="Query Tezos coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."/>
-<meta name="keywords" content="Tezos API, Tezos Coinpath, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Tezos Coinpath API" />
-<meta property="og:description" content="Query Tezos coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Tezos Coinpath API" />
-<meta property="twitter:description" content="Query Tezos coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
-</head>
-
 # Coinpath
 
 The Coinpath API provides information about the movement of funds within the Tezos Blockchain.

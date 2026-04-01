@@ -1,24 +1,9 @@
 ---
 sidebar_position: 1
 title: "Ethereum Beacon Chain API — Blockchain Data Schema | Bitquery"
-description: "Access Ethereum Beacon Chain blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more."
+description: "Access Ethereum Beacon Chain data through Bitquery's GraphQL API. Query attestations, validators, beacon blocks, proposer slashings, and staking data."
 keywords: [Ethereum Beacon Chain API, Ethereum Beacon Chain GraphQL, Ethereum Beacon Chain blockchain data, Bitquery]
 ---
-
-<head>
-<meta name="title" content="Ethereum Beacon Chain API — Blockchain Data Schema | Bitquery"/>
-<meta name="description" content="Access Ethereum Beacon Chain blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more."/>
-<meta name="keywords" content="Ethereum Beacon Chain API, Ethereum Beacon Chain GraphQL, Ethereum Beacon Chain blockchain data, Bitquery"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Ethereum Beacon Chain API — Blockchain Data Schema | Bitquery" />
-<meta property="og:description" content="Access Ethereum Beacon Chain blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Ethereum Beacon Chain API — Blockchain Data Schema | Bitquery" />
-<meta property="twitter:description" content="Access Ethereum Beacon Chain blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more." />
-</head>
 
 # Ethereum Beacon Chain API Overview
 

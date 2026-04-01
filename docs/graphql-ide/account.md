@@ -12,21 +12,6 @@ keywords:
   ]
 ---
 
-<head>
-<meta name="title" content="Bitquery Account Dashboard — API Usage, Billing & Stats"/>
-<meta name="description" content="Use the Bitquery account dashboard for subscriptions, billing, API usage, points consumption, saved queries, errors, and blockchain system status."/>
-<meta name="keywords" content="Bitquery account, API usage dashboard, billing, points consumption, system status"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Bitquery Account Dashboard — API Usage, Billing & Stats" />
-<meta property="og:description" content="Use the Bitquery account dashboard for subscriptions, billing, API usage, points consumption, saved queries, errors, and blockchain system status." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Bitquery Account Dashboard — API Usage, Billing & Stats" />
-<meta property="twitter:description" content="Use the Bitquery account dashboard for subscriptions, billing, API usage, points consumption, saved queries, errors, and blockchain system status." />
-</head>
-
 # Your Account Dashboard
 
 Account dashboard gives you details related to your account like your subscriptions plan, API usage, frequently used queries etc. Let's epxlore each section on the page. 

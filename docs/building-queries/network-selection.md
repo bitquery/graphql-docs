@@ -5,21 +5,6 @@ description: "Learn how to select blockchain networks in Bitquery API requests a
 keywords: [Bitquery, GraphQL, network selection, blockchain API, IDE]
 ---
 
-<head>
-<meta name="title" content="Network Selection in Bitquery GraphQL API"/>
-<meta name="description" content="Learn how to select blockchain networks in Bitquery API requests and use the IDE network filter for Ethereum and other chains."/>
-<meta name="keywords" content="Bitquery, GraphQL, network selection, blockchain API, IDE"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Network Selection in Bitquery GraphQL API" />
-<meta property="og:description" content="Learn how to select blockchain networks in Bitquery API requests and use the IDE network filter for Ethereum and other chains." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Network Selection in Bitquery GraphQL API" />
-<meta property="twitter:description" content="Learn how to select blockchain networks in Bitquery API requests and use the IDE network filter for Ethereum and other chains." />
-</head>
-
 # Network Selection
 When using Bitquery APIs, you can specify the network that you want to query. This is done by setting the network parameter in the request. 
 

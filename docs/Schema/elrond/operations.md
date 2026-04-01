@@ -4,21 +4,6 @@ description: "Query Elrond operations data using Bitquery GraphQL API. Get chain
 keywords: ["Elrond API", "Elrond Operations", "Bitquery", "GraphQL"]
 ---
 
-<head>
-<meta name="title" content="Elrond Operations API"/>
-<meta name="description" content="Query Elrond operations data using Bitquery GraphQL API. Get chain operations, types, and operation details."/>
-<meta name="keywords" content="Elrond API, Elrond Operations, Bitquery, GraphQL"/>
-<meta name="robots" content="index, follow"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="language" content="English"/>
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Elrond Operations API" />
-<meta property="og:description" content="Query Elrond operations data using Bitquery GraphQL API. Get chain operations, types, and operation details." />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Elrond Operations API" />
-<meta property="twitter:description" content="Query Elrond operations data using Bitquery GraphQL API. Get chain operations, types, and operation details." />
-</head>
-
 # MultiversX Operations API
 
 The MultiversX Operations API allows you to query information about operations on the MultiversX blockchain. You can use this API to get information about the sender, receiver, type, action, and other details of an operation.
