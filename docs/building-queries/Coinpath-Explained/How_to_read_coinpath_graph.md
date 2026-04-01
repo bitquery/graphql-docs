@@ -1,8 +1,13 @@
 ---
 sidebar_position: 2
+title: "How to Read a Coinpath Graph — Nodes, Edges, Levels & Grouping"
+description: "Learn to interpret Coinpath's money-flow DAG: nodes (addresses), edges (transfers), depth levels, transaction vs transactions grouping, and finalAddress vs sender/receiver filters."
+keywords: [Coinpath graph, DAG, money flow, nodes, edges, depth, transaction grouping, finalAddress, Bitquery]
 ---
 
 # How to Read Coinpath Graph
+
+Coinpath represents fund flows as a **directed acyclic multigraph (DAG)**. This page explains every component of that graph and the key query-level distinctions you need to know — `transaction` vs `transactions` grouping and `finalAddress` vs `sender`/`receiver` filtering.
 
 ## Different Components of the Money Flow Graph
 
@@ -293,3 +298,13 @@ query ($network: EthereumNetwork!, $outboundDepth: Int!, $limit: Int!, $currency
   "dateFormat": "%Y-%m"
 }
 ```
+
+---
+
+## Next Steps
+
+- [Coinpath Overview](./Overview) — what Coinpath is and why it matters.
+- **Fund Tracking by chain type:** [EVM](./Fund%20Tracking/EVM_Chains) | [UTXO](./Fund%20Tracking/UTXO_Chains) | [Ledger-based](./Fund%20Tracking/Ledger_Based_Chains)
+- [Coinpath Money Flow API — query cookbook](/docs/Examples/coinpath/money-flow-api)
+- [Bitcoin Coinpath schema reference](/docs/Schema/bitcoin/coinpath)
+- [Ethereum Coinpath schema reference](/docs/Schema/ethereum/coinpath)
