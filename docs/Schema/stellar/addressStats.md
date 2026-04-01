@@ -1,3 +1,24 @@
+---
+title: "Stellar Address Stats API"
+description: "Query Stellar address stats data using Bitquery GraphQL API. Get aggregate address statistics and activity metrics."
+keywords: ["Stellar API", "Stellar Address Stats", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Stellar Address Stats API"/>
+<meta name="description" content="Query Stellar address stats data using Bitquery GraphQL API. Get aggregate address statistics and activity metrics."/>
+<meta name="keywords" content="Stellar API, Stellar Address Stats, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Stellar Address Stats API" />
+<meta property="og:description" content="Query Stellar address stats data using Bitquery GraphQL API. Get aggregate address statistics and activity metrics." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Stellar Address Stats API" />
+<meta property="twitter:description" content="Query Stellar address stats data using Bitquery GraphQL API. Get aggregate address statistics and activity metrics." />
+</head>
+
 # AddressStats
 
 Stellar AddressStats API helps you get information on Addresses in the network. Below are the fields in the API:
@@ -118,3 +139,10 @@ query ($address: String!, $network: StellarNetwork!) {
 
 - **lastTxAt** : The timestamp of the most recent transaction to or from the address.
 
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Stellar Coinpath API](https://docs.bitquery.io/v1/docs/Schema/stellar/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

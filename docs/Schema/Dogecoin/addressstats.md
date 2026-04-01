@@ -1,5 +1,6 @@
 ---
 title: Dogecoin Address Stats API
+description: "Query address statistics and history on Dogecoin."
 ---
 
 <head>
@@ -56,3 +57,12 @@ Here is an example that demonstrates how to retrieve statistics about a specific
 </details>
 
 -   `address`: Returns statistics for the blockchain address
+
+## Related Resources
+
+- [Dogecoin schema overview](https://docs.bitquery.io/v1/docs/Schema/Dogecoin/overview)
+- [Dogecoin API examples](https://docs.bitquery.io/v1/docs/Examples/Dogecoin)
+- [Coinpath (Dogecoin)](https://docs.bitquery.io/v1/docs/Schema/Dogecoin/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

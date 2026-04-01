@@ -1,6 +1,31 @@
 ---
 sidebar_position: 1
+title: "Getting Started with Bitquery GraphQL IDE"
+description: "Create a Bitquery account, open the GraphQL IDE, and run your first blockchain query with autocomplete, examples, and the query builder."
+keywords:
+  [
+    Bitquery IDE,
+    GraphQL tutorial,
+    first query,
+    blockchain GraphQL,
+    account signup,
+  ]
 ---
+
+<head>
+<meta name="title" content="Getting Started with Bitquery GraphQL IDE"/>
+<meta name="description" content="Create a Bitquery account, open the GraphQL IDE, and run your first blockchain query with autocomplete, examples, and the query builder."/>
+<meta name="keywords" content="Bitquery IDE, GraphQL tutorial, first query, blockchain GraphQL, account signup"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Getting Started with Bitquery GraphQL IDE" />
+<meta property="og:description" content="Create a Bitquery account, open the GraphQL IDE, and run your first blockchain query with autocomplete, examples, and the query builder." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Getting Started with Bitquery GraphQL IDE" />
+<meta property="twitter:description" content="Create a Bitquery account, open the GraphQL IDE, and run your first blockchain query with autocomplete, examples, and the query builder." />
+</head>
 
 # Running your First Query
 
@@ -101,3 +126,11 @@ We have written blog posts to help you explain our APIs, please them on the [Bit
 If you still don't question our GraphQL APIs please ask them on this forum, and always provide complete details.
 
 Check our [Youtube Channel](https://www.youtube.com/@bitquery) for video tutorials.
+
+## Related Resources
+
+- [How to use the Bitquery GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/ide)
+- [Getting an API access token](https://docs.bitquery.io/v1/docs/graphql-ide/apikey)
+- [Use Bitquery in your application](https://docs.bitquery.io/v1/docs/graphql-ide/use-it-in-your-application)
+- [Basic structure of a GraphQL query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
+- [V1 vs V2 APIs](https://docs.bitquery.io/v1/docs/graphql-ide/v1-and-v2)

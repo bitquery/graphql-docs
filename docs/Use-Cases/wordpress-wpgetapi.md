@@ -1,7 +1,24 @@
 ---
+title: "WordPress Integration with Bitquery API via WPGetAPI"
 sidebar_position: 2
-description: In this tutorial, we'll use WPGetAPI plugin to show blockchain data on Wordpress sites.
+description: "Connect WordPress to the Bitquery GraphQL endpoint with the WPGetAPI plugin: POST queries, JSON body, and shortcodes for on-site blockchain data."
+keywords: [WordPress, WPGetAPI, Bitquery API, GraphQL, blockchain, DEX]
 ---
+
+<head>
+<meta name="title" content="WordPress Integration with Bitquery API via WPGetAPI"/>
+<meta name="description" content="Connect WordPress to the Bitquery GraphQL endpoint with the WPGetAPI plugin: POST queries, JSON body, and shortcodes for on-site blockchain data."/>
+<meta name="keywords" content="WordPress, WPGetAPI, Bitquery API, GraphQL, blockchain, DEX"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="WordPress Integration with Bitquery API via WPGetAPI" />
+<meta property="og:description" content="Connect WordPress to the Bitquery GraphQL endpoint with the WPGetAPI plugin: POST queries, JSON body, and shortcodes for on-site blockchain data." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="WordPress Integration with Bitquery API via WPGetAPI" />
+<meta property="twitter:description" content="Connect WordPress to the Bitquery GraphQL endpoint with the WPGetAPI plugin: POST queries, JSON body, and shortcodes for on-site blockchain data." />
+</head>
 
 # Step-by-step guide on using the Bitquery API with WPGetAPI on WordPress
 
@@ -114,3 +131,11 @@ Finally set
 ```
 [wpgetapi_endpoint api_id='bitquery_v1' endpoint_id='v1' debug='false']
 ```
+
+## Related Resources
+
+- [Bitquery documentation home](https://docs.bitquery.io/v1/docs/intro)
+- [How to start with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/Examples/bitcoin)
+- [Coinpath explained — overview](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)

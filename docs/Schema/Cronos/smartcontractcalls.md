@@ -1,3 +1,23 @@
+---
+title: "Cronos Smart Contract Calls API"
+description: "Query Cronos smart contract calls data using Bitquery GraphQL API. Get contract calls, methods, inputs, and execution context."
+keywords: ["Cronos API", "Cronos Smart Contract Calls", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Cronos Smart Contract Calls API"/>
+<meta name="description" content="Query Cronos smart contract calls data using Bitquery GraphQL API. Get contract calls, methods, inputs, and execution context."/>
+<meta name="keywords" content="Cronos API, Cronos Smart Contract Calls, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cronos Smart Contract Calls API" />
+<meta property="og:description" content="Query Cronos smart contract calls data using Bitquery GraphQL API. Get contract calls, methods, inputs, and execution context." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Cronos Smart Contract Calls API" />
+<meta property="twitter:description" content="Query Cronos smart contract calls data using Bitquery GraphQL API. Get contract calls, methods, inputs, and execution context." />
+</head>
 
 # Smart Contract Calls
 
@@ -83,3 +103,11 @@ Smart Contract Calls can be filtered using following arguments:
 - `smartContractMethod`: returns details of method to which the call was made
 - `success`: returns if calls is successful or not
 - `transaction`: returns details of the transaction in which smart contract call was executed
+
+## Related Resources
+
+- [Cronos schema overview](https://docs.bitquery.io/v1/docs/Schema/Cronos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cronos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/Cronos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

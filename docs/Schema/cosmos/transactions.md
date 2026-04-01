@@ -1,3 +1,24 @@
+---
+title: "Cosmos Transactions API"
+description: "Query Cosmos transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+keywords: ["Cosmos API", "Cosmos Transactions", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Cosmos Transactions API"/>
+<meta name="description" content="Query Cosmos transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."/>
+<meta name="keywords" content="Cosmos API, Cosmos Transactions, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cosmos Transactions API" />
+<meta property="og:description" content="Query Cosmos transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Cosmos Transactions API" />
+<meta property="twitter:description" content="Query Cosmos transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+</head>
+
 # Transaction
 
 The Transactions API returns information about transactions on Cosmos network.
@@ -114,3 +135,11 @@ Here is an example that demonstrates how to fetch 10 latest transactions:
 -   `success`: returns success of the transaction as boolean
 
 -   `type`: returns type of transaction
+
+## Related Resources
+
+- [Cosmos schema overview](https://docs.bitquery.io/v1/docs/Schema/cosmos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cosmos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/cosmos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

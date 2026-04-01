@@ -1,3 +1,24 @@
+---
+title: "Algorand Coinpath API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Algorand coinpath. Trace senders, receivers, and transaction counts."
+keywords: [Algorand API examples, Algorand GraphQL queries, Bitquery]
+---
+
+<head>
+<meta name="title" content="Algorand Coinpath API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries for Algorand coinpath. Trace senders, receivers, and transaction counts."/>
+<meta name="keywords" content="Algorand API examples, Algorand GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Algorand Coinpath API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries for Algorand coinpath. Trace senders, receivers, and transaction counts." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Algorand Coinpath API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries for Algorand coinpath. Trace senders, receivers, and transaction counts." />
+</head>
+
 # Algorand Coinpath API
 
 Our Algorand Coinpath API provides detailed information about money flow of addresses on the Algorand Blockchain.
@@ -53,3 +74,11 @@ Replace `SENDER_ADDRESS_HERE` with the actual Algorand address of the sender you
 ```
 
 Replace BWSNMG43TUYEOHE76J6KDWIY6MU4U6JFJYGAYCZA2RF5IS3XPO3P3G4FEI with the actual Algorand address of the receiver you want to query. This query will return the count of coinpath transactions received by the specified Algorand address after the date "2023-08-01" from the Algorand blockchain. It provides the total number of coinpath transactions received by the specified receiver address within the specified timeframe.
+
+## Related Resources
+
+- [Algorand schema overview](https://docs.bitquery.io/v1/docs/Schema/algorand/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath money flow examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

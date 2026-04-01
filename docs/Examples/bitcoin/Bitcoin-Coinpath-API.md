@@ -1,12 +1,23 @@
 ---
-title: Bitcoin Coinpath API
-description: Track Bitcoin (BTC) fund flows between addresses with GraphQL coinpath queries—depth, direction, and transaction paths on the Bitcoin network.
-keywords:
-  - Bitcoin coinpath
-  - Bitcoin fund tracing
-  - BTC transaction path
-  - Bitcoin GraphQL API
+title: "Bitcoin Coinpath API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Bitcoin coinpath and fund flow data. Track transfers between addresses, depth, direction, and transaction paths."
+keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 ---
+
+<head>
+<meta name="title" content="Bitcoin Coinpath API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries for Bitcoin coinpath and fund flow data. Track transfers between addresses, depth, direction, and transaction paths."/>
+<meta name="keywords" content="Bitcoin API examples, Bitcoin GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Bitcoin Coinpath API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries for Bitcoin coinpath and fund flow data. Track transfers between addresses, depth, direction, and transaction paths." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Bitcoin Coinpath API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries for Bitcoin coinpath and fund flow data. Track transfers between addresses, depth, direction, and transaction paths." />
+</head>
 
 # Coinpath API
 
@@ -113,3 +124,11 @@ query ($network: BitcoinNetwork!) {
 This query explores the relationship between two specific addresses (initialAddress and receiver) within the context of transactions that occurred after October 10, 2023. It retrieves a maximum of 10 transactions initiated from the initial address and received by the specified receiver.
 
 For each transaction, the query provides details like the transferred amount in USD, block height, timestamp, currency information, sender and receiver addresses, transaction hash, and value. By analyzing these transactions, users can gain insights into the flow of funds between the two addresses and understand their financial interactions.
+
+## Related Resources
+
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Bitcoin address API examples](https://docs.bitquery.io/v1/docs/Examples/bitcoin/bitcoin-address-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

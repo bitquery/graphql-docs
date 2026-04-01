@@ -1,3 +1,24 @@
+---
+title: "Celo Transfers API"
+description: "Query Celo transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."
+keywords: ["Celo API", "Celo Transfers", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Celo Transfers API"/>
+<meta name="description" content="Query Celo transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."/>
+<meta name="keywords" content="Celo API, Celo Transfers, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Celo Transfers API" />
+<meta property="og:description" content="Query Celo transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Celo Transfers API" />
+<meta property="twitter:description" content="Query Celo transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
+</head>
+
 # Transfers
 
 Celo `transfers` API allows you to retrieve currency or token transfers from Celo Blockchain.
@@ -111,4 +132,12 @@ Data retrieved using `transfers` can be filtered using following arguments:
 - `receiver`: returns receiver of a particular transfer
 - `sender`: returns sender of a particular transfer
 - `success`: returns boolean value for success of a particular transfer
-- `transaction`: returns details of transaction in which a particular transfer 
+- `transaction`: returns details of transaction in which a particular transfer
+
+## Related Resources
+
+- [Celo schema overview](https://docs.bitquery.io/v1/docs/Schema/celo/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Celo Coinpath API](https://docs.bitquery.io/v1/docs/Schema/celo/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

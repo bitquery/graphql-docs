@@ -1,5 +1,6 @@
 ---
 title: "Avalanche Transfers API"
+description: "Query AVAX and token transfers on Avalanche."
 ---
 
 <head>
@@ -155,3 +156,12 @@ query ($network: EthereumNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTim
 `success`: Whether the transfer was successful.
 
 `entityId`: The ID of the transfer.
+
+## Related Resources
+
+- [Avalanche schema overview](https://docs.bitquery.io/v1/docs/Schema/Avalanche/overview)
+- [Avalanche API examples](https://docs.bitquery.io/v1/docs/Examples/avalanche/avax-trades-api)
+- [Coinpath (Avalanche)](https://docs.bitquery.io/v1/docs/Schema/Avalanche/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

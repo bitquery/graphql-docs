@@ -1,3 +1,24 @@
+---
+title: "Celo Active Addresses API"
+description: "Query Celo active addresses data using Bitquery GraphQL API. Get active address counts and time-bucketed activity."
+keywords: ["Celo API", "Celo Active Addresses", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Celo Active Addresses API"/>
+<meta name="description" content="Query Celo active addresses data using Bitquery GraphQL API. Get active address counts and time-bucketed activity."/>
+<meta name="keywords" content="Celo API, Celo Active Addresses, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Celo Active Addresses API" />
+<meta property="og:description" content="Query Celo active addresses data using Bitquery GraphQL API. Get active address counts and time-bucketed activity." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Celo Active Addresses API" />
+<meta property="twitter:description" content="Query Celo active addresses data using Bitquery GraphQL API. Get active address counts and time-bucketed activity." />
+</head>
+
 # Active Addresses
 
 The `activeAddresses` field allows us to retrieve details about the active addresses from the Celo blockchain.
@@ -40,3 +61,11 @@ The following are available fields for the `activeAddresses`:
 -   `address`: returns the address and its annotation.
 -   `count`: returns the aggregate count of active addresses.
 -   `countBigInt`: returns the aggregate count of active addresses in `BigInt` format.
+
+## Related Resources
+
+- [Celo schema overview](https://docs.bitquery.io/v1/docs/Schema/celo/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Celo Coinpath API](https://docs.bitquery.io/v1/docs/Schema/celo/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

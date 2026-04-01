@@ -1,3 +1,32 @@
+---
+sidebar_position: 10
+title: "Bitquery GraphQL V1 vs V2 APIs — Endpoints & Features"
+description: "Compare Bitquery V1 and V2 Streaming APIs: endpoints, real-time data, WebSockets, supported chains, NFTs, traces, and when to use each API."
+keywords:
+  [
+    Bitquery V1 vs V2,
+    Streaming API,
+    GraphQL endpoint,
+    WebSocket subscriptions,
+    blockchain API migration,
+  ]
+---
+
+<head>
+<meta name="title" content="Bitquery GraphQL V1 vs V2 APIs — Endpoints & Features"/>
+<meta name="description" content="Compare Bitquery V1 and V2 Streaming APIs: endpoints, real-time data, WebSockets, supported chains, NFTs, traces, and when to use each API."/>
+<meta name="keywords" content="Bitquery V1 vs V2, Streaming API, GraphQL endpoint, WebSocket subscriptions, blockchain API migration"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Bitquery GraphQL V1 vs V2 APIs — Endpoints & Features" />
+<meta property="og:description" content="Compare Bitquery V1 and V2 Streaming APIs: endpoints, real-time data, WebSockets, supported chains, NFTs, traces, and when to use each API." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Bitquery GraphQL V1 vs V2 APIs — Endpoints & Features" />
+<meta property="twitter:description" content="Compare Bitquery V1 and V2 Streaming APIs: endpoints, real-time data, WebSockets, supported chains, NFTs, traces, and when to use each API." />
+</head>
+
 # Difference between Bitquery GraphQL V1 and V2 APIs
 
 Today we will explain the difference between our V1 and V2 APIs. Let’s start with naming; we call our V2 APIs as Streaming APIs. Additionally, there is also a difference in the endpoint.
@@ -75,3 +104,11 @@ We are very excited to see enable more features in our Streaming APIs. Here are 
 * [**Data in the cloud** ](https://bitquery.io/products/streaming)— This is our new product, which uses streaming internally, using which we will allow complete historical and Real-time data through AWS, Snowflake, Google, and other Cloud vendors.
 
 If you have questions about our APIs, please check out [Telegram](https://t.me/bloxy_info), and the [forum](https://community.bitquery.io/).
+
+## Related Resources
+
+- [Bitquery V1 documentation overview](https://docs.bitquery.io/v1/docs/intro)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Supported blockchains (V1)](https://docs.bitquery.io/v1/docs/graphql-ide/supported-blockchains)
+- [Getting an API access token](https://docs.bitquery.io/v1/docs/graphql-ide/apikey)
+- [Basic structure of a GraphQL query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)

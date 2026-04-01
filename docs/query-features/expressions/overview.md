@@ -1,6 +1,24 @@
 ---
 sidebar_position: 1
+title: "Expressions in Bitquery GraphQL API"
+description: "Define custom calculated fields with expression() in Bitquery V1 GraphQL, including limitBy and derived metrics."
+keywords: [Bitquery, GraphQL, expressions, expression(), calculated fields]
 ---
+
+<head>
+<meta name="title" content="Expressions in Bitquery GraphQL API"/>
+<meta name="description" content="Define custom calculated fields with expression() in Bitquery V1 GraphQL, including limitBy and derived metrics."/>
+<meta name="keywords" content="Bitquery, GraphQL, expressions, expression(), calculated fields"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Expressions in Bitquery GraphQL API" />
+<meta property="og:description" content="Define custom calculated fields with expression() in Bitquery V1 GraphQL, including limitBy and derived metrics." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Expressions in Bitquery GraphQL API" />
+<meta property="twitter:description" content="Define custom calculated fields with expression() in Bitquery V1 GraphQL, including limitBy and derived metrics." />
+</head>
 
 # Expressions
 
@@ -97,3 +115,11 @@ The `limitby` field can be used to limit the results of a query to a specific nu
   }
 }
 ```
+
+## Related Resources
+
+- [Bitquery API FAQ](https://docs.bitquery.io/v1/docs/building-queries/FAQ)
+- [Limits and limitBy](https://docs.bitquery.io/v1/docs/query-features/filtering/limits)
+- [Aggregation overview](https://docs.bitquery.io/v1/docs/query-features/aggregation/aggregation)
+- [Metrics in Bitquery GraphQL API](https://docs.bitquery.io/v1/docs/query-features/Metrics)
+- [Introduction](https://docs.bitquery.io/v1/docs/intro)

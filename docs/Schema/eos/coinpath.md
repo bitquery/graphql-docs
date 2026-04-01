@@ -1,3 +1,24 @@
+---
+title: "EOS Coinpath API"
+description: "Query EOS coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."
+keywords: ["EOS API", "EOS Coinpath", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="EOS Coinpath API"/>
+<meta name="description" content="Query EOS coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."/>
+<meta name="keywords" content="EOS API, EOS Coinpath, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="EOS Coinpath API" />
+<meta property="og:description" content="Query EOS coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="EOS Coinpath API" />
+<meta property="twitter:description" content="Query EOS coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
+</head>
+
 # EOS Coinpath
 
 The EOS Coinpath API allows you to get the money flow for an address on the EOS blockchain. You can track any levels of fund movement with this API. This is a very useful API for crypto investigations.
@@ -180,3 +201,10 @@ query ($address: String!, $currency: String!, $from: ISO8601DateTime, $till: ISO
 - **depth** The depth of the coinpath.
 - **count** The number of transactions in the coinpath.
 - **block** The block in which the first transaction in the coinpath was included.
+
+## Related Resources
+
+- [EOS schema overview](https://docs.bitquery.io/v1/docs/Schema/eos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

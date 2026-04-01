@@ -1,5 +1,6 @@
 ---
 title: BNB Coinpath API
+description: "Track fund flows up to any depth on BNB Smart Chain with coinpath."
 ---
 
 <head>
@@ -56,3 +57,12 @@ The following are available fields for the `coinpath`:
 - `sender`: returns information about the sender.
 - `transaction`: returns transaction details.
 - `transactions`: returns attributes of transactions.
+
+## Related Resources
+
+- [BNB Smart Chain schema overview](https://docs.bitquery.io/v1/docs/Schema/binance_smart_chain/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath (BNB Smart Chain)](https://docs.bitquery.io/v1/docs/Schema/binance_smart_chain/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

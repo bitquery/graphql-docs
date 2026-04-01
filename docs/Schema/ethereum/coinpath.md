@@ -1,5 +1,6 @@
 ---
 title: "Ethereum Coinpath API"
+description: "Retrieve detailed money flow information using the coinpath API. Filter by currency, date, sender, receiver, and more."
 ---
 
 <head>
@@ -63,3 +64,11 @@ The following are available fields for the `coinpath`:
 - `sender`: returns information about the sender.
 - `transaction`:  returns transaction details.
 - `transactions`: returns attributes of transactions.
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath (Ethereum)](https://docs.bitquery.io/v1/docs/Schema/ethereum/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

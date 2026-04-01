@@ -1,3 +1,24 @@
+---
+title: "Cronos Transfers API"
+description: "Query Cronos transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."
+keywords: ["Cronos API", "Cronos Transfers", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Cronos Transfers API"/>
+<meta name="description" content="Query Cronos transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."/>
+<meta name="keywords" content="Cronos API, Cronos Transfers, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cronos Transfers API" />
+<meta property="og:description" content="Query Cronos transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Cronos Transfers API" />
+<meta property="twitter:description" content="Query Cronos transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
+</head>
+
 # Transfers
 
 Bitquery `transfers` API allows you to retrieve currency or token transfers from cronos Blockchain.
@@ -111,4 +132,12 @@ Data retrieved using `transfers` can be filtered using following arguments:
 - `receiver`: returns receiver of a particular transfer
 - `sender`: returns sender of a particular transfer
 - `success`: returns boolean value for success of a particular transfer
-- `transaction`: returns details of transaction in which a particular transfer 
+- `transaction`: returns details of transaction in which a particular transfer
+
+## Related Resources
+
+- [Cronos schema overview](https://docs.bitquery.io/v1/docs/Schema/Cronos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cronos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/Cronos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

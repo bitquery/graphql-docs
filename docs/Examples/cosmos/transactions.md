@@ -1,3 +1,24 @@
+---
+title: "Cosmos Transactions API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Cosmos transactions. Get fees, gas, signers, and raw transaction data."
+keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
+---
+
+<head>
+<meta name="title" content="Cosmos Transactions API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries for Cosmos transactions. Get fees, gas, signers, and raw transaction data."/>
+<meta name="keywords" content="Cosmos API examples, Cosmos GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cosmos Transactions API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries for Cosmos transactions. Get fees, gas, signers, and raw transaction data." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Cosmos Transactions API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries for Cosmos transactions. Get fees, gas, signers, and raw transaction data." />
+</head>
+
 # Transactions API
 
 Our Cosmos Transactions API provides information related to transactions created on Cosmos Blockchain.
@@ -68,5 +89,13 @@ This query retrieves transaction details based on a specific transaction hash. I
 ```
 
 This query retrieves transactions from a specific date, filtered by a particular signer's address. It retrieves information including the block's height and timestamp of each transaction, transaction fee, details about the fee currency including its name and address, gas used, transaction index, raw transaction data, signer's address, and transaction type.
+
+## Related Resources
+
+- [Cosmos schema overview](https://docs.bitquery.io/v1/docs/Schema/cosmos/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Cosmos transfers examples](https://docs.bitquery.io/v1/docs/Examples/cosmos/transfers)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
 
 

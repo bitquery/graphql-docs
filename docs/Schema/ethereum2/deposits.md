@@ -1,5 +1,6 @@
 ---
 title: ETH2 Deposits API
+description: "Query validator deposits on the Beacon Chain."
 ---
 
 <head>
@@ -116,3 +117,12 @@ query ($network: Ethereum2Network!, $limit: Int!, $offset: Int!) {
 `depositIndex`: This field contains the index of the deposit in the block.
 
 `height`: This field specifies the height of the block that the deposits should be returned for.
+
+## Related Resources
+
+- [Beacon Chain schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum2/overview)
+- [ETH2 examples](https://docs.bitquery.io/v1/docs/Examples/Beacon%20Chain%20Examples/eth2_examples)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+- [Ethereum execution layer schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+

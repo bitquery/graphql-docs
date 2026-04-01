@@ -1,5 +1,6 @@
 ---
 title: Bitcoin Address Stats API
+description: "Get address balance and history on the Bitcoin blockchain. Also, get address balance and history for tokens on the Bitcoin blockchain."
 ---
 
 <head>
@@ -55,3 +56,11 @@ Here is an example that demonstrates how to retrieve statistics about a specific
 </details>
 
 -   `address`: Returns statistics for the blockchain address
+
+## Related Resources
+
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/Examples/bitcoin)
+- [Coinpath (Bitcoin)](https://docs.bitquery.io/v1/docs/Schema/bitcoin/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

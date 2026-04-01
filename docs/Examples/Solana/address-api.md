@@ -1,3 +1,24 @@
+---
+title: "Solana Address API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Solana addresses. Get balances, annotations, and multi-address lookups."
+keywords: [Solana API examples, Solana GraphQL queries, Bitquery]
+---
+
+<head>
+<meta name="title" content="Solana Address API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries for Solana addresses. Get balances, annotations, and multi-address lookups."/>
+<meta name="keywords" content="Solana API examples, Solana GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Solana Address API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries for Solana addresses. Get balances, annotations, and multi-address lookups." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Solana Address API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries for Solana addresses. Get balances, annotations, and multi-address lookups." />
+</head>
+
 # Solana Address API
 
 ## Latest Balance of an address
@@ -33,3 +54,11 @@ query MyQuery {
   }
 }
 ```
+
+## Related Resources
+
+- [Solana schema overview](https://docs.bitquery.io/v1/docs/Schema/solana/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Solana transfers examples](https://docs.bitquery.io/v1/docs/Examples/Solana/transfers)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

@@ -1,5 +1,6 @@
 ---
 title: Bitcoin OmniTransactions API
+description: "Get information on Omni layer transactions and wallets on the Bitcoin blockchain. Also, get information on tokens or NFTs on the Bitcoin blockchain."
 ---
 
 <head>
@@ -95,3 +96,11 @@ The following are available fields for the `omniTransactions`:
 -   `typeInt`: returns type as Int
 -   `valid`:
 -   `version`: returns version
+
+## Related Resources
+
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/Examples/bitcoin)
+- [Coinpath (Bitcoin)](https://docs.bitquery.io/v1/docs/Schema/bitcoin/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

@@ -1,3 +1,24 @@
+---
+title: "Elrond Operations API"
+description: "Query Elrond operations data using Bitquery GraphQL API. Get chain operations, types, and operation details."
+keywords: ["Elrond API", "Elrond Operations", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Elrond Operations API"/>
+<meta name="description" content="Query Elrond operations data using Bitquery GraphQL API. Get chain operations, types, and operation details."/>
+<meta name="keywords" content="Elrond API, Elrond Operations, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Elrond Operations API" />
+<meta property="og:description" content="Query Elrond operations data using Bitquery GraphQL API. Get chain operations, types, and operation details." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Elrond Operations API" />
+<meta property="twitter:description" content="Query Elrond operations data using Bitquery GraphQL API. Get chain operations, types, and operation details." />
+</head>
+
 # MultiversX Operations API
 
 The MultiversX Operations API allows you to query information about operations on the MultiversX blockchain. You can use this API to get information about the sender, receiver, type, action, and other details of an operation.
@@ -90,3 +111,11 @@ query ($network: ElrondNetwork!,  $from: ISO8601DateTime, $till: ISO8601DateTime
   - `receiverBlockHash`: The hash of the block that received the miniblock.
   - `receiverShard`: The shard where the block that received the miniblock resides.
   - `type`: The type of the miniblock.
+
+## Related Resources
+
+- [Elrond schema overview](https://docs.bitquery.io/v1/docs/Schema/elrond/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Elrond Coinpath API](https://docs.bitquery.io/v1/docs/Schema/elrond/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

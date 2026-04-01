@@ -1,5 +1,6 @@
 ---
 title: Ripple Transactions API
+description: "Query XRP Ledger transactions and outcomes."
 ---
 
 <head>
@@ -104,3 +105,12 @@ query ($from: ISO8601DateTime, $till: ISO8601DateTime) {
 - `txSigners`: The signers of the transaction.
 - `type`: The type of the transaction.
 - `timestamp`: The timestamp of the transaction.
+
+## Related Resources
+
+- [XRP Ledger schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Ripple API examples](https://docs.bitquery.io/v1/docs/Examples/ripple)
+- [Coinpath (XRP Ledger)](https://docs.bitquery.io/v1/docs/Schema/ripple/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

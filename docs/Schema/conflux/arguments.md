@@ -1,3 +1,24 @@
+---
+title: "Conflux Arguments API"
+description: "Query Conflux GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."
+keywords: ["Conflux API", "Conflux Arguments", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Conflux Arguments API"/>
+<meta name="description" content="Query Conflux GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."/>
+<meta name="keywords" content="Conflux API, Conflux Arguments, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Conflux Arguments API" />
+<meta property="og:description" content="Query Conflux GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Conflux Arguments API" />
+<meta property="twitter:description" content="Query Conflux GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema." />
+</head>
+
 # Conflux Arguments API
 
 Bitquery's  Conflux Arguments API gives you information on the arguments passed during on chain updates to functions. Below are the fields in the schema:
@@ -82,3 +103,11 @@ The following are available fields for the `arguments`:
 - `success`:
 - `transaction`: returns transaction information
 - `value`: returns value of method or event argument
+
+## Related Resources
+
+- [Conflux schema overview](https://docs.bitquery.io/v1/docs/Schema/conflux/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Conflux Coinpath API](https://docs.bitquery.io/v1/docs/Schema/conflux/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

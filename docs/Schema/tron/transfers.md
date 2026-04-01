@@ -1,5 +1,6 @@
 ---
 title: Tron Transfers API
+description: "Query TRC-20 and native transfers on Tron."
 ---
 
 <head>
@@ -97,3 +98,12 @@ Here is an example that demonstrates how to fetch transfers from a particular bl
 - `txFrom`: returns transaction from address
 - `txHash`: returns transaction hash
 - `txTo`: returns transaction to address
+
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Tron API examples](https://docs.bitquery.io/v1/docs/Examples/tron)
+- [Coinpath (Tron)](https://docs.bitquery.io/v1/docs/Schema/tron/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

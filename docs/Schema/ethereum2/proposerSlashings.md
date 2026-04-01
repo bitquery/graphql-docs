@@ -1,5 +1,6 @@
 ---
 title: ETH2 Proposer Slashings API
+description: "Query proposer slashing evidence on the Beacon Chain."
 ---
 
 <head>
@@ -142,3 +143,12 @@ query ($network: Ethereum2Network!) {
 `signature`: The signature of the slashing.
 
 `slot`: The slot of the slashing.
+
+## Related Resources
+
+- [Beacon Chain schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum2/overview)
+- [ETH2 examples](https://docs.bitquery.io/v1/docs/Examples/Beacon%20Chain%20Examples/eth2_examples)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+- [Ethereum execution layer schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+

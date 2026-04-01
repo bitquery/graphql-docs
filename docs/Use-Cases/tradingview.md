@@ -1,6 +1,24 @@
 ---
+title: "TradingView Charts with Bitquery API — Integration Guide"
 sidebar_position: 1
+description: "Build candlestick charts for DEX token data using Bitquery GraphQL, React, Lightweight Charts, and Ethereum dexTrades—includes WETH pricing and OHLC aggregation."
+keywords: [TradingView, Lightweight Charts, Bitquery API, DEX, Ethereum, React, blockchain charts]
 ---
+
+<head>
+<meta name="title" content="TradingView Charts with Bitquery API — Integration Guide"/>
+<meta name="description" content="Build candlestick charts for DEX token data using Bitquery GraphQL, React, Lightweight Charts, and Ethereum dexTrades—includes WETH pricing and OHLC aggregation."/>
+<meta name="keywords" content="TradingView, Lightweight Charts, Bitquery API, DEX, Ethereum, React, blockchain charts"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="TradingView Charts with Bitquery API — Integration Guide" />
+<meta property="og:description" content="Build candlestick charts for DEX token data using Bitquery GraphQL, React, Lightweight Charts, and Ethereum dexTrades—includes WETH pricing and OHLC aggregation." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="TradingView Charts with Bitquery API — Integration Guide" />
+<meta property="twitter:description" content="Build candlestick charts for DEX token data using Bitquery GraphQL, React, Lightweight Charts, and Ethereum dexTrades—includes WETH pricing and OHLC aggregation." />
+</head>
 
 # Build a tradingview chart app for blockchain data
 
@@ -281,3 +299,11 @@ This is how it will look finally!
 ![chart](/img/tv.png)
 
 The full code is available in this repo here https://github.com/bitquery/Tradingview-Application
+
+## Related Resources
+
+- [Bitquery documentation home](https://docs.bitquery.io/v1/docs/intro)
+- [How to start with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [React tutorial — Bitquery APIs](https://docs.bitquery.io/v1/docs/Use-Cases/react-example)
+- [Coinpath explained — overview](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)

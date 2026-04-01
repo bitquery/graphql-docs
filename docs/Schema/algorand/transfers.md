@@ -1,3 +1,24 @@
+---
+title: "Algorand Transfers API"
+description: "Query Algorand transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."
+keywords: ["Algorand API", "Algorand Transfers", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Algorand Transfers API"/>
+<meta name="description" content="Query Algorand transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."/>
+<meta name="keywords" content="Algorand API, Algorand Transfers, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Algorand Transfers API" />
+<meta property="og:description" content="Query Algorand transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Algorand Transfers API" />
+<meta property="twitter:description" content="Query Algorand transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
+</head>
+
 # Transfers
 
 The `transfers` field allows us to fetch details about token transfers from the Algorand blockchain.
@@ -79,3 +100,11 @@ Transfer data can be filtered using the following arguments
 -   `sender`: returns address and annotation for sender of the transfer
 -   `transaction`: returns details of transaction in which transfer occurred 
 -   `transferType`: returns transfer type
+
+## Related Resources
+
+- [Algorand schema overview](https://docs.bitquery.io/v1/docs/Schema/algorand/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Algorand Coinpath API](https://docs.bitquery.io/v1/docs/Schema/algorand/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

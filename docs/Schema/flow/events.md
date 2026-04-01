@@ -1,3 +1,24 @@
+---
+title: "Flow Events API"
+description: "Query Flow events data using Bitquery GraphQL API. Get on-chain events, types, and payloads."
+keywords: ["Flow API", "Flow Events", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Flow Events API"/>
+<meta name="description" content="Query Flow events data using Bitquery GraphQL API. Get on-chain events, types, and payloads."/>
+<meta name="keywords" content="Flow API, Flow Events, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Flow Events API" />
+<meta property="og:description" content="Query Flow events data using Bitquery GraphQL API. Get on-chain events, types, and payloads." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Flow Events API" />
+<meta property="twitter:description" content="Query Flow events data using Bitquery GraphQL API. Get on-chain events, types, and payloads." />
+</head>
+
 # Events
 
 The Flow Events API provides information about events emiited on the Flow Blockchain.
@@ -38,3 +59,11 @@ The Flow Events API provides information about events emiited on the Flow Blockc
 -   time: returns time when transaction was created
 -   transaction: returns details of transaction
 -   type: returns type of event
+
+## Related Resources
+
+- [Flow schema overview](https://docs.bitquery.io/v1/docs/Schema/flow/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Flow Coinpath API](https://docs.bitquery.io/v1/docs/Schema/flow/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

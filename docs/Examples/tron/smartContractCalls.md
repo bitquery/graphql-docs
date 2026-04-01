@@ -1,4 +1,26 @@
+---
+title: "Tron Smart Contract Calls API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Tron smart contract calls. Filter by method, contract, energy usage, and arguments."
+keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
+---
+
+<head>
+<meta name="title" content="Tron Smart Contract Calls API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries for Tron smart contract calls. Filter by method, contract, energy usage, and arguments."/>
+<meta name="keywords" content="Tron API examples, Tron GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tron Smart Contract Calls API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries for Tron smart contract calls. Filter by method, contract, energy usage, and arguments." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Tron Smart Contract Calls API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries for Tron smart contract calls. Filter by method, contract, energy usage, and arguments." />
+</head>
+
 # Smart Contract Calls API
+
 
 Our Tron Smart Contract Calls API provides detailed information about smart contract calls executed on the Tron Blockchain.
 
@@ -127,3 +149,11 @@ This query retrieves the latest 10 smart contract calls on the Tron network that
 ```
 
 This query retrieves the latest 10 smart contract calls on the Tron network that occurred after July 31, 2023, specifically for the smart contract "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t" and the method "Transfer". It provides details such as call amount, arguments, block height and timestamp, energy usage, net usage for the specified method, smart contract address, method name and signature, and transaction hash.
+
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Tron smart contract events examples](https://docs.bitquery.io/v1/docs/Examples/tron/smartContractEvents)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

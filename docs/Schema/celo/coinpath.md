@@ -1,3 +1,23 @@
+---
+title: "Celo Coinpath API"
+description: "Query Celo coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."
+keywords: ["Celo API", "Celo Coinpath", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Celo Coinpath API"/>
+<meta name="description" content="Query Celo coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."/>
+<meta name="keywords" content="Celo API, Celo Coinpath, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Celo Coinpath API" />
+<meta property="og:description" content="Query Celo coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Celo Coinpath API" />
+<meta property="twitter:description" content="Query Celo coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
+</head>
 
 # Coinpath
 
@@ -36,3 +56,10 @@ The following are available fields for the `coinpath`:
 - `sender`: returns information about the sender.
 - `transaction`:  returns transaction details.
 - `transactions`: returns attributes of transactions.
+
+## Related Resources
+
+- [Celo schema overview](https://docs.bitquery.io/v1/docs/Schema/celo/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

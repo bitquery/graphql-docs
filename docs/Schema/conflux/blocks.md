@@ -1,3 +1,24 @@
+---
+title: "Conflux Blocks API"
+description: "Query Conflux blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."
+keywords: ["Conflux API", "Conflux Blocks", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Conflux Blocks API"/>
+<meta name="description" content="Query Conflux blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."/>
+<meta name="keywords" content="Conflux API, Conflux Blocks, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Conflux Blocks API" />
+<meta property="og:description" content="Query Conflux blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Conflux Blocks API" />
+<meta property="twitter:description" content="Query Conflux blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata." />
+</head>
+
 # Conflux Blocks API
 
 Bitquery's Conflux blocks API provides information on blocks in the Conflux chain. Below are the fields in the schema:
@@ -67,3 +88,11 @@ query ($network: ConfluxNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
 `powerQuality`: The PoW quality of the block.
 
 `blame`: The blame score of the block.
+
+## Related Resources
+
+- [Conflux schema overview](https://docs.bitquery.io/v1/docs/Schema/conflux/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Conflux Coinpath API](https://docs.bitquery.io/v1/docs/Schema/conflux/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

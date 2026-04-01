@@ -1,5 +1,6 @@
 ---
 title: Dogecoin OmniTransactions API
+description: "Query Omni layer transactions on Dogecoin."
 ---
 
 <head>
@@ -95,3 +96,12 @@ The following are available fields for the `omniTransactions`:
 -   `typeInt`: returns type as Int
 -   `valid`:
 -   `version`: returns version
+
+## Related Resources
+
+- [Dogecoin schema overview](https://docs.bitquery.io/v1/docs/Schema/Dogecoin/overview)
+- [Dogecoin API examples](https://docs.bitquery.io/v1/docs/Examples/Dogecoin)
+- [Coinpath (Dogecoin)](https://docs.bitquery.io/v1/docs/Schema/Dogecoin/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

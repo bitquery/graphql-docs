@@ -1,3 +1,24 @@
+---
+title: "Hedera Inputs API"
+description: "Query Hedera inputs data using Bitquery GraphQL API. Get transaction inputs, authorizers, and signatures context."
+keywords: ["Hedera API", "Hedera Inputs", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Hedera Inputs API"/>
+<meta name="description" content="Query Hedera inputs data using Bitquery GraphQL API. Get transaction inputs, authorizers, and signatures context."/>
+<meta name="keywords" content="Hedera API, Hedera Inputs, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Hedera Inputs API" />
+<meta property="og:description" content="Query Hedera inputs data using Bitquery GraphQL API. Get transaction inputs, authorizers, and signatures context." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Hedera Inputs API" />
+<meta property="twitter:description" content="Query Hedera inputs data using Bitquery GraphQL API. Get transaction inputs, authorizers, and signatures context." />
+</head>
+
 # Inputs
 
 The Inputs API provides information about transaction inputs on the Hedera Blockchain.
@@ -90,3 +111,11 @@ You can filter your input data using the following filters:
 -   `transactionValidDurationInSec`: Returns the transaction valid duration in seconds.
 -   `transferEntity`: Returns details about the transfer account.
 -   `validStart`: Returns the start timestamp of the valid duration for the transaction.
+
+## Related Resources
+
+- [Hedera schema overview](https://docs.bitquery.io/v1/docs/Schema/hedera/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Hedera Coinpath API](https://docs.bitquery.io/v1/docs/Schema/hedera/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

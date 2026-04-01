@@ -1,3 +1,24 @@
+---
+title: "Cronos Arguments API"
+description: "Query Cronos GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."
+keywords: ["Cronos API", "Cronos Arguments", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Cronos Arguments API"/>
+<meta name="description" content="Query Cronos GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."/>
+<meta name="keywords" content="Cronos API, Cronos Arguments, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cronos Arguments API" />
+<meta property="og:description" content="Query Cronos GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Cronos Arguments API" />
+<meta property="twitter:description" content="Query Cronos GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema." />
+</head>
+
 # Arguments
 
 The `arguments` field allows us to fetch information about arguments of smart contract calls and evetns.
@@ -70,3 +91,11 @@ The following are available fields for the `arguments`:
 - `success`:
 - `transaction`: returns transaction information
 - `value`: returns value of method or event argument
+
+## Related Resources
+
+- [Cronos schema overview](https://docs.bitquery.io/v1/docs/Schema/Cronos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cronos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/Cronos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

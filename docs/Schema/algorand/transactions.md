@@ -1,3 +1,24 @@
+---
+title: "Algorand Transactions API"
+description: "Query Algorand transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+keywords: ["Algorand API", "Algorand Transactions", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Algorand Transactions API"/>
+<meta name="description" content="Query Algorand transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."/>
+<meta name="keywords" content="Algorand API, Algorand Transactions, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Algorand Transactions API" />
+<meta property="og:description" content="Query Algorand transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Algorand Transactions API" />
+<meta property="twitter:description" content="Query Algorand transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+</head>
+
 # Transactions
 
 The Algorand Transactions API can be used to get information about transactions, such as the sender, the recipient, the amount, the fee, and the timestamp. Here are the fields in the schema.
@@ -109,3 +130,11 @@ group: A filter that groups the results by a specific field.
 `poolerror`: The pool error associated with the transaction.
 
 `subtype`: The subtype of the transaction.
+
+## Related Resources
+
+- [Algorand schema overview](https://docs.bitquery.io/v1/docs/Schema/algorand/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Algorand Coinpath API](https://docs.bitquery.io/v1/docs/Schema/algorand/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

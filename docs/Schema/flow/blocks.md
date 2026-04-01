@@ -1,3 +1,24 @@
+---
+title: "Flow Blocks API"
+description: "Query Flow blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."
+keywords: ["Flow API", "Flow Blocks", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Flow Blocks API"/>
+<meta name="description" content="Query Flow blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."/>
+<meta name="keywords" content="Flow API, Flow Blocks, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Flow Blocks API" />
+<meta property="og:description" content="Query Flow blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Flow Blocks API" />
+<meta property="twitter:description" content="Query Flow blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata." />
+</head>
+
 # Blocks
 
 The Flow Blocks API provides detailed information about blocks created on the Flow Blockchain.
@@ -36,3 +57,11 @@ You can filter the blocks using the following fields:
 -   parentBlockId: returns id/hash of parent block
 -   time: returns time when block was created
 -   transactionsCount: returns transaction count of block
+
+## Related Resources
+
+- [Flow schema overview](https://docs.bitquery.io/v1/docs/Schema/flow/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Flow Coinpath API](https://docs.bitquery.io/v1/docs/Schema/flow/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

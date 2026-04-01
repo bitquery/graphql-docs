@@ -1,5 +1,6 @@
 ---
 title: "Ethereum Smart Contract Events API"
+description: "Get Ethereum smart contract event data using the Events API. Explore events in depth with detailed information."
 ---
 
 <head>
@@ -96,3 +97,11 @@ Smart Contract Events can be filtered using following arguments:
 - `smartContract`: returns details of smart contract on which event happened
 - `smartContractEvent`: returns details about smart contract event like name, signature, and signature hash
 - `transaction`: returns details about transaction which emitted  smart contract event
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath (Ethereum)](https://docs.bitquery.io/v1/docs/Schema/ethereum/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

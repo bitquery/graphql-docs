@@ -1,3 +1,24 @@
+---
+title: "Filecoin Blocks API"
+description: "Query Filecoin blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."
+keywords: ["Filecoin API", "Filecoin Blocks", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Filecoin Blocks API"/>
+<meta name="description" content="Query Filecoin blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."/>
+<meta name="keywords" content="Filecoin API, Filecoin Blocks, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Filecoin Blocks API" />
+<meta property="og:description" content="Query Filecoin blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Filecoin Blocks API" />
+<meta property="twitter:description" content="Query Filecoin blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata." />
+</head>
+
 # Blocks
 
 The Filecoin Blocks API allows you to query information about blocks on the Filecoin blockchain.
@@ -75,3 +96,11 @@ query ($network: FilecoinNetwork!) {
 `height`: The height of the block.
 
 `index`: The index of the block in the chain.
+
+## Related Resources
+
+- [Filecoin schema overview](https://docs.bitquery.io/v1/docs/Schema/filecoin/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Filecoin Coinpath API](https://docs.bitquery.io/v1/docs/Schema/filecoin/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

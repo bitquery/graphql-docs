@@ -1,6 +1,32 @@
 ---
 sidebar_position: 2
+title: "How to Use the Bitquery GraphQL IDE"
+description: "Learn the Bitquery GraphQL IDE: visual query builder, writing queries, saving and sharing, access tokens, billing, and API usage from your dashboard."
+keywords:
+  [
+    Bitquery IDE,
+    GraphQL IDE,
+    query builder,
+    save queries,
+    OAuth token,
+    API dashboard,
+  ]
 ---
+
+<head>
+<meta name="title" content="How to Use the Bitquery GraphQL IDE"/>
+<meta name="description" content="Learn the Bitquery GraphQL IDE: visual query builder, writing queries, saving and sharing, access tokens, billing, and API usage from your dashboard."/>
+<meta name="keywords" content="Bitquery IDE, GraphQL IDE, query builder, save queries, OAuth token, API dashboard"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="How to Use the Bitquery GraphQL IDE" />
+<meta property="og:description" content="Learn the Bitquery GraphQL IDE: visual query builder, writing queries, saving and sharing, access tokens, billing, and API usage from your dashboard." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="How to Use the Bitquery GraphQL IDE" />
+<meta property="twitter:description" content="Learn the Bitquery GraphQL IDE: visual query builder, writing queries, saving and sharing, access tokens, billing, and API usage from your dashboard." />
+</head>
 
 # How to use the IDE ?
 
@@ -56,3 +82,11 @@ You can find which queries have consumed substantial points within the "Queries"
 ## What if I don't want to use IDE?
 
 If the IDE isn't your preferred route, you can still directly access our API from your application using your Access Token.
+
+## Related Resources
+
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [GraphQL query builder guide](https://docs.bitquery.io/v1/docs/graphql-ide/query-builder)
+- [API access token setup](https://docs.bitquery.io/v1/docs/graphql-ide/apikey)
+- [Account dashboard overview](https://docs.bitquery.io/v1/docs/graphql-ide/account)
+- [Use Bitquery APIs in your app](https://docs.bitquery.io/v1/docs/graphql-ide/use-it-in-your-application)

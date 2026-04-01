@@ -1,3 +1,24 @@
+---
+title: "Cardano Inputs and Outputs API"
+description: "Query Cardano inputs outputs data using Bitquery GraphQL API. Get transaction inputs, outputs, and UTXO-style movements."
+keywords: ["Cardano API", "Cardano Inputs and Outputs", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Cardano Inputs and Outputs API"/>
+<meta name="description" content="Query Cardano inputs outputs data using Bitquery GraphQL API. Get transaction inputs, outputs, and UTXO-style movements."/>
+<meta name="keywords" content="Cardano API, Cardano Inputs and Outputs, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cardano Inputs and Outputs API" />
+<meta property="og:description" content="Query Cardano inputs outputs data using Bitquery GraphQL API. Get transaction inputs, outputs, and UTXO-style movements." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Cardano Inputs and Outputs API" />
+<meta property="twitter:description" content="Query Cardano inputs outputs data using Bitquery GraphQL API. Get transaction inputs, outputs, and UTXO-style movements." />
+</head>
+
 # Inputs and Outputs
 
 The Inputs and Outputs API schema returns information about the inputs and outputs of a transaction. The schema includes the following fields:
@@ -100,3 +121,11 @@ The index of the output within the transaction.
 The amount of ADA transferred out of the output.
 
 </details>
+
+## Related Resources
+
+- [Cardano schema overview](https://docs.bitquery.io/v1/docs/Schema/cardano/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cardano Coinpath API](https://docs.bitquery.io/v1/docs/Schema/cardano/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

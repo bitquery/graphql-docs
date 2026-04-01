@@ -1,7 +1,24 @@
 ---
+title: "React App with Bitquery GraphQL API — Tutorial"
 sidebar_position: 3
-description: In this tutorial we will see how to use Bitquery APIs with ReactJS
+description: "Build a React app that shows top DEX gainers and losers using hooks, async data fetching, and the Bitquery GraphQL API for Ethereum trading data."
+keywords: [React, GraphQL, Bitquery API, DEX, Ethereum, JavaScript]
 ---
+
+<head>
+<meta name="title" content="React App with Bitquery GraphQL API — Tutorial"/>
+<meta name="description" content="Build a React app that shows top DEX gainers and losers using hooks, async data fetching, and the Bitquery GraphQL API for Ethereum trading data."/>
+<meta name="keywords" content="React, GraphQL, Bitquery API, DEX, Ethereum, JavaScript"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="React App with Bitquery GraphQL API — Tutorial" />
+<meta property="og:description" content="Build a React app that shows top DEX gainers and losers using hooks, async data fetching, and the Bitquery GraphQL API for Ethereum trading data." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="React App with Bitquery GraphQL API — Tutorial" />
+<meta property="twitter:description" content="Build a React app that shows top DEX gainers and losers using hooks, async data fetching, and the Bitquery GraphQL API for Ethereum trading data." />
+</head>
 
 # Using Bitquery APIs with ReactJS to get Top Gainers and Losers
 
@@ -213,3 +230,11 @@ export default GainersLosers;
 ```
 
 That concludes the step-by-step guide for creating the `GainersLosers` component. This component demonstrates how to fetch and display data from a V1 API, manage state with hooks, and dynamically update the UI based on user interactions.
+
+## Related Resources
+
+- [Bitquery documentation home](https://docs.bitquery.io/v1/docs/intro)
+- [How to start with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Blockchain API examples](https://docs.bitquery.io/v1/docs/Examples/overview)
+- [Coinpath explained — overview](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)

@@ -1,5 +1,6 @@
 ---
 title: Tron Address API
+description: "Look up address balances and history on Tron."
 ---
 
 <head>
@@ -52,3 +53,12 @@ Address data can be filtered using the following arguments:
 -   `balances`: returns token balance history of address
 -   `claimableRewards`: returns rewards that a witness or a user has not yet withdrawn
 -   `smartContract`: returns details is address is smart contract
+
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Tron API examples](https://docs.bitquery.io/v1/docs/Examples/tron)
+- [Coinpath (Tron)](https://docs.bitquery.io/v1/docs/Schema/tron/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

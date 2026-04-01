@@ -1,6 +1,24 @@
 ---
 sidebar_position: 2
+title: "Filter Fields in Bitquery GraphQL API"
+description: "Use method filters, date, time, uniq counts, and field combinations to narrow Bitquery blockchain and DEX queries."
+keywords: [Bitquery, GraphQL, filters, fields, uniq, transactions]
 ---
+
+<head>
+<meta name="title" content="Filter Fields in Bitquery GraphQL API"/>
+<meta name="description" content="Use method filters, date, time, uniq counts, and field combinations to narrow Bitquery blockchain and DEX queries."/>
+<meta name="keywords" content="Bitquery, GraphQL, filters, fields, uniq, transactions"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Filter Fields in Bitquery GraphQL API" />
+<meta property="og:description" content="Use method filters, date, time, uniq counts, and field combinations to narrow Bitquery blockchain and DEX queries." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Filter Fields in Bitquery GraphQL API" />
+<meta property="twitter:description" content="Use method filters, date, time, uniq counts, and field combinations to narrow Bitquery blockchain and DEX queries." />
+</head>
 
 # Fields
 
@@ -43,3 +61,11 @@ query MyQuery {
 
 
 ```
+
+## Related Resources
+
+- [Options filter](https://docs.bitquery.io/v1/docs/query-features/filtering/options)
+- [Limits and limitBy](https://docs.bitquery.io/v1/docs/query-features/filtering/limits)
+- [Sorting](https://docs.bitquery.io/v1/docs/query-features/filtering/sorting)
+- [Basic structure of a query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
+- [Aggregation overview](https://docs.bitquery.io/v1/docs/query-features/aggregation/aggregation)

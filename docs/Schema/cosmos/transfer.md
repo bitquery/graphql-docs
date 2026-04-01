@@ -1,3 +1,24 @@
+---
+title: "Cosmos Transfer API"
+description: "Query Cosmos transfer data using Bitquery GraphQL API. Get transfers, denoms, senders, receivers, and transaction context."
+keywords: ["Cosmos API", "Cosmos Transfer", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Cosmos Transfer API"/>
+<meta name="description" content="Query Cosmos transfer data using Bitquery GraphQL API. Get transfers, denoms, senders, receivers, and transaction context."/>
+<meta name="keywords" content="Cosmos API, Cosmos Transfer, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cosmos Transfer API" />
+<meta property="og:description" content="Query Cosmos transfer data using Bitquery GraphQL API. Get transfers, denoms, senders, receivers, and transaction context." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Cosmos Transfer API" />
+<meta property="twitter:description" content="Query Cosmos transfer data using Bitquery GraphQL API. Get transfers, denoms, senders, receivers, and transaction context." />
+</head>
+
 # Transfers
 
 The Transfers API returns information about token transfers on Cosmos network.
@@ -120,3 +141,11 @@ Here's an example that demostrates how to fetch 10 latest transfers:
 -   `value`: returns value of the transfer
 
 -   `valueDecimal`: returns value as decimal
+
+## Related Resources
+
+- [Cosmos schema overview](https://docs.bitquery.io/v1/docs/Schema/cosmos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cosmos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/cosmos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

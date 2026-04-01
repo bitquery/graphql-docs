@@ -1,3 +1,24 @@
+---
+title: "Harmony Blocks API"
+description: "Query Harmony blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."
+keywords: ["Harmony API", "Harmony Blocks", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Harmony Blocks API"/>
+<meta name="description" content="Query Harmony blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."/>
+<meta name="keywords" content="Harmony API, Harmony Blocks, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Harmony Blocks API" />
+<meta property="og:description" content="Query Harmony blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Harmony Blocks API" />
+<meta property="twitter:description" content="Query Harmony blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata." />
+</head>
+
 # Blocks
 
 The Harmony Blocks API provides information about blocks from the Harmony Blockchain.
@@ -58,3 +79,11 @@ You can filter data using any of the following fields:
 -   transactionsRoot: returns root of the transaction trie of the block
 -   unclesCount: returns count of uncles hashes
 -   viewId: returns view id
+
+## Related Resources
+
+- [Harmony schema overview](https://docs.bitquery.io/v1/docs/Schema/harmony/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Harmony Coinpath API](https://docs.bitquery.io/v1/docs/Schema/harmony/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

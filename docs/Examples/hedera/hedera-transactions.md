@@ -1,4 +1,26 @@
+---
+title: "Hedera Transactions API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Hedera consensus transactions. Get fees, timestamps, and transaction types."
+keywords: [Hedera API examples, Hedera GraphQL queries, Bitquery]
+---
+
+<head>
+<meta name="title" content="Hedera Transactions API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries for Hedera consensus transactions. Get fees, timestamps, and transaction types."/>
+<meta name="keywords" content="Hedera API examples, Hedera GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Hedera Transactions API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries for Hedera consensus transactions. Get fees, timestamps, and transaction types." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Hedera Transactions API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries for Hedera consensus transactions. Get fees, timestamps, and transaction types." />
+</head>
+
 # Hedera Transactions API
+
 
 In this section we will see how to get information on transactions on Hedera.
 
@@ -148,3 +170,11 @@ query MyQuery {
 }
 
 ```
+
+## Related Resources
+
+- [Hedera schema overview](https://docs.bitquery.io/v1/docs/Schema/hedera/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Hedera address examples](https://docs.bitquery.io/v1/docs/Examples/hedera/hedera-address)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

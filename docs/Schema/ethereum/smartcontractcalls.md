@@ -1,5 +1,6 @@
 ---
 title: "Ethereum Smart Contract Calls API"
+description: "Explore Ethereum smart contract call data. Analyze smart contract calls with detailed information."
 ---
 
 <head>
@@ -110,3 +111,11 @@ Smart Contract Calls can be filtered using following arguments:
 - `smartContractMethod`: returns details of method to which the call was made
 - `success`: returns if calls is successful or not
 - `transaction`: returns details of the transaction in which smart contract call was executed
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath (Ethereum)](https://docs.bitquery.io/v1/docs/Schema/ethereum/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

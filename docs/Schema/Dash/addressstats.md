@@ -1,5 +1,6 @@
 ---
 title: Dash Address Stats API
+description: "Query address statistics and history on Dash."
 ---
 
 <head>
@@ -56,3 +57,12 @@ Here is an example that demonstrates how to retrieve statistics about a specific
 </details>
 
 -   `address`: Returns statistics for the blockchain address
+
+## Related Resources
+
+- [Dash schema overview](https://docs.bitquery.io/v1/docs/Schema/Dash/overview)
+- [Blockchain API examples](https://docs.bitquery.io/v1/docs/Examples/overview)
+- [Coinpath (Dash)](https://docs.bitquery.io/v1/docs/Schema/Dash/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

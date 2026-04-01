@@ -1,5 +1,6 @@
 ---
 title: "Ethereum DEX API"
+description: "Get Ethereum DEX trade data with DEX Trades API. DEX data for 100+ DEX like Uniswap, Sushiswap, Curve, Balancer, and more."
 ---
 
 <head>
@@ -155,4 +156,11 @@ The following are available fields for the `dexTrades`:
 - `tradeAmount`: returns the trade amount in the base currency.
 - `tradeIndex`: returns the index of the trade in the transaction.
 - `transaction`:  returns information about the transaction in which the trade was executed.
-  
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [DEX trading examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Coinpath (Ethereum)](https://docs.bitquery.io/v1/docs/Schema/ethereum/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

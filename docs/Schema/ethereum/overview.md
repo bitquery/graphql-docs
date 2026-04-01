@@ -1,6 +1,24 @@
 ---
 sidebar_position: 1
+title: "Ethereum API — Blockchain Data Schema | Bitquery"
+description: "Access Ethereum blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more."
+keywords: [Ethereum API, Ethereum GraphQL, Ethereum blockchain data, Bitquery]
 ---
+
+<head>
+<meta name="title" content="Ethereum API — Blockchain Data Schema | Bitquery"/>
+<meta name="description" content="Access Ethereum blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more."/>
+<meta name="keywords" content="Ethereum API, Ethereum GraphQL, Ethereum blockchain data, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ethereum API — Blockchain Data Schema | Bitquery" />
+<meta property="og:description" content="Access Ethereum blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Ethereum API — Blockchain Data Schema | Bitquery" />
+<meta property="twitter:description" content="Access Ethereum blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more." />
+</head>
 
 # Overview
 
@@ -24,3 +42,11 @@ Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your Access T
 :::
 
 Let's dive in and explore the Ethereum data available through Bitquery API.
+
+## Related Resources
+
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Polygon schema overview](https://docs.bitquery.io/v1/docs/Schema/Polygon/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)

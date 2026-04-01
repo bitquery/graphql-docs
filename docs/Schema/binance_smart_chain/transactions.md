@@ -1,5 +1,6 @@
 ---
 title: BNB Transactions API
+description: "Query BNB Smart Chain transactions, senders, fees, and success status."
 ---
 
 <head>
@@ -132,3 +133,12 @@ Transactions can be filtered using following arguments:
 - `success`: returns if transaction is success or not
 - `to`: returns address to which of a particular transaction was sent
 - `txType`: returns transaction type
+
+## Related Resources
+
+- [BNB Smart Chain schema overview](https://docs.bitquery.io/v1/docs/Schema/binance_smart_chain/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath (BNB Smart Chain)](https://docs.bitquery.io/v1/docs/Schema/binance_smart_chain/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

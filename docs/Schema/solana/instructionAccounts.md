@@ -1,3 +1,24 @@
+---
+title: "Solana Instruction Accounts API"
+description: "Query Solana instruction accounts data using Bitquery GraphQL API. Get accounts referenced by each instruction."
+keywords: ["Solana API", "Solana Instruction Accounts", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Solana Instruction Accounts API"/>
+<meta name="description" content="Query Solana instruction accounts data using Bitquery GraphQL API. Get accounts referenced by each instruction."/>
+<meta name="keywords" content="Solana API, Solana Instruction Accounts, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Solana Instruction Accounts API" />
+<meta property="og:description" content="Query Solana instruction accounts data using Bitquery GraphQL API. Get accounts referenced by each instruction." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Solana Instruction Accounts API" />
+<meta property="twitter:description" content="Query Solana instruction accounts data using Bitquery GraphQL API. Get accounts referenced by each instruction." />
+</head>
+
 # InstructionAccounts
 
 This API returns information about the accounts involved in an instruction. An instruction is the smallest execution logic on Solana. One transaction can have 1 or more instructions. Below are the fields in the API:
@@ -216,3 +237,11 @@ This field filters the results by the index of the account that was affected by 
     -   **transactionIndex**
         
         This field is a unique identifier for the transaction within the block.
+
+## Related Resources
+
+- [Solana schema overview](https://docs.bitquery.io/v1/docs/Schema/solana/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Solana Coinpath API](https://docs.bitquery.io/v1/docs/Schema/solana/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

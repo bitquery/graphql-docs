@@ -1,3 +1,24 @@
+---
+title: "Cosmos Messages API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Cosmos messages. Get message types by block and message counts."
+keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
+---
+
+<head>
+<meta name="title" content="Cosmos Messages API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries for Cosmos messages. Get message types by block and message counts."/>
+<meta name="keywords" content="Cosmos API examples, Cosmos GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cosmos Messages API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries for Cosmos messages. Get message types by block and message counts." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Cosmos Messages API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries for Cosmos messages. Get message types by block and message counts." />
+</head>
+
 # Messages API
 
 Our Cosmos Messages API provides all the information related to messages generated on Cosmos Blockchain.
@@ -73,3 +94,11 @@ This query retrieves messages from the Cosmos blockchain where transactions sign
 ```
 
 This query retrieves the count of unique types of messages present in the block with a block height of 16494924 from the Cosmos blockchain. It provides information about the variety of message types contained within that specific block, helping to understand the diversity of actions or transactions taking place in that block.
+
+## Related Resources
+
+- [Cosmos schema overview](https://docs.bitquery.io/v1/docs/Schema/cosmos/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Cosmos transactions examples](https://docs.bitquery.io/v1/docs/Examples/cosmos/transactions)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

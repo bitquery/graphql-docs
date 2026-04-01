@@ -1,6 +1,25 @@
 ---
 sidebar_position: 2
+title: "EVM Arguments in Bitquery GraphQL API"
+description: "Query transaction and event arguments on Ethereum and EVM chains with smartContractEvent and argument filters."
+keywords: [Bitquery, GraphQL, EVM, arguments, smart contract events]
 ---
+
+<head>
+<meta name="title" content="EVM Arguments in Bitquery GraphQL API"/>
+<meta name="description" content="Query transaction and event arguments on Ethereum and EVM chains with smartContractEvent and argument filters."/>
+<meta name="keywords" content="Bitquery, GraphQL, EVM, arguments, smart contract events"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="EVM Arguments in Bitquery GraphQL API" />
+<meta property="og:description" content="Query transaction and event arguments on Ethereum and EVM chains with smartContractEvent and argument filters." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="EVM Arguments in Bitquery GraphQL API" />
+<meta property="twitter:description" content="Query transaction and event arguments on Ethereum and EVM chains with smartContractEvent and argument filters." />
+</head>
+
 # EVM Arguments
 
 You can use the `arguments` method with EVM chains to get arguments and values of transactions, trades and calls.
@@ -66,3 +85,11 @@ Here the arguments are completely different.
 In this example, the borrow method has six arguments: `offer.totalAmount`, `offer.minAmount`, `offer.maxAmount`, `loanAmount`, `offer.auctionDuration`, and `offer`.`expirationTime`. The argument field is used to specify the name of the argument that you want to retrieve. 
 
 In this case, the `totalAmount`, `minAmount`, `maxAmount`, `loanAmount`, `auctionDuration`, and `expirationTime` arguments are retrieved
+
+## Related Resources
+
+- [Arguments overview](https://docs.bitquery.io/v1/docs/query-features/arguments/argument)
+- [Arguments on other chains](https://docs.bitquery.io/v1/docs/query-features/arguments/Other_Chains_arguments)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [GraphQL IDE — how to start](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Filtering options](https://docs.bitquery.io/v1/docs/query-features/filtering/options)

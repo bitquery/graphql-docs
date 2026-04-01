@@ -1,5 +1,6 @@
 ---
 title: "Ethereum References API"
+description: "Filter and query reference fields linked to Ethereum smart contract arguments, calls, and events."
 ---
 
 <head>
@@ -72,3 +73,11 @@ References can be filtered using following arguments:
 - `smartContractSignature`:
 - `success`:
 - `transaction`:
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Smart contract events examples](https://docs.bitquery.io/v1/docs/Examples/smartcontractEvents/smart-contract-events-api)
+- [Coinpath (Ethereum)](https://docs.bitquery.io/v1/docs/Schema/ethereum/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

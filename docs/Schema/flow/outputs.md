@@ -1,3 +1,24 @@
+---
+title: "Flow Outputs API"
+description: "Query Flow outputs data using Bitquery GraphQL API. Get transaction outputs, amounts, and recipients."
+keywords: ["Flow API", "Flow Outputs", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Flow Outputs API"/>
+<meta name="description" content="Query Flow outputs data using Bitquery GraphQL API. Get transaction outputs, amounts, and recipients."/>
+<meta name="keywords" content="Flow API, Flow Outputs, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Flow Outputs API" />
+<meta property="og:description" content="Query Flow outputs data using Bitquery GraphQL API. Get transaction outputs, amounts, and recipients." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Flow Outputs API" />
+<meta property="twitter:description" content="Query Flow outputs data using Bitquery GraphQL API. Get transaction outputs, amounts, and recipients." />
+</head>
+
 # Outputs
 
 The Flow Outputs API provides information about the transaction outputs from the Flow Blockchain.
@@ -50,3 +71,11 @@ You can filter the outputs using the following fields:
 -   transaction: returns information of transaction
 -   transferReason: returns transfer reason like nft_transfer, fungible_token_transfer, fee
 -   type: returns type of output
+
+## Related Resources
+
+- [Flow schema overview](https://docs.bitquery.io/v1/docs/Schema/flow/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Flow Coinpath API](https://docs.bitquery.io/v1/docs/Schema/flow/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

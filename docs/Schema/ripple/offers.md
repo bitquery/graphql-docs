@@ -1,5 +1,6 @@
 ---
 title: Ripple Offers API
+description: "Query decentralized exchange offers on the XRP Ledger."
 ---
 
 <head>
@@ -179,3 +180,12 @@ query MyQuery {
     - The address of the account that created the offer.
   - **annotation**
     - A label to store any additional information about the address.
+
+## Related Resources
+
+- [XRP Ledger schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Ripple API examples](https://docs.bitquery.io/v1/docs/Examples/ripple)
+- [Coinpath (XRP Ledger)](https://docs.bitquery.io/v1/docs/Schema/ripple/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

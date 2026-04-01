@@ -1,3 +1,24 @@
+---
+title: "Celo DEX Trades API"
+description: "Query Celo DEX trades data using Bitquery GraphQL API. Get DEX swaps, pools, amounts, and trader addresses."
+keywords: ["Celo API", "Celo DEX Trades", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Celo DEX Trades API"/>
+<meta name="description" content="Query Celo DEX trades data using Bitquery GraphQL API. Get DEX swaps, pools, amounts, and trader addresses."/>
+<meta name="keywords" content="Celo API, Celo DEX Trades, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Celo DEX Trades API" />
+<meta property="og:description" content="Query Celo DEX trades data using Bitquery GraphQL API. Get DEX swaps, pools, amounts, and trader addresses." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Celo DEX Trades API" />
+<meta property="twitter:description" content="Query Celo DEX trades data using Bitquery GraphQL API. Get DEX swaps, pools, amounts, and trader addresses." />
+</head>
+
 # DEX Trades
 
 The `dexTrades` field allows us to retrieve dex trade data from Ethereum blockchain.
@@ -127,4 +148,11 @@ The following are available fields for the `dexTrades`:
 - `tradeAmount`: returns the trade amount in the base currency.
 - `tradeIndex`: returns the index of the trade in the transaction.
 - `transaction`:  returns information about the transaction in which the trade was executed.
-  
+
+## Related Resources
+
+- [Celo schema overview](https://docs.bitquery.io/v1/docs/Schema/celo/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Celo Coinpath API](https://docs.bitquery.io/v1/docs/Schema/celo/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

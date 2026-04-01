@@ -1,3 +1,23 @@
+---
+title: "Cardano Mints API"
+description: "Query Cardano mints data using Bitquery GraphQL API. Get mint events, policies, assets, and recipients."
+keywords: ["Cardano API", "Cardano Mints", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Cardano Mints API"/>
+<meta name="description" content="Query Cardano mints data using Bitquery GraphQL API. Get mint events, policies, assets, and recipients."/>
+<meta name="keywords" content="Cardano API, Cardano Mints, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cardano Mints API" />
+<meta property="og:description" content="Query Cardano mints data using Bitquery GraphQL API. Get mint events, policies, assets, and recipients." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Cardano Mints API" />
+<meta property="twitter:description" content="Query Cardano mints data using Bitquery GraphQL API. Get mint events, policies, assets, and recipients." />
+</head>
 
 # Mints
 
@@ -48,3 +68,11 @@ query MyQuery {
 
 `value`: The amount of tokens minted.
 </details>
+
+## Related Resources
+
+- [Cardano schema overview](https://docs.bitquery.io/v1/docs/Schema/cardano/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cardano Coinpath API](https://docs.bitquery.io/v1/docs/Schema/cardano/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

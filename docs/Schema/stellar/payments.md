@@ -1,3 +1,24 @@
+---
+title: "Stellar Payments API"
+description: "Query Stellar payments data using Bitquery GraphQL API. Get payment operations and path payments."
+keywords: ["Stellar API", "Stellar Payments", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Stellar Payments API"/>
+<meta name="description" content="Query Stellar payments data using Bitquery GraphQL API. Get payment operations and path payments."/>
+<meta name="keywords" content="Stellar API, Stellar Payments, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Stellar Payments API" />
+<meta property="og:description" content="Query Stellar payments data using Bitquery GraphQL API. Get payment operations and path payments." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Stellar Payments API" />
+<meta property="twitter:description" content="Query Stellar payments data using Bitquery GraphQL API. Get payment operations and path payments." />
+</head>
+
 # Payments
 
 Stellar network is optimized for payments. Bitquery's Payments API will give you information on payments on the XRP ledger. Below are the fields in the schema:
@@ -240,3 +261,11 @@ query ($network: StellarNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
 - **path**
 
   The path that the payment took through the Stellar network.
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Stellar Coinpath API](https://docs.bitquery.io/v1/docs/Schema/stellar/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

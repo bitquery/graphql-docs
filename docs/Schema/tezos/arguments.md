@@ -1,3 +1,24 @@
+---
+title: "Tezos Arguments API"
+description: "Query Tezos GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."
+keywords: ["Tezos API", "Tezos Arguments", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Tezos Arguments API"/>
+<meta name="description" content="Query Tezos GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."/>
+<meta name="keywords" content="Tezos API, Tezos Arguments, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tezos Arguments API" />
+<meta property="og:description" content="Query Tezos GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Tezos Arguments API" />
+<meta property="twitter:description" content="Query Tezos GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema." />
+</head>
+
 # Arguments
 
 The Arguments API provides you with information about arguments.
@@ -100,3 +121,11 @@ You can filter arguments using the following fields:
 -   `timestamp`: Returns the timestamp of the transaction.
 
 -   `transaction`: Returns details of the transaction where the transfer is included.
+
+## Related Resources
+
+- [Tezos schema overview](https://docs.bitquery.io/v1/docs/Schema/tezos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Tezos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/tezos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

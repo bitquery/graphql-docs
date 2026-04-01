@@ -1,3 +1,24 @@
+---
+title: "Multi-Chain Transaction API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for transactions on Bitcoin, Ethereum, and other networks. Get hashes, senders, receivers, and aggregates."
+keywords: [transaction API examples, GraphQL queries, Bitquery]
+---
+
+<head>
+<meta name="title" content="Multi-Chain Transaction API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries for transactions on Bitcoin, Ethereum, and other networks. Get hashes, senders, receivers, and aggregates."/>
+<meta name="keywords" content="transaction API examples, GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Multi-Chain Transaction API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries for transactions on Bitcoin, Ethereum, and other networks. Get hashes, senders, receivers, and aggregates." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Multi-Chain Transaction API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries for transactions on Bitcoin, Ethereum, and other networks. Get hashes, senders, receivers, and aggregates." />
+</head>
+
 # Transaction API
 
 To get transactions from different blockchains, you can use our Transaction API. Let's see some examples.
@@ -281,3 +302,11 @@ query MyQuery {
 }
 
 ```
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

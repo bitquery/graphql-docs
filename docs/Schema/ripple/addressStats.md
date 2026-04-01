@@ -1,5 +1,6 @@
 ---
 title: "Ripple Addresses Stats API"
+description: "Query aggregate address statistics on the XRP Ledger."
 ---
 
 <head>
@@ -66,3 +67,12 @@ Here is an example that demonstrates how to retrieve statistics about the USDT s
 </details>
 
 -   `address`: Returns statistics for the blockchain address
+
+## Related Resources
+
+- [XRP Ledger schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Ripple API examples](https://docs.bitquery.io/v1/docs/Examples/ripple)
+- [Coinpath (XRP Ledger)](https://docs.bitquery.io/v1/docs/Schema/ripple/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

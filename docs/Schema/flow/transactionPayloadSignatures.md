@@ -1,3 +1,24 @@
+---
+title: "Flow Transaction Payload Signatures API"
+description: "Query Flow signatures data using Bitquery GraphQL API. Get payload signatures and signer keys."
+keywords: ["Flow API", "Flow Transaction Payload Signatures", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Flow Transaction Payload Signatures API"/>
+<meta name="description" content="Query Flow signatures data using Bitquery GraphQL API. Get payload signatures and signer keys."/>
+<meta name="keywords" content="Flow API, Flow Transaction Payload Signatures, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Flow Transaction Payload Signatures API" />
+<meta property="og:description" content="Query Flow signatures data using Bitquery GraphQL API. Get payload signatures and signer keys." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Flow Transaction Payload Signatures API" />
+<meta property="twitter:description" content="Query Flow signatures data using Bitquery GraphQL API. Get payload signatures and signer keys." />
+</head>
+
 # Transaction Payload Signatures
 
 The Flow Transaction Payload Signatures API provides information about payload signatures of transaction from the Flow Blockchain.
@@ -47,3 +68,11 @@ You can filter data using following fields:
 -   signature: returns raw signature data
 -   time: returns time of transaction creation
 -   transaction: returns basic information about transaction
+
+## Related Resources
+
+- [Flow schema overview](https://docs.bitquery.io/v1/docs/Schema/flow/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Flow Coinpath API](https://docs.bitquery.io/v1/docs/Schema/flow/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

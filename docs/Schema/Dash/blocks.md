@@ -1,5 +1,6 @@
 ---
 title: Dash Blocks API
+description: "Query Dash blocks, difficulty, and transaction counts."
 ---
 
 <head>
@@ -87,3 +88,12 @@ The following fields are available for the `blocks`:
 - `minimum`: returns maximum of selected measurable fields of Dash blocks
 - `timestamp`: returns block timestamp
 - `transactionCount`: returns number of transactions in block
+
+## Related Resources
+
+- [Dash schema overview](https://docs.bitquery.io/v1/docs/Schema/Dash/overview)
+- [Blockchain API examples](https://docs.bitquery.io/v1/docs/Examples/overview)
+- [Coinpath (Dash)](https://docs.bitquery.io/v1/docs/Schema/Dash/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

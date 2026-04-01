@@ -1,3 +1,24 @@
+---
+title: "Conflux Transactions API"
+description: "Query Conflux transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+keywords: ["Conflux API", "Conflux Transactions", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Conflux Transactions API"/>
+<meta name="description" content="Query Conflux transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."/>
+<meta name="keywords" content="Conflux API, Conflux Transactions, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Conflux Transactions API" />
+<meta property="og:description" content="Query Conflux transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Conflux Transactions API" />
+<meta property="twitter:description" content="Query Conflux transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+</head>
+
 # Conflux Transactions API
 
 ```
@@ -106,3 +127,11 @@ query ($network: ConfluxNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
     - A annotation field that contains any information about the address
 - **success**
   - Whether the transaction was successful.
+
+## Related Resources
+
+- [Conflux schema overview](https://docs.bitquery.io/v1/docs/Schema/conflux/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Conflux Coinpath API](https://docs.bitquery.io/v1/docs/Schema/conflux/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

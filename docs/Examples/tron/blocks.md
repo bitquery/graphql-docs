@@ -1,4 +1,26 @@
+---
+title: "Tron Blocks API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Tron blocks. Get recent blocks, witnesses, timestamps, and parent hashes."
+keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
+---
+
+<head>
+<meta name="title" content="Tron Blocks API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries for Tron blocks. Get recent blocks, witnesses, timestamps, and parent hashes."/>
+<meta name="keywords" content="Tron API examples, Tron GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tron Blocks API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries for Tron blocks. Get recent blocks, witnesses, timestamps, and parent hashes." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Tron Blocks API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries for Tron blocks. Get recent blocks, witnesses, timestamps, and parent hashes." />
+</head>
+
 # Blocks API
+
 
 Our Tron API provides all details regarding blocks from Tron Blockchain.
 
@@ -81,4 +103,12 @@ This query filter block data by parent block hash of that block.
 ```
 
 This query allows us to filter block by it's witness address.
+
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Tron transactions examples](https://docs.bitquery.io/v1/docs/Examples/tron/transaction)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
 

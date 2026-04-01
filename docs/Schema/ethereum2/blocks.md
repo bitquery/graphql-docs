@@ -1,5 +1,6 @@
 ---
 title: ETH2 Blocks API
+description: "Query Beacon Chain blocks, roots, and consensus data."
 ---
 
 <head>
@@ -125,3 +126,12 @@ query ($network: Ethereum2Network!, $dateFormat: String!, $from: ISO8601DateTime
 `stateRoot`: This field contains the hash of the block's state root.
 
 `randaoReveal`: This field contains the RANDAO reveal of the block.
+
+## Related Resources
+
+- [Beacon Chain schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum2/overview)
+- [ETH2 examples](https://docs.bitquery.io/v1/docs/Examples/Beacon%20Chain%20Examples/eth2_examples)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+- [Ethereum execution layer schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+

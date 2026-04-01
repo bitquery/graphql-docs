@@ -1,3 +1,24 @@
+---
+title: "Cosmos Messages API"
+description: "Query Cosmos messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls."
+keywords: ["Cosmos API", "Cosmos Messages", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Cosmos Messages API"/>
+<meta name="description" content="Query Cosmos messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls."/>
+<meta name="keywords" content="Cosmos API, Cosmos Messages, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cosmos Messages API" />
+<meta property="og:description" content="Query Cosmos messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Cosmos Messages API" />
+<meta property="twitter:description" content="Query Cosmos messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls." />
+</head>
+
 # Messages
 
 The `messages` field allows us to retrieve detaild information about messages from Cosmos blockchain.
@@ -63,3 +84,11 @@ Here is an example that demonstrates retrieving message from Cosmos hub:
 -   `success`: returns success of transaction as boolean
 -   `transaction`: returns transaction formation where message is included
 -   `type`: returns type of message
+
+## Related Resources
+
+- [Cosmos schema overview](https://docs.bitquery.io/v1/docs/Schema/cosmos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cosmos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/cosmos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

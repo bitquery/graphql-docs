@@ -1,3 +1,24 @@
+---
+title: "Velas Arguments API"
+description: "Query Velas GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."
+keywords: ["Velas API", "Velas Arguments", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Velas Arguments API"/>
+<meta name="description" content="Query Velas GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."/>
+<meta name="keywords" content="Velas API, Velas Arguments, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Velas Arguments API" />
+<meta property="og:description" content="Query Velas GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Velas Arguments API" />
+<meta property="twitter:description" content="Query Velas GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema." />
+</head>
+
 # Arguments
 
 The `arguments` field allows us to fetch information about arguments of smart contract calls and evetns.
@@ -70,3 +91,11 @@ The following are available fields for the `arguments`:
 - `success`:
 - `transaction`: returns transaction information
 - `value`: returns value of method or event argument
+
+## Related Resources
+
+- [Velas schema overview](https://docs.bitquery.io/v1/docs/Schema/velas/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Velas Coinpath API](https://docs.bitquery.io/v1/docs/Schema/velas/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,7 +1,24 @@
 ---
 sidebar_position: 1
+title: "Aggregation in Bitquery GraphQL API"
+description: "Group and aggregate blockchain data with sum, count, average, maximum, minimum, and median on Bitquery V1 GraphQL."
+keywords: [Bitquery, GraphQL, aggregation, calculate, sum, count]
 ---
 
+<head>
+<meta name="title" content="Aggregation in Bitquery GraphQL API"/>
+<meta name="description" content="Group and aggregate blockchain data with sum, count, average, maximum, minimum, and median on Bitquery V1 GraphQL."/>
+<meta name="keywords" content="Bitquery, GraphQL, aggregation, calculate, sum, count"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Aggregation in Bitquery GraphQL API" />
+<meta property="og:description" content="Group and aggregate blockchain data with sum, count, average, maximum, minimum, and median on Bitquery V1 GraphQL." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Aggregation in Bitquery GraphQL API" />
+<meta property="twitter:description" content="Group and aggregate blockchain data with sum, count, average, maximum, minimum, and median on Bitquery V1 GraphQL." />
+</head>
 
 # Aggregation in V1 
 
@@ -65,3 +82,11 @@ parameters:
 > Notes:
 
 The calculate argument can be used to specify the aggregation function that should be used.
+
+## Related Resources
+
+- [Count aggregation](https://docs.bitquery.io/v1/docs/query-features/aggregation/count)
+- [Sum aggregation](https://docs.bitquery.io/v1/docs/query-features/aggregation/sum)
+- [Basic structure of a query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
+- [Filtering fields](https://docs.bitquery.io/v1/docs/query-features/filtering/fields)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)

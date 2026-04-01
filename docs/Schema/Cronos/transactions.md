@@ -1,3 +1,24 @@
+---
+title: "Cronos Transactions API"
+description: "Query Cronos transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+keywords: ["Cronos API", "Cronos Transactions", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Cronos Transactions API"/>
+<meta name="description" content="Query Cronos transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."/>
+<meta name="keywords" content="Cronos API, Cronos Transactions, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cronos Transactions API" />
+<meta property="og:description" content="Query Cronos transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Cronos Transactions API" />
+<meta property="twitter:description" content="Query Cronos transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+</head>
+
 # Transactions
 
 Bitquery `transactions` API allows you to retrieve all the blockchain transactions from cronos Blockchain.
@@ -111,3 +132,11 @@ Transactions can be filtered using following arguments:
 - `success`: returns if transaction is success or not
 - `to`: returns address to which of a particular transaction was sent
 - `txType`: returns transaction type
+
+## Related Resources
+
+- [Cronos schema overview](https://docs.bitquery.io/v1/docs/Schema/Cronos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cronos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/Cronos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

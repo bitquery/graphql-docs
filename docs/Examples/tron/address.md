@@ -1,3 +1,24 @@
+---
+title: "Tron Address API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Tron addresses. Get balance, rewards, and smart contract details for an address."
+keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
+---
+
+<head>
+<meta name="title" content="Tron Address API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries for Tron addresses. Get balance, rewards, and smart contract details for an address."/>
+<meta name="keywords" content="Tron API examples, Tron GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tron Address API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries for Tron addresses. Get balance, rewards, and smart contract details for an address." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Tron Address API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries for Tron addresses. Get balance, rewards, and smart contract details for an address." />
+</head>
+
 # Address API
 
 Our Tron Address API provides all details regarding any address on Tron Blockchain. If given address is a smart contract API also details of that smart contract too.
@@ -77,3 +98,11 @@ Replace `ADDRESS_HERE` with the Tron address you want to query. This query will 
 ```
 
 Replace `ADDRESS_HERE` with the Tron address you want to query. This query will fetch basic details of the smart contract, such as contract type and protocol type. If the contract is an ERC-20 token, it will also return additional information like decimals, name, symbol, and token type.
+
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Tron transfers examples](https://docs.bitquery.io/v1/docs/Examples/tron/transfers)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

@@ -1,3 +1,24 @@
+---
+title: "Filecoin Transfers API"
+description: "Query Filecoin transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."
+keywords: ["Filecoin API", "Filecoin Transfers", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Filecoin Transfers API"/>
+<meta name="description" content="Query Filecoin transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."/>
+<meta name="keywords" content="Filecoin API, Filecoin Transfers, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Filecoin Transfers API" />
+<meta property="og:description" content="Query Filecoin transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Filecoin Transfers API" />
+<meta property="twitter:description" content="Query Filecoin transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
+</head>
+
 # Transfers
 
 The Transfers API allows you to query information about transfers on the Filecoin blockchain.
@@ -146,3 +167,11 @@ query ($network: FilecoinNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTim
     -   The name of the method that was used to perform the transfer.
 -   **transferType**
     -  The type of transfer. Can be `burn`, `miner`, `reward` and so on.
+
+## Related Resources
+
+- [Filecoin schema overview](https://docs.bitquery.io/v1/docs/Schema/filecoin/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Filecoin Coinpath API](https://docs.bitquery.io/v1/docs/Schema/filecoin/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

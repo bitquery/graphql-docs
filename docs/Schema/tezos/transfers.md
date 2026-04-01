@@ -1,3 +1,24 @@
+---
+title: "Tezos Transfers API"
+description: "Query Tezos transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."
+keywords: ["Tezos API", "Tezos Transfers", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Tezos Transfers API"/>
+<meta name="description" content="Query Tezos transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."/>
+<meta name="keywords" content="Tezos API, Tezos Transfers, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tezos Transfers API" />
+<meta property="og:description" content="Query Tezos transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Tezos Transfers API" />
+<meta property="twitter:description" content="Query Tezos transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
+</head>
+
 # Transfers
 
 The Tezos Transfers API provides information about the transfers on the Tezos Blockchain.
@@ -52,3 +73,11 @@ You can filter transfers using the following fields:
 - `sender`: returns the address of the transfer sender.
 - `timestamp`: returns the timestamp of the transfer.
 - `transaction`: returns details about the transaction where the transfer is included.
+
+## Related Resources
+
+- [Tezos schema overview](https://docs.bitquery.io/v1/docs/Schema/tezos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Tezos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/tezos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

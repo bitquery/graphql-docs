@@ -1,3 +1,24 @@
+---
+title: "EOS Blocks API"
+description: "Query EOS blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."
+keywords: ["EOS API", "EOS Blocks", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="EOS Blocks API"/>
+<meta name="description" content="Query EOS blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."/>
+<meta name="keywords" content="EOS API, EOS Blocks, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="EOS Blocks API" />
+<meta property="og:description" content="Query EOS blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="EOS Blocks API" />
+<meta property="twitter:description" content="Query EOS blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata." />
+</head>
+
 # EOS Blocks API
 
 Bitquery's EOS blocks API provides information on blocks in the EOS chain. Below are the fields in the schema:
@@ -55,3 +76,11 @@ query ($from: ISO8601DateTime, $till: ISO8601DateTime) {
 - **producer** : The producer who created the block.
   - **address** : The producer's EOS account address.
   - **annotation** : The producer's annotation for the block.
+
+## Related Resources
+
+- [EOS schema overview](https://docs.bitquery.io/v1/docs/Schema/eos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [EOS Coinpath API](https://docs.bitquery.io/v1/docs/Schema/eos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

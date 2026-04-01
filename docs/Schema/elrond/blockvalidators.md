@@ -1,3 +1,24 @@
+---
+title: "Elrond Block Validators API"
+description: "Query Elrond validators data using Bitquery GraphQL API. Get validators associated with blocks and consensus roles."
+keywords: ["Elrond API", "Elrond Block Validators", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Elrond Block Validators API"/>
+<meta name="description" content="Query Elrond validators data using Bitquery GraphQL API. Get validators associated with blocks and consensus roles."/>
+<meta name="keywords" content="Elrond API, Elrond Block Validators, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Elrond Block Validators API" />
+<meta property="og:description" content="Query Elrond validators data using Bitquery GraphQL API. Get validators associated with blocks and consensus roles." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Elrond Block Validators API" />
+<meta property="twitter:description" content="Query Elrond validators data using Bitquery GraphQL API. Get validators associated with blocks and consensus roles." />
+</head>
+
 # MultiversX Block Validators API
 
 The MultiversX Block Validators API allows you to query information about the validators of a block on the MultiversX blockchain. A validator is a node that has been elected to participate in the consensus process and produce blocks. The API can be used to get information about the validators of a block, including their addresses, shards, and public key bitmaps.
@@ -63,3 +84,11 @@ query ($network: ElrondNetwork!, $limit: Int!, $offset: Int!, $blockHash: String
   - `sizeTxs`: The total size of the transactions in the block.
   - `transactionCount`: The number of transactions in the block.
   - `publicKeyBitmap`: The public key bitmap of the block.
+
+## Related Resources
+
+- [Elrond schema overview](https://docs.bitquery.io/v1/docs/Schema/elrond/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Elrond Coinpath API](https://docs.bitquery.io/v1/docs/Schema/elrond/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

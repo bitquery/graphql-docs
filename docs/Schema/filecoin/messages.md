@@ -1,3 +1,24 @@
+---
+title: "Filecoin Messages API"
+description: "Query Filecoin messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls."
+keywords: ["Filecoin API", "Filecoin Messages", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Filecoin Messages API"/>
+<meta name="description" content="Query Filecoin messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls."/>
+<meta name="keywords" content="Filecoin API, Filecoin Messages, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Filecoin Messages API" />
+<meta property="og:description" content="Query Filecoin messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Filecoin Messages API" />
+<meta property="twitter:description" content="Query Filecoin messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls." />
+</head>
+
 # Messages
 
 According to the [official Filecoin documentation](https://docs.filecoin.io/basics/the-blockchain/blocks-and-tipsets/),
@@ -94,3 +115,11 @@ query ($network: FilecoinNetwork!, $dateFormat: String!, $from: ISO8601DateTime,
 -   **signature:**  The signature of the message.
 -   **signatureType:**  The type of signature used to sign the message.
 -   **signedHash:**  The hash of the message that was signed.
+
+## Related Resources
+
+- [Filecoin schema overview](https://docs.bitquery.io/v1/docs/Schema/filecoin/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Filecoin Coinpath API](https://docs.bitquery.io/v1/docs/Schema/filecoin/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

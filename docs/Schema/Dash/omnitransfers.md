@@ -1,5 +1,6 @@
 ---
 title: Dash OmniTransfers API
+description: "Query Omni layer transfers on Dash."
 ---
 
 <head>
@@ -106,3 +107,12 @@ Omni Transfers can be filtered using the following arguments:
 -   `type`: returns type of transfer
 -   `typeInt`: returns type as Int
 -   `value`: returns value
+
+## Related Resources
+
+- [Dash schema overview](https://docs.bitquery.io/v1/docs/Schema/Dash/overview)
+- [Blockchain API examples](https://docs.bitquery.io/v1/docs/Examples/overview)
+- [Coinpath (Dash)](https://docs.bitquery.io/v1/docs/Schema/Dash/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

@@ -1,3 +1,24 @@
+---
+title: "Conflux Active Address API"
+description: "Query Conflux active address data using Bitquery GraphQL API. Get active address metrics and participation."
+keywords: ["Conflux API", "Conflux Active Address", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Conflux Active Address API"/>
+<meta name="description" content="Query Conflux active address data using Bitquery GraphQL API. Get active address metrics and participation."/>
+<meta name="keywords" content="Conflux API, Conflux Active Address, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Conflux Active Address API" />
+<meta property="og:description" content="Query Conflux active address data using Bitquery GraphQL API. Get active address metrics and participation." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Conflux Active Address API" />
+<meta property="twitter:description" content="Query Conflux active address data using Bitquery GraphQL API. Get active address metrics and participation." />
+</head>
+
 # Conflux Active Address API
 
 Conflux Active Address API gives you information on the active addresses on the Conflux chain. The following are the fields on the schema:
@@ -33,3 +54,11 @@ The address of the wallet
 
 `annotation`
 Any information about the address
+
+## Related Resources
+
+- [Conflux schema overview](https://docs.bitquery.io/v1/docs/Schema/conflux/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Conflux Coinpath API](https://docs.bitquery.io/v1/docs/Schema/conflux/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

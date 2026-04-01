@@ -1,3 +1,24 @@
+---
+title: "Tezos Transactions API"
+description: "Query Tezos transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+keywords: ["Tezos API", "Tezos Transactions", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Tezos Transactions API"/>
+<meta name="description" content="Query Tezos transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."/>
+<meta name="keywords" content="Tezos API, Tezos Transactions, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tezos Transactions API" />
+<meta property="og:description" content="Query Tezos transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Tezos Transactions API" />
+<meta property="twitter:description" content="Query Tezos transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+</head>
+
 # Transactions
 
 The Tezos Transactions API allows you to retrieve information about transactions on the Tezos blockchain.
@@ -68,3 +89,11 @@ You can filter transactions using various field:
 -   `storageSize`: returns the storage size.
 -   `success`: indicates the success of the transaction.
 -   `timestamp`: returns the timestamp of the transaction.
+
+## Related Resources
+
+- [Tezos schema overview](https://docs.bitquery.io/v1/docs/Schema/tezos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Tezos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/tezos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

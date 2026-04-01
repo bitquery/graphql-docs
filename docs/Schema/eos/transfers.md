@@ -1,3 +1,24 @@
+---
+title: "EOS Transfers API"
+description: "Query EOS transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."
+keywords: ["EOS API", "EOS Transfers", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="EOS Transfers API"/>
+<meta name="description" content="Query EOS transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."/>
+<meta name="keywords" content="EOS API, EOS Transfers, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="EOS Transfers API" />
+<meta property="og:description" content="Query EOS transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="EOS Transfers API" />
+<meta property="twitter:description" content="Query EOS transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
+</head>
+
 # EOS Transfers API
 
 Bitquery's EOS transfers API gives you information including sender, receiver, currency details. Below are the fields in the schema:
@@ -82,3 +103,11 @@ query ( $date: ISO8601DateTime) {
 - **amount** : The amount of tokens that were transferred.
 - **txHash** : The hash of the transaction that made the transfer.
 - **actors** : The actors involved in the transfer. This includes the sender, receiver, and any other accounts that were involved in the transaction.
+
+## Related Resources
+
+- [EOS schema overview](https://docs.bitquery.io/v1/docs/Schema/eos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [EOS Coinpath API](https://docs.bitquery.io/v1/docs/Schema/eos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,3 +1,24 @@
+---
+title: "Cardano Transactions API"
+description: "Query Cardano transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+keywords: ["Cardano API", "Cardano Transactions", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Cardano Transactions API"/>
+<meta name="description" content="Query Cardano transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."/>
+<meta name="keywords" content="Cardano API, Cardano Transactions, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cardano Transactions API" />
+<meta property="og:description" content="Query Cardano transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Cardano Transactions API" />
+<meta property="twitter:description" content="Query Cardano transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+</head>
+
 # Transactions
 
 The Transactions API schema returns a list of transactions that occurred on the Cardano blockchain within a specified date range. The schema includes the following fields:
@@ -122,3 +143,11 @@ The total amount of ADA withdrawn from the transaction.
 The address of the input that sent the funds.
 
 </details>
+
+## Related Resources
+
+- [Cardano schema overview](https://docs.bitquery.io/v1/docs/Schema/cardano/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cardano Coinpath API](https://docs.bitquery.io/v1/docs/Schema/cardano/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

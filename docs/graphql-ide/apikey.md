@@ -1,6 +1,31 @@
 ---
 sidebar_position: 2
+title: "Bitquery API Access Token — Create, Generate & Use OAuth Tokens"
+description: "Create Bitquery applications, generate OAuth2 access tokens for V1 and V2 GraphQL APIs, use Bearer authentication, and revoke tokens securely."
+keywords:
+  [
+    Bitquery API key,
+    access token,
+    OAuth2,
+    Bearer token,
+    GraphQL authentication,
+  ]
 ---
+
+<head>
+<meta name="title" content="Bitquery API Access Token — Create, Generate & Use OAuth Tokens"/>
+<meta name="description" content="Create Bitquery applications, generate OAuth2 access tokens for V1 and V2 GraphQL APIs, use Bearer authentication, and revoke tokens securely."/>
+<meta name="keywords" content="Bitquery API key, access token, OAuth2, Bearer token, GraphQL authentication"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Bitquery API Access Token — Create, Generate & Use OAuth Tokens" />
+<meta property="og:description" content="Create Bitquery applications, generate OAuth2 access tokens for V1 and V2 GraphQL APIs, use Bearer authentication, and revoke tokens securely." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Bitquery API Access Token — Create, Generate & Use OAuth Tokens" />
+<meta property="twitter:description" content="Create Bitquery applications, generate OAuth2 access tokens for V1 and V2 GraphQL APIs, use Bearer authentication, and revoke tokens securely." />
+</head>
 
 # Getting the Access Token
 
@@ -111,3 +136,11 @@ If you no longer need an application, you can delete it by clicking **Delete** o
 
 Your Access Token is your identity in the system, you have to be very careful to whom and where you place your Access Token, as this will directly impact the performance of your account.
 :::
+
+## Related Resources
+
+- [Use Bitquery in your application](https://docs.bitquery.io/v1/docs/graphql-ide/use-it-in-your-application)
+- [How to use the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/ide)
+- [Getting started with the IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [V1 vs V2 APIs](https://docs.bitquery.io/v1/docs/graphql-ide/v1-and-v2)
+- [Account dashboard](https://docs.bitquery.io/v1/docs/graphql-ide/account)

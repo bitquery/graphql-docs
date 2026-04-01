@@ -1,3 +1,24 @@
+---
+title: "DEX Pools API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for DEX liquidity pools. Get pair creation, reserves, and pool metadata on EVM chains."
+keywords: [DEX API examples, DEX GraphQL queries, Bitquery]
+---
+
+<head>
+<meta name="title" content="DEX Pools API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries for DEX liquidity pools. Get pair creation, reserves, and pool metadata on EVM chains."/>
+<meta name="keywords" content="DEX API examples, DEX GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="DEX Pools API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries for DEX liquidity pools. Get pair creation, reserves, and pool metadata on EVM chains." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="DEX Pools API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries for DEX liquidity pools. Get pair creation, reserves, and pool metadata on EVM chains." />
+</head>
+
 # Pools API
 
 In this section, we will look at some examples regarding DEX Pools data.
@@ -62,4 +83,12 @@ To calculate supply, we will use the formula,
 To get the latest price, you can use our DEXTrades API. Here's an [example](https://ide.bitquery.io/Latest-price-of-ERUTA).
 
 Once you have both values, you can multiply and get the FDV.
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [DEX trading data examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
 

@@ -1,5 +1,6 @@
 ---
 title: Bitcoin Blocks API
+description: "Get information on blocks on the Bitcoin blockchain. Also, get information on blocks for tokens on the Bitcoin blockchain."
 ---
 
 <head>
@@ -87,3 +88,11 @@ The following fields are available for the `blocks`:
 - `minimum`: returns maximum of selected measurable fields of Bitcoin Blocks
 - `timestamp`: returns block timestamp
 - `transactionCount`: returns number of transactions in block
+
+## Related Resources
+
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/Examples/bitcoin)
+- [Coinpath (Bitcoin)](https://docs.bitquery.io/v1/docs/Schema/bitcoin/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

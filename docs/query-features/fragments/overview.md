@@ -1,6 +1,24 @@
 ---
 sidebar_position: 1
+title: "GraphQL Fragments in Bitquery API"
+description: "Reuse query fragments for balance history and other patterns to reduce duplication in Bitquery GraphQL."
+keywords: [Bitquery, GraphQL, fragments, reuse, queries]
 ---
+
+<head>
+<meta name="title" content="GraphQL Fragments in Bitquery API"/>
+<meta name="description" content="Reuse query fragments for balance history and other patterns to reduce duplication in Bitquery GraphQL."/>
+<meta name="keywords" content="Bitquery, GraphQL, fragments, reuse, queries"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="GraphQL Fragments in Bitquery API" />
+<meta property="og:description" content="Reuse query fragments for balance history and other patterns to reduce duplication in Bitquery GraphQL." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="GraphQL Fragments in Bitquery API" />
+<meta property="twitter:description" content="Reuse query fragments for balance history and other patterns to reduce duplication in Bitquery GraphQL." />
+</head>
 
 # Fragments
 
@@ -48,4 +66,11 @@ fragment balanceChange on EthereumBalanceChange {
 }
 ```
 
+## Related Resources
+
+- [GraphQL aliases](https://docs.bitquery.io/v1/docs/query-features/aliases)
+- [Basic structure of a query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
+- [GraphQL IDE — how to start](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Utilities API](https://docs.bitquery.io/v1/docs/query-features/utilities/utilities)
 

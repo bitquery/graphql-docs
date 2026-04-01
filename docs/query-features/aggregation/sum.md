@@ -1,6 +1,24 @@
 ---
 sidebar_position: 4
+title: "Sum Aggregation in Bitquery GraphQL API"
+description: "Calculate total amounts with sum and conditional criteria for transfers, volume, and USD in Bitquery GraphQL."
+keywords: [Bitquery, GraphQL, sum, aggregation, transfers, USD]
 ---
+
+<head>
+<meta name="title" content="Sum Aggregation in Bitquery GraphQL API"/>
+<meta name="description" content="Calculate total amounts with sum and conditional criteria for transfers, volume, and USD in Bitquery GraphQL."/>
+<meta name="keywords" content="Bitquery, GraphQL, sum, aggregation, transfers, USD"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Sum Aggregation in Bitquery GraphQL API" />
+<meta property="og:description" content="Calculate total amounts with sum and conditional criteria for transfers, volume, and USD in Bitquery GraphQL." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Sum Aggregation in Bitquery GraphQL API" />
+<meta property="twitter:description" content="Calculate total amounts with sum and conditional criteria for transfers, volume, and USD in Bitquery GraphQL." />
+</head>
 
 # Sum
 
@@ -53,3 +71,11 @@ By mention the address as a sender or receiver we are calculating:
 
 - The total amount of ETH that was transferred into and out of the address, as `sum_in` and `sum_out` fields
 - The total amount of ETH that was transferred into and out of the address as the `sum_in_usd` and `sum_out_usd` fields
+
+## Related Resources
+
+- [Aggregation overview](https://docs.bitquery.io/v1/docs/query-features/aggregation/aggregation)
+- [Count aggregation](https://docs.bitquery.io/v1/docs/query-features/aggregation/count)
+- [Filtering fields](https://docs.bitquery.io/v1/docs/query-features/filtering/fields)
+- [Coinpath explained — overview](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Bitcoin examples](https://docs.bitquery.io/v1/docs/Examples/bitcoin)

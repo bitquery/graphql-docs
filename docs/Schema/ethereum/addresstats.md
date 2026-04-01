@@ -1,5 +1,6 @@
 ---
 title: "Ethereum Addresses Stats API"
+description: "Explore comprehensive address statistics, including counts, aggregates, and historical data for transfers, balances, fees, and more."
 ---
 
 <head>
@@ -69,3 +70,11 @@ Here is an example that demonstrates how to retrieve statistics about the USDT s
 </details>
 
 -   `address`: Returns statistics for the blockchain address
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath (Ethereum)](https://docs.bitquery.io/v1/docs/Schema/ethereum/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

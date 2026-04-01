@@ -1,3 +1,24 @@
+---
+title: "Stellar Transactions API"
+description: "Query Stellar transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+keywords: ["Stellar API", "Stellar Transactions", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Stellar Transactions API"/>
+<meta name="description" content="Query Stellar transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."/>
+<meta name="keywords" content="Stellar API, Stellar Transactions, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Stellar Transactions API" />
+<meta property="og:description" content="Query Stellar transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Stellar Transactions API" />
+<meta property="twitter:description" content="Query Stellar transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+</head>
+
 # Transactions
 
 > Transactions comprise a bundle of between 1-100 operations and are
@@ -203,3 +224,11 @@ The memos that were included in the transaction. This is an array of objects tha
 - **memoType**
 
 The type of memo that was included in the transaction.
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Stellar Coinpath API](https://docs.bitquery.io/v1/docs/Schema/stellar/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,3 +1,24 @@
+---
+title: "Celo Address API"
+description: "Query Celo address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."
+keywords: ["Celo API", "Celo Address", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Celo Address API"/>
+<meta name="description" content="Query Celo address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."/>
+<meta name="keywords" content="Celo API, Celo Address, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Celo Address API" />
+<meta property="og:description" content="Query Celo address data using Bitquery GraphQL API. Get address balances, annotations, and related activity." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Celo Address API" />
+<meta property="twitter:description" content="Query Celo address data using Bitquery GraphQL API. Get address balances, annotations, and related activity." />
+</head>
+
 # Address
 
 The `address` allows us to retrieve information about a specific address.
@@ -48,3 +69,11 @@ The following are available fields for the address:
 - `balance`: Returns the current balance of the address.
 - `balances`: Returns the balance history of the address.
 - `smartContract`: Returns details if the address is that of a smart contract.
+
+## Related Resources
+
+- [Celo schema overview](https://docs.bitquery.io/v1/docs/Schema/celo/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Celo Coinpath API](https://docs.bitquery.io/v1/docs/Schema/celo/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

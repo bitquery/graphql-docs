@@ -1,5 +1,6 @@
 ---
 title: ETH2 Voluntary Exits API
+description: "Query voluntary validator exits on the Beacon Chain."
 ---
 
 <head>
@@ -107,3 +108,12 @@ voluntaryExitEpoch: This field specifies the epoch number at which the voluntary
 `voluntaryExitEpoch`: This field contains the epoch number at which the voluntary exit was submitted.
 
 `height`: This field specifies the height of the block that the voluntary exits should be returned for.
+
+## Related Resources
+
+- [Beacon Chain schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum2/overview)
+- [ETH2 examples](https://docs.bitquery.io/v1/docs/Examples/Beacon%20Chain%20Examples/eth2_examples)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+- [Ethereum execution layer schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+

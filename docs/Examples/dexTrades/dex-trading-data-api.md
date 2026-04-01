@@ -1,6 +1,24 @@
 ---
+title: "DEX Trading Data API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for DEX trades across EVM chains. Get swaps, liquidity, prices, and DEX analytics."
+keywords: [DEX API examples, DEX GraphQL queries, Bitquery]
 sidebar_position: 1
 ---
+
+<head>
+<meta name="title" content="DEX Trading Data API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries for DEX trades across EVM chains. Get swaps, liquidity, prices, and DEX analytics."/>
+<meta name="keywords" content="DEX API examples, DEX GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="DEX Trading Data API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries for DEX trades across EVM chains. Get swaps, liquidity, prices, and DEX analytics." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="DEX Trading Data API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries for DEX trades across EVM chains. Get swaps, liquidity, prices, and DEX analytics." />
+</head>
 
 # DEX Trading Data APIs
 
@@ -873,3 +891,11 @@ query MyQuery {
 }
 
 ```
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [DEX OHLC examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/ohlc)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

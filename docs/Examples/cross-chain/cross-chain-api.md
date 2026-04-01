@@ -1,3 +1,24 @@
+---
+title: "Cross-Chain API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries spanning multiple blockchains. Get balances, transfers, trades, and token analytics in one request."
+keywords: [cross-chain API examples, GraphQL queries, Bitquery]
+---
+
+<head>
+<meta name="title" content="Cross-Chain API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries spanning multiple blockchains. Get balances, transfers, trades, and token analytics in one request."/>
+<meta name="keywords" content="cross-chain API examples, GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cross-Chain API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries spanning multiple blockchains. Get balances, transfers, trades, and token analytics in one request." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Cross-Chain API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries spanning multiple blockchains. Get balances, transfers, trades, and token analytics in one request." />
+</head>
+
 # Cross-Chain API
 
 In this section we see how to use Bitquery APIs to get information across multiple chains in one go.
@@ -709,3 +730,11 @@ query ($from: ISO8601DateTime, $till: ISO8601DateTime) {
 }
 
 ```
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Address API examples](https://docs.bitquery.io/v1/docs/Examples/address/Blockchain-Address-API-Examples)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

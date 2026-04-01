@@ -1,5 +1,6 @@
 ---
 title: Dogecoin Blocks API
+description: "Query Dogecoin blocks, difficulty, and transaction counts."
 ---
 
 <head>
@@ -87,3 +88,12 @@ The following fields are available for the `blocks`:
 - `minimum`: returns maximum of selected measurable fields of Dogecoin Blocks
 - `timestamp`: returns block timestamp
 - `transactionCount`: returns number of transactions in block
+
+## Related Resources
+
+- [Dogecoin schema overview](https://docs.bitquery.io/v1/docs/Schema/Dogecoin/overview)
+- [Dogecoin API examples](https://docs.bitquery.io/v1/docs/Examples/Dogecoin)
+- [Coinpath (Dogecoin)](https://docs.bitquery.io/v1/docs/Schema/Dogecoin/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

@@ -1,3 +1,24 @@
+---
+title: "Solana Transactions API"
+description: "Query Solana transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+keywords: ["Solana API", "Solana Transactions", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Solana Transactions API"/>
+<meta name="description" content="Query Solana transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."/>
+<meta name="keywords" content="Solana API, Solana Transactions, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Solana Transactions API" />
+<meta property="og:description" content="Query Solana transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Solana Transactions API" />
+<meta property="twitter:description" content="Query Solana transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+</head>
+
 # Transactions
 
 The Solana transactions API allows you to query for transactions on the Solana blockchain. You can use this API to get information about specific transactions, such as the signature, block, transaction fee, success, fee payer, inner instructions count, instructions count, signer, and transaction index.
@@ -97,3 +118,11 @@ accountsCount: This field allows you to filter transactions by the number of acc
 `signer`: The account that signed the transaction.
 
 `transactionIndex`: The index of the transaction in the block.
+
+## Related Resources
+
+- [Solana schema overview](https://docs.bitquery.io/v1/docs/Schema/solana/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Solana Coinpath API](https://docs.bitquery.io/v1/docs/Schema/solana/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

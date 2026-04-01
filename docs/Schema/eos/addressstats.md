@@ -1,3 +1,24 @@
+---
+title: "EOS Address Stats API"
+description: "Query EOS address stats data using Bitquery GraphQL API. Get aggregate address statistics and activity metrics."
+keywords: ["EOS API", "EOS Address Stats", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="EOS Address Stats API"/>
+<meta name="description" content="Query EOS address stats data using Bitquery GraphQL API. Get aggregate address statistics and activity metrics."/>
+<meta name="keywords" content="EOS API, EOS Address Stats, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="EOS Address Stats API" />
+<meta property="og:description" content="Query EOS address stats data using Bitquery GraphQL API. Get aggregate address statistics and activity metrics." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="EOS Address Stats API" />
+<meta property="twitter:description" content="Query EOS address stats data using Bitquery GraphQL API. Get aggregate address statistics and activity metrics." />
+</head>
+
 # EOS Address Stats API
 
 ```
@@ -70,3 +91,11 @@ Address data can be filtered using following arguments:
 - **sendToCount** : The number of accounts that the account has sent tokens to.
 - **sendToCurrencies** : The currencies that the account has sent tokens in.
 - **sendTxCount** : The number of transactions that the account has sent tokens in.
+
+## Related Resources
+
+- [EOS schema overview](https://docs.bitquery.io/v1/docs/Schema/eos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [EOS Coinpath API](https://docs.bitquery.io/v1/docs/Schema/eos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

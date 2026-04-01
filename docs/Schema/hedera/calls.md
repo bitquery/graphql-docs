@@ -1,3 +1,24 @@
+---
+title: "Hedera Calls API"
+description: "Query Hedera calls data using Bitquery GraphQL API. Get contract or system calls, inputs, and results."
+keywords: ["Hedera API", "Hedera Calls", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Hedera Calls API"/>
+<meta name="description" content="Query Hedera calls data using Bitquery GraphQL API. Get contract or system calls, inputs, and results."/>
+<meta name="keywords" content="Hedera API, Hedera Calls, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Hedera Calls API" />
+<meta property="og:description" content="Query Hedera calls data using Bitquery GraphQL API. Get contract or system calls, inputs, and results." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Hedera Calls API" />
+<meta property="twitter:description" content="Query Hedera calls data using Bitquery GraphQL API. Get contract or system calls, inputs, and results." />
+</head>
+
 # Calls
 
 The Calls API provides you with information about calls made on Hedera Blockchain. It offers information about various aspects, such as call inputs, result of the calls, and much more.
@@ -66,3 +87,11 @@ You can filter the calls data using the following fields:
 - `transactionHash`: Presents the hash of the transaction.
 - `transactionValidDurationInSec`: Provides the duration for which this transaction is valid in seconds.
 - `validStart`: Displays the start timestamp of the valid duration of the transaction.
+
+## Related Resources
+
+- [Hedera schema overview](https://docs.bitquery.io/v1/docs/Schema/hedera/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Hedera Coinpath API](https://docs.bitquery.io/v1/docs/Schema/hedera/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

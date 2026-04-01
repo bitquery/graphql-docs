@@ -1,5 +1,6 @@
 ---
 title: Dash Transactions API
+description: "Query Dash transactions, fees, inputs, and outputs."
 ---
 
 <head>
@@ -119,3 +120,12 @@ The following are available fields for the `transactions`:
 -   `txversion`: returns version of transaction
 -   `txVsize`: returns vsize of transaction
 -   `txWeight`: returns transaction weight
+
+## Related Resources
+
+- [Dash schema overview](https://docs.bitquery.io/v1/docs/Schema/Dash/overview)
+- [Blockchain API examples](https://docs.bitquery.io/v1/docs/Examples/overview)
+- [Coinpath (Dash)](https://docs.bitquery.io/v1/docs/Schema/Dash/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

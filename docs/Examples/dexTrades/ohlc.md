@@ -1,3 +1,24 @@
+---
+title: "DEX OHLC API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for DEX OHLC candle data. Get open, high, low, close, and trade counts for pairs."
+keywords: [DEX API examples, DEX GraphQL queries, Bitquery]
+---
+
+<head>
+<meta name="title" content="DEX OHLC API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries for DEX OHLC candle data. Get open, high, low, close, and trade counts for pairs."/>
+<meta name="keywords" content="DEX API examples, DEX GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="DEX OHLC API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries for DEX OHLC candle data. Get open, high, low, close, and trade counts for pairs." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="DEX OHLC API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries for DEX OHLC candle data. Get open, high, low, close, and trade counts for pairs." />
+</head>
+
 # OHLC API
 
 Using our APIs, you can also get [OHLC](https://en.wikipedia.org/wiki/Open-high-low-close_chart) data.
@@ -90,3 +111,11 @@ In this example, we are getting OHLC prices by aggregating price data at run tim
   }
 }
 ```
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [DEX trading data examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

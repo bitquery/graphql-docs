@@ -1,3 +1,24 @@
+---
+title: "Hedera Coinpath API"
+description: "Query Hedera coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."
+keywords: ["Hedera API", "Hedera Coinpath", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Hedera Coinpath API"/>
+<meta name="description" content="Query Hedera coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."/>
+<meta name="keywords" content="Hedera API, Hedera Coinpath, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Hedera Coinpath API" />
+<meta property="og:description" content="Query Hedera coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Hedera Coinpath API" />
+<meta property="twitter:description" content="Query Hedera coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
+</head>
+
 # Coinpath
 
 The Coinpath API offers information related to the flow of funds on the Hedera Blockchain.
@@ -33,3 +54,10 @@ You can filter the information fetched from the API using the following filters:
 - `receiver`:  Provides information about the receiver, including the address and annotation (if available).
 - `sender`: Provides information about the sender, including the address and annotation (if available).
 - `transactions`: Returns details about transactions, including the amount, height, hash, and more.
+
+## Related Resources
+
+- [Hedera schema overview](https://docs.bitquery.io/v1/docs/Schema/hedera/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

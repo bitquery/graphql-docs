@@ -1,3 +1,24 @@
+---
+title: "Elrond Call Results API"
+description: "Query Elrond call results data using Bitquery GraphQL API. Get smart contract call results and return data."
+keywords: ["Elrond API", "Elrond Call Results", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Elrond Call Results API"/>
+<meta name="description" content="Query Elrond call results data using Bitquery GraphQL API. Get smart contract call results and return data."/>
+<meta name="keywords" content="Elrond API, Elrond Call Results, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Elrond Call Results API" />
+<meta property="og:description" content="Query Elrond call results data using Bitquery GraphQL API. Get smart contract call results and return data." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Elrond Call Results API" />
+<meta property="twitter:description" content="Query Elrond call results data using Bitquery GraphQL API. Get smart contract call results and return data." />
+</head>
+
 # MultiversX CallResults API
 
 The MultiversX CallResults API allows you to query information about call results on the MultiversX blockchain. A call result is a record of a function call that was made to a smart contract. The API can be used to get information about the sender, receiver, value, type, and other details of a call result.
@@ -119,3 +140,11 @@ query ($network: ElrondNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
 - **data:** The data that was passed to the call result.
 - **dataOperation:** The data operation that was performed by the call result.
 - **transaction:** The transaction that the call result belongs to
+
+## Related Resources
+
+- [Elrond schema overview](https://docs.bitquery.io/v1/docs/Schema/elrond/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Elrond Coinpath API](https://docs.bitquery.io/v1/docs/Schema/elrond/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

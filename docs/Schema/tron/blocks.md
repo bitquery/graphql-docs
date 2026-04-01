@@ -1,5 +1,6 @@
 ---
 title: Tron Blocks API
+description: "Query Tron blocks, transactions, fees, and timestamps."
 ---
 
 <head>
@@ -80,3 +81,12 @@ Here is an example that demonstrates how to retrieve blocks data:
 - `version`: returns block version
 - `witness`: returns block witness
 - `witnessSignature`: returns block witness signature
+
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Tron API examples](https://docs.bitquery.io/v1/docs/Examples/tron)
+- [Coinpath (Tron)](https://docs.bitquery.io/v1/docs/Schema/tron/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

@@ -1,3 +1,24 @@
+---
+title: "Algorand Address API"
+description: "Query Algorand address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."
+keywords: ["Algorand API", "Algorand Address", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Algorand Address API"/>
+<meta name="description" content="Query Algorand address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."/>
+<meta name="keywords" content="Algorand API, Algorand Address, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Algorand Address API" />
+<meta property="og:description" content="Query Algorand address data using Bitquery GraphQL API. Get address balances, annotations, and related activity." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Algorand Address API" />
+<meta property="twitter:description" content="Query Algorand address data using Bitquery GraphQL API. Get address balances, annotations, and related activity." />
+</head>
+
 # Address
 
 The `address` field allows us to fetch information about a specific address or a list of addresses from the Algorand blockchain.
@@ -38,3 +59,11 @@ The following are available fields for the `address`:
 - `round`: returns the current round.
 - `smartContract`: returns information about a smart contract if it exists at the address.
 - `status`: returns the current status of the address.
+
+## Related Resources
+
+- [Algorand schema overview](https://docs.bitquery.io/v1/docs/Schema/algorand/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Algorand Coinpath API](https://docs.bitquery.io/v1/docs/Schema/algorand/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

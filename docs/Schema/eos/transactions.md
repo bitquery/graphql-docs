@@ -1,3 +1,24 @@
+---
+title: "EOS Transactions API"
+description: "Query EOS transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+keywords: ["EOS API", "EOS Transactions", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="EOS Transactions API"/>
+<meta name="description" content="Query EOS transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."/>
+<meta name="keywords" content="EOS API, EOS Transactions, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="EOS Transactions API" />
+<meta property="og:description" content="Query EOS transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="EOS Transactions API" />
+<meta property="twitter:description" content="Query EOS transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+</head>
+
 # EOS Transactions API
 
 Bitquery's EOS Transactions API gives you information on cpuUsageUs, status of transaction and, netUsage details. Below are the fields in the schema:
@@ -65,3 +86,11 @@ query ($from: ISO8601DateTime, $till: ISO8601DateTime) {
 - **netUsageWords** The amount of network resources used by the transaction.
 - **scheduled** A boolean value indicating whether the transaction was scheduled.
 - **success** A boolean value indicating whether the transaction was successful.
+
+## Related Resources
+
+- [EOS schema overview](https://docs.bitquery.io/v1/docs/Schema/eos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [EOS Coinpath API](https://docs.bitquery.io/v1/docs/Schema/eos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

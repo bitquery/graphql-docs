@@ -1,3 +1,24 @@
+---
+title: "Flow Transaction Envelope Signatures API"
+description: "Query Flow signatures data using Bitquery GraphQL API. Get envelope signatures and signing accounts."
+keywords: ["Flow API", "Flow Transaction Envelope Signatures", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Flow Transaction Envelope Signatures API"/>
+<meta name="description" content="Query Flow signatures data using Bitquery GraphQL API. Get envelope signatures and signing accounts."/>
+<meta name="keywords" content="Flow API, Flow Transaction Envelope Signatures, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Flow Transaction Envelope Signatures API" />
+<meta property="og:description" content="Query Flow signatures data using Bitquery GraphQL API. Get envelope signatures and signing accounts." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Flow Transaction Envelope Signatures API" />
+<meta property="twitter:description" content="Query Flow signatures data using Bitquery GraphQL API. Get envelope signatures and signing accounts." />
+</head>
+
 # Transaction Envelope Signatures
 
 The Flow Transaction Envelope Signatures API provides details about envelope signatures of transaction from the Flow Blockchain.
@@ -47,3 +68,11 @@ You can filter the data using following fields:
 -   signature: returns raw signature data
 -   time: returns time the transaction was created
 -   transaction: returns basic information about transaction
+
+## Related Resources
+
+- [Flow schema overview](https://docs.bitquery.io/v1/docs/Schema/flow/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Flow Coinpath API](https://docs.bitquery.io/v1/docs/Schema/flow/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

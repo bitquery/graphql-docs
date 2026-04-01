@@ -1,5 +1,6 @@
 ---
 title: Bitcoin Coinpath API
+description: "Track flow of funds up to any depth on the Bitcoin blockchain. Also, get information on blocks for tokens or NFTs on the Bitcoin blockchain."
 ---
 
 <head>
@@ -55,3 +56,11 @@ The following are available fields for the `coinpath`:
 - `sender`: returns information about the sender.
 - `transaction`: returns transaction details.
 - `transactions`: returns attributes of transactions.
+
+## Related Resources
+
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/Examples/bitcoin)
+- [Coinpath (Bitcoin)](https://docs.bitquery.io/v1/docs/Schema/bitcoin/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

@@ -1,6 +1,24 @@
 ---
 sidebar_position: 1
+title: "Understanding Bitquery Query Architecture — Cubes, Dimensions & Metrics"
+description: "Learn how Bitquery models blockchain data as cubes with dimensions, metrics, and filters, and how GraphQL maps to ClickHouse analytics."
+keywords: [Bitquery, GraphQL, cube, dimensions, metrics, query architecture]
 ---
+
+<head>
+<meta name="title" content="Understanding Bitquery Query Architecture — Cubes, Dimensions & Metrics"/>
+<meta name="description" content="Learn how Bitquery models blockchain data as cubes with dimensions, metrics, and filters, and how GraphQL maps to ClickHouse analytics."/>
+<meta name="keywords" content="Bitquery, GraphQL, cube, dimensions, metrics, query architecture"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Understanding Bitquery Query Architecture — Cubes, Dimensions & Metrics" />
+<meta property="og:description" content="Learn how Bitquery models blockchain data as cubes with dimensions, metrics, and filters, and how GraphQL maps to ClickHouse analytics." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Understanding Bitquery Query Architecture — Cubes, Dimensions & Metrics" />
+<meta property="twitter:description" content="Learn how Bitquery models blockchain data as cubes with dimensions, metrics, and filters, and how GraphQL maps to ClickHouse analytics." />
+</head>
 
 # Basic Structure of A Query
 
@@ -61,3 +79,11 @@ Metrics look similar to Dimensions, however, they behave differently. For exampl
 ## Dataset and Filters
 
 Datasets are types of data such as Ethereum and Binance smart chain, both are Ethereum type datasets because they are similar types of blockchains. Filters help in adding scope and range to queries.
+
+## Related Resources
+
+- [Introduction](https://docs.bitquery.io/v1/docs/intro)
+- [Network selection](https://docs.bitquery.io/v1/docs/building-queries/network-selection)
+- [Bitquery API FAQ](https://docs.bitquery.io/v1/docs/building-queries/FAQ)
+- [Aggregation in Bitquery GraphQL API](https://docs.bitquery.io/v1/docs/query-features/aggregation/aggregation)
+- [Filtering fields](https://docs.bitquery.io/v1/docs/query-features/filtering/fields)

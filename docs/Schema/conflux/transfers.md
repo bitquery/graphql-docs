@@ -1,3 +1,24 @@
+---
+title: "Conflux Transfers API"
+description: "Query Conflux transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."
+keywords: ["Conflux API", "Conflux Transfers", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Conflux Transfers API"/>
+<meta name="description" content="Query Conflux transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."/>
+<meta name="keywords" content="Conflux API, Conflux Transfers, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Conflux Transfers API" />
+<meta property="og:description" content="Query Conflux transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Conflux Transfers API" />
+<meta property="twitter:description" content="Query Conflux transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
+</head>
+
 # Conflux Transfers API
 
 Bitquery's conflux transfers API gives you information on the asset transfers on conflux. The following are the fields in the schema:
@@ -122,3 +143,11 @@ query ($network: ConfluxNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Dat
   - The ID of the entity that was transferred, if the transfer is for a token.
 - **success**
   - A `true` or `false` value that indicates whether the transfer was successful.
+
+## Related Resources
+
+- [Conflux schema overview](https://docs.bitquery.io/v1/docs/Schema/conflux/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Conflux Coinpath API](https://docs.bitquery.io/v1/docs/Schema/conflux/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,3 +1,24 @@
+---
+title: "EOS Proposers API"
+description: "Query EOS proposers data using Bitquery GraphQL API. Get block proposers and producer metadata."
+keywords: ["EOS API", "EOS Proposers", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="EOS Proposers API"/>
+<meta name="description" content="Query EOS proposers data using Bitquery GraphQL API. Get block proposers and producer metadata."/>
+<meta name="keywords" content="EOS API, EOS Proposers, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="EOS Proposers API" />
+<meta property="og:description" content="Query EOS proposers data using Bitquery GraphQL API. Get block proposers and producer metadata." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="EOS Proposers API" />
+<meta property="twitter:description" content="Query EOS proposers data using Bitquery GraphQL API. Get block proposers and producer metadata." />
+</head>
+
 # EOS Producers API
 
 ```
@@ -59,3 +80,11 @@ query ( $from: ISO8601DateTime, $till: ISO8601DateTime) {
 - **timestamp** : The timestamp of the block.
 - **hash** : The hash of the block.
 - **height** : The block number.
+
+## Related Resources
+
+- [EOS schema overview](https://docs.bitquery.io/v1/docs/Schema/eos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [EOS Coinpath API](https://docs.bitquery.io/v1/docs/Schema/eos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

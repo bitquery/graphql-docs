@@ -1,3 +1,24 @@
+---
+title: "Stellar Effects API"
+description: "Query Stellar effects data using Bitquery GraphQL API. Get ledger effects, operations, and asset movements."
+keywords: ["Stellar API", "Stellar Effects", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Stellar Effects API"/>
+<meta name="description" content="Query Stellar effects data using Bitquery GraphQL API. Get ledger effects, operations, and asset movements."/>
+<meta name="keywords" content="Stellar API, Stellar Effects, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Stellar Effects API" />
+<meta property="og:description" content="Query Stellar effects data using Bitquery GraphQL API. Get ledger effects, operations, and asset movements." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Stellar Effects API" />
+<meta property="twitter:description" content="Query Stellar effects data using Bitquery GraphQL API. Get ledger effects, operations, and asset movements." />
+</head>
+
 # Effects
 
 According to the Stellar documentation,
@@ -151,3 +172,11 @@ query ($network: StellarNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
 - **address**
 
   The account that is the subject of the effect.
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Stellar Coinpath API](https://docs.bitquery.io/v1/docs/Schema/stellar/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

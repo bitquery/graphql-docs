@@ -1,6 +1,24 @@
 ---
 sidebar_position: 1
+title: "Options Filter in Bitquery GraphQL API"
+description: "Combine limit, offset, ascending and descending sort in the options argument for Bitquery GraphQL queries."
+keywords: [Bitquery, GraphQL, options, limit, offset, sorting]
 ---
+
+<head>
+<meta name="title" content="Options Filter in Bitquery GraphQL API"/>
+<meta name="description" content="Combine limit, offset, ascending and descending sort in the options argument for Bitquery GraphQL queries."/>
+<meta name="keywords" content="Bitquery, GraphQL, options, limit, offset, sorting"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Options Filter in Bitquery GraphQL API" />
+<meta property="og:description" content="Combine limit, offset, ascending and descending sort in the options argument for Bitquery GraphQL queries." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Options Filter in Bitquery GraphQL API" />
+<meta property="twitter:description" content="Combine limit, offset, ascending and descending sort in the options argument for Bitquery GraphQL queries." />
+</head>
 
 # Options
 
@@ -33,3 +51,11 @@ query ($network: EthereumNetwork!, $dateFormat: String!, $from: ISO8601DateTime,
 
 - The options filter is case-sensitive.
 - The limit and offset option must be a positive integer.
+
+## Related Resources
+
+- [Sorting](https://docs.bitquery.io/v1/docs/query-features/filtering/sorting)
+- [Limits and limitBy](https://docs.bitquery.io/v1/docs/query-features/filtering/limits)
+- [Network selection](https://docs.bitquery.io/v1/docs/building-queries/network-selection)
+- [EVM arguments](https://docs.bitquery.io/v1/docs/query-features/arguments/EVM_arguments)
+- [Introduction](https://docs.bitquery.io/v1/docs/intro)

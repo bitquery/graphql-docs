@@ -1,3 +1,24 @@
+---
+title: "Solana Coinpath API"
+description: "Query Solana coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."
+keywords: ["Solana API", "Solana Coinpath", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Solana Coinpath API"/>
+<meta name="description" content="Query Solana coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."/>
+<meta name="keywords" content="Solana API, Solana Coinpath, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Solana Coinpath API" />
+<meta property="og:description" content="Query Solana coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Solana Coinpath API" />
+<meta property="twitter:description" content="Query Solana coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
+</head>
+
 # Coinpath
 
 The Solana Coinpath API allows you to get the money flow for an address on the Solana blockchain. You can track any levels of fund movement with this API. This is a very useful API for crypto investigations. 
@@ -167,3 +188,10 @@ The depth of the connection between the two addresses.
 `signature`
 
 The signature of the transfer.
+
+## Related Resources
+
+- [Solana schema overview](https://docs.bitquery.io/v1/docs/Schema/solana/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

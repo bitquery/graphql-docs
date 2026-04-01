@@ -1,5 +1,6 @@
 ---
 title:  BNB Active Addresses API
+description: "Query active addresses and counts on BNB Smart Chain."
 ---
 
 
@@ -63,3 +64,12 @@ The following are available fields for the `activeAddresses`:
 -   `address`: returns the address and its annotation.
 -   `count`: returns the aggregate count of active addresses.
 -   `countBigInt`: returns the aggregate count of active addresses in `BigInt` format.
+
+## Related Resources
+
+- [BNB Smart Chain schema overview](https://docs.bitquery.io/v1/docs/Schema/binance_smart_chain/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath (BNB Smart Chain)](https://docs.bitquery.io/v1/docs/Schema/binance_smart_chain/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

@@ -1,26 +1,24 @@
 ---
 sidebar_position: 1
-title:  Polygon API Overview
+title: "Polygon API — Blockchain Data Schema | Bitquery"
+description: "Access Polygon blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more."
+keywords: [Polygon API, Polygon GraphQL, Polygon blockchain data, Bitquery]
 ---
 
 
 <head>
-<meta name="title" content="Polygon API Overview - Start here"/>
-<meta name="description" content="Polygon (Matic) Blockchain API - Get Real-time and historical data for Polygon blockchain, including DEX trades, token transfers, NFT, transactions, money flow, gas, Smart contract calls, and events. "/>
-<meta name="keywords" content="polygon api, polygon python api, polygon nft api, polygon scan api, polygon matic api, polygon api docs, polygon crypto api, polygon blockchain api,matic network api"/>
+<meta name="title" content="Polygon API — Blockchain Data Schema | Bitquery"/>
+<meta name="description" content="Access Polygon blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more."/>
+<meta name="keywords" content="Polygon API, Polygon GraphQL, Polygon blockchain data, Bitquery"/>
 <meta name="robots" content="index, follow"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="language" content="English"/>
-
-<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Polygon API Overview - Start here" />
-<meta property="og:description" content="Polygon (Matic) Blockchain API - Get Real-time and historical data for Polygon blockchain, including DEX trades, token transfers, NFT, transactions, money flow, gas, Smart contract calls, and events." />
-
-<!-- Twitter -->
+<meta property="og:title" content="Polygon API — Blockchain Data Schema | Bitquery" />
+<meta property="og:description" content="Access Polygon blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more." />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Polygon API Overview - Start here" />
-<meta property="twitter:description" content="Polygon (Matic) Blockchain API - Get Real-time and historical data for Polygon blockchain, including DEX trades, token transfers, NFT, transactions, money flow, gas, Smart contract calls, and events." />
+<meta property="twitter:title" content="Polygon API — Blockchain Data Schema | Bitquery" />
+<meta property="twitter:description" content="Access Polygon blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more." />
 </head>
 
 
@@ -50,3 +48,11 @@ Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your Access T
 
 
 Let's dive in and explore the Polygon API in following chapters.
+
+## Related Resources
+
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)

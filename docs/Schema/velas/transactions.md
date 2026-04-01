@@ -1,3 +1,24 @@
+---
+title: "Velas Transactions API"
+description: "Query Velas transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+keywords: ["Velas API", "Velas Transactions", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Velas Transactions API"/>
+<meta name="description" content="Query Velas transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."/>
+<meta name="keywords" content="Velas API, Velas Transactions, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Velas Transactions API" />
+<meta property="og:description" content="Query Velas transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Velas Transactions API" />
+<meta property="twitter:description" content="Query Velas transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations." />
+</head>
+
 # Transactions
 
 Bitquery `transactions` API allows you to retrieve all the blockchain transactions from velas Blockchain.
@@ -111,3 +132,11 @@ Transactions can be filtered using following arguments:
 - `success`: returns if transaction is success or not
 - `to`: returns address to which of a particular transaction was sent
 - `txType`: returns transaction type
+
+## Related Resources
+
+- [Velas schema overview](https://docs.bitquery.io/v1/docs/Schema/velas/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Velas Coinpath API](https://docs.bitquery.io/v1/docs/Schema/velas/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

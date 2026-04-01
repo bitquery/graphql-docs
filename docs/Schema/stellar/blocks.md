@@ -1,3 +1,24 @@
+---
+title: "Stellar Blocks API"
+description: "Query Stellar blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."
+keywords: ["Stellar API", "Stellar Blocks", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Stellar Blocks API"/>
+<meta name="description" content="Query Stellar blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."/>
+<meta name="keywords" content="Stellar API, Stellar Blocks, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Stellar Blocks API" />
+<meta property="og:description" content="Query Stellar blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Stellar Blocks API" />
+<meta property="twitter:description" content="Query Stellar blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata." />
+</head>
+
 # Blocks
 
 Stellar Blocks API helps you get information on Blocks in the network. Below are the fields in the API:
@@ -57,3 +78,11 @@ query ($network: StellarNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
 - **maxTxSetSize** : The maximum size of a transaction set that can be included in a block.
 - **baseReserve** : The base reserve of the ledger at the time of the block.
 - **baseFee** : The base fee of the ledger at the time of the block.
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Stellar Coinpath API](https://docs.bitquery.io/v1/docs/Schema/stellar/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,3 +1,24 @@
+---
+title: "Filecoin Calls API"
+description: "Query Filecoin calls data using Bitquery GraphQL API. Get contract or system calls, inputs, and results."
+keywords: ["Filecoin API", "Filecoin Calls", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Filecoin Calls API"/>
+<meta name="description" content="Query Filecoin calls data using Bitquery GraphQL API. Get contract or system calls, inputs, and results."/>
+<meta name="keywords" content="Filecoin API, Filecoin Calls, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Filecoin Calls API" />
+<meta property="og:description" content="Query Filecoin calls data using Bitquery GraphQL API. Get contract or system calls, inputs, and results." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Filecoin Calls API" />
+<meta property="twitter:description" content="Query Filecoin calls data using Bitquery GraphQL API. Get contract or system calls, inputs, and results." />
+</head>
+
 # Calls
 
 In Filecoin, calls are used to invoke methods on actors and transfer FIL. Bitquery's Calls API provides you the following information:
@@ -101,3 +122,11 @@ The `amount` filter allows you to filter calls by the amount of FIL transferred.
 -   `sender`: The address of the actor that made the call.
 -   `success`: Whether the call was successful.
 -   `hash`: The hash of the message that was called.
+
+## Related Resources
+
+- [Filecoin schema overview](https://docs.bitquery.io/v1/docs/Schema/filecoin/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Filecoin Coinpath API](https://docs.bitquery.io/v1/docs/Schema/filecoin/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

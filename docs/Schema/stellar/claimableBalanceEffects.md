@@ -1,3 +1,24 @@
+---
+title: "Stellar Claimable Balance Effects API"
+description: "Query Stellar claimable balance data using Bitquery GraphQL API. Get claimable balance claimants, assets, and predicates."
+keywords: ["Stellar API", "Stellar Claimable Balance Effects", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Stellar Claimable Balance Effects API"/>
+<meta name="description" content="Query Stellar claimable balance data using Bitquery GraphQL API. Get claimable balance claimants, assets, and predicates."/>
+<meta name="keywords" content="Stellar API, Stellar Claimable Balance Effects, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Stellar Claimable Balance Effects API" />
+<meta property="og:description" content="Query Stellar claimable balance data using Bitquery GraphQL API. Get claimable balance claimants, assets, and predicates." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Stellar Claimable Balance Effects API" />
+<meta property="twitter:description" content="Query Stellar claimable balance data using Bitquery GraphQL API. Get claimable balance claimants, assets, and predicates." />
+</head>
+
 # Claimable BalanceEffects
 
 Claimable balance allows stellar wallets to send payments in parts.The claimable balance is recorded on the Stellar ledger. Read more [here](https://developers.stellar.org/docs/encyclopedia/claimable-balances)
@@ -191,3 +212,11 @@ This field allows you to control the pagination and sorting of the results. The 
 - **transaction**
 
   The transaction that created the claimable balance effect.
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Stellar Coinpath API](https://docs.bitquery.io/v1/docs/Schema/stellar/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

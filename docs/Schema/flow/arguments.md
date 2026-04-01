@@ -1,3 +1,24 @@
+---
+title: "Flow Arguments API"
+description: "Query Flow GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."
+keywords: ["Flow API", "Flow Arguments", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Flow Arguments API"/>
+<meta name="description" content="Query Flow GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."/>
+<meta name="keywords" content="Flow API, Flow Arguments, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Flow Arguments API" />
+<meta property="og:description" content="Query Flow GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Flow Arguments API" />
+<meta property="twitter:description" content="Query Flow GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema." />
+</head>
+
 # Arguments
 
 The Flow Arguments API provides information about transaction arguments from the flow blockchain which contains the payload and envelope signatures
@@ -39,4 +60,12 @@ You can filter Arguments using the following fields:
 -   time: returns time when the transaction was created
 -   value: returns value of argument
 -   valueAsFix: returns value of argument converted to Fixed point number
--   valueAsInt: returns value of argument converted to Integer 
+-   valueAsInt: returns value of argument converted to Integer
+
+## Related Resources
+
+- [Flow schema overview](https://docs.bitquery.io/v1/docs/Schema/flow/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Flow Coinpath API](https://docs.bitquery.io/v1/docs/Schema/flow/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

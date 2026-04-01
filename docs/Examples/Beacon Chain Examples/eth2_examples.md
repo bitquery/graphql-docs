@@ -1,7 +1,24 @@
 ---
+title: "Ethereum 2 / Beacon Chain API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Ethereum 2 and Beacon Chain data. Get validators, attestations, slots, and network stats."
+keywords: [Ethereum 2 API examples, Beacon Chain GraphQL queries, Bitquery]
 sidebar_position: 1
 ---
 
+<head>
+<meta name="title" content="Ethereum 2 / Beacon Chain API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries for Ethereum 2 and Beacon Chain data. Get validators, attestations, slots, and network stats."/>
+<meta name="keywords" content="Ethereum 2 API examples, Beacon Chain GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ethereum 2 / Beacon Chain API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries for Ethereum 2 and Beacon Chain data. Get validators, attestations, slots, and network stats." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Ethereum 2 / Beacon Chain API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries for Ethereum 2 and Beacon Chain data. Get validators, attestations, slots, and network stats." />
+</head>
 
 # ETH2 Examples
 
@@ -155,3 +172,11 @@ query ($network: Ethereum2Network!, $dateFormat: String!, $index: Int!, $from: I
   "dateFormat": "%Y-%m-%d"
 }
 ```
+
+## Related Resources
+
+- [Ethereum 2 schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum2/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Blockchain API examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

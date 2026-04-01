@@ -1,3 +1,24 @@
+---
+title: "Cosmos Coinpath API"
+description: "Query Cosmos coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."
+keywords: ["Cosmos API", "Cosmos Coinpath", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Cosmos Coinpath API"/>
+<meta name="description" content="Query Cosmos coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."/>
+<meta name="keywords" content="Cosmos API, Cosmos Coinpath, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cosmos Coinpath API" />
+<meta property="og:description" content="Query Cosmos coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Cosmos Coinpath API" />
+<meta property="twitter:description" content="Query Cosmos coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
+</head>
+
 # Coinpath
 
 The coinpath API provides detailed information about the money flow using coinpath technology.
@@ -29,3 +50,10 @@ The coinpath API provides detailed information about the money flow using coinpa
 -   `receiver`: returns receiver address
 -   `sender`: returns sender address
 -   `transaction`: returns message of transfer happened
+
+## Related Resources
+
+- [Cosmos schema overview](https://docs.bitquery.io/v1/docs/Schema/cosmos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

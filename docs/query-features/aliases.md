@@ -1,6 +1,24 @@
 ---
 sidebar_position: 2
+title: "GraphQL Aliases in Bitquery API"
+description: "Rename GraphQL response fields with aliases in Bitquery queries for clearer DEX trade and token data."
+keywords: [Bitquery, GraphQL, aliases, field renaming, DEX]
 ---
+
+<head>
+<meta name="title" content="GraphQL Aliases in Bitquery API"/>
+<meta name="description" content="Rename GraphQL response fields with aliases in Bitquery queries for clearer DEX trade and token data."/>
+<meta name="keywords" content="Bitquery, GraphQL, aliases, field renaming, DEX"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="GraphQL Aliases in Bitquery API" />
+<meta property="og:description" content="Rename GraphQL response fields with aliases in Bitquery queries for clearer DEX trade and token data." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="GraphQL Aliases in Bitquery API" />
+<meta property="twitter:description" content="Rename GraphQL response fields with aliases in Bitquery queries for clearer DEX trade and token data." />
+</head>
 
 # Aliases
 
@@ -55,3 +73,11 @@ Here's an example of a query with aliasing:
   }
 }
 ```
+
+## Related Resources
+
+- [Basic structure of a query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
+- [Fragments overview](https://docs.bitquery.io/v1/docs/query-features/fragments/overview)
+- [Count aggregation](https://docs.bitquery.io/v1/docs/query-features/aggregation/count)
+- [GraphQL IDE — how to start](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Schema — Ethereum overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)

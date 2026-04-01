@@ -1,5 +1,6 @@
 ---
 title: Tron DEX Trades API
+description: "Query DEX trades, pools, and pairs on Tron."
 ---
 
 <head>
@@ -144,3 +145,12 @@ The following fields are available for the `dexTrades`:
 -   `tradeAmount`: returns trade amount
 -   `tradeIndex`: returns index of trade in the transaction
 -   `transaction`: returns details of transaction
+
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Tron API examples](https://docs.bitquery.io/v1/docs/Examples/tron)
+- [Coinpath (Tron)](https://docs.bitquery.io/v1/docs/Schema/tron/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

@@ -1,6 +1,24 @@
 ---
+title: "Transfer API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for token and native transfers on EVM chains. Filter by address, contract, and time."
+keywords: [transfer API examples, GraphQL queries, Bitquery]
 sidebar_position: 1
 ---
+
+<head>
+<meta name="title" content="Transfer API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries for token and native transfers on EVM chains. Filter by address, contract, and time."/>
+<meta name="keywords" content="transfer API examples, GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Transfer API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries for token and native transfers on EVM chains. Filter by address, contract, and time." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Transfer API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries for token and native transfers on EVM chains. Filter by address, contract, and time." />
+</head>
 
 # Transfer API
 
@@ -515,3 +533,11 @@ query MyQuery {
 ## Detailed NFT Transfers
 
 NFT transfers are much better supported on our V2 APIs (Streaming APIs). Therefore please check [streaming APIs](https://bitquery.io/products/streaming).
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Transaction API examples](https://docs.bitquery.io/v1/docs/Examples/Transactions/transaction-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

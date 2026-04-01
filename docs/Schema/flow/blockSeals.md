@@ -1,3 +1,24 @@
+---
+title: "Flow Block Seals API"
+description: "Query Flow block seals data using Bitquery GraphQL API. Get block seals, execution nodes, and consensus proofs."
+keywords: ["Flow API", "Flow Block Seals", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Flow Block Seals API"/>
+<meta name="description" content="Query Flow block seals data using Bitquery GraphQL API. Get block seals, execution nodes, and consensus proofs."/>
+<meta name="keywords" content="Flow API, Flow Block Seals, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Flow Block Seals API" />
+<meta property="og:description" content="Query Flow block seals data using Bitquery GraphQL API. Get block seals, execution nodes, and consensus proofs." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Flow Block Seals API" />
+<meta property="twitter:description" content="Query Flow block seals data using Bitquery GraphQL API. Get block seals, execution nodes, and consensus proofs." />
+</head>
+
 # Block Seals
 
 The Flow Block Seals API provides you information about blocks seal from the Flow Blockchain. A block seal is an attestation that execution result of a specific block has been verified and approved by a quorum of verification nodes.
@@ -34,3 +55,11 @@ You can filter block seal data using following fields:
 -   resultApprovalSIgnatures: returns BLS signatures of verification nodes on the result approval contents
 -   sealId: returns Id of the block being sealed
 -   time: returns the time block being sealed
+
+## Related Resources
+
+- [Flow schema overview](https://docs.bitquery.io/v1/docs/Schema/flow/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Flow Coinpath API](https://docs.bitquery.io/v1/docs/Schema/flow/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

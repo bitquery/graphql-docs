@@ -1,3 +1,24 @@
+---
+title: "Stellar Liquidity Pool Trade Effects API"
+description: "Query Stellar liquidity pool data using Bitquery GraphQL API. Get liquidity pool trades, reserves, and pool participants."
+keywords: ["Stellar API", "Stellar Liquidity Pool Trade Effects", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Stellar Liquidity Pool Trade Effects API"/>
+<meta name="description" content="Query Stellar liquidity pool data using Bitquery GraphQL API. Get liquidity pool trades, reserves, and pool participants."/>
+<meta name="keywords" content="Stellar API, Stellar Liquidity Pool Trade Effects, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Stellar Liquidity Pool Trade Effects API" />
+<meta property="og:description" content="Query Stellar liquidity pool data using Bitquery GraphQL API. Get liquidity pool trades, reserves, and pool participants." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Stellar Liquidity Pool Trade Effects API" />
+<meta property="twitter:description" content="Query Stellar liquidity pool data using Bitquery GraphQL API. Get liquidity pool trades, reserves, and pool participants." />
+</head>
+
 # Liquidity Pool Trade Effects
 
 Liquidity pools on Stellar support AMMs. Bitquery's Liquidity TradePoolEffects API gives you trade effects information regarding liquidity pools. The following are the fields in the schema:
@@ -212,3 +233,11 @@ query ($network: StellarNetwork!) {
 - **address**
 
   The address of the account that was affected by the liquidity pool trade effect.
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Stellar Coinpath API](https://docs.bitquery.io/v1/docs/Schema/stellar/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

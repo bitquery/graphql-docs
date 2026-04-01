@@ -1,3 +1,23 @@
+---
+title: "Algorand Coinpath API"
+description: "Query Algorand coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."
+keywords: ["Algorand API", "Algorand Coinpath", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Algorand Coinpath API"/>
+<meta name="description" content="Query Algorand coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."/>
+<meta name="keywords" content="Algorand API, Algorand Coinpath, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Algorand Coinpath API" />
+<meta property="og:description" content="Query Algorand coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Algorand Coinpath API" />
+<meta property="twitter:description" content="Query Algorand coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
+</head>
 
 # Coinpath
 
@@ -36,3 +56,10 @@ The following are available fields for the `coinpath`:
 - `sender`: returns information about the sender.
 - `transaction`:  returns transaction details.
 - `transactions`: returns attributes of transactions.
+
+## Related Resources
+
+- [Algorand schema overview](https://docs.bitquery.io/v1/docs/Schema/algorand/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

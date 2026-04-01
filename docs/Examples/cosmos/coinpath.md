@@ -1,3 +1,24 @@
+---
+title: "Cosmos Coinpath API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Cosmos coinpath flows. Trace funds between addresses with depth and amounts."
+keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
+---
+
+<head>
+<meta name="title" content="Cosmos Coinpath API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries for Cosmos coinpath flows. Trace funds between addresses with depth and amounts."/>
+<meta name="keywords" content="Cosmos API examples, Cosmos GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cosmos Coinpath API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries for Cosmos coinpath flows. Trace funds between addresses with depth and amounts." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Cosmos Coinpath API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries for Cosmos coinpath flows. Trace funds between addresses with depth and amounts." />
+</head>
+
 # Coinpath API
 
 Our Cosmos Coinpath API provides comprehensive information about money flow of addresses on the Cosmos blockchain.
@@ -118,4 +139,12 @@ For each transaction, the query provides details like the transferred amount in 
 }
 ```
 
-This query retrieves 10 latest transactions initiated from the initial address and received by the specified receiver, where the minimum transaction amount is set to 200. 
+This query retrieves 10 latest transactions initiated from the initial address and received by the specified receiver, where the minimum transaction amount is set to 200.
+
+## Related Resources
+
+- [Cosmos schema overview](https://docs.bitquery.io/v1/docs/Schema/cosmos/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Staking examples](https://docs.bitquery.io/v1/docs/Examples/Staking/stake_examples)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

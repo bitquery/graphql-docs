@@ -1,3 +1,24 @@
+---
+title: "Stellar Coinpath API"
+description: "Query Stellar coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."
+keywords: ["Stellar API", "Stellar Coinpath", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Stellar Coinpath API"/>
+<meta name="description" content="Query Stellar coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."/>
+<meta name="keywords" content="Stellar API, Stellar Coinpath, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Stellar Coinpath API" />
+<meta property="og:description" content="Query Stellar coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Stellar Coinpath API" />
+<meta property="twitter:description" content="Query Stellar coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers." />
+</head>
+
 # Coinpath
 
 The Coinpath API allows you to get the money flow for an address on the Stellar blockchain. You can track any levels of fund movement with this API. This is a very useful API for crypto investigations. 
@@ -151,3 +172,10 @@ query ($network: StellarNetwork!, $address: String!, $from: ISO8601DateTime, $ti
 - **currencyFrom**
 
   The asset that was sent from the sender's account in native asset (XLM)
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

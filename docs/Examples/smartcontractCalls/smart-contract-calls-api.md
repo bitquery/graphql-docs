@@ -1,3 +1,24 @@
+---
+title: "Smart Contract Calls API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for EVM smart contract calls. Get methods, arguments, call depth, and callers."
+keywords: [smart contract API examples, GraphQL queries, Bitquery]
+---
+
+<head>
+<meta name="title" content="Smart Contract Calls API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries for EVM smart contract calls. Get methods, arguments, call depth, and callers."/>
+<meta name="keywords" content="smart contract API examples, GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Smart Contract Calls API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries for EVM smart contract calls. Get methods, arguments, call depth, and callers." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Smart Contract Calls API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries for EVM smart contract calls. Get methods, arguments, call depth, and callers." />
+</head>
+
 # Smart contract call API
 
 Our Smart contract call API allows you access to parsed smart contract calls and arguments for all the blockchains we support.
@@ -366,3 +387,11 @@ query ($network: EthereumNetwork!, $address: String!, $limit: Int!, $offset: Int
 
 
 ```
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Smart contract events examples](https://docs.bitquery.io/v1/docs/Examples/smartcontractEvents/smart-contract-events-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

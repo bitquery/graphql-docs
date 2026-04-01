@@ -1,3 +1,24 @@
+---
+title: "Harmony Smart Contract Events API"
+description: "Query Harmony smart contract events data using Bitquery GraphQL API. Get contract events, logs, topics, and decoded payloads."
+keywords: ["Harmony API", "Harmony Smart Contract Events", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Harmony Smart Contract Events API"/>
+<meta name="description" content="Query Harmony smart contract events data using Bitquery GraphQL API. Get contract events, logs, topics, and decoded payloads."/>
+<meta name="keywords" content="Harmony API, Harmony Smart Contract Events, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Harmony Smart Contract Events API" />
+<meta property="og:description" content="Query Harmony smart contract events data using Bitquery GraphQL API. Get contract events, logs, topics, and decoded payloads." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Harmony Smart Contract Events API" />
+<meta property="twitter:description" content="Query Harmony smart contract events data using Bitquery GraphQL API. Get contract events, logs, topics, and decoded payloads." />
+</head>
+
 # Smart Contract Events
 
 The Harmony Smart Contract Events API provides information about events emiited from smart contract on the Harmony Blockchain.
@@ -45,3 +66,11 @@ You can filter events using following fields:
 -   txHash: returns hash of the transaction
 -   txIndex: returns index of the transaction in the block
 -   txTo: returns transaction to address
+
+## Related Resources
+
+- [Harmony schema overview](https://docs.bitquery.io/v1/docs/Schema/harmony/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Harmony Coinpath API](https://docs.bitquery.io/v1/docs/Schema/harmony/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

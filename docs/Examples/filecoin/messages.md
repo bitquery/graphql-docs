@@ -1,3 +1,24 @@
+---
+title: "Filecoin Messages API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Filecoin messages and storage deals. Track publish, faults, and on-chain actors."
+keywords: [Filecoin API examples, Filecoin GraphQL queries, Bitquery]
+---
+
+<head>
+<meta name="title" content="Filecoin Messages API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries for Filecoin messages and storage deals. Track publish, faults, and on-chain actors."/>
+<meta name="keywords" content="Filecoin API examples, Filecoin GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Filecoin Messages API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries for Filecoin messages and storage deals. Track publish, faults, and on-chain actors." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Filecoin Messages API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries for Filecoin messages and storage deals. Track publish, faults, and on-chain actors." />
+</head>
+
 # Filecoin Storage & Deal Data Examples
 
 In this section we will see some example queries that track different stages in a storae deal flow on Filecoin. For further details on Storage deals on Filecoin, refer to their [official documentation](https://docs.filecoin.io/storage-providers/filecoin-deals/storage-deals).
@@ -165,3 +186,11 @@ query MyQuery {
 ```
 
 (Run query here: [DeclareFaults](https://ide.bitquery.io/Filecoin-DeclareFaults-Message))
+
+## Related Resources
+
+- [Filecoin schema overview](https://docs.bitquery.io/v1/docs/Schema/filecoin/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Blockchain API examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

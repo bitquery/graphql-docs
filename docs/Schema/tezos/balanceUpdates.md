@@ -1,3 +1,24 @@
+---
+title: "Tezos Balance Updates API"
+description: "Query Tezos balance updates data using Bitquery GraphQL API. Get balance updates, contracts, and token movements."
+keywords: ["Tezos API", "Tezos Balance Updates", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Tezos Balance Updates API"/>
+<meta name="description" content="Query Tezos balance updates data using Bitquery GraphQL API. Get balance updates, contracts, and token movements."/>
+<meta name="keywords" content="Tezos API, Tezos Balance Updates, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tezos Balance Updates API" />
+<meta property="og:description" content="Query Tezos balance updates data using Bitquery GraphQL API. Get balance updates, contracts, and token movements." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Tezos Balance Updates API" />
+<meta property="twitter:description" content="Query Tezos balance updates data using Bitquery GraphQL API. Get balance updates, contracts, and token movements." />
+</head>
+
 # Balance Updates
 
 The balanceUpdates API allows you to retrieve information about balance updates for a specific address.
@@ -61,3 +82,11 @@ You can filter balance updates data using the following fields:
 -   `source`: returns the source of the transaction
 -   `timestamp`: returns the timestamp of the transaction
 -   `transaction`: returns details of the transaction
+
+## Related Resources
+
+- [Tezos schema overview](https://docs.bitquery.io/v1/docs/Schema/tezos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Tezos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/tezos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

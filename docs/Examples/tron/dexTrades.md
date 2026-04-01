@@ -1,4 +1,26 @@
+---
+title: "Tron DEX Trades API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Tron DEX trades. Get pairs, base/quote currencies, smart contracts, and trade counts."
+keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
+---
+
+<head>
+<meta name="title" content="Tron DEX Trades API Examples — Bitquery GraphQL"/>
+<meta name="description" content="Example GraphQL queries for Tron DEX trades. Get pairs, base/quote currencies, smart contracts, and trade counts."/>
+<meta name="keywords" content="Tron API examples, Tron GraphQL queries, Bitquery"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tron DEX Trades API Examples — Bitquery GraphQL" />
+<meta property="og:description" content="Example GraphQL queries for Tron DEX trades. Get pairs, base/quote currencies, smart contracts, and trade counts." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Tron DEX Trades API Examples — Bitquery GraphQL" />
+<meta property="twitter:description" content="Example GraphQL queries for Tron DEX trades. Get pairs, base/quote currencies, smart contracts, and trade counts." />
+</head>
+
 # DEX Trade API
+
 
 Our Tron DEX Trade API provides comprehensive information about DEX Trades from Tron blockchain.
 
@@ -92,4 +114,12 @@ This query retrieves the latest 10 decentralized exchange (DEX) trades on the Tr
 ```
 
 This query retrieves the latest 10 decentralized exchange (DEX) trades on the Tron network for the base currency "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t" and provides the base currency symbol, name, and address, quote currency symbol, name, and address, smart contract address, and the trade count for each unique smart contract address involved in the trades.
+
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [DEX trades examples (folder)](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
 

@@ -1,3 +1,24 @@
+---
+title: "Flow Event Fields API"
+description: "Query Flow event fields data using Bitquery GraphQL API. Get event field definitions and typed values."
+keywords: ["Flow API", "Flow Event Fields", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Flow Event Fields API"/>
+<meta name="description" content="Query Flow event fields data using Bitquery GraphQL API. Get event field definitions and typed values."/>
+<meta name="keywords" content="Flow API, Flow Event Fields, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Flow Event Fields API" />
+<meta property="og:description" content="Query Flow event fields data using Bitquery GraphQL API. Get event field definitions and typed values." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Flow Event Fields API" />
+<meta property="twitter:description" content="Query Flow event fields data using Bitquery GraphQL API. Get event field definitions and typed values." />
+</head>
+
 # Event Fields
 
 The Flow Event Fields API provides information about events from the Flow Blockchain.
@@ -46,3 +67,11 @@ You can filter the events fields data using the following fields:
 -   time: returns time when transaction is created
 -   transaction: returns information about transaction
 -   type: returns type of field
+
+## Related Resources
+
+- [Flow schema overview](https://docs.bitquery.io/v1/docs/Schema/flow/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Flow Coinpath API](https://docs.bitquery.io/v1/docs/Schema/flow/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

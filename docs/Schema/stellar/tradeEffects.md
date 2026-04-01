@@ -1,3 +1,24 @@
+---
+title: "Stellar Trade Effects API"
+description: "Query Stellar trade effects data using Bitquery GraphQL API. Get trade effects, offers, and asset changes."
+keywords: ["Stellar API", "Stellar Trade Effects", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Stellar Trade Effects API"/>
+<meta name="description" content="Query Stellar trade effects data using Bitquery GraphQL API. Get trade effects, offers, and asset changes."/>
+<meta name="keywords" content="Stellar API, Stellar Trade Effects, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Stellar Trade Effects API" />
+<meta property="og:description" content="Query Stellar trade effects data using Bitquery GraphQL API. Get trade effects, offers, and asset changes." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Stellar Trade Effects API" />
+<meta property="twitter:description" content="Query Stellar trade effects data using Bitquery GraphQL API. Get trade effects, offers, and asset changes." />
+</head>
+
 # Trade Effects
 
 When an offer is fully or partially fulfilled, a trade happens. Trade Effects capture the effects wrt trades. Below are the fields in the schema:
@@ -203,3 +224,11 @@ query ($network: StellarNetwork!, $hash: String!) {
 - **offerId**
 
   The ID of the offer that was involved in the trade.
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Stellar Coinpath API](https://docs.bitquery.io/v1/docs/Schema/stellar/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

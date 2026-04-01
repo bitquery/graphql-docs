@@ -1,5 +1,6 @@
 ---
 title: "Ripple Blocks API"
+description: "Query validated XRP Ledger ledgers (blocks), timestamps, and transaction counts."
 ---
 
 <head>
@@ -55,3 +56,12 @@ query ($network: RippleNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime)
   "dateFormat": "%Y-%m-%d"
 }
 ```
+
+## Related Resources
+
+- [XRP Ledger schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Ripple API examples](https://docs.bitquery.io/v1/docs/Examples/ripple)
+- [Coinpath (XRP Ledger)](https://docs.bitquery.io/v1/docs/Schema/ripple/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

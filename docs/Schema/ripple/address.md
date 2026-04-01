@@ -1,5 +1,6 @@
 ---
 title: Ripple Address API
+description: "Look up address balances and history on the XRP Ledger."
 ---
 
 <head>
@@ -102,3 +103,12 @@ query ($address: String!, $network: RippleNetwork!) {
 - `sendAmount`: The total amount of XRP that has been sent by the wallet.
 - `lastTransferAt`: The timestamp of the most recent transfer to or from the wallet.
 - `lastTxAt`: The timestamp of the most recent transaction involving the wallet.
+
+## Related Resources
+
+- [XRP Ledger schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Ripple API examples](https://docs.bitquery.io/v1/docs/Examples/ripple)
+- [Coinpath (XRP Ledger)](https://docs.bitquery.io/v1/docs/Schema/ripple/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

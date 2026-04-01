@@ -1,5 +1,6 @@
 ---
 title: "Ethereum Addresses API"
+description: "Explore specific address details, balances, and smart contract attributes using Bitquery's Ethereum address query."
 ---
 
 <head>
@@ -77,3 +78,11 @@ The following are available fields for the address:
 - `balance`: Returns the current balance of the address.
 - `balances`: Returns the balance history of the address.
 - `smartContract`: Returns details if the address is that of a smart contract.
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath (Ethereum)](https://docs.bitquery.io/v1/docs/Schema/ethereum/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

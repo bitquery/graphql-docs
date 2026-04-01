@@ -1,3 +1,24 @@
+---
+title: "Stellar Transfers API"
+description: "Query Stellar transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."
+keywords: ["Stellar API", "Stellar Transfers", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Stellar Transfers API"/>
+<meta name="description" content="Query Stellar transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."/>
+<meta name="keywords" content="Stellar API, Stellar Transfers, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Stellar Transfers API" />
+<meta property="og:description" content="Query Stellar transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Stellar Transfers API" />
+<meta property="twitter:description" content="Query Stellar transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies." />
+</head>
+
 # Transfers
 
 Bitquery's Stellar transfers API provides you the following information:
@@ -186,3 +207,11 @@ query ($network: StellarNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
 - **operation**
 
   The operation that created the transfer.
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Stellar Coinpath API](https://docs.bitquery.io/v1/docs/Schema/stellar/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

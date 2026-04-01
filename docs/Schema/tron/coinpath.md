@@ -1,5 +1,6 @@
 ---
 title: Tron Coinpath API
+description: "Track fund flows up to any depth on Tron with coinpath."
 ---
 
 <head>
@@ -53,3 +54,12 @@ Coinpath data can be filtered using following arguments:
 - `receiver`: returns receiver address
 - `sender`: returns sender address
 - `transaction`: returns transaction of transfer happened
+
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Tron API examples](https://docs.bitquery.io/v1/docs/Examples/tron)
+- [Coinpath (Tron)](https://docs.bitquery.io/v1/docs/Schema/tron/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

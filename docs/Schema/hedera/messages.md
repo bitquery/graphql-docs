@@ -1,3 +1,24 @@
+---
+title: "Hedera Messages API"
+description: "Query Hedera messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls."
+keywords: ["Hedera API", "Hedera Messages", "Bitquery", "GraphQL"]
+---
+
+<head>
+<meta name="title" content="Hedera Messages API"/>
+<meta name="description" content="Query Hedera messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls."/>
+<meta name="keywords" content="Hedera API, Hedera Messages, Bitquery, GraphQL"/>
+<meta name="robots" content="index, follow"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="language" content="English"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Hedera Messages API" />
+<meta property="og:description" content="Query Hedera messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls." />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Hedera Messages API" />
+<meta property="twitter:description" content="Query Hedera messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls." />
+</head>
+
 # Messages
 
 The Messages API provides information about blockchain messages on the Hedera Blockchain.
@@ -82,3 +103,11 @@ You can filter blockchain messages using the following arguments:
 -   `transactionHash`: Returns the hash of the transaction.
 -   `transactionValidDurationInSec`: Returns the duration of transaction validity in seconds.
 -   `validStart`: Returns the timestamp when the transaction validity starts.
+
+## Related Resources
+
+- [Hedera schema overview](https://docs.bitquery.io/v1/docs/Schema/hedera/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Hedera Coinpath API](https://docs.bitquery.io/v1/docs/Schema/hedera/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)
