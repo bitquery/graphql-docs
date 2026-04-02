@@ -92,15 +92,6 @@ const config = {
             from: "/docs/category/Bitcoin",
           },
         ],
-        // On case-sensitive hosts, also redirect /docs/Examples/bitcoin → /docs/examples/Bitcoin.
-        // Can't be a static redirect here (macOS build is case-insensitive); handle in nginx if needed.
-        createRedirects(existingPath) {
-          // Bitcoin hub: slug /examples/Bitcoin differs from file path Examples/bitcoin
-          if (existingPath === "/docs/examples/Bitcoin") {
-            return ["/docs/Examples/bitcoin/index"];
-          }
-          return undefined;
-        },
       },
     ],
   ],
