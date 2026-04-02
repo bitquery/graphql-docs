@@ -25,6 +25,23 @@ query {
 
 Let's dive in and explore the Ethereum data available through Bitquery API.
 
+Celo is a mobile-first EVM-compatible network with native stable-value assets such as **cUSD** and **cEUR**, plus **CELO** for governance and gas-related economics. Production and test networks (for example mainnet, Alfajores, Baklava) are selected via the `network` argument on the `ethereum` root. Bitquery surfaces blocks, transfers, contracts, DEX trades, and coinpath like other EVM chains.
+
+## What You Can Query
+
+- **Blocks** — heights, timestamps, validators where indexed, gas aggregates, and transaction inclusion
+- **Transactions** — hashes, senders, recipients, status, gas, and contract call input data
+- **Transfers** — CELO, ERC-20 stablecoins, and other tokens with amounts and counterparties
+- **Smart contracts** — deployments and log-driven events for DeFi and mobile dApps
+- **DEX trades** — swap-level records for on-chain DEX activity on Celo
+- **Coinpath** — token flow tracing across addresses and protocols
+
+## Common Use Cases
+
+- **Stablecoin circulation** — track cUSD/cEUR (and related assets) mint, burn, and transfer patterns
+- **Mobile and remittance analytics** — monitor high-volume payment contracts and wallet cohorts
+- **DeFi monitoring** — DEX volumes, pool events, and protocol treasuries on Celo
+
 ## Related Resources
 
 - [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

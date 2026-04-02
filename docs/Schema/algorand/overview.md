@@ -23,6 +23,22 @@ You can also fetch data from Algorand Betanet (`algorand_betanet`).
 
 Let's dive in and explore the Algorand data available through Bitquery API.
 
+Algorand is a pure proof-of-stake layer 1 with fast finality, native **ALGO** transfers, and **ASA** (Algorand Standard Asset) tokens for fungible and non-fungible assets. Bitquery indexes blocks, payments-style activity, application (smart contract) calls, and asset movements for mainnet and Betanet.
+
+## What You Can Query
+
+- **Blocks** — round/height, timestamps, proposer context where indexed, and throughput-related fields
+- **Transactions** — signatures, types, fees, and grouping of inner transactions where applicable
+- **Transfers** — ALGO and ASA movements with asset IDs, amounts, senders, and receivers
+- **Smart contract calls** — application (app) call transactions and related fields for on-chain program interaction
+- **Coinpath** — chained asset flows across accounts for tracing and analytics
+
+## Common Use Cases
+
+- **ASA and ALGO treasury tracking** — monitor balances and transfer history for assets and accounts
+- **dApp and DeFi analytics** — volume and participation around apps, pools, or known program IDs
+- **Cross-account tracing** — use coinpath to follow ASA or ALGO through several hops
+
 ## Related Resources
 
 - [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

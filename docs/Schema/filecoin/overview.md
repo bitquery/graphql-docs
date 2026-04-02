@@ -19,6 +19,23 @@ Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your Access T
 
 :::
 
+**Filecoin** is a decentralized storage network: miners earn **FIL** by committing storage, and the chain records **storage deals** and proofs rather than a generic “world computer” model. On Filecoin, **actors** (not EVM-style contracts) implement protocol logic, and the ledger records **messages**—the primary unit of chain activity—rather than Ethereum-like “transactions” alone. Bitquery exposes this model as **blocks**, **messages**, **calls**, **transfers**, **addresses**, and **coinpath** for tracing flows.
+
+## What You Can Query
+
+- **Blocks** — heights, timestamps, and structural metadata for tipsets and chain progression
+- **Messages** — Filecoin messages with senders, recipients, method names, and execution outcomes where indexed
+- **Calls** — actor method invocations and related execution detail for storage, market, and payment actors
+- **Transfers** — FIL movements between addresses, including fees and value associated with messages
+- **Addresses** — activity and balance-oriented fields for miners, clients, and regular accounts as exposed in the schema
+- **Coinpath** — multi-hop FIL flows for following value through intermediate addresses
+
+## Common Use Cases
+
+- **Storage economics** — relate message and call patterns to deal activity, miner behavior, and network utilization
+- **Miner and client reporting** — summarize transfers and address-level flows for operational or financial reporting
+- **Forensics** — use **coinpath** to reconstruct how FIL moved across wallets tied to deals or market actors
+
 ## Related Resources
 
 - [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

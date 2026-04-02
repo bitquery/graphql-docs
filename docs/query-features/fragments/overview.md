@@ -51,6 +51,16 @@ fragment balanceChange on EthereumBalanceChange {
 }
 ```
 
+Fragments pay off when you find yourself **copy-pasting the same block of fields** into several queries or when one query needs the same selection under multiple paths (for example, different variables or aliases). They keep a single source of truth for “what a balance change looks like” or “which token fields we always need,” which reduces mistakes when the schema evolves. Nesting fragments—smaller fragments included inside larger ones—mirrors how you think about domain objects (a balance change inside a history inside an address) without repeating literal field lists.
+
+## When to Use Fragments
+
+- **Repeated field sets**: When three or more queries need identical columns for the same GraphQL type, extract a fragment so a schema change updates one definition instead of many.
+- **DRY across environments**: When staging and production queries differ only by variables but should share shape, fragments ensure parity and simplify code review.
+- **Cross-chain or multi-entity queries**: When you query similar structures on different roots or with different arguments, shared fragments keep token, trade, or transfer shapes consistent while you vary only the entry point.
+- **Client and server collaboration**: When mobile, web, and backend services consume the same Bitquery shapes, a checked-in fragment document becomes an informal contract for the payload.
+- **Readability of large operations**: When a query would span dozens of lines, named fragments break it into navigable pieces without changing the wire protocol.
+
 ## Related Resources
 
 - [GraphQL aliases](https://docs.bitquery.io/v1/docs/query-features/aliases)

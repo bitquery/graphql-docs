@@ -23,6 +23,22 @@ query {
 
 Let's dive in and explore the Dogecoin data available through Bitquery API.
 
+Dogecoin is a UTXO-based Litecoin-family chain widely used for tips, payments, and community transfers. Bitquery models it through the Bitcoin-style schema (`bitcoin` root) so you can query blocks, transactions, addresses, and coinpath-style flows without smart contracts on-chain.
+
+## What You Can Query
+
+- **Blocks** — heights, timestamps, sizes, and the transactions committed in each block
+- **Transactions** — hashes, fees, inputs and outputs, and linkage to block context
+- **Addresses** — aggregated activity and UTXO-derived views for Dogecoin addresses
+- **Transfers** — DOGE movements between addresses with amounts tied to transaction outputs
+- **Coinpath** — multi-hop tracing of funds across addresses for analytics and investigations
+
+## Common Use Cases
+
+- **Payment and tipping analytics** — measure transaction counts, fees, and value moved for merchant or creator use cases
+- **Address monitoring** — alert on deposits, withdrawals, or large movements for hot wallets or treasuries
+- **UTXO flow analysis** — follow coinpath hops for compliance or research on the Dogecoin graph
+
 ## Related Resources
 
 - [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

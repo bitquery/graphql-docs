@@ -23,6 +23,22 @@ query {
 
 Let's dive in and explore the Dash data available through Bitquery API.
 
+Dash is a privacy-oriented UTXO network known for optional coin-mixing (PrivateSend), fast-confirmation InstantSend locks, and a masternode layer that supports governance and services. InstantSend and PrivateSend appear as on-chain transaction types where applicable; Bitquery indexes the ledger so you can analyze blocks, transactions, addresses, and value flows like other Bitcoin-family chains.
+
+## What You Can Query
+
+- **Blocks** — heights, timestamps, sizes, difficulty, and the transactions included in each block
+- **Transactions** — hashes, fees, version and locktime context, and UTXO inputs and outputs
+- **Addresses** — receive and spend activity derived from script and address-level views of the UTXO set
+- **Transfers** — movements of DASH between addresses with amounts and linkage to parent transactions
+- **Coinpath** — multi-hop tracing of funds across addresses for flow and clustering-style analysis
+
+## Common Use Cases
+
+- **Network and masternode-era analytics** — monitor block intervals, fees, and throughput alongside transaction patterns
+- **UTXO flow tracing** — use coinpath to follow value across several hops for investigations or risk scoring
+- **Explorer and wallet services** — power address pages, transaction detail, and recent-block feeds for Dash users
+
 ## Related Resources
 
 - [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

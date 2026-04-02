@@ -26,6 +26,23 @@ to fetch data from Algorand blockchain, you need to provide the `network` argume
 
 Let's dive in and explore the cardano data available through Bitquery API.
 
+Cardano uses an **eUTXO** model: **ADA** and **native tokens** live in transaction outputs guarded by scripts; minting policies control token creation. Staking and certificates appear as specialized transaction components. Bitquery indexes blocks, transactions, addresses, transfers, mint events, and coinpath-style flows under the `cardano` root.
+
+## What You Can Query
+
+- **Blocks** — heights, slot and epoch context, timestamps, and embedded transactions
+- **Transactions** — hashes, fees, metadata, certificates, and withdrawals where present in indexed data
+- **Addresses** — stake and payment address activity derived from outputs and movements
+- **Transfers** — ADA and native asset movements with quantities, policies, and asset names
+- **Mints** — mint and burn events tied to minting policies and transactions
+- **Coinpath** — chained movements across addresses for tracing and analytics
+
+## Common Use Cases
+
+- **Native asset (token) analytics** — issuance, circulation, and holder flows for policy-specific assets
+- **Staking and delegation views** — combine transaction and certificate-related fields for participation metrics (where exposed)
+- **Wallet and explorer backends** — address histories, UTXO/eUTXO-aware transfers, and recent blocks
+
 ## Related Resources
 
 - [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

@@ -23,6 +23,24 @@ query {
 
 Let's dive in and explore the BNB data available through Bitquery API.
 
+BNB Smart Chain (BSC) is an EVM-compatible network where **BNB** pays gas and anchors a large DeFi ecosystem (including major DEXes such as PancakeSwap). Queries use the `ethereum` root with `network: bsc`; Bitquery provides deep coverage of blocks, tokens, contracts, DEX activity, and address-level metrics.
+
+## What You Can Query
+
+- **Blocks** — heights, timestamps, validators/miners where exposed, gas usage, and transaction counts
+- **Transactions** — hashes, from/to, status, gas, and calldata for contract interactions
+- **Transfers** — BNB and BEP-20 movements with amounts, symbols, and USD values where available
+- **Smart contracts** — creation, methods, and events surfaced through the EVM indexing model
+- **DEX trades** — swaps, pairs, and volumes consistent with Bitquery’s DEX schemas on EVM chains
+- **Coinpath** — token flow graphs across wallets and contracts
+- **Active addresses** — engagement signals derived from indexed transfer and transaction activity
+
+## Common Use Cases
+
+- **DEX and token analytics** — pair volumes, liquidity events, and trader behavior on BSC-native markets
+- **Whale and treasury monitoring** — large transfers, contract wallets, and recurring payout patterns
+- **Ecosystem growth metrics** — active addresses, new contracts, and transfer counts over time
+
 ## Related Resources
 
 - [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

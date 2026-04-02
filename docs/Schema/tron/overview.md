@@ -29,6 +29,24 @@ Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your Access T
 
 :::
 
+**Tron** uses **delegated proof-of-stake (DPoS)**; **TRX** is the native asset, and **TRC-20** tokens—especially **USDT**—drive a large share of stablecoin transfer volume on the network. Bitquery indexes **blocks**, **transactions**, **transfers**, **smart contracts**, **DEX trades**, **coinpath**, and **arguments** (decoded call parameters where available) so you can analyze both token flows and contract-level behavior.
+
+## What You Can Query
+
+- **Blocks** — heights, timestamps, witness or producer fields under DPoS, and transaction counts
+- **Transactions** — hashes, bandwidth and energy consumption, fees in TRX, and execution results
+- **Transfers** — TRX and TRC-20 (and related token types) with amounts and USD values where indexed
+- **Smart contracts** — TVM contract deployments, internal calls, and interaction history
+- **DEX trades** — swaps and trading-pair activity on integrated on-chain exchanges
+- **Arguments** — structured parameters passed into contract calls when decoding is supported
+- **Coinpath** — multi-hop tracing suited to high-volume stablecoin paths across exchanges and wallets
+
+## Common Use Cases
+
+- **Stablecoin analytics** — monitor USDT and other TRC-20 volume, counterparties, and corridors at scale
+- **dApp monitoring** — track **DEX trades**, contract calls, and **arguments** for consumer or B2B dashboards
+- **Compliance workflows** — combine **coinpath** with contract metadata to explain complex multi-hop flows
+
 ## Related Resources
 
 - [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
