@@ -7,6 +7,10 @@ keywords: [EOS API, EOS GraphQL, EOS blockchain data, Bitquery]
 
 # Overview
 
+:::caution Deprecated
+Bitquery has stopped supporting the EOS blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 EOS is a open-source blockchain network focused on building high-performance blockchain platforms on top of the network.
 Bitquery's EOS API provides you data on proposers, smart contract calls, transactions and tokens on the network.
 

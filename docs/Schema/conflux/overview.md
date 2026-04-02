@@ -7,6 +7,10 @@ keywords: [Conflux API, Conflux GraphQL, Conflux blockchain data, Bitquery]
 
 # Overview
 
+:::caution Deprecated
+Bitquery has stopped supporting the Conflux blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 Bitquery provides APIs to access Conflux data. You can get info on the conflux  chain which uses the Tree-Graph consensus, a consensus method with parallel-processing to reach distributed consensus. 
 
 Bitquery supports conflux_hydra, conflux_tethys and conflux_oceanus.

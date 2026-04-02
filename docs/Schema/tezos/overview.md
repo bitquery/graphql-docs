@@ -6,6 +6,10 @@ description: "Access Tezos (XTZ) blockchain data through Bitquery's GraphQL API.
 
 # Overview
 
+:::caution Deprecated
+Bitquery has stopped supporting the Tezos blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 Bitquery indexes Tezos blockchain data for GraphQL queries. Use the schema pages in this section for blocks, transactions, transfers, operations, address balances, coin path, and related fields.
 
 ## Related Resources

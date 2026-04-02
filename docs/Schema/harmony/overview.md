@@ -6,6 +6,10 @@ description: "Access Harmony blockchain data through Bitquery's GraphQL API. Que
 
 # Overview
 
+:::caution Deprecated
+Bitquery has stopped supporting the Harmony blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 Bitquery indexes Harmony blockchain data for GraphQL queries. Use the schema pages in this section for blocks, transactions, transfers, smart contract calls and events, staking transactions, and related fields.
 
 ## Related Resources

@@ -7,6 +7,10 @@ keywords: [Velas API, Velas GraphQL, Velas blockchain data, Bitquery]
 
 # Overview
 
+:::caution Deprecated
+Bitquery has stopped supporting the Velas blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 Bitquery Velas API offers access to indexed data from the velas blockchain via GraphQL API for developers.
 
 The Velas schema contains various types of queries, including block, transaction, event, transactions, transfers, and more. These queries can be used to retrieve blockchain data, such as block information, transaction details, events, token transfers, and other relevant information.
