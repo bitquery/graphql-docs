@@ -69,7 +69,10 @@ query ($network: StellarNetwork!, $hash: String!) {
 
 ```
 
-<details><summary>Filtering TradeEffects</summary>
+<details>
+
+<summary>Filtering TradeEffects</summary>
+
 
 - **options**
 

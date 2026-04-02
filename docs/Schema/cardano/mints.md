@@ -38,7 +38,10 @@ query MyQuery {
 }
 ```
 
-<details> <summary>Filtering Mints</summary>
+<details>
+
+<summary>Filtering Mints</summary>
+
 
 `date`: The date of the mint.
 
@@ -53,6 +56,7 @@ query MyQuery {
 `txIndex`: The index of the transaction in the block.
 
 `value`: The amount of tokens minted.
+
 </details>
 
 ## Related Resources

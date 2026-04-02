@@ -22,7 +22,10 @@ query MyQuery {
 }
 
 ```
-<details><summary>Filtering Address</summary>
+<details>
+
+<summary>Filtering Address</summary>
+
 
 `is`: This option specifies that the address must match the specified value.
 

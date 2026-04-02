@@ -90,7 +90,10 @@ query ($network: RippleNetwork!, $limit: Int!, $offset: Int!) {
 
 ```
 
-<details><summary>Filtering NFtoken NFToken</summary>
+<details>
+
+<summary>Filtering NFtoken NFToken</summary>
+
 
 - `transactionType`: The type of transaction that created the offer.
 - `transactionSender`: The account that created the offer.

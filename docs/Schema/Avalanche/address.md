@@ -68,7 +68,10 @@ query ($network: EthereumNetwork!) {
 }
 ```
 
-<details><summary>Filtering Address</summary>
+<details>
+
+<summary>Filtering Address</summary>
+
 
 `limit`: The maximum number of results to return.
 

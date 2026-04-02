@@ -80,7 +80,10 @@ query ($network: StellarNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
 
 ```
 
-<details><summary>Filtering Payments</summary>
+<details>
+
+<summary>Filtering Payments</summary>
+
 
 - **options**
 

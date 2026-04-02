@@ -56,7 +56,10 @@ query ($network: SolanaNetwork!, $date: ISO8601DateTime, $height: Int) {
   "dateFormat": "%Y-%m-%d"
 }
 ```
-<details><summary>Filtering blockRewards</summary>
+<details>
+
+<summary>Filtering blockRewards</summary>
+
 
 
 `date` The date of the block rewards. 
@@ -76,6 +79,7 @@ query ($network: SolanaNetwork!, $date: ISO8601DateTime, $height: Int) {
 `parentSlot` The slot number of the parent block.
 
 `rewardType` The type of block rewards. 
+
 </details>
 
 

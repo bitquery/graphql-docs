@@ -73,7 +73,7 @@ Follow the steps here to create one: [How to generate Bitquery API token ➤](ht
 
 ### 3. Multi-Chain Examples
 
-- [Cardano Wallet Inflows](#getting-inflows--fund-moving-in-to-a-cardano-wallet-address)
+- [Cardano Wallet Inflows](#getting-inflows-funds-moving-in-to-a-cardano-walletaddress)
 - [Ethereum Multi-Hop Tracking](#get-transactions-from-multiple-addresses-to-a-final-destination-address)
 
 ### 4. Funding History & Bundle Detection

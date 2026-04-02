@@ -60,7 +60,10 @@ query MyQuery {
 
 ```
 
-<details> <summary>Filtering claimableBalance Effects</summary>
+<details>
+
+<summary>Filtering claimableBalance Effects</summary>
+
 
 - **transactionHash**
 

@@ -69,7 +69,10 @@ query ($network: StellarNetwork!) {
 
 ```
 
-<details><summary>Filtering Trade Effects API</summary>
+<details>
+
+<summary>Filtering Trade Effects API</summary>
+
 
 - **buyIssuer**
 

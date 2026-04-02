@@ -14,16 +14,16 @@ The options filter contains most of the sorting and result limiting features as 
 
 You can select one or more options, use them in combination or alone to fitler your results.
 
-``` options: {limit: 1, descByInteger: "tradeIndex"}```
+`options: {limit: 1, descByInteger: "tradeIndex"}`
 
 In this example, the results will be limited to 1 result, and the results will be sorted by the tradeIndex field in descending order.
 
 Here's another example:
-``` options: {asc: "block.height", limit: 2000}```
+`options: {asc: "block.height", limit: 2000}`
 
 ### Passing as Parameters
 
-``` options: {asc: "date.date", offset: $offset}```
+`options: {asc: "date.date", offset: $offset}`
 
 The parameters are passsed in the query
 

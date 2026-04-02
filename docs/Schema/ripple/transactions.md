@@ -62,7 +62,10 @@ query ($from: ISO8601DateTime, $till: ISO8601DateTime) {
 }
 ```
 
-<details><summary>Filtering Transactions</summary>
+<details>
+
+<summary>Filtering Transactions</summary>
+
 
 - `hash`: The hash of the transaction.
 - `type`: The type of the transaction.

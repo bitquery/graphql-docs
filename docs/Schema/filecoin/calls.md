@@ -49,7 +49,10 @@ query ($network: FilecoinNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTim
 
 ```
 
-<details><summary>Filtering Calls</summary>
+<details>
+
+<summary>Filtering Calls</summary>
+
 
 -   **date**
 

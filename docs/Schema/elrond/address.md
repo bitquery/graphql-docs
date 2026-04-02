@@ -12,7 +12,11 @@ Below are the fields in the schema:
 
 
 ```
-<details><summary></summary></details>
+<details>
+
+<summary></summary>
+
+</details>
 
 ## Fields
 

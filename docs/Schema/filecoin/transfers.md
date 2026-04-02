@@ -66,7 +66,10 @@ query ($network: FilecoinNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTim
 }
 ```
 
-<details><summary>Filtering Transfers</summary>
+<details>
+
+<summary>Filtering Transfers</summary>
+
 
 **options**
 

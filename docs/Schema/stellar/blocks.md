@@ -41,7 +41,10 @@ query ($network: StellarNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
 }
 ```
 
-<details><summary>Filtering Blocks</summary>
+<details>
+
+<summary>Filtering Blocks</summary>
+
 
 - **options** : This object contains the options for ordering and limiting the results
 - **time** : This object contains the time range for filtering the blocks.

@@ -88,7 +88,10 @@ query ($network: EthereumNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTim
 }
 ```
 
-<details><summary>Filtering Transfers</summary>
+<details>
+
+<summary>Filtering Transfers</summary>
+
 
 `options`: A set of options that control the behavior of the query.
 
@@ -118,6 +121,7 @@ query ($network: EthereumNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTim
 `txFrom`: The address of the sender of the transaction that the transfer was included in.
 
 `txHash`: The hash of the transaction that the transfer was included in
+
 </details>
 
 

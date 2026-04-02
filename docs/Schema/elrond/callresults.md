@@ -58,7 +58,10 @@ query ($network: ElrondNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
 
 ```
 
-<details><summary>Filtering CallResults</summary>
+<details>
+
+<summary>Filtering CallResults</summary>
+
 
 **options** : A set of options that can be used to filter the results.
 

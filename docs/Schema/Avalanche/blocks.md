@@ -74,7 +74,10 @@ query ($network: EthereumNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Da
 
 ```
 
-<details><summary> Filtering Blocks</summary>
+<details>
+
+<summary> Filtering Blocks</summary>
+
 
 - **options** : A set of options that can be used to filter the results.
   - **desc** or **asc** : The order of the results, either "asc" (ascending) or "desc" (descending).

@@ -37,7 +37,10 @@ query ($network: FilecoinNetwork!) {
   "network": "filecoin"
 }
 ```
-<details><summary>Filtering Blocks</summary>
+<details>
+
+<summary>Filtering Blocks</summary>
+
 
 `any`: This field allows you to filter blocks by any of the other fields in the response. For example, you could use the any field to filter blocks by timestamp, hash, or address.
 

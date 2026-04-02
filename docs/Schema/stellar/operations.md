@@ -37,7 +37,10 @@ query ($network: StellarNetwork!, $hash: String!) {
 
 ```
 
-<details><summary>Filtering</summary>
+<details>
+
+<summary>Filtering</summary>
+
 
 - **transactionHash**
 

@@ -25,7 +25,10 @@ query ($network: ConfluxNetwork!) {
 
 ```
 
-<details><summary> Filtering Active Address</summary>
+<details>
+
+<summary> Filtering Active Address</summary>
+
 
 `address`
 The address of the wallet

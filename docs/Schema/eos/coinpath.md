@@ -145,7 +145,10 @@ query ($address: String!, $currency: String!, $from: ISO8601DateTime, $till: ISO
 
 ```
 
-<details><summary>Filtering Coinpath</summary>
+<details>
+
+<summary>Filtering Coinpath</summary>
+
 
 - **initialAddress** The address of the account whose coinpath you want to retrieve.
 - **currency** The currency you want to filter the results by.

@@ -39,7 +39,10 @@ query ($network: SolanaNetwork!,$from: ISO8601DateTime, $till: ISO8601DateTime) 
 }
 ```
 
-<details><summary>Filtering Blocks</summary>
+<details>
+
+<summary>Filtering Blocks</summary>
+
 
 `rewards`: This field allows you to filter blocks by the amount of rewards they contain. 
 
@@ -58,6 +61,7 @@ query ($network: SolanaNetwork!,$from: ISO8601DateTime, $till: ISO8601DateTime) 
 `any`: This field allows you to filter blocks by any of the other fields (OR logic). 
 
 `transactionCount`: This field allows you to filter blocks by the number of transactions they contain. 
+
 </details>
 
 ## Related Resources

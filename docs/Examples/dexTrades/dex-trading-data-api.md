@@ -18,9 +18,12 @@ In the case of Buy/Sell Currency, we look into only 1 side of the swap.
 However, in the case of Base/Quote Currency, we look at both sides of the swap.
 
 For example - Let's say there are 3 trades.
-1 - A <-> B
-2 - B <-> C
-3 - C <-> A
+
+```
+1 - A < - > B
+2 - B < - > C
+3 - C < - > A
+```
 
 Now when you query, give me all trades where sellCurrency is B, and we will give only 1st trade (Swap). However, if you query saying give me all trades where quoteCurrency is B, we will give both 1st and 2nd because Base/Quote currency looks at both sides of the trade.
 
@@ -55,7 +58,7 @@ If you see this [query](https://ide.bitquery.io/Ethereum-Trades-for-specific-tim
 Protocols are basically rules or behavior to explain how a system will work. In the context of DEX, A DEX protocol is a set of smart contracts showing how DEX will work. When a protocol is deployed by any entity on the blockchain, it becomes an actual exchange. 
 For example, Uniswap is an exchange and a protocol. Uniswap protocol deployed by the Uniswap team created the Uniswap exchange. In the case of PancakeSwap, the exchange is PancakeSwap, but the protocol is still Uniswap.
 
-## How to check if exchange is indexed by Bitquery?
+## How to check if an exchange is indexed by Bitquery?
 
 If Bitquery index a protocol (ex - Uniswap v2 protocol), therefore any other exchange which is implemented this Uniswap V2, we have already indexed them. We might not be naming them, but you can get their trades using [**this API**](https://ide.bitquery.io/query/pzizr56shpq6wQrX), by simply replacing exchangeAddress with that exchange's factory address.
 
@@ -502,7 +505,7 @@ https://ide.bitquery.io/Trades-for-a-trading-pair-on-Ethereum
 ## Get Ethereum DEX Trades for a Liquidity Pool Contract Address
 
 To get trades for pair tokens, you should use buy/sell; in the case of using Base/Quote, it will replicate the result.
-For example, if there is a swap A <-> B, using Base/Quote, it will give two results in one A as the base currency and in another B as the quote currency.
+For example, if there is a swap A < - > B, using Base/Quote, it will give two results in one A as the base currency and in another B as the quote currency.
 
 [Open this query in IDE](https://ide.bitquery.io/Trades-for-a-pair-token-on-ethereum)
 

@@ -79,7 +79,10 @@ query ($network: RippleNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
 }
 ```
 
-<details><summary>Filtering Escrows</summary>
+<details>
+
+<summary>Filtering Escrows</summary>
+
 
 - **options** - This field allows you to specify the order of the results and the number of results to return.
 

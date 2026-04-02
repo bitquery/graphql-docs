@@ -48,11 +48,15 @@ query MyQuery {
 }
 ```
 
-<details> <summary>Filtering Address</summary>
+<details>
+
+<summary>Filtering Address</summary>
+
 
 `address`
 The address of the wallet
- </details>
+
+</details>
 
 ## Related Resources
 

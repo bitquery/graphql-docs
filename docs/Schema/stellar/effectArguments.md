@@ -8,7 +8,11 @@ keywords: ["Stellar API", "Stellar Effect Arguments", "Bitquery", "GraphQL"]
 
 Effect arguments expose the structured parameters attached to Stellar ledger effects—balance changes, trust-line modifications, offer fills, and other state transitions that result from operations. Where the **effects** API tells you *what changed*, effect arguments tell you the *input parameters and context* behind that change. Use this API for detailed reconciliation, audit trails, and understanding exactly how an operation altered account or asset state on the Stellar network.
 
-<details><summary>Filtering Effect Arguments</summary></details>
+<details>
+
+<summary>Filtering Effect Arguments</summary>
+
+</details>
 
 ## Fields
 

@@ -89,7 +89,10 @@ query ($network: SolanaNetwork!, $date: ISO8601DateTime, $height: Int) {
 }
 ```
 
-<details><summary>Filtering Transfers</summary>
+<details>
+
+<summary>Filtering Transfers</summary>
+
 
 `amount`
 

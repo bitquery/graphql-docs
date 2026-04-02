@@ -52,7 +52,10 @@ query ($network: ConfluxNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
 
 ```
 
-<details><summary>Filtering Transactions</summary>
+<details>
+
+<summary>Filtering Transactions</summary>
+
 
 - **options**
   - **asc** or **desc** The field to sort the results by in ascending or descending

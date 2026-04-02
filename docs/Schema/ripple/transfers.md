@@ -95,7 +95,10 @@ query ($network: RippleNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime)
 
 ```
 
-<details><summary>Filtering Transfers</summary>
+<details>
+
+<summary>Filtering Transfers</summary>
+
 
 - `options`: This object contains options that control the pagination and sorting of the results.
 

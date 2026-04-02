@@ -46,7 +46,10 @@ query MyQuery {
 
 ```
 
-<details><summary> Filtering Address Stats</summary>
+<details>
+
+<summary> Filtering Address Stats</summary>
+
 
 Address data can be filtered using following arguments:
 

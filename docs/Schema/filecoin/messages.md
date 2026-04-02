@@ -57,7 +57,10 @@ query ($network: FilecoinNetwork!, $dateFormat: String!, $from: ISO8601DateTime,
 
 ```
 
-<details><summary>Filtering Messages</summary>
+<details>
+
+<summary>Filtering Messages</summary>
+
 
   
 

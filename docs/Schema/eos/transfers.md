@@ -46,7 +46,10 @@ query ( $date: ISO8601DateTime) {
 
 ```
 
-<details><summary>Filtering Transfers</summary>
+<details>
+
+<summary>Filtering Transfers</summary>
+
 
 - **options** : A set of options that can be used to filter the results.
   - **asc** or **desc** : The order of the results, either "asc" (ascending) or "desc" (descending).

@@ -76,6 +76,7 @@ query ($network: Ethereum2Network!) {
 ```
 <details>
 <summary>Filtering validatorUpdates</summary>
+
 `options`: This field contains a set of options that can be used to customize the response.
 
 `limit`: This option can be used to limit the number of results that are returned. 

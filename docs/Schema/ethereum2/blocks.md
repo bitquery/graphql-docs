@@ -75,7 +75,10 @@ query ($network: Ethereum2Network!, $dateFormat: String!, $from: ISO8601DateTime
 }
 ```
 
-<details> <summary>Filtering Blocks</summary>
+<details>
+
+<summary>Filtering Blocks</summary>
+
 
 `any` (or condition): This field can be used to filter the results by any of the other fields in the response.
 

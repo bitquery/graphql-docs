@@ -29,3 +29,5 @@ audit2.log
 fix.log
 force.log
 serialize_javascript.log
+docs/Schema/algorand/coinpath.md
+build.log

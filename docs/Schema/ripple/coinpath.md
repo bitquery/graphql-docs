@@ -151,7 +151,10 @@ query ($network: RippleNetwork!, $address: String!, $inboundDepth: Int!, $outbou
 
 ```
 
-<details><summary>Filtering Coinpath Results</summary>
+<details>
+
+<summary>Filtering Coinpath Results</summary>
+
 
 - `initialAddress`: This field specifies the address that you want to track the flow of funds for.
 - `depth`: This field specifies the number of hops to follow the flow of funds.

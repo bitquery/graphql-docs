@@ -62,7 +62,10 @@ query ($network: ElrondNetwork!,$from: ISO8601DateTime, $till: ISO8601DateTime) 
 
 ```
 
-<details><summary>Filtering Transactions</summary>
+<details>
+
+<summary>Filtering Transactions</summary>
+
 
 **options** : A set of options that can be used to filter the results.
 

@@ -67,7 +67,10 @@ query ($network: Ethereum2Network!) {
 }
 ```
 
-<details><summary>Filtering VoluntaryExits</summary>
+<details>
+
+<summary>Filtering VoluntaryExits</summary>
+
 
 `options`: This field contains a set of options that can be used to customize the response. For example, you can use the asc option to sort the results in ascending order by the date field. You can also use the limit option to limit the number of results that are returned.
 
