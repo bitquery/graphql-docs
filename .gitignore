@@ -24,3 +24,8 @@ scripts/verify-static-seo-local.sh
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+audit.log
+audit2.log
+fix.log
+force.log
+serialize_javascript.log
