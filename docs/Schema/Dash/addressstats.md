@@ -24,6 +24,8 @@ description: "Query address statistics and history on Dash."
 
 The `addressstats` field allows us to retrieves statistics related to blockchain addresses.
 
+Address statistics summarize a Dash address's lifetime activity: total sent and received amounts, transaction counts, fee expenditure, and days with activity. These aggregates help compliance teams, explorer backends, and wallet services build address profile pages or flag unusual patterns without replaying the full UTXO history.
+
 Here is an example that demonstrates how to retrieve statistics about a specific address:
 
 ```

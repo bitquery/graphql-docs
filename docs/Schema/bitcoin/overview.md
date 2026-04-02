@@ -39,6 +39,8 @@ Bitcoin is the original UTXO blockchain; **BTC** moves only through transaction 
 - **Exchange and custody reconciliation** — match deposits and withdrawals to UTXO-level movements
 - **Compliance and investigations** — follow coinpath across hops with block and tx context
 - **Omni and colored-coin style analytics** — track legacy token layers that ride on Bitcoin transactions
+- **Institutional treasury management** — corporations holding BTC on their balance sheet can automate proof-of-reserves, cold-wallet audits, and board-level reporting by querying address balances and UTXO histories
+- **Regulatory and AML workflows** — compliance teams at exchanges, banks, and OTC desks can trace coinpath flows to meet travel-rule obligations and flag high-risk transaction patterns
 
 ## Related Resources
 

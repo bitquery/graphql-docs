@@ -24,6 +24,8 @@ description: "Query address statistics and history on Dogecoin."
 
 The `addressstats` field allows us to retrieves statistics related to blockchain addresses.
 
+Address statistics give a high-level profile of any Dogecoin address: total DOGE sent and received, transaction counts, fee totals, and active-day counts. This is valuable for merchant dashboards, tipping-platform analytics, and compliance workflows that need an address summary without scanning every UTXO individually.
+
 Here is an example that demonstrates how to retrieve statistics about a specific address:
 
 ```

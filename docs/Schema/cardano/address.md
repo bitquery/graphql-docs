@@ -8,6 +8,7 @@ keywords: ["Cardano API", "Cardano Address", "Bitquery", "GraphQL"]
 
 The Address API schema returns information about a wallet. The schema includes the following fields:
 
+Cardano uses two address types: payment addresses for value transfer and stake addresses for delegation. The address API returns balance and annotation for a given address. This is useful for wallet interfaces, staking dashboards, and explorer backends that need a quick account overview in Cardano's eUTXO model.
 
 ```
 query MyQuery {

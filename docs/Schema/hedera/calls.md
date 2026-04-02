@@ -6,6 +6,10 @@ keywords: ["Hedera API", "Hedera Calls", "Bitquery", "GraphQL"]
 
 # Calls
 
+:::caution Deprecated
+Bitquery has stopped supporting the Hedera blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 The Calls API provides you with information about calls made on Hedera Blockchain. It offers information about various aspects, such as call inputs, result of the calls, and much more.
 
 Here's an example that demonstrates how to extract calls fromm a transaction:

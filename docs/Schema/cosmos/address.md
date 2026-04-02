@@ -8,6 +8,8 @@ keywords: ["Cosmos API", "Cosmos Address", "Bitquery", "GraphQL"]
 
 The `address` field allows us to retrieve basic information about a particular address or list of address like balance, annotation, etc.
 
+Cosmos addresses identify accounts across Cosmos SDK chains. The address API returns balance and annotation for a given account. Use it for validator dashboards, wallet interfaces, and staking-product backends that need a quick account overview on Cosmos Hub, Crypto.org, or Heimdall networks.
+
 Here is an exmaple that demonstrates retrival of balance for an address:
 
 ```

@@ -8,6 +8,8 @@ keywords: ["Cronos API", "Cronos Address", "Bitquery", "GraphQL"]
 
 The `address` allows us to retrieve information about a specific address.
 
+Cronos is an EVM-compatible chain from Crypto.com, so addresses follow the standard Ethereum model. The address API returns CRO balance, annotations, balance history, and smart contract details including token metadata and contract type. Use it for wallet pages, DeFi portfolio snapshots, and verifying contract attributes on the Cronos network before querying transfers or DEX trades.
+
 Here is an example that demonstrates how to retrieve basic information about the USDT smart contract:
 
 ```

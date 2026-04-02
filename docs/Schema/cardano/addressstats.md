@@ -8,6 +8,7 @@ keywords: ["Cardano API", "Cardano Address Stats", "Bitquery", "GraphQL"]
 
 The AddressStats API schema returns information about a wallet on its inflows, outflows and activity. The schema includes the following fields:
 
+Address statistics provide aggregate metrics for a Cardano address: transaction counts, sent and received amounts, fee totals, and active-day counts. These summaries help staking platforms, compliance tools, and portfolio trackers assess an address's activity profile without replaying individual eUTXO transactions.
 
 ```
 query MyQuery {

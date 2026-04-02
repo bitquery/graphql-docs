@@ -8,6 +8,8 @@ keywords: ["Cronos API", "Cronos Address Stats", "Bitquery", "GraphQL"]
 
 The `addressstats` field allows us to retrieves statistics related to blockchain addresses.
 
+Address statistics aggregate a Cronos address's lifetime activity into a single response: total CRO and token amounts sent and received, transaction counts, fee totals, and active-day counts. This is useful for compliance profiling, exchange account monitoring, and building summary pages for the Cronos ecosystem without scanning every transaction individually.
+
 Here is an example that demonstrates how to retrieve statistics about the USDT smart contract:
 
 ```

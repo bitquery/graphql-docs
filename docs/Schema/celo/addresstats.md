@@ -8,6 +8,8 @@ keywords: ["Celo API", "Celo Address Stats", "Bitquery", "GraphQL"]
 
 The `addressstats` field allows us to retrieves statistics related to blockchain addresses.
 
+Address statistics aggregate a Celo address's lifetime activity: total sent and received amounts, transaction counts, fee expenditure, and active-day counts across CELO and stablecoin transfers. This is useful for compliance profiling, remittance-corridor analysis, and building account health dashboards for Celo's mobile-payment ecosystem.
+
 Here is an example that demonstrates how to retrieve statistics about a smart contract:
 
 ```

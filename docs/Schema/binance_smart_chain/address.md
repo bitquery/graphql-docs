@@ -24,6 +24,8 @@ description: "Look up address balances, annotations, and smart contract details 
 
 The `address` allows us to retrieve information about a specific address.
 
+On BNB Smart Chain, addresses follow the same EVM model as Ethereum: EOAs hold BNB and interact with contracts, while contract addresses expose BEP-20 token metadata, protocol type, and on-chain attributes. The address API returns balance, annotation, balance history, and smart contract details. Use it for wallet lookups, token supply checks, and verifying contract properties before querying transfers or DEX activity on BSC.
+
 Here is an example that demonstrates how to retrieve basic information about the USDT smart contract:
 
 ```

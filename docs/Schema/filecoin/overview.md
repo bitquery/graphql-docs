@@ -35,6 +35,7 @@ Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your Access T
 - **Storage economics** — relate message and call patterns to deal activity, miner behavior, and network utilization
 - **Miner and client reporting** — summarize transfers and address-level flows for operational or financial reporting
 - **Forensics** — use **coinpath** to reconstruct how FIL moved across wallets tied to deals or market actors
+- **Enterprise data compliance** — organizations storing regulated data on Filecoin can audit deal lifecycles, storage-provider relationships, and FIL payment flows for procurement and data-residency reporting
 
 ## Related Resources
 

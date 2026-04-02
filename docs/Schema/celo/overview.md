@@ -41,6 +41,7 @@ Celo is a mobile-first EVM-compatible network with native stable-value assets su
 - **Stablecoin circulation** — track cUSD/cEUR (and related assets) mint, burn, and transfer patterns
 - **Mobile and remittance analytics** — monitor high-volume payment contracts and wallet cohorts
 - **DeFi monitoring** — DEX volumes, pool events, and protocol treasuries on Celo
+- **Financial inclusion and NGO programs** — organizations running micro-payment, aid-disbursement, or mobile-banking programs on Celo can audit fund flows, stablecoin distribution, and beneficiary wallet activity for donor and regulatory reporting
 
 ## Related Resources
 

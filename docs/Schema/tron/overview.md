@@ -46,6 +46,7 @@ Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your Access T
 - **Stablecoin analytics** — monitor USDT and other TRC-20 volume, counterparties, and corridors at scale
 - **dApp monitoring** — track **DEX trades**, contract calls, and **arguments** for consumer or B2B dashboards
 - **Compliance workflows** — combine **coinpath** with contract metadata to explain complex multi-hop flows
+- **Enterprise cross-border settlement** — companies using TRC-20 USDT for B2B payments or remittance corridors can automate reconciliation, fee tracking, and counterparty verification across high-volume transfer data
 
 ## Related Resources
 

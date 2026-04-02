@@ -24,6 +24,8 @@ description: "Get address balance and history on the Bitcoin blockchain. Also, g
 
 The `addressstats` field allows us to retrieves statistics related to blockchain addresses.
 
+Address statistics provide an aggregate profile of a Bitcoin address: total sent and received amounts, transaction counts, fee totals, and the number of active days. This is useful for risk scoring, compliance profiling, and building explorer-style address summary pages without pulling individual transaction history. Because Bitcoin uses a UTXO model, these aggregates are derived from input and output activity rather than account-level state.
+
 Here is an example that demonstrates how to retrieve statistics about a specific address; there is a balance field, too; please avoid using it; if you require a BTC balance, then please use [this API](https://docs.bitquery.io/v1/docs/examples/Bitcoin/bitcoin-address-api).
 
 ```

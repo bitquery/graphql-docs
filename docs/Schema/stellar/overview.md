@@ -39,6 +39,7 @@ Stellar is a multi-asset ledger: **XLM** is the native asset, while anchors and 
 - **SDEX and anchor analytics** — volumes, spreads, and offer books for on-ledger markets and issued assets
 - **Cross-border payment monitoring** — path payments, corridor assets, and liquidity pool usage
 - **Account and asset compliance** — reconstruct activity from operations, effects, and transfers
+- **Enterprise remittance and CBDC pilots** — financial institutions and central banks running tokenized fiat or remittance corridors on Stellar can reconcile payment operations, anchor trust-line balances, and settlement flows for regulatory and operational reporting
 
 ## Related Resources
 

@@ -14,6 +14,8 @@ According to the [official Filecoin documentation](https://docs.filecoin.io/basi
 > So, in other words, a block describes all changes to the network state
 > in a given epoch.
 
+Messages are the primary unit of on-chain activity on Filecoin—analogous to transactions on other networks. Every storage deal proposal, miner sector commitment, payment, and governance action is expressed as a message between actors. The messages API lets you query senders, receivers, method names, gas costs, and execution outcomes. Use it for network activity monitoring, miner operations dashboards, and correlating on-chain messages with storage-deal lifecycles.
+
 ```
 query ($network: FilecoinNetwork!, $dateFormat: String!, $from: ISO8601DateTime, $till: ISO8601DateTime) {
   filecoin(network: $network) {

@@ -8,6 +8,8 @@ keywords: ["Stellar API", "Stellar Address", "Bitquery", "GraphQL"]
 
 Stellar Address API helps you get information on Address balance in the network. Below are the fields in the API:
 
+Stellar addresses (public keys) identify accounts on the Stellar network. The address API returns balance, annotation, and account-level metadata. Use it for wallet lookups, anchor verification, and portfolio dashboards that need to resolve a Stellar account before querying operations, payments, or trust-line details.
+
 ```
 query ($network: StellarNetwork!) {
   stellar(network: $network) {

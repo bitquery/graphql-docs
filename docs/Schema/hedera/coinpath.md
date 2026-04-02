@@ -6,6 +6,10 @@ keywords: ["Hedera API", "Hedera Coinpath", "Bitquery", "GraphQL"]
 
 # Coinpath
 
+:::caution Deprecated
+Bitquery has stopped supporting the Hedera blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 The Coinpath API offers information related to the flow of funds on the Hedera Blockchain.
 
 <details>

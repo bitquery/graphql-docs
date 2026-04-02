@@ -22,6 +22,10 @@ description: "Query validator deposits on the Beacon Chain."
 <meta property="twitter:description" content="Get Deposits information on the ETH2 blockchain. Also, get information on epochs, block root and  validator information on the ETH2 blockchain." />
 </head>
 
+:::caution Deprecated
+Bitquery has stopped supporting the Ethereum Beacon Chain (ETH2) API. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 The deposits API allows you to query for deposits that have been made to the Ethereum 2.0 beacon chain. You can use this API to get information about the deposits themselves, such as the amount of ETH that was deposited, the validator that made the deposit, and the block that the deposit was included in. Below are the fields in the schema: 
 
 ```

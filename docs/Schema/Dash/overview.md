@@ -38,6 +38,7 @@ Dash is a privacy-oriented UTXO network known for optional coin-mixing (PrivateS
 - **Network and masternode-era analytics** — monitor block intervals, fees, and throughput alongside transaction patterns
 - **UTXO flow tracing** — use coinpath to follow value across several hops for investigations or risk scoring
 - **Explorer and wallet services** — power address pages, transaction detail, and recent-block feeds for Dash users
+- **Enterprise payment processing** — merchants and payment providers accepting DASH can reconcile InstantSend-confirmed transactions against point-of-sale records using block and transaction-level queries
 
 ## Related Resources
 

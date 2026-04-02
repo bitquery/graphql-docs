@@ -7,6 +7,10 @@ keywords: [Ethereum Beacon Chain API, Ethereum Beacon Chain GraphQL, Ethereum Be
 
 # Ethereum Beacon Chain API Overview
 
+:::caution Deprecated
+Bitquery has stopped supporting the Ethereum Beacon Chain (ETH2) API. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 Bitquery provides APIs to access Eth2 data. You can get info on the ethereum's staking model. It uses the Proof-of-stake, a consensus method that blockchain networks utilize to reach distributed consensus. 
 
 These APIs provide details on validators, their staked amounts, their exits and so on. The easiest way to start is through the [Beacon Chain Explorer](https://explorer.bitquery.io/eth2)

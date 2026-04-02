@@ -8,6 +8,8 @@ keywords: ["Solana API", "Solana Address", "Bitquery", "GraphQL"]
 
 The Solana address API gives you information of the balance of a wallet in SOL.
 
+Solana addresses (public keys) can be regular wallets, token accounts, or program-derived addresses. The address API returns balance, annotation, and account-level metadata. Use it for wallet lookups, portfolio snapshots, or verifying whether an address is a known entity before diving into transfer or instruction history.
+
 ```
 query MyQuery {
   solana(network: solana) {

@@ -8,7 +8,7 @@ keywords: ["Filecoin API", "Filecoin Address", "Bitquery", "GraphQL"]
 
 The Address API allows you to query information about addresses on the Filecoin blockchain.
 
-
+Filecoin addresses (actors) come in several formats—f0 (ID), f1 (secp256k1), f2 (actor/contract), and f3 (BLS). The address API returns the address itself, any annotation label, and the FIL balance. Use it for miner lookups, client account verification, and wallet dashboards that need a quick snapshot before querying messages or deal activity.
 
 ```
 query MyQuery {

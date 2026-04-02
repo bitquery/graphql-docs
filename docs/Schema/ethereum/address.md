@@ -31,6 +31,8 @@ description: "Explore specific address details, balances, and smart contract att
 
 The `address` allows us to retrieve information about a specific address.
 
+On Ethereum, an address can be an externally owned account (EOA) or a smart contract. The address API returns the current ETH balance, human-readable annotations where available, and—when the address is a contract—details such as contract type, protocol type, token metadata (decimals, symbol, token standard), and on-chain attributes. Use this for wallet pages, portfolio dashboards, token supply lookups, and quick contract verification before diving into transfer or event history.
+
 Here is an example that demonstrates how to retrieve basic information about the USDT smart contract:
 
 ```

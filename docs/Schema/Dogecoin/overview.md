@@ -38,6 +38,7 @@ Dogecoin is a UTXO-based Litecoin-family chain widely used for tips, payments, a
 - **Payment and tipping analytics** — measure transaction counts, fees, and value moved for merchant or creator use cases
 - **Address monitoring** — alert on deposits, withdrawals, or large movements for hot wallets or treasuries
 - **UTXO flow analysis** — follow coinpath hops for compliance or research on the Dogecoin graph
+- **Enterprise merchant integration** — businesses accepting DOGE for goods and services can automate payment confirmation, reconciliation, and accounting by querying transaction and address-level data
 
 ## Related Resources
 

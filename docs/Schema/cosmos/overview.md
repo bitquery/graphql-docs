@@ -45,6 +45,7 @@ The **Cosmos** ecosystem is built on **Tendermint** consensus and the **IBC** in
 - **Multi-network operations** — compare **Cosmos Hub**, **Heimdall**, and **Crypto.org** traffic using the same schema with different `network` values
 - **Staking products** — aggregate delegate, undelegate, and reward **messages** for validators and delegators
 - **IBC observability** — when indexing covers IBC, relate **transfers** and **messages** to cross-chain volume and corridor health
+- **Institutional staking and validator management** — custodians and staking-as-a-service providers can track delegation, reward accrual, and validator performance across Cosmos networks for client reporting and SLA compliance
 
 ## Related Resources
 

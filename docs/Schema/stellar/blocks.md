@@ -6,7 +6,11 @@ keywords: ["Stellar API", "Stellar Blocks", "Bitquery", "GraphQL"]
 
 # Blocks
 
-Stellar Blocks API helps you get information on Blocks in the network. Below are the fields in the API:
+Stellar Blocks API helps you get information on Blocks in the network.
+
+On Stellar, blocks correspond to closed **ledgers**—each ledger captures the network state at a sequence number, including total lumens in circulation, the fee pool, base fee, and base reserve. The blocks API exposes these economic parameters alongside height, hash, and protocol version. Use it for network-health monitoring, explorer backends, and tracking Stellar protocol upgrades or reserve-requirement changes over time.
+
+Below are the fields in the API:
 
 ```
 query ($network: StellarNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime) {

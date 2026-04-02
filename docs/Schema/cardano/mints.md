@@ -8,6 +8,7 @@ keywords: ["Cardano API", "Cardano Mints", "Bitquery", "GraphQL"]
 
 The Mints API query returns information about the mints on the Cardano network. A mint is an event where new tokens are created. The query returns information about the block that the mint occurred in, the amount of tokens minted, the transaction that minted the tokens, and the currency that was minted.
 
+On Cardano, native tokens are defined by **minting policies** rather than smart contracts: any transaction can mint or burn tokens if it satisfies the associated policy script. This API surfaces those mint and burn events with policy IDs, asset names, and quantities. Use it to track token issuance for NFT collections, fungible-token launches, and supply-management workflows where you need to verify on-chain minting activity against expected schedules or caps.
 
 ```
 query MyQuery {

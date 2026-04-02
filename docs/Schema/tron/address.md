@@ -24,6 +24,8 @@ description: "Look up address balances and history on Tron."
 
 The `address` field allows us to retrieve details about address or smart contract from Tron blockchain.
 
+Tron addresses hold TRX balances and may be associated with TRC-20 token contracts. The address API returns balance, annotation, and smart contract metadata when the address is a contract. Use it for wallet lookups, token supply queries, and verifying contract attributes on the Tron network.
+
 Here is an example that demonstrates use `address` query:
 
 ```

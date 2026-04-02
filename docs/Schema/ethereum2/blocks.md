@@ -22,6 +22,10 @@ description: "Query Beacon Chain blocks, roots, and consensus data."
 <meta property="twitter:description" content="Get blocks information on the ETH2 blockchain. Also, get blocks information for tokens or NFTs on the ETH2 blockchain." />
 </head>
 
+:::caution Deprecated
+Bitquery has stopped supporting the Ethereum Beacon Chain (ETH2) API. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 The Eth2 blocks API retrieves staking and validator information for a block. Here are the fields in the schema:
 
 ```

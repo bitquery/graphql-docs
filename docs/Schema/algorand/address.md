@@ -8,6 +8,8 @@ keywords: ["Algorand API", "Algorand Address", "Bitquery", "GraphQL"]
 
 The `address` field allows us to fetch information about a specific address or a list of addresses from the Algorand blockchain.
 
+Algorand addresses hold ALGO balances and may also hold ASA (Algorand Standard Asset) tokens. The address API lets you look up an account's native balance, any human-readable annotation, and related metadata. This is useful for wallet interfaces, account verification tools, and portfolio dashboards that need a quick snapshot of an Algorand account.
+
 Here is an example that demonstrates how to retrieve basic information about a specific address:
 
 ```

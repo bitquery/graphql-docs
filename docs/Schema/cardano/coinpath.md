@@ -8,6 +8,8 @@ keywords: ["Cardano API", "Cardano Coinpath", "Bitquery", "GraphQL"]
 
 Coinpath APIs are a set of money-tracing APIs that help you track funds from one address to another. 
 
+Cardano uses an **eUTXO** model, so coinpath traces how ADA and native tokens flow through transaction outputs across multiple hops. This is valuable for compliance investigations, treasury auditing, and understanding multi-step fund flows in Cardano's native-token ecosystem. The API returns depth, amounts, currency details (including policy-based native tokens), and sender/receiver metadata for each hop in the trace.
+
 ```
 query MyQuery {
   cardano {

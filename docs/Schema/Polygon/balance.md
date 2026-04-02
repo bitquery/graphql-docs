@@ -27,7 +27,7 @@ description: "Get balance or balance history for any address or smart contract o
 
 The `address` api also allow you pull balance details including balance history.
 
-You can filter using currency smart contract address and get balance for specific currency. In case of native currency, you can just mention "MATIC".
+You can filter using currency smart contract address and get balance for specific currency. In case of native currency, you can just mention "MATIC". The balance API is particularly useful for treasury dashboards, portfolio trackers, and reconciliation workflows where you need current or historical token holdings for an address across MATIC and ERC-20 assets on Polygon.
 
 Here is an example on getting balance of [0x198905a3e2e3ffeb20169adf9ceaf0f9e66c35b9](https://explorer.bitquery.io/matic/address/0x198905a3e2e3ffeb20169adf9ceaf0f9e66c35b9):
 

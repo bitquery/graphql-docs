@@ -6,6 +6,10 @@ keywords: ["Hedera API", "Hedera Arguments", "Bitquery", "GraphQL"]
 
 # Arguments 
 
+:::caution Deprecated
+Bitquery has stopped supporting the Hedera blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 The Arguments API provides you with information about event arguments. It offers valuable information about various aspects, such as the specific values of event arguments, their corresponding types, and even the transaction where the event originally occurred.
 
 Here's an example that demonstrates how to extract arguments from a transaction:

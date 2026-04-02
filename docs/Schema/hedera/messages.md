@@ -6,6 +6,10 @@ keywords: ["Hedera API", "Hedera Messages", "Bitquery", "GraphQL"]
 
 # Messages
 
+:::caution Deprecated
+Bitquery has stopped supporting the Hedera blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 The Messages API provides information about blockchain messages on the Hedera Blockchain.
 
 Here's an exmaple showcasing how to fetch message data:

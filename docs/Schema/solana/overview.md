@@ -44,6 +44,8 @@ Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your Access T
 - **Program analytics** — break down instruction mix and account usage for DeFi, NFT, or consumer programs
 - **Wallet and SPL portfolios** — aggregate token balances and transfer history per owner or token mint
 - **Validator economics** — combine **block rewards** with transaction fees for performance or yield reporting
+- **Enterprise payment integration** — businesses accepting SOL or SPL tokens for commerce can reconcile high-throughput payment flows with sub-second finality, tying instruction-level data to order systems
+- **Institutional program auditing** — fund administrators and protocol teams can verify program interactions, token mints, and authority changes for governance and risk reporting
 
 ## Related Resources
 

@@ -8,6 +8,8 @@ keywords: ["Celo API", "Celo Address", "Bitquery", "GraphQL"]
 
 The `address` allows us to retrieve information about a specific address.
 
+Celo is an EVM-compatible, mobile-first network with native stablecoins such as cUSD and cEUR alongside CELO for governance. The address API returns CELO balance, annotations, balance history, and smart contract details including token metadata. Use it for mobile wallet lookups, stablecoin issuer verification, and building account overview pages for Celo's financial-inclusion ecosystem.
+
 Here is an example that demonstrates how to retrieve basic information about the a smart contract:
 
 ```

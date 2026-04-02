@@ -33,6 +33,7 @@ Flow targets consumer-scale apps: NFT collections (for example NBA Top Shot), ga
 - **NFT and collection analytics** — monitor mints, transfers, and marketplace events for a contract or collection
 - **Game and app telemetry** — aggregate user- or contract-driven events for retention and economy dashboards
 - **Account flow tracing** — follow FLOW or tokens through several hops for treasury or compliance workflows
+- **Enterprise IP and brand partnerships** — major brands (e.g., sports leagues, entertainment studios) launching digital collectibles on Flow can track minting, secondary-market transfers, and royalty events for revenue reporting and rights management
 
 ## Related Resources
 

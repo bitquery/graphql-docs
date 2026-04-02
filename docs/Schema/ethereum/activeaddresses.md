@@ -31,6 +31,8 @@ description: "Access historical and current Ethereum active address metrics with
 
 The `activeAddresses` field allows us to retrieve details about the active addresses from the Ethereum blockchain.
 
+Active addresses measure network engagement: they count distinct addresses that participated in transfers (as sender or receiver) during a given period. This is a key metric for ecosystem health dashboards, investor reports, and growth analytics—showing whether the network is gaining or losing participants over time. You can filter by currency, amount thresholds, and date ranges to narrow the count to specific tokens, whales, or time windows.
+
 Here is an example that demonstrates how to retrieve the number of active addresses from the Ethereum blockchain:
 
 ```

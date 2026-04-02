@@ -45,6 +45,8 @@ Let's dive in and explore the Ethereum data available through Bitquery API.
 - **DeFi and market data** — rank tokens, pools, and DEX volume for research terminals or trading products
 - **Institutional reporting** — tie **transfers**, balances, and **active addresses** to treasury or compliance views
 - **Investigations** — use **coinpath** to map how ETH or tokens moved through mixers, bridges, or nested contracts
+- **Enterprise compliance and AML** — regulated entities can automate transaction monitoring, sanctions screening, and audit trails by combining coinpath with address and contract metadata across ERC-20 flows
+- **Real-world asset (RWA) tokenization** — track issuance, transfers, and holder distribution of tokenized securities, bonds, or real-estate assets deployed as smart contracts on Ethereum
 
 ## Related Resources
 

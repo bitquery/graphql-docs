@@ -6,6 +6,10 @@ keywords: ["Hedera API", "Hedera Transactions", "Bitquery", "GraphQL"]
 
 # Transactions
 
+:::caution Deprecated
+Bitquery has stopped supporting the Hedera blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 The Transactions API offers insights into transactions on the Hedera Blockchain.
 
 <details>

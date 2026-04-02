@@ -8,6 +8,8 @@ keywords: ["Stellar API", "Stellar Balance Effects", "Bitquery", "GraphQL"]
 
 The Stellar BalanceEffects API allows you to get information about the balance changes of an account.Below are the fields in the API:
 
+Balance effects capture every change to an account's balance as a result of operations—payments, path payments, merges, fees, and inflation distributions. This API surface is useful when you need a complete ledger of credits and debits for an account or asset, for reconciliation, audit trails, or building balance-over-time charts.
+
 ```
 query ($network: StellarNetwork!, $address: String!, $from: ISO8601DateTime, $till: ISO8601DateTime, $limit: Int!, $offset: Int!) {
   stellar(network: $network) {

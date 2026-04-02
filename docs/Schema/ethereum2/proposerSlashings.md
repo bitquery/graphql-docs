@@ -22,6 +22,10 @@ description: "Query proposer slashing evidence on the Beacon Chain."
 <meta property="twitter:description" content="Get Proposer Slashings information on the ETH2 blockchain. Also, get information on epochs, block root and  validator information on the ETH2 blockchain." />
 </head>
 
+:::caution Deprecated
+Bitquery has stopped supporting the Ethereum Beacon Chain (ETH2) API. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 The proposerSlashings API returns a list of proposer slashings for a given Ethereum 2.0 network. A proposer slashing occurs when a validator is found to have double signed a block. 
 The proposerSlashings API can be used to get information about proposer slashings, such as the date of the slashing, the block height, and the validator's index. 
 

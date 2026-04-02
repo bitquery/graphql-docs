@@ -8,6 +8,8 @@ keywords: ["Cosmos API", "Cosmos Coinpath", "Bitquery", "GraphQL"]
 
 The coinpath API provides detailed information about the money flow using coinpath technology.
 
+On Cosmos SDK chains, value moves through **messages** (bank sends, IBC transfers, staking rewards) rather than UTXO outputs or EVM internal transactions. Coinpath traces these message-based flows across multiple hops, letting you follow ATOM, CRO, or other native assets through intermediary accounts. This is useful for staking-reward audits, IBC corridor analysis, and compliance investigations across Cosmos Hub, Crypto.org, or Heimdall networks.
+
 <details>
 <summary></summary>
 

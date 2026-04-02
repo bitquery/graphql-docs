@@ -8,6 +8,8 @@ keywords: ["Flow API", "Flow Address", "Bitquery", "GraphQL"]
 
 The Flow Address API offers basic information about addresses from the Flow Blockchain.
 
+Flow addresses identify accounts that can hold FLOW tokens, NFT collections, and Cadence resources. The address API returns balance, annotation, and account-level metadata. Use it for wallet lookups, collection dashboards, and verifying account identity before drilling into events or transfer history.
+
 <details>
 
 <summary>Filtering Addresses</summary>

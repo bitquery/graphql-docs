@@ -6,6 +6,10 @@ keywords: ["Hedera API", "Hedera Outputs", "Bitquery", "GraphQL"]
 
 # Outputs
 
+:::caution Deprecated
+Bitquery has stopped supporting the Hedera blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 The Outputs API provides information about transaction outputs on the Hedera Blockchain.
 
 <details>

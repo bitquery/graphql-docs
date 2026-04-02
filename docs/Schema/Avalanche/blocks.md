@@ -29,7 +29,11 @@ description: "Query Avalanche C-Chain blocks, gas, rewards, and transaction coun
 <meta property="twitter:description" content="Avalanche Blocks API: Explore Avalanche chain blocks with timestamp, height, miner address, reward, and more. Get in-depth Avalanche blocks data using Bitquery's API" />
 </head>
 
-Bitquery's Avalanche blocks API provides information on blocks in the Avalanche chain. Below are the fields in the schema:
+Bitquery's Avalanche blocks API provides information on blocks in the Avalanche chain.
+
+Avalanche's C-Chain follows the EVM block model: each block includes gas usage, miner/producer address, rewards, difficulty, and transaction counts. Because Bitquery queries the C-Chain through the `ethereum` root with `network: avalanche`, the block fields are consistent with other EVM chains while reflecting Avalanche's faster finality and subnet-aware consensus. Use the blocks API for C-Chain explorer pages, network throughput dashboards, and validator reward analysis.
+
+Below are the fields in the schema:
 
 ```
 query ($network: EthereumNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601DateTime, $till: ISO8601DateTime) {

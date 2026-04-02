@@ -39,6 +39,7 @@ Cronos is an EVM-compatible chain from Crypto.com, using **CRO** for gas and set
 - **DeFi and DEX dashboards** — volume, liquidity, and pair-level activity on Cronos
 - **Wallet and portfolio tracking** — histories and balances derived from transfer and transaction filters
 - **Contract monitoring** — watch specific contracts or event signatures for protocol or treasury activity
+- **Crypto.com ecosystem integration** — enterprises building on the Crypto.com stack can correlate on-chain Cronos activity with CRO-based payment, card, and exchange flows for unified business intelligence
 
 ## Related Resources
 

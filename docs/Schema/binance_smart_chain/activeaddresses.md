@@ -26,6 +26,8 @@ description: "Query active addresses and counts on BNB Smart Chain."
 
 The `activeAddresses` field allows us to retrieve details about the active addresses from the BNB blockchain.
 
+Active addresses count distinct wallets that participated in transfers on BSC during a given period—a key engagement metric for ecosystem dashboards, DeFi protocol growth reports, and investor-facing analytics. You can filter by currency, amount thresholds, sender/receiver roles, and date ranges to segment the count by token, whale activity, or specific time windows.
+
 Here is an example that demonstrates how to retrieve the number of active addresses from the BNB blockchain:
 
 ```

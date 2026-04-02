@@ -45,6 +45,8 @@ The **XRP Ledger** (often called **Ripple** in market contexts) is **payment-cen
 - **Remittance and payments** — analyze high-volume payment traffic and bridge use of XRP between corridors
 - **DEX and liquidity** — monitor **offers**, fills, and trading-related transactions on the built-in order book
 - **Advanced ledger features** — study escrows, checks, payment channels, or NFTokens when querying those transaction families
+- **Banking and institutional settlement** — financial institutions using XRP as a bridge asset or RippleNet corridors can reconcile ledger-level payment flows, escrow releases, and trust-line positions for treasury and regulatory reporting
+- **Enterprise escrow and payment channel management** — businesses leveraging on-ledger escrows or payment channels for scheduled disbursements or streaming payments can track state changes and settlement outcomes programmatically
 
 ## Related Resources
 

@@ -7,6 +7,10 @@ keywords: [Hedera API, Hedera GraphQL, Hedera blockchain data, Bitquery]
 
 # Overview
 
+:::caution Deprecated
+Bitquery has stopped supporting the Hedera blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 Our API makes it easy to access different types of data from the Hedera blockchain, like addresses, arguments, calls, and more.
 
 ## Getting Started

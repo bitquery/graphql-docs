@@ -29,6 +29,8 @@ description: "Query AccountRoot fields for XRP Ledger accounts."
 <meta property="twitter:description" content="Explore AccountRoots on the Ripple network. Retrieve account details, transfer rate, sequence, and more. Technical query for account information" />
 </head>
 
+Account roots represent the fundamental ledger entry for each XRP Ledger account, storing the account's XRP balance, sequence number, flags, and trust-line or escrow settings. This API lets you query these base-layer account properties for compliance checks, account verification, and understanding an account's ledger state beyond just its transaction history.
+
 ```
 query MyQuery {
   ripple(network: ripple) {

@@ -22,6 +22,10 @@ description: "Query attestations, aggregation bits, and validators on the Beacon
 <meta property="twitter:description" content="Get Attestations information on the ETH2 blockchain. Also, get information on epochs, block root and  validator information on the ETH2 blockchain." />
 </head>
 
+:::caution Deprecated
+Bitquery has stopped supporting the Ethereum Beacon Chain (ETH2) API. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 The attestations API allows you to query for attestations that have been submitted to the Ethereum 2.0 beacon chain. You can use this API to get information about the attestations themselves, such as the epoch number, slot number, and committee index. You can also get information about the block that the attestation was included in, such as the block root hash and timestamp. The below query lists the fields in the schema:
 
 ```

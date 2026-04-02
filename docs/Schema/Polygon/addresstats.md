@@ -27,6 +27,8 @@ description: "Get Polygon (Matic) token supply and activity summaries. Retrieve 
 
 The `addressstats` field allows us to retrieves statistics related to blockchain addresses.
 
+Address statistics aggregate a Polygon address's lifetime activity: total sent and received amounts, transaction counts, fee expenditure, distinct currencies, and active-day counts. This powers compliance profiling, explorer summary views, and portfolio dashboards that need a quick snapshot of how active an address has been on Polygon without scanning every individual transfer.
+
 Here is an example that demonstrates how to retrieve statistics about the USDT smart contract:
 
 ```

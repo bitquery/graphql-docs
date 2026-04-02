@@ -6,6 +6,10 @@ keywords: ["Hedera API", "Hedera Inputs", "Bitquery", "GraphQL"]
 
 # Inputs
 
+:::caution Deprecated
+Bitquery has stopped supporting the Hedera blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 The Inputs API provides information about transaction inputs on the Hedera Blockchain.
 
 Here's an example showcasing how to retrieve input data:

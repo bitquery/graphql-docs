@@ -40,6 +40,7 @@ BNB Smart Chain (BSC) is an EVM-compatible network where **BNB** pays gas and an
 - **DEX and token analytics** — pair volumes, liquidity events, and trader behavior on BSC-native markets
 - **Whale and treasury monitoring** — large transfers, contract wallets, and recurring payout patterns
 - **Ecosystem growth metrics** — active addresses, new contracts, and transfer counts over time
+- **Enterprise token operations** — businesses issuing BEP-20 loyalty, reward, or in-game tokens can track distribution, holder activity, and redemption patterns at scale on BSC's low-fee infrastructure
 
 ## Related Resources
 

@@ -25,6 +25,8 @@ description: "Get address balance history and aggregate statistics on BNB Smart 
 
 The `addressstats` field allows us to retrieves statistics related to blockchain addresses.
 
+Address statistics aggregate a BSC address's lifetime activity into a single response: total BNB and token amounts sent and received, transaction counts, fee totals, distinct currency counts, and the number of active days. This helps compliance teams profile addresses, exchange operators build account-health dashboards, and analytics products surface whale or bot behavior without replaying individual transactions.
+
 Here is an example that demonstrates how to retrieve statistics about the USDT smart contract:
 
 ```

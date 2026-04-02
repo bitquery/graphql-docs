@@ -27,7 +27,7 @@ description: "Get Polygon token and smart contract details for addresses, includ
 
 The `address` allows us to retrieve information about a specific address including any smart contract.
 
-Therefore, this api can be helpful to get the initial supply and other attributes of any token.
+Therefore, this api can be helpful to get the initial supply and other attributes of any token. Polygon (Matic) shares the EVM address model with Ethereum: the address API returns MATIC balance, annotations, balance history, and—for contracts—token metadata, protocol type, and on-chain attributes. Use it for wallet interfaces, token-supply lookups, and contract verification on Polygon's low-fee network before diving into transfer or DEX data.
 
 Here is an example that demonstrates how to retrieve basic information about the USDT Token smart contract:
 

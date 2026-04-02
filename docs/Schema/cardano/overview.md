@@ -42,6 +42,7 @@ Cardano uses an **eUTXO** model: **ADA** and **native tokens** live in transacti
 - **Native asset (token) analytics** — issuance, circulation, and holder flows for policy-specific assets
 - **Staking and delegation views** — combine transaction and certificate-related fields for participation metrics (where exposed)
 - **Wallet and explorer backends** — address histories, UTXO/eUTXO-aware transfers, and recent blocks
+- **Enterprise identity and credentials** — organizations issuing verifiable credentials, supply-chain tokens, or governance NFTs on Cardano can monitor minting policies, holder distribution, and lifecycle events through native-asset and transfer queries
 
 ## Related Resources
 

@@ -41,6 +41,7 @@ Avalanche’s architecture is built around **subnets**; most developer-facing ac
 - **DeFi analytics** — rank pairs, volume, and liquidity events tied to ecosystems such as Trader Joe or Pangolin
 - **Treasury and wallets** — aggregate AVAX and token balances and transfer history for custody or accounting
 - **Investigations** — follow **coinpath** traces to explain how funds flowed through intermediaries on the C-Chain
+- **Enterprise subnet and tokenization projects** — institutions launching permissioned subnets or tokenized assets on Avalanche can monitor C-Chain contract activity, token flows, and settlement patterns for compliance and operational reporting
 
 ## Related Resources
 

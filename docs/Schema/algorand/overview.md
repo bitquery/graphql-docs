@@ -38,6 +38,8 @@ Algorand is a pure proof-of-stake layer 1 with fast finality, native **ALGO** tr
 - **ASA and ALGO treasury tracking** — monitor balances and transfer history for assets and accounts
 - **dApp and DeFi analytics** — volume and participation around apps, pools, or known program IDs
 - **Cross-account tracing** — use coinpath to follow ASA or ALGO through several hops
+- **Government and CBDC programs** — sovereign issuers and institutions piloting digital currencies or regulated asset tokens on Algorand can track issuance, circulation, and redemption through ASA transfer and smart-contract-call queries
+- **Enterprise asset tokenization** — companies tokenizing bonds, real estate, or carbon credits as ASAs can monitor holder distributions, settlement volumes, and compliance-relevant transfer patterns
 
 ## Related Resources
 

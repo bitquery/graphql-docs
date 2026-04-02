@@ -8,6 +8,7 @@ keywords: ["Stellar API", "Stellar Address Stats", "Bitquery", "GraphQL"]
 
 Stellar AddressStats API helps you get information on Addresses in the network. Below are the fields in the API:
 
+Address statistics aggregate a Stellar account's lifetime activity: transaction counts, sent and received amounts across XLM and issued assets, fee totals, and active-day metrics. These are useful for compliance profiling, anchor due diligence, and building account summary pages for explorers or institutional dashboards.
 
 ```
 

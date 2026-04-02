@@ -29,7 +29,11 @@ description: "Query validated XRP Ledger ledgers (blocks), timestamps, and trans
 <meta property="twitter:description" content="Access real-time Ripple blockchain data with our Blocks API. Monitor blocks, explore the XRP blocks effortlessly" />
 </head>
 
-Ripple Blocks API helps you get information on Blocks in the network. Below are the fields in the API: 
+Ripple Blocks API helps you get information on Blocks in the network.
+
+On the XRP Ledger, "blocks" correspond to validated **ledgers**—each ledger captures a snapshot of all account balances, trust lines, and offers at a specific sequence number. The blocks API returns ledger height, close time, hash, total XRP supply (`totalCoins`), and account-hash references. Use it for network-health dashboards, explorer backends displaying recent ledgers, and correlating transaction data to specific ledger versions.
+
+Below are the fields in the API: 
 
 ```
 query ($network: RippleNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime) {

@@ -32,6 +32,8 @@ description: "Query aggregate address statistics on the XRP Ledger."
 
 The `addressstats` field allows us to retrieves statistics related to blockchain addresses.
 
+Address statistics provide aggregate metrics for an XRP Ledger account: transaction counts, sent and received amounts across XRP and issued currencies, fee totals, and active-day counts. These summaries are useful for compliance profiling, payment corridor analysis, and building explorer-style account pages without scanning every ledger entry.
+
 Here is an example that demonstrates how to retrieve statistics about the USDT smart contract:
 
 ```

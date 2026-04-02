@@ -6,6 +6,10 @@ keywords: ["Hedera API", "Hedera Address", "Bitquery", "GraphQL"]
 
 # Address
 
+:::caution Deprecated
+Bitquery has stopped supporting the Hedera blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 The Address API provides basic information about addresses on the Hedera Blockchain. It offers information about various aspects, including the balance of the native currency associated with the address, any available annotations, and more.
 
 Here's an example that shows how to retrieve the balance of an address:
