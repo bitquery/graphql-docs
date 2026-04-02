@@ -1,3 +1,9 @@
+---
+title: "Elrond Block Validators API"
+description: "MultiversX block validators: consensus validator hex, shard, public key bitmap, block size, and tx counts per block hash."
+keywords: ["Elrond API", "Elrond Block Validators", "Bitquery", "GraphQL"]
+---
+
 # MultiversX Block Validators API
 
 The MultiversX Block Validators API allows you to query information about the validators of a block on the MultiversX blockchain. A validator is a node that has been elected to participate in the consensus process and produce blocks. The API can be used to get information about the validators of a block, including their addresses, shards, and public key bitmaps.
@@ -63,3 +69,11 @@ query ($network: ElrondNetwork!, $limit: Int!, $offset: Int!, $blockHash: String
   - `sizeTxs`: The total size of the transactions in the block.
   - `transactionCount`: The number of transactions in the block.
   - `publicKeyBitmap`: The public key bitmap of the block.
+
+## Related Resources
+
+- [Elrond schema overview](https://docs.bitquery.io/v1/docs/Schema/elrond/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Elrond Coinpath API](https://docs.bitquery.io/v1/docs/Schema/elrond/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

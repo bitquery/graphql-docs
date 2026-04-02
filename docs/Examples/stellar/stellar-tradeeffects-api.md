@@ -1,24 +1,8 @@
 ---
-title: Stellar Trades API
-description: Access comprehensive Stellar Trade API with Effects and Price
+title: "Stellar Trades API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Stellar DEX trades and trade effects. Get prices, sellers, buyers, and assets."
+keywords: [Stellar API examples, Stellar GraphQL queries, Bitquery]
 slug: /blockchain/Stellar/trade-effects-api
-keywords:
-  - Stellar Trade Effects API
-  - Stellar DEX API
-  - Stellar trading API
-  - Stellar blockchain API
-  - Stellar GraphQL API
-  - Stellar trade data
-  - Stellar token swaps
-  - Stellar DEX trades
-  - Stellar trading analytics
-  - Stellar API documentation
-  - Stellar blockchain data API
-  - Stellar asset trading
-  - Stellar orderbook API
-  - Stellar liquidity pools
-  - free stellar api
-  - stellar data api
 ---
 
 # Stellar Trades API 
@@ -37,7 +21,7 @@ New to Bitquery? Here's how to get started:
 
 Need help crafting a query or subscription? Message us on [support](https://t.me/Bloxy_info).
 
-### Trades of a Token on Stellar
+### Get Stellar Trade Effects for a Token by Buy Currency
 
 This query retrieves trade effects for a specific token on the Stellar network. The `priceAmount` field represents the sell asset per buy asset ratio, providing you with accurate pricing information for each trade.
 
@@ -92,7 +76,7 @@ query {
 }
 ```
 
-### Latest Trade Effects on Stellar
+### Get Latest Stellar Trade Effects with Full Trade Details
 
 This query retrieves the most recent trade effects on the Stellar network, providing comprehensive information about each trade including seller addresses, operation details, and complete currency information.
 
@@ -141,4 +125,12 @@ query MyQuery {
   }
 }
 ```
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Stellar payments examples](https://docs.bitquery.io/v1/docs/Examples/stellar/stellar-payments-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
 

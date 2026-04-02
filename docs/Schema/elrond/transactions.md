@@ -1,3 +1,9 @@
+---
+title: "Elrond Transactions API"
+description: "MultiversX transactions: cross-shard sender/receiver shards, EGLD value (USD), fees, status, signature, and action metadata."
+keywords: ["Elrond API", "Elrond Transactions", "Bitquery", "GraphQL"]
+---
+
 # MultiversX Transaction API
 
 he MultiversX Transactions API allows you to query information about transactions on the MultiversX blockchain. You can use this API to get information about the sender, receiver, amount, currency, and other details of a transaction.
@@ -110,3 +116,11 @@ query ($network: ElrondNetwork!,$from: ISO8601DateTime, $till: ISO8601DateTime) 
 - **action:** The type of action performed by the transaction. This includes the following fields:
   - `description`: A description of the action indicating for example if it was a Transfer
   - `category`: The category of the action for example `esdtNft`
+
+## Related Resources
+
+- [Elrond schema overview](https://docs.bitquery.io/v1/docs/Schema/elrond/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Elrond Coinpath API](https://docs.bitquery.io/v1/docs/Schema/elrond/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

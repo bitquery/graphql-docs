@@ -1,3 +1,9 @@
+---
+title: "Cronos Transactions API"
+description: "Cronos EVM transactions: gas price, fee payer/ratio, sender and recipient, amounts, nonces, and block timestamps via Bitquery GraphQL."
+keywords: ["Cronos API", "Cronos Transactions", "Bitquery", "GraphQL"]
+---
+
 # Transactions
 
 Bitquery `transactions` API allows you to retrieve all the blockchain transactions from cronos Blockchain.
@@ -111,3 +117,11 @@ Transactions can be filtered using following arguments:
 - `success`: returns if transaction is success or not
 - `to`: returns address to which of a particular transaction was sent
 - `txType`: returns transaction type
+
+## Related Resources
+
+- [Cronos schema overview](https://docs.bitquery.io/v1/docs/Schema/Cronos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cronos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/Cronos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

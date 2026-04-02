@@ -1,5 +1,8 @@
 ---
 sidebar_position: 3
+title: "Count Aggregation in Bitquery GraphQL API"
+description: "Use count and countBigInt in Bitquery queries for transactions, events, and grouped results with sorting and filters."
+keywords: [Bitquery, GraphQL, count, countBigInt, aggregation]
 ---
 
 # Count
@@ -117,3 +120,11 @@ query ($network: EverscaleNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTi
   "dateFormat": "%Y-%m-%d"
 }
 ```
+
+## Related Resources
+
+- [Aggregation overview](https://docs.bitquery.io/v1/docs/query-features/aggregation/aggregation)
+- [Sum aggregation](https://docs.bitquery.io/v1/docs/query-features/aggregation/sum)
+- [GraphQL aliases](https://docs.bitquery.io/v1/docs/query-features/aliases)
+- [Sorting](https://docs.bitquery.io/v1/docs/query-features/filtering/sorting)
+- [Arguments overview](https://docs.bitquery.io/v1/docs/query-features/arguments/argument)

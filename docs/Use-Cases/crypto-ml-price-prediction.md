@@ -1,6 +1,8 @@
 ---
+title: "Crypto Price Prediction with Machine Learning — Bitquery API Use Case"
 sidebar_position: 3
-description: In this tutorial, we'll explore how to use GraphQL to retrieve historical trading data and use machine learning with Python to build a simple cryptocurrency price prediction model.
+description: "Learn how to fetch historical DEX trading data with GraphQL from the Bitquery API and build a Python Random Forest model for cryptocurrency price prediction."
+keywords: [machine learning, cryptocurrency, GraphQL, Bitquery API, DEX, Python]
 ---
 
 # Building an ML Model With Crypto Price Data
@@ -217,3 +219,11 @@ We preprocess the recent trading data and use our trained model for predictions.
 Predictions for Recent Prices: [1856.33533188 1876.33664406 1881.45406742 1855.9330]
 
 Thus, we have built an ML model with blockchain data using BitQuery DEX API to fetch Ethereum-based decentralized exchange (DEX) trading data.
+
+## Related Resources
+
+- [Bitquery documentation home](https://docs.bitquery.io/v1/docs/intro)
+- [How to start with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/examples/Bitcoin)
+- [Coinpath explained — overview](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)

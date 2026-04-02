@@ -1,5 +1,15 @@
 ---
 sidebar_position: 5
+title: "Bitquery GraphQL Query Builder — Visual Blockchain Queries"
+description: "Build Bitquery GraphQL queries visually: pick blockchain and network, explore schema fields, set filters, select data fields, and run queries in the IDE."
+keywords:
+  [
+    Bitquery query builder,
+    visual GraphQL,
+    blockchain query builder,
+    schema explorer,
+    IDE,
+  ]
 ---
 
 # Query Builder
@@ -27,3 +37,12 @@ Creating precise queries using the Query Builder is a straightforward process. F
 7. Execute Your Query: When you've your query and want to fetch the data, simply click the green button and fetch the data.
 
 Simplify your query creation process and access the data you need from various blockchain networks using the Query Builder.
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [DEX Trades API examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [How to use the Bitquery GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/ide)
+- [Getting started with the IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Basic structure of a GraphQL query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)

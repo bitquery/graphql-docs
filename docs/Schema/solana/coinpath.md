@@ -1,3 +1,9 @@
+---
+title: "Solana Coinpath API"
+description: "Query Solana coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."
+keywords: ["Solana API", "Solana Coinpath", "Bitquery", "GraphQL"]
+---
+
 # Coinpath
 
 The Solana Coinpath API allows you to get the money flow for an address on the Solana blockchain. You can track any levels of fund movement with this API. This is a very useful API for crypto investigations. 
@@ -167,3 +173,10 @@ The depth of the connection between the two addresses.
 `signature`
 
 The signature of the transfer.
+
+## Related Resources
+
+- [Solana schema overview](https://docs.bitquery.io/v1/docs/Schema/solana/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

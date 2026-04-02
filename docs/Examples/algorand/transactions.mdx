@@ -1,10 +1,16 @@
+---
+title: "Algorand Transactions API Examples — Bitquery GraphQL"
+description: "Query Algorand transactions with Bitquery GraphQL. Get latest transactions, filter by date range, count daily transactions, find unique senders, and look up by hash."
+keywords: [Algorand, transactions, Algorand API, Bitquery, GraphQL, transaction count, sender, transaction hash]
+---
+
 # Algorand Transactions API
 
 Our Algorand Transaction API provides detailed information about Algorand Transactions. Below are some examples of `transactions` API:
 
 import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
 
-## Get Latest Transactions
+## Get Latest Algorand Transactions with Block and Fee Details
 
 The query retrieves the latest 10 transactions from the Algorand blockchain, providing details such as the block height, timestamp, currency address and name, fee, group, transaction hash, index, sender's address, subtype, and type of each transaction.
 
@@ -39,7 +45,7 @@ The query retrieves the latest 10 transactions from the Algorand blockchain, pro
 }
 ```
 
-## Get all the transactions in a specific timeframe
+## Get Algorand Transactions in a Specific Date Range
 
 This query retrieves all the transactions in a specific date range on Algorand network using Bitquery Transactions API.
 You can find the query [here](https://ide.bitquery.io/All-Transactions-on-Algorand#).
@@ -87,7 +93,7 @@ query MyQuery {
 
 ```
 
-## Get Daily Transaction Count of Algorand network
+## Get Daily Algorand Transaction Counts for Recent Days
 
 This query retrieves the number of transactions happened each day in the last 10 days on Algorand network using Bitquery Transactions API.
 You can find the query [here](https://ide.bitquery.io/Daily-Transaction-Count-for-last-10-days#).
@@ -106,7 +112,7 @@ query MyQuery {
 
 ```
 
-## Get Daily Unique Senders of Transactions on Algorand network
+## Count Unique Algorand Transaction Senders for a Single Day
 
 This query retrieves the number of unique senders of transactions on date `2024-07-08` using this filter `(date: {is: "2024-07-08"})` on Algorand network using Bitquery Transactions API.
 You can find the query [here](https://ide.bitquery.io/Daily-Unique-Txn-Senders-on-algorand#).
@@ -122,7 +128,7 @@ query MyQuery {
 
 ```
 
-## Get Count of Transactions by a Particular Address
+## Count Algorand Transactions Sent from a Specific Address
 
 The query retrieves the count of all transactions sent by the specified Algorand address ("ADDRESS_HERE") from the Algorand blockchain.
 
@@ -138,7 +144,7 @@ The query retrieves the count of all transactions sent by the specified Algorand
 }
 ```
 
-## Get Information about a Particular Transaction
+## Get Algorand Transaction Details by Transaction Hash
 
 The query retrieves details of a specific transaction with the given transaction hash ("TXN_HASH_HERE") from the Algorand blockchain, including the block height, timestamp, currency address and name, sender's address, subtype, and type of the transaction.
 
@@ -171,3 +177,10 @@ The query retrieves details of a specific transaction with the given transaction
 ## Video Tutorial | How to get Algorand Transactions Data using Bitquery API v1
 
 <VideoPlayer url="https://www.youtube.com/watch?v=O3WC0QOk5Pw" />
+
+## Related Resources
+
+- [Algorand schema overview](https://docs.bitquery.io/v1/docs/Schema/algorand/overview)
+- [Algorand Coinpath API examples](https://docs.bitquery.io/v1/docs/Examples/algorand/coinpath)
+- [Transaction API examples](https://docs.bitquery.io/v1/docs/Examples/Transactions/transaction-api)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)

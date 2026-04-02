@@ -1,5 +1,8 @@
 ---
 sidebar_position: 1
+title: "Celo API — Blockchain Data Schema | Bitquery"
+description: "Access Celo blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more."
+keywords: [Celo API, Celo GraphQL, Celo blockchain data, Bitquery]
 ---
 
 # Overview
@@ -21,3 +24,30 @@ query {
 ```
 
 Let's dive in and explore the Ethereum data available through Bitquery API.
+
+Celo is a mobile-first EVM-compatible network with native stable-value assets such as **cUSD** and **cEUR**, plus **CELO** for governance and gas-related economics. Production and test networks (for example mainnet, Alfajores, Baklava) are selected via the `network` argument on the `ethereum` root. Bitquery surfaces blocks, transfers, contracts, DEX trades, and coinpath like other EVM chains.
+
+## What You Can Query
+
+- **Blocks** — heights, timestamps, validators where indexed, gas aggregates, and transaction inclusion
+- **Transactions** — hashes, senders, recipients, status, gas, and contract call input data
+- **Transfers** — CELO, ERC-20 stablecoins, and other tokens with amounts and counterparties
+- **Smart contracts** — deployments and log-driven events for DeFi and mobile dApps
+- **DEX trades** — swap-level records for on-chain DEX activity on Celo
+- **Coinpath** — token flow tracing across addresses and protocols
+
+## Common Use Cases
+
+- **Stablecoin circulation** — track cUSD/cEUR (and related assets) mint, burn, and transfer patterns
+- **Mobile and remittance analytics** — monitor high-volume payment contracts and wallet cohorts
+- **DeFi monitoring** — DEX volumes, pool events, and protocol treasuries on Celo
+- **Financial inclusion and NGO programs** — organizations running micro-payment, aid-disbursement, or mobile-banking programs on Celo can audit fund flows, stablecoin distribution, and beneficiary wallet activity for donor and regulatory reporting
+
+## Related Resources
+
+- [DEX Trades examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath Money Flow API examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Polygon schema overview](https://docs.bitquery.io/v1/docs/Schema/Polygon/overview)

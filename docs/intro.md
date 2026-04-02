@@ -1,10 +1,21 @@
 ---
 sidebar_position: 1
+title: "Bitquery V1 API Documentation — Blockchain Data for 40+ Chains"
+description: "Overview of the Bitquery V1 GraphQL API for historical and real-time blockchain data across 40+ networks, with guides for queries, schemas, and integration."
+keywords:
+  [
+    Bitquery,
+    GraphQL API,
+    blockchain data,
+    V1 API,
+    cryptocurrency data,
+    multi-chain API,
+  ]
 ---
 
 # Overview
 
-Bitquery 's infrastructure provides you access to historical and real-time blockchain data through various interfaces such as GraphQL APIs. In this documentation
+Bitquery's infrastructure provides you access to historical and real-time blockchain data through various interfaces such as GraphQL APIs. In this documentation
 we will show you how to get blockchain data from 40+ chains via graphQL.
 
 
@@ -26,3 +37,11 @@ We highly encourage you to dig into our docs first; however, you can contact us 
 1. [Telegram](https://t.me/bloxy_info) - For quick questions and doubts
 2. [Community Forum](https://community.bitquery.io/) - For how to questions, features requests that can also help wider community
 3. [Support Desk](https://support.bitquery.io/hc/en-us/requests/new) - For data problems, bugs 
+
+## Related Resources
+
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [How to use the Bitquery GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/ide)
+- [Basic structure of a GraphQL query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Bitcoin examples](https://docs.bitquery.io/v1/docs/examples/Bitcoin)

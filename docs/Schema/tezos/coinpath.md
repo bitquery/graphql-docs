@@ -1,3 +1,9 @@
+---
+title: "Tezos Coinpath API"
+description: "Query Tezos coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."
+keywords: ["Tezos API", "Tezos Coinpath", "Bitquery", "GraphQL"]
+---
+
 # Coinpath
 
 The Coinpath API provides information about the movement of funds within the Tezos Blockchain.
@@ -34,3 +40,10 @@ You can filter the returned data using the following criteria:
 -   `receiver`: returns the receiver of the transfer.
 -   `sender`: returns the sender of the transfer.
 -   `transaction`: returns details about the transaction where the transfer occurred.
+
+## Related Resources
+
+- [Tezos schema overview](https://docs.bitquery.io/v1/docs/Schema/tezos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

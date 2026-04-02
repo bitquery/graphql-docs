@@ -1,3 +1,9 @@
+---
+title: "Solana Transactions API"
+description: "Solana txs: signature, fee & feePayer, signer, instruction counts, inner instructions, block slot—GraphQL."
+keywords: ["Solana API", "Solana Transactions", "Bitquery", "GraphQL"]
+---
+
 # Transactions
 
 The Solana transactions API allows you to query for transactions on the Solana blockchain. You can use this API to get information about specific transactions, such as the signature, block, transaction fee, success, fee payer, inner instructions count, instructions count, signer, and transaction index.
@@ -97,3 +103,11 @@ accountsCount: This field allows you to filter transactions by the number of acc
 `signer`: The account that signed the transaction.
 
 `transactionIndex`: The index of the transaction in the block.
+
+## Related Resources
+
+- [Solana schema overview](https://docs.bitquery.io/v1/docs/Schema/solana/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Solana Coinpath API](https://docs.bitquery.io/v1/docs/Schema/solana/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

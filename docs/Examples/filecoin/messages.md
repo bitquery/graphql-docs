@@ -1,8 +1,14 @@
+---
+title: "Filecoin Messages API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Filecoin messages and storage deals. Track publish, faults, and on-chain actors."
+keywords: [Filecoin API examples, Filecoin GraphQL queries, Bitquery]
+---
+
 # Filecoin Storage & Deal Data Examples
 
 In this section we will see some example queries that track different stages in a storae deal flow on Filecoin. For further details on Storage deals on Filecoin, refer to their [official documentation](https://docs.filecoin.io/storage-providers/filecoin-deals/storage-deals).
 
-## PublishStorageDeals
+## Count Filecoin PublishStorageDeals Messages to f05 in a Date Range
 
 `PublishStorageDeals` message is added to chain when a new set of storage deals are published.
 Query to track published storage deals within a specified date range:
@@ -27,7 +33,7 @@ query ($network: FilecoinNetwork!) {
 
 (Run query here: [PublishStorageDeals](https://ide.bitquery.io/Weekly-PublishStorageDeals-Messages-Count))
 
-## Slashing
+## List Filecoin Slashing Burn Transfers From a Storage Provider
 
 Slashing is "a set of penalties which are to be paid by storage providers if they fail to provide sector reliability or decide to voluntarily exit the network".
 Below is the query to retrieve storage slashing messages:
@@ -62,7 +68,7 @@ Below is the query to retrieve storage slashing messages:
 
 (Run query here: [Slashings](https://ide.bitquery.io/Slashing-for-a-Provider-on-Filecoin))
 
-## RemoveExpiredAllocations:
+## List Filecoin RemoveExpiredAllocations Burn Transfers From a Provider
 
 The below query helps track messages when expired DataCap allocations are removed and reclaim those DataCap tokens back to the client.
 
@@ -96,7 +102,7 @@ The below query helps track messages when expired DataCap allocations are remove
 
 (Source: [RemoveExpiredAllocations](https://ide.bitquery.io/RemoveExpiredAllocations-Filecoin))
 
-## Storage Precommit
+## List Filecoin PreCommit Sector Messages on a Calendar Date
 
 ```
 query MyQuery {
@@ -128,7 +134,7 @@ query MyQuery {
 
 (Source: [PreCommit-Storage](https://ide.bitquery.io/PreCommit-Storage-Messages--day))
 
-## Declarefaults
+## List Filecoin DeclareFaults Messages for a Receiver Actor
 
 ```
 query MyQuery {
@@ -165,3 +171,11 @@ query MyQuery {
 ```
 
 (Run query here: [DeclareFaults](https://ide.bitquery.io/Filecoin-DeclareFaults-Message))
+
+## Related Resources
+
+- [Filecoin schema overview](https://docs.bitquery.io/v1/docs/Schema/filecoin/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Blockchain API examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

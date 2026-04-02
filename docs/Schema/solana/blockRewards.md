@@ -1,3 +1,9 @@
+---
+title: "Solana Block Rewards API"
+description: "Query Solana block rewards data using Bitquery GraphQL API. Get block reward distributions, validators, and amounts."
+keywords: ["Solana API", "Solana Block Rewards", "Bitquery", "GraphQL"]
+---
+
 # Block Rewards
 
 The BlockRewards API returns information about rewards on the Solana network. Solana implements a proof of stake reward scheme for validator nodes. Rewards are paid every epoch.
@@ -88,3 +94,11 @@ query ($network: SolanaNetwork!, $date: ISO8601DateTime, $height: Int) {
 `postBalance`: The balance of the account after the reward was issued.
 
 `time`: The timestamp the reward was issued.
+
+## Related Resources
+
+- [Solana schema overview](https://docs.bitquery.io/v1/docs/Schema/solana/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Solana Coinpath API](https://docs.bitquery.io/v1/docs/Schema/solana/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

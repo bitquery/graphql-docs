@@ -1,3 +1,9 @@
+---
+title: "Elrond Blocks API"
+description: "Query Elrond blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."
+keywords: ["Elrond API", "Elrond Blocks", "Bitquery", "GraphQL"]
+---
+
 # MultiversX Blocks API
 
 The MultiversX Blocks API allows you to query information about blocks on the MultiversX blockchain. You can use this API to get information about the block hash, height, timestamp, and other details.Below are the fields in the schema:
@@ -50,3 +56,11 @@ query ($network: ElrondNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime)
 - `previousBlockHash`: The hash of the previous block.
 - `publicKeyBitmap`: The public key bitmap of the block.
 - `proposer`: The address of the block proposer.
+
+## Related Resources
+
+- [Elrond schema overview](https://docs.bitquery.io/v1/docs/Schema/elrond/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Elrond Coinpath API](https://docs.bitquery.io/v1/docs/Schema/elrond/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,5 +1,6 @@
 ---
 title:  Polygon Address Balance API
+description: "Get balance or balance history for any address or smart contract on the Polygon blockchain."
 ---
 
 
@@ -26,7 +27,7 @@ title:  Polygon Address Balance API
 
 The `address` api also allow you pull balance details including balance history.
 
-You can filter using currency smart contract address and get balance for specific currency. In case of native currency, you can just mention "MATIC".
+You can filter using currency smart contract address and get balance for specific currency. In case of native currency, you can just mention "MATIC". The balance API is particularly useful for treasury dashboards, portfolio trackers, and reconciliation workflows where you need current or historical token holdings for an address across MATIC and ERC-20 assets on Polygon.
 
 Here is an example on getting balance of [0x198905a3e2e3ffeb20169adf9ceaf0f9e66c35b9](https://explorer.bitquery.io/matic/address/0x198905a3e2e3ffeb20169adf9ceaf0f9e66c35b9):
 
@@ -69,3 +70,12 @@ The following are available fields for the address:
 Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your Access Token, Read _[our guide](/docs/graphql-ide/how-to-start/)_ on getting started.
 
 :::
+
+## Related Resources
+
+- [Polygon schema overview](https://docs.bitquery.io/v1/docs/Schema/Polygon/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath (Polygon)](https://docs.bitquery.io/v1/docs/Schema/Polygon/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

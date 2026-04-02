@@ -1,3 +1,9 @@
+---
+title: "Ethereum Trace API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for EVM transaction traces. Inspect internal calls, gas, and execution trees."
+keywords: [Ethereum API examples, trace GraphQL queries, Bitquery]
+---
+
 # Ethereum Trace API
 
 ## What is Ethereum Trace?
@@ -53,3 +59,11 @@ The collect node has two child nodes, transfer and transfer. These two child nod
 The unwrapWETH9 node has two child nodes, balanceOf and withdraw. These two child nodes represent two separate calls to the balanceOf and withdraw functions in a different smart contract.
 
 You can also visualize it through [bloxy](https://bloxy.info/tx/0xd3c3e2164ac91c1d70abcce1bc06ef5107367596303e8925041ef4ebcfb39c43#) graph. I hope you found this blog on blockchain trace informative. If you have any questions, please feel free to leave a comment below.
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Smart contract calls examples](https://docs.bitquery.io/v1/docs/Examples/smartcontractCalls/smart-contract-calls-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

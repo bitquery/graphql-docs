@@ -1,8 +1,14 @@
+---
+title: "Smart Contract Calls API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for EVM smart contract calls. Get methods, arguments, call depth, and callers."
+keywords: [smart contract API examples, GraphQL queries, Bitquery]
+---
+
 # Smart contract call API
 
 Our Smart contract call API allows you access to parsed smart contract calls and arguments for all the blockchains we support.
 
-## All Smart contract calls for a blockchain
+## Get Recent Ethereum Smart Contract Calls with Callers and Arguments
 
 You can use our SmartContractCalls to get contract calls for any blockchain. In the following example, we are getting smart contract calls for Ethereum with details like arguments, transaction, caller, and [calldepth](https://community.bitquery.io/t/bitquery-trace-api/1556).
 
@@ -49,7 +55,7 @@ You can use our SmartContractCalls to get contract calls for any blockchain. In 
 }
 ```
 
-## All Smart contract call for a specific contract
+## Get Ethereum Smart Contract Calls for One Contract Address
 
 [Open this query on IDE](https://ide.bitquery.io/Calls-for-a-specific-ethereum-smart-contract)
 
@@ -88,7 +94,7 @@ You can use our SmartContractCalls to get contract calls for any blockchain. In 
 }
 ```
 
-## List of calls of a smart contract
+## List Latest Ethereum Smart Contract Calls Grouped by Method Name
 
 To check the list of methods (calls) done on a smart contract you can use following api.
 
@@ -134,7 +140,7 @@ To check the list of methods (calls) done on a smart contract you can use follow
 }
 ```
 
-## Specific method call from a specific contract
+## Get Ethereum getReserves Calls from a Specific Caller Contract
 
 To check the specific method call from a specific smart contract you can use the api below.
 
@@ -177,7 +183,7 @@ To check the specific method call from a specific smart contract you can use the
 
 ```
 
-## Method calls by specific address
+## Get Ethereum Smart Contract Calls Where One Address Is Caller
 
 To check method calls by a specific [smart contract address](https://explorer.bitquery.io/ethereum/smart_contract/0x1a0ad011913a150f69f6a19df447a0cfd9551054/calls_contracts), you can use following API.
 
@@ -222,7 +228,7 @@ To check method calls by a specific [smart contract address](https://explorer.bi
 }
 ```
 
-## Smart contract arguments API
+## List BSC Smart Contract Parsed Arguments by Block and Transaction
 
 ```graphql
 {
@@ -306,7 +312,7 @@ To filter specific argument, please use following API.
 
 Our v1 APIs support Argument Filtering, however we would rather suggest using V2 APIs for this. They are much more powerful in arguments, allowing argument aggregation and filtering.
 
-## Blacklist Calls on a Token
+## Get Ethereum Blacklist Smart Contract Calls for a Token Contract
 
 To restrict certain addresses from performing specific actions within your smart contract, you can utilize the blacklist functionality. The query below utilizes the `smartContractMethod: {is: "blacklist"}` to fetch transactions where an address was blacklisted. 
 You can run the query [here](https://ide.bitquery.io/PEPE-Blacklist-calls)
@@ -366,3 +372,11 @@ query ($network: EthereumNetwork!, $address: String!, $limit: Int!, $offset: Int
 
 
 ```
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Smart contract events examples](https://docs.bitquery.io/v1/docs/Examples/smartcontractEvents/smart-contract-events-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

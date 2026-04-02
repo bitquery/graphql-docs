@@ -1,5 +1,6 @@
 ---
 title: ETH2 Deposits API
+description: "Query validator deposits on the Beacon Chain."
 ---
 
 <head>
@@ -20,6 +21,10 @@ title: ETH2 Deposits API
 <meta property="twitter:title" content="ETH2 Deposits API" />
 <meta property="twitter:description" content="Get Deposits information on the ETH2 blockchain. Also, get information on epochs, block root and  validator information on the ETH2 blockchain." />
 </head>
+
+:::caution Deprecated
+Bitquery has stopped supporting the Ethereum Beacon Chain (ETH2) API. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The deposits API allows you to query for deposits that have been made to the Ethereum 2.0 beacon chain. You can use this API to get information about the deposits themselves, such as the amount of ETH that was deposited, the validator that made the deposit, and the block that the deposit was included in. Below are the fields in the schema: 
 
@@ -116,3 +121,12 @@ query ($network: Ethereum2Network!, $limit: Int!, $offset: Int!) {
 `depositIndex`: This field contains the index of the deposit in the block.
 
 `height`: This field specifies the height of the block that the deposits should be returned for.
+
+## Related Resources
+
+- [Beacon Chain schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum2/overview)
+- [ETH2 examples](https://docs.bitquery.io/v1/docs/Examples/Beacon%20Chain%20Examples/eth2_examples)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+- [Ethereum execution layer schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+

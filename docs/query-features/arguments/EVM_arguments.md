@@ -1,6 +1,10 @@
 ---
 sidebar_position: 2
+title: "EVM Arguments in Bitquery GraphQL API"
+description: "Query transaction and event arguments on Ethereum and EVM chains with smartContractEvent and argument filters."
+keywords: [Bitquery, GraphQL, EVM, arguments, smart contract events]
 ---
+
 # EVM Arguments
 
 You can use the `arguments` method with EVM chains to get arguments and values of transactions, trades and calls.
@@ -66,3 +70,11 @@ Here the arguments are completely different.
 In this example, the borrow method has six arguments: `offer.totalAmount`, `offer.minAmount`, `offer.maxAmount`, `loanAmount`, `offer.auctionDuration`, and `offer`.`expirationTime`. The argument field is used to specify the name of the argument that you want to retrieve. 
 
 In this case, the `totalAmount`, `minAmount`, `maxAmount`, `loanAmount`, `auctionDuration`, and `expirationTime` arguments are retrieved
+
+## Related Resources
+
+- [Arguments overview](https://docs.bitquery.io/v1/docs/query-features/arguments/argument)
+- [Arguments on other chains](https://docs.bitquery.io/v1/docs/query-features/arguments/Other_Chains_arguments)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [GraphQL IDE — how to start](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Filtering options](https://docs.bitquery.io/v1/docs/query-features/filtering/options)

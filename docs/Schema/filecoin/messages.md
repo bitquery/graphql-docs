@@ -1,3 +1,9 @@
+---
+title: "Filecoin Messages API"
+description: "Filecoin messages between actors: sender/receiver accounts and types, signature type, signed hash, and execution-ordered state."
+keywords: ["Filecoin API", "Filecoin Messages", "Bitquery", "GraphQL"]
+---
+
 # Messages
 
 According to the [official Filecoin documentation](https://docs.filecoin.io/basics/the-blockchain/blocks-and-tipsets/),
@@ -7,6 +13,8 @@ According to the [official Filecoin documentation](https://docs.filecoin.io/basi
 > appearance, deduplicated and returned in canonical order of execution.
 > So, in other words, a block describes all changes to the network state
 > in a given epoch.
+
+Messages are the primary unit of on-chain activity on Filecoin—analogous to transactions on other networks. Every storage deal proposal, miner sector commitment, payment, and governance action is expressed as a message between actors. The messages API lets you query senders, receivers, method names, gas costs, and execution outcomes. Use it for network activity monitoring, miner operations dashboards, and correlating on-chain messages with storage-deal lifecycles.
 
 ```
 query ($network: FilecoinNetwork!, $dateFormat: String!, $from: ISO8601DateTime, $till: ISO8601DateTime) {
@@ -94,3 +102,11 @@ query ($network: FilecoinNetwork!, $dateFormat: String!, $from: ISO8601DateTime,
 -   **signature:**  The signature of the message.
 -   **signatureType:**  The type of signature used to sign the message.
 -   **signedHash:**  The hash of the message that was signed.
+
+## Related Resources
+
+- [Filecoin schema overview](https://docs.bitquery.io/v1/docs/Schema/filecoin/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Filecoin Coinpath API](https://docs.bitquery.io/v1/docs/Schema/filecoin/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

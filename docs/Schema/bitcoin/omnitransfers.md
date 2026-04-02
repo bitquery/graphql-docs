@@ -1,5 +1,6 @@
 ---
 title: Bitcoin OmniTransfers API
+description: "Get information on Omni layer transfers on the Bitcoin blockchain. Also, get information on tokens or NFTs on the Bitcoin blockchain."
 ---
 
 <head>
@@ -106,3 +107,11 @@ Omni Transfers can be filtered using the following arguments:
 -   `type`: returns type of transfer
 -   `typeInt`: returns type as Int
 -   `value`: returns value
+
+## Related Resources
+
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/examples/Bitcoin)
+- [Coinpath (Bitcoin)](https://docs.bitquery.io/v1/docs/Schema/bitcoin/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

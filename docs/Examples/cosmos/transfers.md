@@ -1,8 +1,14 @@
+---
+title: "Cosmos Transfers API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Cosmos transfers. Get transfers by signer, currency, value, and time."
+keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
+---
+
 # Transfers API
 
 Our Cosmos Transfers API provides all the information about token transfers happened on Cosmos Blockchain.
 
-## Get Transfers by a Specific Signer, Arranged by Timestamp and Value
+## Get Cosmos Transfers by Signer Sorted by Time and Value
 
 ```
 {
@@ -39,7 +45,7 @@ Our Cosmos Transfers API provides all the information about token transfers happ
 
 This query retrieves the latest transfers involving a specific transaction signer's address. It orders the results by both the timestamp and the value of the transfers in descending order, limiting the output to the top 10 transfers. For each transfer, it provides information such as the block height, timestamp, currency details, receiver's address, sender's address, transaction hash, transfer type, and transfer value.
 
-## Fetch the Most Recent Transfer of a Specific Currency
+## Get Recent Cosmos Transfers for a Specific Currency
 
 ```
 {
@@ -78,4 +84,12 @@ This query retrieves the latest transfers involving a specific transaction signe
 This query fetches the latest 10 transfers of a specific currency, "Atom," on the Cosmos network. The transfers are arranged in descending order based on their value. The query filters transfers that occurred after August 5th, 2023. 
 
 For each transfer, it retrieves details such as the block's height, timestamp, currency address and name, receiver's and sender's addresses, transaction hash, transfer type, and the transferred value.
+
+## Related Resources
+
+- [Cosmos schema overview](https://docs.bitquery.io/v1/docs/Schema/cosmos/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Cosmos address examples](https://docs.bitquery.io/v1/docs/Examples/cosmos/address)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
 

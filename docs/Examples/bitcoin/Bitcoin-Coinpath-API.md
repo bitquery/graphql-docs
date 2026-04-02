@@ -1,18 +1,14 @@
 ---
-title: Bitcoin Coinpath API
-description: Track Bitcoin (BTC) fund flows between addresses with GraphQL coinpath queries—depth, direction, and transaction paths on the Bitcoin network.
-keywords:
-  - Bitcoin coinpath
-  - Bitcoin fund tracing
-  - BTC transaction path
-  - Bitcoin GraphQL API
+title: "Bitcoin Coinpath API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Bitcoin coinpath and fund flow data. Track transfers between addresses, depth, direction, and transaction paths."
+keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 ---
 
 # Coinpath API
 
 Our Bitcoin Coinpath API provides comprehensive information about money flow of addresses on the **Bitcoin** blockchain.
 
-## Explore 
+## Explore Bitcoin Coinpath Flow from a Seed Address
 
 [Run API](https://ide.bitquery.io/Destination-of-Funds-from-a-Specific-Address-on-Bitcoin)
 
@@ -49,7 +45,7 @@ Our Bitcoin Coinpath API provides comprehensive information about money flow of 
 
 This query retrieves a list of coinpath transactions initiated from a specific initial address (bc1p4kufll9uhnpkgzuc65slcxd2qaw2hl9xecket3h8yyu4awglcsqslqaztd) after a certain date (2023-10-10). The query limits the results to 10 transactions and orders them by timestamp in descending order. For each transaction, it provides details such as the transferred amount in USD, block height, timestamp, currency information, sender and receiver addresses, transaction hash, and value.
 
-## Get Money Flow With Particular Receiver Address
+## Bitcoin Coinpath Inflows to a Specific Receiver Address
 
 ```
 query ($network: BitcoinNetwork!) {
@@ -80,7 +76,7 @@ query ($network: BitcoinNetwork!) {
 
 This query allows you to retrieve the money flow details where the receiver is a particular address (bc1p4kufll9uhnpkgzuc65slcxd2qaw2hl9xecket3h8yyu4awglcsqslqaztd) after October 10, 2023. The results are ordered in descending order based on block heights and are limited to the top 10 entries.
 
-## Investigate Relationship Between Two Addresses
+## Bitcoin Coinpath Between Initial and Receiver Addresses
 
 ```
 query ($network: BitcoinNetwork!) {
@@ -113,3 +109,11 @@ query ($network: BitcoinNetwork!) {
 This query explores the relationship between two specific addresses (initialAddress and receiver) within the context of transactions that occurred after October 10, 2023. It retrieves a maximum of 10 transactions initiated from the initial address and received by the specified receiver.
 
 For each transaction, the query provides details like the transferred amount in USD, block height, timestamp, currency information, sender and receiver addresses, transaction hash, and value. By analyzing these transactions, users can gain insights into the flow of funds between the two addresses and understand their financial interactions.
+
+## Related Resources
+
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Bitcoin address API examples](https://docs.bitquery.io/v1/docs/Examples/bitcoin/bitcoin-address-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

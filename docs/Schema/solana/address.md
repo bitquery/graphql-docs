@@ -1,6 +1,14 @@
+---
+title: "Solana Address API"
+description: "Solana wallet SOL balance and account annotations—query addresses on Solana with Bitquery GraphQL."
+keywords: ["Solana API", "Solana Address", "Bitquery", "GraphQL"]
+---
+
 # Address
 
 The Solana address API gives you information of the balance of a wallet in SOL.
+
+Solana addresses (public keys) can be regular wallets, token accounts, or program-derived addresses. The address API returns balance, annotation, and account-level metadata. Use it for wallet lookups, portfolio snapshots, or verifying whether an address is a known entity before diving into transfer or instruction history.
 
 ```
 query MyQuery {
@@ -41,3 +49,10 @@ The balance of the account in SOL.
 
 The balance of the account.
 
+## Related Resources
+
+- [Solana schema overview](https://docs.bitquery.io/v1/docs/Schema/solana/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Solana Coinpath API](https://docs.bitquery.io/v1/docs/Schema/solana/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

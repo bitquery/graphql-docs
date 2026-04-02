@@ -1,10 +1,16 @@
+---
+title: "Ripple XRP Balance API Examples — Bitquery GraphQL"
+description: "Query XRP Ledger account balances with Bitquery GraphQL. Get historical balance snapshots, multi-currency holdings, and balance changes for any Ripple address."
+keywords: [Ripple, XRP, balance, XRP Ledger, Bitquery, GraphQL, account balance, Ripple API, historical balance]
+---
+
 # Ripple Balance API
 
 Ripple Balance API provides all details regarding balances on Ripple Blockchain. Below are some examples of `balance` API:
 
 import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
 
-## Get Historical Balance of an address on Ripple
+## Get Historical XRP Ledger Account Balances for a Ripple Address
 
 We are using the below query to get all historical balance of an address `rs9ineLqrCzeAGS1bxsrW8x2n3bRJYAh3Q` on Ripple Blockchain. You can find the query [here](https://ide.bitquery.io/historical-balances-of-a-ripple-address).
 
@@ -65,3 +71,10 @@ query ($network: RippleNetwork!, $address: String!, $from: ISO8601DateTime, $til
 ## Video Tutorial | How to get Balance of an Address on Ripple Blockchain
 
 <VideoPlayer url="https://www.youtube.com/watch?v=6F3KHBm81Zk" />
+
+## Related Resources
+
+- [Ripple schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Ripple Payments examples](https://docs.bitquery.io/v1/docs/Examples/ripple/payments)
+- [Ripple Transfers examples](https://docs.bitquery.io/v1/docs/Examples/ripple/transfers)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)

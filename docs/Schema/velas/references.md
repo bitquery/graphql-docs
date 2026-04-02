@@ -1,3 +1,8 @@
+---
+title: "Velas References API"
+description: "Query Velas schema references data using Bitquery GraphQL API. Get reference data and lookup tables for this network schema."
+keywords: ["Velas API", "Velas References", "Bitquery", "GraphQL"]
+---
 
 # References
 
@@ -45,3 +50,11 @@ References can be filtered using following arguments:
 - `smartContractSignature`:
 - `success`:
 - `transaction`:
+
+## Related Resources
+
+- [Velas schema overview](https://docs.bitquery.io/v1/docs/Schema/velas/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Velas Coinpath API](https://docs.bitquery.io/v1/docs/Schema/velas/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

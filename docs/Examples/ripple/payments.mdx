@@ -1,10 +1,16 @@
+---
+title: "Ripple XRP Payments API Examples — Bitquery GraphQL"
+description: "Query XRP Ledger payments with Bitquery GraphQL. Get the latest payments on Ripple, filter by sender or receiver address, and retrieve payment amounts in USD."
+keywords: [Ripple, XRP, payments, XRP Ledger, Bitquery, GraphQL, Ripple payments, Ripple API]
+---
+
 # Ripple Payments API
 
 Ripple Payments API provides all details regarding payments on Ripple Blockchain. Below are some examples of `payments` API:
 
 import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
 
-## Get Latest Payments on Ripple
+## Get Latest XRP Ledger Payments on the Ripple Network
 
 We are using the below query to get the latest payments on Ripple Blockchain. You can find the query [here](https://ide.bitquery.io/Latest-payments-on-ripple-blockchain).
 
@@ -50,7 +56,7 @@ query ($network: RippleNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
 }
 ```
 
-## Get Payments of an Address on Ripple
+## Get XRP Ledger Payments Involving a Specific Ripple Address
 
 We are using the below query to get the payments of a specific address `rLR5BTsGcnMp5SwUzX1V9VCTbN1hayH61R` on Ripple Blockchain. You can find the query [here](https://ide.bitquery.io/Payments-of-an-address-on-ripple).
 
@@ -100,3 +106,10 @@ query ($network: RippleNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
 ## Video Tutorial | How to get payments data on Ripple Blockchain
 
 <VideoPlayer url="https://youtu.be/wTpMKEcjBqs" />
+
+## Related Resources
+
+- [Ripple schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Ripple Balances examples](https://docs.bitquery.io/v1/docs/Examples/ripple/balances)
+- [Ripple Transfers examples](https://docs.bitquery.io/v1/docs/Examples/ripple/transfers)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)

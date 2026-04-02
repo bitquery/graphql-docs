@@ -1,5 +1,6 @@
 ---
 title: Bitcoin Address Stats API
+description: "Get address balance and history on the Bitcoin blockchain. Also, get address balance and history for tokens on the Bitcoin blockchain."
 ---
 
 <head>
@@ -23,7 +24,9 @@ title: Bitcoin Address Stats API
 
 The `addressstats` field allows us to retrieves statistics related to blockchain addresses.
 
-Here is an example that demonstrates how to retrieve statistics about a specific address; there is a balance field, too; please avoid using it; if you require a BTC balance, then please use [this API](https://docs.bitquery.io/v1/docs/Examples/bitcoin%20/bitcoin-address-api).
+Address statistics provide an aggregate profile of a Bitcoin address: total sent and received amounts, transaction counts, fee totals, and the number of active days. This is useful for risk scoring, compliance profiling, and building explorer-style address summary pages without pulling individual transaction history. Because Bitcoin uses a UTXO model, these aggregates are derived from input and output activity rather than account-level state.
+
+Here is an example that demonstrates how to retrieve statistics about a specific address; there is a balance field, too; please avoid using it; if you require a BTC balance, then please use [this API](https://docs.bitquery.io/v1/docs/examples/Bitcoin/bitcoin-address-api).
 
 ```
 {
@@ -55,3 +58,11 @@ Here is an example that demonstrates how to retrieve statistics about a specific
 </details>
 
 -   `address`: Returns statistics for the blockchain address
+
+## Related Resources
+
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/examples/Bitcoin)
+- [Coinpath (Bitcoin)](https://docs.bitquery.io/v1/docs/Schema/bitcoin/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

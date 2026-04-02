@@ -1,3 +1,9 @@
+---
+title: "Harmony Blocks API"
+description: "Query Harmony blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."
+keywords: ["Harmony API", "Harmony Blocks", "Bitquery", "GraphQL"]
+---
+
 # Blocks
 
 The Harmony Blocks API provides information about blocks from the Harmony Blockchain.
@@ -58,3 +64,11 @@ You can filter data using any of the following fields:
 -   transactionsRoot: returns root of the transaction trie of the block
 -   unclesCount: returns count of uncles hashes
 -   viewId: returns view id
+
+## Related Resources
+
+- [Harmony schema overview](https://docs.bitquery.io/v1/docs/Schema/harmony/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Harmony Coinpath API](https://docs.bitquery.io/v1/docs/Schema/harmony/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,4 +1,14 @@
+---
+title: "Flow Event Fields API"
+description: "Query Flow event fields data using Bitquery GraphQL API. Get event field definitions and typed values."
+keywords: ["Flow API", "Flow Event Fields", "Bitquery", "GraphQL"]
+---
+
 # Event Fields
+
+:::caution Deprecated
+Bitquery has stopped supporting the Flow blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The Flow Event Fields API provides information about events from the Flow Blockchain.
 
@@ -46,3 +56,11 @@ You can filter the events fields data using the following fields:
 -   time: returns time when transaction is created
 -   transaction: returns information about transaction
 -   type: returns type of field
+
+## Related Resources
+
+- [Flow schema overview](https://docs.bitquery.io/v1/docs/Schema/flow/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Flow Coinpath API](https://docs.bitquery.io/v1/docs/Schema/flow/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

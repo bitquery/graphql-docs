@@ -1,4 +1,14 @@
+---
+title: "Flow Transactions API"
+description: "Flow Cadence transactions: UTF-8 script, gas limit, status, proposer, payer, reference block, collection id, events count."
+keywords: ["Flow API", "Flow Transactions", "Bitquery", "GraphQL"]
+---
+
 # Transactions
+
+:::caution Deprecated
+Bitquery has stopped supporting the Flow blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The Flow Transaction API provides information about transactions from the Flow Blockchain.
 
@@ -52,3 +62,11 @@ You can filter transaction data using following fields:
 -   script: returns raw script code for the cadence script encoded as UTF-8 bytes
 -   statusCode: returns status code of transaction where 0 is success and 1 is failure
 -   time: returns time the transaction was created
+
+## Related Resources
+
+- [Flow schema overview](https://docs.bitquery.io/v1/docs/Schema/flow/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Flow Coinpath API](https://docs.bitquery.io/v1/docs/Schema/flow/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

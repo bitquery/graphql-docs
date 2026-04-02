@@ -1,10 +1,13 @@
 ---
 sidebar_position: 1
+title: "Understanding Bitquery Query Architecture — Cubes, Dimensions & Metrics"
+description: "Learn how Bitquery models blockchain data as cubes with dimensions, metrics, and filters, and how GraphQL maps to ClickHouse analytics."
+keywords: [Bitquery, GraphQL, cube, dimensions, metrics, query architecture]
 ---
 
 # Basic Structure of A Query
 
-Bitquery Architechture
+Bitquery Architecture
 Let’s understand how we built our infrastructure to enable scalable analytical processing. In the simplest form, we are using Clickhouse (An OLAP database) at our data warehouse and built a GraphQL layer on top of it, and glued them together using a library called Activecube, which we have written from scratch and open-sourced. This library transforms GraphQL queries to Clickhouse queries.
 
 ![under the hood](/img/under-the-hood.jpeg)
@@ -61,3 +64,12 @@ Metrics look similar to Dimensions, however, they behave differently. For exampl
 ## Dataset and Filters
 
 Datasets are types of data such as Ethereum and Binance smart chain, both are Ethereum type datasets because they are similar types of blockchains. Filters help in adding scope and range to queries.
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [DEX Trades API examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Network selection](https://docs.bitquery.io/v1/docs/building-queries/network-selection)
+- [Aggregation in Bitquery GraphQL API](https://docs.bitquery.io/v1/docs/query-features/aggregation/aggregation)
+- [Filtering fields](https://docs.bitquery.io/v1/docs/query-features/filtering/fields)

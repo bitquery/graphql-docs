@@ -1,4 +1,14 @@
+---
+title: "Hedera Coinpath API"
+description: "Query Hedera coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."
+keywords: ["Hedera API", "Hedera Coinpath", "Bitquery", "GraphQL"]
+---
+
 # Coinpath
+
+:::caution Deprecated
+Bitquery has stopped supporting the Hedera blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The Coinpath API offers information related to the flow of funds on the Hedera Blockchain.
 
@@ -33,3 +43,10 @@ You can filter the information fetched from the API using the following filters:
 - `receiver`:  Provides information about the receiver, including the address and annotation (if available).
 - `sender`: Provides information about the sender, including the address and annotation (if available).
 - `transactions`: Returns details about transactions, including the amount, height, hash, and more.
+
+## Related Resources
+
+- [Hedera schema overview](https://docs.bitquery.io/v1/docs/Schema/hedera/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

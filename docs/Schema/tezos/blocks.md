@@ -1,3 +1,9 @@
+---
+title: "Tezos Blocks API"
+description: "Query Tezos blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."
+keywords: ["Tezos API", "Tezos Blocks", "Bitquery", "GraphQL"]
+---
+
 # Blocks
 
 The Blocks API provides information about the blocks created on the Tezos blockchain.
@@ -66,3 +72,10 @@ You can filter blocks data using the following fields:
 
 -   `timestamp`: returns the timestamp of the block.
 
+## Related Resources
+
+- [Tezos schema overview](https://docs.bitquery.io/v1/docs/Schema/tezos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Tezos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/tezos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

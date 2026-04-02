@@ -1,3 +1,9 @@
+---
+title: "EOS Coinpath API"
+description: "Query EOS coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."
+keywords: ["EOS API", "EOS Coinpath", "Bitquery", "GraphQL"]
+---
+
 # EOS Coinpath
 
 The EOS Coinpath API allows you to get the money flow for an address on the EOS blockchain. You can track any levels of fund movement with this API. This is a very useful API for crypto investigations.
@@ -180,3 +186,10 @@ query ($address: String!, $currency: String!, $from: ISO8601DateTime, $till: ISO
 - **depth** The depth of the coinpath.
 - **count** The number of transactions in the coinpath.
 - **block** The block in which the first transaction in the coinpath was included.
+
+## Related Resources
+
+- [EOS schema overview](https://docs.bitquery.io/v1/docs/Schema/eos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

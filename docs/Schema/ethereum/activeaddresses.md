@@ -1,5 +1,6 @@
 ---
 title: "Ethereum Active Addresses API"
+description: "Access historical and current Ethereum active address metrics with Bitquery GraphQL."
 ---
 
 <head>
@@ -29,6 +30,8 @@ title: "Ethereum Active Addresses API"
 </head>
 
 The `activeAddresses` field allows us to retrieve details about the active addresses from the Ethereum blockchain.
+
+Active addresses measure network engagement: they count distinct addresses that participated in transfers (as sender or receiver) during a given period. This is a key metric for ecosystem health dashboards, investor reports, and growth analytics—showing whether the network is gaining or losing participants over time. You can filter by currency, amount thresholds, and date ranges to narrow the count to specific tokens, whales, or time windows.
 
 Here is an example that demonstrates how to retrieve the number of active addresses from the Ethereum blockchain:
 
@@ -68,3 +71,11 @@ The following are available fields for the `activeAddresses`:
 -   `address`: returns the address and its annotation.
 -   `count`: returns the aggregate count of active addresses.
 -   `countBigInt`: returns the aggregate count of active addresses in `BigInt` format.
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Active addresses examples](https://docs.bitquery.io/v1/docs/Examples/activeAddresses/blockchain-active-addresses-api)
+- [Coinpath (Ethereum)](https://docs.bitquery.io/v1/docs/Schema/ethereum/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

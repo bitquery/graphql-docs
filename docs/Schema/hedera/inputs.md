@@ -1,4 +1,14 @@
+---
+title: "Hedera Inputs API"
+description: "Hedera transfer inputs: amount, currency, payerAccount, nodeAccount, consensus time, transaction hash—GraphQL."
+keywords: ["Hedera API", "Hedera Inputs", "Bitquery", "GraphQL"]
+---
+
 # Inputs
+
+:::caution Deprecated
+Bitquery has stopped supporting the Hedera blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The Inputs API provides information about transaction inputs on the Hedera Blockchain.
 
@@ -90,3 +100,11 @@ You can filter your input data using the following filters:
 -   `transactionValidDurationInSec`: Returns the transaction valid duration in seconds.
 -   `transferEntity`: Returns details about the transfer account.
 -   `validStart`: Returns the start timestamp of the valid duration for the transaction.
+
+## Related Resources
+
+- [Hedera schema overview](https://docs.bitquery.io/v1/docs/Schema/hedera/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Hedera Coinpath API](https://docs.bitquery.io/v1/docs/Schema/hedera/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,6 +1,12 @@
+---
+title: "Solana Transactions API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Solana transactions. Get transactions by time range, fees, instructions, and block context."
+keywords: [Solana API examples, Solana GraphQL queries, Bitquery]
+---
+
 # Solana Transactions API
 
-## Transactions in a specific timeperiod
+## Get Solana Transactions by Date Range
 
 This below query will get you the transactions for a specific timeperiod. You can change the timeperiod values as per your need.
 You can run the query [here](https://ide.bitquery.io/transactions-in-a-specific-timeperiod).
@@ -33,7 +39,7 @@ query MyQuery {
 
 ```
 
-## Transactions of an address for a specific timeperiod
+## Get Solana Address Transactions by Date Range
 
 This below query will get you the transactions of an address for a specific timeperiod. You can change the address and timeperiod values as per your need.
 You can run the query [here](https://ide.bitquery.io/transactions-of-an-address-in-a-specific-timeperiod).
@@ -66,3 +72,11 @@ query MyQuery {
 }
 
 ```
+
+## Related Resources
+
+- [Solana schema overview](https://docs.bitquery.io/v1/docs/Schema/solana/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Solana transfers examples](https://docs.bitquery.io/v1/docs/Examples/Solana/transfers)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

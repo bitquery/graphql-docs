@@ -1,5 +1,16 @@
 ---
 sidebar_position: 2
+title: "How to Use the Bitquery GraphQL IDE"
+description: "Learn the Bitquery GraphQL IDE: visual query builder, writing queries, saving and sharing, access tokens, billing, and API usage from your dashboard."
+keywords:
+  [
+    Bitquery IDE,
+    GraphQL IDE,
+    query builder,
+    save queries,
+    OAuth token,
+    API dashboard,
+  ]
 ---
 
 # How to use the IDE ?
@@ -56,3 +67,12 @@ You can find which queries have consumed substantial points within the "Queries"
 ## What if I don't want to use IDE?
 
 If the IDE isn't your preferred route, you can still directly access our API from your application using your Access Token.
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [DEX Trades API examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [GraphQL query builder guide](https://docs.bitquery.io/v1/docs/graphql-ide/query-builder)
+- [API access token setup](https://docs.bitquery.io/v1/docs/graphql-ide/apikey)
+- [Use Bitquery APIs in your app](https://docs.bitquery.io/v1/docs/graphql-ide/use-it-in-your-application)

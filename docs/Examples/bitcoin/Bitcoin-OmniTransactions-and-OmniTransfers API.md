@@ -1,3 +1,9 @@
+---
+title: "Bitcoin Omni API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Bitcoin Omni Layer data. Get Omni transactions and transfers by address."
+keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
+---
+
 # Bitcoin OmniTransactions and OmniTransfers API
 
 ## Get the Latest Omni Transaction on Bitcoin
@@ -47,3 +53,11 @@ query ($network: BitcoinNetwork!) {
 ```
 
 This query provides all the omni transfers from a particular wallet address which is mentioned as “ADDRESS_HERE” and provides the block hash, transfer initiator and transfer receiver for each transfer
+
+## Related Resources
+
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Bitcoin examples index](https://docs.bitquery.io/v1/docs/examples/Bitcoin/index)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

@@ -1,8 +1,15 @@
+---
+title: "Tron Coinpath API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Tron coinpath and fund flows. Trace sender, receiver, depth, and amounts."
+keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
+---
+
 # Coinpath API
+
 
 Our Tron Coinpath API provides comprehensive information about money flow of addresses on the Tron blockchain.
 
-## Get Money Flow of Particular Address
+## Trace Tron USDT Coinpath From Initial Sender After a Date
 
 ```graphql
 {
@@ -46,7 +53,7 @@ Our Tron Coinpath API provides comprehensive information about money flow of add
 
 This query allows you to retrieve the money flow details originating from a particular address (TTd9qHyjqiUkfTxe3gotbuTMpjU8LEbpkN) for the Tron currency (TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t) after July 31, 2023. The results are ordered in descending order based on block timestamps and are limited to the top 5 entries.
 
-## Get Money Flow With Particular Receiver Address
+## Trace Tron USDT Coinpath To a Receiver Address After a Date
 
 ```graphql
 {
@@ -88,4 +95,12 @@ This query allows you to retrieve the money flow details originating from a part
 }
 ```
 This query allows you to retrieve the money flow details where the receiver is a particular address (TTd9qHyjqiUkfTxe3gotbuTMpjU8LEbpkN) for the Tron currency (TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t) after July 31, 2023. The results are ordered in descending order based on block timestamps and are limited to the top 5 entries.
+
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath money flow examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
 

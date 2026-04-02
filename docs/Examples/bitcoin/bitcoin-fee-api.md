@@ -1,10 +1,16 @@
+---
+title: "Bitcoin Fee API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Bitcoin transaction fees. Get per-tx fees, USD fees, and fee aggregates by account."
+keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
+---
+
 # Bitcoin Fee API
 
 This Bitquery API allows you to query Bitcoin transaction fees using GraphQL. You can retrieve detailed fee information for specific addresses, calculate total fees paid by an account, and convert fee values to USD. The examples below demonstrate how to use the API for common fee-related queries.
 
 import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
 
-## Get Bitcoin Transactions and Fees of an Account
+## List Bitcoin Transactions with Per-Tx Fees and USD Fees
 
 Below query will get you bitcoin transactions for a account along with the transaction fees. You can try out the query [here](https://ide.bitquery.io/bitcoin-trxn-fees-for-a-account_2).
 
@@ -41,7 +47,7 @@ qquery MyQuery {
 }
 ```
 
-## Get Total fees paid by an account on Bitcoin network
+## Sum Total Bitcoin Fees Paid by an Address on One Day
 
 Below query will get you total fees paid by an account on Bitcoin network. You can try out the query [here](https://ide.bitquery.io/Get-Total-fees-paid-by-an-account-on-Bitcoin-network).
 
@@ -62,3 +68,11 @@ query MyQuery {
 ## Video Tutorial | How to get Bitcoin Transaction Fees data using Bitquery APIs
 
 <VideoPlayer url="https://www.youtube.com/watch?v=OR_7gQT71D4" />
+
+## Related Resources
+
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Bitcoin examples index](https://docs.bitquery.io/v1/docs/examples/Bitcoin/index)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

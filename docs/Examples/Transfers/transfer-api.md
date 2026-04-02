@@ -1,4 +1,7 @@
 ---
+title: "Transfer API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for token and native transfers on EVM chains. Filter by address, contract, and time."
+keywords: [transfer API examples, GraphQL queries, Bitquery]
 sidebar_position: 1
 ---
 
@@ -6,7 +9,7 @@ sidebar_position: 1
 
 Transfer API is available for all blockchains that have smart contract capabilities, especially EVMs. This api helps you get token (native or non-native) transfers. Let's see a few examples.
 
-## All transfers for a token
+## Get All WBNB Token Transfers on BNB Chain
 
 To get all transfers for a token, you can use the following api. In this API, we are mentioning WBNB token transfer, and for that, we are mentioning its token address 0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c. You can get transfers for more than one currency by mentioning their address using `{in: ["currency1", "currency2"…]}` instead of using `{is: "currency"}`. Additionally to get transfers for the native token, you need to use its symbol directly for example, in case of a BNB chain `BNB` is the native token, therefore you can just mention its symbol like `{is: "BNB"}`.
 
@@ -50,7 +53,7 @@ To get all transfers for a token, you can use the following api. In this API, we
 }
 ```
 
-## Transfers sent by an address
+## Track WBNB Transfers Sent by a BNB Chain Address
 
 To check all transfers sent by an address you can following query.
 
@@ -95,7 +98,7 @@ To check all transfers sent by an address you can following query.
 }
 ```
 
-## Transfers received by address
+## Get WBNB Transfers Received by a BNB Chain Address
 
 To check all transfers received by an address use following query.
 
@@ -140,7 +143,7 @@ To check all transfers received by an address use following query.
 }
 ```
 
-## All transfers of a address
+## Query All WBNB Transfers Sent and Received by an Address
 
 We can use `any` filter, which is basically an `OR` condition to get all transfers sent and received by an address.
 
@@ -188,7 +191,7 @@ We can use `any` filter, which is basically an `OR` condition to get all transfe
 }
 ```
 
-## Biggest transfers of a token
+## Fetch Largest WBNB Transfers on BNB Chain by Amount
 
 To check the biggest transfers of a token, you can use the following query. In this query, we are ordering results based on the transfer amount.
 
@@ -232,7 +235,7 @@ To check the biggest transfers of a token, you can use the following query. In t
 }
 ```
 
-## Transfers of a transaction
+## Get All Transfers Inside a BNB Chain Transaction
 
 To check all transfers in a transaction use following query.
 
@@ -276,7 +279,7 @@ To check all transfers in a transaction use following query.
 }
 ```
 
-## All transfers in a block
+## Query All Transfers in a Specific BNB Chain Block
 
 To check all transfers in a block use following query.
 
@@ -315,7 +318,7 @@ To check all transfers in a block use following query.
 }
 ```
 
-## All internal transfers
+## Query Internal-Only Transfers in a BNB Chain Block
 
 Internal transfers are triggered by smart contract and using the following query you can check only internal transfers by using filter `external : false`.
 
@@ -352,7 +355,7 @@ Internal transfers are triggered by smart contract and using the following query
 }
 ```
 
-## Summary of token received by a wallet
+## Aggregate Tokens Received by a BNB Chain Wallet Since a Date
 
 Our GraphQL APIs are very good for aggregation. For example, in the following query, we are getting all currencies with the amount received by address on the Binance chain since 1st Jan 2023.
 Note: As the BNB chain has a huge amount of data, therefore to optimize the query you should use date and try not to query data over 1 year, otherwise it might not return results.
@@ -378,7 +381,7 @@ https://ide.bitquery.io/Summary-of-tokens-received-by-an-address
 }
 ```
 
-## Latest Filecoin Transfers
+## Get Latest Filecoin Blocks Sorted by Height
 
 The query below allows gets the latest Filecoin transfers made on the Filecoin network ordered by descending order of block height and limited to 10 responses between the two dates `from` and `till`
 
@@ -416,7 +419,7 @@ The query below allows gets the latest Filecoin transfers made on the Filecoin n
 }
 ```
 
-## SPL (Solana Program Library ) Token Transfers
+## Get SPL Token Transfers on Solana Excluding Native SOL
 
 This query is used to fetch the SPL token transfers on the Solana network within a specific time frame. It excludes SOL transfers and only considers those transactions where the transferred amount is greater than zero.
 
@@ -468,7 +471,7 @@ query ($network: SolanaNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
 }
 ```
 
-## Celo NFT Transfers
+## Fetch GANG and CeloPunks NFT Transfers on Celo Mainnet
 
 The below query gets transfers for ChinChilla Gang (GANG) NFT and CeloPunks NFT collection on Celo network by mentioning the curency smart contract in the `  currency: {in:}` filter. You can use it to retrieve the most recent transfers for specific NFT collections
 You can find the query [here](https://ide.bitquery.io/Celo-NFT-Transfers)
@@ -515,3 +518,11 @@ query MyQuery {
 ## Detailed NFT Transfers
 
 NFT transfers are much better supported on our V2 APIs (Streaming APIs). Therefore please check [streaming APIs](https://bitquery.io/products/streaming).
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Transaction API examples](https://docs.bitquery.io/v1/docs/Examples/Transactions/transaction-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

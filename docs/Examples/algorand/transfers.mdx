@@ -1,10 +1,16 @@
+---
+title: "Algorand Transfers API Examples — Bitquery GraphQL"
+description: "Query Algorand token transfers with Bitquery GraphQL. Filter transfers by asset ID, date range, and sender or receiver address."
+keywords: [Algorand, transfers, token transfers, Algorand API, Bitquery, GraphQL, ASA, asset transfer]
+---
+
 # Algorand Transfers API
 
 Our Algorand Transfers API provides detailed information about Algorand Transfers. Below are some examples of `transfers` API:
 
 import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
 
-## Get Transfers of a specific Asset on Algorand
+## Get Algorand Transfers for a Specific Asset in a Date Range
 
 This query gives you the transfers of a specific Asset in a given timeframe on Algorand network.
 You can find the query [here](https://ide.bitquery.io/All-the-transfers-of-an-asset-on-Algorand-Mainnet-in-a-specific-timeframe).
@@ -50,7 +56,7 @@ query MyQuery {
 }
 ```
 
-## Get transfers where sender/receiver of an asset is a particular address
+## Get Algorand Transfers to or from an Address for a Specific Asset
 
 This query gives you the transfers of a specific Asset sent to or from a particular address in a given timeframe on Algorand network.
 You can find the query [here](https://ide.bitquery.io/traansfers-where-a-currency-is-sent-from-or-sent-to-a-particular-address).
@@ -94,3 +100,10 @@ query MyQuery {
 ## Video Tutorial | How to get Algorand Transfers Data using Bitquery API v1
 
 <VideoPlayer url="https://www.youtube.com/watch?v=Wu4RVrFMJ4Y" />
+
+## Related Resources
+
+- [Algorand schema overview](https://docs.bitquery.io/v1/docs/Schema/algorand/overview)
+- [Algorand Coinpath API examples](https://docs.bitquery.io/v1/docs/Examples/algorand/coinpath)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)

@@ -1,3 +1,9 @@
+---
+title: "UTXO Input Output API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for UTXO inputs and outputs on Bitcoin-family chains. Get scripts, values, and transaction links."
+keywords: [UTXO API examples, Bitcoin GraphQL queries, Bitquery]
+---
+
 # UTXO Input output API
 
 
@@ -6,7 +12,7 @@
 
 
 
-## All inputs and outputs of a transaction 
+## List Bitcoin Transaction Inputs and Outputs With Scripts and Values 
 
 To check all inputs and outputs of a Bitcoin transaction, you can use the following query. Additionally, there are filters like `inputScriptType` , `inputAddress`, `inputValue`, which you can use to get transactions based on your requirements.
 
@@ -81,3 +87,11 @@ To check all inputs and outputs of a Bitcoin transaction, you can use the follow
 }
 
 ```
+
+## Related Resources
+
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Input/Output examples folder](https://docs.bitquery.io/v1/docs/Examples/Input_Output/IO_examples)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

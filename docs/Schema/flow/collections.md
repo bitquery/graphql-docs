@@ -1,4 +1,14 @@
+---
+title: "Flow Collections API"
+description: "Flow collections: transaction batches in blocks—SHA3-256 id, block index, BLS collection-node signatures, and tx counts."
+keywords: ["Flow API", "Flow Collections", "Bitquery", "GraphQL"]
+---
+
 # Collections
+
+:::caution Deprecated
+Bitquery has stopped supporting the Flow blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The Flow Collections API provides information about collections from the Flow Blockchain. A collection is batch of transactions that have been includes in a block.
 
@@ -35,3 +45,11 @@ You can filer the collections data using the following fields:
 -   signatures: returns BLS signatures of the collection nodes guaranteeing the collection
 -   time: returns time the collection was created
 -   transactionsCount: returns count of transactions inside collection
+
+## Related Resources
+
+- [Flow schema overview](https://docs.bitquery.io/v1/docs/Schema/flow/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Flow Coinpath API](https://docs.bitquery.io/v1/docs/Schema/flow/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,11 +1,7 @@
 ---
-title: Bitcoin Address API — balances and UTXO activity
-description: Query Bitcoin addresses for balance, inputs, outputs, and USD values using Bitquery GraphQL—address stats and UTXO-based balance derivation.
-keywords:
-  - Bitcoin address API
-  - BTC balance API
-  - Bitcoin GraphQL
-  - UTXO Bitcoin API
+title: "Bitcoin Address API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Bitcoin address data. Get balances, inputs, outputs, UTXO activity, and USD values."
+keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 ---
 
 # BTC Balance API
@@ -14,7 +10,7 @@ Our Input/Output APIs provides all the details regarding any address on Bitcoin 
 
 ## Bitcoin Balance API
 
-### Using Balance Cube
+### Bitcoin Address Balance via addressStats
 
 [Run Query](https://ide.bitquery.io/Bitcoin-balance_5)
 
@@ -43,7 +39,7 @@ Our Input/Output APIs provides all the details regarding any address on Bitcoin 
 
 ```
 
-### Using Inputs and Outputs
+### Bitcoin Address Balance via Inputs and Outputs
 
 ```
 {
@@ -74,7 +70,7 @@ Our Input/Output APIs provides all the details regarding any address on Bitcoin 
 
 Try this API [here](https://ide.bitquery.io/Bitcoin-balance-using-input-outputs)
 
-## Get Balance of Multiple Addresses
+## Get Aggregated Bitcoin Balances for Multiple Addresses
 
 To get addresses of multiple bitcoin addresses just by providing them in the parameters.
 
@@ -113,7 +109,7 @@ To get addresses of multiple bitcoin addresses just by providing them in the par
 
 Try API for getting balance of multiple bitcoin addresses [here].(https://ide.bitquery.io/BTC-balance-API-for-multiple-addresses)
 
-## Get the age of the Address
+## Get Bitcoin Address First and Last Active Timestamps
 
 To get the age of the bitcoin wallet, you can use the following API.
 
@@ -142,7 +138,7 @@ query ($network: BitcoinNetwork!) {
 
 Replace ADDRESS_HERE with the desired Bitcoin Address you want to query. This query fetches the first and last date, time of the transaction of the wallet in different formats you would need.
 
-## Get net inflow and outflow of bitcoin from an address
+## Bitcoin Address Inputs and Outputs Over a Date Range
 
 To get inflows and outflow of a bitcoin address, use following API.
 
@@ -197,3 +193,11 @@ To get inflows and outflow of a bitcoin address, use following API.
 ```
 
 Try this API to get inputs and outputs of a bitcoin address here.[https://ide.bitquery.io/Input-and-outputs-of-a-bitcoin-address]
+
+## Related Resources
+
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Bitcoin examples index](https://docs.bitquery.io/v1/docs/examples/Bitcoin/index)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

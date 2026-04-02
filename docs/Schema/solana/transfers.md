@@ -1,3 +1,9 @@
+---
+title: "Solana Transfers API"
+description: "Query Solana transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."
+keywords: ["Solana API", "Solana Transfers", "Bitquery", "GraphQL"]
+---
+
 # Transfers
 
 The transfers API allows you to get a information on transfers that have occurred on the Solana blockchain.Below are the fields in the schema:
@@ -335,3 +341,11 @@ A catch-all filter (OR Logic) that can be used to filter the results by any of t
         -   The type of the action.
     -   **program**
         -   The program ID of the program that was used to perform the transfer.
+
+## Related Resources
+
+- [Solana schema overview](https://docs.bitquery.io/v1/docs/Schema/solana/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Solana Coinpath API](https://docs.bitquery.io/v1/docs/Schema/solana/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

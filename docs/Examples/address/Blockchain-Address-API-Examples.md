@@ -1,4 +1,7 @@
 ---
+title: "Blockchain Address API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for addresses across chains. Get transactions, balances, transfers, and coinpath."
+keywords: [address API examples, GraphQL queries, Bitquery]
 sidebar_position: 1
 ---
 
@@ -7,7 +10,7 @@ sidebar_position: 1
 Our APIs can provide all sorts of details for any address on the blockchain. Let's see some examples.
 
 
-## Transactions of an Address
+## Get All Transactions for an Ethereum Address
 To check transactions sent and received by an address, you can use following API. You can get same data for multiple addresses, just use `{in: ["address1", "address2"]}` instead of `{is: "address"}`.
 
 [Open this query on IDE](https://ide.bitquery.io/ethereum-transactions-of-an-address)
@@ -42,7 +45,7 @@ To check transactions sent and received by an address, you can use following API
 ```
 
 
-## Transfers of an Address
+## Get Ethereum Token Transfers Sent and Received by an Address
 
 To get token transfers of addresses use following API, in this example we are showing all sent and received token transfers of an address.
 
@@ -84,7 +87,7 @@ To get token transfers of addresses use following API, in this example we are sh
 ```
 
 
-## Transfers sent by multiple addresses
+## Track Transfers Sent by Multiple Ethereum Addresses
 
 You can transfers for multiple addresses, for example in the following query we are getting transfers sent by two addresses (0xa106c1a6c0e46826fbb4e82b9337bb880c3e2575 & 0x93ff65b50b2f12387bc448d5ee17c1600cd66626). You can use upto 100 addresses in a query.
 
@@ -130,7 +133,7 @@ You can transfers for multiple addresses, for example in the following query we 
 ```
 
 
-## Trades of an Address
+## Query DEX Trades for an Ethereum Address
 
 To check trades of an address you can use our DEX trade API. 
 
@@ -171,7 +174,7 @@ To check trades of an address you can use our DEX trade API.
 ```
 
 
-## Balance of an Address
+## Query Address Balances on Polygon and Bitcoin Networks
 
 To check balance of an address use our balance API.
 
@@ -219,7 +222,7 @@ For UTXO based blockchains such as Bitcoin, Litcoin, dogecoin, you can get input
 ```
 
 
-## Balance history of an Address
+## Track USDT Balance History for an Ethereum Address
 You can also get balance history of any address using our v1 APIs. Additionly in V2 we have created [`BalanceUpdates`](https://docs.bitquery.io/docs/examples/balances/balance-api/) API, which extend this capabilities.
 
 [Open this query on IDE](https://ide.bitquery.io/usdt-balance-history-template_1)
@@ -255,7 +258,7 @@ You can also get balance history of any address using our v1 APIs. Additionly in
 }
 ```
 
-## Smart Contract calls of an address
+## Get Smart Contract Calls for a Polygon Address
 TO get smart contract call of an address use our SmartContractCalls API.
 
 [Open this query on IDE](https://ide.bitquery.io/query/XVYLusoNeGcYm5b3)
@@ -296,7 +299,7 @@ TO get smart contract call of an address use our SmartContractCalls API.
 
 ```
 
-## Source of funds from an address
+## Trace Inbound ETH Sources to an Ethereum Address with Coinpath
 
 To check the source of funds for any address you can use our Coinpath APIs.
 
@@ -346,7 +349,7 @@ To check the source of funds for any address you can use our Coinpath APIs.
 ```
 
 
-## Destination of funds from an address
+## Track Outbound ETH Destinations from an Ethereum Address with Coinpath
 
 Coinpath API also helpful to get the destination of funds. Check following example.
 
@@ -396,7 +399,13 @@ https://ide.bitquery.io/Destination-of-funds-for-an-address
 }
 ```
 
+## Related Resources
 
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Cross-chain examples](https://docs.bitquery.io/v1/docs/Examples/cross-chain/cross-chain-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
 
 
 

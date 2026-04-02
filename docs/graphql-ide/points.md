@@ -1,5 +1,15 @@
 ---
 sidebar_position: 4
+title: "Bitquery API Points — Pricing, Consumption & Query Cost"
+description: "Understand Bitquery API points: how query cost is calculated from complexity and data volume, plans, free tier, and how to optimize usage and billing."
+keywords:
+  [
+    Bitquery points,
+    API pricing,
+    query cost,
+    billing,
+    GraphQL limits,
+  ]
 ---
 
 # What are Points?
@@ -23,3 +33,11 @@ The number of points can vary for various reasons. Even the same query can produ
 - The level of complexity of the query.
 
 For instance, if you include additional addresses, the points will be calculated considering the resources occupied by those addresses. To optimize this query, there are a few approaches you can consider. Firstly, narrowing down the date range can help to refine the results. Secondly, reducing the list of addresses may also be beneficial. However, the effectiveness of these strategies will depend on your specific goal.
+
+## Related Resources
+
+- [Account dashboard — API usage and billing](https://docs.bitquery.io/v1/docs/graphql-ide/account)
+- [Common API errors](https://docs.bitquery.io/v1/docs/graphql-ide/errors)
+- [Getting started with the IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Use Bitquery in your application](https://docs.bitquery.io/v1/docs/graphql-ide/use-it-in-your-application)
+- [Basic structure of a GraphQL query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)

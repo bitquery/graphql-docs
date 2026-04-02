@@ -1,3 +1,9 @@
+---
+title: "Conflux Coinpath API"
+description: "Query Conflux coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."
+keywords: ["Conflux API", "Conflux Coinpath", "Bitquery", "GraphQL"]
+---
+
 # Conflux Coinpath API
 
 The Conflux Coinpath API allows you to get the money flow for an address on the Conflux blockchain. You can track any levels of fund movement with this API. This is a very useful API for crypto investigations.
@@ -123,3 +129,10 @@ The Conflux Coinpath API allows you to get the money flow for an address on the 
 - **depth** The depth of the coinpath.
 - **count** The number of transactions in the coinpath.
 - **block** The block in which the first transaction in the coinpath was included.
+
+## Related Resources
+
+- [Conflux schema overview](https://docs.bitquery.io/v1/docs/Schema/conflux/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

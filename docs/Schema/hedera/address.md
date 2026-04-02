@@ -1,4 +1,14 @@
+---
+title: "Hedera Address API"
+description: "Hedera HBAR & HTS: native balance, fungible/NFT tokenBalances, annotations—EVM or shard.realm.num IDs—GraphQL."
+keywords: ["Hedera API", "Hedera Address", "Bitquery", "GraphQL"]
+---
+
 # Address
+
+:::caution Deprecated
+Bitquery has stopped supporting the Hedera blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The Address API provides basic information about addresses on the Hedera Blockchain. It offers information about various aspects, including the balance of the native currency associated with the address, any available annotations, and more.
 
@@ -28,3 +38,11 @@ Use the `address` field to filter by a specific address or a list of addresses, 
 - `annotation`: offers any available annotation associated with the address
 - `balance`: displays the balance of the native currency
 - `tokenBalances`: shows balances of all tokens, both fungible and non-fungible
+
+## Related Resources
+
+- [Hedera schema overview](https://docs.bitquery.io/v1/docs/Schema/hedera/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Hedera Coinpath API](https://docs.bitquery.io/v1/docs/Schema/hedera/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

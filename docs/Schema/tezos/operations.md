@@ -1,3 +1,9 @@
+---
+title: "Tezos Operations API"
+description: "Tezos operations: kind, internal/external, protocol, source, contents—bakes, delegations—Bitquery GraphQL."
+keywords: ["Tezos API", "Tezos Operations", "Bitquery", "GraphQL"]
+---
+
 # Operations
 
 The Tezos Operations API provides information about operations from the Tezos Blockchain.
@@ -47,3 +53,11 @@ You can filter the operations using the following fields:
 - `success`: indicates the success of the operation.
 - `timestamp`: returns the timestamp of the operation.
 - `transaction`: returns details about the transaction.
+
+## Related Resources
+
+- [Tezos schema overview](https://docs.bitquery.io/v1/docs/Schema/tezos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Tezos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/tezos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

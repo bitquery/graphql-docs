@@ -1,3 +1,8 @@
+---
+title: "Celo Smart Contract Calls API"
+description: "Query Celo smart contract calls data using Bitquery GraphQL API. Get contract calls, methods, inputs, and execution context."
+keywords: ["Celo API", "Celo Smart Contract Calls", "Bitquery", "GraphQL"]
+---
 
 # Smart Contract Calls
 
@@ -83,3 +88,11 @@ Smart Contract Calls can be filtered using following arguments:
 - `smartContractMethod`: returns details of method to which the call was made
 - `success`: returns if calls is successful or not
 - `transaction`: returns details of the transaction in which smart contract call was executed
+
+## Related Resources
+
+- [Celo schema overview](https://docs.bitquery.io/v1/docs/Schema/celo/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Celo Coinpath API](https://docs.bitquery.io/v1/docs/Schema/celo/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

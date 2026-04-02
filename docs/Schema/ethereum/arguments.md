@@ -1,5 +1,6 @@
 ---
 title: "Ethereum Arguments API"
+description: "Query arguments of smart contract calls and events with the arguments API. Filter by type, depth, caller, and more."
 ---
 
 <head>
@@ -81,3 +82,11 @@ The following are available fields for the `arguments`:
 - `success`:
 - `transaction`: returns transaction information
 - `value`: returns value of method or event argument
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Smart contract calls examples](https://docs.bitquery.io/v1/docs/Examples/smartcontractCalls/smart-contract-calls-api)
+- [Coinpath (Ethereum)](https://docs.bitquery.io/v1/docs/Schema/ethereum/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

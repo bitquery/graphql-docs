@@ -1,5 +1,6 @@
 ---
 title: Ripple Payments API
+description: "Query Ripple payment transactions, issuers, and amounts."
 ---
 
 <head>
@@ -159,3 +160,12 @@ query ($network: RippleNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime)
 - `deliverMinIssuer` - The issuer of the minimum amount that was delivered.
 - `deliveredAmount` - The amount that was delivered.
 - `deliverMinCurrency` - The currency of the minimum amount that was delivered.
+
+## Related Resources
+
+- [XRP Ledger schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Ripple API examples](https://docs.bitquery.io/v1/docs/Examples/ripple)
+- [Coinpath (XRP Ledger)](https://docs.bitquery.io/v1/docs/Schema/ripple/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

@@ -1,5 +1,6 @@
 ---
 title: BNB Blocks API
+description: "Query BNB Smart Chain blocks, including transactions, fees, and miner details."
 ---
 
 <head>
@@ -91,3 +92,12 @@ Blocks data can be filtered using following arguments:
 - `transactionCountBigInt`:
 - `uncleCount`:
 - `uncleCountBigInt`:
+
+## Related Resources
+
+- [BNB Smart Chain schema overview](https://docs.bitquery.io/v1/docs/Schema/binance_smart_chain/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath (BNB Smart Chain)](https://docs.bitquery.io/v1/docs/Schema/binance_smart_chain/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

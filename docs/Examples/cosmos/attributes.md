@@ -1,8 +1,14 @@
+---
+title: "Cosmos Event Attributes API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Cosmos event attributes. Filter by event type and time ranges."
+keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
+---
+
 # Attributes API
 
 Our Cosmos Attribtues API provides all the details regarding event attributes from Cosmos network.
 
-## Get Attributes of Recent Events
+## Get Recent Cosmos Event Attributes
 
 ```
 {
@@ -37,7 +43,7 @@ Our Cosmos Attribtues API provides all the details regarding event attributes fr
 
 The query retrieves event attribute information from the Cosmos blockchain, including attribute names, block height and timestamp, event types, message senders and types, transaction hash, signer's address, and attribute values. The results are sorted based on block timestamp in descending order.
 
-## Filter Attributes by Event Type
+## Filter Cosmos Event Attributes by Event Type
 
 ```
 {
@@ -75,7 +81,7 @@ The query retrieves event attribute details from the Cosmos blockchain, specific
 
 The query provides information about attribute names, block height, block timestamp, event type, message senders and types, transaction hash, signer's address, and attribute values. This offers insights into recent `proposal_vote` event attributes on the Cosmos network.
 
-## Get Count of Attributes
+## Count Cosmos Event Attributes
 
 ```
 {
@@ -88,3 +94,11 @@ The query provides information about attribute names, block height, block timest
 ```
 
 The query retrieves a count of unique occurrences of `proposal_vote` event attributes from the Cosmos blockchain, specifically those that occurred after August 8, 2023. The query uses the `count` function with the argument `uniq: times` to calculate the total number of times the `proposal_vote` event attributes appeared within the specified timeframe.
+
+## Related Resources
+
+- [Cosmos schema overview](https://docs.bitquery.io/v1/docs/Schema/cosmos/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Cosmos messages examples](https://docs.bitquery.io/v1/docs/Examples/cosmos/messages)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

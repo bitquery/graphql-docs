@@ -1,4 +1,14 @@
+---
+title: "Flow Arguments API"
+description: "Query Flow GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."
+keywords: ["Flow API", "Flow Arguments", "Bitquery", "GraphQL"]
+---
+
 # Arguments
+
+:::caution Deprecated
+Bitquery has stopped supporting the Flow blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The Flow Arguments API provides information about transaction arguments from the flow blockchain which contains the payload and envelope signatures
 
@@ -39,4 +49,12 @@ You can filter Arguments using the following fields:
 -   time: returns time when the transaction was created
 -   value: returns value of argument
 -   valueAsFix: returns value of argument converted to Fixed point number
--   valueAsInt: returns value of argument converted to Integer 
+-   valueAsInt: returns value of argument converted to Integer
+
+## Related Resources
+
+- [Flow schema overview](https://docs.bitquery.io/v1/docs/Schema/flow/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Flow Coinpath API](https://docs.bitquery.io/v1/docs/Schema/flow/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

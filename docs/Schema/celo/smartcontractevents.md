@@ -1,3 +1,8 @@
+---
+title: "Celo Smart Contract Events API"
+description: "Query Celo smart contract events data using Bitquery GraphQL API. Get contract events, logs, topics, and decoded payloads."
+keywords: ["Celo API", "Celo Smart Contract Events", "Bitquery", "GraphQL"]
+---
 
 # Smart Contract Events
 
@@ -69,3 +74,11 @@ Smart Contract Events can be filtered using following arguments:
 - `smartContract`: returns details of smart contract on which event happened
 - `smartContractEvent`: returns details about smart contract event like name, signature, and signature hash
 - `transaction`: returns details about transaction which emitted  smart contract event
+
+## Related Resources
+
+- [Celo schema overview](https://docs.bitquery.io/v1/docs/Schema/celo/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Celo Coinpath API](https://docs.bitquery.io/v1/docs/Schema/celo/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,8 +1,14 @@
+---
+title: "Stellar Transactions API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Stellar transactions. Get fees, hashes, senders, operation counts, and timestamps."
+keywords: [Stellar API examples, Stellar GraphQL queries, Bitquery]
+---
+
 # Stellar Transactions API
 
 This API enables you to access and analyze transactions on the Stellar network, providing detailed information about each transaction, including the fee, hash, sender, and timestamp.
 
-## Latest Transactions
+## Get Latest Stellar Transactions
 
 In this query we retrieve the latest transactions on the Stellar network, including details such as the transaction fee, hash, success status, sender's address, operation count, and timestamp.
 
@@ -34,7 +40,7 @@ query MyQuery {
 
 ```
 
-## Latest Transactions by a Sender
+## Get Latest Stellar Transactions by Sender
 
 In this query we retrieve the most recent transactions sent by a specific address, including transaction fee, hash, memos, success status, operation count, timestamp, and sequence number.
 
@@ -64,3 +70,11 @@ query MyQuery {
 }
 
 ```
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Stellar payments examples](https://docs.bitquery.io/v1/docs/Examples/stellar/stellar-payments-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

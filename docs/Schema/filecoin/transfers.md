@@ -1,3 +1,9 @@
+---
+title: "Filecoin Transfers API"
+description: "Query Filecoin transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."
+keywords: ["Filecoin API", "Filecoin Transfers", "Bitquery", "GraphQL"]
+---
+
 # Transfers
 
 The Transfers API allows you to query information about transfers on the Filecoin blockchain.
@@ -146,3 +152,11 @@ query ($network: FilecoinNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTim
     -   The name of the method that was used to perform the transfer.
 -   **transferType**
     -  The type of transfer. Can be `burn`, `miner`, `reward` and so on.
+
+## Related Resources
+
+- [Filecoin schema overview](https://docs.bitquery.io/v1/docs/Schema/filecoin/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Filecoin Coinpath API](https://docs.bitquery.io/v1/docs/Schema/filecoin/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

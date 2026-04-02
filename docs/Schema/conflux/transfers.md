@@ -1,3 +1,9 @@
+---
+title: "Conflux Transfers API"
+description: "Query Conflux transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."
+keywords: ["Conflux API", "Conflux Transfers", "Bitquery", "GraphQL"]
+---
+
 # Conflux Transfers API
 
 Bitquery's conflux transfers API gives you information on the asset transfers on conflux. The following are the fields in the schema:
@@ -122,3 +128,11 @@ query ($network: ConfluxNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Dat
   - The ID of the entity that was transferred, if the transfer is for a token.
 - **success**
   - A `true` or `false` value that indicates whether the transfer was successful.
+
+## Related Resources
+
+- [Conflux schema overview](https://docs.bitquery.io/v1/docs/Schema/conflux/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Conflux Coinpath API](https://docs.bitquery.io/v1/docs/Schema/conflux/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

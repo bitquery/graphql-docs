@@ -1,3 +1,9 @@
+---
+title: "Celo Blocks API"
+description: "Query Celo blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."
+keywords: ["Celo API", "Celo Blocks", "Bitquery", "GraphQL"]
+---
+
 # Blocks
 
 The `blocks` field allows us to retrieve information about the blocks from the Ethereum blockchain.
@@ -70,3 +76,11 @@ Blocks data can be filtered using following arguments:
 -   `transactionCountBigInt`:
 -   `uncleCount`:
 -   `uncleCountBigInt`:
+
+## Related Resources
+
+- [Celo schema overview](https://docs.bitquery.io/v1/docs/Schema/celo/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Celo Coinpath API](https://docs.bitquery.io/v1/docs/Schema/celo/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

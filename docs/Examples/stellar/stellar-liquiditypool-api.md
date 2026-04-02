@@ -1,8 +1,14 @@
+---
+title: "Stellar Liquidity Pools API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Stellar liquidity pool effects. Get pool operations, transactions, and currencies."
+keywords: [Stellar API examples, Stellar GraphQL queries, Bitquery]
+---
+
 # Stellar Liquidity Pools API
 
 This API allows you to access and analyze effects from Stellar's liquidity pools. Effects are specific changes that occur within the ledger due to operations performed on the liquidity pools.
 
-## Latest Pool Effects for a Particular Pool
+## Get Latest Stellar Liquidity Pool Effects for One Pool
 
 The below query gets the latest effects for a specific liquidity pool, including details about the operation, the transaction, and the pool itself.
 
@@ -39,7 +45,7 @@ query MyQuery {
 
 ```
 
-## Latest Liquidity Pool Deposits
+## Get Latest Stellar Liquidity Pool Deposit Effects
 
 The query below fetches the most recent deposit effects into all liquidity pools. This query provides details about the deposit operation, including the amount, pool details, transaction hash, and currency.
 You can run the query [here](https://ide.bitquery.io/Latest-Pool-Deposits)
@@ -75,3 +81,11 @@ query MyQuery {
 
 
 ```
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Stellar effects examples](https://docs.bitquery.io/v1/docs/Examples/stellar/stellar-effects-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

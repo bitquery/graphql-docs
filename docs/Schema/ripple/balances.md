@@ -1,5 +1,6 @@
 ---
 title: "Ripple Balances API"
+description: "Query account balances and balance history on the XRP Ledger."
 ---
 
 <head>
@@ -134,3 +135,12 @@ query ($network: RippleNetwork!, $address: String!, $from: ISO8601DateTime, $til
 - `balance`: This field specifies the balance of the account after the transaction.
 - `account`: This field specifies the account that owns the balance.
 - `flags`: This field specifies the flags of the transaction.
+
+## Related Resources
+
+- [XRP Ledger schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Ripple API examples](https://docs.bitquery.io/v1/docs/Examples/ripple)
+- [Coinpath (XRP Ledger)](https://docs.bitquery.io/v1/docs/Schema/ripple/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

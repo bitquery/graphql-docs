@@ -1,7 +1,9 @@
 ---
 sidebar_position: 1
+title: "Aggregation in Bitquery GraphQL API"
+description: "Group and aggregate blockchain data with sum, count, average, maximum, minimum, and median on Bitquery V1 GraphQL."
+keywords: [Bitquery, GraphQL, aggregation, calculate, sum, count]
 ---
-
 
 # Aggregation in V1 
 
@@ -65,3 +67,11 @@ parameters:
 > Notes:
 
 The calculate argument can be used to specify the aggregation function that should be used.
+
+## Related Resources
+
+- [Count aggregation](https://docs.bitquery.io/v1/docs/query-features/aggregation/count)
+- [Sum aggregation](https://docs.bitquery.io/v1/docs/query-features/aggregation/sum)
+- [Basic structure of a query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
+- [Filtering fields](https://docs.bitquery.io/v1/docs/query-features/filtering/fields)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)

@@ -1,4 +1,14 @@
+---
+title: "Hedera Outputs API"
+description: "Hedera transfer outputs: amount, currency, transferEntity, fees, consensusTimestamp, validStart—GraphQL."
+keywords: ["Hedera API", "Hedera Outputs", "Bitquery", "GraphQL"]
+---
+
 # Outputs
+
+:::caution Deprecated
+Bitquery has stopped supporting the Hedera blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The Outputs API provides information about transaction outputs on the Hedera Blockchain.
 
@@ -46,3 +56,11 @@ The Outputs API provides information about transaction outputs on the Hedera Blo
 -   `transactionValidDurationInSec`: Returns duration of transaction validity in seconds.
 -   `transferEntity`: Returns details of the transfer account.
 -   `validStart`: Returns the timestamp when the transaction validity starts.
+
+## Related Resources
+
+- [Hedera schema overview](https://docs.bitquery.io/v1/docs/Schema/hedera/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Hedera Coinpath API](https://docs.bitquery.io/v1/docs/Schema/hedera/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

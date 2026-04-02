@@ -1,5 +1,6 @@
 ---
 title: "Ethereum Blocks API"
+description: "Access Ethereum block data, including gas limits, rewards, and more. Get the latest 10 blocks with the Ethereum Blocks API."
 ---
 
 <head>
@@ -98,3 +99,11 @@ Blocks data can be filtered using following arguments:
 -   `transactionCountBigInt`:
 -   `uncleCount`:
 -   `uncleCountBigInt`:
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath (Ethereum)](https://docs.bitquery.io/v1/docs/Schema/ethereum/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

@@ -1,5 +1,8 @@
 ---
 sidebar_position: 2
+title: "Filter Fields in Bitquery GraphQL API"
+description: "Use method filters, date, time, uniq counts, and field combinations to narrow Bitquery blockchain and DEX queries."
+keywords: [Bitquery, GraphQL, filters, fields, uniq, transactions]
 ---
 
 # Fields
@@ -43,3 +46,11 @@ query MyQuery {
 
 
 ```
+
+## Related Resources
+
+- [Options filter](https://docs.bitquery.io/v1/docs/query-features/filtering/options)
+- [Limits and limitBy](https://docs.bitquery.io/v1/docs/query-features/filtering/limits)
+- [Sorting](https://docs.bitquery.io/v1/docs/query-features/filtering/sorting)
+- [Basic structure of a query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
+- [Aggregation overview](https://docs.bitquery.io/v1/docs/query-features/aggregation/aggregation)

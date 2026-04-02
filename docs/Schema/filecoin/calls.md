@@ -1,3 +1,9 @@
+---
+title: "Filecoin Calls API"
+description: "Filecoin actor method calls and FIL moves: sender/receiver types, method ids/names, call path/hash, message method, success."
+keywords: ["Filecoin API", "Filecoin Calls", "Bitquery", "GraphQL"]
+---
+
 # Calls
 
 In Filecoin, calls are used to invoke methods on actors and transfer FIL. Bitquery's Calls API provides you the following information:
@@ -101,3 +107,11 @@ The `amount` filter allows you to filter calls by the amount of FIL transferred.
 -   `sender`: The address of the actor that made the call.
 -   `success`: Whether the call was successful.
 -   `hash`: The hash of the message that was called.
+
+## Related Resources
+
+- [Filecoin schema overview](https://docs.bitquery.io/v1/docs/Schema/filecoin/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Filecoin Coinpath API](https://docs.bitquery.io/v1/docs/Schema/filecoin/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

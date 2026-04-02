@@ -1,3 +1,9 @@
+---
+title: "Stellar Trade Effects API"
+description: "Query Stellar trade effects data using Bitquery GraphQL API. Get trade effects, offers, and asset changes."
+keywords: ["Stellar API", "Stellar Trade Effects", "Bitquery", "GraphQL"]
+---
+
 # Trade Effects
 
 When an offer is fully or partially fulfilled, a trade happens. Trade Effects capture the effects wrt trades. Below are the fields in the schema:
@@ -203,3 +209,11 @@ query ($network: StellarNetwork!, $hash: String!) {
 - **offerId**
 
   The ID of the offer that was involved in the trade.
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Stellar Coinpath API](https://docs.bitquery.io/v1/docs/Schema/stellar/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

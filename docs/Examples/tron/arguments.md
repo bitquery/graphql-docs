@@ -1,8 +1,15 @@
+---
+title: "Tron Smart Contract Arguments API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Tron smart contract call arguments. Filter by method, block, and transaction index."
+keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
+---
+
 # Arguments API
+
 
 Our Ton Arguments API provides all details regarding smart contract or event arguments on Tron Blockchain.
 
-## Get Arguments For Latest Smart Contract Calls and Events
+## List Latest Tron Smart Contract Events and Call Arguments
 
 ```
 {
@@ -37,7 +44,7 @@ Our Ton Arguments API provides all details regarding smart contract or event arg
 
 This query will return list of 10 latest arguments for smart contract calls from Tron Blockchain.
 
-## Filter arguments by event name
+## Filter Tron Arguments by Transfer Event Name
 
 ```
 {
@@ -73,7 +80,7 @@ This query will return list of 10 latest arguments for smart contract calls from
 
 This query will return the arguments where name of event is `Transfer`.
 
-## Filter Arguments by Block Height
+## Filter Tron Transfer Arguments After a Minimum Block Height
 
 ```
 {
@@ -109,3 +116,11 @@ This query will return the arguments where name of event is `Transfer`.
 ```
 
 This query will return data of arguments for `Transfer` events happened after block height of 53392720.
+
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Tron smart contract calls examples](https://docs.bitquery.io/v1/docs/Examples/tron/smartContractCalls)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

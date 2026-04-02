@@ -1,9 +1,14 @@
+---
+title: "Token API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for token prices, holders, supply, and DEX trades. Works across supported EVM chains."
+keywords: [token API examples, GraphQL queries, Bitquery]
+---
 
 # Token API
 Bitquery's flexible GraphQL APIs will help you get all sorts of token related data. We will show example of USDT on Ethereum but you can actually use same APIs to get data for any token on all chains supported by Bitquery.
 
 
-## Token Price API
+## Get Latest Ethereum USDT per WETH DEX Price in USD
 
 Latest trade = Latest price. In the following example, we are getting the latest trade. However, to get the price in USD, we need to apply a trick. As you know, USD doesn't exist on the blockchain. Therefore, we need to derive it. Bitquery gets the USD price of tokens listed on centralized exchanges through its partner, Cryptorank. We save them on a historical basis at the 1-hour candle and provide USD conversion of buy/sell or base/quote amount by using this USD value. Now if you have USD price anywhere in the result, you can drive the USD value of other parameters using it, including price; please check the following query, for example.
 
@@ -47,7 +52,7 @@ Latest trade = Latest price. In the following example, we are getting the latest
 
 ```
 
-## Token OHLC Price Data API
+## Get Ethereum USDT Five-Minute OHLC Candles Against WETH
 
 To get OHLC(Open-High-Low-Close) data you can use our Dextrades api, following query shows an example of USDT ohlc price against WETH token.
 
@@ -85,7 +90,7 @@ To get OHLC(Open-High-Low-Close) data you can use our Dextrades api, following q
 ```
 
 
-## Token Stats API
+## Aggregate Ethereum USDT Transfer Medians Counts and Unique Parties
 
 Using transfers apis you can stats like `median transfer`, `average transfer`, `total transfer amount and count`, `Unique sender and receivers` using our transfer api. Let's see an example of [USDT token](https://explorer.bitquery.io/ethereum/token/0xdac17f958d2ee523a2206206994597c13d831ec7).
 
@@ -119,7 +124,7 @@ Using transfers apis you can stats like `median transfer`, `average transfer`, `
 }
 ```
 
-## Token Transaction API
+## List Ethereum Transactions Sent to USDT Token Contract
 If you want to see all transactions sent to [USDT token](https://explorer.bitquery.io/ethereum/token/0xdac17f958d2ee523a2206206994597c13d831ec7) contract address, you can use following query.
 
 [Open this query on IDE](https://ide.bitquery.io/query/RNqa8PqNZ4CfQR9U)
@@ -158,7 +163,7 @@ If you want to see all transactions sent to [USDT token](https://explorer.bitque
 }
 ```
 
-## Token Transaction Tracking API
+## Trace Ethereum USDT Inbound and Outbound Coinpath by Address
 
 If you want to track source and destination of USDT funds from an address you can use our Coinpath API.
 
@@ -253,7 +258,7 @@ If you want to track source and destination of USDT funds from an address you ca
 }
 ```
 
-## Token Transaction History API
+## List Recent Ethereum USDT Transfers with Receiver and Success Flag
 To check the latest [USDT token](https://explorer.bitquery.io/ethereum/token/0xdac17f958d2ee523a2206206994597c13d831ec7) transfers, try following api. It can give historical USDT transactions too.
 
 [Open this query on IDE](https://ide.bitquery.io/USDT-Transaction-History-API-Template_1)
@@ -292,7 +297,7 @@ To check the latest [USDT token](https://explorer.bitquery.io/ethereum/token/0xd
 }
 ```
 
-## Token supply
+## Get Ethereum USDT Circulating Supply with Mint and Burn Totals
 To check the token supply, you can use the following API. It also calculates Mint and burn by checking the amount sent to the dead address.
 
 [Open this query on IDE](https://ide.bitquery.io/Total-Circulating-Supply-of-a-USDT-Template)
@@ -337,7 +342,7 @@ To check the token supply, you can use the following API. It also calculates Min
 }
 ```
 
-## Token Conversion API
+## Get Latest Ethereum DEX USDT Trade Price in USD
 You can get USD price of token using our DEXtrade API.
 
 
@@ -378,7 +383,7 @@ You can get USD price of token using our DEXtrade API.
 ```
 
 
-## Token Pool API (Pairs of token)
+## List Ethereum USDT DEX Pairs Quote Tokens and Pool Addresses
 To check all pairs of a token, you can use our DEXtrade API. It also provides the Pool addresses and exchange names with the protocol used by the exchange. In this query, we are using the [USDT token](https://explorer.bitquery.io/ethereum/token/0xdac17f958d2ee523a2206206994597c13d831ec7) as an example.
 
 [Open this query on IDE](https://ide.bitquery.io/query/xA8yam1LgfrPxNnP)
@@ -422,7 +427,7 @@ To check all pairs of a token, you can use our DEXtrade API. It also provides th
 }
 ```
 
-## Token Balance API
+## Get Ethereum Wallet USDT Balance for One Address
 
 To get the token balance of any address, you can use the following API. In our example, we are getting the USDT balance for this Ethereum address[0x28c6c06298d514db089934071355e5743bf21d60](https://explorer.bitquery.io/ethereum/address/0x28c6c06298d514db089934071355e5743bf21d60).
 
@@ -441,7 +446,7 @@ To get the token balance of any address, you can use the following API. In our e
 
 ```
 
-## Token Trace API
+## Get Ethereum Smart Contract Call Trace for One Transaction Hash
 You also get the smart contract call trace for any transaction using our API. Our V2 APIs have much better data on call trace. Check [here](https://docs.bitquery.io/docs/examples/calls/smartcontract/).
 
 [Open this query](https://ide.bitquery.io/Transaction-Call-Trace_1_1)
@@ -481,7 +486,7 @@ You also get the smart contract call trace for any transaction using our API. Ou
 }
 ```
 
-## Token Wallet History API
+## List Ethereum USDT Transfers for One Wallet in Date Range
 You can get transaction history for any token for any address using following api.
 
 [Open this query on IDE](https://ide.bitquery.io/USDT-Wallet-History-v1_1_1_1)
@@ -522,7 +527,7 @@ You can get transaction history for any token for any address using following ap
 }
 ```
 
-## Token Transfer API
+## List Ethereum USDT Transfers After a Date with Receivers
 You can check any token's transfers using our transfer API.
 
 [Open this query on IDE](https://ide.bitquery.io/USDT-Transfer-API-Template)
@@ -561,7 +566,7 @@ You can check any token's transfers using our transfer API.
 
 ```
 
-## Token All Time High & Low Price API
+## Get Ethereum USDT Yearly High and Low vs WETH on DEX
 You can use our DEXtrades api to get All time, low of high of any token.
 
 [Open this query on IDE](https://ide.bitquery.io/USDC-All-time-high-low-v1_1_1_1_1_1)
@@ -594,11 +599,11 @@ You can use our DEXtrades api to get All time, low of high of any token.
 
 ```
 
-## Token Token Holder API
+## Find Token Holders Using the V2 Token Holders API
 
 Check our V2 API, it has support for [token holder API](https://docs.bitquery.io/docs/examples/balances/tokenHolders-api/).
 
-## Token Balance History API
+## Get Ethereum USDT Balance History with Transfers per Block
 
 We can also provide balance history for any token for any address; check the following example.
 
@@ -629,7 +634,7 @@ We can also provide balance history for any token for any address; check the fol
 
 ```
 
-## Token Approval Events API
+## List Ethereum USDT Approval Events from Token Contract
 You can also track token approvals permissions using `Approval` event.
 
 [Open this query on IDE](https://ide.bitquery.io/Get-USDT-Approval-Events-Template)
@@ -665,3 +670,11 @@ You can also track token approvals permissions using `Approval` event.
 }
 
 ```
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [DEX trading data examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

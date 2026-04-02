@@ -1,5 +1,6 @@
 ---
 title: Ripple Transfers API
+description: "Query currency and token transfers on the XRP Ledger."
 ---
 
 <head>
@@ -137,3 +138,12 @@ query ($network: RippleNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime)
 - `receiver`: The address of the receiver.
 - `sender`: The address of the sender.
 - `transaction`: The transaction ID of the transfer.
+
+## Related Resources
+
+- [XRP Ledger schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Ripple API examples](https://docs.bitquery.io/v1/docs/Examples/ripple)
+- [Coinpath (XRP Ledger)](https://docs.bitquery.io/v1/docs/Schema/ripple/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

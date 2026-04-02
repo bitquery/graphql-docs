@@ -1,5 +1,6 @@
 ---
 title: Tron Smart Contract Calls API
+description: "Query smart contract calls and arguments on Tron."
 ---
 
 <head>
@@ -109,3 +110,12 @@ The following fields are available for `smartContractCalls`:
 - `success`: returns if call was success or not
 - `txFrom`: returns transaction from address
 - `txTo`: returns transaction to address
+
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Tron API examples](https://docs.bitquery.io/v1/docs/Examples/tron)
+- [Coinpath (Tron)](https://docs.bitquery.io/v1/docs/Schema/tron/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

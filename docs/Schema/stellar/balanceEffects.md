@@ -1,6 +1,14 @@
+---
+title: "Stellar Balance Effects API"
+description: "Query Stellar balance effects data using Bitquery GraphQL API. Get balance changes, trust lines, and liabilities."
+keywords: ["Stellar API", "Stellar Balance Effects", "Bitquery", "GraphQL"]
+---
+
 # BalanceEffects
 
 The Stellar BalanceEffects API allows you to get information about the balance changes of an account.Below are the fields in the API:
+
+Balance effects capture every change to an account's balance as a result of operations—payments, path payments, merges, fees, and inflation distributions. This API surface is useful when you need a complete ledger of credits and debits for an account or asset, for reconciliation, audit trails, or building balance-over-time charts.
 
 ```
 query ($network: StellarNetwork!, $address: String!, $from: ISO8601DateTime, $till: ISO8601DateTime, $limit: Int!, $offset: Int!) {
@@ -94,3 +102,11 @@ query ($network: StellarNetwork!, $address: String!, $from: ISO8601DateTime, $ti
 - **order** : The order of the balance effect in the list of balance effects.
 - **timestamp** : The timestamp of the balance change.
 - **transaction** : The transaction hash that caused the balance change.
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Stellar Coinpath API](https://docs.bitquery.io/v1/docs/Schema/stellar/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,4 +1,14 @@
+---
+title: "Hedera Arguments API"
+description: "Query Hedera GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."
+keywords: ["Hedera API", "Hedera Arguments", "Bitquery", "GraphQL"]
+---
+
 # Arguments 
+
+:::caution Deprecated
+Bitquery has stopped supporting the Hedera blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The Arguments API provides you with information about event arguments. It offers valuable information about various aspects, such as the specific values of event arguments, their corresponding types, and even the transaction where the event originally occurred.
 
@@ -74,3 +84,11 @@ You can filter the retrieved arguments using the following fields:
 - `transactionValidDurationInSec`: Provides the duration for which this transaction is valid in seconds.
 - `validStart`: Displays the start timestamp of the valid duration of the transaction.
 - `value`: Displays the value of the arguments.
+
+## Related Resources
+
+- [Hedera schema overview](https://docs.bitquery.io/v1/docs/Schema/hedera/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Hedera Coinpath API](https://docs.bitquery.io/v1/docs/Schema/hedera/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

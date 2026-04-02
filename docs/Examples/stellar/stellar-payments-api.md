@@ -1,8 +1,14 @@
+---
+title: "Stellar Payments API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Stellar payments. Get amounts, currencies, issuers, paths, and counterparties."
+keywords: [Stellar API examples, Stellar GraphQL queries, Bitquery]
+---
+
 # Stellar Payments API
 
 This API enables you to access and analyze payment transactions on the Stellar network, providing detailed information about each payment, including amounts, currencies, issuers, timestamps, and paths.
 
-## Latest Payments on Stellar
+## Get Latest Stellar Payment Transactions
 
 Below is the query to get the latest payment transactions on the Stellar network. This query provides details about the amount transferred, the currency and issuer involved, sender and receiver addresses, and the transaction path.
 You can run the query [here](https://ide.bitquery.io/Latest-Payments-on-Stellar)
@@ -74,3 +80,11 @@ The path field contains an array of assets involved in the payment path. Each as
 ]
 
 ```
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Stellar trades examples](https://docs.bitquery.io/v1/docs/Examples/stellar/stellar-tradeeffects-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

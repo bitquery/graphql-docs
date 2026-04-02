@@ -1,3 +1,9 @@
+---
+title: "Stellar Effects API"
+description: "Stellar effects: ledger-side deltas from operations—detail JSON, op & tx links, addresses—Bitquery GraphQL."
+keywords: ["Stellar API", "Stellar Effects", "Bitquery", "GraphQL"]
+---
+
 # Effects
 
 According to the Stellar documentation,
@@ -151,3 +157,11 @@ query ($network: StellarNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
 - **address**
 
   The account that is the subject of the effect.
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Stellar Coinpath API](https://docs.bitquery.io/v1/docs/Schema/stellar/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

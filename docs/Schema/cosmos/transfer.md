@@ -1,3 +1,9 @@
+---
+title: "Cosmos Transfer API"
+description: "Query Cosmos transfer data using Bitquery GraphQL API. Get transfers, denoms, senders, receivers, and transaction context."
+keywords: ["Cosmos API", "Cosmos Transfer", "Bitquery", "GraphQL"]
+---
+
 # Transfers
 
 The Transfers API returns information about token transfers on Cosmos network.
@@ -120,3 +126,11 @@ Here's an example that demostrates how to fetch 10 latest transfers:
 -   `value`: returns value of the transfer
 
 -   `valueDecimal`: returns value as decimal
+
+## Related Resources
+
+- [Cosmos schema overview](https://docs.bitquery.io/v1/docs/Schema/cosmos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cosmos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/cosmos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

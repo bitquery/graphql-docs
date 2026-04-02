@@ -1,5 +1,6 @@
 ---
 title: Ripple States API
+description: "Query RippleState objects for trust lines and balances."
 ---
 
 <head>
@@ -111,3 +112,12 @@ query ($network: RippleNetwork!) {
 - `prevLedgerSequence`: The ledger sequence of the previous transaction, if any.
 - `timestamp`: The timestamp of the transaction that created the RippleState object.
 - `transaction`: The transaction that created the RippleState object.
+
+## Related Resources
+
+- [XRP Ledger schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Ripple API examples](https://docs.bitquery.io/v1/docs/Examples/ripple)
+- [Coinpath (XRP Ledger)](https://docs.bitquery.io/v1/docs/Schema/ripple/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

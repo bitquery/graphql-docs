@@ -1,3 +1,17 @@
+---
+sidebar_position: 8
+title: "Bitquery API Common Errors — Troubleshooting GraphQL & ClickHouse"
+description: "Interpret Bitquery GraphQL API errors including ClickHouse 400, parse errors, memory limits, rate limits, timeouts, and 403/500 responses with resolution steps."
+keywords:
+  [
+    Bitquery errors,
+    GraphQL troubleshooting,
+    ClickHouse error,
+    API rate limit,
+    query memory limit,
+  ]
+---
+
 # Common Errors and What to Do
 
 This section will guide you through the interpretation of common error messages encountered within Bitquery APIs. It will help you decide when to escalate issues by filing a ticket at [Bitquery Support](https://support.bitquery.io/).
@@ -112,8 +126,17 @@ When request fails with status code 403, please contact support on telegram.
 
 
 
+
 ### Important Notes
 
 - **Resource Consideration**: Be cautious when setting high limits, as large queries might consume significant resources and impact performance.
 - **Pagination**: For large datasets, consider implementing pagination with `offset` to retrieve data in smaller chunks for better efficiency. Read more on limits and offsets [here](/docs/query-features/filtering/limits)
 - **Optimization**: Always aim to optimize your queries to retrieve the necessary data efficiently without exceeding resource limits.
+
+## Related Resources
+
+- [Getting started with queries](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [What are API points?](https://docs.bitquery.io/v1/docs/graphql-ide/points)
+- [Account dashboard — errors and usage](https://docs.bitquery.io/v1/docs/graphql-ide/account)
+- [Basic structure of a GraphQL query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)

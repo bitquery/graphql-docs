@@ -1,3 +1,9 @@
+---
+title: "Elrond Operations API"
+description: "MultiversX operations within transactions: indexed sender/receiver, type, action, data, message, and linked miniblock fields."
+keywords: ["Elrond API", "Elrond Operations", "Bitquery", "GraphQL"]
+---
+
 # MultiversX Operations API
 
 The MultiversX Operations API allows you to query information about operations on the MultiversX blockchain. You can use this API to get information about the sender, receiver, type, action, and other details of an operation.
@@ -90,3 +96,11 @@ query ($network: ElrondNetwork!,  $from: ISO8601DateTime, $till: ISO8601DateTime
   - `receiverBlockHash`: The hash of the block that received the miniblock.
   - `receiverShard`: The shard where the block that received the miniblock resides.
   - `type`: The type of the miniblock.
+
+## Related Resources
+
+- [Elrond schema overview](https://docs.bitquery.io/v1/docs/Schema/elrond/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Elrond Coinpath API](https://docs.bitquery.io/v1/docs/Schema/elrond/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,5 +1,6 @@
 ---
 title: "Avalanche Calls API"
+description: "Query smart contract calls on Avalanche."
 ---
 
 <head>
@@ -113,3 +114,12 @@ Smart Contract Calls can be filtered using following arguments:
 - `smartContractMethod`: returns details of method to which the call was made
 - `success`: returns if calls is successful or not
 - `transaction`: returns details of the transaction in which smart contract call was executed
+
+## Related Resources
+
+- [Avalanche schema overview](https://docs.bitquery.io/v1/docs/Schema/Avalanche/overview)
+- [Avalanche API examples](https://docs.bitquery.io/v1/docs/Examples/avalanche/avax-trades-api)
+- [Coinpath (Avalanche)](https://docs.bitquery.io/v1/docs/Schema/Avalanche/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

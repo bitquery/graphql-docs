@@ -1,8 +1,15 @@
+---
+title: "Tron Blocks API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Tron blocks. Get recent blocks, witnesses, timestamps, and parent hashes."
+keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
+---
+
 # Blocks API
+
 
 Our Tron API provides all details regarding blocks from Tron Blockchain.
 
-## Get Transaction Trie Root of Block
+## List Tron Block Trie Roots, Witnesses, and Timestamps
 
 ```
 {
@@ -28,7 +35,7 @@ Our Tron API provides all details regarding blocks from Tron Blockchain.
 
 This query returns transaction trie root from the block.
 
-## Filter by Parent Block Hash of Block
+## Filter Tron Blocks by Parent Block Hash
 
 ```
 {
@@ -55,7 +62,7 @@ This query returns transaction trie root from the block.
 
 This query filter block data by parent block hash of that block.
 
-## Filter by Witness address of the Block
+## Filter Tron Blocks by Witness Address
 
 ```
 {
@@ -81,4 +88,12 @@ This query filter block data by parent block hash of that block.
 ```
 
 This query allows us to filter block by it's witness address.
+
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Tron transactions examples](https://docs.bitquery.io/v1/docs/Examples/tron/transaction)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
 

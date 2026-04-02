@@ -1,3 +1,9 @@
+---
+title: "Harmony Transactions API"
+description: "Harmony ONE transfers: shardId, cross-shard toShardId, gas, value in atto, success, block height—Bitquery GraphQL."
+keywords: ["Harmony API", "Harmony Transactions", "Bitquery", "GraphQL"]
+---
+
 # Transactions
 
 The Harmony Transactions API provides information about transaction form the Harmony blockchain.
@@ -55,3 +61,11 @@ You can filter transactions using the following fields:
 -   transactionHash: returns hash of the transaction
 -   transactionIndex: returns index of transaction in the block
 -   value: returns value transferred in ATTO
+
+## Related Resources
+
+- [Harmony schema overview](https://docs.bitquery.io/v1/docs/Schema/harmony/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Harmony Coinpath API](https://docs.bitquery.io/v1/docs/Schema/harmony/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,3 +1,9 @@
+---
+title: "Celo Transfers API"
+description: "Celo token transfers: filter ERC-20 and native flows by currency and date; amounts, parties, gas, and transaction hash via GraphQL."
+keywords: ["Celo API", "Celo Transfers", "Bitquery", "GraphQL"]
+---
+
 # Transfers
 
 Celo `transfers` API allows you to retrieve currency or token transfers from Celo Blockchain.
@@ -111,4 +117,12 @@ Data retrieved using `transfers` can be filtered using following arguments:
 - `receiver`: returns receiver of a particular transfer
 - `sender`: returns sender of a particular transfer
 - `success`: returns boolean value for success of a particular transfer
-- `transaction`: returns details of transaction in which a particular transfer 
+- `transaction`: returns details of transaction in which a particular transfer
+
+## Related Resources
+
+- [Celo schema overview](https://docs.bitquery.io/v1/docs/Schema/celo/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Celo Coinpath API](https://docs.bitquery.io/v1/docs/Schema/celo/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

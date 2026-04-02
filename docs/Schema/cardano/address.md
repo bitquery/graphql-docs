@@ -1,7 +1,14 @@
+---
+title: "Cardano Address API"
+description: "Cardano address GraphQL: native multi-asset balances, staking stake and rewards, and controlled stake for Shelley-style addresses."
+keywords: ["Cardano API", "Cardano Address", "Bitquery", "GraphQL"]
+---
+
 # Address
 
 The Address API schema returns information about a wallet. The schema includes the following fields:
 
+Cardano uses two address types: payment addresses for value transfer and stake addresses for delegation. The address API returns balance and annotation for a given address. This is useful for wallet interfaces, staking dashboards, and explorer backends that need a quick account overview in Cardano's eUTXO model.
 
 ```
 query MyQuery {
@@ -46,3 +53,11 @@ query MyQuery {
 `address`
 The address of the wallet
  </details>
+
+## Related Resources
+
+- [Cardano schema overview](https://docs.bitquery.io/v1/docs/Schema/cardano/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cardano Coinpath API](https://docs.bitquery.io/v1/docs/Schema/cardano/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

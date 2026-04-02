@@ -1,5 +1,8 @@
 ---
 sidebar_position: 4
+title: "Limits and LimitBy in Bitquery GraphQL API"
+description: "Control result size with limit and limitBy options in Bitquery GraphQL for DEX trades and aggregated queries."
+keywords: [Bitquery, GraphQL, limit, limitBy, pagination]
 ---
 
 # Limits
@@ -83,3 +86,11 @@ limitBy: {each: "baseCurrency.address", limit: 1}
 
 - `each`: The field to limit by, in this case `baseCurrency.address`.
 - `limit`: The maximum number of results to return for each value of the `each` field, in this case 1.
+
+## Related Resources
+
+- [Options filter](https://docs.bitquery.io/v1/docs/query-features/filtering/options)
+- [Sorting](https://docs.bitquery.io/v1/docs/query-features/filtering/sorting)
+- [Expressions overview](https://docs.bitquery.io/v1/docs/query-features/expressions/overview)
+- [Filtering fields](https://docs.bitquery.io/v1/docs/query-features/filtering/fields)
+- [GraphQL IDE — how to start](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)

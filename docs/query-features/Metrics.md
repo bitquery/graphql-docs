@@ -1,5 +1,8 @@
 ---
 sidebar_position: 6
+title: "Metrics in Bitquery GraphQL API"
+description: "Use the IDE metrics API and utilities metrics to inspect query cost, points, SQL requests, and chain-specific usage."
+keywords: [Bitquery, metrics, API usage, query cost, GraphQL]
 ---
 
 # Metrics
@@ -51,3 +54,11 @@ The Extra Memory Consumption, GB metric measures the amount of extra memory that
 
 
 Some chains have specific metrics that you can get using the metrics API. For example, the Tron chain has a `netUsage` metric that you can use to get the network usage for a query.
+
+## Related Resources
+
+- [Utilities API](https://docs.bitquery.io/v1/docs/query-features/utilities/utilities)
+- [Introduction](https://docs.bitquery.io/v1/docs/intro)
+- [Bitquery API FAQ](https://docs.bitquery.io/v1/docs/building-queries/FAQ)
+- [GraphQL IDE — how to start](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Aggregation overview](https://docs.bitquery.io/v1/docs/query-features/aggregation/aggregation)

@@ -1,3 +1,9 @@
+---
+title: "Algorand Smart Contract Calls API"
+description: "Query Algorand smart contract calls data using Bitquery GraphQL API. Get contract calls, methods, inputs, and execution context."
+keywords: ["Algorand API", "Algorand Smart Contract Calls", "Bitquery", "GraphQL"]
+---
+
 # Smart Contract Calls
 
 The `smartContractCalls` field allows you to retrieve smart contract calls made to any smart contract on Algorand blockchain.
@@ -52,3 +58,11 @@ Here's an exmaple that demonstrates how to use `smartContractCalls` query:
 -   `transaction`: returns information of transaction where call was executed
 -   `txSender`: returns information of transaction sender
 -   `txType`: returns transaction type in which transfer happened
+
+## Related Resources
+
+- [Algorand schema overview](https://docs.bitquery.io/v1/docs/Schema/algorand/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Algorand Coinpath API](https://docs.bitquery.io/v1/docs/Schema/algorand/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

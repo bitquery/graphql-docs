@@ -1,3 +1,9 @@
+---
+title: "Elrond Notarized Blocks API"
+description: "Query Elrond notarized blocks data using Bitquery GraphQL API. Get notarized block records and consensus metadata."
+keywords: ["Elrond API", "Elrond Notarized Blocks", "Bitquery", "GraphQL"]
+---
+
 # MultiversX Notarized Blocks API
 
 The MultiversX Notarized Blocks API allows you to query information about notarized blocks on the MultiversX blockchain. A notarized block is a block that has been verified by a set of validators. The API can be used to get information about notarized blocks, including their hashes, epochs, heights, and public key bitmaps.
@@ -60,3 +66,11 @@ query ($network: ElrondNetwork!, $limit: Int!, $offset: Int!, $blockHash: String
   - `publicKeyBitmap`: The public key bitmap of the block.
   - `shard`: The shard where the block was mined.
   - `sizeTxs`: The total size of the transactions in the block
+
+## Related Resources
+
+- [Elrond schema overview](https://docs.bitquery.io/v1/docs/Schema/elrond/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Elrond Coinpath API](https://docs.bitquery.io/v1/docs/Schema/elrond/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

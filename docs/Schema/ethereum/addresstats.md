@@ -1,5 +1,6 @@
 ---
 title: "Ethereum Addresses Stats API"
+description: "Explore comprehensive address statistics, including counts, aggregates, and historical data for transfers, balances, fees, and more."
 ---
 
 <head>
@@ -29,6 +30,8 @@ title: "Ethereum Addresses Stats API"
 </head>
 
 The `addressstats` field allows us to retrieves statistics related to blockchain addresses.
+
+Address statistics provide an aggregate profile of an Ethereum address in a single query: total sent and received amounts, transaction counts (including calls and called transactions), fee expenditure, the number of distinct currencies involved, and the count of active days. This is useful for compliance profiling, risk scoring, explorer summary pages, and any workflow where you need a high-level view of an address's lifetime activity without pulling every individual transaction.
 
 Here is an example that demonstrates how to retrieve statistics about the USDT smart contract:
 
@@ -69,3 +72,11 @@ Here is an example that demonstrates how to retrieve statistics about the USDT s
 </details>
 
 -   `address`: Returns statistics for the blockchain address
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath (Ethereum)](https://docs.bitquery.io/v1/docs/Schema/ethereum/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

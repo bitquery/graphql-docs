@@ -1,3 +1,9 @@
+---
+title: "EOS Proposers API"
+description: "EOSIO DPoS producers via blocks aggregate: producer account, blocks produced, min/max dates, height, hash, and timestamps."
+keywords: ["EOS API", "EOS Proposers", "Bitquery", "GraphQL"]
+---
+
 # EOS Producers API
 
 ```
@@ -59,3 +65,11 @@ query ( $from: ISO8601DateTime, $till: ISO8601DateTime) {
 - **timestamp** : The timestamp of the block.
 - **hash** : The hash of the block.
 - **height** : The block number.
+
+## Related Resources
+
+- [EOS schema overview](https://docs.bitquery.io/v1/docs/Schema/eos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [EOS Coinpath API](https://docs.bitquery.io/v1/docs/Schema/eos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

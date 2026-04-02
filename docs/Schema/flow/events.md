@@ -1,4 +1,14 @@
+---
+title: "Flow Events API"
+description: "Flow Cadence events: event type, smart contract address and method, block height, transaction id/index, and timestamps."
+keywords: ["Flow API", "Flow Events", "Bitquery", "GraphQL"]
+---
+
 # Events
+
+:::caution Deprecated
+Bitquery has stopped supporting the Flow blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The Flow Events API provides information about events emiited on the Flow Blockchain.
 
@@ -38,3 +48,11 @@ The Flow Events API provides information about events emiited on the Flow Blockc
 -   time: returns time when transaction was created
 -   transaction: returns details of transaction
 -   type: returns type of event
+
+## Related Resources
+
+- [Flow schema overview](https://docs.bitquery.io/v1/docs/Schema/flow/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Flow Coinpath API](https://docs.bitquery.io/v1/docs/Schema/flow/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

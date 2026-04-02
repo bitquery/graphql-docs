@@ -1,5 +1,6 @@
 ---
 title: Ripple Coinpath API
+description: "Track fund flows on the XRP Ledger with coinpath."
 ---
 
 <head>
@@ -172,3 +173,12 @@ query ($network: RippleNetwork!, $address: String!, $inboundDepth: Int!, $outbou
 - `count`: This field specifies the number of transactions that were involved in the flow of funds.
 - `currencyFrom`: This field specifies the currency that the funds were originally held in, if the funds were converted.
 - `transaction`: This field specifies the transaction that was used to transfer the funds.
+
+## Related Resources
+
+- [XRP Ledger schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Ripple API examples](https://docs.bitquery.io/v1/docs/Examples/ripple)
+- [Coinpath Money Flow API examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

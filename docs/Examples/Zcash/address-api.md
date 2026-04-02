@@ -287,13 +287,10 @@ You can query multiple addresses at once by using `{in: ["address1", "address2",
 
 :::
 
-:::tip
+## Related Resources
 
-**Need More Zcash Data?**
-
-Check out our other Zcash examples:
-
-- [UTXO Input/Output API ➤](https://docs.bitquery.io/docs/Examples/Transactions/input-output-api/)
-- [Transaction API ➤](https://docs.bitquery.io/docs/Examples/Transactions/transaction-api/)
-
-:::
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [UTXO Input/Output API Examples](https://docs.bitquery.io/v1/docs/Examples/Transactions/input-output-api)
+- [Transaction API Examples](https://docs.bitquery.io/v1/docs/Examples/Transactions/transaction-api)
+- [Coinpath Money Flow API](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)

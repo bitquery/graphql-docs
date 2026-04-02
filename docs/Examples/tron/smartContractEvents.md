@@ -1,8 +1,15 @@
+---
+title: "Tron Smart Contract Events API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Tron smart contract events. Filter by contract, event name, block, and logs."
+keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
+---
+
 # Smart Contract Events API
+
 
 Our Tron Smart Contract Events API provides detailed information about smart contract events executed made on Tron Blockchain.
 
-## Get List of Latest Smart Contract Events
+## List Latest Tron Smart Contract Events With Arguments and Block Details
 
 ```
 {
@@ -44,7 +51,7 @@ Our Tron Smart Contract Events API provides detailed information about smart con
 
 This query retrieves the latest 10 smart contract events on the Tron network that occurred after July 31, 2023, providing details such as event arguments, block height and timestamp, smart contract addresses, event name and signature, and transaction hash. Note that there is a duplicate entry for "smartContract" in the query, which could be removed for better optimization.
 
-## Filter Smart Contract Events By Contract Address
+## Filter Tron Smart Contract Events by USDT Contract Address
 
 ```
 {
@@ -81,7 +88,7 @@ This query retrieves the latest 10 smart contract events on the Tron network tha
 
 This query retrieves the latest 10 smart contract events on the Tron network that occurred after July 31, 2023, specifically for the smart contract "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t". It provides details such as event arguments and values, block height and timestamp, smart contract address, event name and signature, and transaction hash.
 
-## Filter Smart Contract Events By List of Event Name
+## Filter Tron USDT Events by Transfer or Approval Event Names
 
 ```
 {
@@ -123,3 +130,11 @@ This query retrieves the latest 10 smart contract events on the Tron network tha
 ```
 
 The query retrieves the latest 10 smart contract events on the Tron network that occurred after July 31, 2023, for the smart contract "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t" and can include events with names "Transfer", "Approval", and any other event names specified in the in clause. It provides details such as event arguments, block height and timestamp, smart contract address, event name and signature, and transaction hash.
+
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Tron smart contract calls examples](https://docs.bitquery.io/v1/docs/Examples/tron/smartContractCalls)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

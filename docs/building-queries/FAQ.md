@@ -1,3 +1,9 @@
+---
+title: "Bitquery API FAQ — Frequently Asked Questions"
+description: "Answers to common Bitquery API questions: DEX maker/taker, transfers vs transactions, USD price, priceAsymmetry, and token market cap."
+keywords: [Bitquery, FAQ, GraphQL API, DEX, token price, market cap]
+---
+
 # Glossary and Frequently Asked Questions
 
 ## What is a maker and taker in a DEX Trade?
@@ -180,3 +186,13 @@ In the following query, we will get the initial supply from the contract attribu
 ```
 
 Note: In many cases token attributes shown as null in those cases you should find other ways to get supply of the token.
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [DEX Trades API examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Basic structure of a query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
+- [Expressions overview](https://docs.bitquery.io/v1/docs/query-features/expressions/overview)
+- [Metrics in Bitquery GraphQL API](https://docs.bitquery.io/v1/docs/query-features/Metrics)

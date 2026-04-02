@@ -1,3 +1,9 @@
+---
+title: "Cardano Transactions API"
+description: "Cardano UTXO transactions: input and output totals and counts, fees, validity ranges, mint and withdrawal counts, and block context."
+keywords: ["Cardano API", "Cardano Transactions", "Bitquery", "GraphQL"]
+---
+
 # Transactions
 
 The Transactions API schema returns a list of transactions that occurred on the Cardano blockchain within a specified date range. The schema includes the following fields:
@@ -122,3 +128,11 @@ The total amount of ADA withdrawn from the transaction.
 The address of the input that sent the funds.
 
 </details>
+
+## Related Resources
+
+- [Cardano schema overview](https://docs.bitquery.io/v1/docs/Schema/cardano/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cardano Coinpath API](https://docs.bitquery.io/v1/docs/Schema/cardano/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

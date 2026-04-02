@@ -1,5 +1,6 @@
 ---
 title: Polygon Smart Contract Call API
+description: "Get decoded smart contract call details with arguments from the Polygon blockchain."
 ---
 
 
@@ -117,3 +118,12 @@ Smart Contract Calls can be filtered using following arguments:
 Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your Access Token, Read _[our guide](/docs/graphql-ide/how-to-start/)_ on getting started.
 
 :::
+
+## Related Resources
+
+- [Polygon schema overview](https://docs.bitquery.io/v1/docs/Schema/Polygon/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath (Polygon)](https://docs.bitquery.io/v1/docs/Schema/Polygon/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

@@ -1,3 +1,9 @@
+---
+title: "Celo Transactions API"
+description: "Celo EVM transactions: gas in CELO, token amounts, fee payer fields, sender and receiver annotations, and per-block ordering filters."
+keywords: ["Celo API", "Celo Transactions", "Bitquery", "GraphQL"]
+---
+
 # Transactions
 
 Celo `Transactions` API allows you to retrieve all the blockchain transactions from Celo Blockchain.
@@ -111,3 +117,11 @@ Transactions can be filtered using following arguments:
 - `success`: returns if transaction is success or not
 - `to`: returns address to which of a particular transaction was sent
 - `txType`: returns transaction type
+
+## Related Resources
+
+- [Celo schema overview](https://docs.bitquery.io/v1/docs/Schema/celo/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Celo Coinpath API](https://docs.bitquery.io/v1/docs/Schema/celo/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

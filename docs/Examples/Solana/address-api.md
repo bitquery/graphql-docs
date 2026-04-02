@@ -1,6 +1,12 @@
+---
+title: "Solana Address API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Solana addresses. Get balances, annotations, and multi-address lookups."
+keywords: [Solana API examples, Solana GraphQL queries, Bitquery]
+---
+
 # Solana Address API
 
-## Latest Balance of an address
+## Get Latest Solana Address Balance
 
 This below query will get you the latest balance of an address.
 You can run the query [here](https://ide.bitquery.io/address-balance-api).
@@ -17,7 +23,7 @@ query MyQuery {
 }
 ```
 
-## Latest Balance of multiple addresses
+## Query Multiple Solana Address Balances
 
 This below query will get you the latest balance of multiple addresses. You can specify any other addresses as well. And you can test the API with as many addresses as you like.
 You can run the query [here](https://ide.bitquery.io/latest-balances-of-multiple-addresses).
@@ -33,3 +39,11 @@ query MyQuery {
   }
 }
 ```
+
+## Related Resources
+
+- [Solana schema overview](https://docs.bitquery.io/v1/docs/Schema/solana/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Solana transfers examples](https://docs.bitquery.io/v1/docs/Examples/Solana/transfers)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

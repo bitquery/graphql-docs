@@ -1,5 +1,6 @@
 ---
 title:  Polygon Coinpath® API
+description: "Trace tokens on Polygon and learn about sources, destinations, and parties involved in transactions."
 ---
 
 
@@ -106,7 +107,7 @@ The `coinpath` API allows us to retrieve detailed information about flow of fund
 
 ```
 
-Check more examples of Coinpath APIs **[here](/docs/Examples/coinpath/money-flow-api.md)**.
+Check more examples of Coinpath APIs **[here](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)**.
 
 <details>
 <summary>Filtering Options</summary>
@@ -149,3 +150,12 @@ The following are available fields for the `coinpath`:
 Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your Access Token, Read _[our guide](/docs/graphql-ide/how-to-start/)_ on getting started.
 
 :::
+
+## Related Resources
+
+- [Polygon schema overview](https://docs.bitquery.io/v1/docs/Schema/Polygon/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath Money Flow API examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

@@ -1,8 +1,14 @@
+---
+title: "Multi-Chain Transaction API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for transactions on Bitcoin, Ethereum, and other networks. Get hashes, senders, receivers, and aggregates."
+keywords: [transaction API examples, GraphQL queries, Bitquery]
+---
+
 # Transaction API
 
 To get transactions from different blockchains, you can use our Transaction API. Let's see some examples.
 
-## Bitcoin Transaction
+## Get Recent Bitcoin Transactions With Fees Sizes and In Out Values
 
 Let' see an example to get transactions from the Bitcoin blockchain.
 
@@ -45,7 +51,7 @@ Let' see an example to get transactions from the Bitcoin blockchain.
 }
 ```
 
-## Ethereum Transaction API
+## Get Recent Ethereum Transactions With Gas Nonce and Recipients
 
 Let's see another example on how to get transactions from Ethereum blockchain.
 
@@ -97,7 +103,7 @@ Let's see another example on how to get transactions from Ethereum blockchain.
 }
 ```
 
-## Transaction in a block
+## List Ethereum Transactions Inside One Block by Block Height
 
 To check transaction in a block use following query. You can use `in: ["block1","block2"]` if you want to get transactions from multiple blockchains.
 
@@ -149,7 +155,7 @@ To check transaction in a block use following query. You can use `in: ["block1",
 }
 ```
 
-## Transaction for a user
+## Get Ethereum Transactions To From or Creating One User Address
 
 To get transactions for a user, you can use the following query. As you can see, we are using the `any` operator, which is basically how you add OR conditions in filters.
 
@@ -206,7 +212,7 @@ To get transactions for a user, you can use the following query. As you can see,
 }
 ```
 
-## Get Daily Transaction Count on Solana
+## Get Daily Solana Transaction Counts for the Last Ten Days
 
 [Access the query here](https://ide.bitquery.io/Get-daily-Solana-transaction-volume-for-the-last-10-days)
 
@@ -226,7 +232,7 @@ query get_per_day_transaction_count_of_solana_for_last_ten_days{
 }
 ```
 
-## Get Cronos-Bridged and Crypto.org Transactions
+## Get Cronos or Crypto.org Chain Transaction Details by Hash
 
 The below query gets complete information on Cronos or Crypto.org transaction using the `hash`.
 You can find the query [here](https://ide.bitquery.io/Cronos-Bridged-Tx-Info)
@@ -266,7 +272,7 @@ query ($network: CosmosNetwork!, $hash: String!) {
 
 The `rawTx` field contains complete information encoded including Source Channel,Receiver Address,Memo,auth_info,signer and so on.
 
-## Get Daily Unique Senders/ Receivers
+## Count Unique Ethereum Transaction Senders and Receivers on One Date
 
 In the below query , we are querying for the distinct count of senders and receivers who made transactions on a specific date by using the `uniq` filter and aliasing `uniq: senders` and `uniq: receivers`.
 
@@ -281,3 +287,11 @@ query MyQuery {
 }
 
 ```
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

@@ -1,3 +1,9 @@
+---
+title: "EOS Smart Contract Calls API"
+description: "Query EOS smart contract calls data using Bitquery GraphQL API. Get contract calls, methods, inputs, and execution context."
+keywords: ["EOS API", "EOS Smart Contract Calls", "Bitquery", "GraphQL"]
+---
+
 # EOS Smart Contract Calls API
 
 According to the official documentation, EOS smart contracts include definition for
@@ -102,3 +108,11 @@ query ( $date: ISO8601DateTime) {
 - **permissions** : Whether the permissions were `active` or` inactive` Permissions for an account are used to authorize actions and transactions to other accounts.
 - **receivers** : The receivers of the call.
 - **scheduled** : `true` or `false` value as to whether the call was scheduled or not.
+
+## Related Resources
+
+- [EOS schema overview](https://docs.bitquery.io/v1/docs/Schema/eos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [EOS Coinpath API](https://docs.bitquery.io/v1/docs/Schema/eos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

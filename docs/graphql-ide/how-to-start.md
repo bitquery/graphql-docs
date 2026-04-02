@@ -1,5 +1,15 @@
 ---
 sidebar_position: 1
+title: "Getting Started with Bitquery GraphQL IDE"
+description: "Create a Bitquery account, open the GraphQL IDE, and run your first blockchain query with autocomplete, examples, and the query builder."
+keywords:
+  [
+    Bitquery IDE,
+    GraphQL tutorial,
+    first query,
+    blockchain GraphQL,
+    account signup,
+  ]
 ---
 
 # Running your First Query
@@ -101,3 +111,13 @@ We have written blog posts to help you explain our APIs, please them on the [Bit
 If you still don't question our GraphQL APIs please ask them on this forum, and always provide complete details.
 
 Check our [Youtube Channel](https://www.youtube.com/@bitquery) for video tutorials.
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [DEX Trades API examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Coinpath Money Flow API examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
+- [How to use the Bitquery GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/ide)
+- [Getting an API access token](https://docs.bitquery.io/v1/docs/graphql-ide/apikey)
+- [Basic structure of a GraphQL query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
+- [V1 vs V2 APIs](https://docs.bitquery.io/v1/docs/graphql-ide/v1-and-v2)

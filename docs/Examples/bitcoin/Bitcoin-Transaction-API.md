@@ -1,6 +1,12 @@
+---
+title: "Bitcoin Transaction API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Bitcoin transactions. Get latest txs, fees, inputs, outputs, and daily aggregates."
+keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
+---
+
 # Transaction API
 
-## Get Latest Transaction
+## Get Latest Bitcoin Transactions with Fees and Transfer Values
 
 ```
 query ($network: BitcoinNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601DateTime, $till: ISO8601DateTime) {
@@ -31,7 +37,7 @@ query ($network: BitcoinNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Dat
 
 The query retrieves the latest 10 transactions from the Bitcoin blockchain, providing details such as the block height, timestamp, currency address and name, fee, group, transaction hash, index, sender's address, subtype, and type of each transaction.
 
-## Avg. Fee per transaction for each day
+## Daily Bitcoin Transaction Count and Average Fee per Day
 
 ```
 query ($network: BitcoinNetwork!, $dateFormat: String!, $from: ISO8601DateTime, $till: ISO8601DateTime) {
@@ -51,7 +57,7 @@ query ($network: BitcoinNetwork!, $dateFormat: String!, $from: ISO8601DateTime, 
 
 The query retrieves the latest 7 days average fee per transaction from the Bitcoin blockchain, providing details such as the average fee by per day for a week.
 
-## Get Count of Transactions by a Particular Address
+## List Bitcoin Transactions Sent from a Specific Address
 
 ```
 query ($network: BitcoinNetwork!) {
@@ -77,3 +83,11 @@ query ($network: BitcoinNetwork!) {
 ```
 
 The query retrieves the count of all transactions sent by the specified Bitcoin address ("ADDRESS_HERE") from the Bitcoin blockchain.
+
+## Related Resources
+
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Bitcoin examples index](https://docs.bitquery.io/v1/docs/examples/Bitcoin/index)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
