@@ -87,11 +87,11 @@ Track where BTC moved from an address over 2 hops:
 }
 ```
 
-## Related
+## Related Resources
 
 - [Coinpath Overview](../Overview) — what Coinpath is and cross-chain comparison.
 - [How to Read a Coinpath Graph](../How_to_read_coinpath_graph) — nodes, edges, depth levels.
 - [EVM Fund Tracking](./EVM_Chains) | [Ledger-Based Fund Tracking](./Ledger_Based_Chains)
-- [Bitcoin Coinpath schema reference](/docs/Schema/bitcoin/coinpath)
-- [Bitcoin Coinpath API examples](/docs/Examples/bitcoin/Bitcoin-Coinpath-API)
-- [Coinpath Money Flow API — query cookbook](/docs/Examples/coinpath/money-flow-api)
+- [Bitcoin Coinpath schema reference](https://docs.bitquery.io/v1/docs/Schema/bitcoin/coinpath)
+- [Bitcoin Coinpath API examples](https://docs.bitquery.io/v1/docs/examples/bitcoin/Bitcoin-Coinpath-API)
+- [Coinpath Money Flow API — query cookbook](https://docs.bitquery.io/v1/docs/examples/coinpath/money-flow-api)

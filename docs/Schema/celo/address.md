@@ -1,6 +1,6 @@
 ---
 title: "Celo Address API"
-description: "Query Celo address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."
+description: "Celo EVM addresses: CELO and stablecoin balances, ERC-20 contract metadata, balance history, and labels via Bitquery GraphQL."
 keywords: ["Celo API", "Celo Address", "Bitquery", "GraphQL"]
 ---
 

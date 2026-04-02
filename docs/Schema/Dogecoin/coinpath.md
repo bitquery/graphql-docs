@@ -1,25 +1,25 @@
 ---
-title: Dash Coinpath API
-description: "Track fund flows up to any depth on Dogecoin with coinpath."
+title: Dogecoin Coinpath API
+description: "Track DOGE fund flows up to any depth on the Dogecoin blockchain using Coinpath technology via Bitquery GraphQL."
 ---
 
 <head>
-<meta name="title" content="Dash Coinpath API"/>
-<meta name="description" content="Track flow of funds up to any depth on the Dash blockchain. Also, get information on blocks for tokens or NFTs on the Dash blockchain."/>
-<meta name="keywords" content="Dash api, Dash python api, Dash nft api, Dash scan api, Dash matic api, Dash api docs, Dash crypto api, Dash blockchain api,matic network api"/>
+<meta name="title" content="Dogecoin Coinpath API"/>
+<meta name="description" content="Track flow of funds up to any depth on the Dogecoin blockchain. Trace DOGE movements across addresses with Coinpath for compliance, auditing, and investigation."/>
+<meta name="keywords" content="Dogecoin api, Dogecoin coinpath, DOGE fund flow, Dogecoin blockchain api, Dogecoin transaction tracing, Bitquery, GraphQL, DOGE api"/>
 <meta name="robots" content="index, follow"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="language" content="English"/>
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Dash Coinpath API" />
-<meta property="og:description" content="Track flow of funds up to any depth on the Dash blockchain. Also, get information on blocks for tokens or NFTs on the Dash blockchain." />
+<meta property="og:title" content="Dogecoin Coinpath API" />
+<meta property="og:description" content="Track flow of funds up to any depth on the Dogecoin blockchain. Trace DOGE movements with Coinpath for compliance and investigation." />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Dash Coinpath API" />
-<meta property="twitter:description" content="Track flow of funds up to any depth on the Dash blockchain. Also, get blocks information for tokens or NFTs on the Dash blockchain." />
+<meta property="twitter:title" content="Dogecoin Coinpath API" />
+<meta property="twitter:description" content="Track flow of funds up to any depth on the Dogecoin blockchain. Trace DOGE movements with Coinpath for compliance and investigation." />
 </head>
 
 The `coinpath` field allows us to retrieve detailed information about money flow using coinpath technology from Dash.

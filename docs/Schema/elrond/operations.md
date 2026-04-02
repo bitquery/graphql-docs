@@ -1,6 +1,6 @@
 ---
 title: "Elrond Operations API"
-description: "Query Elrond operations data using Bitquery GraphQL API. Get chain operations, types, and operation details."
+description: "MultiversX operations within transactions: indexed sender/receiver, type, action, data, message, and linked miniblock fields."
 keywords: ["Elrond API", "Elrond Operations", "Bitquery", "GraphQL"]
 ---
 

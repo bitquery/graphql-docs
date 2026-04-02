@@ -1,6 +1,6 @@
 ---
 title: "Stellar Transactions API"
-description: "Query Stellar transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+description: "Stellar signed bundles: fee, memos, timeBounds, operationCount, sender, success—multi-op txs—GraphQL."
 keywords: ["Stellar API", "Stellar Transactions", "Bitquery", "GraphQL"]
 ---
 

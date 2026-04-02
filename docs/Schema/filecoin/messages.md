@@ -1,6 +1,6 @@
 ---
 title: "Filecoin Messages API"
-description: "Query Filecoin messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls."
+description: "Filecoin messages between actors: sender/receiver accounts and types, signature type, signed hash, and execution-ordered state."
 keywords: ["Filecoin API", "Filecoin Messages", "Bitquery", "GraphQL"]
 ---
 

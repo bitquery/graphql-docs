@@ -1,6 +1,6 @@
 ---
 title: "EOS Transfers API"
-description: "Query EOS transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."
+description: "EOSIO token transfers: amounts, sender/receiver accounts with annotations, currency symbol/address, tx hash, and actors."
 keywords: ["EOS API", "EOS Transfers", "Bitquery", "GraphQL"]
 ---
 

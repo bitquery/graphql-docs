@@ -1,6 +1,6 @@
 ---
 title: "Cosmos Transactions API"
-description: "Query Cosmos transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+description: "Cosmos transactions API: result codes, fees and gas, signer, tx type, raw bytes, block index, and Tendermint block context."
 keywords: ["Cosmos API", "Cosmos Transactions", "Bitquery", "GraphQL"]
 ---
 

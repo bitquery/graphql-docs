@@ -1,6 +1,6 @@
 ---
 title: "Flow Transactions API"
-description: "Query Flow transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+description: "Flow Cadence transactions: UTF-8 script, gas limit, status, proposer, payer, reference block, collection id, events count."
 keywords: ["Flow API", "Flow Transactions", "Bitquery", "GraphQL"]
 ---
 

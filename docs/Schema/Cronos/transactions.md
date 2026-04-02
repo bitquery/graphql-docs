@@ -1,6 +1,6 @@
 ---
 title: "Cronos Transactions API"
-description: "Query Cronos transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+description: "Cronos EVM transactions: gas price, fee payer/ratio, sender and recipient, amounts, nonces, and block timestamps via Bitquery GraphQL."
 keywords: ["Cronos API", "Cronos Transactions", "Bitquery", "GraphQL"]
 ---
 

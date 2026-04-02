@@ -1,6 +1,6 @@
 ---
 title: "Elrond Transactions API"
-description: "Query Elrond transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+description: "MultiversX transactions: cross-shard sender/receiver shards, EGLD value (USD), fees, status, signature, and action metadata."
 keywords: ["Elrond API", "Elrond Transactions", "Bitquery", "GraphQL"]
 ---
 

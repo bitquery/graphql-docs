@@ -1,6 +1,6 @@
 ---
 title: "Flow Transaction Authorizers API"
-description: "Query Flow authorizers data using Bitquery GraphQL API. Get authorizers and payer roles for transactions."
+description: "Flow authorizers: accounts authorizing state-mutating Cadence txs—payer, proposer, proposal keys, block, and collection id."
 keywords: ["Flow API", "Flow Transaction Authorizers", "Bitquery", "GraphQL"]
 ---
 

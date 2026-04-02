@@ -145,12 +145,10 @@ query LatestTrades {
 </details>
 
 
-:::tip
+## Related Resources
 
-**Need More Solana Token Data?**
-
-Check out our other Solana examples:
-- [Solana Transfers API ➤](https://docs.bitquery.io/v1/docs/examples/Solana/transfers)
-- [Solana DEX Trades API ➤](https://docs.bitquery.io/v1/docs/examples/dexTrades/dex-trading-data-api)
-
-:::
+- [Solana Transfers API Examples](https://docs.bitquery.io/v1/docs/examples/Solana/transfers)
+- [DEX Trading Data API Examples](https://docs.bitquery.io/v1/docs/examples/dexTrades/dex-trading-data-api)
+- [Zcash Address API Examples](https://docs.bitquery.io/v1/docs/examples/Zcash/address-api)
+- [DEX OHLC API Examples](https://docs.bitquery.io/v1/docs/examples/dexTrades/ohlc)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)

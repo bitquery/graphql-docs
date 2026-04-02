@@ -1,6 +1,6 @@
 ---
 title: "Flow Transaction Payload Signatures API"
-description: "Query Flow signatures data using Bitquery GraphQL API. Get payload signatures and signer keys."
+description: "Flow payload signatures on the transaction body: signer address, key id, raw signature, block height, and collection id."
 keywords: ["Flow API", "Flow Transaction Payload Signatures", "Bitquery", "GraphQL"]
 ---
 

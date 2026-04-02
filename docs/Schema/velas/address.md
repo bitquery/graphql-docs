@@ -1,6 +1,6 @@
 ---
 title: "Velas Address API"
-description: "Query Velas address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."
+description: "Velas EVM addresses: VLX balance, smart contract metadata, balance history—ethereum(network: velas)—GraphQL."
 keywords: ["Velas API", "Velas Address", "Bitquery", "GraphQL"]
 ---
 

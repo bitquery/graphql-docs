@@ -1,6 +1,6 @@
 ---
 title: "Conflux Transactions API"
-description: "Query Conflux transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+description: "Conflux transactions: CFX gas with USD conversion, success flag, contract-creation target, sender, currency, and block details."
 keywords: ["Conflux API", "Conflux Transactions", "Bitquery", "GraphQL"]
 ---
 

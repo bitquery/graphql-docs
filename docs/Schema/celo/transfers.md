@@ -1,6 +1,6 @@
 ---
 title: "Celo Transfers API"
-description: "Query Celo transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."
+description: "Celo token transfers: filter ERC-20 and native flows by currency and date; amounts, parties, gas, and transaction hash via GraphQL."
 keywords: ["Celo API", "Celo Transfers", "Bitquery", "GraphQL"]
 ---
 

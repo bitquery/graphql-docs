@@ -301,10 +301,10 @@ query ($network: EthereumNetwork!, $outboundDepth: Int!, $limit: Int!, $currency
 
 ---
 
-## Next Steps
+## Related Resources
 
 - [Coinpath Overview](./Overview) — what Coinpath is and why it matters.
 - **Fund Tracking by chain type:** [EVM](./Fund%20Tracking/EVM_Chains) | [UTXO](./Fund%20Tracking/UTXO_Chains) | [Ledger-based](./Fund%20Tracking/Ledger_Based_Chains)
-- [Coinpath Money Flow API — query cookbook](/docs/Examples/coinpath/money-flow-api)
-- [Bitcoin Coinpath schema reference](/docs/Schema/bitcoin/coinpath)
-- [Ethereum Coinpath schema reference](/docs/Schema/ethereum/coinpath)
+- [Coinpath Money Flow API — query cookbook](https://docs.bitquery.io/v1/docs/examples/coinpath/money-flow-api)
+- [Bitcoin Coinpath schema reference](https://docs.bitquery.io/v1/docs/Schema/bitcoin/coinpath)
+- [Ethereum Coinpath schema reference](https://docs.bitquery.io/v1/docs/Schema/ethereum/coinpath)

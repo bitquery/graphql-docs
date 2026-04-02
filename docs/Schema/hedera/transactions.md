@@ -1,6 +1,6 @@
 ---
 title: "Hedera Transactions API"
-description: "Query Hedera transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+description: "Hedera transactions: transactionType, memo, fees, payer/node accounts, transactionBytes, success—GraphQL."
 keywords: ["Hedera API", "Hedera Transactions", "Bitquery", "GraphQL"]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Flow Inputs API"
-description: "Query Flow inputs data using Bitquery GraphQL API. Get transaction inputs, authorizers, and signatures context."
+description: "Flow transaction inputs: amounts, currencies, NFT entity ids, transfer reasons (fees/FT/NFT), and Cadence call linkage."
 keywords: ["Flow API", "Flow Inputs", "Bitquery", "GraphQL"]
 ---
 

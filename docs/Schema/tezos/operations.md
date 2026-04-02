@@ -1,6 +1,6 @@
 ---
 title: "Tezos Operations API"
-description: "Query Tezos operations data using Bitquery GraphQL API. Get chain operations, types, and operation details."
+description: "Tezos operations: kind, internal/external, protocol, source, contents—bakes, delegations—Bitquery GraphQL."
 keywords: ["Tezos API", "Tezos Operations", "Bitquery", "GraphQL"]
 ---
 

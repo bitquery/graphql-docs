@@ -56,3 +56,13 @@ Jump straight into example queries:
 - [Bitcoin Coinpath API examples](/docs/Examples/bitcoin/Bitcoin-Coinpath-API)
 - [Bitcoin Coinpath schema reference](/docs/Schema/bitcoin/coinpath)
 - [Ethereum Coinpath schema reference](/docs/Schema/ethereum/coinpath)
+
+## Related Resources
+
+- [How to Read a Coinpath Graph](./How_to_read_coinpath_graph)
+- [Coinpath for EVM Networks](./Fund%20Tracking/EVM_Chains)
+- [Coinpath for UTXO Networks](./Fund%20Tracking/UTXO_Chains)
+- [Coinpath for Ledger-Based Networks](./Fund%20Tracking/Ledger_Based_Chains)
+- [Coinpath Money Flow API — query cookbook](https://docs.bitquery.io/v1/docs/examples/coinpath/money-flow-api)
+- [Bitcoin Coinpath schema reference](https://docs.bitquery.io/v1/docs/Schema/bitcoin/coinpath)
+- [Ethereum Coinpath schema reference](https://docs.bitquery.io/v1/docs/Schema/ethereum/coinpath)

@@ -1,6 +1,6 @@
 ---
 title: "Cardano Transactions API"
-description: "Query Cardano transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+description: "Cardano UTXO transactions: input and output totals and counts, fees, validity ranges, mint and withdrawal counts, and block context."
 keywords: ["Cardano API", "Cardano Transactions", "Bitquery", "GraphQL"]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Elrond Block Validators API"
-description: "Query Elrond validators data using Bitquery GraphQL API. Get validators associated with blocks and consensus roles."
+description: "MultiversX block validators: consensus validator hex, shard, public key bitmap, block size, and tx counts per block hash."
 keywords: ["Elrond API", "Elrond Block Validators", "Bitquery", "GraphQL"]
 ---
 

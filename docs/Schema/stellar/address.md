@@ -1,6 +1,6 @@
 ---
 title: "Stellar Address API"
-description: "Query Stellar address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."
+description: "Stellar accounts: native XLM plus multi-asset tokenBalances (issuer, code, type) and annotations—GraphQL."
 keywords: ["Stellar API", "Stellar Address", "Bitquery", "GraphQL"]
 ---
 

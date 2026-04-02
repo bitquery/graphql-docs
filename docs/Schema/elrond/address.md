@@ -1,6 +1,6 @@
 ---
 title: "Elrond Address API"
-description: "Query Elrond address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."
+description: "MultiversX (Elrond) account addresses: native EGLD balances, annotations, and on-chain account metadata via GraphQL."
 keywords: ["Elrond API", "Elrond Address", "Bitquery", "GraphQL"]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Cosmos Messages API"
-description: "Query Cosmos messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls."
+description: "Cosmos SDK messages in GraphQL: JSON payloads, indices, senders, message types, and parent transaction hash and signer fields."
 keywords: ["Cosmos API", "Cosmos Messages", "Bitquery", "GraphQL"]
 ---
 

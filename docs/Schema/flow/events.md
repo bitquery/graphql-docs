@@ -1,6 +1,6 @@
 ---
 title: "Flow Events API"
-description: "Query Flow events data using Bitquery GraphQL API. Get on-chain events, types, and payloads."
+description: "Flow Cadence events: event type, smart contract address and method, block height, transaction id/index, and timestamps."
 keywords: ["Flow API", "Flow Events", "Bitquery", "GraphQL"]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Velas Transactions API"
-description: "Query Velas transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+description: "Velas EVM txs: gas, gasCurrency, feeRatio, txType, sender/to—query ethereum(network: velas)—GraphQL."
 keywords: ["Velas API", "Velas Transactions", "Bitquery", "GraphQL"]
 ---
 

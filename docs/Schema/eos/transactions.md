@@ -1,6 +1,6 @@
 ---
 title: "EOS Transactions API"
-description: "Query EOS transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+description: "EOSIO transactions: CPU microseconds, net usage words, scheduled flag, success, block height/timestamp, and transaction hash."
 keywords: ["EOS API", "EOS Transactions", "Bitquery", "GraphQL"]
 ---
 

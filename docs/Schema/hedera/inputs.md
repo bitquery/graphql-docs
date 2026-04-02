@@ -1,6 +1,6 @@
 ---
 title: "Hedera Inputs API"
-description: "Query Hedera inputs data using Bitquery GraphQL API. Get transaction inputs, authorizers, and signatures context."
+description: "Hedera transfer inputs: amount, currency, payerAccount, nodeAccount, consensus time, transaction hash—GraphQL."
 keywords: ["Hedera API", "Hedera Inputs", "Bitquery", "GraphQL"]
 ---
 

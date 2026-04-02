@@ -1,6 +1,6 @@
 ---
 title: "Cardano Mints API"
-description: "Query Cardano mints data using Bitquery GraphQL API. Get mint events, policies, assets, and recipients."
+description: "Cardano mint API: newly minted native token amounts with policy and asset IDs, plus block, time, and parent transaction hash and index."
 keywords: ["Cardano API", "Cardano Mints", "Bitquery", "GraphQL"]
 ---
 

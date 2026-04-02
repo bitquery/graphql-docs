@@ -1,6 +1,6 @@
 ---
 title: "Cosmos Address API"
-description: "Query Cosmos address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."
+description: "Cosmos address field: native balance, annotations, and token holdings metadata for bech32 accounts via Bitquery GraphQL."
 keywords: ["Cosmos API", "Cosmos Address", "Bitquery", "GraphQL"]
 ---
 

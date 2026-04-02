@@ -1,6 +1,6 @@
 ---
 title: "Conflux Address API"
-description: "Query Conflux address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."
+description: "Conflux address API: native CFX balance and annotations on Conflux networks (e.g. Hydra) through Bitquery GraphQL."
 keywords: ["Conflux API", "Conflux Address", "Bitquery", "GraphQL"]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Hedera Address API"
-description: "Query Hedera address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."
+description: "Hedera HBAR & HTS: native balance, fungible/NFT tokenBalances, annotations—EVM or shard.realm.num IDs—GraphQL."
 keywords: ["Hedera API", "Hedera Address", "Bitquery", "GraphQL"]
 ---
 

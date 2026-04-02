@@ -1,6 +1,6 @@
 ---
 title: "Solana Address API"
-description: "Query Solana address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."
+description: "Solana wallet SOL balance and account annotations—query addresses on Solana with Bitquery GraphQL."
 keywords: ["Solana API", "Solana Address", "Bitquery", "GraphQL"]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "EOS Proposers API"
-description: "Query EOS proposers data using Bitquery GraphQL API. Get block proposers and producer metadata."
+description: "EOSIO DPoS producers via blocks aggregate: producer account, blocks produced, min/max dates, height, hash, and timestamps."
 keywords: ["EOS API", "EOS Proposers", "Bitquery", "GraphQL"]
 ---
 

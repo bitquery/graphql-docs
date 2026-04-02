@@ -46,10 +46,10 @@ To address these challenges, the Coinpath graph for ledger-based chains differs 
 | Trade visibility | All transfers explicit | Only **taker** side appears; maker side excluded from path |
 | Pre-processing | Minimal | Extracts implicit transfers from raw tx data |
 
-## Related
+## Related Resources
 
 - [Coinpath Overview](../Overview) — what Coinpath is and cross-chain comparison.
 - [How to Read a Coinpath Graph](../How_to_read_coinpath_graph) — nodes, edges, depth levels.
 - [EVM Fund Tracking](./EVM_Chains) | [UTXO Fund Tracking](./UTXO_Chains)
-- [Ripple schema reference](/docs/Schema/ripple/overview)
-- [Coinpath Money Flow API — query cookbook](/docs/Examples/coinpath/money-flow-api)
+- [Ripple schema reference](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Coinpath Money Flow API — query cookbook](https://docs.bitquery.io/v1/docs/examples/coinpath/money-flow-api)

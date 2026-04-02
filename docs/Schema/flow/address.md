@@ -1,6 +1,6 @@
 ---
 title: "Flow Address API"
-description: "Query Flow address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."
+description: "Flow account addresses: native FLOW balance and annotations for Cadence wallets, contracts, and filtered address lookups."
 keywords: ["Flow API", "Flow Address", "Bitquery", "GraphQL"]
 ---
 

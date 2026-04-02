@@ -1,6 +1,6 @@
 ---
 title: "Stellar Payments API"
-description: "Query Stellar payments data using Bitquery GraphQL API. Get payment operations and path payments."
+description: "Stellar payments & path swaps: currencyFrom/To, path hops, sender/receiver, amounts—DEX-ready—GraphQL."
 keywords: ["Stellar API", "Stellar Payments", "Bitquery", "GraphQL"]
 ---
 

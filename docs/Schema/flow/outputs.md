@@ -1,6 +1,6 @@
 ---
 title: "Flow Outputs API"
-description: "Query Flow outputs data using Bitquery GraphQL API. Get transaction outputs, amounts, and recipients."
+description: "Flow transaction outputs: recipient addresses, amounts and decimals, currencies, NFT entity ids, types, and transfer reasons."
 keywords: ["Flow API", "Flow Outputs", "Bitquery", "GraphQL"]
 ---
 

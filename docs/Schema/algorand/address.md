@@ -1,6 +1,6 @@
 ---
 title: "Algorand Address API"
-description: "Query Algorand address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."
+description: "Algorand account GraphQL: ALGO balance, pending and accrued rewards, participation round, status, and optional ASA contract info."
 keywords: ["Algorand API", "Algorand Address", "Bitquery", "GraphQL"]
 ---
 

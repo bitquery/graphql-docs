@@ -1,6 +1,6 @@
 ---
 title: "Celo Transactions API"
-description: "Query Celo transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+description: "Celo EVM transactions: gas in CELO, token amounts, fee payer fields, sender and receiver annotations, and per-block ordering filters."
 keywords: ["Celo API", "Celo Transactions", "Bitquery", "GraphQL"]
 ---
 

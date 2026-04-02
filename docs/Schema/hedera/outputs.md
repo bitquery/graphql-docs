@@ -1,6 +1,6 @@
 ---
 title: "Hedera Outputs API"
-description: "Query Hedera outputs data using Bitquery GraphQL API. Get transaction outputs, amounts, and recipients."
+description: "Hedera transfer outputs: amount, currency, transferEntity, fees, consensusTimestamp, validStart—GraphQL."
 keywords: ["Hedera API", "Hedera Outputs", "Bitquery", "GraphQL"]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Flow Transaction Envelope Signatures API"
-description: "Query Flow signatures data using Bitquery GraphQL API. Get envelope signatures and signing accounts."
+description: "Flow envelope signatures: signer address and key id, raw signature bytes, plus block, collection, and transaction context."
 keywords: ["Flow API", "Flow Transaction Envelope Signatures", "Bitquery", "GraphQL"]
 ---
 

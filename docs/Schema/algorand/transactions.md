@@ -1,6 +1,6 @@
 ---
 title: "Algorand Transactions API"
-description: "Query Algorand transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+description: "Algorand transaction index: fees (ALGO/USD), tx type and subtype, optional note, ASA token fields, block height, and GraphQL filters."
 keywords: ["Algorand API", "Algorand Transactions", "Bitquery", "GraphQL"]
 ---
 

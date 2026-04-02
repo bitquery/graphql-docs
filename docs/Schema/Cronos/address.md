@@ -1,6 +1,6 @@
 ---
 title: "Cronos Address API"
-description: "Query Cronos address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."
+description: "Cronos EVM addresses on Bitquery: CRO balances, smart-contract token metadata (ERC-20), and human-readable annotations."
 keywords: ["Cronos API", "Cronos Address", "Bitquery", "GraphQL"]
 ---
 

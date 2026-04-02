@@ -82,10 +82,10 @@ Track where funds went from an address over 2 hops on Ethereum:
 }
 ```
 
-## Related
+## Related Resources
 
 - [Coinpath Overview](../Overview) — what Coinpath is and cross-chain comparison.
 - [How to Read a Coinpath Graph](../How_to_read_coinpath_graph) — nodes, edges, depth levels.
 - [UTXO Fund Tracking](./UTXO_Chains) | [Ledger-Based Fund Tracking](./Ledger_Based_Chains)
-- [Ethereum Coinpath schema reference](/docs/Schema/ethereum/coinpath)
-- [Coinpath Money Flow API — query cookbook](/docs/Examples/coinpath/money-flow-api)
+- [Ethereum Coinpath schema reference](https://docs.bitquery.io/v1/docs/Schema/ethereum/coinpath)
+- [Coinpath Money Flow API — query cookbook](https://docs.bitquery.io/v1/docs/examples/coinpath/money-flow-api)

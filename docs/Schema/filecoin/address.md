@@ -1,6 +1,6 @@
 ---
 title: "Filecoin Address API"
-description: "Query Filecoin address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."
+description: "Filecoin actor addresses (f0/f1/f2…): FIL balance, annotation labels, and account lookup for storage and wallet actors."
 keywords: ["Filecoin API", "Filecoin Address", "Bitquery", "GraphQL"]
 ---
 

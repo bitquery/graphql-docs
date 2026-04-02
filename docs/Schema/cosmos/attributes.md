@@ -1,6 +1,6 @@
 ---
 title: "Cosmos Attributes API"
-description: "Query Cosmos attributes data using Bitquery GraphQL API. Get event and message attributes for filtering and display."
+description: "Cosmos SDK attributes from blocks: attribute keys and values, event types, linked messages and transactions, signers, and timestamps."
 keywords: ["Cosmos API", "Cosmos Attributes", "Bitquery", "GraphQL"]
 ---
 

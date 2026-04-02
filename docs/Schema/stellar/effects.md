@@ -1,6 +1,6 @@
 ---
 title: "Stellar Effects API"
-description: "Query Stellar effects data using Bitquery GraphQL API. Get ledger effects, operations, and asset movements."
+description: "Stellar effects: ledger-side deltas from operations—detail JSON, op & tx links, addresses—Bitquery GraphQL."
 keywords: ["Stellar API", "Stellar Effects", "Bitquery", "GraphQL"]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Hedera Messages API"
-description: "Query Hedera messages data using Bitquery GraphQL API. Get chain messages, actors, and method calls."
+description: "Hedera Consensus Service messages: payload, entity, topicRunningHash, payer, node—Bitquery GraphQL."
 keywords: ["Hedera API", "Hedera Messages", "Bitquery", "GraphQL"]
 ---
 

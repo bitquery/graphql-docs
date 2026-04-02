@@ -1,6 +1,6 @@
 ---
 title: "Tezos Address API"
-description: "Query Tezos address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."
+description: "Tezos tz addresses: balance (available, staking, delegated), annotations—XTZ account data—Bitquery GraphQL."
 keywords: ["Tezos API", "Tezos Address", "Bitquery", "GraphQL"]
 ---
 

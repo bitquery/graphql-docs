@@ -1,6 +1,6 @@
 ---
 title: "Stellar Operations API"
-description: "Query Stellar operations data using Bitquery GraphQL API. Get chain operations, types, and operation details."
+description: "Stellar operations inside transactions: type, source account, success, index, block—Bitquery GraphQL."
 keywords: ["Stellar API", "Stellar Operations", "Bitquery", "GraphQL"]
 ---
 

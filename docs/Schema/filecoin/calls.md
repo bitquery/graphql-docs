@@ -1,6 +1,6 @@
 ---
 title: "Filecoin Calls API"
-description: "Query Filecoin calls data using Bitquery GraphQL API. Get contract or system calls, inputs, and results."
+description: "Filecoin actor method calls and FIL moves: sender/receiver types, method ids/names, call path/hash, message method, success."
 keywords: ["Filecoin API", "Filecoin Calls", "Bitquery", "GraphQL"]
 ---
 

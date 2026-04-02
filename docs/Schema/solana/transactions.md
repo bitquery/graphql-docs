@@ -1,6 +1,6 @@
 ---
 title: "Solana Transactions API"
-description: "Query Solana transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+description: "Solana txs: signature, fee & feePayer, signer, instruction counts, inner instructions, block slot—GraphQL."
 keywords: ["Solana API", "Solana Transactions", "Bitquery", "GraphQL"]
 ---
 

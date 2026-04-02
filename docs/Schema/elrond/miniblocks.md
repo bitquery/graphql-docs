@@ -1,6 +1,6 @@
 ---
 title: "Elrond Miniblocks API"
-description: "Query Elrond miniblocks data using Bitquery GraphQL API. Get miniblock headers, shards, and ordering."
+description: "MultiversX miniblocks for cross-shard flow: hashes, type, receiver shard/block hash, sender block epoch/height, and time."
 keywords: ["Elrond API", "Elrond Miniblocks", "Bitquery", "GraphQL"]
 ---
 

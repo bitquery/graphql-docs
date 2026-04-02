@@ -1,6 +1,6 @@
 ---
 title: "Hedera Calls API"
-description: "Query Hedera calls data using Bitquery GraphQL API. Get contract or system calls, inputs, and results."
+description: "Hedera smart contract calls: callInput, callResult, gas, payer & node accounts, consensusTimestamp—GraphQL."
 keywords: ["Hedera API", "Hedera Calls", "Bitquery", "GraphQL"]
 ---
 

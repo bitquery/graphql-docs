@@ -1,6 +1,6 @@
 ---
 title: "Flow Collections API"
-description: "Query Flow collections data using Bitquery GraphQL API. Get NFT collections, IDs, and collection metadata."
+description: "Flow collections: transaction batches in blocks—SHA3-256 id, block index, BLS collection-node signatures, and tx counts."
 keywords: ["Flow API", "Flow Collections", "Bitquery", "GraphQL"]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Tezos Transactions API"
-description: "Query Tezos transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+description: "Tezos transfers: XTZ amount, fee, gas & storage, burn, sender/receiver, internal flag—Bitquery GraphQL."
 keywords: ["Tezos API", "Tezos Transactions", "Bitquery", "GraphQL"]
 ---
 

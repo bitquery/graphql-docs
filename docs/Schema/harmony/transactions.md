@@ -1,6 +1,6 @@
 ---
 title: "Harmony Transactions API"
-description: "Query Harmony transactions data using Bitquery GraphQL API. Get transactions, fees, statuses, and included operations."
+description: "Harmony ONE transfers: shardId, cross-shard toShardId, gas, value in atto, success, block height—Bitquery GraphQL."
 keywords: ["Harmony API", "Harmony Transactions", "Bitquery", "GraphQL"]
 ---
 

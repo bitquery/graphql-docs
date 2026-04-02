@@ -1,6 +1,6 @@
 ---
 title: "Cardano Address API"
-description: "Query Cardano address data using Bitquery GraphQL API. Get address balances, annotations, and related activity."
+description: "Cardano address GraphQL: native multi-asset balances, staking stake and rewards, and controlled stake for Shelley-style addresses."
 keywords: ["Cardano API", "Cardano Address", "Bitquery", "GraphQL"]
 ---
 
