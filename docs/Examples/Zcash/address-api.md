@@ -289,8 +289,8 @@ You can query multiple addresses at once by using `{in: ["address1", "address2",
 
 ## Related Resources
 
-- [UTXO Input/Output API Examples](https://docs.bitquery.io/v1/docs/examples/Transactions/input-output-api)
-- [Transaction API Examples](https://docs.bitquery.io/v1/docs/examples/Transactions/transaction-api)
-- [ZenZEC Token Trades API](https://docs.bitquery.io/v1/docs/examples/Zcash/zenzec-api)
-- [Coinpath Money Flow API](https://docs.bitquery.io/v1/docs/examples/coinpath/money-flow-api)
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [UTXO Input/Output API Examples](https://docs.bitquery.io/v1/docs/Examples/Transactions/input-output-api)
+- [Transaction API Examples](https://docs.bitquery.io/v1/docs/Examples/Transactions/transaction-api)
+- [Coinpath Money Flow API](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)

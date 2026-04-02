@@ -42,6 +42,71 @@ The following are available fields for the `coinpath`:
 - `transaction`:  returns transaction details.
 - `transactions`: returns attributes of transactions.
 
+## Example Query
+
+The following query traces outbound CELO fund flow from an address up to 2 hops deep, returning sender/receiver details, amounts, and block timestamps. Add `direction: inbound` inside `options` to trace incoming funds instead.
+
+```graphql
+{
+  ethereum(network: celo_mainnet) {
+    coinpath(
+      initialAddress: { is: "0xe11BFCBDd43745D4Aa6f4f18E24aD24f4623af04" }
+      currency: { is: "CELO" }
+      depth: { lteq: 2 }
+      options: {
+        seed: 110
+        asc: "depth"
+        desc: "amount"
+        limitBy: { each: "depth", limit: 10 }
+      }
+      date: { since: "2023-01-01", till: "2023-06-30" }
+    ) {
+      sender {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      receiver {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      amount
+      currency {
+        symbol
+        name
+      }
+      transaction {
+        hash
+        value
+      }
+      block {
+        height
+        timestamp {
+          time(format: "%Y-%m-%d")
+        }
+      }
+      depth
+      count
+    }
+  }
+}
+```
+
+For more coinpath examples — including inbound tracing, two-address relationship analysis, and multi-hop fund tracking — see the [Coinpath Money Flow API examples](/v1/docs/Examples/coinpath/money-flow-api).
+
 ## Related Resources
 
 - [Celo schema overview](https://docs.bitquery.io/v1/docs/Schema/celo/overview)

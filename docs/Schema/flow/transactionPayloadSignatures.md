@@ -6,6 +6,10 @@ keywords: ["Flow API", "Flow Transaction Payload Signatures", "Bitquery", "Graph
 
 # Transaction Payload Signatures
 
+:::caution Deprecated
+Bitquery has stopped supporting the Flow blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 The Flow Transaction Payload Signatures API provides information about payload signatures of transaction from the Flow Blockchain.
 
 <details>

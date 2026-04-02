@@ -6,6 +6,10 @@ keywords: ["Flow API", "Flow Coinpath", "Bitquery", "GraphQL"]
 
 # Coinpath
 
+:::caution Deprecated
+Bitquery has stopped supporting the Flow blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 The Tezos Coinpath API provides information about money flow from the Flow Blockchain. 
 
 <details>

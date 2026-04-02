@@ -57,11 +57,48 @@ The following are available fields for the `coinpath`:
 - `transaction`: returns transaction details.
 - `transactions`: returns attributes of transactions.
 
+## Example Query
+
+The following query traces outbound DASH fund flow from an address, returning sender/receiver addresses, amounts, block height, and transaction hashes. Dash uses the UTXO model, so coinpath queries go through the `bitcoin` schema with `network: dash`.
+
+```graphql
+{
+  bitcoin(network: dash) {
+    coinpath(
+      initialAddress: { is: "XpESxaUmonkq8RaLLp46Brx2K39ggQe226" }
+      date: { after: "2023-01-01" }
+      options: { limit: 10, asc: "block.height", seed: 10 }
+    ) {
+      amount(in: USD)
+      block {
+        height
+      }
+      sender {
+        address
+      }
+      receiver {
+        address
+      }
+      transaction {
+        hash
+      }
+      currency {
+        name
+      }
+      depth
+      count
+    }
+  }
+}
+```
+
+For more coinpath examples — including inbound tracing and multi-hop fund tracking — see the [Coinpath Money Flow API examples](/v1/docs/Examples/coinpath/money-flow-api).
+
 ## Related Resources
 
 - [Dash schema overview](https://docs.bitquery.io/v1/docs/Schema/Dash/overview)
 - [Blockchain API examples](https://docs.bitquery.io/v1/docs/Examples/overview)
-- [Coinpath (Dash)](https://docs.bitquery.io/v1/docs/Schema/Dash/coinpath)
+- [Coinpath Money Flow API examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
 

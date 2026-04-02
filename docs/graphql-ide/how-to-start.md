@@ -114,8 +114,10 @@ Check our [Youtube Channel](https://www.youtube.com/@bitquery) for video tutoria
 
 ## Related Resources
 
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [DEX Trades API examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Coinpath Money Flow API examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
 - [How to use the Bitquery GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/ide)
 - [Getting an API access token](https://docs.bitquery.io/v1/docs/graphql-ide/apikey)
-- [Use Bitquery in your application](https://docs.bitquery.io/v1/docs/graphql-ide/use-it-in-your-application)
 - [Basic structure of a GraphQL query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
 - [V1 vs V2 APIs](https://docs.bitquery.io/v1/docs/graphql-ide/v1-and-v2)

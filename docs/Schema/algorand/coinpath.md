@@ -42,6 +42,46 @@ The following are available fields for the `coinpath`:
 - `transaction`:  returns transaction details.
 - `transactions`: returns attributes of transactions.
 
+## Example Query
+
+The following query traces fund flow from a sender address on Algorand, returning amounts, block timestamps, receiver addresses, depth, and transaction hashes.
+
+```graphql
+{
+  algorand {
+    coinpath(
+      date: { after: "2023-08-05" }
+      options: { desc: "block.timestamp.iso8601", limit: 10 }
+      sender: { is: "BWSNMG43TUYEOHE76J6KDWIY6MU4U6JFJYGAYCZA2RF5IS3XPO3P3G4FEI" }
+    ) {
+      amount
+      block {
+        timestamp {
+          iso8601
+        }
+      }
+      currency {
+        address
+        name
+      }
+      depth
+      receiver {
+        address
+      }
+      sender {
+        address
+      }
+      transaction {
+        hash
+        value
+      }
+    }
+  }
+}
+```
+
+For more coinpath examples — including receiver-based tracing and transaction counts — see the [Algorand Coinpath API examples](/v1/docs/Examples/algorand/coinpath) and the [Coinpath Money Flow API examples](/v1/docs/Examples/coinpath/money-flow-api).
+
 ## Related Resources
 
 - [Algorand schema overview](https://docs.bitquery.io/v1/docs/Schema/algorand/overview)

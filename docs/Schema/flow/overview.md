@@ -7,6 +7,10 @@ keywords: [Flow API, Flow GraphQL, Flow blockchain data, Bitquery]
 
 # Overview
 
+:::caution Deprecated
+Bitquery has stopped supporting the Flow blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 Flow is a layer 1 blockchain for creating and trading non-fungible tokens (NFTs), decentralized applications (dApps), and games.
 ![flow explorer](/img/flow.png)
 

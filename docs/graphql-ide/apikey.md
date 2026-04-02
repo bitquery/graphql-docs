@@ -124,8 +124,9 @@ Your Access Token is your identity in the system, you have to be very careful to
 
 ## Related Resources
 
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [API examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)
 - [Use Bitquery in your application](https://docs.bitquery.io/v1/docs/graphql-ide/use-it-in-your-application)
 - [How to use the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/ide)
 - [Getting started with the IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [V1 vs V2 APIs](https://docs.bitquery.io/v1/docs/graphql-ide/v1-and-v2)
-- [Account dashboard](https://docs.bitquery.io/v1/docs/graphql-ide/account)

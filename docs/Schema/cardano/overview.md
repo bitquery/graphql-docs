@@ -46,7 +46,8 @@ Cardano uses an **eUTXO** model: **ADA** and **native tokens** live in transacti
 
 ## Related Resources
 
-- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
+- [Coinpath Money Flow API examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
+- [Cross-chain API examples](https://docs.bitquery.io/v1/docs/Examples/cross-chain/cross-chain-api)
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
 - [Solana schema overview](https://docs.bitquery.io/v1/docs/Schema/solana/overview)

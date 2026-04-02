@@ -65,10 +65,77 @@ The following are available fields for the `coinpath`:
 - `transaction`:  returns transaction details.
 - `transactions`: returns attributes of transactions.
 
+## Example Query
+
+The following query traces outbound fund flow from an address up to 2 hops deep, returning sender/receiver details, amounts, block timestamps, and transaction hashes. You can switch to inbound tracing by adding `direction: inbound` inside `options`.
+
+[Open this query on IDE](https://ide.bitquery.io/destination-of-funds-for-upbit-hackers)
+
+```graphql
+{
+  ethereum(network: ethereum) {
+    coinpath(
+      initialAddress: { is: "0xa09871aeadf4994ca12f5c0b6056bbd1d343c029" }
+      currency: { is: "ETH" }
+      depth: { lteq: 2 }
+      options: {
+        seed: 110
+        asc: "depth"
+        desc: "amount"
+        limitBy: { each: "depth", limit: 10 }
+      }
+      date: { since: "2018-03-01", till: "2021-01-31" }
+    ) {
+      sender {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      receiver {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      amount
+      currency {
+        symbol
+        name
+      }
+      transaction {
+        hash
+        value
+      }
+      block {
+        height
+        timestamp {
+          time(format: "%y-%d-%m")
+        }
+      }
+      depth
+      count
+    }
+  }
+}
+```
+
+For more coinpath examples — including inbound tracing, two-address relationship analysis, and multi-hop fund tracking — see the [Coinpath Money Flow API examples](/v1/docs/Examples/coinpath/money-flow-api).
+
 ## Related Resources
 
 - [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
 - [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
-- [Coinpath (Ethereum)](https://docs.bitquery.io/v1/docs/Schema/ethereum/coinpath)
+- [Coinpath Money Flow API examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

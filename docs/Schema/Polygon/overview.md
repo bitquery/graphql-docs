@@ -55,8 +55,10 @@ Let's dive in and explore the Polygon API in following chapters.
 
 ## Related Resources
 
-- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
+- [DEX Trades examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Smart Contract Events examples](https://docs.bitquery.io/v1/docs/Examples/smartcontractEvents/smart-contract-events-api)
+- [Coinpath Money Flow API examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
 - [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
-- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)

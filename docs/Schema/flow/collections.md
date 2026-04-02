@@ -6,6 +6,10 @@ keywords: ["Flow API", "Flow Collections", "Bitquery", "GraphQL"]
 
 # Collections
 
+:::caution Deprecated
+Bitquery has stopped supporting the Flow blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 The Flow Collections API provides information about collections from the Flow Blockchain. A collection is batch of transactions that have been includes in a block.
 
 <details>

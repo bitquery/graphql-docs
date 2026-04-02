@@ -6,6 +6,10 @@ keywords: ["Flow API", "Flow Inputs", "Bitquery", "GraphQL"]
 
 # Inputs
 
+:::caution Deprecated
+Bitquery has stopped supporting the Flow blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 The Flow Inputs API provides information about transaction inputs from the Flow Blockchain.
 
 <details>

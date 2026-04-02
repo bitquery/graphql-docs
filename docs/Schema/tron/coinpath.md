@@ -55,11 +55,57 @@ Coinpath data can be filtered using following arguments:
 - `sender`: returns sender address
 - `transaction`: returns transaction of transfer happened
 
+## Example Query
+
+The following query traces USDT fund flow from an initial address on Tron, returning amounts, block timestamps, sender/receiver balances, depth, and transaction hashes.
+
+```graphql
+{
+  tron {
+    coinpath(
+      currency: { is: "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t" }
+      initialAddress: { is: "TTd9qHyjqiUkfTxe3gotbuTMpjU8LEbpkN" }
+      initialDate: { after: "2023-07-31" }
+      options: { desc: "block.timestamp.iso8601", limit: 5 }
+    ) {
+      amount
+      block {
+        timestamp {
+          iso8601
+        }
+      }
+      currency {
+        address
+        name
+      }
+      depth
+      receiver {
+        address
+        balance
+        amountOut
+        amountIn
+      }
+      sender {
+        address
+        amountIn
+        amountOut
+        balance
+      }
+      transaction {
+        hash
+      }
+    }
+  }
+}
+```
+
+For more coinpath examples — including receiver-based tracing — see the [Tron Coinpath API examples](/v1/docs/Examples/tron/coinpath) and the [Coinpath Money Flow API examples](/v1/docs/Examples/coinpath/money-flow-api).
+
 ## Related Resources
 
 - [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
 - [Tron API examples](https://docs.bitquery.io/v1/docs/Examples/tron)
-- [Coinpath (Tron)](https://docs.bitquery.io/v1/docs/Schema/tron/coinpath)
+- [Coinpath Money Flow API examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
 

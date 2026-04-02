@@ -67,8 +67,9 @@ Datasets are types of data such as Ethereum and Binance smart chain, both are Et
 
 ## Related Resources
 
-- [Introduction](https://docs.bitquery.io/v1/docs/intro)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [DEX Trades API examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
 - [Network selection](https://docs.bitquery.io/v1/docs/building-queries/network-selection)
-- [Bitquery API FAQ](https://docs.bitquery.io/v1/docs/building-queries/FAQ)
 - [Aggregation in Bitquery GraphQL API](https://docs.bitquery.io/v1/docs/query-features/aggregation/aggregation)
 - [Filtering fields](https://docs.bitquery.io/v1/docs/query-features/filtering/fields)

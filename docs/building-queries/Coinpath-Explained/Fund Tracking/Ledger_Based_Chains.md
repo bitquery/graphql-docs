@@ -52,4 +52,5 @@ To address these challenges, the Coinpath graph for ledger-based chains differs 
 - [How to Read a Coinpath Graph](../How_to_read_coinpath_graph) — nodes, edges, depth levels.
 - [EVM Fund Tracking](./EVM_Chains) | [UTXO Fund Tracking](./UTXO_Chains)
 - [Ripple schema reference](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
-- [Coinpath Money Flow API — query cookbook](https://docs.bitquery.io/v1/docs/examples/coinpath/money-flow-api)
+- [Coinpath Money Flow API examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
+- [Ripple Transfers examples](https://docs.bitquery.io/v1/docs/Examples/ripple/transfers)

@@ -58,11 +58,76 @@ The following are available fields for the `coinpath`:
 - `transaction`: returns transaction details.
 - `transactions`: returns attributes of transactions.
 
+## Example Query
+
+The following query traces outbound BNB fund flow from an address up to 2 hops deep, returning sender/receiver details, amounts, and block timestamps. Add `direction: inbound` inside `options` to trace incoming funds instead.
+
+```graphql
+{
+  ethereum(network: bsc) {
+    coinpath(
+      initialAddress: { is: "0x8894e0a0c962cb723c1ef8a1b3c07b89fcb4ea93" }
+      currency: { is: "BNB" }
+      depth: { lteq: 2 }
+      options: {
+        seed: 110
+        asc: "depth"
+        desc: "amount"
+        limitBy: { each: "depth", limit: 10 }
+      }
+      date: { since: "2023-01-01", till: "2023-06-30" }
+    ) {
+      sender {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      receiver {
+        address
+        annotation
+        smartContract {
+          contractType
+          currency {
+            symbol
+            name
+          }
+        }
+      }
+      amount
+      currency {
+        symbol
+        name
+      }
+      transaction {
+        hash
+        value
+      }
+      block {
+        height
+        timestamp {
+          time(format: "%Y-%m-%d")
+        }
+      }
+      depth
+      count
+    }
+  }
+}
+```
+
+For more coinpath examples — including inbound tracing, two-address relationship analysis, and multi-hop fund tracking — see the [Coinpath Money Flow API examples](/v1/docs/Examples/coinpath/money-flow-api).
+
 ## Related Resources
 
 - [BNB Smart Chain schema overview](https://docs.bitquery.io/v1/docs/Schema/binance_smart_chain/overview)
 - [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
-- [Coinpath (BNB Smart Chain)](https://docs.bitquery.io/v1/docs/Schema/binance_smart_chain/coinpath)
+- [Coinpath Money Flow API examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
 

@@ -189,8 +189,10 @@ Note: In many cases token attributes shown as null in those cases you should fin
 
 ## Related Resources
 
-- [Introduction](https://docs.bitquery.io/v1/docs/intro)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [DEX Trades API examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
 - [Basic structure of a query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
 - [Expressions overview](https://docs.bitquery.io/v1/docs/query-features/expressions/overview)
 - [Metrics in Bitquery GraphQL API](https://docs.bitquery.io/v1/docs/query-features/Metrics)
-- [Bitcoin examples](https://docs.bitquery.io/v1/docs/examples/Bitcoin)

@@ -6,6 +6,10 @@ keywords: ["Flow API", "Flow Arguments", "Bitquery", "GraphQL"]
 
 # Arguments
 
+:::caution Deprecated
+Bitquery has stopped supporting the Flow blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 The Flow Arguments API provides information about transaction arguments from the flow blockchain which contains the payload and envelope signatures
 
 <details>

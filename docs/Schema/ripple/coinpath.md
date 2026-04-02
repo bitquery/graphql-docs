@@ -178,7 +178,7 @@ query ($network: RippleNetwork!, $address: String!, $inboundDepth: Int!, $outbou
 
 - [XRP Ledger schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
 - [Ripple API examples](https://docs.bitquery.io/v1/docs/Examples/ripple)
-- [Coinpath (XRP Ledger)](https://docs.bitquery.io/v1/docs/Schema/ripple/coinpath)
+- [Coinpath Money Flow API examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
 

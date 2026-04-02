@@ -38,6 +38,46 @@ On Cosmos SDK chains, value moves through **messages** (bank sends, IBC transfer
 -   `sender`: returns sender address
 -   `transaction`: returns message of transfer happened
 
+## Example Query
+
+The following query traces outbound fund flow from a Cosmos address, returning amounts in USD, block height and timestamps, sender/receiver addresses, and transaction hashes.
+
+```graphql
+{
+  cosmos {
+    coinpath(
+      initialAddress: { is: "cosmos1ypejmkpfqrqmv5w7cscq874xf8rlggq7w44rsw" }
+      date: { after: "2023-08-07" }
+      options: { desc: "block.timestamp.iso8601", limit: 10 }
+    ) {
+      amount(in: USD)
+      block {
+        height
+        timestamp {
+          iso8601
+        }
+      }
+      currency {
+        address
+        name
+      }
+      receiver {
+        address
+      }
+      sender {
+        address
+      }
+      transaction {
+        hash
+        value
+      }
+    }
+  }
+}
+```
+
+For more coinpath examples — including two-address flow analysis and minimum-amount filtering — see the [Cosmos Coinpath API examples](/v1/docs/Examples/cosmos/coinpath) and the [Coinpath Money Flow API examples](/v1/docs/Examples/coinpath/money-flow-api).
+
 ## Related Resources
 
 - [Cosmos schema overview](https://docs.bitquery.io/v1/docs/Schema/cosmos/overview)

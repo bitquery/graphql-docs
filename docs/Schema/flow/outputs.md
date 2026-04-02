@@ -6,6 +6,10 @@ keywords: ["Flow API", "Flow Outputs", "Bitquery", "GraphQL"]
 
 # Outputs
 
+:::caution Deprecated
+Bitquery has stopped supporting the Flow blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 The Flow Outputs API provides information about the transaction outputs from the Flow Blockchain.
 
 <details>

@@ -70,8 +70,9 @@ If the IDE isn't your preferred route, you can still directly access our API fro
 
 ## Related Resources
 
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [DEX Trades API examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [GraphQL query builder guide](https://docs.bitquery.io/v1/docs/graphql-ide/query-builder)
 - [API access token setup](https://docs.bitquery.io/v1/docs/graphql-ide/apikey)
-- [Account dashboard overview](https://docs.bitquery.io/v1/docs/graphql-ide/account)
 - [Use Bitquery APIs in your app](https://docs.bitquery.io/v1/docs/graphql-ide/use-it-in-your-application)

@@ -22,7 +22,7 @@ description: "Track DOGE fund flows up to any depth on the Dogecoin blockchain u
 <meta property="twitter:description" content="Track flow of funds up to any depth on the Dogecoin blockchain. Trace DOGE movements with Coinpath for compliance and investigation." />
 </head>
 
-The `coinpath` field allows us to retrieve detailed information about money flow using coinpath technology from Dash.
+The `coinpath` field allows us to retrieve detailed information about money flow using coinpath technology from Dogecoin.
 
 <details>
 <summary>Filtering Options</summary>
@@ -57,11 +57,48 @@ The following are available fields for the `coinpath`:
 - `transaction`: returns transaction details.
 - `transactions`: returns attributes of transactions.
 
+## Example Query
+
+The following query traces outbound DOGE fund flow from an address, returning sender/receiver addresses, amounts, block height, and transaction hashes. Dogecoin uses the UTXO model, so coinpath queries go through the `bitcoin` schema with `network: dogecoin`.
+
+```graphql
+{
+  bitcoin(network: dogecoin) {
+    coinpath(
+      initialAddress: { is: "DRSqEwcnJESVpUFD2bNmEXHqy2DKhiRVJb" }
+      date: { after: "2023-01-01" }
+      options: { limit: 10, asc: "block.height", seed: 10 }
+    ) {
+      amount(in: USD)
+      block {
+        height
+      }
+      sender {
+        address
+      }
+      receiver {
+        address
+      }
+      transaction {
+        hash
+      }
+      currency {
+        name
+      }
+      depth
+      count
+    }
+  }
+}
+```
+
+For more coinpath examples — including inbound tracing and multi-hop fund tracking — see the [Coinpath Money Flow API examples](/v1/docs/Examples/coinpath/money-flow-api).
+
 ## Related Resources
 
 - [Dogecoin schema overview](https://docs.bitquery.io/v1/docs/Schema/Dogecoin/overview)
 - [Dogecoin API examples](https://docs.bitquery.io/v1/docs/Examples/Dogecoin)
-- [Coinpath (Dogecoin)](https://docs.bitquery.io/v1/docs/Schema/Dogecoin/coinpath)
+- [Coinpath Money Flow API examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
 

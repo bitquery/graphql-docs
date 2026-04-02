@@ -50,8 +50,10 @@ Let's dive in and explore the Ethereum data available through Bitquery API.
 
 ## Related Resources
 
-- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
+- [Ethereum DEX Trades examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Ethereum Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Smart Contract Events examples](https://docs.bitquery.io/v1/docs/Examples/smartcontractEvents/smart-contract-events-api)
+- [Coinpath Money Flow API examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
 - [Polygon schema overview](https://docs.bitquery.io/v1/docs/Schema/Polygon/overview)
-- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)

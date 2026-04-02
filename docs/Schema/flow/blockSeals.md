@@ -6,6 +6,10 @@ keywords: ["Flow API", "Flow Block Seals", "Bitquery", "GraphQL"]
 
 # Block Seals
 
+:::caution Deprecated
+Bitquery has stopped supporting the Flow blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
+
 The Flow Block Seals API provides you information about blocks seal from the Flow Blockchain. A block seal is an attestation that execution result of a specific block has been verified and approved by a quorum of verification nodes.
 
 <details>

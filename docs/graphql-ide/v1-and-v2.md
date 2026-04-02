@@ -92,7 +92,8 @@ If you have questions about our APIs, please check out [Telegram](https://t.me/b
 
 ## Related Resources
 
-- [Bitquery V1 documentation overview](https://docs.bitquery.io/v1/docs/intro)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [API examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Supported blockchains (V1)](https://docs.bitquery.io/v1/docs/graphql-ide/supported-blockchains)
 - [Getting an API access token](https://docs.bitquery.io/v1/docs/graphql-ide/apikey)

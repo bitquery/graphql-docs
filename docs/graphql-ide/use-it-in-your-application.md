@@ -37,8 +37,9 @@ Authentication is usually a bearer-style token you obtain from the account or AP
 
 ## Related Resources
 
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [API examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)
 - [Getting an API access token](https://docs.bitquery.io/v1/docs/graphql-ide/apikey)
 - [How to use the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/ide)
 - [Getting started with the IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
-- [Common API errors](https://docs.bitquery.io/v1/docs/graphql-ide/errors)
 - [Basic structure of a GraphQL query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)

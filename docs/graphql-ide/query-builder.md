@@ -40,8 +40,9 @@ Simplify your query creation process and access the data you need from various b
 
 ## Related Resources
 
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [DEX Trades API examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
 - [How to use the Bitquery GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/ide)
 - [Getting started with the IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
-- [Supported blockchains](https://docs.bitquery.io/v1/docs/graphql-ide/supported-blockchains)
 - [Basic structure of a GraphQL query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
-- [Bitcoin examples](https://docs.bitquery.io/v1/docs/examples/Bitcoin)

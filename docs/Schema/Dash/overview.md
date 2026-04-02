@@ -42,7 +42,8 @@ Dash is a privacy-oriented UTXO network known for optional coin-mixing (PrivateS
 
 ## Related Resources
 
-- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
+- [Coinpath Money Flow API examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
+- [Cross-chain API examples](https://docs.bitquery.io/v1/docs/Examples/cross-chain/cross-chain-api)
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
 - [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
