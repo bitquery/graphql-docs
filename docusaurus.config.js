@@ -117,7 +117,6 @@ const config = {
         blog: {
           showReadingTime: true,
           editUrl: "https://github.com/bitquery/graphql-docs/tree/main",
-          showLastUpdateTime: true,
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
