@@ -112,10 +112,12 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: "https://github.com/bitquery/graphql-docs/tree/main",
+          showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
           editUrl: "https://github.com/bitquery/graphql-docs/tree/main",
+          showLastUpdateTime: true,
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
