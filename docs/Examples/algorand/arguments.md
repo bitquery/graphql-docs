@@ -6,7 +6,9 @@ keywords: [Algorand API examples, Algorand GraphQL queries, Bitquery]
 
 # Algorand Arguments API
 
-Our Algorand Arguments API provides all the details regarding all the arguments of smart contract calls and events.
+Retrieve argument names, types, and values from Algorand smart contract calls and events.
+
+**Variations:** Filter by smart contract address, argument name, or call date. See [query features](/docs/category/query-features) for aggregation options.
 
 ## Related Resources
 

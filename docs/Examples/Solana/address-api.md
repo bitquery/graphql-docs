@@ -6,10 +6,13 @@ keywords: [Solana API examples, Solana GraphQL queries, Bitquery]
 
 # Solana Address API
 
+The Solana Address API returns balance, annotation, and address metadata for Solana wallets. Use it for quick balance lookups and multi-address queries.
+
 ## Get Latest Solana Address Balance
 
-This below query will get you the latest balance of an address.
-You can run the query [here](https://ide.bitquery.io/address-balance-api).
+Look up the current SOL balance and annotation for a single Solana address. [Run query](https://ide.bitquery.io/address-balance-api).
+
+**Variations:** For SPL token balances, use the [transfers API](/docs/Examples/Solana/transfers) with aggregation instead. Combine with the multi-address query below for batch lookups.
 
 ```
 query MyQuery {
@@ -25,8 +28,9 @@ query MyQuery {
 
 ## Query Multiple Solana Address Balances
 
-This below query will get you the latest balance of multiple addresses. You can specify any other addresses as well. And you can test the API with as many addresses as you like.
-You can run the query [here](https://ide.bitquery.io/latest-balances-of-multiple-addresses).
+Batch-query SOL balances for multiple Solana addresses in one request using `address: {in: [...]}`. Returns balance and annotation for each address. [Run query](https://ide.bitquery.io/latest-balances-of-multiple-addresses).
+
+**Variations:** Add or remove addresses from the array. Combine with the [transfers API](/docs/Examples/Solana/transfers) for per-token balances across wallets.
 
 ```
 query MyQuery {

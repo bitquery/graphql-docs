@@ -6,10 +6,13 @@ keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
 
 # Coinpath API
 
-
-Our Tron Coinpath API provides comprehensive information about money flow of addresses on the Tron blockchain.
+Trace the flow of funds across Tron addresses with depth, amounts, and sender/receiver balances.
 
 ## Trace Tron USDT Coinpath From Initial Sender After a Date
+
+Trace the outward money flow from a specific Tron address for a given TRC-20 token. Returns transfer amounts, depth, and sender/receiver balances at each hop.
+
+**Variations:** Change `initialAddress` to trace a different wallet, adjust `currency` for another token, or increase `limit` for deeper tracing. See [Coinpath explained](/docs/building-queries/Coinpath-Explained/Overview) for details.
 
 ```graphql
 {
@@ -51,9 +54,11 @@ Our Tron Coinpath API provides comprehensive information about money flow of add
 }
 ```
 
-This query allows you to retrieve the money flow details originating from a particular address (TTd9qHyjqiUkfTxe3gotbuTMpjU8LEbpkN) for the Tron currency (TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t) after July 31, 2023. The results are ordered in descending order based on block timestamps and are limited to the top 5 entries.
-
 ## Trace Tron USDT Coinpath To a Receiver Address After a Date
+
+Trace incoming fund flows to a specific Tron receiver address for a given token. Returns amounts, depth, and balance snapshots at each hop.
+
+**Variations:** Swap `receiver` for `sender` to trace outflows, or widen the `initialDate` range. See [Coinpath explained](/docs/building-queries/Coinpath-Explained/Overview) for details.
 
 ```graphql
 {
@@ -94,7 +99,6 @@ This query allows you to retrieve the money flow details originating from a part
   }
 }
 ```
-This query allows you to retrieve the money flow details where the receiver is a particular address (TTd9qHyjqiUkfTxe3gotbuTMpjU8LEbpkN) for the Tron currency (TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t) after July 31, 2023. The results are ordered in descending order based on block timestamps and are limited to the top 5 entries.
 
 ## Related Resources
 

@@ -15,13 +15,13 @@ Please read the difference between Transfers and transactions [**here**](https:/
 
 ## How to calculate the price of a token in USD?
 
-We can calculate the price of a token in USD using `buyAmountUSD` and `sellAmount` fields.
+Use the `buyAmountUSD` and `sellAmount` fields from the DEX Trades API to derive a token's USD price on-chain.
 
-The USD price is then calculated by dividing the `buyAmountUSD` field by the `sellAmount` field. This gives us the USD price of the sell currency in terms of the buy currency.
+Divide `buyAmountUSD` by `sellAmount` to get the USD price of the sell currency per unit. For example, if `buyAmountUSD` is 100 USD and `sellAmount` is 1 ETH, the price is 100 USD/ETH.
 
-For example, if the `buyAmountUSD` field is 100 USD and the `sellAmount` field is 1 ETH, then the USD price of ETH is 100 USD / 1 ETH = 100 USD/ETH.
+The following query retrieves DEX trades for a buy currency within a date range and computes the USD price using an inline `expression` field.
 
-Below is the query to calculate price of a token betweeen two dates `from` and `to`
+**Variations:** Change the `buyCurrency` address to price any ERC-20 token. Remove the date filter to get the latest trades instead of a historical window.
 
 ```
 query ($from: ISO8601DateTime!, $to: ISO8601DateTime!, $limit: Int) {
@@ -91,13 +91,13 @@ query ($from: ISO8601DateTime!, $to: ISO8601DateTime!, $limit: Int) {
 
 ## How to use priceAsymmetry to filter anomalies and outliers in Trades ?
 
-The priceAsymmetry metric is being used to filter outliers of anomalies. This means that trades that have a price asymmetry that is greater than 1 will be excluded from the results. This helps to ensure that the results are more accurate and reliable, as it removes any trades that may have been caused by anomalies.
+The `priceAsymmetry` filter removes trades with extreme price deviations, improving data accuracy for DEX analytics. Trades with a price asymmetry greater than 1 are excluded from results, eliminating manipulated or erroneous swaps.
 
 
-priceAsymmetry measures how close the trade’s prices are to each other. If the price asymmetry is less than 0.01, then the difference between the prices is less than 1%.
-However, the value of 0.01 might be too small and could omit a lot of trades. To improve your anomaly filtering mechanism, , add another filter like `tradeAmountUsd: {gt: 100}` filter to only include trades with a trade amount of more than 100 USD.
+`priceAsymmetry` measures how close a trade’s buy and sell prices are to each other. A value below 0.01 means the prices differ by less than 1%.
+However, 0.01 can be too strict and may exclude legitimate trades. To balance accuracy, combine it with a `tradeAmountUsd: {gt: 100}` filter to only include trades with a trade amount of more than 100 USD.
 
-Here’s an example query for [WETH trades](https://ide.bitquery.io/PriceAsymmetry-and-TradeAmountUSD)
+The following query fetches OHLC candlestick data for a token pair while filtering out outlier trades using `priceAsymmetry` and a minimum `tradeAmountUsd` threshold. [Open in IDE](https://ide.bitquery.io/PriceAsymmetry-and-TradeAmountUSD).
 
 ```
 query ($baseAddress: String, $interval: Int) {
@@ -138,11 +138,11 @@ query ($baseAddress: String, $interval: Int) {
 
 Above, we have already shown how to get the USD price of an asset; now, let's get the supply.
 
-**Query to get supply**
+**Query to calculate token total supply**
 
 `Total supply =  Initial Supply + Minted supply - Burned supply`
 
-In the following query, we will get the initial supply from the contract attributed and then use transfer API to get mint and burns by checking how many tokens were sent or received from the dead address.
+The query below reads the token's initial supply from its smart contract attributes and then uses the Transfer API to sum minted and burned amounts by tracking tokens sent to or received from the zero address (`0x000...000`).
 
 [Open this query on IDE](https://ide.bitquery.io/Total-supply-of-FTC-token).
 

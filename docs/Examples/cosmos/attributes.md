@@ -6,9 +6,13 @@ keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
 
 # Attributes API
 
-Our Cosmos Attribtues API provides all the details regarding event attributes from Cosmos network.
+Query event attributes from the Cosmos blockchain, including attribute names, event types, message metadata, and transaction details.
 
 ## Get Recent Cosmos Event Attributes
+
+Fetch the most recent event attributes from the Cosmos blockchain, sorted by block timestamp. Returns attribute names, event types, associated message info, and transaction details.
+
+**Variations:** Add an `eventType` filter to narrow results to a specific event. Adjust the `date` range or increase `limit` for broader coverage. See [query features](/docs/category/query-features) for sorting and filtering.
 
 ```
 {
@@ -41,9 +45,11 @@ Our Cosmos Attribtues API provides all the details regarding event attributes fr
 }
 ```
 
-The query retrieves event attribute information from the Cosmos blockchain, including attribute names, block height and timestamp, event types, message senders and types, transaction hash, signer's address, and attribute values. The results are sorted based on block timestamp in descending order.
-
 ## Filter Cosmos Event Attributes by Event Type
+
+Filter event attributes to a specific event type such as `proposal_vote`. Returns the 10 most recent matching attributes with full block, message, and transaction details.
+
+**Variations:** Replace `proposal_vote` with other event types like `transfer`, `delegate`, or `unbond`. Combine with additional filters like `transactionSigner` to narrow results further. See [query features](/docs/category/query-features) for available filters.
 
 ```
 {
@@ -77,11 +83,11 @@ The query retrieves event attribute information from the Cosmos blockchain, incl
 }
 ```
 
-The query retrieves event attribute details from the Cosmos blockchain, specifically targeting `proposal_vote` events. It focuses on recent records, sorting them based on block timestamp in descending order, and limits the output to the latest 10 records.
-
-The query provides information about attribute names, block height, block timestamp, event type, message senders and types, transaction hash, signer's address, and attribute values. This offers insights into recent `proposal_vote` event attributes on the Cosmos network.
-
 ## Count Cosmos Event Attributes
+
+Count the total occurrences of a specific event type (e.g., `proposal_vote`) within a date range. Useful for tracking governance activity or event frequency over time.
+
+**Variations:** Change the `eventType` to count different events. Remove the `eventType` filter to count all attributes. Use different `uniq` values for alternative aggregations. See [query features](/docs/category/query-features) for counting options.
 
 ```
 {
@@ -92,8 +98,6 @@ The query provides information about attribute names, block height, block timest
   }
 }
 ```
-
-The query retrieves a count of unique occurrences of `proposal_vote` event attributes from the Cosmos blockchain, specifically those that occurred after August 8, 2023. The query uses the `count` function with the argument `uniq: times` to calculate the total number of times the `proposal_vote` event attributes appeared within the specified timeframe.
 
 ## Related Resources
 

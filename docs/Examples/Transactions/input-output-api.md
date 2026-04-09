@@ -6,15 +6,14 @@ keywords: [UTXO API examples, Bitcoin GraphQL queries, Bitquery]
 
 # UTXO Input output API
 
-
-[UTXO](https://www.geeksforgeeks.org/what-is-unspent-transaction-output-utxo/) based blockchains such as Bitcoin. Litecoin, Zcash as inputs and outputs. Let's see some examples. 
-
+Inspect raw UTXO inputs and outputs for [UTXO](https://www.geeksforgeeks.org/what-is-unspent-transaction-output-utxo/)-based blockchains like Bitcoin, Litecoin, Dogecoin, and Zcash.
 
 
+## List Bitcoin Transaction Inputs and Outputs With Scripts and Values
 
-## List Bitcoin Transaction Inputs and Outputs With Scripts and Values 
+Get a complete breakdown of every input and output in a given Bitcoin transaction. Returns script types, addresses, values in both BTC and USD, output direction, and references to the linked spending or funding transactions.
 
-To check all inputs and outputs of a Bitcoin transaction, you can use the following query. Additionally, there are filters like `inputScriptType` , `inputAddress`, `inputValue`, which you can use to get transactions based on your requirements.
+**Variations:** Filter by `inputScriptType`, `inputAddress`, or `inputValue` to narrow results. Change `network` to `litecoin`, `zcash`, or `dogecoin` for other UTXO chains. See [query features](/docs/category/query-features) for sorting and pagination.
 
 [Open this query on IDE](https://ide.bitquery.io/All-input-and-outputs-for-a-given-bitcoin-transaction)
 

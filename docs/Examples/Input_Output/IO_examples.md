@@ -8,6 +8,14 @@ keywords: [inputs outputs API examples, GraphQL queries, Bitquery]
 
 ## Aggregate FlowToken Daily Volumes from Flow Inputs and Outputs
 
+:::caution Deprecated
+Bitquery has stopped supporting the Flow blockchain. This example is preserved for reference but the data is no longer updated.
+:::
+
+Aggregate daily spend and receive volumes for a token using the `outputs` (spend) and `inputs` (receive) APIs with `amount(calculate: sum)` grouped by date. Uses [aliases](/docs/query-features/aliases) to label the two directions in one query.
+
+**Variations:** Change `currency` for a different token. Adjust the `date` range. Switch to other chains that use the inputs/outputs model (e.g., Bitcoin with `bitcoin` schema). Add `count` for transaction counts per day.
+
 ```
 query MyQuery {
   flow(network: flow) {

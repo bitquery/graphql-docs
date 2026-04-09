@@ -69,7 +69,7 @@ By mention the address as a sender or receiver we are calculating:
 
 ## Related Resources
 
-- [Aggregation overview](https://docs.bitquery.io/v1/docs/query-features/aggregation/aggregation)
+- [Aggregation overview](https://docs.bitquery.io/v1/docs/query-features/aggregation/)
 - [Count aggregation](https://docs.bitquery.io/v1/docs/query-features/aggregation/count)
 - [Filtering fields](https://docs.bitquery.io/v1/docs/query-features/filtering/fields)
 - [Coinpath explained — overview](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)

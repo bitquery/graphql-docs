@@ -6,6 +6,8 @@ keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 
 # Transaction API
 
+The Bitcoin Transaction API returns detailed transaction data including inputs, outputs, fees, block context, and USD values. Works with query variables for flexible pagination and date filtering.
+
 ## Get Latest Bitcoin Transactions with Fees and Transfer Values
 
 ```
@@ -35,7 +37,9 @@ query ($network: BitcoinNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Dat
 
 ```
 
-The query retrieves the latest 10 transactions from the Bitcoin blockchain, providing details such as the block height, timestamp, currency address and name, fee, group, transaction hash, index, sender's address, subtype, and type of each transaction.
+Fetch the latest Bitcoin transactions with input/output values in BTC and USD, fee amounts, and block context. Uses query variables for `limit`, `offset`, and date range — a reusable pattern for paginated transaction feeds.
+
+**Variations:** Adjust `limit` and `offset` for pagination. Narrow with `inputAddress` or `outputAddress` for a specific wallet. Add `hash: {is: "..."}` for a single transaction lookup.
 
 ## Daily Bitcoin Transaction Count and Average Fee per Day
 
@@ -55,7 +59,9 @@ query ($network: BitcoinNetwork!, $dateFormat: String!, $from: ISO8601DateTime, 
 
 ```
 
-The query retrieves the latest 7 days average fee per transaction from the Bitcoin blockchain, providing details such as the average fee by per day for a week.
+Get daily transaction counts and average fees over a date range. Returns count, total fees, and average fee per day — useful for fee trend analysis and network health dashboards.
+
+**Variations:** Change the date variables for different periods. Add `feeValue(calculate: median)` for median fees. Use `count(uniq: addresses)` for daily active address counts alongside fee data.
 
 ## List Bitcoin Transactions Sent from a Specific Address
 
@@ -82,7 +88,9 @@ query ($network: BitcoinNetwork!) {
 
 ```
 
-The query retrieves the count of all transactions sent by the specified Bitcoin address ("ADDRESS_HERE") from the Bitcoin blockchain.
+List all transactions where a specific address was an input (sender). Returns input values, output values, fees, and block timestamps — the standard query for viewing a Bitcoin wallet's outbound transaction history.
+
+**Variations:** Switch to `outputAddress` for received transactions. Add `date` for a time range. Use [limit/offset](/docs/query-features/filtering/options) for pagination. Add `value(in: USD)` for USD-equivalent amounts.
 
 ## Related Resources
 

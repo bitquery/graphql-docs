@@ -6,11 +6,15 @@ keywords: [Ripple API examples, XRP GraphQL queries, Bitquery]
 
 # Ripple NFT Token Offers API
 
-Ripple NFT Token Offers API provides all details regarding NFT Token offers on Ripple Blockchain. Below are some examples of `nftokenOffers` API:
+Explore NFT token offer data on the XRP Ledger — filter by sender, receiver, currency, and offer amount using the Bitquery GraphQL API.
 
 ## Get XRP Ledger NFT Token Offers from a Specific Transaction Sender
 
-We are using the below query to get the NFT Token Offers from a particular address `rBEARbo4Prn33894evmvYcAf9yAQjp4VJF` on Ripple Blockchain. You can find the query [here](https://ide.bitquery.io/NFT-Token-offers-API-on-Ripple-blockchain).
+Look up all NFT token offers sent by a given address on XRPL. Returns the offer currency, native and USD amounts, destination account, and operation type for each offer — useful for tracking NFT marketplace activity for address `rBEARbo4Prn33894evmvYcAf9yAQjp4VJF`.
+
+**Variations:** Narrow results by `operation` type (e.g., buy vs. sell offers), add `date` ranges, or pivot the filter to `destinationAccount`. See [query features](/docs/category/query-features) for pagination and sorting options.
+
+[Open this query on IDE](https://ide.bitquery.io/NFT-Token-offers-API-on-Ripple-blockchain)
 
 ```
 query ($network: RippleNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601DateTime, $till: ISO8601DateTime, $address: String!) {

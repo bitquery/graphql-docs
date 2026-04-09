@@ -9,11 +9,9 @@ sidebar_position: 2
 
 ## Get Native MATIC and Token Balances on Polygon for an Address
 
-This is a query that retrieves the native balance and token balances for an Ethereum address on the Matic network.
-The native balance is the balance of the account in its native currency, which is MATIC in this case. The token balances are the balances of the account in other currencies.
+Get both the native MATIC balance and all ERC-20 token balances for a Polygon address in one query. The `balance` field returns the native balance, while `balances(currency: {not: "MATIC"})` excludes the native token from the token list. Also retrieves smart contract attributes for the address. [Run query](https://ide.bitquery.io/Get-balances--Native-Balance--MATIC).
 
-The query below removes MATIC from the results and names the balance variable as native_balance.
-You can find the query [here](https://ide.bitquery.io/Get-balances--Native-Balance--MATIC)
+**Variations:** Remove the `not` filter to include MATIC in the token list. Add `currency: {is: "..."}` for a specific token. Switch `network` to `ethereum`, `bsc`, or any EVM chain. Use [aliases](/docs/query-features/aliases) to rename fields for cleaner responses.
 
 ```
 query MyQuery {
@@ -42,7 +40,7 @@ query MyQuery {
 
 ```
 
-Please note that the fields `value` and `balance` field values are of type `Float` not string.
+The `value` and `balance` fields return `Float` values (not strings).
 
 ## Related Resources
 

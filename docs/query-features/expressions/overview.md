@@ -115,6 +115,6 @@ Expressions shine when the metric you need is **not stored directly** but is a s
 
 - [Bitquery API FAQ](https://docs.bitquery.io/v1/docs/building-queries/FAQ)
 - [Limits and limitBy](https://docs.bitquery.io/v1/docs/query-features/filtering/limits)
-- [Aggregation overview](https://docs.bitquery.io/v1/docs/query-features/aggregation/aggregation)
+- [Aggregation overview](https://docs.bitquery.io/v1/docs/query-features/aggregation/)
 - [Metrics in Bitquery GraphQL API](https://docs.bitquery.io/v1/docs/query-features/Metrics)
 - [Introduction](https://docs.bitquery.io/v1/docs/intro)

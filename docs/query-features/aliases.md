@@ -8,7 +8,7 @@ keywords: [Bitquery, GraphQL, aliases, field renaming, DEX]
 # Aliases
 
 
-An alias is a short, descriptive name for a metric. It can be used to make metric names more readable and easier to understand. Aliases are typically used in conjunction with tags to identify specific metrics. Bitquery APIs support aliases.
+GraphQL aliases let you rename any response field to a custom key, making API output clearer and avoiding key collisions when the same field appears in multiple contexts. Bitquery APIs fully support aliases on all fields, dimensions, and metrics.
 
 
 You can give an alias to any field in the response by writing 
@@ -30,8 +30,8 @@ Renaming the address as seller_address makes it clearer. The response will be re
           },
 ```
 
-You can rename more than 1 field, even all fields in the response as per your needs.
-Here's an example of a query with aliasing:
+You can alias multiple fields — or every field — in a single query.
+The following query retrieves a DEX trade on Ethereum and aliases the `address` fields under `buyCurrency` and `sellCurrency` to `buyer_address` and `seller_address` for clarity:
 
 ```
 {

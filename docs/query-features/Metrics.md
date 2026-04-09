@@ -7,7 +7,7 @@ keywords: [Bitquery, metrics, API usage, query cost, GraphQL]
 
 # Metrics
 
-The IDE Builder provides a metrics API that you can use to get details on your usage. 
+The Bitquery IDE exposes a metrics API through the `utilities` field, letting you inspect query cost, point consumption, and resource breakdown for any executed query.
 
 ![metrics](/img/ide/metrics.png)
 
@@ -25,7 +25,7 @@ The metrics API returns a JSON object with the following properties:
 
 
 
-Here's an example query: 
+The following query fetches API usage metrics for a specific query ID, returning total data points consumed and the number of SQL requests executed.
 
 ```
 query MyQuery {
@@ -38,7 +38,7 @@ query MyQuery {
 }
 ```
 
-And one of the response fields in the `list` was 
+The response `list` array breaks down cost by resource type. For example, the entry below shows memory consumption:
 
 ```
 "list": [
@@ -50,7 +50,7 @@ And one of the response fields in the `list` was
           },
 ]
 ```
-The Extra Memory Consumption, GB metric measures the amount of extra memory that was used by the query.
+The `Extra Memory Consumption, GB` metric measures the additional memory allocated to process the query beyond the baseline.
 
 
 Some chains have specific metrics that you can get using the metrics API. For example, the Tron chain has a `netUsage` metric that you can use to get the network usage for a query.
@@ -61,4 +61,4 @@ Some chains have specific metrics that you can get using the metrics API. For ex
 - [Introduction](https://docs.bitquery.io/v1/docs/intro)
 - [Bitquery API FAQ](https://docs.bitquery.io/v1/docs/building-queries/FAQ)
 - [GraphQL IDE — how to start](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
-- [Aggregation overview](https://docs.bitquery.io/v1/docs/query-features/aggregation/aggregation)
+- [Aggregation overview](https://docs.bitquery.io/v1/docs/query-features/aggregation/)

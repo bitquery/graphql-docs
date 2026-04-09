@@ -6,7 +6,7 @@ keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 
 # Coinpath API
 
-Our Bitcoin Coinpath API provides comprehensive information about money flow of addresses on the **Bitcoin** blockchain.
+The Bitcoin Coinpath API traces the flow of funds between addresses on the Bitcoin blockchain. Use it for AML investigations, source-of-funds verification, and mapping transaction paths between wallets. See [Coinpath Explained](/docs/building-queries/Coinpath-Explained/Overview) for a detailed guide.
 
 ## Explore Bitcoin Coinpath Flow from a Seed Address
 
@@ -43,7 +43,9 @@ Our Bitcoin Coinpath API provides comprehensive information about money flow of 
 
 ```
 
-This query retrieves a list of coinpath transactions initiated from a specific initial address (bc1p4kufll9uhnpkgzuc65slcxd2qaw2hl9xecket3h8yyu4awglcsqslqaztd) after a certain date (2023-10-10). The query limits the results to 10 transactions and orders them by timestamp in descending order. For each transaction, it provides details such as the transferred amount in USD, block height, timestamp, currency information, sender and receiver addresses, transaction hash, and value.
+Trace the outbound fund flow from a seed address. Returns the direct recipients, amounts in USD, block heights, and transaction hashes. The `seed` option controls the starting point for multi-hop tracing.
+
+**Variations:** Add `depth: {lteq: N}` for multi-hop tracing. Use `options: {direction: inbound}` to trace funds flowing into the address instead. Adjust `date` for a specific time window.
 
 ## Bitcoin Coinpath Inflows to a Specific Receiver Address
 
@@ -74,7 +76,9 @@ query ($network: BitcoinNetwork!) {
 
 ```
 
-This query allows you to retrieve the money flow details where the receiver is a particular address (bc1p4kufll9uhnpkgzuc65slcxd2qaw2hl9xecket3h8yyu4awglcsqslqaztd) after October 10, 2023. The results are ordered in descending order based on block heights and are limited to the top 10 entries.
+Track all incoming fund paths to a specific Bitcoin address using the `receiver` filter. Returns sender addresses, USD amounts, and transaction hashes — useful for identifying who sent funds to a wallet.
+
+**Variations:** Swap `receiver` for `sender` to trace outflows. Add `initialAddress` to find paths between two specific addresses. Adjust `limit` and `date` for different result sets.
 
 ## Bitcoin Coinpath Between Initial and Receiver Addresses
 
@@ -106,9 +110,9 @@ query ($network: BitcoinNetwork!) {
 
 ```
 
-This query explores the relationship between two specific addresses (initialAddress and receiver) within the context of transactions that occurred after October 10, 2023. It retrieves a maximum of 10 transactions initiated from the initial address and received by the specified receiver.
+Trace the fund flow between two specific Bitcoin addresses by combining `initialAddress` and `receiver` filters. Returns the transaction paths, amounts, and block details — the standard pattern for verifying whether funds moved from address A to address B.
 
-For each transaction, the query provides details like the transferred amount in USD, block height, timestamp, currency information, sender and receiver addresses, transaction hash, and value. By analyzing these transactions, users can gain insights into the flow of funds between the two addresses and understand their financial interactions.
+**Variations:** Increase `limit` for more results. Add `depth: {lteq: N}` for multi-hop paths. Adjust `date` for different time periods. Combine with the inbound/outbound queries above for comprehensive fund-flow analysis.
 
 ## Related Resources
 

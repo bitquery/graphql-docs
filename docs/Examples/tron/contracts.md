@@ -6,6 +6,8 @@ keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
 
 # Contracts API
 
+Explore Tron smart contract deployment data and on-chain contract metadata.
+
 ## Related Resources
 
 - [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)

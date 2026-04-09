@@ -6,12 +6,13 @@ keywords: [Solana API examples, Solana GraphQL queries, Bitquery]
 
 # Solana Instructions Data
 
+The Solana Instructions API returns parsed instruction-level data including program names, action types, execution logs, and raw instruction data. Instructions are the atomic operations that make up Solana transactions.
+
 ## Recent Solana Instructions with Actions, Programs, and Logs
 
-The below query allows you to retrieve a set of instructions from the Solana blockchain network. These instructions form the building blocks of transactions and smart contracts on the network.
-The fields within the instructions `{}` specify the data that the query will return for each instruction. This includes details about the action, block, transaction, program, log, external action, external program, and raw data associated with each instruction.
+Fetch the latest Solana instructions with full details — action name/type, program info, execution logs, external program calls, and raw instruction data. Uses query variables for `limit`, `offset`, and date filtering. [Run query](https://ide.bitquery.io/Solana-Instructions_6).
 
-You can run the query [here](https://ide.bitquery.io/Solana-Instructions_6)
+**Variations:** Add `parsedActionName` to filter by specific actions. Use `program: {id: {is: "..."}}` to filter by program. Adjust `date` for different periods. Change `limit` and `offset` for pagination.
 
 ```
 query ($network: SolanaNetwork!, $limit: Int!, $offset: Int!) {
@@ -72,12 +73,11 @@ query ($network: SolanaNetwork!, $limit: Int!, $offset: Int!) {
 
 ```
 
-This will return the last 100 instructions from the Solana network on a particular day. You can adjust the limit and offset and period parameters as needed to retrieve different sets of instructions.
-
 ## Find Solana Instructions by Parsed Action Name
 
-The below query find all instructions, corresponding transactions and program logs for a specific program on the Solana blockchain.
-You can run the query [here](https://ide.bitquery.io/Solana-compactupdatevotestate-Action_4)
+Filter instructions by a specific parsed action name (e.g., `compactupdatevotestate`) to find all occurrences of that operation across the network. Returns full instruction context including logs and program details. [Run query](https://ide.bitquery.io/Solana-compactupdatevotestate-Action_4).
+
+**Variations:** Change `parsedActionName` to any Solana action (`transfer`, `mintTo`, `createAccount`, etc.). Add `program: {id: {is: "..."}}` to narrow by program. Use `transaction: {signature: {is: "..."}}` for a specific transaction.
 
 ```
 query ($network: SolanaNetwork!, $limit: Int!, $offset: Int!) {
@@ -141,7 +141,9 @@ query ($network: SolanaNetwork!, $limit: Int!, $offset: Int!) {
 ```
 ## Recent Solana Transactions After Block Height with Fee and Signer
 
-The query provided retrieves the latest transactions on the Solana blockchain following block number `286563743` after the timestamp of `2024-12-18T06:30:00Z`. It details the count of instructions within each transaction, identifies the account that initiated the transaction, and lists the unique signature that distinguishes the transaction. Additionally, it specifies the number of inner instructions, which are instructions nested within other instructions, among other transaction-related information. You can run the query [here](https://ide.bitquery.io/Recent-Solana-Transactions_1)
+Get recent Solana transactions after a specific block height and timestamp. Returns fee details, instruction counts (including inner instructions), signer, and success status. [Run query](https://ide.bitquery.io/Recent-Solana-Transactions_1).
+
+**Variations:** Adjust `height: {gteq: N}` and the `time` filter for different starting points. Add `signer: {is: "..."}` for a specific wallet. Use `success: false` to find failed transactions.
 
 ```
 query MyQuery {

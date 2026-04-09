@@ -6,61 +6,69 @@ keywords: [Ethereum API examples, trace GraphQL queries, Bitquery]
 
 # Ethereum Trace API
 
+**Ethereum Trace API** examples show how to read EVM execution traces in Bitquery: call order, depth, gas, and nested contract flows in Explorer or GraphQL for debugging, analytics, and security review.
+
+**Variations:** Reuse the same flow on other EVM networks in Explorer; plug in any transaction hash that returns trace or internal-call data.
+
 ## What is Ethereum Trace?
 
-An EVM(Ethereum Virtual Machine) trace is a detailed record of the steps taken by the Ethereum Virtual Machine (EVM) to execute a transaction. It includes information such as the gas used, the results of each step, and any errors that occurred.
+Use **EVM traces** to reconstruct how a transaction actually ran: nested contract calls, gas, return data, and reverts—so you debug failures, compare gas, and audit DeFi or router flows beyond the outer `from` / `to` on the receipt.
 
-- EVM traces can be used to debug smart contracts, analyze performance, and investigate smart contract security vulnerabilities.
-- EVM traces can be a valuable tool for developers and researchers who want to understand how smart contracts work.
-- They can also be used to track the flow of funds on the Ethereum blockchain and to identify potential security vulnerabilities
+- Step through **internal calls**, not only the top-level `to` / `from` on the receipt.
+- Inspect **gas and errors per sub-call** when a batch or router transaction fails partway through.
+- Follow **control and value flow** across nested calls, delegatecalls, and multicall-style routers.
 
-In this blog, we will learn how to use Bitquery’s Trace API to perform an ethereum transaction trace. Also, here is an example of [Call Trace API](https://ide.bitquery.io/Transaction-Call-Trace-v2_1).
+Open trace-oriented queries in the IDE with [Call Trace API](https://ide.bitquery.io/Transaction-Call-Trace-v2_1).
 
-Take an example of this [transaction](https://explorer.bitquery.io/ethereum/tx/0xd3c3e2164ac91c1d70abcce1bc06ef5107367596303e8925041ef4ebcfb39c43/calls):
+**Variations:** Filter IDE examples by transaction hash, network, or block range; start from Explorer’s Calls view, then copy the hash into GraphQL when automating.
+
+Follow this [transaction](https://explorer.bitquery.io/ethereum/tx/0xd3c3e2164ac91c1d70abcce1bc06ef5107367596303e8925041ef4ebcfb39c43/calls) in Explorer to see how **Call depth** maps to EVM execution order in the flat call list.
 
 ![tx](/img/transaction.png)
 
-In the Call depth column, you see the numbers starting from 0, 0-2-1 etc. It shows in what sequence the calls were made. This order displayed is the explorer is the order of execution.
+Values like `0` and `0-2-1` encode **execution order** left to right: outer call → nested call → deeper nested call. Rows match the sequence the EVM executed.
 
-For example if call depth is 0-2-1 then,
+Depth **0-2-1** means: root frame **`0`**, then branch index **`2`**, then **`1`** at the next level—so you can walk from the root down to that internal call.
 
-the first number (0) indicates the outermost call, the second number (2) indicates the second call, and the third number (1) indicates the third call. Like this, we can interpret the call depth for each entry there.
+**Variations:** Compare depth strings across Explorer, Bloxy, or your API by anchoring on the same transaction hash; notation lines up once the root call matches.
 
 ## Decoding the call sequence visually
 
-To make it visually easier, we will use this data to construct a tree.
-For this transaction
-[https://explorer.bitquery.io/ethereum/tx/0xd3c3e2164ac91c1d70abcce1bc06ef5107367596303e8925041ef4ebcfb39c43/calls](https://explorer.bitquery.io/ethereum/tx/0xd3c3e2164ac91c1d70abcce1bc06ef5107367596303e8925041ef4ebcfb39c43/calls)
+The same [transaction](https://explorer.bitquery.io/ethereum/tx/0xd3c3e2164ac91c1d70abcce1bc06ef5107367596303e8925041ef4ebcfb39c43/calls) as a **tree** lets you align Explorer’s flat call list with parent/child relationships in one view.
 
 The call tree looks like the one below.
 
 ![trace](/img/trace.png)
 
-The multicall method initiates call to multiple methods in same/different smartcontracts .
+The pattern is **multicall-style**: one root fans into multiple contract methods—same contract or several—in a single transaction.
 
 **root**
 
-The call tree starts at the root node, which represents the main function of the smart contract. The root node has two child nodes, burn and positions.
+**root** is the top-level call; here it splits into **burn** and **positions**.
 
 **burn**
 
-The burn node has no child nodes, so it represents a function that does not call any other functions.
+**burn** is a **leaf** in this trace—no deeper nested calls under it.
 
 **positions**
 
-The positions node has one child node, collect.
+**positions** continues into **collect** as the nested child step.
 
 **collect**
 
-The collect node has two child nodes, transfer and transfer. These two child nodes represent two separate calls to the transfer function in the same smart contract.
+**collect** fans into **two** sibling `transfer` calls—parallel branches under the same parent.
 
 **unwrapWETH9**
 
-The unwrapWETH9 node has two child nodes, balanceOf and withdraw. These two child nodes represent two separate calls to the balanceOf and withdraw functions in a different smart contract.
+**unwrapWETH9** calls into another contract, nesting **balanceOf** and **withdraw**.
 
-You can also visualize it through [bloxy](https://bloxy.info/tx/0xd3c3e2164ac91c1d70abcce1bc06ef5107367596303e8925041ef4ebcfb39c43#) graph. I hope you found this blog on blockchain trace informative. If you have any questions, please feel free to leave a comment below.
+Compare the shape on [bloxy](https://bloxy.info/tx/0xd3c3e2164ac91c1d70abcce1bc06ef5107367596303e8925041ef4ebcfb39c43#) for an alternate graph layout.
+
+**Variations:** Open other transactions in Bloxy or Explorer side by side; reuse the hash in GraphQL trace queries when you need the same structure in API responses.
 
 ## Related Resources
+
+Use these for Ethereum schema reference, Coinpath, the GraphQL IDE, and related API examples.
 
 - [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
 - [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)

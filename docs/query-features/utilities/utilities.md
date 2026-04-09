@@ -71,4 +71,4 @@ The utilities root query is most valuable **alongside** your regular blockchain 
 - [Introduction](https://docs.bitquery.io/v1/docs/intro)
 - [Bitquery API FAQ](https://docs.bitquery.io/v1/docs/building-queries/FAQ)
 - [GraphQL IDE — how to start](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
-- [Aggregation overview](https://docs.bitquery.io/v1/docs/query-features/aggregation/aggregation)
+- [Aggregation overview](https://docs.bitquery.io/v1/docs/query-features/aggregation/)

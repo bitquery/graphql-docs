@@ -8,7 +8,9 @@ keywords: [staking API examples, GraphQL queries, Bitquery]
 
 ## Get Staking Data for a Stake Address on Cardano
 
-Below is an example to get the staking information for the address using the `staking` function. The `rewardsAmount` field returns the total amount of staking rewards that have been earned by the address. You can access the query [here](https://ide.bitquery.io/Cardano-stake-data-for-a-stake-address)
+Look up staking rewards for a Cardano stake address. The `rewardsAmount` field returns the total ADA earned through delegation — useful for reward tracking, tax reporting, and staking performance analysis. [Run query](https://ide.bitquery.io/Cardano-stake-data-for-a-stake-address).
+
+**Variations:** Replace the stake address with any Cardano stake key. Combine with the Cardano `address` API to get both balance and staking data in one request.
 
 ```
 query MyQuery {
@@ -30,8 +32,9 @@ query MyQuery {
 
 ## Get Latest BSC StakeNFT Events From the YieldFarming Contract
 
-The query below retrieves the latest 10 transactions on the Ethereum blockchain which called the `StakeNFT` event on the `YieldFarming` smart contract address
-You can access the query [here](https://ide.bitquery.io/latest-Staked-NFT_1)
+Retrieve the latest NFT staking events from a YieldFarming contract on BSC. Uses the `arguments` API to extract the staker address (`member`) and token ID (`tokenId`) from each `StakeNFT` event. [Run query](https://ide.bitquery.io/latest-Staked-NFT_1).
+
+**Variations:** Change the event name and contract address for any staking protocol. Add `date` or `time` filters for a specific period. Switch `network` to any EVM chain.
 
 ```
 {
@@ -60,8 +63,9 @@ You can access the query [here](https://ide.bitquery.io/latest-Staked-NFT_1)
 
 ## Get Recent Solana Staking Rewards per Block Sorted by Height
 
-The query below retrieves the staking rewards for every block on the Solana blockchain. The query limits the results to the 10 most recent blocks and sorts the results by `block height` in `descending` order.
-You can access the query [here](https://ide.bitquery.io/staking-rewards-on-solana)
+Fetch per-block staking rewards on Solana using the `blockRewards` API with `rewardType: Staking`. Returns the reward amount and block height for the 10 most recent blocks. [Run query](https://ide.bitquery.io/staking-rewards-on-solana).
+
+**Variations:** Change `rewardType` to `Fee` or `Rent` for other reward types. Use [aggregations](/docs/query-features/aggregation/) like `sum` on `amount` for total rewards over a period. Add a `date` filter for a specific time range.
 
 ```
 {

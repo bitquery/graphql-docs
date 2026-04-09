@@ -6,11 +6,13 @@ keywords: [DEX API examples, DEX GraphQL queries, Bitquery]
 
 # Pools API
 
-In this section, we will look at some examples regarding DEX Pools data.
+The Pools API lets you discover newly created DEX trading pairs, retrieve token addresses from pair events, and calculate token valuation metrics like Fully Diluted Valuation (FDV).
 
 ## List Latest Ethereum PairCreated Events With Token Zero Addresses
 
-The following GraphQL query retrieves data on the latest 50 PairCreated events on the Ethereum network, along with their associated block timestamp, token0 address and name. It uses the ethereum network and the arguments from the query above to filter events based on specific criteria.
+Discover the latest DEX trading pairs by querying `PairCreated` events. Returns the token0 address and name for each new pair, sorted by creation time — useful for tracking new token listings and early liquidity.
+
+**Variations:** Add `argument: {is: "token1"}` to also get the second token. Use `smartContractAddress` to filter for a specific factory (e.g., Uniswap, SushiSwap). Switch `network` to any EVM chain. Adjust `time` for different periods.
 
 ```graphql
 {
