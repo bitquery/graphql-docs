@@ -123,7 +123,7 @@ query ($network: EverscaleNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTi
 
 ## Related Resources
 
-- [Aggregation overview](https://docs.bitquery.io/v1/docs/query-features/aggregation/aggregation)
+- [Aggregation overview](https://docs.bitquery.io/v1/docs/query-features/aggregation/)
 - [Sum aggregation](https://docs.bitquery.io/v1/docs/query-features/aggregation/sum)
 - [GraphQL aliases](https://docs.bitquery.io/v1/docs/query-features/aliases)
 - [Sorting](https://docs.bitquery.io/v1/docs/query-features/filtering/sorting)

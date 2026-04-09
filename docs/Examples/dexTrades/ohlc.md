@@ -6,13 +6,13 @@ keywords: [DEX API examples, DEX GraphQL queries, Bitquery]
 
 # OHLC API
 
-Using our APIs, you can also get [OHLC](https://en.wikipedia.org/wiki/Open-high-low-close_chart) data.
-
-The OHLC API allows you to retrieve OHLC data for a given asset pair and time period.
+Build [OHLC](https://en.wikipedia.org/wiki/Open-high-low-close_chart) candlestick chart data for any DEX token pair using the `dexTrades` API. Prices are aggregated at runtime from on-chain swaps, with configurable time intervals, outlier filters, and exchange-specific filtering.
 
 ## Get Ethereum DEX OHLC for DAI and Quote in Ten Minute Intervals
 
-This query gets OHLC data for the period from 5pm to 6pm UTC on July 9, 2023,, where the base currency is DAI (0xd0b3a986fff305854a7238a8e099cce1ced01a3d) and the quote currency is USDC (0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2) in 10 minute intervals.
+Get 10-minute OHLC candles for a DAI/WETH pair on Ethereum. Returns open, high, low, close prices with trade counts, base/quote amounts, and USD values using the `expression` field for derived calculations.
+
+**Variations:** Change `minute(count: 10)` to `minute(count: 1)`, `hour`, or `day` for different intervals. Swap the token addresses for any pair. Add `exchangeName` to filter by DEX. Adjust the `time` range for any period.
 
 ```
 {
@@ -53,11 +53,11 @@ This query gets OHLC data for the period from 5pm to 6pm UTC on July 9, 2023,, w
 
 ```
 
-The `timeInterval` field indicates time interval for which the data is aggregated.
-
 ## Get Uniswap Ethereum WETH USDT OHLC With Outlier Trade Filters
 
-In this example, we are getting OHLC prices by aggregating price data at run time. Additionally, we are using `priceAsymmetry` and `tradeAmountUsd` to filter out trades with abnormal prices. Read more about priceAsymmetry [here](https://docs.bitquery.io/v1/docs/building-queries/FAQ#how-to-use-priceasymmetry-to-filter-anomalies-and-outliers-in-trades-)
+Get 5-minute OHLC candles for WETH/USDT on Uniswap specifically, with outlier filtering. The `priceAsymmetry: {lt: 1}` filter removes trades with mismatched buy/sell USD values, and `tradeAmountUsd: {gt: 500}` excludes dust trades. Read more about [priceAsymmetry](https://docs.bitquery.io/v1/docs/building-queries/FAQ#how-to-use-priceasymmetry-to-filter-anomalies-and-outliers-in-trades-).
+
+**Variations:** Change `exchangeName` to `"Sushiswap"` or remove it for all DEXes. Adjust `tradeAmountUsd` threshold for your quality requirements. Switch `network` to `bsc` or `matic` for other chains.
 
 [Open this query on IDE](https://ide.bitquery.io/Uniswap-OHLC-data-5-minute-candle--WETHUSDT)
 

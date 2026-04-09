@@ -6,13 +6,15 @@ keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 
 # Bitcoin Fee API
 
-This Bitquery API allows you to query Bitcoin transaction fees using GraphQL. You can retrieve detailed fee information for specific addresses, calculate total fees paid by an account, and convert fee values to USD. The examples below demonstrate how to use the API for common fee-related queries.
+Query Bitcoin transaction fees with per-transaction breakdowns and aggregate totals in both BTC and USD. Useful for fee estimation, cost analysis, and wallet expense tracking.
 
 import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
 
 ## List Bitcoin Transactions with Per-Tx Fees and USD Fees
 
-Below query will get you bitcoin transactions for a account along with the transaction fees. You can try out the query [here](https://ide.bitquery.io/bitcoin-trxn-fees-for-a-account_2).
+Get individual Bitcoin transactions for a specific address with per-transaction fee amounts in BTC and USD, input/output values, and counts. [Run query](https://ide.bitquery.io/bitcoin-trxn-fees-for-a-account_2).
+
+**Variations:** Remove the `inputAddress` filter to see fees across all transactions. Add `date: {since: ..., till: ...}` for a time range. Sort by `feeValue` to find highest-fee transactions.
 
 ```
 qquery MyQuery {
@@ -49,7 +51,9 @@ qquery MyQuery {
 
 ## Sum Total Bitcoin Fees Paid by an Address on One Day
 
-Below query will get you total fees paid by an account on Bitcoin network. You can try out the query [here](https://ide.bitquery.io/Get-Total-fees-paid-by-an-account-on-Bitcoin-network).
+Aggregate total fees paid by a Bitcoin address on a specific day using `feeValue(calculate: sum)` in both BTC and USD. [Run query](https://ide.bitquery.io/Get-Total-fees-paid-by-an-account-on-Bitcoin-network).
+
+**Variations:** Change `date` to a range for multi-day totals. Remove the `inputAddress` filter for network-wide fee aggregates. Add `feeValue(calculate: average)` for average fee per transaction.
 
 ```
 query MyQuery {

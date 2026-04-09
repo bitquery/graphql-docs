@@ -54,9 +54,9 @@ For streaming real-time data, check our [Solana Streaming API docs](https://docs
 
 ## Recent Solana Transfers for a Wallet as Sender or Receiver
 
-This query retrieves the most recent 100 transfers involving a specific wallet address, showing both incoming and outgoing transactions. The `any` keyword allows us to search for transfers where the wallet is either the sender OR receiver in a single query.
+Get the complete transfer history for a Solana wallet — both sent and received — using the `any` filter (OR on `senderAddress` and `receiverAddress`). Returns token details, amounts, timestamps, and transaction signatures. [Run query](https://ide.bitquery.io/Transfers-of-an-address_1).
 
-You can run the query [here](https://ide.bitquery.io/Transfers-of-an-address_1)
+**Variations:** Add `currency: {is: "..."}` for a specific SPL token. Use `date` or `time` for a date range. Apply [sorting](/docs/query-features/filtering/sorting) by `amount` for largest transfers. Add `amount(in: USD)` for USD values.
 
 ```
 query MyQuery {
@@ -185,9 +185,9 @@ query MyQuery {
 
 ## Solana Pumpfun Token Migrations on a Specific Calendar Date
 
-Below API retrieves pump fun token migrations on a specific date.
+Track Pump Fun token migrations on a specific date by filtering for transfers to the migration receiver address via the Pump Fun program. Returns token details, sender/receiver with mint accounts, and transaction signatures. [Run query](https://ide.bitquery.io/pumpfun-transfers-type-v1-to-pumpfun-migrations_1).
 
-Try the query [here](https://ide.bitquery.io/pumpfun-transfers-type-v1-to-pumpfun-migrations_1).
+**Variations:** Change `date` for different days. Adjust `receiverAddress` for other migration targets. Remove the `currency: {not: "SOL"}` filter to include SOL movements. Use [limit/offset](/docs/query-features/filtering/options) for pagination.
 
 ```
 {
@@ -256,8 +256,9 @@ Try the query [here](https://ide.bitquery.io/pumpfun-transfers-type-v1-to-pumpfu
 
 ## Detect Solana Pumpfun Mayhem Mode Launch by Mint Amount
 
-This query finds "Pump Fun" token launches in Mayhem mode by filtering for a transfer of exactly 1,000,000,000,000,000 units (1 Billion if adjusted to 6 decimal places) to the specified receiver and token mint. It returns currency info, amount, and transaction signature. In mayhem mode token, 1 Billion token supply is minted to `BwWK17cbHxwWBKZkUYvzxLcNQ1YVyaFezduWbtm2de6s` Mayhem Autonomous AI agent.
-Try out the API [here](https://ide.bitquery.io/check-if-a-pump-fun-token-was-in-mayhem-mode).
+Detect whether a Pump Fun token was launched in Mayhem mode by checking for the characteristic 1 Billion token mint (1,000,000,000,000,000 raw units at 6 decimals) to the Mayhem AI agent address. Returns token details and transaction signature. [Run query](https://ide.bitquery.io/check-if-a-pump-fun-token-was-in-mayhem-mode).
+
+**Variations:** Change the `currency` to check any Pump Fun token. Adjust `amount` for other mint amounts. Add `date` to search within a time range.
 
 ```
 query MyQuery {
@@ -284,8 +285,9 @@ query MyQuery {
 
 ## Solana Per-Token Sent, Received, and Balance for an Address
 
-Below API will give you details on the aggreated currency sent and received by an address.
-Try the API [here](https://ide.bitquery.io/currency-sent-and-received-by-an-address#).
+Calculate per-token balances for a Solana wallet by aggregating all sent and received amounts. Uses `expression(get: "sum_in - sum_out")` to compute the current balance, with separate inbound/outbound counts per token. [Run query](https://ide.bitquery.io/currency-sent-and-received-by-an-address#).
+
+**Variations:** Add `currency: {is: "..."}` for a single token. Include `date` for a time-bounded calculation. Use `amount(in: USD)` for USD-equivalent totals.
 
 ```
 query ($address: String!) {
@@ -318,7 +320,9 @@ query ($address: String!) {
 
 ## Solana Wallet Balances per Token Up to a Point in Time
 
-This query calculates the balance of a wallet at a specific date by fetching all transfers sent and received transactions up to that height. `received - sent` is the balance of the address.
+Get a wallet's per-token balances as of a specific date by summing all transfers up to that point. Uses `date: {till: $date}` with the same `sum_in - sum_out` expression pattern — useful for historical snapshots, tax reporting, and point-in-time audits.
+
+**Variations:** Change the `$date` variable for different snapshot dates. Add `currency: {is: "..."}` for a single token. Add `amount(in: USD)` for USD values.
 
 [Run query](https://ide.bitquery.io/balance-on-a-specific-date#)
 
@@ -354,9 +358,9 @@ query ($address: String!, $date: ISO8601DateTime!) {
 
 ## Solana SPL Token Holders with Aggregated Balances
 
-This query returns all holders of a specific token with their balances. It aggregates transfers by receiver (holder) for the given token: each row is a wallet address that holds the token, with total received (`sum_in`), total sent (`sum_out`), and current balance (`sum_in - sum_out`). Results are sorted by balance descending and limited to the top 10,000 holders. Use `date: { since: "..." }` to compute balances from a given date onward.
+Get a token's holder list with computed balances by aggregating all transfers per receiver address. Returns the top 10,000 holders sorted by balance with total received, sent, and net balance. [Run query](https://ide.bitquery.io/solana-holders_1).
 
-You can run the query [here](https://ide.bitquery.io/solana-holders_1).
+**Variations:** Change the `currency` for any SPL token. Adjust `date: {since: "..."}` to compute balances from a specific date. Change `limit` for more/fewer holders. Filter by `amount(calculate: sum, gt: N)` to exclude dust holders.
 
 ```
 {
@@ -386,9 +390,9 @@ You can run the query [here](https://ide.bitquery.io/solana-holders_1).
 
 ## Solana Token Inflows to a Wallet for Bubble Map Charts
 
-This query retrieves all incoming transfers of a specific token (e.g., USDT) to a given Solana wallet on a particular date. It includes sender and receiver details, transaction signatures, block data, and transfer amounts in USD — useful for visualizing wallet inflows using a Bubble Map.
+Retrieve all incoming token transfers to a wallet on a specific date with USD amounts — the data needed for bubble map visualizations showing where funds came from. See the full [Solana BubbleMaps guide](https://bitquery.io/blog/solana-bubblemaps-bitquery-zero-rpc).
 
-You can check out this [guide on how to build Solana BubbleMaps using Bitquery](https://bitquery.io/blog/solana-bubblemaps-bitquery-zero-rpc).
+**Variations:** Change `receiverAddress` to `senderAddress` for outflows. Adjust the `date` and `currency` variables. Use [limit/offset](/docs/query-features/filtering/options) for pagination through large result sets.
 
 [Run query](https://ide.bitquery.io/map-query-working_1)
 
@@ -444,7 +448,9 @@ query TransfersForBubbleMap($since: ISO8601DateTime!, $currency: String, $limit:
 
 ## List Solana Token Senders to a Specific Receiver Address
 
-This query identifies all senders who have transferred a specific token to a particular wallet address. This is useful for tracking token sources.
+Identify every wallet that sent a specific token to a given receiver address on a particular date. Useful for tracking token sources, verifying payment senders, or investigating inbound fund origins.
+
+**Variations:** Swap `receiverAddress` for `senderAddress` to find all recipients instead. Remove `date` for all-time data. Change the token address for any SPL token.
 
 [Run query](https://ide.bitquery.io/find-sender-of-a-token)
 
@@ -486,9 +492,9 @@ query MyQuery {
 
 ## Solana Wallet Inflow and Outflow Transfers at Block Height
 
-This query demonstrates how to analyze wallet activity at a specific block height by separating incoming (inflow) and outgoing (outflow) transfers. This is particularly useful for understanding wallet behavior during specific events or time periods.
+Analyze a wallet's inflow and outflow at a specific block height using [aliases](/docs/query-features/aliases) (`outflow:` and `inflow:`). Shows token details, program info, and sender/receiver types — useful for event-level forensics and block-by-block wallet analysis. [Run query](https://ide.bitquery.io/outflowinflow-of-an-address-on-Solana).
 
-You can run the query [here](https://ide.bitquery.io/outflowinflow-of-an-address-on-Solana)
+**Variations:** Change `height` to a different block. Use `date` or `time` instead for a time window. Add `currency: {is: "..."}` to filter by token.
 
 ```
 {
@@ -582,9 +588,9 @@ You can run the query [here](https://ide.bitquery.io/outflowinflow-of-an-address
 
 ## Solana Wallet Transfers Within a Start and End Time Range
 
-This query demonstrates how to retrieve transfers for a specific wallet within a defined time range. This is essential for time-based analysis, reporting, and compliance requirements.
+Get all transfers for a wallet within a precise UTC time window using the `time` filter. Captures both sent and received transfers via the `any` clause — useful for hourly reporting, compliance audits, and time-bounded analysis. [Run query](https://ide.bitquery.io/Transfers-of-a-wallet-for-a-specific-timeperiod).
 
-Test the API [here](https://ide.bitquery.io/Transfers-of-a-wallet-for-a-specific-timeperiod).
+**Variations:** Adjust the `time` range for different windows. Add `currency` to filter by token. Use `date` instead for day-level precision.
 
 ```
 query MyQuery {
@@ -622,9 +628,9 @@ query MyQuery {
 
 ## Largest Solana Token Transfers by Amount After a Date
 
-This query identifies the largest transfers for a specific token, sorted by transfer amount. This is useful for identifying significant token movements and whale activity.
+Find the biggest transfers for a specific token by sorting with `desc: "amount"`. Surfaces whale movements and large institutional transfers — useful for market impact analysis and whale tracking. [Run query](https://ide.bitquery.io/v1-top-transfers-of-a-solana-token_1).
 
-Try the query [here](https://ide.bitquery.io/v1-top-transfers-of-a-solana-token_1).
+**Variations:** Change the token address for any SPL token. Adjust the `date` filter. Add `senderAddress` or `receiverAddress` to focus on a specific wallet. Use `amount: {gt: N}` for a minimum threshold.
 
 ```
 query MyQuery {
@@ -662,9 +668,9 @@ query MyQuery {
 
 ## Solana Wallet Historical SOL and Stablecoin Balances via Transfers
 
-This query demonstrates how to calculate a wallet's historical balance by analyzing all incoming and outgoing transfers up to a specific point in time. The balance is calculated by subtracting total outgoing transfers from total incoming transfers, with amounts converted to USD for accurate valuation.
+Calculate a wallet's historical SOL and stablecoin balances at a point in time by separately summing sent and received amounts with USD conversion. Uses `time: {till: ...}` to cap the calculation at a specific timestamp. [Run query](https://ide.bitquery.io/solana-money-sent-and-recieved-by-an-address_5).
 
-Test the query [here](https://ide.bitquery.io/solana-money-sent-and-recieved-by-an-address_5)
+**Variations:** Change the `currency: {in: [...]}` array to track different tokens. Adjust the `time` for different snapshots. Remove the currency filter for all-token balance history.
 
 ```
 {
@@ -704,9 +710,9 @@ Test the query [here](https://ide.bitquery.io/solana-money-sent-and-recieved-by-
 
 ## Solana Transfers for All Instructions in One Transaction Signature
 
-This query retrieves all transfer details contained within a specific transaction signature. This is essential for transaction analysis, debugging, and understanding the complete flow of a multi-transfer transaction.
+Inspect every transfer inside a single Solana transaction by filtering on `signature`. Returns all token movements, program details, and sender/receiver account types — essential for debugging failed transactions or understanding complex DeFi interactions. [Run query](https://ide.bitquery.io/get-historical-transaction-detail-on-Solana).
 
-Test the query [here](https://ide.bitquery.io/get-historical-transaction-detail-on-Solana).
+**Variations:** Change the `signature` to any transaction. Remove the `date` filter if the transaction date is unknown. Add `currency` to filter for specific token movements within the transaction.
 
 ```
 query MyQuery {
@@ -757,7 +763,7 @@ query MyQuery {
 
 ## Solana Network-Wide Transfers in a Narrow Time Window
 
-This query retrieves all transfers within a specific time window across the entire Solana network. This is useful for network-wide analysis, but requires careful time range selection due to the high volume of transfers on Solana.
+Query all transfers across the entire Solana network within a narrow time window. Returns token movements from every program and wallet — useful for network-wide analytics, trending analysis, and aggregate metrics.
 
 **Important Notes:**
 

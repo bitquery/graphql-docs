@@ -6,9 +6,13 @@ keywords: [smart contract API examples, GraphQL queries, Bitquery]
 
 # Smart contract event API
 
-Our Smart contract event API allows you access parsed smart contract events and arguments for all the blockchains we support.
+The Smart Contract Events API returns parsed event logs with decoded arguments for all supported blockchains. Use it to monitor token transfers, DEX swaps, lending events, governance votes, or any custom event emitted by a smart contract.
 
 ## Get Recent Ethereum Smart Contract Events with Parsed Arguments
+
+Fetch the latest smart contract events on Ethereum with decoded argument names and values, contract address, event name, signature hash, and the triggering transaction. Returns events from all contracts in the given date range.
+
+**Variations:** Add `smartContractAddress` to filter events from a specific contract. Use `smartContractEvent: {is: "Transfer"}` for a specific event type. Switch `network` to any EVM chain. Apply [limit/offset](/docs/query-features/filtering/options) for pagination.
 
 [Open this query on IDE](https://ide.bitquery.io/Smart-contract-event-API_1_1)
 
@@ -52,7 +56,9 @@ Our Smart contract event API allows you access parsed smart contract events and 
 
 ## Get Ethereum Smart Contract Events for One Pool Contract Address
 
-To check specific smart contract events, you need to mention the smart contract address. For example, in the following query, we are getting [AAVE's V3 Pool smart contract](https://explorer.bitquery.io/ethereum/smart_contract/0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2/events) events.
+Get all events emitted by a specific smart contract. This example retrieves events from [AAVE's V3 Pool contract](https://explorer.bitquery.io/ethereum/smart_contract/0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2/events) — useful for monitoring lending activity, liquidations, and protocol state changes.
+
+**Variations:** Replace the contract address with any smart contract. Add `smartContractEvent: {is: "EventName"}` to filter by event type. Use [count aggregation](/docs/query-features/aggregation/count) to see how often each event fires.
 
 [Open this query on IDE](https://ide.bitquery.io/Smart-contract-event-for-Aave-v3-pool)
 
@@ -99,7 +105,9 @@ To check specific smart contract events, you need to mention the smart contract 
 
 ## Get Ethereum Repay Events from Aave V3 Pool Smart Contract
 
-We can also get specific event for a given smart contract using our SmartContractEvent API. For example in the following query are getting `Repay` event from the [AAVE's V3 Pool smart contract](https://explorer.bitquery.io/ethereum/smart_contract/0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2/events).
+Filter events by both contract address and event name. This example retrieves only `Repay` events from [AAVE's V3 Pool](https://explorer.bitquery.io/ethereum/smart_contract/0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2/events) — useful for tracking loan repayments, building DeFi dashboards, or triggering alerts on specific protocol actions.
+
+**Variations:** Change the event name to `Borrow`, `Supply`, `Liquidation`, or any other event. Add `transaction.txFrom` filter to track events from a specific user. Apply [sorting](/docs/query-features/filtering/sorting) by `block.height` for chronological order.
 
 [Open this query on IDE]https://ide.bitquery.io/Repay-event---Smart-contract-event-for-Aave-v3-pool
 
@@ -147,7 +155,9 @@ We can also get specific event for a given smart contract using our SmartContrac
 
 ## Get Latest Ethereum Uniswap V2 PairCreated Events from Factory Contract
 
-Using `smartContractEvents` API, we can filter `PairCreated` event emitted from Uniswap V2 Factory smart contract. [0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f](https://explorer.bitquery.io/ethereum/smart_contract/0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f) is Uniswap V2 Factory Contract. Here is [the query](https://ide.bitquery.io/Ethereum-Get-List-of-Pairs-Created-on-Uniswap) which you can check in the IDE.
+Track new trading pair deployments by filtering `PairCreated` events from the Uniswap V2 Factory contract ([0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f](https://explorer.bitquery.io/ethereum/smart_contract/0x5c69bee701ef814a2b6a3edd4b1652cb9cc5aa6f)). The event arguments contain the two token addresses and the new pair contract address. [Run query](https://ide.bitquery.io/Ethereum-Get-List-of-Pairs-Created-on-Uniswap).
+
+**Variations:** Replace the factory address with PancakeSwap, SushiSwap, or any Uniswap V2 fork on any EVM chain. Use `argument: {is: "token0"}` with a specific value to find pairs for a given token.
 
 ```
 {
@@ -175,11 +185,11 @@ Using `smartContractEvents` API, we can filter `PairCreated` event emitted from 
 }
 ```
 
-To get events from Uniswap V2, we are filtering using address of the factory smart contract using `smartContractAddress` field. As we want to get `PairCreated` event, we used `smartContractEvent` field and passed name of the event to it. Lastly, we want latest event so we put those in desceding order uisng timestamp when event was emitted.
-
 ## Get BSC PancakeSwap PairCreated Event Arguments from Factory Address
 
-We have an `arguments` API, which provides parsed smart contracts. Let's get the latest pair created from PancakeSwap by getting `PairCreated` events as shown below. Additionally, you can write another API in a different way using `any`; here is [an example](https://ide.bitquery.io/Latest-Pair-Created-on-Pancake-Swap_1_1_1).
+Retrieve parsed event arguments from PancakeSwap's `PairCreated` events on BSC using the `arguments` API. Returns each argument name and value with the transaction hash — useful for indexing newly created liquidity pools. See also [an alternative approach using `any`](https://ide.bitquery.io/Latest-Pair-Created-on-Pancake-Swap_1_1_1).
+
+**Variations:** Replace the factory address with any DEX factory contract. Add `argument: {is: "token0"}` to filter for pairs involving a specific token. Switch `network` for other EVM chains.
 
 ```
 {
@@ -208,7 +218,7 @@ We have an `arguments` API, which provides parsed smart contracts. Let's get the
 
 ## Arguments Filtering
 
-Let's see how to do argument filtering using our V1 API.
+Filter events by specific argument names and values. This query finds `PairCreated` events where `token0` matches a specific address — useful for tracking all pools created for a given token.
 
 ```graphql
 {
@@ -243,7 +253,9 @@ Let's see how to do argument filtering using our V1 API.
 }
 ```
 
-Our v1 APIs support Argument Filtering, however we would rather suggest using V2 APIs for this. They are much more powerful in arguments, allowing argument aggregation and filtering.
+:::note
+V1 supports basic argument filtering. For advanced argument aggregation and multi-condition filtering, use the [V2 APIs](https://docs.bitquery.io/docs/examples/events/events-api/) which offer richer capabilities.
+:::
 
 ## Related Resources
 

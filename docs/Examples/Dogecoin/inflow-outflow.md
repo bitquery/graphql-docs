@@ -6,9 +6,15 @@ keywords: [Dogecoin API examples, Dogecoin GraphQL queries, Bitquery]
 
 # Tranfers of an Address on DogeCoin Network
 
+Trace inbound and outbound fund movements for any Dogecoin address using the Coinpath money-flow API.
+
 ## Dogecoin Address Inbound and Outbound Coinpath Depth and Amounts
 
-Doge Coin is one of the most famous meme coin in the cryptocurrency space. Using [this](https://ide.bitquery.io/zFB1y4MP5B) query, we can get the transfers of Doge Coin to a particular address.
+Visualize the complete money-flow graph for a Dogecoin address by querying inbound and outbound coinpaths in a single request. Returns sender/receiver pairs, transaction hashes, transfer amounts, and hop depth — ideal for compliance checks or fund-tracing on address `DJVeRemZM842GmvT6WR3PzVkqhqCEUGsDH`.
+
+**Variations:** Raise `inboundDepth` / `outboundDepth` to trace funds across more hops, add `date` filters to scope the analysis, or widen `limitBy` for broader coverage. See [Coinpath explained](/docs/building-queries/Coinpath-Explained/Overview) for depth and direction details.
+
+[Open this query on IDE](https://ide.bitquery.io/zFB1y4MP5B)
 
 ```graphql
 query (

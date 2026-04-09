@@ -6,12 +6,13 @@ keywords: [Stellar API examples, Stellar GraphQL queries, Bitquery]
 
 # Stellar Payments API
 
-This API enables you to access and analyze payment transactions on the Stellar network, providing detailed information about each payment, including amounts, currencies, issuers, timestamps, and paths.
+Retrieve Stellar payment transactions — amounts, currencies, issuers, sender/receiver addresses, and multi-hop routing paths — through the Bitquery GraphQL API.
 
 ## Get Latest Stellar Payment Transactions
 
-Below is the query to get the latest payment transactions on the Stellar network. This query provides details about the amount transferred, the currency and issuer involved, sender and receiver addresses, and the transaction path.
-You can run the query [here](https://ide.bitquery.io/Latest-Payments-on-Stellar)
+List the latest Stellar payment transactions with amounts, currencies, issuers, sender/receiver addresses, and the multi-hop routing path. The `path` field returns an array of intermediate assets — each with `asset_code`, `asset_type`, and `asset_issuer` — showing how the payment was routed across the DEX. [Run the query on the IDE](https://ide.bitquery.io/Latest-Payments-on-Stellar).
+
+**Variations:** Add a `sender` or `receiver` filter to track a specific account, change `date` for historical lookups, or reduce `limit` for a quick snapshot. See [query features](/docs/category/query-features) for pagination.
 
 ```
 query MyQuery {
@@ -53,7 +54,7 @@ query MyQuery {
 
 ```
 
-The path field contains an array of assets involved in the payment path. Each asset is represented with its code, type, and issuer. Here's an example of what the path field response might look like:
+Example `path` response:
 
 ```
 "path": [

@@ -6,9 +6,13 @@ keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
 
 # Transactions API
 
-Our Cosmos Transactions API provides information related to transactions created on Cosmos Blockchain.
+Query Cosmos blockchain transactions, including fees, gas usage, signers, and raw transaction data.
 
 ## Get Cosmos Transaction by Transaction Hash
+
+Look up a specific Cosmos transaction by its hash. Returns block info, fee details, gas usage, raw transaction data, signer address, and transaction type.
+
+**Variations:** Replace the `hash` value to look up any transaction. Add `options: {limit: N}` when querying without a hash to paginate results. See [query features](/docs/category/query-features) for available filters.
 
 ```
 {
@@ -39,9 +43,11 @@ Our Cosmos Transactions API provides information related to transactions created
 }
 ```
 
-This query retrieves transaction details based on a specific transaction hash. It fetches information such as the block's height and timestamp where the transaction is included, the transaction fee, fee currency details including its name and address, gas used, index of the transaction, raw transaction data, signer's address, and the transaction type. 
-
 ## Get Cosmos Transactions by Signer and Date
+
+Retrieve all transactions signed by a specific address on a given date. Returns block info, fees, gas usage, and raw transaction data for each match.
+
+**Variations:** Use `date: {after: "..."}` for a date range instead of a single day. Remove the `signer` filter to see all transactions on that date. See [query features](/docs/category/query-features) for sorting and pagination.
 
 ```
 {
@@ -72,8 +78,6 @@ This query retrieves transaction details based on a specific transaction hash. I
   }
 }
 ```
-
-This query retrieves transactions from a specific date, filtered by a particular signer's address. It retrieves information including the block's height and timestamp of each transaction, transaction fee, details about the fee currency including its name and address, gas used, transaction index, raw transaction data, signer's address, and transaction type.
 
 ## Related Resources
 

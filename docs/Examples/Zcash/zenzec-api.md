@@ -6,11 +6,7 @@ description: "Get ZenZEC token latest trades, price, volume, and DEX trading dat
 
 # zenZEC API - Latest Trades, Price, Volume on Solana
 
-Get ZenZEC token latest trades, price, volume, and DEX trading data on Solana blockchain using our GraphQL API. Track ZenZEC token transactions, market activity, and trading pairs.
-
-The below GraphQL API is an example of data points you can get with Bitquery for ZenZEC token.
-
-If you have any question on other data points reach out to [support](https://t.me/Bloxy_info).
+Track ZenZEC token trades, live prices, and DEX volume on Solana using the Bitquery streaming GraphQL API.
 
 :::note
 
@@ -91,7 +87,9 @@ Make sure to use this endpoint when querying ZenZEC data.
 
 ## Get Latest Trades for ZenZEC Token
 
-Get the latest 50 trades for ZenZEC token including trade details, prices, amounts, market information, and DEX protocol data.
+Pull the 50 most recent DEX trades involving the ZenZEC token on Solana. Each trade includes the USD price, trade size, market address, and the DEX protocol (e.g., Raydium, Orca) that executed it.
+
+**Variations:** Raise `limit` for a larger trade feed, add a `Block_Time` filter to target a specific time window, or swap the `MintAddress` to query any other Solana token. See [query features](/docs/category/query-features) for sorting and filtering.
 
 [Try ZenZEC Latest Trades Query ➤](https://ide.bitquery.io/Latest-Trades-of-zenZEC-COin)
 

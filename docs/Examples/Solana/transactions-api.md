@@ -6,10 +6,13 @@ keywords: [Solana API examples, Solana GraphQL queries, Bitquery]
 
 # Solana Transactions API
 
+The Solana Transactions API returns transaction-level data including fee payer, instruction counts, success status, and block context. Use it for transaction monitoring, fee analysis, and wallet activity tracking.
+
 ## Get Solana Transactions by Date Range
 
-This below query will get you the transactions for a specific timeperiod. You can change the timeperiod values as per your need.
-You can run the query [here](https://ide.bitquery.io/transactions-in-a-specific-timeperiod).
+Fetch Solana transactions within a precise UTC time window. Returns fee payer, instruction counts, success flag, and transaction signature for each transaction. [Run query](https://ide.bitquery.io/transactions-in-a-specific-timeperiod).
+
+**Variations:** Adjust the `time` range as needed. Add `signer: {is: "..."}` to filter by wallet. Use `success: true` to exclude failed transactions. Add [limit/offset](/docs/query-features/filtering/options) for pagination.
 
 ```
 query MyQuery {
@@ -41,8 +44,9 @@ query MyQuery {
 
 ## Get Solana Address Transactions by Date Range
 
-This below query will get you the transactions of an address for a specific timeperiod. You can change the address and timeperiod values as per your need.
-You can run the query [here](https://ide.bitquery.io/transactions-of-an-address-in-a-specific-timeperiod).
+Get all transactions signed by a specific wallet within a time range using the `signer` filter. Returns instruction counts, fees, success status, and block details. [Run query](https://ide.bitquery.io/transactions-of-an-address-in-a-specific-timeperiod).
+
+**Variations:** Change the `signer` address and `time` range. Add `feePayer: {is: "..."}` if the fee payer differs from the signer. Use `success: false` to find failed transactions.
 
 ```
 query MyQuery {

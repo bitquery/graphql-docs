@@ -6,12 +6,21 @@ keywords: [Filecoin API examples, Filecoin GraphQL queries, Bitquery]
 
 # Filecoin Storage & Deal Data Examples
 
-In this section we will see some example queries that track different stages in a storae deal flow on Filecoin. For further details on Storage deals on Filecoin, refer to their [official documentation](https://docs.filecoin.io/storage-providers/filecoin-deals/storage-deals).
+:::caution Deprecated
+
+The Filecoin dataset on the V1 API is **deprecated** and may be removed in a future release. Existing queries will continue to work but no new data is being ingested.
+
+:::
+
+Monitor Filecoin storage-deal lifecycle events — deal publishing, slashing penalties, sector pre-commits, and fault declarations. For background on the deal flow, see the [Filecoin official documentation](https://docs.filecoin.io/storage-providers/filecoin-deals/storage-deals).
 
 ## Count Filecoin PublishStorageDeals Messages to f05 in a Date Range
 
-`PublishStorageDeals` message is added to chain when a new set of storage deals are published.
-Query to track published storage deals within a specified date range:
+Count `PublishStorageDeals` messages sent to Filecoin's built-in storage market actor (`f05`) during a given date range. Each message corresponds to a batch of newly published deals, making this a quick way to gauge deal-making activity.
+
+**Variations:** Widen or narrow the `date` window, or replace `f05` with a specific provider address to count deals for a single miner. See [query features](/docs/category/query-features) for aggregation options.
+
+[Open this query on IDE](https://ide.bitquery.io/Weekly-PublishStorageDeals-Messages-Count)
 
 ```
 query ($network: FilecoinNetwork!) {
@@ -31,12 +40,13 @@ query ($network: FilecoinNetwork!) {
 
 ```
 
-(Run query here: [PublishStorageDeals](https://ide.bitquery.io/Weekly-PublishStorageDeals-Messages-Count))
-
 ## List Filecoin Slashing Burn Transfers From a Storage Provider
 
-Slashing is "a set of penalties which are to be paid by storage providers if they fail to provide sector reliability or decide to voluntarily exit the network".
-Below is the query to retrieve storage slashing messages:
+Retrieve burn transfers caused by slashing penalties for a specific Filecoin storage provider. Slashing fires when a provider fails to prove sector storage or is terminated — each burn record includes the amount, timestamp, and transaction hash.
+
+**Variations:** Swap `sender` to inspect a different provider, remove `limit` to fetch all burn events, or add a `date` filter for a specific window. See [query features](/docs/category/query-features) for pagination.
+
+[Open this query on IDE](https://ide.bitquery.io/Slashing-for-a-Provider-on-Filecoin)
 
 ```
 {
@@ -65,12 +75,14 @@ Below is the query to retrieve storage slashing messages:
 }
 
 ```
-
-(Run query here: [Slashings](https://ide.bitquery.io/Slashing-for-a-Provider-on-Filecoin))
 
 ## List Filecoin RemoveExpiredAllocations Burn Transfers From a Provider
 
-The below query helps track messages when expired DataCap allocations are removed and reclaim those DataCap tokens back to the client.
+List burn transfers triggered by the removal of expired DataCap allocations for a Filecoin provider. These events reclaim unused DataCap tokens back to the client, making them useful for auditing allocation lifecycle.
+
+**Variations:** Change `sender` to a different provider address, or add `date` constraints to scope the results. See [query features](/docs/category/query-features) for sorting and filtering.
+
+[Open this query on IDE](https://ide.bitquery.io/RemoveExpiredAllocations-Filecoin)
 
 ```
 {
@@ -100,9 +112,13 @@ The below query helps track messages when expired DataCap allocations are remove
 
 ```
 
-(Source: [RemoveExpiredAllocations](https://ide.bitquery.io/RemoveExpiredAllocations-Filecoin))
-
 ## List Filecoin PreCommit Sector Messages on a Calendar Date
+
+Fetch PreCommitSector messages (method 6) submitted on a given calendar date. Each message represents a provider pledging a new sector before the sealing process begins — useful for monitoring network growth.
+
+**Variations:** Set `date` to any calendar day, add a `sender` filter to isolate a single provider, or increase `limit` for more results. See [query features](/docs/category/query-features) for pagination.
+
+[Open this query on IDE](https://ide.bitquery.io/PreCommit-Storage-Messages--day)
 
 ```
 query MyQuery {
@@ -132,9 +148,13 @@ query MyQuery {
 
 ```
 
-(Source: [PreCommit-Storage](https://ide.bitquery.io/PreCommit-Storage-Messages--day))
-
 ## List Filecoin DeclareFaults Messages for a Receiver Actor
+
+Retrieve DeclareFaults messages (method 10) sent to a specific Filecoin actor. These indicate a provider has reported faulty sectors — the response includes burn amounts, over-estimation burns, refunds, and gas details for each fault declaration.
+
+**Variations:** Change `receiver` to target a different actor, add `date` filters, or drop the `method` filter to view all message types for the actor. See [query features](/docs/category/query-features) for sorting.
+
+[Open this query on IDE](https://ide.bitquery.io/Filecoin-DeclareFaults-Message)
 
 ```
 query MyQuery {
@@ -169,8 +189,6 @@ query MyQuery {
 }
 
 ```
-
-(Run query here: [DeclareFaults](https://ide.bitquery.io/Filecoin-DeclareFaults-Message))
 
 ## Related Resources
 

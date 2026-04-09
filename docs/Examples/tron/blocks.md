@@ -6,10 +6,13 @@ keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
 
 # Blocks API
 
-
-Our Tron API provides all details regarding blocks from Tron Blockchain.
+Retrieve Tron block data including trie roots, witnesses, timestamps, and parent block hashes.
 
 ## List Tron Block Trie Roots, Witnesses, and Timestamps
+
+Fetch the latest Tron blocks with their transaction trie roots, witness addresses and annotations, signatures, and timestamps.
+
+**Variations:** Adjust the `date` filter or increase `limit` to retrieve more blocks. Add a `height` filter to target a specific block range.
 
 ```
 {
@@ -33,9 +36,11 @@ Our Tron API provides all details regarding blocks from Tron Blockchain.
 }
 ```
 
-This query returns transaction trie root from the block.
-
 ## Filter Tron Blocks by Parent Block Hash
+
+Find a Tron block by its parent block hash, useful for traversing the chain or verifying block lineage.
+
+**Variations:** Replace the hash value to look up a different block's children, or combine with a [date filter](/docs/category/query-features) to narrow results.
 
 ```
 {
@@ -60,9 +65,11 @@ This query returns transaction trie root from the block.
 }
 ```
 
-This query filter block data by parent block hash of that block.
-
 ## Filter Tron Blocks by Witness Address
+
+Retrieve Tron blocks produced by a specific witness (super representative) address.
+
+**Variations:** Change the `witness` address to query a different super representative, or remove the filter to see all witnesses.
 
 ```
 {
@@ -86,8 +93,6 @@ This query filter block data by parent block hash of that block.
   }
 }
 ```
-
-This query allows us to filter block by it's witness address.
 
 ## Related Resources
 

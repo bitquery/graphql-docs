@@ -6,13 +6,13 @@ keywords: [Stellar API examples, Stellar GraphQL queries, Bitquery]
 
 # Stellar Transactions API
 
-This API enables you to access and analyze transactions on the Stellar network, providing detailed information about each transaction, including the fee, hash, sender, and timestamp.
+Explore Stellar transaction records — fees, hashes, senders, operation counts, and block timestamps — through the Bitquery GraphQL API.
 
 ## Get Latest Stellar Transactions
 
-In this query we retrieve the latest transactions on the Stellar network, including details such as the transaction fee, hash, success status, sender's address, operation count, and timestamp.
+List the latest Stellar transactions alongside their fee, hash, success status, sender, operation count, and timestamp. [Run the query on the IDE](https://ide.bitquery.io/Latest-Transactions-on-Stellar).
 
-You can run the query [here](https://ide.bitquery.io/Latest-Transactions-on-Stellar)
+**Variations:** Adjust the `date` filter for a different day, raise `limit` for deeper history, or add a `sender` filter to scope results to one account. See [query features](/docs/category/query-features) for sorting and pagination.
 
 ```
 
@@ -42,7 +42,9 @@ query MyQuery {
 
 ## Get Latest Stellar Transactions by Sender
 
-In this query we retrieve the most recent transactions sent by a specific address, including transaction fee, hash, memos, success status, operation count, timestamp, and sequence number.
+Look up all transactions sent by a particular Stellar account, including fee, hash, memos, success flag, operation count, timestamp, and sequence number.
+
+**Variations:** Swap the `sender` address to monitor a different account, drop the `date` filter for an open-ended time range, or add `success: {is: true}` to return only confirmed transactions.
 
 ```
 query MyQuery {

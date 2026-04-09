@@ -7,16 +7,18 @@ sidebar_position: 1
 
 # DEX Trading Data APIs
 
-Our DEX trading APIs provides DEX data for 100s of DEXs from [40+ blockchains](https://app-status.bitquery.io/). Let's see some of example of getting DEX data.
+The DEX Trading Data API returns on-chain swap data from hundreds of decentralized exchanges across [40+ blockchains](https://app-status.bitquery.io/). Query individual trades, aggregate price data, discover trading pairs, and build DEX analytics dashboards.
 
 ## Buy/Sell Currency vs Base/Quote Currency
 
-Before starting, we need to understand a major difference between Buy/Sell Currency vs Base/Quote Currency, as you will encounter to this going forward. As you already know AMMs have swaps; there is normally no buying or selling happening as you are trading with Liquidity pools. We store these Swaps normally.
+The API offers two currency models:
 
-In the case of Buy/Sell Currency, we look into only 1 side of the swap.
+- **Buy/Sell Currency** — matches only one side of the swap. If you query `sellCurrency: B`, you get only swaps where B was sold.
+- **Base/Quote Currency** — matches both sides. If you query `quoteCurrency: B`, you get every swap where B appeared on either side.
 
-However, in the case of Base/Quote Currency, we look at both sides of the swap.
+**Example:** Given trades A↔B, B↔C, C↔A — filtering by `sellCurrency: B` returns only trade 1, while `quoteCurrency: B` returns trades 1 and 2.
 
+Use **buy/sell** when you need directional data (e.g., who bought token X). Use **base/quote** when you want all trading activity for a token regardless of direction.
 For example - Let's say there are 3 trades.
 
 ```
@@ -29,42 +31,40 @@ Now when you query, give me all trades where sellCurrency is B, and we will give
 
 ## Time vs Date
 
-Time and Date are two different filter. Date do not cosider full time.
+The `date` filter matches only the calendar date (ignores the time component). Use the `time` filter when you need sub-day precision.
 
-For example, if you use `date: {since: "23-07-17T23:59:59"}` here it won't cosider `23:59:59`.
-Therefore if you want to use full time, please use `time: {since: "023-07-17T23:59:59"}`.
+- `date: {since: "2023-07-17T23:59:59"}` — the time part is ignored; returns data from July 17 onward.
+- `time: {since: "2023-07-17T23:59:59"}` — returns data from exactly 23:59:59 UTC onward.
 
-We use UTC timezone and support ISO8601 Datetime format.
+All timestamps use **UTC** and the **ISO 8601** format.
 
 ## How we get USD price?
 
-USD doesn't exist on blockchain. We get USD price for all cryptocurrencies trades on major exchanges using our partner [Cryptorank](https://cryptorank.io/exchanges/dex) and we store them on hourly candle basis.
-
-We multiple this USD price to trades, transfers to get USD amounts.
-
-Additionly, we do store historical USD pricing data and multiply them on the same time in which transaction/transfer/trade happened.
+USD doesn't exist on-chain. Bitquery sources USD prices for all listed tokens from centralized exchanges via [Cryptorank](https://cryptorank.io/exchanges/dex), stored as hourly candles. These reference prices are multiplied into trade, transfer, and balance data at the time the on-chain event occurred — so you get historically accurate USD values.
 
 ## priceAsymmetry
 
-There might be difference in USD amount of buy/sell or base/quote Amounts. `priceAsymmetry` is a filter that can help filter those trades. Let's understand using an example.
-If you put this filter like `priceAsymmetry : {lt: 1}` It means only give trades where BuyAmount (or Base Amount) in USD and SellAmount (or Quote Amount) in USD has less than $1 difference.
+The `priceAsymmetry` filter removes trades where the USD values of the buy side and sell side diverge significantly — a sign of outlier or manipulated prices.
+
+`priceAsymmetry: {lt: 1}` means: only return trades where the USD difference between buy and sell amounts is less than $1. Use this with `tradeAmountUsd: {gt: N}` to produce clean, reliable price feeds.
 
 ## How to calculate USD pricing with our APIs?
 
-If you see this [query](https://ide.bitquery.io/Ethereum-Trades-for-specific-time), we are using `expression` to calculate price; in some cases where we don't have Buy or sell amount, you can use this to calculate USD prices because if you have USD price in anywhere in result, you will able to derive USD prices. Additionally, we have a field called `quote price`; it is used with Base/quote currency to get the quote price per token.
+Use the `expression` field to derive USD prices from any available USD amount in the response. For example, `expression(get: "sell_amount_usd / buyAmount")` calculates the USD price per token from the sell-side USD value. See this [example query](https://ide.bitquery.io/Ethereum-Trades-for-specific-time). The `quotePrice` field is available when using the base/quote currency model and gives the quote price per base token directly.
 
 ## Difference b/w protocol and exchange
 
-Protocols are basically rules or behavior to explain how a system will work. In the context of DEX, A DEX protocol is a set of smart contracts showing how DEX will work. When a protocol is deployed by any entity on the blockchain, it becomes an actual exchange. 
-For example, Uniswap is an exchange and a protocol. Uniswap protocol deployed by the Uniswap team created the Uniswap exchange. In the case of PancakeSwap, the exchange is PancakeSwap, but the protocol is still Uniswap.
+A **protocol** is the underlying smart contract logic (e.g., Uniswap V2, Uniswap V3). An **exchange** is a specific deployment of that protocol. PancakeSwap is an exchange that uses the Uniswap V2 protocol. Use `protocol` to query all exchanges built on the same codebase, or `exchangeName`/`exchangeAddress` to target a specific DEX.
 
 ## How to check if an exchange is indexed by Bitquery?
 
-If Bitquery index a protocol (ex - Uniswap v2 protocol), therefore any other exchange which is implemented this Uniswap V2, we have already indexed them. We might not be naming them, but you can get their trades using [**this API**](https://ide.bitquery.io/query/pzizr56shpq6wQrX), by simply replacing exchangeAddress with that exchange's factory address.
+If Bitquery indexes a protocol (e.g., Uniswap V2), every exchange using that protocol is automatically indexed — even if we haven't named it. Query trades for any exchange by passing its factory address to `exchangeAddress`. [Try it here](https://ide.bitquery.io/query/pzizr56shpq6wQrX).
 
 ## Get Ethereum DEX Trades for a Full UTC Time Window
 
-To get trades from the Ethereum blockchain for a specific time, please use the following API.
+Fetch DEX trades on Ethereum within a precise UTC time window using the `time` filter. Returns buy/sell amounts in USD, exchange names, pool addresses, and derived token prices via `expression`.
+
+**Variations:** Switch to `date` for day-level queries. Add `buyCurrency` or `sellCurrency` for a specific token. Filter by `exchangeName` or `protocol` for a specific DEX. Apply [sorting](/docs/query-features/filtering/sorting) by `buyAmount` or `sellAmount` for largest trades.
 
 [Open this query on IDE](https://ide.bitquery.io/Ethereum-Trades-for-specific-time).
 
@@ -116,7 +116,9 @@ To get trades from the Ethereum blockchain for a specific time, please use the f
 
 ## Get Uniswap Ethereum DEX Trades by Factory Contract Addresses
 
-To get trades for specific exchange you can you use `exchangeName` (Not recommended) or `exchangeAddress` (recommended). In the following example we are getting, Uniswap's trades. To showcase, we have used both exchangeName and exchangeAddress. In exchange address we have entered factory address of Uniswap v1, v2 and V3 because Uniswap is one exchange with 3 different version deployemnt.
+Get trades from a specific DEX using `exchangeAddress` (recommended) or `exchangeName`. This example queries all three Uniswap versions by passing V1, V2, and V3 factory addresses with `in: [...]`.
+
+**Variations:** Replace factory addresses for SushiSwap, PancakeSwap, or any DEX. Use `exchangeName` alone for a quick lookup (less precise). Add `protocol` to also filter by protocol version. Switch `network` for other EVM chains.
 
 [Open this query in IDE](https://ide.bitquery.io/Trades-for-Uniswap)
 
@@ -177,7 +179,9 @@ To get trades for specific exchange you can you use `exchangeName` (Not recommen
 
 ## Get Ethereum DEX Trades for Uniswap v3 Protocol Across Exchanges
 
-Using `protocol` filter you can get trades for any protocol such as Uniswap v3. In the following query we are getting trades for Uniswap v3 protocol, regardless the exchange. In other words, we are getting trades from all exchange that are using Uniswap v3.
+Query all trades on the Uniswap V3 protocol regardless of which exchange deployed it. The `protocol` filter captures every Uniswap V3 fork — useful for measuring total protocol-level volume and activity.
+
+**Variations:** Change to `"Uniswap v2"`, `"Sushiswap"`, or any indexed protocol. Combine with `exchangeAddress` to narrow to a specific deployment. Add `date` or `baseCurrency` for further filtering.
 
 [Open this in IDE](https://ide.bitquery.io/Trades-for-protocol-uniswap-v3)
 
@@ -230,7 +234,9 @@ Using `protocol` filter you can get trades for any protocol such as Uniswap v3. 
 ```
 
 ## Get Ethereum DEX Token Prices Against WETH in One Query
-If you want to get prices of multiple DEX tokens against a sell currency (ex - WETH) you can use follow query.
+Get the latest DEX price for up to 1,000 tokens against WETH in a single query using `limitBy: {each: "buyCurrency.address", limit: 1}`. Returns the most recent trade per token with derived USD prices — ideal for building a token price dashboard.
+
+**Variations:** Change `sellCurrency` to any base token (e.g., USDT, USDC). Adjust `limitBy` to get more price points per token. Add `exchangeName` to price from a specific DEX.
 
 ```
 {
@@ -273,7 +279,9 @@ If you want to get prices of multiple DEX tokens against a sell currency (ex - W
 
 ## Get Ethereum DEX Trades Where the Transaction Sender Is a Wallet
 
-You can use `txSender` to see the trades where transaction sender is specific address.
+Find all DEX swaps initiated by a specific wallet using the `txSender` filter. Returns both base/quote amounts, maker/taker addresses, and USD values — useful for building a wallet's complete DEX trading history.
+
+**Variations:** Use `makerOrTaker` instead to match on the actual swap participants (not just the transaction sender). Add `buyCurrency` or `baseCurrency` to filter by token. Apply [aggregations](/docs/query-features/aggregation/) like `sum` on amounts for total traded volume.
 
 [Open this query on IDE](https://ide.bitquery.io/Trades-for-a-given-wallet)
 
@@ -336,9 +344,11 @@ You can use `txSender` to see the trades where transaction sender is specific ad
 
 ## Get Ethereum DEX Trades for the SHIB Token as Base Currency
 
-To get trades for a token you can either use buy/sell currency filter or base/quote currency filter. In the following example we are getting trades for [SHIB token](https://explorer.bitquery.io/ethereum/token/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce).
+Get all DEX trades for a specific token using the `baseCurrency` filter. Returns trades from every pair and DEX where [SHIB](https://explorer.bitquery.io/ethereum/token/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce) is traded, with maker/taker addresses and USD amounts.
 
-https://ide.bitquery.io/Trades-for-SHIB-token
+**Variations:** Use `buyCurrency` instead for directional (buy-only) trades. Add `quoteCurrency` to target a specific pair. Apply [sorting](/docs/query-features/filtering/sorting) by `baseAmount` for largest trades.
+
+[Open this query on IDE](https://ide.bitquery.io/Trades-for-SHIB-token)
 
 ```graphql
 {
@@ -399,7 +409,9 @@ https://ide.bitquery.io/Trades-for-SHIB-token
 
 ## List Top Ethereum DEX Quote Pairs for WETH by Trade Count
 
-To get all pairs for a give token you can use following api.
+Discover all DEX trading pairs for a token sorted by trade count, with one result per pool contract using `limitBy: {each: "smartContract.address.address", limit: 1}`. Shows the most active pairs first — useful for finding where a token has the deepest liquidity.
+
+**Variations:** Remove `limitBy` to see all pools. Change `baseCurrency` to any token address. Add `date` for a specific period. Use [count aggregation](/docs/query-features/aggregation/count) for total trades per pair.
 
 [Open this on IDE](https://ide.bitquery.io/Pairs-for-give-token-on-ethereum)
 
@@ -438,9 +450,11 @@ To get all pairs for a give token you can use following api.
 
 ## Get Ethereum DEX Trades for WOJAK Versus WETH Currency Pair
 
-You can use both buy/sell or Base/Quote currency to get trades for a given currency pair. In the following example we are getting trades for [WOJAK](https://explorer.bitquery.io/ethereum/token/0x5026f006b85729a8b14553fae6af249ad16c9aab) / [WETH](https://explorer.bitquery.io/ethereum/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2) currency pair.
+Get trades for a specific token pair by combining `buyCurrency` and `quoteCurrency` filters. This example fetches [WOJAK](https://explorer.bitquery.io/ethereum/token/0x5026f006b85729a8b14553fae6af249ad16c9aab)/[WETH](https://explorer.bitquery.io/ethereum/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2) trades with derived USD prices via `expression`.
 
-https://ide.bitquery.io/Trades-for-a-trading-pair-on-Ethereum
+**Variations:** Use `baseCurrency`/`quoteCurrency` for bidirectional matching. Add `exchangeName` or `smartContractAddress` to target a specific pool. Apply [OHLC aggregation](/docs/Examples/dexTrades/ohlc) for candlestick data.
+
+[Open this query on IDE](https://ide.bitquery.io/Trades-for-a-trading-pair-on-Ethereum)
 
 ```graphql
 {
@@ -504,6 +518,9 @@ https://ide.bitquery.io/Trades-for-a-trading-pair-on-Ethereum
 
 ## Get Ethereum DEX Trades for a Liquidity Pool Contract Address
 
+Query trades from a specific liquidity pool by passing the pool contract address to `smartContractAddress`. Use the **buy/sell** model to avoid duplicate results — the base/quote model returns each swap twice (once per side).
+
+**Variations:** Add `date` or `time` for a specific period. Filter by `buyCurrency` to see only one direction. Combine with the pool balance query below to correlate trade activity with liquidity depth.
 To get trades for pair tokens, you should use buy/sell; in the case of using Base/Quote, it will replicate the result.
 For example, if there is a swap A < - > B, using Base/Quote, it will give two results in one A as the base currency and in another B as the quote currency.
 
@@ -562,9 +579,9 @@ For example, if there is a swap A < - > B, using Base/Quote, it will give two re
 
 ## Derive Ethereum Token USD Price From Latest ERUTA Versus WETH Trade
 
-As we already know, USD doesn't exist on the blockchain. Additionally, there will be tokens that do not have pairs with USDT or other stablecoins. In this case, getting USD prices becomes [price index problem](https://bitquery.io/blog/dex-price-index). However, we have USD pricing for several tokens, and actually, you can derive the USD price of tokens using it.
-In the following example, we are getting the latest trade for ERUTA/WETH trading pair because the latest trade = latest price. In this case, we have the USD price of WETH. Therefore, we are deriving the ERUTA USD price by dividing `sell_amount_usd` by `buyAmount`.
-This is a very effective way to get the USD price for assets that are traded against WETH or WBNB in the case of the Binance chain and so on.
+Derive the USD price for any token — even those without stablecoin pairs — by using the `expression` field on a trade against WETH. Since Bitquery has USD pricing for WETH, dividing `sell_amount_usd` by `buyAmount` gives the token's USD price. This is the standard approach to solve the [DEX price index problem](https://bitquery.io/blog/dex-price-index).
+
+**Variations:** Change `sellCurrency` to WBNB, WAVAX, or any token with known USD price. Use `baseCurrency`/`quoteCurrency` with `quotePrice` for the direct quote price. Add [time-series grouping](/docs/query-features/aggregation/) for price history.
 
 [Open this query on IDE](https://ide.bitquery.io/Latest-price-of-ERUTA)
 
@@ -605,7 +622,9 @@ This is a very effective way to get the USD price for assets that are traded aga
 
 ## List New BSC PancakeSwap PairCreated Events From the Factory Contract
 
-To get latest pairs of an exchange, we can use Event APIs, let's get latest pairs by tracking `PairCreated` event from the [PancakeSwap factory contract](https://explorer.bitquery.io/bsc/smart_contract/0xbcfccbde45ce874adcb698cc183debcf17952812/events) on BNB chain.
+Track new liquidity pool deployments on PancakeSwap by monitoring `PairCreated` events from the [factory contract](https://explorer.bitquery.io/bsc/smart_contract/0xbcfccbde45ce874adcb698cc183debcf17952812/events). Returns both token addresses, token names, and the pair contract address — essential for new token discovery and listing alerts.
+
+**Variations:** Replace the factory address for any Uniswap V2 fork on any EVM chain. Add `argument: {is: "token0"}` with a specific value to find pairs for a given token. Use [limit/offset](/docs/query-features/filtering/options) for pagination.
 
 [Open this query on IDE](https://ide.bitquery.io/Latest-Pair-Created-on-Pancake-Swap_1_1)
 
@@ -646,9 +665,11 @@ To get latest pairs of an exchange, we can use Event APIs, let's get latest pair
 
 ## Get BSC DEX Trades Using an Unlisted Exchange Factory Address
 
-To get an exchange which is not listed on Bitquery, you just need to use their factory address. In the following example, we do not have GIBX Swap listed on our explorer, but we do index GIBX, and you can get it's trade using GIBX Swap factory address.
+Query trades from any DEX — even if it isn't named in Bitquery — by using its factory address in the `exchangeAddress` filter. Bitquery indexes all protocols it supports, so every fork is automatically available through its factory address.
 
-https://ide.bitquery.io/GIBX-trades
+**Variations:** Replace the address with any DEX factory contract. Add `buyCurrency` or `baseCurrency` for a specific token. Use `protocol` to discover which protocol the exchange uses.
+
+[Open this query on IDE](https://ide.bitquery.io/GIBX-trades)
 
 ```graphql
 {
@@ -702,14 +723,9 @@ https://ide.bitquery.io/GIBX-trades
 
 ## Read Ethereum USDC and WETH Balances Inside a Uniswap Pool Contract
 
-To see liquidity in pair tokens, we need to know two things,
+Check the current liquidity depth of a DEX pool by querying the token balances held in the pool contract. This example reads the WETH and USDC balances inside the Uniswap V3 WETH/USDC pool ([0x88e6...5640](https://explorer.bitquery.io/ethereum/smart_contract/0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640)). Use [this query](https://ide.bitquery.io/tokens-in-pair-contract) to discover which tokens make up any pool.
 
-1 - What tokens are in this pair 
-2- The balance of tokens in the Pair token contract.
-
-Let's take an example of WETH/USDC token pair [0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640](https://explorer.bitquery.io/ethereum/smart_contract/0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640). To see which token makes this pool token use [**this API**](https://ide.bitquery.io/tokens-in-pair-contract). As we can see, it has WETH and USDC tokens.
-
-Now we will use the balance API to get the balance of WETH and USDC tokens in our pair contract.
+**Variations:** Replace the pool address and currency addresses for any pool. Add `value(in: USD)` for USD-equivalent balances. Remove the `currency` filter to see all tokens in the contract.
 
 [Open this query in IDE](https://ide.bitquery.io/liquidity-of-token-pair-on-ethereum-using-balance-api)
 
@@ -739,7 +755,9 @@ Now we will use the balance API to get the balance of WETH and USDC tokens in ou
 
 ## Track Ethereum Mint and Burn Events for USDC WETH Pool Liquidity
 
-To track liquidity details for a pair token we can track `Mint` and `Burn` events. In the following example we are tracking lquidity add and remove for USDC/WETH token pair [0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640](https://explorer.bitquery.io/ethereum/smart_contract/0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640/events)
+Track liquidity additions and removals for a DEX pool by monitoring `Mint` and `Burn` events. This query returns token amounts, owner addresses, and tick ranges for the USDC/WETH Uniswap V3 pool ([0x88e6...5640](https://explorer.bitquery.io/ethereum/smart_contract/0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640/events)) — essential for LP tracking and TVL analytics.
+
+**Variations:** Replace the pool address for any Uniswap V3 pool. Add `date` or `time` for a specific period. Use [count aggregation](/docs/query-features/aggregation/count) to compare mint vs burn frequency.
 
 [Open this query on IDE](https://ide.bitquery.io/Mint-and-burn-to-track-liquidity)
 
@@ -789,7 +807,9 @@ To track liquidity details for a pair token we can track `Mint` and `Burn` event
 
 ## Resolve Buy and Sell Currencies for an Ethereum Pool Smart Contract
 
-To check currency pair in a Pool token, you can use following API.
+Identify which tokens make up a DEX pool by fetching a single trade from the pool contract. Returns the buy and sell currency addresses and symbols — the standard method to resolve pool composition when you only have the pool address.
+
+**Variations:** Replace `smartContractAddress` with any pool contract. Use this as a lookup step before running balance or trade queries for the pool.
 
 [Open this query in IDE](https://ide.bitquery.io/tokens-in-pair-contract)
 
@@ -821,9 +841,9 @@ To check currency pair in a Pool token, you can use following API.
 
 ## Count Ethereum DEX Trades Above a USD Threshold for a Pool
 
-We can get number of trades for a uniswap pool above particular value using `count` field and passing value which we want to `tradeAmountUSD` filter along with address of that pools smart contract passed to `smartContractAddress` field.
+Count unique transactions in a DEX pool that exceeded a USD threshold. Uses `count(uniq: txs)` with `tradeAmountUsd: {gt: 500}` to filter out small trades — useful for measuring significant trading activity. [Run query](https://ide.bitquery.io/Ethereum-Get-Count-of-Trades-Above-Certain-USD-Value-for-a-Pool).
 
-Check query [here](https://ide.bitquery.io/Ethereum-Get-Count-of-Trades-Above-Certain-USD-Value-for-a-Pool).
+**Variations:** Adjust `tradeAmountUsd` threshold for different definitions of "significant." Remove `uniq: txs` for total trade count (including multiple swaps per tx). Add `date` for a specific period.
 
 ````
 {
@@ -841,9 +861,9 @@ Check query [here](https://ide.bitquery.io/Ethereum-Get-Count-of-Trades-Above-Ce
 
 ## Get Rolling Twenty Four Hour Ethereum Pool Trade Volume
 
-We can get volume of Uniswap pool using `tradeAmount` field. It gives us trade amount in USD using `timeInterval` field we can set interval to 24H. We have also set limit to 30 days so we will get 24H volume for last 30 days.
+Get rolling 24-hour trading volume in USD for a DEX pool using `tradeAmount(in: USD)` grouped by `timeInterval { hour(count: 24) }`. This query returns the last 30 data points — ideal for volume charts and liquidity monitoring. [Run query](https://ide.bitquery.io/Ethereum-24H-Trading-Value-of-a-Pool-for-last-30-days).
 
-Check query [here](https://ide.bitquery.io/Ethereum-24H-Trading-Value-of-a-Pool-for-last-30-days).
+**Variations:** Change `hour(count: 24)` to `hour(count: 1)` for hourly granularity or `day` for daily totals. Adjust `limit` for more or fewer data points. Add `buyCurrency` to track volume for one side of the pair.
 
 ```
 {
@@ -865,8 +885,9 @@ Check query [here](https://ide.bitquery.io/Ethereum-24H-Trading-Value-of-a-Pool-
 
 ## Count Unique Ethereum DEX Buy and Sell Tokens on One Date
 
-This query below will return the count of unique tokens bought and sold in all DEXs on the Ethereum network on
-a particular date. To achieve this we will be using the `uniq` filter and aliasing `count(uniq: buy_currency)` and `count(uniq: sell_currency)`
+Count the number of unique tokens traded across all Ethereum DEXes on a specific date using `count(uniq: buy_currency)` and `count(uniq: sell_currency)`. Useful for measuring token diversity and DEX ecosystem breadth.
+
+**Variations:** Change `date` to any day or use `date: {since: ..., till: ...}` for a range. Add `exchangeName` to count tokens on a specific DEX. Use [aliases](/docs/query-features/aliases) to query multiple dates in one request.
 
 ```
 query MyQuery {

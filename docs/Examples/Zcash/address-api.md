@@ -6,11 +6,7 @@ description: "Get Zcash address details, transaction history, balance, stats, in
 
 # Zcash API - Address Analysis, Transactions, Balance, Stats
 
-Get comprehensive Zcash address details, transaction history, balance, statistics, and analyze inbound/outbound transactions using our Zcash GraphQL API. Access real-time and historical Zcash blockchain data for any address.
-
-The below GraphQL APIs are examples of data points you can get with Bitquery for Zcash addresses.
-
-If you have any question on other data points reach out to [support](https://t.me/Bloxy_info).
+Analyze Zcash addresses — check balances, pull transaction history, and trace fund flows using the Bitquery GraphQL API.
 
 :::note
 
@@ -85,7 +81,9 @@ Follow the steps here to create one: [How to generate Bitquery API token ➤](ht
 
 ## Get Address Details Using Address Stats
 
-Get comprehensive statistics for any Zcash address including balance, transaction counts, first and last activity timestamps, and unique sender/receiver counts.
+Pull a full profile of any Zcash address in one call — balance (in USD or ZEC), total inbound/outbound transactions, unique sender/receiver counts, and first/last active timestamps.
+
+**Variations:** Pass multiple addresses with `{in: [...]}`, request the balance in a different fiat currency, or add `date` filters. See [address stats schema](/docs/Schema/bitcoin/addressstats) for all available fields.
 
 [Try Zcash Address Stats Query ➤](https://ide.bitquery.io/Address-Stats-for-Zcash)
 
@@ -120,7 +118,9 @@ query MyQuery {
 
 ## Balance of an Address using Inputs and Outputs
 
-Calculate the balance of a Zcash address by aggregating all inputs and outputs. This query returns the total value received (inputs) and sent (outputs) for an address, along with transaction counts and date ranges.
+Compute the balance of a Zcash address by aggregating all UTXO inputs (funds received) and outputs (funds sent). Returns totals in both ZEC and USD along with the first and last active dates.
+
+**Variations:** Add `date` filters to compute the balance for a specific time window, or swap the address to audit a different wallet. See [query features](/docs/category/query-features) for aggregation helpers.
 
 [Try Zcash Address Balance Query ➤](https://ide.bitquery.io/Zcash-balance-of-an-address)
 
@@ -158,7 +158,9 @@ Calculate the balance of a Zcash address by aggregating all inputs and outputs. 
 
 ## Inbound Transaction Details
 
-Get a list of all inbound transactions for a Zcash address, including transaction hashes, timestamps, input/output values, and fees. This query returns transactions where the specified address is the receiver.
+Retrieve all transactions received by a Zcash address, including transaction hashes, block timestamps, input/output values, and fee amounts.
+
+**Variations:** Adjust `limit` for more results, add `date` ranges for a specific period, or sort by `feeValue` to surface high-fee transactions. See [query features](/docs/category/query-features) for sorting and pagination.
 
 [Try Zcash Inbound Transactions Query ➤](https://ide.bitquery.io/Inbound-Transactions-Zcash)
 
@@ -191,7 +193,9 @@ query MyQuery {
 
 ## Outbound Transaction Details
 
-Get a list of all outbound transactions for a Zcash address, including transaction hashes, timestamps, input/output values, and fees. This query returns transactions where the specified address is the sender.
+Retrieve all transactions sent from a Zcash address, including transaction hashes, block timestamps, input/output values, and fee amounts.
+
+**Variations:** Add an `outputAddress` filter to isolate direct transfers between two wallets, or increase `limit` for a full transaction history. See [query features](/docs/category/query-features) for pagination.
 
 [Try Zcash Outbound Transactions Query ➤](https://ide.bitquery.io/Outbound-Transactions-Zcash)
 
@@ -225,7 +229,9 @@ query MyQuery {
 
 ## ZCash Find Trace of an Address
 
-Trace the flow of funds for a Zcash address by following the coinpath. This query tracks inbound transactions to a specific address, showing the sender and receiver addresses, transaction details, block information, and the depth of the money flow path. Useful for investigating fund movements and understanding transaction relationships.
+Follow the flow of funds through a Zcash address using the Coinpath API. Traces inbound hops up to a configurable depth and returns sender/receiver pairs, transaction hashes, amounts, and block context — useful for compliance investigations and fund-source analysis.
+
+**Variations:** Switch `direction` to `outbound` to trace where funds went, increase `depth` for deeper analysis, or add `date` constraints. See [Coinpath explained](/docs/building-queries/Coinpath-Explained/Overview) for depth and direction details.
 
 [Try Zcash Address Trace Query ➤](https://ide.bitquery.io/ZCash-Find-Trace-of-an-Address)
 

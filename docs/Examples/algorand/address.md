@@ -6,9 +6,13 @@ keywords: [Algorand API examples, Algorand GraphQL queries, Bitquery]
 
 # Algorand Address API
 
-Our Algorand Address API provides all details regarding any address on Algorand Blockchain. If given address is a smart contract, API also provides details of that smart contract too. Below are some examples of `address` API:
+Look up Algorand address balances, assets, and smart contract details using the Address API.
 
 ## Get Algorand Address Balance
+
+Fetch the native ALGO balance for a specific Algorand address. Replace `ADDRESS_HERE` with your target address.
+
+**Variations:** Use the `in` operator to query multiple addresses, or add a `date` filter. See [query features](/docs/category/query-features) for more options.
 
 ```
 {
@@ -25,9 +29,11 @@ Our Algorand Address API provides all details regarding any address on Algorand 
 }
 ```
 
-Replace `ADDRESS_HERE` with the actual Algorand address you want to query. This query will return the balance of the address in the Algorand blockchain along with the address itself. The `is` operator is used to filter for a single specific address, ensuring that only data related to that exact address is returned.
-
 ## Get Algorand Balances for Multiple Addresses
+
+Retrieve ALGO balances for multiple Algorand addresses in a single query. Replace the placeholder addresses with your targets.
+
+**Variations:** Switch to the `is` operator for a single address lookup, or combine with `options` for sorting and pagination. See [query features](/docs/category/query-features) for details.
 
 ```
 {
@@ -42,9 +48,11 @@ Replace `ADDRESS_HERE` with the actual Algorand address you want to query. This 
 }
 ```
 
-Replace addresses in the array with the actual Algorand addresses you want to query. This query will retrieve the balances of these addresses from the Algorand blockchain. The `in` operator allows you to filter multiple addresses at once by specifying a list of addresses to retrieve their information.
-
 ## Get Algorand Smart Contract Bytecode and Source
+
+Retrieve the bytecode and source code of an Algorand smart contract. Replace `SMART_CONTRACT_ADDRESS` with the contract address.
+
+**Variations:** Add the `balance` field to also fetch the contract's ALGO holdings. See [query features](/docs/category/query-features) for filtering options.
 
 ```
 {
@@ -61,9 +69,6 @@ Replace addresses in the array with the actual Algorand addresses you want to qu
   }
 }
 ```
-
-
-Replace `SMART_CONTRACT_ADDRESS` with the actual Algorand address of the smart contract you want to query. This will return the bytecode, source code, and the address of the specified smart contract on the Algorand blockchain.
 
 ## Related Resources
 

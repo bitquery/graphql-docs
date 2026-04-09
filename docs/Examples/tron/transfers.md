@@ -6,9 +6,13 @@ keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
 
 # Transfer API
 
-Our Tron Transfers API provides detailed information about token transfers made on the Tron blockchain.
+Track Tron token transfers including TRC-20 movements, sender/receiver addresses, amounts, and inflow/outflow totals.
 
 ## Get Latest Tron USDT Transfers After a Block Date
+
+Fetch the most recent USDT transfers on Tron after a given date, returning amounts, sender/receiver addresses, currency details, and transaction hashes.
+
+**Variations:** Change the `currency` to track a different TRC-20 token, or adjust the `date` filter for a different time range.
 
 ```
 {
@@ -40,11 +44,11 @@ Our Tron Transfers API provides detailed information about token transfers made 
 }
 ```
 
-This query retrieves the latest 10 transfers of a specific currency ("TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t") on the Tron network that occurred after July 31, 2023. It provides details such as transfer amount, block timestamp, currency address and name, receiver and sender addresses, and transaction hash.
-
 ## Get Latest Tron USDT Transfers Received by a Specific Address
 
-In this query we use the `reciever` filter to get all transfers sent to an address on Tron. You can run it [here](https://ide.bitquery.io/tron-transactions-by-receiver)
+Fetch the most recent USDT transfers received by a given Tron address. [Run this query in the IDE](https://ide.bitquery.io/tron-transactions-by-receiver).
+
+**Variations:** Switch `receiver` to `sender` to see outgoing transfers, or change the `currency` to track a different TRC-20 token.
 
 ```
 {
@@ -77,9 +81,11 @@ In this query we use the `reciever` filter to get all transfers sent to an addre
 }
 ```
 
-This query retrieves the latest 10 transfers on the Tron network for the currency "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t" that occurred after July 31, 2023, where the specified receiver address is "TShuppF9wx9Ddx7ih1E2o88QskXeqQpGKE". It provides details such as transfer amount, block timestamp, currency address and name, receiver address, sender address, and transaction hash.
-
 ## List Tron Transfers at a Specific Block Height
+
+Retrieve all token transfers that occurred at a specific Tron block height, useful for block-level auditing.
+
+**Variations:** Add a `currency` filter to scope to a single token, or use a `date` range instead of `height`.
 
 ```
 {
@@ -109,13 +115,11 @@ This query retrieves the latest 10 transfers on the Tron network for the currenc
 }
 ```
 
-This query retrieves transfers on the Tron network that occurred at block height 53420256, providing details such as transfer amount, block timestamp, currency address and name, receiver address, sender address, and transaction hash.
-
 ## Sum Tron Address Inflow and Outflow Totals by Currency
 
-The following query is used to fetch the total incoming and outgoing transfers for a specific address on the Tron network.
+Sum all incoming and outgoing transfer amounts for a Tron address, grouped by currency. [Run this query in the IDE](https://ide.bitquery.io/Tron-Transfer-API).
 
-For both incoming and outgoing transfers, the total value of transfers and the currency name are returned.You can run the query [here](https://ide.bitquery.io/Tron-Transfer-API)
+**Variations:** Add a `date` filter to scope totals to a specific period, or add a `currency` filter to focus on a single token.
 
 ```
 query MyQuery {

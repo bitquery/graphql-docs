@@ -53,4 +53,4 @@ query MyQuery {
 - [Limits and limitBy](https://docs.bitquery.io/v1/docs/query-features/filtering/limits)
 - [Sorting](https://docs.bitquery.io/v1/docs/query-features/filtering/sorting)
 - [Basic structure of a query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
-- [Aggregation overview](https://docs.bitquery.io/v1/docs/query-features/aggregation/aggregation)
+- [Aggregation overview](https://docs.bitquery.io/v1/docs/query-features/aggregation/)
