@@ -50,7 +50,10 @@ query ($network: ElrondNetwork!,  $from: ISO8601DateTime, $till: ISO8601DateTime
 }
 ```
 
-<details><summary>Filtering Operations</summary>
+<details>
+
+<summary>Filtering Operations</summary>
+
 
 **options** : A set of options that can be used to filter the results.
 

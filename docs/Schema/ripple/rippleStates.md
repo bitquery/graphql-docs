@@ -72,7 +72,10 @@ query ($network: RippleNetwork!) {
 
 ```
 
-<details><summary>Filtering rippleStates</summary>
+<details>
+
+<summary>Filtering rippleStates</summary>
+
 
 - `transactionHash`: The hash of the transaction that created the RippleState object.
 - `transactionType`: The type of transaction that created the RippleState object.

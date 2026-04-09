@@ -64,6 +64,7 @@ query {
 
 <details>
 <summary>Filtering Addresses</summary>
+
 - `address`: Filter by a specific address or a list of addresses.
 
 </details>

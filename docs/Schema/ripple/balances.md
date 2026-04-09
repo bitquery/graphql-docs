@@ -87,7 +87,10 @@ query ($network: RippleNetwork!, $address: String!, $from: ISO8601DateTime, $til
 }
 ```
 
-<details><summary>Filtering Balances</summary>
+<details>
+
+<summary>Filtering Balances</summary>
+
 
 - `date`: This field specifies the date and time range for the balance history.
 

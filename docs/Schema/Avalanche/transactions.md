@@ -100,7 +100,10 @@ query ($network: EthereumNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTim
 }
 ```
 
-<details><summary>Filtering Transactions</summary>
+<details>
+
+<summary>Filtering Transactions</summary>
+
 
 
 `limit`: The maximum number of results to return.

@@ -76,7 +76,10 @@ query MyQuery {
 
 ```
 
-<details><summary>Filtering Offers</summary>
+<details>
+
+<summary>Filtering Offers</summary>
+
 
 - `options`: This field specifies the options for the query, such as the order of the results and the number of results to return.
 

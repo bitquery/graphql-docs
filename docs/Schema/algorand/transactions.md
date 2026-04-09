@@ -55,7 +55,10 @@ query ($network: AlgorandNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Da
 }
 ```
 
-<details><summary>Filtering transactions</summary>
+<details>
+
+<summary>Filtering transactions</summary>
+
 
 `limit`: The maximum number of results to return.
 

@@ -53,7 +53,10 @@ query ($network: SolanaNetwork!, $signature: String!) {
 ```
 
 
-<details><summary>Filtering instructionAccounts</summary>
+<details>
+
+<summary>Filtering instructionAccounts</summary>
+
 
 `account`
 
@@ -147,6 +150,7 @@ This field filters the results by the owner of the account that was affected by 
 `accountIndex`
 
 This field filters the results by the index of the account that was affected by the instruction.
+
 </details>
 
 ## Fields

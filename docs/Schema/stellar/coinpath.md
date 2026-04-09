@@ -70,7 +70,10 @@ query ($network: StellarNetwork!, $address: String!, $from: ISO8601DateTime, $ti
 
 ```
 
-<details><summary>Filtering Coinpath</summary>
+<details>
+
+<summary>Filtering Coinpath</summary>
+
 
 - **initialAddress**
 

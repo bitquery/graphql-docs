@@ -75,7 +75,11 @@ query ($network: RippleNetwork!) {
 
 ```
 
-<details><summary>Filtering Checks</summary>
+<details>
+
+<summary>Filtering Checks</summary>
+
+
 -   `options`: This object contains options that control the pagination and sorting of the results.
  
 -   `date`: This object contains the start and end dates and times of the time range to filter the results by.

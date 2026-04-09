@@ -65,7 +65,10 @@ query ($network: StellarNetwork!, $address: String!, $from: ISO8601DateTime, $ti
 
 ```
 
-<details><summary>Filtering balanceEffects</summary>
+<details>
+
+<summary>Filtering balanceEffects</summary>
+
 
 - **date:** This field allows you to filter the balance effects by date range.
 - **address:** This field allows you to filter the balance effects by the account address.

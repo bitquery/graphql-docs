@@ -52,7 +52,10 @@ query ($network: ConfluxNetwork!) {
 }
 ```
 
-<details><summary>Filtering Arguments</summary>
+<details>
+
+<summary>Filtering Arguments</summary>
+
 
 - `any`: A catch-all filter ( OR logic) that can be used to select arguments that match any of the other filters. This is useful if you want to combine multiple filters to narrow down the results.
 - `argument`: Filter by specific argument for smart contract method or event

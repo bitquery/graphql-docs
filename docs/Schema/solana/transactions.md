@@ -42,7 +42,10 @@ query ($network: SolanaNetwork!, $date: ISO8601DateTime, $height: Int) {
 }
 ```
 
-<details><summary>Filtering Transactions</summary>
+<details>
+
+<summary>Filtering Transactions</summary>
+
 
 `transactionIndex`: This field allows you to filter transactions by their index in the block.
 

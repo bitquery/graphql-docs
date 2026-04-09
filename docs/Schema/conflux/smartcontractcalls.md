@@ -49,7 +49,10 @@ query ($network: ConfluxNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
 }
 ```
 
-<details><summary>Filtering Calls</summary>
+<details>
+
+<summary>Filtering Calls</summary>
+
 
 - **options** : A set of options that can be used to filter the results.
 

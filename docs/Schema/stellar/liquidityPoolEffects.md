@@ -69,7 +69,10 @@ query MyQuery {
 
 ```
 
-<details><summary>Filtering Effects API</summary>
+<details>
+
+<summary>Filtering Effects API</summary>
+
 
 - **transactionHash**
 

@@ -59,7 +59,10 @@ query ($network: StellarNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
 }
 ```
 
-<details><summary>Filtering Effects</summary>
+<details>
+
+<summary>Filtering Effects</summary>
+
 
 - **options**
 

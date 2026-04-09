@@ -40,7 +40,10 @@ query ($network: ConfluxNetwork!, $hash: String!) {
 }
 ```
 
-<details><summary>Filtering Events</summary>
+<details>
+
+<summary>Filtering Events</summary>
+
 
 Smart contract events can be filtered using the following arguments:
 

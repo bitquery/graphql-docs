@@ -65,7 +65,11 @@ query ($network: SolanaNetwork!, $signature: String!) {
 ```
 
 
-<details><summary>Filtering Instructions</summary></details>
+<details>
+
+<summary>Filtering Instructions</summary>
+
+</details>
 
 ## Fields
 

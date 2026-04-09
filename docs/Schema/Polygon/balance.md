@@ -51,6 +51,7 @@ Here is an example on getting balance of [0x198905a3e2e3ffeb20169adf9ceaf0f9e66c
 
 <details>
 <summary>Filtering Addresses</summary>
+
 - `address`: Filter by a specific address or a list of addresses.
 - `currency` : In `balances` we can filter using currency address.
 - `history` :  You can get the balance history of an address and use block height and timestamp as filters.

@@ -78,7 +78,10 @@ query ($network: Ethereum2Network!) {
 }
 ```
 
-<details><summary>Filtering proposerSlashings</summary>
+<details>
+
+<summary>Filtering proposerSlashings</summary>
+
 
 `limit`: The maximum number of results to return.
 
@@ -99,6 +102,7 @@ query ($network: Ethereum2Network!) {
 `slashingProposerIndex`: The index of the proposer in the slashing to filter the results by.
 
 `time`: The timestamp of the proposer slashing to filter the results by.
+
 </details>
 
 

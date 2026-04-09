@@ -97,7 +97,10 @@ The Conflux Coinpath API allows you to get the money flow for an address on the 
 
 ```
 
-<details><summary>Filtering Coinpath</summary>
+<details>
+
+<summary>Filtering Coinpath</summary>
+
 
 - **initialAddress** The address of the account whose coinpath you want to retrieve.
 - **currency** The currency you want to filter the results by.

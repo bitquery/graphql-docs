@@ -19,6 +19,15 @@ The API offers two currency models:
 **Example:** Given trades A↔B, B↔C, C↔A — filtering by `sellCurrency: B` returns only trade 1, while `quoteCurrency: B` returns trades 1 and 2.
 
 Use **buy/sell** when you need directional data (e.g., who bought token X). Use **base/quote** when you want all trading activity for a token regardless of direction.
+For example - Let's say there are 3 trades.
+
+```
+1 - A < - > B
+2 - B < - > C
+3 - C < - > A
+```
+
+Now when you query, give me all trades where sellCurrency is B, and we will give only 1st trade (Swap). However, if you query saying give me all trades where quoteCurrency is B, we will give both 1st and 2nd because Base/Quote currency looks at both sides of the trade.
 
 ## Time vs Date
 
@@ -47,7 +56,7 @@ Use the `expression` field to derive USD prices from any available USD amount in
 
 A **protocol** is the underlying smart contract logic (e.g., Uniswap V2, Uniswap V3). An **exchange** is a specific deployment of that protocol. PancakeSwap is an exchange that uses the Uniswap V2 protocol. Use `protocol` to query all exchanges built on the same codebase, or `exchangeName`/`exchangeAddress` to target a specific DEX.
 
-## How to check if exchange is indexed by Bitquery?
+## How to check if an exchange is indexed by Bitquery?
 
 If Bitquery indexes a protocol (e.g., Uniswap V2), every exchange using that protocol is automatically indexed — even if we haven't named it. Query trades for any exchange by passing its factory address to `exchangeAddress`. [Try it here](https://ide.bitquery.io/query/pzizr56shpq6wQrX).
 
@@ -512,6 +521,8 @@ Get trades for a specific token pair by combining `buyCurrency` and `quoteCurren
 Query trades from a specific liquidity pool by passing the pool contract address to `smartContractAddress`. Use the **buy/sell** model to avoid duplicate results — the base/quote model returns each swap twice (once per side).
 
 **Variations:** Add `date` or `time` for a specific period. Filter by `buyCurrency` to see only one direction. Combine with the pool balance query below to correlate trade activity with liquidity depth.
+To get trades for pair tokens, you should use buy/sell; in the case of using Base/Quote, it will replicate the result.
+For example, if there is a swap A < - > B, using Base/Quote, it will give two results in one A as the base currency and in another B as the quote currency.
 
 [Open this query in IDE](https://ide.bitquery.io/Trades-for-a-pair-token-on-ethereum)
 

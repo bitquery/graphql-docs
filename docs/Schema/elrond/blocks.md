@@ -34,7 +34,10 @@ query ($network: ElrondNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime)
 
 ```
 
-<details><summary>Filtering Blocks</summary>
+<details>
+
+<summary>Filtering Blocks</summary>
+
 
 - `any`: A catch-all field ( OR Logic) that can be used to filter on any other field in the blocks API.
 - `blockHash`: Filter by block hash.

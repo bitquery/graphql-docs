@@ -125,6 +125,7 @@ Coinpath data can be filtered using following arguments:
 - `sender`: Filter by the sender's address.
 - `time`: Filter by the time of the transaction.
   
+
 </details>
 
 The following are available fields for the `coinpath`:

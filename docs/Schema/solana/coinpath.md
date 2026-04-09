@@ -87,7 +87,10 @@ query ($network: SolanaNetwork!, $address: String!, $from: ISO8601DateTime, $til
 ```
 
 
-<details><summary>Filtering Coinpath</summary>
+<details>
+
+<summary>Filtering Coinpath</summary>
+
 
 -   **initialAddress**
     
