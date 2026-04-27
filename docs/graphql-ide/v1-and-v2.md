@@ -18,6 +18,12 @@ Today we will explain the difference between our V1 and V2 APIs. Let’s start w
 
 If you have any questions please comment on [this community post](https://community.bitquery.io/t/difference-between-bitquery-graphql-v1-and-v2-apis/1561).
 
+:::note Solana on V1
+
+V1 covers full historical **Solana transfers, transactions, addresses, blocks, block rewards, and Coinpath** — see the [Solana schema overview](/docs/Schema/solana/overview) and [Solana transfers examples](/docs/Examples/Solana/transfers). The V1 Solana **`instructions`** and **`instructionAccounts`** queries have been **removed**; parsed Solana instruction-, program-, and DEX-trade-level analytics are now served by the **[V2 Solana Instructions API](https://docs.bitquery.io/docs/blockchain/Solana/solana-instructions/)** at `https://streaming.bitquery.io/graphql`.
+
+:::
+
 ## Endpoints
 
 V1 — https://graphql.bitquery.io/
