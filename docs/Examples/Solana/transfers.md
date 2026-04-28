@@ -17,11 +17,11 @@ keywords:
   ]
 ---
 
-# Solana historical transfers API
+# Solana Historical Transfers API
 
-Bitquery indexes **complete historical** Solana **SOL** and **SPL token** transfers as structured rows you can filter, aggregate, and reconcile—without parsing raw RPC transactions yourself. Teams use this dataset for **accounting** and ledger tie-out, **tax and reporting** pipelines (Bitquery provides movement and USD fields; always apply your jurisdiction’s rules—this is not tax advice), **trading and market** analysis, **compliance** and source-of-funds views, **audit** sampling and evidence bundles (signatures, slots, timestamps), **treasury** monitoring, and **data engineering** (dashboards, ETL, or bulk files). For live streams, see the [Solana streaming docs](https://docs.bitquery.io/docs/blockchain/Solana/).
+Bitquery indexes **complete historical** Solana **SOL** and **SPL token** transfers as structured rows you can filter, aggregate, and reconcile—without parsing raw RPC transactions yourself. Teams use this dataset for **accounting** and ledger tie-out, **tax and reporting** pipelines (Bitquery provides movement and USD fields; always apply your jurisdiction's rules—this is not tax advice), **trading and market** analysis, **compliance** and source-of-funds views, **audit** sampling and evidence bundles (signatures, slots, timestamps), **treasury** monitoring, and **data engineering** (dashboards, ETL, or bulk files). For live streams, see the [Solana streaming docs](https://docs.bitquery.io/docs/blockchain/Solana/).
 
-## Use cases at a glance
+## Use Cases at a Glance
 
 Jump to examples by intent:
 
@@ -32,20 +32,20 @@ Jump to examples by intent:
 - **Treasury and operations** — [Wallet as sender or receiver](#wallet-sender-receiver), [historical SOL and stablecoin rows](#historical-sol-stablecoin-rows)
 - **Data products and bulk export** — [Pagination and limits](/docs/query-features/filtering/options), [aggregations](/docs/query-features/aggregation/), [Bulk export (S3 and Parquet)](#bulk-export-s3-parquet)
 
-## What the Solana transfers API gives you
+## What the Solana Transfers API Gives You
 
 - **Historical and streaming** — Full archive for analytics; for realtime use the [streaming Solana docs](https://docs.bitquery.io/docs/blockchain/Solana/) and [subscriptions](https://docs.bitquery.io/docs/subscriptions/websockets/).
 - **Filtering** — Wallets, mints, time, block height, programs, success, amounts, signatures.
 - **Aggregates** — Per-token `sum` / `count`, [expressions](/docs/query-features/expressions/overview) (e.g. net balance), and [sorting](/docs/query-features/filtering/sorting).
 - **Evidence-friendly fields** — Block height, timestamps, transaction signature, program and instruction metadata where indexed.
 
-## Solana RPC vs Bitquery transfers
+## Solana RPC vs. Bitquery Transfers
 
 **RPC** — Encoded transactions, heavy parsing, limited turnkey history for analytics.
 
 **Bitquery** — Pre-parsed transfer rows, filters, aggregates, and time-bounded pulls suited to reporting and monitoring.
 
-## Real-time streaming and webhooks
+## Real-Time Streaming and Webhooks
 
 You can turn queries into subscriptions for live streams and webhooks. See [WebSocket subscriptions](https://docs.bitquery.io/docs/subscriptions/websockets/), [real-time Solana streams](https://docs.bitquery.io/docs/streams/real-time-solana-data/), and [more Solana API examples](/docs/Examples/Solana/address-api).
 
@@ -117,7 +117,7 @@ query MyQuery {
 }
 ```
 
-## Historical Solana Pumpfun Tokens Minted by Wallet from Transfers {#pumpfun-mints-by-wallet}
+## Historical Solana Pump Fun Tokens Minted by Wallet from Transfers {#pumpfun-mints-by-wallet}
 
 [Run query](https://ide.bitquery.io/get-historical-created-token-and-creator)
 
@@ -180,7 +180,7 @@ query MyQuery {
 }
 ```
 
-## Solana Pumpfun Token Migrations on a Specific Calendar Date
+## Solana Pump Fun Token Migrations on a Specific Calendar Date
 
 Track Pump Fun token migrations on a specific date by filtering for transfers to the migration receiver address via the Pump Fun program. Returns token details, sender/receiver with mint accounts, and transaction signatures. [Run query](https://ide.bitquery.io/pumpfun-transfers-type-v1-to-pumpfun-migrations_1).
 
@@ -251,7 +251,7 @@ Track Pump Fun token migrations on a specific date by filtering for transfers to
 }
 ```
 
-## Detect Solana Pumpfun Mayhem Mode Launch by Mint Amount
+## Detect Solana Pump Fun Mayhem Mode Launch by Mint Amount
 
 Detect whether a Pump Fun token was launched in Mayhem mode by checking for the characteristic 1 Billion token mint (1,000,000,000,000,000 raw units at 6 decimals) to the Mayhem AI agent address. Returns token details and transaction signature. [Run query](https://ide.bitquery.io/check-if-a-pump-fun-token-was-in-mayhem-mode).
 
@@ -443,7 +443,7 @@ query TransfersForBubbleMap($since: ISO8601DateTime!, $currency: String, $limit:
 }
 ```
 
-## Solana multi-wallet transfer aggregates (bubble-map style) {#multi-wallet-aggregates}
+## Solana Multi-Wallet Transfer Aggregates (Bubble-Map Style) {#multi-wallet-aggregates}
 
 For **compliance graphs**, **holder-set analytics**, or **bubble-map** style visuals, you often need **aggregated flows between many addresses** (only edges where both sender and receiver are in your set). Filter `senderAddress` and `receiverAddress` with the same `in` list, restrict mints with `currency: {in: $currencies}`, and sum amounts. This pattern scales better than hard-coding dozens of GraphQL variables—pass one address array from your app. See the [Solana BubbleMaps guide](https://bitquery.io/blog/solana-bubblemaps-bitquery-zero-rpc).
 
@@ -503,7 +503,7 @@ query SolanaMultiWalletAggregates(
 }
 ```
 
-## Parallel Solana sent and received transfers for a wallet (date range) {#parallel-sent-received-range}
+## Parallel Solana Sent and Received Transfers for a Wallet (Date Range) {#parallel-sent-received-range}
 
 **Accounting**, **tax**, and **audit** teams often need **separate ledgers** of outbound vs inbound transfers for the same wallet over a reporting window. Query `sent: transfers(...)` and `received: transfers(...)` in one GraphQL request using field aliases. Below, each branch filters `amount: {gt: 0}` and returns block time, counterparties, USD, and signatures for evidence.
 
@@ -580,7 +580,7 @@ query SolanaWalletSentReceivedRange {
 }
 ```
 
-## Who funded these Solana wallets (System Program) {#system-program-funding}
+## Who Funded These Solana Wallets (System Program) {#system-program-funding}
 
 For **compliance** and **source-of-funds** review, native SOL funding often shows up through the **System Program**. The query below returns early inbound SOL (or system-level) transfers to a small set of receivers, one row per receiver (`limitBy`), ordered by block and transaction index.
 
@@ -625,9 +625,9 @@ For **compliance** and **source-of-funds** review, native SOL funding often show
 }
 ```
 
-## Earliest on-chain transfer for a Solana token mint {#earliest-mint-transfer}
+## Earliest On-Chain Transfer for a Solana Token Mint {#earliest-mint-transfer}
 
-**Trading**, **research**, and **provenance** workflows often need the **first** indexed transfer for a mint (mint creation or first movement). Request `limit: 1` with ascending block and transaction index. Inspect `sender`, `receiver`, and `transaction` (including `signer`) for attribution—not legal proof of “creator” by itself.
+**Trading**, **research**, and **provenance** workflows often need the **first** indexed transfer for a mint (mint creation or first movement). Request `limit: 1` with ascending block and transaction index. Inspect `sender`, `receiver`, and `transaction` (including `signer`) for attribution—not legal proof of "creator" by itself.
 
 **Variations:** Add `date: {since: "..."}` to bound scan cost. Change `currency` to your mint address.
 
@@ -681,7 +681,7 @@ For **compliance** and **source-of-funds** review, native SOL funding often show
 }
 ```
 
-## Solana transfers involving the SPL Token program {#spl-token-program-transfers}
+## Solana Transfers Involving the SPL Token Program {#spl-token-program-transfers}
 
 Many SPL movements are mediated by the **Token program**. Filter `programId` to **TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA** when you need **accounting** or **audit** samples aligned to standard SPL instruction surfaces (with program and external action metadata).
 
@@ -1110,7 +1110,7 @@ query MyQuery {
 }
 ```
 
-## Bulk export: Solana transfer data (S3 and Parquet) {#bulk-export-s3-parquet}
+## Bulk Export: Solana Transfer Data (S3 and Parquet) {#bulk-export-s3-parquet}
 
 For **audit**, **regulatory**, and **warehouse** workloads, teams often need **complete historical** transfer rows at scale—not only interactive GraphQL. Bitquery delivers blockchain datasets through **cloud export**, including delivery to **Amazon S3** as **Apache Parquet** for analytics engines (Snowflake, BigQuery, DuckDB, Spark, and similar), retention policies, and ACL-governed buckets. This complements the queries on this page: use GraphQL for targeted samples and dashboards, and bulk files for population-level extracts and workpaper pipelines.
 
