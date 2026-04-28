@@ -282,15 +282,13 @@ const sidebars = {
           type: "category",
           label: "Solana",
           items: [
-            "Schema/solana/address",
-            "Schema/solana/blockRewards",
-            "Schema/solana/blocks",
-            "Schema/solana/coinpath",
-            "Schema/solana/instructionAccounts",
-            "Schema/solana/instructions",
             "Schema/solana/overview",
-            "Schema/solana/transactions",
             "Schema/solana/transfers",
+            "Schema/solana/transactions",
+            "Schema/solana/address",
+            "Schema/solana/blocks",
+            "Schema/solana/blockRewards",
+            "Schema/solana/coinpath",
           ],
         },
         {
@@ -415,7 +413,6 @@ const sidebars = {
               type: "category",
               label: "Solana",
               items: [
-                "Examples/Solana/instructions",
                 "Examples/Solana/transfers",
                 "Examples/Solana/transactions-api",
                 "Examples/Solana/address-api",

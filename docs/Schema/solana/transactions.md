@@ -1,12 +1,24 @@
 ---
-title: "Solana Transactions API"
-description: "Solana txs: signature, fee & feePayer, signer, instruction counts, inner instructions, block slot—GraphQL."
-keywords: ["Solana API", "Solana Transactions", "Bitquery", "GraphQL"]
+title: "Solana Transactions API — Signature, Fee, Fee Payer, Signer, Block Context"
+description: "Query Solana transactions with Bitquery V1 GraphQL: signature, transaction fee, fee payer, signer, success, instruction counts, and full block context. Built for fee analysis, wallet activity, audit, and reconciliation."
+keywords:
+  [
+    "Solana transactions API",
+    "Solana fee payer",
+    "Solana signer",
+    "Solana failed transactions",
+    "Solana audit",
+    "Solana fee analysis",
+    "Bitquery V1",
+    "Solana GraphQL",
+  ]
 ---
 
 # Transactions
 
-The Solana transactions API allows you to query for transactions on the Solana blockchain. You can use this API to get information about specific transactions, such as the signature, block, transaction fee, success, fee payer, inner instructions count, instructions count, signer, and transaction index.
+The Solana **transactions API** on Bitquery V1 returns indexed transaction-level data on the Solana blockchain: **signature**, **block** context, **transactionFee**, **success**, **feePayer**, **innerInstructionsCount**, **instructionsCount**, **signer**, and **transactionIndex** within the block. It covers the full historical chain and is the reference surface for **fee analysis**, **wallet activity reporting**, **audit and reconciliation**, **operations dashboards**, and **failure analytics**.
+
+For raw parsed instruction data, program IDs, or DEX swap decoding, see the **[V2 Solana Instructions API](https://docs.bitquery.io/docs/blockchain/Solana/solana-instructions/)** (also: [V1 vs V2](/docs/graphql-ide/v1-and-v2)).
 
 ```
 query ($network: SolanaNetwork!, $date: ISO8601DateTime, $height: Int) {
@@ -42,10 +54,17 @@ query ($network: SolanaNetwork!, $date: ISO8601DateTime, $height: Int) {
 }
 ```
 
+## Common use cases
+
+- **Fee analysis and capacity planning** — see [transactions in a date range](/docs/Examples/Solana/transactions-api#date-range).
+- **Wallet activity reporting** — fetch [a wallet's signed transactions in a window](/docs/Examples/Solana/transactions-api#wallet-signed-range).
+- **Failure analytics and debugging** — filter to [failed transactions](/docs/Examples/Solana/transactions-api#failed-transactions).
+- **Sponsored transactions and treasuries** — distinguish [fee payer from signer](/docs/Examples/Solana/transactions-api#fee-payer-vs-signer) for relayer cost attribution.
+- **Audit and reconciliation** — pair with [transfers](/docs/Examples/Solana/transfers#parallel-sent-received-range) to attach fee, signer, and success status to every booked movement.
+
 <details>
 
 <summary>Filtering Transactions</summary>
-
 
 `transactionIndex`: This field allows you to filter transactions by their index in the block.
 
@@ -77,17 +96,15 @@ query ($network: SolanaNetwork!, $date: ISO8601DateTime, $height: Int) {
 
 `date`: This field allows you to filter transactions by their date.
 
-blockHash: This field allows you to filter transactions by their block hash.
+`blockHash`: This field allows you to filter transactions by their block hash.
 
-any: This field allows you to filter transactions by any of the other fields in OR condition.
+`any`: This field allows you to filter transactions by any of the other fields in OR condition.
 
-accountsCount: This field allows you to filter transactions by the number of accounts they interact with.
+`accountsCount`: This field allows you to filter transactions by the number of accounts they interact with.
 
 </details>
 
-
 ## Fields
-
 
 `signature`: The signature of the transaction.
 
@@ -109,8 +126,11 @@ accountsCount: This field allows you to filter transactions by the number of acc
 
 ## Related Resources
 
-- [Solana schema overview](https://docs.bitquery.io/v1/docs/Schema/solana/overview)
-- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
-- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
-- [Solana Coinpath API](https://docs.bitquery.io/v1/docs/Schema/solana/coinpath)
-- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)
+- [Solana transactions examples (V1)](/docs/Examples/Solana/transactions-api)
+- [Solana transfers schema (V1)](/docs/Schema/solana/transfers)
+- [Solana transfers examples (V1)](/docs/Examples/Solana/transfers)
+- [Solana address schema (V1)](/docs/Schema/solana/address)
+- [Solana schema overview (V1)](/docs/Schema/solana/overview)
+- [Solana Coinpath API (V1)](/docs/Schema/solana/coinpath)
+- [Getting started with the GraphQL IDE](/docs/graphql-ide/how-to-start)
+- [V1 vs V2 API and cloud data](/docs/graphql-ide/v1-and-v2)
