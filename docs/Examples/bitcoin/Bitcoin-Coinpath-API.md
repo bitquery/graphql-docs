@@ -8,6 +8,8 @@ keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 
 The Bitcoin Coinpath API traces the flow of funds between addresses on the Bitcoin blockchain. Use it for AML investigations, source-of-funds verification, and mapping transaction paths between wallets. See [Coinpath Explained](/docs/building-queries/Coinpath-Explained/Overview) for a detailed guide.
 
+import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
+
 ## Explore Bitcoin Coinpath Flow from a Seed Address
 
 [Run API](https://ide.bitquery.io/Destination-of-Funds-from-a-Specific-Address-on-Bitcoin)
@@ -113,6 +115,10 @@ query ($network: BitcoinNetwork!) {
 Trace the fund flow between two specific Bitcoin addresses by combining `initialAddress` and `receiver` filters. Returns the transaction paths, amounts, and block details — the standard pattern for verifying whether funds moved from address A to address B.
 
 **Variations:** Increase `limit` for more results. Add `depth: {lteq: N}` for multi-hop paths. Adjust `date` for different time periods. Combine with the inbound/outbound queries above for comprehensive fund-flow analysis.
+
+## Video Tutorial | How to Trace Bitcoin Fund Flows with Coinpath API
+
+<VideoPlayer url="https://www.youtube.com/watch?v=pEVNAhfEOJ4" />
 
 ## Related Resources
 

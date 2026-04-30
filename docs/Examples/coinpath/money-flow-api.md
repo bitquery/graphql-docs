@@ -17,6 +17,8 @@ To query data via GraphQL **outside the Bitquery IDE**, you need to generate an 
 Follow the steps here to create one: [How to generate Bitquery API token ➤](https://docs.bitquery.io/docs/authorisation/how-to-generate/)
 :::
 
+import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
+
 <head>
 <title>Coinpath® API - Money Flow Tracking, Fund Tracing, Bundle Detection</title>
 <meta
@@ -874,6 +876,10 @@ Discover direct and indirect funding relationships between a token creator and b
 ```
 
 ---
+
+## Video Tutorial | Coinpath API - Money Flow Tracking & Fund Tracing
+
+<VideoPlayer url="https://www.youtube.com/watch?v=pEVNAhfEOJ4" />
 
 ## Related Resources
 
