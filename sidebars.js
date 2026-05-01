@@ -392,6 +392,19 @@ const sidebars = {
                 "Examples/bitcoin/bitcoin-address-api",
               ],
             },
+            {
+              type: "category",
+              label: "Cardano",
+              items: [
+                "Examples/cardano/blocks",
+                "Examples/cardano/transactions",
+                "Examples/cardano/inputs-outputs",
+                "Examples/cardano/mints",
+                "Examples/cardano/coinpath",
+                "Examples/cardano/address",
+                "Examples/cardano/djed",
+              ],
+            },
 
             {
               type: "category",
