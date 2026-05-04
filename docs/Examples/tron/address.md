@@ -77,3 +77,29 @@ Replace `ADDRESS_HERE` with the Tron address you want to query. This query will 
 ```
 
 Replace `ADDRESS_HERE` with the Tron address you want to query. This query will fetch basic details of the smart contract, such as contract type and protocol type. If the contract is an ERC-20 token, it will also return additional information like decimals, name, symbol, and token type.
+
+## Get All TRC20 Token Balances for a Tron Address (Wallet Portfolio)
+
+Pull every TRC20 token balance for a Tron wallet using [this](https://ide.bitquery.io/tron-address-balance-stats) query. Data returned by the API response could be used by explorers and portfolio trackers.
+
+```graphql
+{
+  tron {
+    address(address: {is: "ADDRESS_HERE"}) {
+      balances {
+        currency {
+          symbol
+          name
+          address
+          tokenType
+          decimals
+        }
+        value
+        value_usd: value(in: USD)
+      }
+    }
+  }
+}
+```
+
+Replace `ADDRESS_HERE` with the Tron address. Returns every token currently held by the address along with its USD value.

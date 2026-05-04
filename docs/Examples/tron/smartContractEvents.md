@@ -123,3 +123,37 @@ This query retrieves the latest 10 smart contract events on the Tron network tha
 ```
 
 The query retrieves the latest 10 smart contract events on the Tron network that occurred after July 31, 2023, for the smart contract "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t" and can include events with names "Transfer", "Approval", and any other event names specified in the in clause. It provides details such as event arguments, block height and timestamp, smart contract address, event name and signature, and transaction hash.
+
+## JustLend Lending Events on Tron (Borrow / Repay / Liquidation)
+
+JustLend is the largest lending protocol on Tron. This query targets its market contracts and surfaces Borrow, Repay, and Liquidate events — the core data for any Tron lending dashboard.
+
+```graphql
+{
+  tron(network: tron) {
+    smartContractEvents(
+      smartContractAddress: {is: "TGBr8uh9jBVHJhhkwSJvQM7qkK9VVmMjHe"}
+      smartContractEvent: {in: ["Borrow", "RepayBorrow", "LiquidateBorrow"]}
+      date: {after: "2026-05-01"}
+      options: {desc: "block.timestamp.iso8601", limit: 50}
+    ) {
+      smartContractEvent {
+        name
+      }
+      arguments {
+        argument
+        value
+      }
+      block {
+        timestamp {
+          iso8601
+        }
+        height
+      }
+      txHash
+    }
+  }
+}
+```
+
+Returns the most recent 50 lending lifecycle events on a JustLend market. Swap the `smartContractAddress` for any other JustLend jToken market to scope to a specific asset.
