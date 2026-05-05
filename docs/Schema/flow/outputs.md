@@ -1,4 +1,14 @@
+---
+title: "Flow Outputs API"
+description: "Flow transaction outputs: recipient addresses, amounts and decimals, currencies, NFT entity ids, types, and transfer reasons."
+keywords: ["Flow API", "Flow Outputs", "Bitquery", "GraphQL"]
+---
+
 # Outputs
+
+:::caution Deprecated
+Bitquery has stopped supporting the Flow blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The Flow Outputs API provides information about the transaction outputs from the Flow Blockchain.
 
@@ -50,3 +60,11 @@ You can filter the outputs using the following fields:
 -   transaction: returns information of transaction
 -   transferReason: returns transfer reason like nft_transfer, fungible_token_transfer, fee
 -   type: returns type of output
+
+## Related Resources
+
+- [Flow schema overview](https://docs.bitquery.io/v1/docs/Schema/flow/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Flow Coinpath API](https://docs.bitquery.io/v1/docs/Schema/flow/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

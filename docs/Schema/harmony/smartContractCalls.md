@@ -1,3 +1,9 @@
+---
+title: "Harmony Smart Contract Calls API"
+description: "Query Harmony smart contract calls data using Bitquery GraphQL API. Get contract calls, methods, inputs, and execution context."
+keywords: ["Harmony API", "Harmony Smart Contract Calls", "Bitquery", "GraphQL"]
+---
+
 # Smart Contract Calls
 
 The Harmony Smart Contract Calls API provides detailed information about smart contract calls made on the Harmony Blockchain.
@@ -54,3 +60,11 @@ You can filter smart contract calls data using following fields:
 -   txIndex: returns index of the transaction in the block
 -   txSender: returns sender of the transaction
 -   txTo: returns transaction to address
+
+## Related Resources
+
+- [Harmony schema overview](https://docs.bitquery.io/v1/docs/Schema/harmony/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Harmony Coinpath API](https://docs.bitquery.io/v1/docs/Schema/harmony/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,5 +1,6 @@
 ---
 title: "Ripple Account Roots API"
+description: "Query AccountRoot fields for XRP Ledger accounts."
 ---
 
 <head>
@@ -27,6 +28,8 @@ title: "Ripple Account Roots API"
 
 <meta property="twitter:description" content="Explore AccountRoots on the Ripple network. Retrieve account details, transfer rate, sequence, and more. Technical query for account information" />
 </head>
+
+Account roots represent the fundamental ledger entry for each XRP Ledger account, storing the account's XRP balance, sequence number, flags, and trust-line or escrow settings. This API lets you query these base-layer account properties for compliance checks, account verification, and understanding an account's ledger state beyond just its transaction history.
 
 ```
 query MyQuery {
@@ -87,3 +90,12 @@ query MyQuery {
     -   The domain of the account. This is the domain that the account is associated with.
 -   **balance**
     -   The current balance of the account
+
+## Related Resources
+
+- [XRP Ledger schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Ripple API examples](https://docs.bitquery.io/v1/docs/Examples/ripple)
+- [Coinpath (XRP Ledger)](https://docs.bitquery.io/v1/docs/Schema/ripple/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

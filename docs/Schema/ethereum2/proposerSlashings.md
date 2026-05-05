@@ -1,5 +1,6 @@
 ---
 title: ETH2 Proposer Slashings API
+description: "Query proposer slashing evidence on the Beacon Chain."
 ---
 
 <head>
@@ -20,6 +21,10 @@ title: ETH2 Proposer Slashings API
 <meta property="twitter:title" content="ETH2 Proposer Slashings API" />
 <meta property="twitter:description" content="Get Proposer Slashings information on the ETH2 blockchain. Also, get information on epochs, block root and  validator information on the ETH2 blockchain." />
 </head>
+
+:::caution Deprecated
+Bitquery has stopped supporting the Ethereum Beacon Chain (ETH2) API. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The proposerSlashings API returns a list of proposer slashings for a given Ethereum 2.0 network. A proposer slashing occurs when a validator is found to have double signed a block. 
 The proposerSlashings API can be used to get information about proposer slashings, such as the date of the slashing, the block height, and the validator's index. 
@@ -73,7 +78,10 @@ query ($network: Ethereum2Network!) {
 }
 ```
 
-<details><summary>Filtering proposerSlashings</summary>
+<details>
+
+<summary>Filtering proposerSlashings</summary>
+
 
 `limit`: The maximum number of results to return.
 
@@ -94,6 +102,7 @@ query ($network: Ethereum2Network!) {
 `slashingProposerIndex`: The index of the proposer in the slashing to filter the results by.
 
 `time`: The timestamp of the proposer slashing to filter the results by.
+
 </details>
 
 
@@ -142,3 +151,12 @@ query ($network: Ethereum2Network!) {
 `signature`: The signature of the slashing.
 
 `slot`: The slot of the slashing.
+
+## Related Resources
+
+- [Beacon Chain schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum2/overview)
+- [ETH2 examples](https://docs.bitquery.io/v1/docs/Examples/Beacon%20Chain%20Examples/eth2_examples)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+- [Ethereum execution layer schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+

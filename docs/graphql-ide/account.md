@@ -1,5 +1,15 @@
 ---
 sidebar_position: 6
+title: "Bitquery Account Dashboard — API Usage, Billing & Stats"
+description: "Use the Bitquery account dashboard for subscriptions, billing, API usage, points consumption, saved queries, errors, and blockchain system status."
+keywords:
+  [
+    Bitquery account,
+    API usage dashboard,
+    billing,
+    points consumption,
+    system status,
+  ]
 ---
 
 # Your Account Dashboard
@@ -32,4 +42,12 @@ The "Errors" section shows you number of errors, both accumulated since the crea
 
 ## System Status
 
-This section offers a comprehensive system status overview for all the blockchains we support. It keeps you informed about any potential data delays, data quality concerns, or GraphQL API issues, ensuring transparency and allowing you to stay updated on the health of our services. 
+This section offers a comprehensive system status overview for all the blockchains we support. It keeps you informed about any potential data delays, data quality concerns, or GraphQL API issues, ensuring transparency and allowing you to stay updated on the health of our services.  
+
+## Related Resources
+
+- [What are API points?](https://docs.bitquery.io/v1/docs/graphql-ide/points)
+- [Getting an API access token](https://docs.bitquery.io/v1/docs/graphql-ide/apikey)
+- [Common API errors and fixes](https://docs.bitquery.io/v1/docs/graphql-ide/errors)
+- [Supported blockchains and status](https://docs.bitquery.io/v1/docs/graphql-ide/supported-blockchains)
+- [How to use the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/ide)

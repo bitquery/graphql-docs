@@ -1,8 +1,18 @@
+---
+title: "Tron Address API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Tron addresses. Get balance, rewards, and smart contract details for an address."
+keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
+---
+
 # Address API
 
-Our Tron Address API provides all details regarding any address on Tron Blockchain. If given address is a smart contract API also details of that smart contract too.
+Look up any Tron address to retrieve TRX balance, token balance history, staking rewards, and smart contract metadata.
 
-## Get Address Balance
+## Get Tron Address TRX Balance in USD With Annotation
+
+Retrieve the TRX balance (in USD) for a Tron address along with its annotation label. Replace `ADDRESS_HERE` with the target address.
+
+**Variations:** Remove the `in: USD` argument to get the raw TRX balance, or change it to another fiat currency.
 
 ```
 {
@@ -16,11 +26,11 @@ Our Tron Address API provides all details regarding any address on Tron Blockcha
 }
 ```
 
-Replace `ADDRESS_HERE` with the actual Tron address you want to query. This will return the balance of TRX tokens for given Tron address in USD, along with the address itself and any additional annotation associated with it.
+## Get Tron TRX Balance History for an Address
 
-Removing `in` argument will give you balance of TRX tokens for given Tron address.
+Track how a Tron address's TRX balance changed over time, with per-block snapshots of transfer amounts and running value. Replace `ADDRESS_HERE` with the target address.
 
-## Get TRX Token Balance History of Address
+**Variations:** Change the `currency` filter to track a different TRC-20 token's balance history.
 
 ```
 {
@@ -39,9 +49,11 @@ Removing `in` argument will give you balance of TRX tokens for given Tron addres
 }
 ```
 
-Replace `ADDRESS_HERE` with the Tron address you want to query. This query will provide the change in balance of the given address for a selected currency. It allows you to obtain the balance history for a particular currency using a single query.
+## Get Tron Address Claimable Voting Rewards
 
-## Get Claimable Rewards of Address
+Check the pending voting rewards available to claim for a Tron address. Replace `ADDRESS_HERE` with the target address.
+
+**Variations:** Combine with the balance query above to get a full snapshot of an address's holdings and rewards.
 
 ```
 {
@@ -53,9 +65,11 @@ Replace `ADDRESS_HERE` with the Tron address you want to query. This query will 
 }
 ```
 
-Replace `ADDRESS_HERE` with the Tron address you want to query. This query will provide the claimable voting reward of the given Tron address.
+## Get Tron Smart Contract Metadata From an Address
 
-## Get Smart Contract Details from Address
+Fetch smart contract metadata for a Tron address, including contract type, protocol type, and token details (decimals, name, symbol). Replace `ADDRESS_HERE` with the target address.
+
+**Variations:** Combine with a [transfers query](/docs/Examples/tron/transfers) to see both contract metadata and recent token activity.
 
 ```
 {
@@ -103,3 +117,10 @@ Pull every TRC20 token balance for a Tron wallet using [this](https://ide.bitque
 ```
 
 Replace `ADDRESS_HERE` with the Tron address. Returns every token currently held by the address along with its USD value.
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Tron transfers examples](https://docs.bitquery.io/v1/docs/Examples/tron/transfers)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

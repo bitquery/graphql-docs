@@ -1,3 +1,9 @@
+---
+title: "Harmony Transfers API"
+description: "Query Harmony transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."
+keywords: ["Harmony API", "Harmony Transfers", "Bitquery", "GraphQL"]
+---
+
 # Transfers
 
 The Harmony Transfers API provides information about token transfers from the Harmony Blockchain.
@@ -59,3 +65,11 @@ You can filter transfers using following fields:
 -   txSenderreturns address of the transaction sender
 -   txTo: returns address of transaction receiver
 -   value: returns value transferred in ATTO
+
+## Related Resources
+
+- [Harmony schema overview](https://docs.bitquery.io/v1/docs/Schema/harmony/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Harmony Coinpath API](https://docs.bitquery.io/v1/docs/Schema/harmony/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

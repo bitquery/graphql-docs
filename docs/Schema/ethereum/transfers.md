@@ -1,5 +1,6 @@
 ---
 title: "Ethereum Transfers API"
+description: "Get Ethereum token transfers with detailed information using the transfers API. Filter, sort, and analyze ERC-20 token flow easily."
 ---
 
 <head>
@@ -140,3 +141,11 @@ Data retrieved using `transfers` can be filtered using following arguments:
 - `sender`: returns sender of a particular transfer
 - `success`: returns boolean value for success of a particular transfer
 - `transaction`: returns details of transaction in which a particular transfer 
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath (Ethereum)](https://docs.bitquery.io/v1/docs/Schema/ethereum/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

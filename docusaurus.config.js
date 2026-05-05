@@ -2,8 +2,9 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 require("dotenv").config();
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const { themes: prismThemes } = require("prism-react-renderer");
+const lightCodeTheme = prismThemes.github;
+const darkCodeTheme = prismThemes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -87,6 +88,10 @@ const config = {
             to: "/docs/building-queries/Coinpath-Explained/Overview",
             from: "/docs/building-queries/Coinpath%20Explained/Overview",
           },
+          {
+            to: "/docs/examples/Bitcoin",
+            from: "/docs/category/Bitcoin",
+          },
         ],
       },
     ],
@@ -99,6 +104,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: "https://github.com/bitquery/graphql-docs/tree/main",
+          showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
@@ -108,7 +114,7 @@ const config = {
           customCss: require.resolve("./src/css/custom.css"),
         },
         sitemap: {
-          changefreq: "weekly",
+          changefreq: "daily",
           priority: 1,
           ignorePatterns: ["/docs/v1/graphql-reference/**"],
           filename: "sitemap.xml",

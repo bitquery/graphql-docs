@@ -1,3 +1,9 @@
+---
+title: "Cosmos Blocks API"
+description: "Query Cosmos blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."
+keywords: ["Cosmos API", "Cosmos Blocks", "Bitquery", "GraphQL"]
+---
+
 # Blocks
 
 The `blocks` field allows us to fetch details about the blocks from Cosmos blockchain.
@@ -53,3 +59,11 @@ Blocks data can be filtered using following arguments:
 -   `minimum`: returns minimum for selected measurable field of Cosmos blocks
 -   `proposer`: returns address and annotation (if available) of block proposer
 -   `timestamp`: returns block timestamp
+
+## Related Resources
+
+- [Cosmos schema overview](https://docs.bitquery.io/v1/docs/Schema/cosmos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cosmos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/cosmos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

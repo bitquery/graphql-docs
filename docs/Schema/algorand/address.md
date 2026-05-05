@@ -1,6 +1,14 @@
+---
+title: "Algorand Address API"
+description: "Algorand account GraphQL: ALGO balance, pending and accrued rewards, participation round, status, and optional ASA contract info."
+keywords: ["Algorand API", "Algorand Address", "Bitquery", "GraphQL"]
+---
+
 # Address
 
 The `address` field allows us to fetch information about a specific address or a list of addresses from the Algorand blockchain.
+
+Algorand addresses hold ALGO balances and may also hold ASA (Algorand Standard Asset) tokens. The address API lets you look up an account's native balance, any human-readable annotation, and related metadata. This is useful for wallet interfaces, account verification tools, and portfolio dashboards that need a quick snapshot of an Algorand account.
 
 Here is an example that demonstrates how to retrieve basic information about a specific address:
 
@@ -38,3 +46,11 @@ The following are available fields for the `address`:
 - `round`: returns the current round.
 - `smartContract`: returns information about a smart contract if it exists at the address.
 - `status`: returns the current status of the address.
+
+## Related Resources
+
+- [Algorand schema overview](https://docs.bitquery.io/v1/docs/Schema/algorand/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Algorand Coinpath API](https://docs.bitquery.io/v1/docs/Schema/algorand/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

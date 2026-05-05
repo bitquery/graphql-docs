@@ -1,13 +1,15 @@
 ---
+title: "Ethereum 2 / Beacon Chain API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Ethereum 2 and Beacon Chain data. Get validators, attestations, slots, and network stats."
+keywords: [Ethereum 2 API examples, Beacon Chain GraphQL queries, Bitquery]
 sidebar_position: 1
 ---
-
 
 # ETH2 Examples
 
 Our ETH2 APIs provides extensive data on Beacon Chain. Let's look at some of the examples. 
 
-### Get Historical Validator Statuses 
+### Get Daily Ethereum Beacon Chain Validator Status Counts
 
 You can get the daily stats of validator statuses (active_exiting, active_ongoing, active_slashed, pending_queued and so on) using the below query. Access it on the [IDE](https://ide.bitquery.io/Validator-Counts-Daily-For-all-status)
 
@@ -26,7 +28,7 @@ query MyQuery {
 ```
 
 
-###  ETH2 Deposits
+### List Largest Ethereum Beacon Chain Validator Deposits by Amount
 
 In ETH2, the validators are decided based on the amount they stake. The below example, gets top validators based on the amount deposited.
 
@@ -79,7 +81,7 @@ This query returns:
 
     - The maximum date (end) on which the validator made a deposit.
 
-###  ETH2 Validator token unlock
+### Track Ethereum Beacon Chain Validator Balance Changes Over Time
 
 The below returns a list of validator updates for a given validator index `$index`, sorted by ascending date. Each validator update includes the date of the update, the change in validator balance, and the maximum validator balance after the update. 
 
@@ -113,7 +115,7 @@ query ($network: Ethereum2Network!, $dateFormat: String!, $index: Int!, $from: I
 ```
 
 
-### Beacon Chain Attestor Slashings
+### List Ethereum Beacon Chain Attester Slashings for a Validator Index
 
 The below query returns a list of attester slashings for a given validator index `$index`, sorted by ascending date. Each attester slashing includes the date of the slashing, the parent root hash, the ETH1 deposit count, the ETH1 deposit root hash, the ETH1 block hash, the state root hash, and the validator's public key and index.
 
@@ -155,3 +157,11 @@ query ($network: Ethereum2Network!, $dateFormat: String!, $index: Int!, $from: I
   "dateFormat": "%Y-%m-%d"
 }
 ```
+
+## Related Resources
+
+- [Ethereum 2 schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum2/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Blockchain API examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

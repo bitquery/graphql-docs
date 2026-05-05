@@ -1,3 +1,9 @@
+---
+title: "Elrond Miniblocks API"
+description: "MultiversX miniblocks for cross-shard flow: hashes, type, receiver shard/block hash, sender block epoch/height, and time."
+keywords: ["Elrond API", "Elrond Miniblocks", "Bitquery", "GraphQL"]
+---
+
 # MultiversX Miniblocks API
 
 MultiversX uses a concept called mini-blocks to handle cross-shard transactions. A mini-block is a small block that contains only cross-shard transactions. These mini-blocks are then aggregated into regular blocks, which are mined on each shard.
@@ -42,7 +48,10 @@ query ($network: ElrondNetwork!,  $from: ISO8601DateTime, $till: ISO8601DateTime
 
 ```
 
-<details><summary>Filtering Miniblocks</summary>
+<details>
+
+<summary>Filtering Miniblocks</summary>
+
 
 - **options** : A set of options that can be used to filter the results.
   - **desc** or **asc** : The order of the results, either "asc" (ascending) or "desc" (descending).
@@ -77,3 +86,11 @@ query ($network: ElrondNetwork!,  $from: ISO8601DateTime, $till: ISO8601DateTime
 `receiverShard`: The shard that received the mini-block.
 `type`: The type of the mini-block, for example `TxBlock`
 `senderBlock`: The block that sent the mini-block.
+
+## Related Resources
+
+- [Elrond schema overview](https://docs.bitquery.io/v1/docs/Schema/elrond/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Elrond Coinpath API](https://docs.bitquery.io/v1/docs/Schema/elrond/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,4 +1,14 @@
+---
+title: "Hedera Messages API"
+description: "Hedera Consensus Service messages: payload, entity, topicRunningHash, payer, node—Bitquery GraphQL."
+keywords: ["Hedera API", "Hedera Messages", "Bitquery", "GraphQL"]
+---
+
 # Messages
+
+:::caution Deprecated
+Bitquery has stopped supporting the Hedera blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The Messages API provides information about blockchain messages on the Hedera Blockchain.
 
@@ -82,3 +92,11 @@ You can filter blockchain messages using the following arguments:
 -   `transactionHash`: Returns the hash of the transaction.
 -   `transactionValidDurationInSec`: Returns the duration of transaction validity in seconds.
 -   `validStart`: Returns the timestamp when the transaction validity starts.
+
+## Related Resources
+
+- [Hedera schema overview](https://docs.bitquery.io/v1/docs/Schema/hedera/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Hedera Coinpath API](https://docs.bitquery.io/v1/docs/Schema/hedera/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

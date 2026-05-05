@@ -1,3 +1,9 @@
+---
+title: "Dogecoin Wallet Auditing with Bitquery API"
+description: "Audit Dogecoin wallets for reporting, compliance, and forensics using Bitquery APIs: balances, transactions, and money-flow visualization."
+keywords: [Dogecoin, wallet audit, Bitquery API, blockchain, forensics, transactions]
+---
+
 # How to Audit a Dogecoin Wallet
 
 Dogecoin, originally created as a meme cryptocurrency, has grown to be a significant digital asset with a vibrant community. With the increasing adoption of Dogecoin in transactions and investments, there is a rising need to audit Dogecoin wallets for various purposes, including financial reporting, compliance, and forensic investigations. In this blog, we will explore who needs Dogecoin wallet data, the types of data required, and how to audit Dogecoin wallets using Bitquery APIs.
@@ -62,3 +68,11 @@ A forensic accountant might use Bitquery to track Dogecoin transactions across m
 Auditing a Dogecoin wallet requires a thorough understanding of blockchain data and the right tools to analyze it. Certified Accountants, external auditors, forensic accountants, and regulatory bodies all have a stake in ensuring the integrity of Dogecoin wallets. By leveraging tools like Bitquery, auditors can efficiently access and analyze the necessary data to perform accurate and comprehensive audits.
 
 Understanding the complexities of Dogecoin transactions and balances is key to a successful audit, ensuring transparency and trust in the growing world of cryptocurrency.
+
+## Related Resources
+
+- [Bitquery documentation home](https://docs.bitquery.io/v1/docs/intro)
+- [How to start with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/examples/Bitcoin)
+- [Blockchain API examples — overview](https://docs.bitquery.io/v1/docs/Examples/overview)
+- [Coinpath explained — overview](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)

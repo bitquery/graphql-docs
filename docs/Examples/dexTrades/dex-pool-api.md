@@ -1,10 +1,18 @@
+---
+title: "DEX Pools API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for DEX liquidity pools. Get pair creation, reserves, and pool metadata on EVM chains."
+keywords: [DEX API examples, DEX GraphQL queries, Bitquery]
+---
+
 # Pools API
 
-In this section, we will look at some examples regarding DEX Pools data.
+The Pools API lets you discover newly created DEX trading pairs, retrieve token addresses from pair events, and calculate token valuation metrics like Fully Diluted Valuation (FDV).
 
-## Latest Pair Created
+## List Latest Ethereum PairCreated Events With Token Zero Addresses
 
-The following GraphQL query retrieves data on the latest 50 PairCreated events on the Ethereum network, along with their associated block timestamp, token0 address and name. It uses the ethereum network and the arguments from the query above to filter events based on specific criteria.
+Discover the latest DEX trading pairs by querying `PairCreated` events. Returns the token0 address and name for each new pair, sorted by creation time — useful for tracking new token listings and early liquidity.
+
+**Variations:** Add `argument: {is: "token1"}` to also get the second token. Use `smartContractAddress` to filter for a specific factory (e.g., Uniswap, SushiSwap). Switch `network` to any EVM chain. Adjust `time` for different periods.
 
 ```graphql
 {
@@ -62,4 +70,12 @@ To calculate supply, we will use the formula,
 To get the latest price, you can use our DEXTrades API. Here's an [example](https://ide.bitquery.io/Latest-price-of-ERUTA).
 
 Once you have both values, you can multiply and get the FDV.
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [DEX trading data examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
 

@@ -1,5 +1,6 @@
 ---
 title: "Avalanche Transfers API"
+description: "Query AVAX and token transfers on Avalanche."
 ---
 
 <head>
@@ -87,7 +88,10 @@ query ($network: EthereumNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTim
 }
 ```
 
-<details><summary>Filtering Transfers</summary>
+<details>
+
+<summary>Filtering Transfers</summary>
+
 
 `options`: A set of options that control the behavior of the query.
 
@@ -117,6 +121,7 @@ query ($network: EthereumNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTim
 `txFrom`: The address of the sender of the transaction that the transfer was included in.
 
 `txHash`: The hash of the transaction that the transfer was included in
+
 </details>
 
 
@@ -155,3 +160,12 @@ query ($network: EthereumNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTim
 `success`: Whether the transfer was successful.
 
 `entityId`: The ID of the transfer.
+
+## Related Resources
+
+- [Avalanche schema overview](https://docs.bitquery.io/v1/docs/Schema/Avalanche/overview)
+- [Avalanche API examples](https://docs.bitquery.io/v1/docs/Examples/avalanche/avax-trades-api)
+- [Coinpath (Avalanche)](https://docs.bitquery.io/v1/docs/Schema/Avalanche/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

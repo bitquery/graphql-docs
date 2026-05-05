@@ -1,3 +1,8 @@
+---
+title: "Algorand Arguments API"
+description: "Query Algorand GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."
+keywords: ["Algorand API", "Algorand Arguments", "Bitquery", "GraphQL"]
+---
 
 # Arguments
 
@@ -78,3 +83,11 @@ The following are available fields for the `arguments`:
 - `txSender`: returns information of transaction sender
 - `txType`: returns transaction type in which transfer happened
 - `value`: returns value of argument
+
+## Related Resources
+
+- [Algorand schema overview](https://docs.bitquery.io/v1/docs/Schema/algorand/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Algorand Coinpath API](https://docs.bitquery.io/v1/docs/Schema/algorand/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

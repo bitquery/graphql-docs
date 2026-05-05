@@ -1,3 +1,9 @@
+---
+title: "Conflux Arguments API"
+description: "Query Conflux GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."
+keywords: ["Conflux API", "Conflux Arguments", "Bitquery", "GraphQL"]
+---
+
 # Conflux Arguments API
 
 Bitquery's  Conflux Arguments API gives you information on the arguments passed during on chain updates to functions. Below are the fields in the schema:
@@ -46,7 +52,10 @@ query ($network: ConfluxNetwork!) {
 }
 ```
 
-<details><summary>Filtering Arguments</summary>
+<details>
+
+<summary>Filtering Arguments</summary>
+
 
 - `any`: A catch-all filter ( OR logic) that can be used to select arguments that match any of the other filters. This is useful if you want to combine multiple filters to narrow down the results.
 - `argument`: Filter by specific argument for smart contract method or event
@@ -82,3 +91,11 @@ The following are available fields for the `arguments`:
 - `success`:
 - `transaction`: returns transaction information
 - `value`: returns value of method or event argument
+
+## Related Resources
+
+- [Conflux schema overview](https://docs.bitquery.io/v1/docs/Schema/conflux/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Conflux Coinpath API](https://docs.bitquery.io/v1/docs/Schema/conflux/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

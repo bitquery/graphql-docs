@@ -1,3 +1,9 @@
+---
+title: "Elrond Transfers API"
+description: "Query Elrond transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."
+keywords: ["Elrond API", "Elrond Transfers", "Bitquery", "GraphQL"]
+---
+
 # MultiversX Transfers API
 
 The MultiversX Transfers API gets information about the sender, receiver, amount, currency, and other details related to transfers on the network. Below are the fields in the schema:
@@ -45,7 +51,10 @@ query ($network: ElrondNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
 }
 ```
 
-<details><summary>Filtering Transfers</summary>
+<details>
+
+<summary>Filtering Transfers</summary>
+
 
 - **options** : A set of options that can be used to filter the results.
   - **asc** or **desc** : The order of the results, either "asc" (ascending) or "desc" (descending).
@@ -90,3 +99,11 @@ query ($network: ElrondNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
   - `signature`: The signature of the transfer. This is used to verify the authenticity of the transfer.
   - `status`: The status of the transfer.
 - **action:** The type of action performed by the transfer, e.g `fee` transfer .
+
+## Related Resources
+
+- [Elrond schema overview](https://docs.bitquery.io/v1/docs/Schema/elrond/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Elrond Coinpath API](https://docs.bitquery.io/v1/docs/Schema/elrond/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

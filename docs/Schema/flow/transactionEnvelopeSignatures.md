@@ -1,4 +1,14 @@
+---
+title: "Flow Transaction Envelope Signatures API"
+description: "Flow envelope signatures: signer address and key id, raw signature bytes, plus block, collection, and transaction context."
+keywords: ["Flow API", "Flow Transaction Envelope Signatures", "Bitquery", "GraphQL"]
+---
+
 # Transaction Envelope Signatures
+
+:::caution Deprecated
+Bitquery has stopped supporting the Flow blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The Flow Transaction Envelope Signatures API provides details about envelope signatures of transaction from the Flow Blockchain.
 
@@ -47,3 +57,11 @@ You can filter the data using following fields:
 -   signature: returns raw signature data
 -   time: returns time the transaction was created
 -   transaction: returns basic information about transaction
+
+## Related Resources
+
+- [Flow schema overview](https://docs.bitquery.io/v1/docs/Schema/flow/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Flow Coinpath API](https://docs.bitquery.io/v1/docs/Schema/flow/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

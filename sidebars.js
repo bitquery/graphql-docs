@@ -186,6 +186,7 @@ const sidebars = {
             "Schema/bitcoin/addressstats",
             "Schema/bitcoin/blocks",
             "Schema/bitcoin/coinpath",
+
             "Schema/bitcoin/inputs",
             "Schema/bitcoin/omnitransactions",
             "Schema/bitcoin/omnitransfers",
@@ -256,19 +257,6 @@ const sidebars = {
             "Schema/Dogecoin/transactions",
           ],
         },
-        {
-          type: "category",
-          label: "Harmony",
-          items: [
-            "Schema/harmony/arguments",
-            "Schema/harmony/blocks",
-            "Schema/harmony/smartContractCalls",
-            "Schema/harmony/smartContractEvents",
-            "Schema/harmony/stakingTransactions",
-            "Schema/harmony/transactions",
-            "Schema/harmony/transfers",
-          ],
-        },
 
         {
           type: "category",
@@ -294,15 +282,13 @@ const sidebars = {
           type: "category",
           label: "Solana",
           items: [
-            "Schema/solana/address",
-            "Schema/solana/blockRewards",
-            "Schema/solana/blocks",
-            "Schema/solana/coinpath",
-            "Schema/solana/instructionAccounts",
-            "Schema/solana/instructions",
             "Schema/solana/overview",
-            "Schema/solana/transactions",
             "Schema/solana/transfers",
+            "Schema/solana/transactions",
+            "Schema/solana/address",
+            "Schema/solana/blocks",
+            "Schema/solana/blockRewards",
+            "Schema/solana/coinpath",
           ],
         },
         {
@@ -324,20 +310,6 @@ const sidebars = {
             "Schema/ripple/rippleStates",
             "Schema/ripple/transactions",
             "Schema/ripple/transfers",
-          ],
-        },
-        {
-          type: "category",
-          label: "Tezos",
-          items: [
-            "Schema/tezos/address",
-            "Schema/tezos/arguments",
-            "Schema/tezos/balanceUpdates",
-            "Schema/tezos/blocks",
-            "Schema/tezos/coinpath",
-            "Schema/tezos/operations",
-            "Schema/tezos/transactions",
-            "Schema/tezos/transfers",
           ],
         },
 
@@ -405,9 +377,15 @@ const sidebars = {
             {
               type: "category",
               label: "Bitcoin",
+              link: {
+                type: "doc",
+                id: "Examples/bitcoin/index",
+              },
+
               items: [
                 "Examples/bitcoin/Bitcoin-Blocks-API",
                 "Examples/bitcoin/Bitcoin-Coinpath-API",
+                "Examples/bitcoin/bitcoin-fee-api",
                 "Examples/bitcoin/Bitcoin-Input-and-Output API",
                 "Examples/bitcoin/Bitcoin-OmniTransactions-and-OmniTransfers API",
                 "Examples/bitcoin/Bitcoin-Transaction-API",
@@ -416,27 +394,15 @@ const sidebars = {
             },
             {
               type: "category",
-              label: "Cosmos",
+              label: "Cardano",
               items: [
-                "Examples/cosmos/address",
-                "Examples/cosmos/attributes",
-                "Examples/cosmos/blocks",
-                "Examples/cosmos/coinpath",
-                "Examples/cosmos/messages",
-                "Examples/cosmos/transactions",
-                "Examples/cosmos/transfers",
-              ],
-            },
-
-            {
-              type: "category",
-              label: "Hedera",
-              items: [
-                "Examples/hedera/hedera-address",
-                "Examples/hedera/hedera-api-video",
-                "Examples/hedera/hedera-io",
-                "Examples/hedera/hedera-messages",
-                "Examples/hedera/hedera-transactions",
+                "Examples/cardano/blocks",
+                "Examples/cardano/transactions",
+                "Examples/cardano/inputs-outputs",
+                "Examples/cardano/mints",
+                "Examples/cardano/coinpath",
+                "Examples/cardano/address",
+                "Examples/cardano/djed",
               ],
             },
 
@@ -444,11 +410,6 @@ const sidebars = {
               type: "category",
               label: "Filecoin",
               items: ["Examples/filecoin/messages"],
-            },
-            {
-              type: "category",
-              label: "Flow",
-              items: ["Examples/Input_Output/IO_examples"],
             },
             {
               type: "category",
@@ -465,8 +426,9 @@ const sidebars = {
               type: "category",
               label: "Solana",
               items: [
-                "Examples/Solana/instructions",
                 "Examples/Solana/transfers",
+                "Examples/Solana/transactions-api",
+                "Examples/Solana/address-api",
               ],
             },
             {
@@ -519,7 +481,10 @@ const sidebars = {
             {
               type: "category",
               label: "Zcash",
-              items: ["Examples/Zcash/address-api"],
+              items: [
+                "Examples/Zcash/address-api",
+                "Examples/Zcash/zenzec-api",
+              ],
             },
           ],
         },
@@ -531,11 +496,6 @@ const sidebars = {
               type: "category",
               label: "Polygon (Matic)",
               items: ["Examples/address/specific-queries"],
-            },
-            {
-              type: "category",
-              label: "Staking (Beacon Chain)",
-              items: ["Examples/Beacon Chain Examples/eth2_examples"],
             },
           ],
         },
@@ -568,7 +528,10 @@ const sidebars = {
             {
               type: "category",
               label: "Transfers",
-              items: ["Examples/Transfers/transfer-api"],
+              items: [
+                "Examples/Transfers/transfer-api",
+                "Examples/cross-chain/cross-chain-api",
+              ],
             },
           ],
         },

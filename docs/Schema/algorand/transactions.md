@@ -1,3 +1,9 @@
+---
+title: "Algorand Transactions API"
+description: "Algorand transaction index: fees (ALGO/USD), tx type and subtype, optional note, ASA token fields, block height, and GraphQL filters."
+keywords: ["Algorand API", "Algorand Transactions", "Bitquery", "GraphQL"]
+---
+
 # Transactions
 
 The Algorand Transactions API can be used to get information about transactions, such as the sender, the recipient, the amount, the fee, and the timestamp. Here are the fields in the schema.
@@ -49,7 +55,10 @@ query ($network: AlgorandNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Da
 }
 ```
 
-<details><summary>Filtering transactions</summary>
+<details>
+
+<summary>Filtering transactions</summary>
+
 
 `limit`: The maximum number of results to return.
 
@@ -109,3 +118,11 @@ group: A filter that groups the results by a specific field.
 `poolerror`: The pool error associated with the transaction.
 
 `subtype`: The subtype of the transaction.
+
+## Related Resources
+
+- [Algorand schema overview](https://docs.bitquery.io/v1/docs/Schema/algorand/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Algorand Coinpath API](https://docs.bitquery.io/v1/docs/Schema/algorand/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

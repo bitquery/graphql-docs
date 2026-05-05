@@ -1,5 +1,6 @@
 ---
 title: Ripple Payments API
+description: "Query Ripple payment transactions, issuers, and amounts."
 ---
 
 <head>
@@ -107,7 +108,10 @@ query ($network: RippleNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime)
 
 ```
 
-<details><summary>Filtering Payments</summary>
+<details>
+
+<summary>Filtering Payments</summary>
+
 
 - **options** - This field allows you to specify the order of the results and the number of results to return. The `desc` property can be used to specify that the results should be ordered in descending order by timestamp. The `limit` property can be used to specify the maximum number of results to return. The `offset` property can be used to specify the number of results to skip.
 - **time** - This field allows you to filter the results by time range. The `since` property can be used to specify the start date and time for the time range filter. The `till` property can be used to specify the end date and time for the time range filter.
@@ -159,3 +163,12 @@ query ($network: RippleNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime)
 - `deliverMinIssuer` - The issuer of the minimum amount that was delivered.
 - `deliveredAmount` - The amount that was delivered.
 - `deliverMinCurrency` - The currency of the minimum amount that was delivered.
+
+## Related Resources
+
+- [XRP Ledger schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Ripple API examples](https://docs.bitquery.io/v1/docs/Examples/ripple)
+- [Coinpath (XRP Ledger)](https://docs.bitquery.io/v1/docs/Schema/ripple/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

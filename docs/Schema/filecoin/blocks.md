@@ -1,3 +1,9 @@
+---
+title: "Filecoin Blocks API"
+description: "Query Filecoin blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."
+keywords: ["Filecoin API", "Filecoin Blocks", "Bitquery", "GraphQL"]
+---
+
 # Blocks
 
 The Filecoin Blocks API allows you to query information about blocks on the Filecoin blockchain.
@@ -31,7 +37,10 @@ query ($network: FilecoinNetwork!) {
   "network": "filecoin"
 }
 ```
-<details><summary>Filtering Blocks</summary>
+<details>
+
+<summary>Filtering Blocks</summary>
+
 
 `any`: This field allows you to filter blocks by any of the other fields in the response. For example, you could use the any field to filter blocks by timestamp, hash, or address.
 
@@ -75,3 +84,11 @@ query ($network: FilecoinNetwork!) {
 `height`: The height of the block.
 
 `index`: The index of the block in the chain.
+
+## Related Resources
+
+- [Filecoin schema overview](https://docs.bitquery.io/v1/docs/Schema/filecoin/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Filecoin Coinpath API](https://docs.bitquery.io/v1/docs/Schema/filecoin/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

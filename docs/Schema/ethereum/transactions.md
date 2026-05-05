@@ -1,5 +1,6 @@
 ---
 title: "Ethereum Transactions API"
+description: "Explore Ethereum transactions. Get insights into the Ethereum blockchain. Monitor Ethereum network activity effortlessly."
 ---
 
 <head>
@@ -30,7 +31,7 @@ title: "Ethereum Transactions API"
 
 `transactions` type allows you to retrieve all the blockchain transactions from Ethereum Blockchain.
 
-Here's an exmaple query that retrieves 10 latest transactions from Ethereum blockchain:
+Here's an example query that retrieves 10 latest transactions from Ethereum blockchain:
 
 ```
 query {
@@ -135,3 +136,11 @@ Transactions can be filtered using following arguments:
 - `success`: returns if transaction is success or not
 - `to`: returns address to which of a particular transaction was sent
 - `txType`: returns transaction type
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath (Ethereum)](https://docs.bitquery.io/v1/docs/Schema/ethereum/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

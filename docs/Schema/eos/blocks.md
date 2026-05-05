@@ -1,3 +1,9 @@
+---
+title: "EOS Blocks API"
+description: "Query EOS blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."
+keywords: ["EOS API", "EOS Blocks", "Bitquery", "GraphQL"]
+---
+
 # EOS Blocks API
 
 Bitquery's EOS blocks API provides information on blocks in the EOS chain. Below are the fields in the schema:
@@ -55,3 +61,11 @@ query ($from: ISO8601DateTime, $till: ISO8601DateTime) {
 - **producer** : The producer who created the block.
   - **address** : The producer's EOS account address.
   - **annotation** : The producer's annotation for the block.
+
+## Related Resources
+
+- [EOS schema overview](https://docs.bitquery.io/v1/docs/Schema/eos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [EOS Coinpath API](https://docs.bitquery.io/v1/docs/Schema/eos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

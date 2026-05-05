@@ -1,3 +1,9 @@
+---
+title: "Harmony Arguments API"
+description: "Query Harmony GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."
+keywords: ["Harmony API", "Harmony Arguments", "Bitquery", "GraphQL"]
+---
+
 # Arguments
 
 The Harmony Arguments API provides information about arguments of smart contract calls and events.
@@ -54,3 +60,11 @@ You can filter data using following fields:
 -   time: returns time when transaction was created
 -   toShardId: returns id of shard where transaction was sent
 -   value: returns value of argument
+
+## Related Resources
+
+- [Harmony schema overview](https://docs.bitquery.io/v1/docs/Schema/harmony/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Harmony Coinpath API](https://docs.bitquery.io/v1/docs/Schema/harmony/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,218 +1,46 @@
-# InstructionAccounts
+---
+title: "Solana Instruction Accounts API (Removed in V1) — Schema Notice"
+description: "The V1 Solana instructionAccounts schema has been removed. Use V2 for per-instruction account metadata, or V1 transfers, transactions, and coinpath."
+keywords:
+  [
+    "Solana instructionAccounts API",
+    "Solana schema",
+    "Bitquery V1",
+    "Solana V2 API",
+    "Solana program accounts",
+    "GraphQL",
+  ]
+---
 
-This API returns information about the accounts involved in an instruction. An instruction is the smallest execution logic on Solana. One transaction can have 1 or more instructions. Below are the fields in the API:
+# InstructionAccounts (Removed in V1)
 
-```
-query ($network: SolanaNetwork!, $signature: String!) {
-  solana(network: $network) {
-    instructionAccounts(signature: {is: $signature}) {
-      instruction {
-        action {
-          name
-        }
-        program {
-          parsedName
-        }
-      }
-      account {
-        index
-        name
-        owner
-        type
-      }
-      block {
-        height
-        hash
-        previousBlockHash
-        timestamp {
-          time
-        }
-      }
-      transaction {
-        feePayer
-        signature
-        success
-        transactionIndex
-      }
-    }
-  }
-}
+:::danger Removed in V1 — use the V2 Solana Instructions API
 
-<!-- Parameters -->
+The Solana `instructionAccounts` query has been **removed from the V1 GraphQL schema** (`graphql.bitquery.io`). The replacement is the **[V2 Solana Instructions API](https://docs.bitquery.io/docs/blockchain/Solana/solana-instructions/)** at `https://streaming.bitquery.io/graphql`, which exposes per-instruction account lists via `Solana.Instructions.Accounts` and balance updates via `Solana.InstructionBalanceUpdates`. This page is kept to preserve inbound links.
 
-{
-  "signature": "19d4fXU8iyMfSkzMadyxzRb9iAkiULA7QYyKPA8rkJP3KPLnhLQLengqj8GpSHVrN4FbCJuFFCgLJc4ifuJjQCs",
-  "network": "solana"
-}
-```
+:::
 
+## Where per-instruction account metadata lives now
 
-<details><summary>Filtering instructionAccounts</summary>
+Use the **[V2 Solana Instructions API](https://docs.bitquery.io/docs/blockchain/Solana/solana-instructions/)** for parsed instructions and the accounts they touch (`Solana.Instructions.Accounts`, `Solana.InstructionBalanceUpdates`):
 
-`account`
+- V2 Solana Instructions API: [`https://docs.bitquery.io/docs/blockchain/Solana/solana-instructions/`](https://docs.bitquery.io/docs/blockchain/Solana/solana-instructions/)
+- V2 endpoint: `https://streaming.bitquery.io/graphql`
+- V2 docs home: [`https://docs.bitquery.io/`](https://docs.bitquery.io/)
+- See [V1 and V2 endpoints](/docs/graphql-ide/v1-and-v2) for an overview of differences.
 
-This field filters the results by the account that was affected by the instruction. You can filter by the account index, name, owner, or type.
+For wallet-level activity, fund flow, accounting, and compliance use cases that do not require per-instruction account metas, V1 continues to support:
 
-`transactionIndex`
+- [Solana transfers schema](/docs/Schema/solana/transfers) and [transfers examples](/docs/Examples/Solana/transfers) (full historical SOL and SPL transfers)
+- [Solana transactions schema](/docs/Schema/solana/transactions) and [transactions examples](/docs/Examples/Solana/transactions-api)
+- [Solana address schema](/docs/Schema/solana/address) and [address examples](/docs/Examples/Solana/address-api)
+- [Solana Coinpath schema](/docs/Schema/solana/coinpath) for multi-hop tracing
 
-This field filters the results by the transaction index of the instruction.
+## Related Resources
 
-`time`
-
-This field filters the results by the timestamp of the block in which the instruction was included.
-
-`success`
-
-This field filters the results by the success of the transaction that included the instruction.
-
-`signature`
-
-This field filters the results by the signature of the transaction that included the instruction.
-
-`programId`
-
-This field filters the results by the program ID of the program that was used to execute the instruction.
-
-`previousBlockHash`
-
-This field filters the results by the hash of the previous block.
-
-`parsedType`
-
-This field filters the results by the parsed type of the account that was affected by the instruction.
-
-`parsedProgramName`
-
-This field filters the results by the parsed program name of the program that was used to execute the instruction.
-
-`parsedActionName`
-
-This field filters the results by the parsed action name of the action that was performed by the instruction.
-
-`parsed`
-
-This field filters the results by the parsed instruction object.
-
-`options`
-
- Filter returned data by ordering, limiting, and constraining it. Available fields: `asc`, `ascByInteger`, `desc`, `descByInteger`, `limit`, `limitBy`, `offset`.
-
-`height`
-
-This field filters the results by the block height of the block in which the instruction was included.
-
-`feePayer`
-
-This field filters the results by the address of the account that paid the transaction fee.
-
-`fee`
-
-This field filters the results by the transaction fee.
-
-`external`
-
-This field filters the results by whether the instruction was external.
-
-`date`
-
-This field filters the results by the date of the block in which the instruction was included.
-
-`callPath`
-
-This field filters the results by the call path of the instruction.
-
-`blockHash`
-
-This field filters the results by the hash of the block in which the instruction was included.
-
-`any`
-
- A catch-all filter (OR Logic) that can be used to filter the results by any of the other fields.
-group: A filter that groups the results by a specific field.
-
-`accountType`
-
-This field filters the results by the type of the account that was affected by the instruction.
-
-`accountOwner`
-
-This field filters the results by the owner of the account that was affected by the instruction.
-
-`accountIndex`
-
-This field filters the results by the index of the account that was affected by the instruction.
-</details>
-
-## Fields
-
--   **instruction**
-    
-    This object contains information about the instruction itself.
-    
-    -   **action**
-        
-        This field contains the name of the action that was performed by the instruction.
-        
-    -   **program**
-        
-        This field contains the name of the program that was used to execute the instruction.
-        
--   **account**
-    
-    This object contains information about the account that was affected by the instruction.
-    
-    -   **index**
-        
-        This field contains the unique identifier for the account.
-        
-    -   **name**
-        
-        This field contains the human-readable name of the account.
-        
-    -   **owner**
-        
-        This field contains the address of the account owner.
-        
-    -   **type**
-        
-        This field contains the type of the account, such as `tokenAccount` or `programAccount`.
-        
--   **block**
-    
-    This object contains information about the block in which the instruction was included.
-    
-    -   **height**
-        
-        This field contains the number of blocks that have been processed since the genesis block.
-        
-    -   **hash**
-        
-        This field contains the unique identifier for the block.
-        
-    -   **previousBlockHash**
-        
-        This field contains the hash of the previous block.
-        
-    -   **timestamp**
-        
-        This field contains the Unix timestamp of the block.
-        
--   **transaction**
-    
-    This object contains information about the transaction that included the instruction.
-    
-    -   **feePayer**
-        
-        This field contains the address of the account that paid the transaction fee.
-        
-    -   **signature**
-        
-        This field contains the cryptographic signature of the transaction.
-        
-    -   **success**
-        
-        This field indicates whether the transaction was successful.
-        
-    -   **transactionIndex**
-        
-        This field is a unique identifier for the transaction within the block.
+- **[V2 Solana Instructions API (replacement)](https://docs.bitquery.io/docs/blockchain/Solana/solana-instructions/)**
+- [Solana schema overview (V1)](/docs/Schema/solana/overview)
+- [V1 vs V2 API and cloud data](/docs/graphql-ide/v1-and-v2)
+- [Solana transfers schema (V1)](/docs/Schema/solana/transfers)
+- [Solana transfers examples (V1)](/docs/Examples/Solana/transfers)
+- [V2 docs home](https://docs.bitquery.io/)

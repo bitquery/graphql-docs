@@ -1,5 +1,6 @@
 ---
 title: Ripple Escrows API
+description: "Query escrows, accounts, and amounts on the XRP Ledger."
 ---
 
 <head>
@@ -78,7 +79,10 @@ query ($network: RippleNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
 }
 ```
 
-<details><summary>Filtering Escrows</summary>
+<details>
+
+<summary>Filtering Escrows</summary>
+
 
 - **options** - This field allows you to specify the order of the results and the number of results to return.
 
@@ -142,3 +146,12 @@ query ($network: RippleNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
 - `flags` - The flags for the escrow.
 - `destinationTag` - The destination tag for the escrow.
 - `condition` - The condition for the escrow.
+
+## Related Resources
+
+- [XRP Ledger schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Ripple API examples](https://docs.bitquery.io/v1/docs/Examples/ripple)
+- [Coinpath (XRP Ledger)](https://docs.bitquery.io/v1/docs/Schema/ripple/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

@@ -1,3 +1,9 @@
+---
+title: "Cosmos Attributes API"
+description: "Cosmos SDK attributes from blocks: attribute keys and values, event types, linked messages and transactions, signers, and timestamps."
+keywords: ["Cosmos API", "Cosmos Attributes", "Bitquery", "GraphQL"]
+---
+
 # Attributes
 
 The `attributes` field allows us to retrieve information about the attributes from cosmos networks.
@@ -74,3 +80,11 @@ Attributes can be filtered using following arguments:
 -   `transaction`: returns transaction info where message is included
 -   `value`: returns value of attribute
 -   `valueIndex`: returns index of attribute
+
+## Related Resources
+
+- [Cosmos schema overview](https://docs.bitquery.io/v1/docs/Schema/cosmos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cosmos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/cosmos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

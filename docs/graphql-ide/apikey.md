@@ -1,5 +1,15 @@
 ---
 sidebar_position: 2
+title: "Bitquery API Access Token — Create, Generate & Use OAuth Tokens"
+description: "Create Bitquery applications, generate OAuth2 access tokens for V1 and V2 GraphQL APIs, use Bearer authentication, and revoke tokens securely."
+keywords:
+  [
+    Bitquery API key,
+    access token,
+    OAuth2,
+    Bearer token,
+    GraphQL authentication,
+  ]
 ---
 
 # Getting the Access Token
@@ -111,3 +121,12 @@ If you no longer need an application, you can delete it by clicking **Delete** o
 
 Your Access Token is your identity in the system, you have to be very careful to whom and where you place your Access Token, as this will directly impact the performance of your account.
 :::
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [API examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)
+- [Use Bitquery in your application](https://docs.bitquery.io/v1/docs/graphql-ide/use-it-in-your-application)
+- [How to use the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/ide)
+- [Getting started with the IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [V1 vs V2 APIs](https://docs.bitquery.io/v1/docs/graphql-ide/v1-and-v2)

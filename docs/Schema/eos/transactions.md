@@ -1,3 +1,9 @@
+---
+title: "EOS Transactions API"
+description: "EOSIO transactions: CPU microseconds, net usage words, scheduled flag, success, block height/timestamp, and transaction hash."
+keywords: ["EOS API", "EOS Transactions", "Bitquery", "GraphQL"]
+---
+
 # EOS Transactions API
 
 Bitquery's EOS Transactions API gives you information on cpuUsageUs, status of transaction and, netUsage details. Below are the fields in the schema:
@@ -31,7 +37,10 @@ query ($from: ISO8601DateTime, $till: ISO8601DateTime) {
 }
 ```
 
-<details><summary>Filtering Transactions</summary>
+<details>
+
+<summary>Filtering Transactions</summary>
+
 
 - **options**
   - **asc** or **desc** The field to sort the results by in ascending or descending
@@ -65,3 +74,11 @@ query ($from: ISO8601DateTime, $till: ISO8601DateTime) {
 - **netUsageWords** The amount of network resources used by the transaction.
 - **scheduled** A boolean value indicating whether the transaction was scheduled.
 - **success** A boolean value indicating whether the transaction was successful.
+
+## Related Resources
+
+- [EOS schema overview](https://docs.bitquery.io/v1/docs/Schema/eos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [EOS Coinpath API](https://docs.bitquery.io/v1/docs/Schema/eos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,5 +1,6 @@
 ---
 title: Dash OmniTransactions API
+description: "Query Omni layer transactions on Dash."
 ---
 
 <head>
@@ -95,3 +96,12 @@ The following are available fields for the `omniTransactions`:
 -   `typeInt`: returns type as Int
 -   `valid`:
 -   `version`: returns version
+
+## Related Resources
+
+- [Dash schema overview](https://docs.bitquery.io/v1/docs/Schema/Dash/overview)
+- [Blockchain API examples](https://docs.bitquery.io/v1/docs/Examples/overview)
+- [Coinpath (Dash)](https://docs.bitquery.io/v1/docs/Schema/Dash/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

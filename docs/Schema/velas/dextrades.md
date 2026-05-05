@@ -1,3 +1,9 @@
+---
+title: "Velas DEX Trades API"
+description: "Query Velas DEX trades data using Bitquery GraphQL API. Get DEX swaps, pools, amounts, and trader addresses."
+keywords: ["Velas API", "Velas DEX Trades", "Bitquery", "GraphQL"]
+---
+
 # DEX Trades
 
 The `dexTrades` field allows us to retrieve dex trade data from Ethereum blockchain.
@@ -127,4 +133,11 @@ The following are available fields for the `dexTrades`:
 - `tradeAmount`: returns the trade amount in the base currency.
 - `tradeIndex`: returns the index of the trade in the transaction.
 - `transaction`:  returns information about the transaction in which the trade was executed.
-  
+
+## Related Resources
+
+- [Velas schema overview](https://docs.bitquery.io/v1/docs/Schema/velas/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Velas Coinpath API](https://docs.bitquery.io/v1/docs/Schema/velas/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

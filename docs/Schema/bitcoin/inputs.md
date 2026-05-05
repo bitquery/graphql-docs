@@ -1,5 +1,6 @@
 ---
 title: Bitcoin Inputs API
+description: "Get information on wallet inputs and fund flow on the Bitcoin blockchain. Also, get information on blocks for tokens or NFTs on the Bitcoin blockchain."
 ---
 
 <head>
@@ -95,3 +96,11 @@ The following are available fields for the `inputs`:
 -   `transaction`: returns information about transaction of this input
 -   `value`: returns input value
 -   `valueDecimal`: returns input value as decimal 
+
+## Related Resources
+
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Bitcoin API examples](https://docs.bitquery.io/v1/docs/examples/Bitcoin)
+- [Coinpath (Bitcoin)](https://docs.bitquery.io/v1/docs/Schema/bitcoin/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

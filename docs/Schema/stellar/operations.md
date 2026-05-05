@@ -1,3 +1,9 @@
+---
+title: "Stellar Operations API"
+description: "Stellar operations inside transactions: type, source account, success, index, block—Bitquery GraphQL."
+keywords: ["Stellar API", "Stellar Operations", "Bitquery", "GraphQL"]
+---
+
 # Operations
 
 An operation is a command that tells the Stellar network to do something, such as send money, or create an account. A transaction is a group of operations that are submitted to the Stellar network together.
@@ -31,7 +37,10 @@ query ($network: StellarNetwork!, $hash: String!) {
 
 ```
 
-<details><summary>Filtering</summary>
+<details>
+
+<summary>Filtering</summary>
+
 
 - **transactionHash**
 
@@ -108,3 +117,11 @@ query ($network: StellarNetwork!, $hash: String!) {
 - **success**
 
   A boolean value that indicates whether the operation was successful.
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Stellar Coinpath API](https://docs.bitquery.io/v1/docs/Schema/stellar/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

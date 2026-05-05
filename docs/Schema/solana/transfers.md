@@ -1,6 +1,33 @@
+---
+title: "Solana Transfers API — SPL & SOL | Bitquery GraphQL"
+description: "Solana transfers schema: full historical SOL and SPL token movements, senders, receivers, programs, and aggregates for accounting, audit, trading, and compliance analytics via GraphQL."
+keywords:
+  [
+    "Solana API",
+    "Solana transfers",
+    "SPL token transfers",
+    "Solana GraphQL",
+    "Bitquery",
+    "historical Solana data",
+    "blockchain audit",
+    "Solana compliance",
+    "Parquet export",
+    "wallet transfers",
+  ]
+---
+
 # Transfers
 
-The transfers API allows you to get a information on transfers that have occurred on the Solana blockchain.Below are the fields in the schema:
+The `transfers` API returns indexed **SOL** and **SPL token** transfer rows on Solana: amounts, counterparties, currency metadata, transaction pointers, block time, and program/instruction context where available. It is the reference surface for **full historical** movement data used in reporting, **audit** evidence, **trading** analytics, and **compliance** workflows. Below is a minimal query shape, then filter reference and field list.
+
+## Common use cases
+
+- **Accounting and tax reporting** — Per-wallet inflows/outflows, period totals, and point-in-time balances (often via aggregates). See [Solana transfers examples](/docs/Examples/Solana/transfers) and [aggregation](/docs/query-features/aggregation/).
+- **Audit and assurance** — Reproducible samples with signature, slot/height, and timestamps; optional bulk datasets for large populations. Examples: [transfers examples](/docs/Examples/Solana/transfers), [expressions](/docs/query-features/expressions/overview).
+- **Trading and research** — Large transfers, funding paths, mint-level history, program-scoped activity. [Examples](/docs/Examples/Solana/transfers).
+- **Compliance and investigations** — Source-of-funds style queries, multi-party aggregates, and [Coinpath](/docs/Schema/solana/coinpath) for multi-hop tracing.
+- **Treasury and operations** — Time-bounded extracts and multi-token views. [Filtering options](/docs/query-features/filtering/options).
+- **Data engineering** — Pagination and aggregates in GraphQL; **S3 / Parquet** and other cloud delivery for warehouse loads. [V1 vs V2 and cloud data](/docs/graphql-ide/v1-and-v2), [streaming product](https://bitquery.io/products/streaming).
 
 ```
 query ($network: SolanaNetwork!, $date: ISO8601DateTime, $height: Int) {
@@ -83,7 +110,10 @@ query ($network: SolanaNetwork!, $date: ISO8601DateTime, $height: Int) {
 }
 ```
 
-<details><summary>Filtering Transfers</summary>
+<details>
+
+<summary>Filtering Transfers</summary>
+
 
 `amount`
 
@@ -335,3 +365,12 @@ A catch-all filter (OR Logic) that can be used to filter the results by any of t
         -   The type of the action.
     -   **program**
         -   The program ID of the program that was used to perform the transfer.
+
+## Related Resources
+
+- [Solana transfers API examples](/docs/Examples/Solana/transfers)
+- [Solana schema overview](https://docs.bitquery.io/v1/docs/Schema/solana/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Solana Coinpath API](https://docs.bitquery.io/v1/docs/Schema/solana/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

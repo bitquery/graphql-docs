@@ -1,5 +1,6 @@
 ---
 title: BNB Transfers API
+description: "Query token and native transfers on BNB Smart Chain with filtering and sorting."
 ---
 
 <head>
@@ -132,4 +133,13 @@ Data retrieved using `transfers` can be filtered using following arguments:
 - `receiver`: returns receiver of a particular transfer
 - `sender`: returns sender of a particular transfer
 - `success`: returns boolean value for success of a particular transfer
-- `transaction`: returns details of transaction in which a particular transfer 
+- `transaction`: returns details of transaction in which a particular transfer
+
+## Related Resources
+
+- [BNB Smart Chain schema overview](https://docs.bitquery.io/v1/docs/Schema/binance_smart_chain/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath (BNB Smart Chain)](https://docs.bitquery.io/v1/docs/Schema/binance_smart_chain/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

@@ -1,10 +1,16 @@
+---
+title: "Ripple XRP Transfers API Examples — Bitquery GraphQL"
+description: "Query XRP Ledger transfers with Bitquery GraphQL. Get token transfers by currency, aggregate transfer counts per address, and retrieve full transfer history."
+keywords: [Ripple, XRP, transfers, XRP Ledger, Bitquery, GraphQL, Ripple transfers, token transfers, address history]
+---
+
 # Ripple Transfers API
 
 Ripple Transfers API provides all details regarding transfers on Ripple Blockchain. Below are some examples of `transfers` API:
 
 import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
 
-## Get Transfers for a currency on Ripple
+## Get XRP Ledger Transfers for a Currency on the Ripple Network
 
 We are using the below query to get all types of transfers for a specific currency `CNY`. You can find the query [here](https://ide.bitquery.io/All-types-of-transfers-for-tokens).
 
@@ -63,7 +69,7 @@ query ($network: RippleNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
 }
 ```
 
-## Total Transfers done by a Ripple address
+## Aggregate XRP Ledger Transfer Counts by Currency for a Ripple Address
 
 We are using the below query to get the total transfers done by a specific address `rs9ineLqrCzeAGS1bxsrW8x2n3bRJYAh3Q`. You can find the query [here](https://ide.bitquery.io/Total-transfers-done-by-a-ripple-address).
 
@@ -107,7 +113,7 @@ query ($network: RippleNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
 }
 ```
 
-## All Historical Transfers of an individual address
+## Get Historical XRP Ledger Transfers for a Ripple Address
 
 We are using the below query to get all the historical transfers done by a specific address `rs9ineLqrCzeAGS1bxsrW8x2n3bRJYAh3Q`. You can find the query [here](https://ide.bitquery.io/All-historical-transfers-of-an-individual-address).
 
@@ -170,3 +176,10 @@ query ($network: RippleNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
 ## Video Tutorial | How to get Transfers data on Ripple Blockchain
 
 <VideoPlayer url="https://www.youtube.com/watch?v=ttZfqNsEoqI" />
+
+## Related Resources
+
+- [Ripple schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Ripple Balances examples](https://docs.bitquery.io/v1/docs/Examples/ripple/balances)
+- [Ripple Payments examples](https://docs.bitquery.io/v1/docs/Examples/ripple/payments)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)

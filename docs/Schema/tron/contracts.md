@@ -1,5 +1,6 @@
 ---
 title: Tron Smart Contract API
+description: "Query Tron smart contract deployment, energy, and fees."
 ---
 
 <head>
@@ -94,3 +95,12 @@ The following fields are available for the `contracts`:
 -   `success`: returns is call was successful or not
 -   `txHash`: returns transaction hash
 -   `txOwner`: returns address of transaction owner
+
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Tron API examples](https://docs.bitquery.io/v1/docs/Examples/tron)
+- [Coinpath (Tron)](https://docs.bitquery.io/v1/docs/Schema/tron/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

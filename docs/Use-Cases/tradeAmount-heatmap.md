@@ -1,32 +1,23 @@
 ---
 title: Visualizing Trade Volume as Heatmap with Python
 sidebar_position: 6
-description: In this tutorial, we'll walk you through how to visualize the trade volume of different Ethereum pairs in a Heatmap using Python, pandas, seaborn, matplotlib, and the Bitquery DEX Trades API.
+description: "Visualize Ethereum DEX pair trade volume as a heatmap with Python, pandas, seaborn, matplotlib, and the Bitquery DEX Trades API."
+keywords: [heatmap, Ethereum, DEX trades, Python, pandas, Bitquery API, trade volume, seaborn]
 ---
 
 <head>
-
-<meta name="description" content="In this tutorial, we'll walk you through how to visualize the trade volume of different Ethereum pairs in a Heatmap using Python, pandas, seaborn, matplotlib, and the Bitquery DEX Trades API. "/>
-
-<meta name="keywords" content="wallet balance, multi chain balance, cross chain portfolio"/>
-
+<meta name="title" content="Visualizing Trade Volume as Heatmap with Python"/>
+<meta name="description" content="Visualize Ethereum DEX pair trade volume as a heatmap with Python, pandas, seaborn, matplotlib, and the Bitquery DEX Trades API."/>
+<meta name="keywords" content="heatmap, Ethereum, DEX trades, Python, pandas, Bitquery API, trade volume, seaborn"/>
 <meta name="robots" content="index, follow"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="language" content="English"/>
-
-<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-
-<meta property="og:title" content="How to Build Heatmap for Crypto Trades" />
-
-<meta property="og:description" content="In this tutorial, we'll walk you through how to visualize the trade volume of different Ethereum pairs in a Heatmap using Python, pandas, seaborn, matplotlib, and the Bitquery DEX Trades API." />
-
-<!-- Twitter -->
+<meta property="og:title" content="Visualizing Trade Volume as Heatmap with Python" />
+<meta property="og:description" content="Visualize Ethereum DEX pair trade volume as a heatmap with Python, pandas, seaborn, matplotlib, and the Bitquery DEX Trades API." />
 <meta property="twitter:card" content="summary_large_image" />
-
-<meta property="twitter:title" content="How to Build Heatmap for Crypto Trades" />
-
-<meta property="twitter:description" content="In this tutorial, we'll walk you through how to visualize the trade volume of different Ethereum pairs in a Heatmap using Python, pandas, seaborn, matplotlib, and the Bitquery DEX Trades API." />
+<meta property="twitter:title" content="Visualizing Trade Volume as Heatmap with Python" />
+<meta property="twitter:description" content="Visualize Ethereum DEX pair trade volume as a heatmap with Python, pandas, seaborn, matplotlib, and the Bitquery DEX Trades API." />
 </head>
 
 In this tutorial, we'll walk you through how to visualize the trade volume of different Ethereum pairs in a Heatmap using Python, pandas, seaborn, matplotlib, and the Bitquery DEX Trades API.
@@ -156,3 +147,11 @@ plt.show()
 The image will look something like the one below. If the data is skewed towards one pair ( large amount of trades), then it is better to filter it or find alternate methods to get a holistic view.
 
 ![heatmap](/img/heatmap.png)
+
+## Related Resources
+
+- [Bitquery documentation home](https://docs.bitquery.io/v1/docs/intro)
+- [How to start with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [DEX trades API examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Coinpath explained — overview](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)

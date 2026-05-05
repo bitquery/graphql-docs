@@ -1,3 +1,9 @@
+---
+title: "Velas Transfers API"
+description: "Query Velas transfers data using Bitquery GraphQL API. Get asset transfers, amounts, senders, receivers, and currencies."
+keywords: ["Velas API", "Velas Transfers", "Bitquery", "GraphQL"]
+---
+
 # Transfers
 
 Bitquery `transfers` API allows you to retrieve currency or token transfers from velas Blockchain.
@@ -111,4 +117,12 @@ Data retrieved using `transfers` can be filtered using following arguments:
 - `receiver`: returns receiver of a particular transfer
 - `sender`: returns sender of a particular transfer
 - `success`: returns boolean value for success of a particular transfer
-- `transaction`: returns details of transaction in which a particular transfer 
+- `transaction`: returns details of transaction in which a particular transfer
+
+## Related Resources
+
+- [Velas schema overview](https://docs.bitquery.io/v1/docs/Schema/velas/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Velas Coinpath API](https://docs.bitquery.io/v1/docs/Schema/velas/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

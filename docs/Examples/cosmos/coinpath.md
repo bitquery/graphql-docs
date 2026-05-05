@@ -1,8 +1,18 @@
+---
+title: "Cosmos Coinpath API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Cosmos coinpath flows. Trace funds between addresses with depth and amounts."
+keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
+---
+
 # Coinpath API
 
-Our Cosmos Coinpath API provides comprehensive information about money flow of addresses on the Cosmos blockchain.
+Trace fund flows between Cosmos addresses using the Coinpath API to analyze financial relationships and transaction paths.
 
-## Explore Destination of Funds from a Specific Address
+## Trace Cosmos Coinpath Outflows from an Address
+
+Trace outgoing fund flows from a specific Cosmos address. Returns the 10 most recent coinpath transactions with USD amounts, block info, currency details, and sender/receiver addresses.
+
+**Variations:** Change `initialAddress` to trace a different wallet, adjust the `date` filter for a wider window, or increase `limit`. See [Coinpath explained](/docs/building-queries/Coinpath-Explained/Overview) for depth options.
 
 ```
 {
@@ -38,9 +48,11 @@ Our Cosmos Coinpath API provides comprehensive information about money flow of a
 }
 ```
 
-This query retrieves a list of coinpath transactions initiated from a specific initial address (`cosmos1ypejmkpfqrqmv5w7cscq874xf8rlggq7w44rsw`) after a certain date (`2023-08-07`). The query limits the results to 10 transactions and orders them by timestamp in descending order. For each transaction, it provides details such as the transferred amount in USD, block height, timestamp, currency information, sender and receiver addresses, transaction hash, and value.
+## Trace Cosmos Coinpath Flow Between Two Addresses
 
-## Investigate Relationship Between Two Addresses
+Analyze the fund flow between two specific Cosmos addresses. Returns coinpath transactions from one address to another, with amounts in USD, block details, and currency info.
+
+**Variations:** Swap `initialAddress` and `receiver` to trace the reverse direction. Adjust the `date` range or remove it for all-time flows. See [Coinpath explained](/docs/building-queries/Coinpath-Explained/Overview) for multi-hop depth tracing.
 
 ```
 {
@@ -77,11 +89,11 @@ This query retrieves a list of coinpath transactions initiated from a specific i
 }
 ```
 
-This query explores the relationship between two specific addresses (`initialAddress` and `receiver`) within the context of transactions that occurred after August 7, 2023. It retrieves a maximum of 10 transactions initiated from the initial address and received by the specified receiver. 
+## Get Cosmos Coinpath Transfers Above Minimum Amount Between Addresses
 
-For each transaction, the query provides details like the transferred amount in USD, block height, timestamp, currency information, sender and receiver addresses, transaction hash, and value. By analyzing these transactions, users can gain insights into the flow of funds between the two addresses and understand their financial interactions.
+Filter coinpath transactions between two addresses by a minimum transfer amount. Only returns transactions of 200 or more, useful for focusing on significant fund movements.
 
-## Retrieve Transactions Exceeding a Certain Value from a Specific Address
+**Variations:** Adjust `minimumTxAmount` to set a different threshold. Remove the `receiver` filter to see all outflows above the minimum. See [query features](/docs/category/query-features) for additional filtering.
 
 ```
 {
@@ -118,4 +130,10 @@ For each transaction, the query provides details like the transferred amount in 
 }
 ```
 
-This query retrieves 10 latest transactions initiated from the initial address and received by the specified receiver, where the minimum transaction amount is set to 200. 
+## Related Resources
+
+- [Cosmos schema overview](https://docs.bitquery.io/v1/docs/Schema/cosmos/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Staking examples](https://docs.bitquery.io/v1/docs/Examples/Staking/stake_examples)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

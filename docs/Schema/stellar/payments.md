@@ -1,3 +1,9 @@
+---
+title: "Stellar Payments API"
+description: "Stellar payments & path swaps: currencyFrom/To, path hops, sender/receiver, amounts—DEX-ready—GraphQL."
+keywords: ["Stellar API", "Stellar Payments", "Bitquery", "GraphQL"]
+---
+
 # Payments
 
 Stellar network is optimized for payments. Bitquery's Payments API will give you information on payments on the XRP ledger. Below are the fields in the schema:
@@ -74,7 +80,10 @@ query ($network: StellarNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
 
 ```
 
-<details><summary>Filtering Payments</summary>
+<details>
+
+<summary>Filtering Payments</summary>
+
 
 - **options**
 
@@ -240,3 +249,11 @@ query ($network: StellarNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
 - **path**
 
   The path that the payment took through the Stellar network.
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Stellar Coinpath API](https://docs.bitquery.io/v1/docs/Schema/stellar/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,20 +1,27 @@
+---
+title: "Cross-Chain API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries spanning multiple blockchains. Get balances, transfers, trades, and token analytics in one request."
+keywords: [cross-chain API examples, GraphQL queries, Bitquery]
+---
+
 # Cross-Chain API
 
-In this section we see how to use Bitquery APIs to get information across multiple chains in one go.
+Bitquery's GraphQL API lets you query multiple blockchains in a single request using [aliases](/docs/query-features/aliases). Each root field targets a different network, and all results come back in one JSON response — no need for multiple API calls.
 
 # Table of Contents
 
-1. [Balance of a Wallet](#balance-of-a-Wallet)
-2. [Token Transfers](#token-transfers-tracking)
-3. [Cross-Chain Trade Insights](#cross-chain-trade)
-4. [Universal Token Tracking](#universal-token-tracking)
+1. [Get Multi-Chain Wallet Balance Across Networks](#get-multi-chain-wallet-balance-across-networks)
+2. [Track Token Transfers Across Multiple Chains](#track-token-transfers-across-multiple-chains)
+3. [Get Multi-Chain DEX Trade Insights for One Wallet](#get-multi-chain-dex-trade-insights-for-one-wallet)
+4. [Aggregate Multi-Chain USDT Transfer Metrics by Network](#aggregate-multi-chain-usdt-transfer-metrics-by-network)
 
+<a name="get-multi-chain-wallet-balance-across-networks"></a>
 
-<a name="balance-of-a-Wallet"></a>
+## Get Multi-Chain Wallet Balance Across Networks
 
-## Balance of a Wallet
+Get a wallet's token balances across 17+ blockchains in a single API call. Uses aliases (`ethereum:`, `bsc:`, `matic:`, etc.) to query each network simultaneously, returning token addresses, symbols, types, and USD values.
 
-Use this query to retrieve address balances across multiple blockchains in one query. Set the wallet address in the `address` filter.
+**Variations:** Add or remove network blocks for the chains you need. Use `currency: {is: "..."}` within any block to filter for a specific token. For UTXO chains (Bitcoin, Litecoin), the query uses `addressStats` instead of `balances`.
 
 [You can run the query here](https://ide.bitquery.io/Query-to-check-balance-on-multiple-blockchains_3)
 
@@ -166,14 +173,6 @@ query ($address: String!) {
       }
     }
   }
-  bitcoinsv: bitcoin(network: bitcoinsv) {
-    addressStats(address: {is: $address}) {
-      address {
-        balance
-        balanceInUSD: balance(in: USD)
-      }
-    }
-  }
   bitcash: bitcoin(network: bitcash) {
     addressStats(address: {is: $address}) {
       address {
@@ -232,12 +231,14 @@ query ($address: String!) {
   "address": "0xb3eaf12a04d9e9df7efa681a92043ef4371ed6fe"
 }
 ```
-    
-<a name="token-transfers-tracking"></a>
 
-## Token Transfers Tracking 
+<a name="track-token-transfers-across-multiple-chains"></a>
 
-With this query you can track token transfers across different chains for any address.  Set the wallet whose movements you want to track in the `address` filter.  Using the  `any` clause, we get transfers were the address was either a sender or reciever.
+## Track Token Transfers Across Multiple Chains
+
+Track all token transfers (sent and received) for a wallet across multiple EVM chains and Tron in one request. The `any` clause captures both inbound and outbound movements per chain.
+
+**Variations:** Add `currency` filters per chain to track a specific token. Include `date` filters for a time range. Add `amount(in: USD)` for USD values. Use [limit/offset](/docs/query-features/filtering/options) per chain block for pagination.
 
 [You can find the query here](https://ide.bitquery.io/Cross-chain-transfers)
 
@@ -449,15 +450,17 @@ query ($address: String!) {
   }
 }
 ```
-    
-<a name="cross-chain-trade"></a>
 
-## Cross-Chain Trade Insights
+<a name="get-multi-chain-dex-trade-insights-for-one-wallet"></a>
 
-The below query gives you insights into token trades spanning various blockchains. Simply set the wallet address in the  `address` parameter. Adjust the `from ` and `to` periods accordingly.
+## Get Multi-Chain DEX Trade Insights for One Wallet
 
-  [Link to query](https://ide.bitquery.io/Cross-chain-Trades)
-    
+Analyze a wallet's DEX trading activity across 10 EVM chains in one call. Uses a GraphQL `fragment` to keep the query DRY — each chain block returns buy/sell amounts, USD values, trade counts, median prices, and the date range of activity.
+
+**Variations:** Add or remove chain blocks as needed. Change the `date` variables for different periods. The `fragment TradeInfo` pattern is reusable — modify it once to change fields across all chains. Use [expressions](/docs/query-features/expressions/overview) for custom price calculations.
+
+[Link to query](https://ide.bitquery.io/Cross-chain-Trades)
+
 ```
 query ($limit: Int!, $offset: Int!, $from: ISO8601DateTime, $till: ISO8601DateTime, $address: String!) {
   ethereum: ethereum {
@@ -582,14 +585,15 @@ fragment TradeInfo on EthereumDexTrades {
 
 ```
 
-<a name="universal-token-tracking"></a>
+<a name="aggregate-multi-chain-usdt-transfer-metrics-by-network"></a>
 
-## Universal Token Tracking
+## Aggregate Multi-Chain USDT Transfer Metrics by Network
 
-The below query gives you stats on tokens across chains including sender/receiver count, first and last date of token transfers and the average amount transferred. 
+Compare USDT transfer activity across Ethereum, BSC, Celo, Polygon, and Avalanche in one query. Returns aggregate metrics per chain — median and average transfer size, total volume, transfer count, unique senders/receivers, and active date range.
+
+**Variations:** Swap the USDT contract addresses for any token on each chain (e.g., USDC, DAI). Adjust the `date` variables for different periods. Add [aggregations](/docs/query-features/aggregation/) like `sum` for total volume or `maximum` for the largest single transfer.
 
 [You can run the query here](https://ide.bitquery.io/multi-chain-token-tracing)
-    
 
 ```
 query ($from: ISO8601DateTime, $till: ISO8601DateTime) {
@@ -617,7 +621,7 @@ query ($from: ISO8601DateTime, $till: ISO8601DateTime) {
       max_date: maximum(of: date)
     }
   }
-  
+
   bsc: ethereum(network: bsc) {
     transfers(
       currency: {is: "0x55d398326f99059fF775485246999027B3197955"}
@@ -642,7 +646,7 @@ query ($from: ISO8601DateTime, $till: ISO8601DateTime) {
       max_date: maximum(of: date)
     }
   }
-  
+
   celo: ethereum(network: celo_mainnet) {
     transfers(
       currency: {is: "0xf6d198cd2a85bb2f3021cdbdab6b878474079be7 "}
@@ -691,7 +695,7 @@ query ($from: ISO8601DateTime, $till: ISO8601DateTime) {
       max_date: maximum(of: date)
     }
   }
-  
+
   avalanche: ethereum(network: avalanche) {
     transfers(
       currency: {is: "0x9702230a8ea53601f5cd2dc00fdbc13d4df4a8c7 "}
@@ -719,3 +723,11 @@ query ($from: ISO8601DateTime, $till: ISO8601DateTime) {
 }
 
 ```
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Address API examples](https://docs.bitquery.io/v1/docs/Examples/address/Blockchain-Address-API-Examples)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

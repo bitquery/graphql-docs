@@ -1,3 +1,9 @@
+---
+title: "Conflux Smart Contract Events API"
+description: "Query Conflux smart contract events data using Bitquery GraphQL API. Get contract events, logs, topics, and decoded payloads."
+keywords: ["Conflux API", "Conflux Smart Contract Events", "Bitquery", "GraphQL"]
+---
+
 # Conflux Smart Contract Events API
 
 ```
@@ -34,7 +40,10 @@ query ($network: ConfluxNetwork!, $hash: String!) {
 }
 ```
 
-<details><summary>Filtering Events</summary>
+<details>
+
+<summary>Filtering Events</summary>
+
 
 Smart contract events can be filtered using the following arguments:
 
@@ -73,3 +82,11 @@ Smart contract events can be filtered using the following arguments:
   - The number of times the event was emitted.
 - **transaction**
   - The hash of the transaction that emitted the event.
+
+## Related Resources
+
+- [Conflux schema overview](https://docs.bitquery.io/v1/docs/Schema/conflux/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Conflux Coinpath API](https://docs.bitquery.io/v1/docs/Schema/conflux/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

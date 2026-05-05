@@ -1,3 +1,9 @@
+---
+title: "Cosmos Transactions API"
+description: "Cosmos transactions API: result codes, fees and gas, signer, tx type, raw bytes, block index, and Tendermint block context."
+keywords: ["Cosmos API", "Cosmos Transactions", "Bitquery", "GraphQL"]
+---
+
 # Transaction
 
 The Transactions API returns information about transactions on Cosmos network.
@@ -114,3 +120,11 @@ Here is an example that demonstrates how to fetch 10 latest transactions:
 -   `success`: returns success of the transaction as boolean
 
 -   `type`: returns type of transaction
+
+## Related Resources
+
+- [Cosmos schema overview](https://docs.bitquery.io/v1/docs/Schema/cosmos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cosmos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/cosmos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

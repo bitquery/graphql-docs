@@ -1,8 +1,15 @@
 ---
 sidebar_position: 1
+title: "Velas API — Blockchain Data Schema | Bitquery"
+description: "Access Velas blockchain data through Bitquery's GraphQL API. Query blocks, transactions, transfers, smart contracts, and more."
+keywords: [Velas API, Velas GraphQL, Velas blockchain data, Bitquery]
 ---
 
 # Overview
+
+:::caution Deprecated
+Bitquery has stopped supporting the Velas blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 Bitquery Velas API offers access to indexed data from the velas blockchain via GraphQL API for developers.
 
@@ -19,3 +26,11 @@ query {
 ```
 
 Let's dive in and explore the Velas data available through Bitquery API.
+
+## Related Resources
+
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Velas API examples](https://docs.bitquery.io/v1/docs/Examples/velas)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)

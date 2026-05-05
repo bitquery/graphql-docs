@@ -1,10 +1,16 @@
+---
+title: "Algorand Smart Contract Calls API Examples — Bitquery GraphQL"
+description: "Query Algorand smart contract calls with Bitquery GraphQL. Count calls per block, filter by transaction type (acfg, pay), and track newly created assets."
+keywords: [Algorand, smart contract calls, acfg, asset config, Algorand API, Bitquery, GraphQL, transaction type]
+---
+
 # Algorand Smart Contract Calls API
 
 Our Algorand Smart Contract Calls API provides detailed information about smart contract calls executed on the Algorand Blockchain.
 
 import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
 
-## Get Count of Smart Contract Calls in Latest Block
+## Count Unique Algorand Smart Contract Calls in Latest Block
 
 The query retrieves the latest block and provides the count of unique smart contract calls made within that block.
 
@@ -28,7 +34,7 @@ You can check the query [here](https://ide.bitquery.io/Get-Count-of-Smart-Contra
 }
 ```
 
-## Get Latest Created Assets on Algorand
+## Get Latest Algorand Asset Config Transactions Creating New Assets
 
 The query retrieves information about the latest 10 smart contract calls on the Algorand blockchain with the transaction type "acfg" including the timestamp of the block, the smart contract address, the transaction hash, the sender's address, and the transaction type.
 `acfg` stands for asset config here.
@@ -64,7 +70,7 @@ You can find the query [here](https://ide.bitquery.io/Track-latest-assets-create
 
 ```
 
-# Get Count of each transaction type since Genesis Block
+## Count Algorand Smart Contract Calls by Transaction Type Since Genesis
 
 The query retrieves the number of times each txn type has been called since the genesis block (first block) of Algorand Mainnet.
 You can find the query [here](https://ide.bitquery.io/Count-of-each-trxn-type-called-till-now-on-Algorand-network#).
@@ -81,7 +87,7 @@ query MyQuery {
 
 ```
 
-## Get Latest Smart Contract Calls with Transaction Type
+## Get Latest Algorand Smart Contract Calls Filtered by Transaction Type
 
 The query retrieves information about the latest 10 smart contract calls on the Algorand blockchain with the transaction type "pay," including the timestamp of the block, the smart contract address, the transaction hash, the sender's address, and the transaction type.
 
@@ -118,3 +124,10 @@ The query retrieves information about the latest 10 smart contract calls on the 
 ## Video Tutorial | How to get Newly Created Tokens on Algorand
 
 <VideoPlayer url="https://www.youtube.com/watch?v=O3WC0QOk5Pw" />
+
+## Related Resources
+
+- [Algorand schema overview](https://docs.bitquery.io/v1/docs/Schema/algorand/overview)
+- [Algorand Coinpath API examples](https://docs.bitquery.io/v1/docs/Examples/algorand/coinpath)
+- [Smart Contract Calls API examples](https://docs.bitquery.io/v1/docs/Examples/smartcontractCalls/smart-contract-calls-api)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)

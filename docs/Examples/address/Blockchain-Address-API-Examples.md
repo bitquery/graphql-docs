@@ -1,14 +1,19 @@
 ---
+title: "Blockchain Address API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for addresses across chains. Get transactions, balances, transfers, and coinpath."
+keywords: [address API examples, GraphQL queries, Bitquery]
 sidebar_position: 1
 ---
 
 # Address API
 
-Our APIs can provide all sorts of details for any address on the blockchain. Let's see some examples.
+The Address API lets you query transactions, token transfers, balances, DEX trades, smart contract calls, and fund flow (Coinpath) for any address across all supported blockchains. Below are cross-chain examples you can adapt by changing the address and network.
 
 
-## Transactions of an Address
-To check transactions sent and received by an address, you can use following API. You can get same data for multiple addresses, just use `{in: ["address1", "address2"]}` instead of `{is: "address"}`.
+## Get All Transactions for an Ethereum Address
+Get all transactions sent and received by an Ethereum address using the `any` filter (OR on `txSender` and `txTo`). Returns block timestamps, gas values in ETH and USD, and success/revert status.
+
+**Variations:** Query multiple addresses with `{in: ["addr1", "addr2"]}`. Add `date` or `success: true` filters. Apply [limit/offset](/docs/query-features/filtering/options) for pagination. Switch `network` for other EVM chains.
 
 [Open this query on IDE](https://ide.bitquery.io/ethereum-transactions-of-an-address)
 
@@ -42,9 +47,11 @@ To check transactions sent and received by an address, you can use following API
 ```
 
 
-## Transfers of an Address
+## Get Ethereum Token Transfers Sent and Received by an Address
 
-To get token transfers of addresses use following API, in this example we are showing all sent and received token transfers of an address.
+Fetch all token transfers (sent and received) for a wallet using the `any` filter on `sender` and `receiver`. Returns token symbols, USD amounts, and transaction hashes within a date range.
+
+**Variations:** Add `currency: {is: "TOKEN_ADDRESS"}` to filter for a specific token. Use [aggregations](/docs/query-features/aggregation/) like `sum` on `amount` for total volume. Remove the `date` filter for all-time data.
 
 [Open this query on IDE](https://ide.bitquery.io/Ethereum-transfers-sent-and-received-by-an-Ethereum-address)
 
@@ -84,9 +91,11 @@ To get token transfers of addresses use following API, in this example we are sh
 ```
 
 
-## Transfers sent by multiple addresses
+## Track Transfers Sent by Multiple Ethereum Addresses
 
-You can transfers for multiple addresses, for example in the following query we are getting transfers sent by two addresses (0xa106c1a6c0e46826fbb4e82b9337bb880c3e2575 & 0x93ff65b50b2f12387bc448d5ee17c1600cd66626). You can use upto 100 addresses in a query.
+Query outbound token transfers from multiple wallets in a single API call using `sender: {in: [...]}`. Supports up to 100 addresses per query — useful for monitoring exchange hot wallets, treasury addresses, or a portfolio of wallets.
+
+**Variations:** Switch `sender` to `receiver` for inbound transfers. Add `currency` to filter by token. Use [sorting](/docs/query-features/filtering/sorting) by `sender.address` to group results by wallet.
 
 [Open this query on IDE](https://ide.bitquery.io/Transfers-sent-by-multiple-addresses)
 
@@ -130,9 +139,11 @@ You can transfers for multiple addresses, for example in the following query we 
 ```
 
 
-## Trades of an Address
+## Query DEX Trades for an Ethereum Address
 
-To check trades of an address you can use our DEX trade API. 
+Retrieve all DEX swap activity for a specific wallet using the `makerOrTaker` filter. Returns buy/sell currencies, USD amounts, trade counts, and median and latest prices per pair — useful for building a wallet's trading history or P&L reports.
+
+**Variations:** Filter by `exchange` or `smartContractAddress` for a specific DEX. Add `buyCurrency` or `sellCurrency` for a specific token. Use [aggregations](/docs/query-features/aggregation/) like `sum` on `buyAmount` for total volume traded.
 
 [Open this query on IDE](https://ide.bitquery.io/Trades-of-an-address)
 
@@ -171,9 +182,9 @@ To check trades of an address you can use our DEX trade API.
 ```
 
 
-## Balance of an Address
+## Query Address Balances on Polygon and Bitcoin Networks
 
-To check balance of an address use our balance API.
+Check token balances for any wallet address. The first query returns all token balances on Polygon. The second shows the Bitcoin UTXO-based approach — sum outputs and subtract inputs to calculate BTC balance.
 
 [Open this query on IDE](https://ide.bitquery.io/Balance-of-a-matic-address)
 
@@ -195,7 +206,7 @@ To check balance of an address use our balance API.
 
 ```
 
-For UTXO based blockchains such as Bitcoin, Litcoin, dogecoin, you can get inputs and outputs and to calculate the balance, you just need to subtrack input value from output value (`outputs.value - inputs.value`)
+**Variations:** On EVM chains, remove the `currency` filter for all token balances or use `currency: {in: [...]}` for specific tokens. For UTXO chains (Bitcoin, Litecoin, Dogecoin), use the inputs/outputs pattern below — balance = `outputs.value - inputs.value`. Add `value(in: USD)` for USD-equivalent amounts.
 
 [Open this query on IDE](https://ide.bitquery.io/Input-outputs-of-an-address_1)
 
@@ -219,8 +230,10 @@ For UTXO based blockchains such as Bitcoin, Litcoin, dogecoin, you can get input
 ```
 
 
-## Balance history of an Address
-You can also get balance history of any address using our v1 APIs. Additionly in V2 we have created [`BalanceUpdates`](https://docs.bitquery.io/docs/examples/balances/balance-api/) API, which extend this capabilities.
+## Track USDT Balance History for an Ethereum Address
+Track how a wallet's token balance changed over time with block-level detail. Returns the balance value, transfer amount, timestamp, and block number for each update. For richer balance tracking, see the [V2 BalanceUpdates API](https://docs.bitquery.io/docs/examples/balances/balance-api/).
+
+**Variations:** Change the `currency` to track a different token. Adjust the `date` filter for different time periods. Remove `currency` to see all token balance changes for the wallet.
 
 [Open this query on IDE](https://ide.bitquery.io/usdt-balance-history-template_1)
 
@@ -255,8 +268,10 @@ You can also get balance history of any address using our v1 APIs. Additionly in
 }
 ```
 
-## Smart Contract calls of an address
-TO get smart contract call of an address use our SmartContractCalls API.
+## Get Smart Contract Calls for a Polygon Address
+List all smart contract method calls made by a specific wallet address. Returns method names, signature hashes, contract addresses, gas costs, and transaction hashes — useful for understanding what a wallet has interacted with.
+
+**Variations:** Add `smartContractAddress` to filter calls to a specific contract. Use `smartContractMethod: {is: "transfer"}` for a specific function. Switch `network` to any EVM chain. Apply [count aggregation](/docs/query-features/aggregation/count) to rank contracts by interaction frequency.
 
 [Open this query on IDE](https://ide.bitquery.io/query/XVYLusoNeGcYm5b3)
 
@@ -296,9 +311,11 @@ TO get smart contract call of an address use our SmartContractCalls API.
 
 ```
 
-## Source of funds from an address
+## Trace Inbound ETH Sources to an Ethereum Address with Coinpath
 
-To check the source of funds for any address you can use our Coinpath APIs.
+Trace where an address received its funds from using Coinpath's `inbound` direction. Returns sender addresses, amounts, smart contract details, and hop depth — essential for compliance checks, AML investigations, and source-of-funds verification.
+
+**Variations:** Increase `depth: {lteq: N}` for deeper tracing. Change `currency` to track ERC-20 tokens. Adjust `limitBy` to control results per hop. See [Coinpath Explained](/docs/building-queries/Coinpath-Explained/Overview) for a detailed walkthrough.
 
 [Open this query on IDE](https://ide.bitquery.io/Source-of-funds-of-an-address)
 
@@ -346,12 +363,14 @@ To check the source of funds for any address you can use our Coinpath APIs.
 ```
 
 
-## Destination of funds from an address
+## Track Outbound ETH Destinations from an Ethereum Address with Coinpath
 
-Coinpath API also helpful to get the destination of funds. Check following example.
+Trace where an address sent its funds using Coinpath's default outbound direction. Maps the destination wallets and contracts that received ETH from the target address — useful for tracking fund disbursements and outflow analysis.
+
+**Variations:** Combine with the inbound query above in a single request (using [aliases](/docs/query-features/aliases)) for a complete fund-flow picture. Increase `depth` for multi-hop tracing. Add a `date` filter for a specific time window.
 
 
-https://ide.bitquery.io/Destination-of-funds-for-an-address
+[Open this query on IDE](https://ide.bitquery.io/Destination-of-funds-for-an-address)
 
 ```graphql
 {
@@ -396,7 +415,13 @@ https://ide.bitquery.io/Destination-of-funds-for-an-address
 }
 ```
 
+## Related Resources
 
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Cross-chain examples](https://docs.bitquery.io/v1/docs/Examples/cross-chain/cross-chain-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
 
 
 

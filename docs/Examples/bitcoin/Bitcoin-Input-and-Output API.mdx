@@ -1,3 +1,9 @@
+---
+title: "Bitcoin Inputs & Outputs API Examples — Bitquery GraphQL"
+description: "Query Bitcoin UTXO inputs and outputs with Bitquery GraphQL. Get historical BTC price, address balance at a block height, miner rewards, Cardano datum, and mining activity."
+keywords: [Bitcoin, UTXO, inputs, outputs, Bitquery, GraphQL, miner rewards, BTC price, block height, Cardano datum]
+---
+
 # Inputs and Outputs API
 
 In this section we will see examples to get details about inputs and outputs of a transaction from Bitcoin network.
@@ -6,7 +12,7 @@ import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js
 
 ## Get the Bitcoin Price on a Given date
 
-[THis](https://ide.bitquery.io/btc-price-in-2016) query returns price of the Bitcoin on a given date. 
+[THis](https://ide.bitquery.io/btc-price-in-2016) query returns price of the Bitcoin on a given date.
 For this example the date is `2016-01-01`.
 
 ```
@@ -21,13 +27,48 @@ query MyQuery {
 }
 ```
 
-## Get the UTXO Input and Outputs for a specific address
+## Get Bitcoin Balance on a given height
+
+Below query gives you balance of a bitcoin address at a specific Block height.
+Run [here](https://ide.bitquery.io/bitcoin-balance-on-a-given-block-height).
 
 ```
-query ($network: BitcoinNetwork!) {
-  bitcoin(network: $network) {
+{
+  bitcoin(network: bitcoin) {
+    inputs(
+      height: {lteq: 919195}
+      inputAddress: {is: "bc1ppu6akjngyvpxwz0w38n4evcygwh08tjtmcc0dx6ft2zzgkxtd97stwehcq"}
+    ) {
+      count
+      value
+      value_usd: value(in: USD)
+      min_date: minimum(of: date)
+      max_date: maximum(of: date)
+    }
+    outputs(
+      height: {lteq: 919195}
+      outputAddress: {is: "bc1ppu6akjngyvpxwz0w38n4evcygwh08tjtmcc0dx6ft2zzgkxtd97stwehcq"}
+    ) {
+      count
+      value
+      value_usd: value(in: USD)
+      min_date: minimum(of: date)
+      max_date: maximum(of: date)
+    }
+  }
+}
+```
+
+## Get the UTXO Input and Outputs for a specific address
+
+[Run Query](https://ide.bitquery.io/bitcoin-inputs-and-outputs-for-address)
+
+```
+{
+  bitcoin(network: bitcoin) {
     spendvolumes: inputs(
       inputAddress: {is: "bc1p4kufll9uhnpkgzuc65slcxd2qaw2hl9xecket3h8yyu4awglcsqslqaztd"}
+      height: {between: [822372, 822376]}
     ) {
       date {
         date
@@ -39,8 +80,14 @@ query ($network: BitcoinNetwork!) {
       transaction {
         hash
       }
+      inputAddress {
+        annotation
+        address
+      }
+      value
     }
     recievevolumes: outputs(
+      height: {between: [822372, 822376]}
       outputAddress: {is: "bc1p4kufll9uhnpkgzuc65slcxd2qaw2hl9xecket3h8yyu4awglcsqslqaztd"}
     ) {
       date {
@@ -53,13 +100,19 @@ query ($network: BitcoinNetwork!) {
       block {
         height
       }
+      outputAddress {
+        annotation
+        address
+      }
+      value
     }
   }
 }
 
+
 ```
 
-In this query we have used two of API sets named “inputs” and “outputs” for getting the spent and received bitcoin currency for the address “bc1p4kufll9uhnpkgzuc65slcxd2qaw2hl9xecket3h8yyu4awglcsqslqaztd” with filtering out by block, date and it provides the transaction hash, block height and amount.
+In this query we have used two of API sets named “inputs” and “outputs” for getting the spent and received bitcoin currency for the address “bc1p4kufll9uhnpkgzuc65slcxd2qaw2hl9xecket3h8yyu4awglcsqslqaztd” with filtering out by block height within a specific number range, and it provides the transaction hash, block height and amount.
 
 ## Get Parsed Datum of a Cardano Transaction UTXO
 
@@ -144,6 +197,61 @@ query ($network: BitcoinNetwork!, $dateFormat: String!, $from: ISO8601DateTime, 
 
 We can get the miner Block reward per day by using the outputs API and using the filters of outputDirection set to mining and we get parameters such as miner address, miner rewards in the whole day and blocks they mined. Yo can try running the example query [here](https://ide.bitquery.io/bitcoin-miners-rewards).
 
+## Get Miners Activity in a Specific Timeframe
+
+This query returns the activity count of miners within a specific date range. You can run this query [here](https://ide.bitquery.io/get-miners-activity-in-a-specific-timeframe).
+
+```
+query MyQuery {
+  bitcoin(network: bitcoin) {
+    outputs(
+      outputDirection: {is: mining}
+      date: {since: "2025-01-01", till: "2025-01-10"}
+      outputScriptType: {notIn: ["nulldata", "nonstandard"]}
+    ) {
+      outputAddress {
+        address
+      }
+      count
+    }
+  }
+}
+```
+
+## Get Miners First Activity
+
+This query returns the first mining activity for specific miner addresses, showing when each miner first received a block reward. You can run this query [here](https://ide.bitquery.io/get-miners-first-activity).
+
+```
+query MyQuery {
+  bitcoin(network: bitcoin) {
+    outputs(
+      outputDirection: {is: mining}
+      options: {asc: "block.timestamp.iso8601", limitBy: {each: "outputAddress.address", limit: 1}}
+      outputAddress: {in: ["1K6KoYC69NnafWJ7YgtrpwJxBLiijWqwa6", "1KGG9kvV5zXiqyQAMfY32sGt9eFLMmgpgX"]}
+      outputScriptType: {notIn: ["nulldata", "nonstandard"]}
+    ) {
+      outputAddress {
+        address
+      }
+      block {
+        timestamp {
+          iso8601
+        }
+      }
+    }
+  }
+}
+```
+
 ## Video Tutorial to Get Daily Miner Rewards Info
 
 <VideoPlayer url="https://youtu.be/3RC7Mxitfzg" />
+
+## Related Resources
+
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Bitcoin Coinpath API examples](https://docs.bitquery.io/v1/docs/Examples/bitcoin/Bitcoin-Coinpath-API)
+- [Bitcoin Transaction API examples](https://docs.bitquery.io/v1/docs/Examples/bitcoin/Bitcoin-Transaction-API)
+- [Input/Output API examples](https://docs.bitquery.io/v1/docs/Examples/Input_Output/IO_examples)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)

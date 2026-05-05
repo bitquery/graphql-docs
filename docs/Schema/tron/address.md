@@ -1,5 +1,6 @@
 ---
 title: Tron Address API
+description: "Look up address balances and history on Tron."
 ---
 
 <head>
@@ -22,6 +23,8 @@ title: Tron Address API
 </head>
 
 The `address` field allows us to retrieve details about address or smart contract from Tron blockchain.
+
+Tron addresses hold TRX balances and may be associated with TRC-20 token contracts. The address API returns balance, annotation, and smart contract metadata when the address is a contract. Use it for wallet lookups, token supply queries, and verifying contract attributes on the Tron network.
 
 Here is an example that demonstrates use `address` query:
 
@@ -52,3 +55,12 @@ Address data can be filtered using the following arguments:
 -   `balances`: returns token balance history of address
 -   `claimableRewards`: returns rewards that a witness or a user has not yet withdrawn
 -   `smartContract`: returns details is address is smart contract
+
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Tron API examples](https://docs.bitquery.io/v1/docs/Examples/tron)
+- [Coinpath (Tron)](https://docs.bitquery.io/v1/docs/Schema/tron/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

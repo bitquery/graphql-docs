@@ -1,3 +1,9 @@
+---
+title: "EOS Address Stats API"
+description: "Query EOS address stats data using Bitquery GraphQL API. Get aggregate address statistics and activity metrics."
+keywords: ["EOS API", "EOS Address Stats", "Bitquery", "GraphQL"]
+---
+
 # EOS Address Stats API
 
 ```
@@ -40,7 +46,10 @@ query MyQuery {
 
 ```
 
-<details><summary> Filtering Address Stats</summary>
+<details>
+
+<summary> Filtering Address Stats</summary>
+
 
 Address data can be filtered using following arguments:
 
@@ -70,3 +79,11 @@ Address data can be filtered using following arguments:
 - **sendToCount** : The number of accounts that the account has sent tokens to.
 - **sendToCurrencies** : The currencies that the account has sent tokens in.
 - **sendTxCount** : The number of transactions that the account has sent tokens in.
+
+## Related Resources
+
+- [EOS schema overview](https://docs.bitquery.io/v1/docs/Schema/eos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [EOS Coinpath API](https://docs.bitquery.io/v1/docs/Schema/eos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,3 +1,9 @@
+---
+title: "Tezos Balance Updates API"
+description: "Query Tezos balance updates data using Bitquery GraphQL API. Get balance updates, contracts, and token movements."
+keywords: ["Tezos API", "Tezos Balance Updates", "Bitquery", "GraphQL"]
+---
+
 # Balance Updates
 
 The balanceUpdates API allows you to retrieve information about balance updates for a specific address.
@@ -61,3 +67,11 @@ You can filter balance updates data using the following fields:
 -   `source`: returns the source of the transaction
 -   `timestamp`: returns the timestamp of the transaction
 -   `transaction`: returns details of the transaction
+
+## Related Resources
+
+- [Tezos schema overview](https://docs.bitquery.io/v1/docs/Schema/tezos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Tezos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/tezos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

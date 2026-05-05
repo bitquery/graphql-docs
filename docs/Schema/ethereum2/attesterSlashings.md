@@ -1,5 +1,6 @@
 ---
 title: ETH2 Attester Slashings API
+description: "Query attester slashing evidence on the Beacon Chain."
 ---
 
 <head>
@@ -21,6 +22,9 @@ title: ETH2 Attester Slashings API
 <meta property="twitter:description" content="Get Attester Slashings information on the ETH2 blockchain. Also, get information on epochs, block root and  validator information on the ETH2 blockchain." />
 </head>
 
+:::caution Deprecated
+Bitquery has stopped supporting the Ethereum Beacon Chain (ETH2) API. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 ```
 query ($network: Ethereum2Network!) {
@@ -73,7 +77,10 @@ query ($network: Ethereum2Network!) {
 }
 ```
 
-<details><summary>Filtering attesterSlashings</summary>
+<details>
+
+<summary>Filtering attesterSlashings</summary>
+
 
 `options`: This field contains a set of options that can be used to customize the response. For example, you can use the asc option to sort the results in ascending order by the date field. You can also use the limit option to limit the number of results that are returned.
 
@@ -94,6 +101,7 @@ query ($network: Ethereum2Network!) {
 `time`: This field specifies the time of the Attester Slashings that should be returned.
 
 `validatorIndex`: This field specifies the index of the validator for the Attester Slashings that should be returned.
+
 </details>
 
 
@@ -120,3 +128,12 @@ query ($network: Ethereum2Network!) {
 `date`: This field contains the date and time of the attester slashing..
 
 `attestationEpoch`: This field specifies the epoch number of the Attester Slashings that should be returned.
+
+## Related Resources
+
+- [Beacon Chain schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum2/overview)
+- [ETH2 examples](https://docs.bitquery.io/v1/docs/Examples/Beacon%20Chain%20Examples/eth2_examples)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+- [Ethereum execution layer schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+

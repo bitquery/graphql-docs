@@ -1,11 +1,19 @@
+---
+title: "Stellar Address API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Stellar addresses. Get wallet balances, assets, issuers, and asset codes."
+keywords: [Stellar API examples, Stellar GraphQL queries, Bitquery]
+---
+
 # Stellar Address API
 
-This API allows you to retrieve detailed information about Stellar wallet addresses, including their balances and token holdings.
+Look up Stellar wallet balances — native XLM, token holdings, asset codes, and issuer details — using the Bitquery GraphQL API.
 
 
-## Latest Balance of a Wallet
+## Get Stellar Wallet Balance
 
-In the below query we will retrieve the latest balance of a specific Stellar wallet address. 
+Get the native XLM balance plus every token balance held by a Stellar wallet, including each asset's type, issuer, and code. [Run the query on the IDE](https://ide.bitquery.io/latest-balance-of-stellar-wallet).
+
+**Variations:** Replace the `address` to inspect a different wallet. Pair with the [Stellar payments API](/docs/Examples/stellar/stellar-payments-api) to correlate holdings with recent payment activity.
 
 ```
 query MyQuery {
@@ -23,4 +31,11 @@ query MyQuery {
 }
 
 ```
-You can run the query [here](https://ide.bitquery.io/latest-balance-of-stellar-wallet)
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Stellar payments examples](https://docs.bitquery.io/v1/docs/Examples/stellar/stellar-payments-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

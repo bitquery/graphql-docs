@@ -1,5 +1,6 @@
 ---
 title: "Avalanche Coinpath API"
+description: "Trace fund flows on Avalanche with coinpath."
 ---
 
 <head>
@@ -152,3 +153,12 @@ The following are available fields for the `coinpath`:
 - `sender`: returns information about the sender.
 - `transaction`: returns transaction details.
 - `transactions`: returns attributes of transactions.
+
+## Related Resources
+
+- [Avalanche schema overview](https://docs.bitquery.io/v1/docs/Schema/Avalanche/overview)
+- [Avalanche API examples](https://docs.bitquery.io/v1/docs/Examples/avalanche/avax-trades-api)
+- [Coinpath Money Flow API examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

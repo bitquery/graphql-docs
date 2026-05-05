@@ -1,10 +1,16 @@
+---
+title: "Ripple XRP DEX Trades API Examples — Bitquery GraphQL"
+description: "Query XRP Ledger DEX trades with Bitquery GraphQL. Get on-ledger trades for any currency pair (e.g., CNY/XRP), with sender, receiver, and USD amounts."
+keywords: [Ripple, XRP, DEX trades, XRP Ledger, Bitquery, GraphQL, Ripple trades, currency pair, on-ledger trading]
+---
+
 # Ripple Trades API
 
 Ripple Trades API provides all details regarding trades on Ripple Blockchain. Below are some examples of `trades` API:
 
 import VideoPlayer from "../../../src/components/HomepageFeatures/videoplayer.js";
 
-## Get Trades for a currency on Ripple
+## Get XRP Ledger DEX Trades for a Currency Pair on Ripple
 
 We are using the below query to get the trades for a specific currency `CNY`. You can find the query [here](https://ide.bitquery.io/trades-for-CNY-on-ripple).
 
@@ -71,3 +77,10 @@ query ($network: RippleNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
 ## Video Tutorial | How to get Trades of a currency on Ripple Blockchain
 
 <VideoPlayer url="https://www.youtube.com/watch?v=SXuebEC9skY" />
+
+## Related Resources
+
+- [Ripple schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Ripple Balances examples](https://docs.bitquery.io/v1/docs/Examples/ripple/balances)
+- [Ripple Transfers examples](https://docs.bitquery.io/v1/docs/Examples/ripple/transfers)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)

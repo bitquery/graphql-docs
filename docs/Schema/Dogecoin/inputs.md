@@ -1,5 +1,6 @@
 ---
 title: Dogecoin Inputs API
+description: "Query transaction inputs and fund flow on Dogecoin."
 ---
 
 <head>
@@ -94,4 +95,13 @@ The following are available fields for the `inputs`:
 -   `outputTransaction`: returns output transaction for this input
 -   `transaction`: returns information about transaction of this input
 -   `value`: returns input value
--   `valueDecimal`: returns input value as decimal 
+-   `valueDecimal`: returns input value as decimal
+
+## Related Resources
+
+- [Dogecoin schema overview](https://docs.bitquery.io/v1/docs/Schema/Dogecoin/overview)
+- [Dogecoin API examples](https://docs.bitquery.io/v1/docs/Examples/Dogecoin)
+- [Coinpath (Dogecoin)](https://docs.bitquery.io/v1/docs/Schema/Dogecoin/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

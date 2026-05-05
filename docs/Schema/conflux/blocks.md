@@ -1,3 +1,9 @@
+---
+title: "Conflux Blocks API"
+description: "Query Conflux blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."
+keywords: ["Conflux API", "Conflux Blocks", "Bitquery", "GraphQL"]
+---
+
 # Conflux Blocks API
 
 Bitquery's Conflux blocks API provides information on blocks in the Conflux chain. Below are the fields in the schema:
@@ -34,7 +40,10 @@ query ($network: ConfluxNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
 
 ```
 
-<details><summary> Filtering Blocks</summary>
+<details>
+
+<summary> Filtering Blocks</summary>
+
 
 - **options** : A set of options that can be used to filter the results.
   - **desc** or **asc** : The order of the results, either "asc" (ascending) or "desc" (descending).
@@ -67,3 +76,11 @@ query ($network: ConfluxNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
 `powerQuality`: The PoW quality of the block.
 
 `blame`: The blame score of the block.
+
+## Related Resources
+
+- [Conflux schema overview](https://docs.bitquery.io/v1/docs/Schema/conflux/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Conflux Coinpath API](https://docs.bitquery.io/v1/docs/Schema/conflux/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

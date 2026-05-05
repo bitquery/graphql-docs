@@ -1,5 +1,6 @@
 ---
 title: Dash Inputs API
+description: "Query transaction inputs and fund flow on Dash."
 ---
 
 <head>
@@ -94,4 +95,13 @@ The following are available fields for the `inputs`:
 -   `outputTransaction`: returns output transaction for this input
 -   `transaction`: returns information about transaction of this input
 -   `value`: returns input value
--   `valueDecimal`: returns input value as decimal 
+-   `valueDecimal`: returns input value as decimal
+
+## Related Resources
+
+- [Dash schema overview](https://docs.bitquery.io/v1/docs/Schema/Dash/overview)
+- [Blockchain API examples](https://docs.bitquery.io/v1/docs/Examples/overview)
+- [Coinpath (Dash)](https://docs.bitquery.io/v1/docs/Schema/Dash/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

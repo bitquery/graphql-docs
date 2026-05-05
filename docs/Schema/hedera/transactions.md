@@ -1,4 +1,14 @@
+---
+title: "Hedera Transactions API"
+description: "Hedera transactions: transactionType, memo, fees, payer/node accounts, transactionBytes, success—GraphQL."
+keywords: ["Hedera API", "Hedera Transactions", "Bitquery", "GraphQL"]
+---
+
 # Transactions
+
+:::caution Deprecated
+Bitquery has stopped supporting the Hedera blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The Transactions API offers insights into transactions on the Hedera Blockchain.
 
@@ -42,3 +52,11 @@ The Transactions API offers insights into transactions on the Hedera Blockchain.
 - `transactionType`: Returns the type of the transaction.
 - `transactionValidDurationInSec`: Returns the duration of the transaction in seconds.
 - `validStart`: Returns the timestamp when the transaction validity starts.
+
+## Related Resources
+
+- [Hedera schema overview](https://docs.bitquery.io/v1/docs/Schema/hedera/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Hedera Coinpath API](https://docs.bitquery.io/v1/docs/Schema/hedera/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,3 +1,9 @@
+---
+title: "Cronos Blocks API"
+description: "Query Cronos blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."
+keywords: ["Cronos API", "Cronos Blocks", "Bitquery", "GraphQL"]
+---
+
 # Blocks
 
 The `blocks` field allows us to retrieve information about the blocks from the cronos blockchain.
@@ -68,3 +74,10 @@ Blocks data can be filtered using following arguments:
 -   `totalDifficulty`: returns the total difficulty.
 -   `transactionCount`: returns the number of transactions included in the block.
 
+## Related Resources
+
+- [Cronos schema overview](https://docs.bitquery.io/v1/docs/Schema/Cronos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cronos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/Cronos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

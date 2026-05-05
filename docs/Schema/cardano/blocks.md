@@ -1,3 +1,9 @@
+---
+title: "Cardano Blocks API"
+description: "Query Cardano blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."
+keywords: ["Cardano API", "Cardano Blocks", "Bitquery", "GraphQL"]
+---
+
 # Blocks
 
 
@@ -80,3 +86,11 @@ The VRF key for the block.
 
 
 </details>
+
+## Related Resources
+
+- [Cardano schema overview](https://docs.bitquery.io/v1/docs/Schema/cardano/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cardano Coinpath API](https://docs.bitquery.io/v1/docs/Schema/cardano/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

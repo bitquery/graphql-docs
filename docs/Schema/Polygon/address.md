@@ -1,5 +1,6 @@
 ---
 title:  Polygon Token, Smart contract Details API
+description: "Get Polygon token and smart contract details for addresses, including supply and contract attributes."
 ---
 
 
@@ -26,7 +27,7 @@ title:  Polygon Token, Smart contract Details API
 
 The `address` allows us to retrieve information about a specific address including any smart contract.
 
-Therefore, this api can be helpful to get the initial supply and other attributes of any token.
+Therefore, this api can be helpful to get the initial supply and other attributes of any token. Polygon (Matic) shares the EVM address model with Ethereum: the address API returns MATIC balance, annotations, balance history, and—for contracts—token metadata, protocol type, and on-chain attributes. Use it for wallet interfaces, token-supply lookups, and contract verification on Polygon's low-fee network before diving into transfer or DEX data.
 
 Here is an example that demonstrates how to retrieve basic information about the USDT Token smart contract:
 
@@ -63,6 +64,7 @@ query {
 
 <details>
 <summary>Filtering Addresses</summary>
+
 - `address`: Filter by a specific address or a list of addresses.
 
 </details>
@@ -81,3 +83,12 @@ The following are available fields for the address:
 Sign up on our **[GraphQL IDE](https://ide.bitquery.io/)** and get your Access Token, Read _[our guide](/docs/graphql-ide/how-to-start/)_ on getting started.
 
 :::
+
+## Related Resources
+
+- [Polygon schema overview](https://docs.bitquery.io/v1/docs/Schema/Polygon/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath (Polygon)](https://docs.bitquery.io/v1/docs/Schema/Polygon/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

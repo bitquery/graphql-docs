@@ -1,8 +1,18 @@
+---
+title: "Tron DEX Trades API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Tron DEX trades. Get pairs, base/quote currencies, smart contracts, and trade counts."
+keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
+---
+
 # DEX Trade API
 
-Our Tron DEX Trade API provides comprehensive information about DEX Trades from Tron blockchain.
+Query Tron DEX trades including trading pairs, base/quote amounts in USD, exchange details, and per-pool trade counts.
 
-## Get USDT Trade from Tron blockchain
+## Get Recent Tron DEX USDT Trades in a Date Range
+
+Fetch recent DEX trades for a specific base currency on Tron within a date window. Returns exchange info, base/quote amounts in USD, maker/taker addresses, and transaction hashes.
+
+**Variations:** Change `baseCurrency` to query a different token, adjust `date` for another time range, or increase `limit` for more results.
 
 ```
 {
@@ -59,9 +69,11 @@ Our Tron DEX Trade API provides comprehensive information about DEX Trades from 
 }
 ```
 
-This query retrieves the latest 10 decentralized exchange (DEX) trades on the Tron network that involve the base currency "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t" and occurred between July 10, 2023, and July 11, 2023. The query includes trade timestamps, trade index, protocol used, exchange name and address, smart contract address with annotation, base and quote amounts and currencies, amounts in USD, maker and taker addresses, and transaction hashes.
+## List Tron USDT Quote Pairs and Trade Counts per Liquidity Pool
 
-## Get All Trading Pair for USDT on Tron blockchain
+List all quote-currency pairs and trade counts for a base token, grouped by liquidity pool smart contract.
+
+**Variations:** Change `baseCurrency` to explore pairs for another token, or remove `limitBy` to see all pairs per pool.
 
 ```
 {
@@ -91,7 +103,13 @@ This query retrieves the latest 10 decentralized exchange (DEX) trades on the Tr
 }
 ```
 
-This query retrieves the latest 10 decentralized exchange (DEX) trades on the Tron network for the base currency "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t" and provides the base currency symbol, name, and address, quote currency symbol, name, and address, smart contract address, and the trade count for each unique smart contract address involved in the trades.
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [DEX trades examples (folder)](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
 
 ## SunSwap DEX Trades on Tron
 

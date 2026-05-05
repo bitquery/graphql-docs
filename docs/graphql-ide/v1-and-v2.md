@@ -1,8 +1,28 @@
+---
+sidebar_position: 10
+title: "Bitquery GraphQL V1 vs V2 APIs — Endpoints & Features"
+description: "Compare Bitquery V1 and V2 Streaming APIs: endpoints, real-time data, WebSockets, supported chains, NFTs, traces, and when to use each API."
+keywords:
+  [
+    Bitquery V1 vs V2,
+    Streaming API,
+    GraphQL endpoint,
+    WebSocket subscriptions,
+    blockchain API migration,
+  ]
+---
+
 # Difference between Bitquery GraphQL V1 and V2 APIs
 
 Today we will explain the difference between our V1 and V2 APIs. Let’s start with naming; we call our V2 APIs as Streaming APIs. Additionally, there is also a difference in the endpoint.
 
 If you have any questions please comment on [this community post](https://community.bitquery.io/t/difference-between-bitquery-graphql-v1-and-v2-apis/1561).
+
+:::note Solana on V1
+
+V1 covers full historical **Solana transfers, transactions, addresses, blocks, block rewards, and Coinpath** — see the [Solana schema overview](/docs/Schema/solana/overview) and [Solana transfers examples](/docs/Examples/Solana/transfers). The V1 Solana **`instructions`** and **`instructionAccounts`** queries have been **removed**; parsed Solana instruction-, program-, and DEX-trade-level analytics are now served by the **[V2 Solana Instructions API](https://docs.bitquery.io/docs/blockchain/Solana/solana-instructions/)** at `https://streaming.bitquery.io/graphql`.
+
+:::
 
 ## Endpoints
 
@@ -29,7 +49,7 @@ GraphQL subscriptions are very useful for building notification services.
 
 ## 3. New blockchains
 
-V1 APIs support [40+ blockchains](https://account.bitquery.io/user/system_status). However, Streaming APIs currently have Ethereum, Binance Smart Chain, and **Arbitrum.**
+V1 APIs support [40+ blockchains](https://app-status.bitquery.io/). However, Streaming APIs currently have Ethereum, Binance Smart Chain, and **Arbitrum.**
 
 We are adding Optimism and slowly migrating more chains from V1 API in which Real timeliness becomes critical for a better user experience.
 
@@ -75,3 +95,12 @@ We are very excited to see enable more features in our Streaming APIs. Here are 
 * [**Data in the cloud** ](https://bitquery.io/products/streaming)— This is our new product, which uses streaming internally, using which we will allow complete historical and Real-time data through AWS, Snowflake, Google, and other Cloud vendors.
 
 If you have questions about our APIs, please check out [Telegram](https://t.me/bloxy_info), and the [forum](https://community.bitquery.io/).
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [API examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Supported blockchains (V1)](https://docs.bitquery.io/v1/docs/graphql-ide/supported-blockchains)
+- [Getting an API access token](https://docs.bitquery.io/v1/docs/graphql-ide/apikey)
+- [Basic structure of a GraphQL query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)

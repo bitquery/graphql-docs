@@ -1,8 +1,18 @@
+---
+title: "Tron Smart Contract Calls API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Tron smart contract calls. Filter by method, contract, energy usage, and arguments."
+keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
+---
+
 # Smart Contract Calls API
 
-Our Tron Smart Contract Calls API provides detailed information about smart contract calls executed on the Tron Blockchain.
+Query Tron smart contract calls by method name, contract address, energy usage, and call arguments.
 
-## Get List of Latest Smart Contract Calls
+## List Latest Tron Smart Contract Calls With Energy Usage and Methods
+
+Fetch the most recent smart contract calls on Tron, returning call amount, arguments, energy and net usage, method name and signature, and transaction hash.
+
+**Variations:** Add a `smartContractAddress` filter to scope to a specific contract, or adjust `limit` and `date` for different windows.
 
 ```
 {
@@ -39,9 +49,11 @@ Our Tron Smart Contract Calls API provides detailed information about smart cont
 }
 ```
 
-This query retrieves the latest 10 smart contract calls on the Tron network that occurred after July 31, 2023, providing details such as call amount, arguments, block height and timestamp, energy usage, net usage, smart contract address, method name and signature, and transaction hash.
+## Filter Tron Smart Contract Calls by USDT Contract Address
 
-## Filter Smart Contract Calls By Contract Address
+Retrieve smart contract calls targeting a specific Tron contract address (here, USDT). Returns call details, energy usage, method signature, and transaction hash.
+
+**Variations:** Replace the `smartContractAddress` with any Tron contract, or add a `smartContractMethod` filter to narrow by method name.
 
 ```
 {
@@ -82,9 +94,11 @@ This query retrieves the latest 10 smart contract calls on the Tron network that
 }
 ```
 
-This query retrieves the latest 10 smart contract calls on the Tron network that occurred after July 31, 2023, for a specific smart contract address "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t". It provides details such as call amount, arguments, block height and timestamp, energy usage, net usage for the specified smart contract, smart contract address, method name and signature, and transaction hash.
+## Filter Tron USDT Contract Calls by transfer Method Name
 
-## Filter Smart Contract Calls By Method Name
+Filter calls to a specific Tron contract down to a single method (here, `transfer`), useful for tracking token transfer invocations.
+
+**Variations:** Change `smartContractMethod` to target other methods like `approve` or `transferFrom`.
 
 ```
 {
@@ -126,4 +140,10 @@ This query retrieves the latest 10 smart contract calls on the Tron network that
 }
 ```
 
-This query retrieves the latest 10 smart contract calls on the Tron network that occurred after July 31, 2023, specifically for the smart contract "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t" and the method "Transfer". It provides details such as call amount, arguments, block height and timestamp, energy usage, net usage for the specified method, smart contract address, method name and signature, and transaction hash.
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Tron smart contract events examples](https://docs.bitquery.io/v1/docs/Examples/tron/smartContractEvents)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

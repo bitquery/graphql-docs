@@ -1,3 +1,9 @@
+---
+title: "Celo Arguments API"
+description: "Query Celo GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."
+keywords: ["Celo API", "Celo Arguments", "Bitquery", "GraphQL"]
+---
+
 # Arguments
 
 The `arguments` field allows us to fetch information about arguments of smart contract calls and evetns.
@@ -71,3 +77,11 @@ The following are available fields for the `arguments`:
 - `success`:
 - `transaction`: returns transaction information
 - `value`: returns value of method or event argument
+
+## Related Resources
+
+- [Celo schema overview](https://docs.bitquery.io/v1/docs/Schema/celo/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Celo Coinpath API](https://docs.bitquery.io/v1/docs/Schema/celo/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

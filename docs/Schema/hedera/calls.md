@@ -1,4 +1,14 @@
+---
+title: "Hedera Calls API"
+description: "Hedera smart contract calls: callInput, callResult, gas, payer & node accounts, consensusTimestamp—GraphQL."
+keywords: ["Hedera API", "Hedera Calls", "Bitquery", "GraphQL"]
+---
+
 # Calls
+
+:::caution Deprecated
+Bitquery has stopped supporting the Hedera blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The Calls API provides you with information about calls made on Hedera Blockchain. It offers information about various aspects, such as call inputs, result of the calls, and much more.
 
@@ -66,3 +76,11 @@ You can filter the calls data using the following fields:
 - `transactionHash`: Presents the hash of the transaction.
 - `transactionValidDurationInSec`: Provides the duration for which this transaction is valid in seconds.
 - `validStart`: Displays the start timestamp of the valid duration of the transaction.
+
+## Related Resources
+
+- [Hedera schema overview](https://docs.bitquery.io/v1/docs/Schema/hedera/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Hedera Coinpath API](https://docs.bitquery.io/v1/docs/Schema/hedera/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

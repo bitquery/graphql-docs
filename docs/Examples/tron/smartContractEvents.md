@@ -1,8 +1,18 @@
+---
+title: "Tron Smart Contract Events API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Tron smart contract events. Filter by contract, event name, block, and logs."
+keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
+---
+
 # Smart Contract Events API
 
-Our Tron Smart Contract Events API provides detailed information about smart contract events executed made on Tron Blockchain.
+Query Tron smart contract events by contract address, event name, date range, and block details.
 
-## Get List of Latest Smart Contract Events
+## List Latest Tron Smart Contract Events With Arguments and Block Details
+
+Fetch the most recent smart contract events on Tron, returning event arguments, block height and timestamp, contract address, event name and signature, and transaction hash.
+
+**Variations:** Add a `smartContractAddress` filter to scope to a specific contract, or adjust `limit` and `date` for different windows.
 
 ```
 {
@@ -42,9 +52,11 @@ Our Tron Smart Contract Events API provides detailed information about smart con
 }
 ```
 
-This query retrieves the latest 10 smart contract events on the Tron network that occurred after July 31, 2023, providing details such as event arguments, block height and timestamp, smart contract addresses, event name and signature, and transaction hash. Note that there is a duplicate entry for "smartContract" in the query, which could be removed for better optimization.
+## Filter Tron Smart Contract Events by USDT Contract Address
 
-## Filter Smart Contract Events By Contract Address
+Retrieve smart contract events emitted by a specific Tron contract address (here, USDT). Returns event arguments, block info, event signature, and transaction hash.
+
+**Variations:** Replace the `smartContractAddress` with any TRC-20 contract, or add a `smartContractEvent` filter to narrow to specific event names.
 
 ```
 {
@@ -79,9 +91,11 @@ This query retrieves the latest 10 smart contract events on the Tron network tha
 }
 ```
 
-This query retrieves the latest 10 smart contract events on the Tron network that occurred after July 31, 2023, specifically for the smart contract "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t". It provides details such as event arguments and values, block height and timestamp, smart contract address, event name and signature, and transaction hash.
+## Filter Tron USDT Events by Transfer or Approval Event Names
 
-## Filter Smart Contract Events By List of Event Name
+Filter events for a specific Tron contract to only `Transfer` and `Approval` event types, useful for monitoring token movements and allowance changes.
+
+**Variations:** Edit the `in` list to include other event names, or remove `smartContractEvent` to see all events for the contract.
 
 ```
 {
@@ -157,3 +171,10 @@ JustLend is the largest lending protocol on Tron. This query targets its market 
 ```
 
 Returns the most recent 50 lending lifecycle events on a JustLend market. Swap the `smartContractAddress` for any other JustLend jToken market to scope to a specific asset.
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Tron smart contract calls examples](https://docs.bitquery.io/v1/docs/Examples/tron/smartContractCalls)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

@@ -1,3 +1,9 @@
+---
+title: "EOS Transfers API"
+description: "EOSIO token transfers: amounts, sender/receiver accounts with annotations, currency symbol/address, tx hash, and actors."
+keywords: ["EOS API", "EOS Transfers", "Bitquery", "GraphQL"]
+---
+
 # EOS Transfers API
 
 Bitquery's EOS transfers API gives you information including sender, receiver, currency details. Below are the fields in the schema:
@@ -40,7 +46,10 @@ query ( $date: ISO8601DateTime) {
 
 ```
 
-<details><summary>Filtering Transfers</summary>
+<details>
+
+<summary>Filtering Transfers</summary>
+
 
 - **options** : A set of options that can be used to filter the results.
   - **asc** or **desc** : The order of the results, either "asc" (ascending) or "desc" (descending).
@@ -82,3 +91,11 @@ query ( $date: ISO8601DateTime) {
 - **amount** : The amount of tokens that were transferred.
 - **txHash** : The hash of the transaction that made the transfer.
 - **actors** : The actors involved in the transfer. This includes the sender, receiver, and any other accounts that were involved in the transaction.
+
+## Related Resources
+
+- [EOS schema overview](https://docs.bitquery.io/v1/docs/Schema/eos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [EOS Coinpath API](https://docs.bitquery.io/v1/docs/Schema/eos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

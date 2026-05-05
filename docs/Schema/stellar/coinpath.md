@@ -1,3 +1,9 @@
+---
+title: "Stellar Coinpath API"
+description: "Query Stellar coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."
+keywords: ["Stellar API", "Stellar Coinpath", "Bitquery", "GraphQL"]
+---
+
 # Coinpath
 
 The Coinpath API allows you to get the money flow for an address on the Stellar blockchain. You can track any levels of fund movement with this API. This is a very useful API for crypto investigations. 
@@ -64,7 +70,10 @@ query ($network: StellarNetwork!, $address: String!, $from: ISO8601DateTime, $ti
 
 ```
 
-<details><summary>Filtering Coinpath</summary>
+<details>
+
+<summary>Filtering Coinpath</summary>
+
 
 - **initialAddress**
 
@@ -151,3 +160,10 @@ query ($network: StellarNetwork!, $address: String!, $from: ISO8601DateTime, $ti
 - **currencyFrom**
 
   The asset that was sent from the sender's account in native asset (XLM)
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

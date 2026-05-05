@@ -1,3 +1,9 @@
+---
+title: "Stellar Claimable Balance Effects API"
+description: "Query Stellar claimable balance data using Bitquery GraphQL API. Get claimable balance claimants, assets, and predicates."
+keywords: ["Stellar API", "Stellar Claimable Balance Effects", "Bitquery", "GraphQL"]
+---
+
 # Claimable BalanceEffects
 
 Claimable balance allows stellar wallets to send payments in parts.The claimable balance is recorded on the Stellar ledger. Read more [here](https://developers.stellar.org/docs/encyclopedia/claimable-balances)
@@ -54,7 +60,10 @@ query MyQuery {
 
 ```
 
-<details> <summary>Filtering claimableBalance Effects</summary>
+<details>
+
+<summary>Filtering claimableBalance Effects</summary>
+
 
 - **transactionHash**
 
@@ -191,3 +200,11 @@ This field allows you to control the pagination and sorting of the results. The 
 - **transaction**
 
   The transaction that created the claimable balance effect.
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Stellar Coinpath API](https://docs.bitquery.io/v1/docs/Schema/stellar/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,3 +1,9 @@
+---
+title: "Velas Arguments API"
+description: "Query Velas GraphQL arguments data using Bitquery GraphQL API. Get query arguments, filters, and options for this schema."
+keywords: ["Velas API", "Velas Arguments", "Bitquery", "GraphQL"]
+---
+
 # Arguments
 
 The `arguments` field allows us to fetch information about arguments of smart contract calls and evetns.
@@ -70,3 +76,11 @@ The following are available fields for the `arguments`:
 - `success`:
 - `transaction`: returns transaction information
 - `value`: returns value of method or event argument
+
+## Related Resources
+
+- [Velas schema overview](https://docs.bitquery.io/v1/docs/Schema/velas/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Velas Coinpath API](https://docs.bitquery.io/v1/docs/Schema/velas/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

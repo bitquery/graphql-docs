@@ -1,4 +1,14 @@
+---
+title: "Flow Transaction Authorizers API"
+description: "Flow authorizers: accounts authorizing state-mutating Cadence txs—payer, proposer, proposal keys, block, and collection id."
+keywords: ["Flow API", "Flow Transaction Authorizers", "Bitquery", "GraphQL"]
+---
+
 # Transaction Authorizers
+
+:::caution Deprecated
+Bitquery has stopped supporting the Flow blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The Flow Transaction Authorizers API provides information about transaction authorizers from the Flow Blcockhain.
 
@@ -43,3 +53,11 @@ You can filter the transaction authorizer data using following fields:
 -   minimum: returns minimum for selected measurable field of Flow Transaction Authorizer
 -   time: returns time of transaction creation 
 -   transaction: returns information about transaction
+
+## Related Resources
+
+- [Flow schema overview](https://docs.bitquery.io/v1/docs/Schema/flow/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Flow Coinpath API](https://docs.bitquery.io/v1/docs/Schema/flow/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

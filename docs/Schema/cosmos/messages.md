@@ -1,3 +1,9 @@
+---
+title: "Cosmos Messages API"
+description: "Cosmos SDK messages in GraphQL: JSON payloads, indices, senders, message types, and parent transaction hash and signer fields."
+keywords: ["Cosmos API", "Cosmos Messages", "Bitquery", "GraphQL"]
+---
+
 # Messages
 
 The `messages` field allows us to retrieve detaild information about messages from Cosmos blockchain.
@@ -63,3 +69,11 @@ Here is an example that demonstrates retrieving message from Cosmos hub:
 -   `success`: returns success of transaction as boolean
 -   `transaction`: returns transaction formation where message is included
 -   `type`: returns type of message
+
+## Related Resources
+
+- [Cosmos schema overview](https://docs.bitquery.io/v1/docs/Schema/cosmos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cosmos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/cosmos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

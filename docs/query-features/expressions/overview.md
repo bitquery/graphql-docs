@@ -1,5 +1,8 @@
 ---
 sidebar_position: 1
+title: "Expressions in Bitquery GraphQL API"
+description: "Define custom calculated fields with expression() in Bitquery V1 GraphQL, including limitBy and derived metrics."
+keywords: [Bitquery, GraphQL, expressions, expression(), calculated fields]
 ---
 
 # Expressions
@@ -97,3 +100,21 @@ The `limitby` field can be used to limit the results of a query to a specific nu
   }
 }
 ```
+
+Expressions shine when the metric you need is **not stored directly** but is a simple function of fields Bitquery already returns—ratios, spreads, net amounts, or scaled prices. Computing these in the query keeps sorting, limiting, and filtering aligned with the derived value (for example, ordering by a custom score) and avoids shipping raw columns to your app only to recompute the same arithmetic. They are especially useful for DEX-style analytics where “price” is naturally expressed from quantities or from min/max of a price series over a window.
+
+## When to Use Expressions
+
+- **Ratios and relative change**: When you need a return multiple, buy/sell imbalance, or close-over-open style metric, expressions combine existing aggregated or scalar fields without an extra round trip.
+- **Percentages and normalization**: When you want to express a share of a total or rescale a metric, derive it with `expression()` so dashboards consume a single field.
+- **Net flows**: When inflow minus outflow (or buy minus sell) answers the business question, expressions encode that definition next to the raw components for transparency.
+- **Chained derived fields**: When one calculated value feeds another (as with a price expression then a multiple of that price), expressions document the dependency chain in the query itself.
+- **Less post-processing**: When you would otherwise download rows and run Python or SQL again for simple arithmetic, moving it into Bitquery reduces pipeline code and keeps limits and `limitBy` behavior consistent with the computed sort keys.
+
+## Related Resources
+
+- [Bitquery API FAQ](https://docs.bitquery.io/v1/docs/building-queries/FAQ)
+- [Limits and limitBy](https://docs.bitquery.io/v1/docs/query-features/filtering/limits)
+- [Aggregation overview](https://docs.bitquery.io/v1/docs/query-features/aggregation/)
+- [Metrics in Bitquery GraphQL API](https://docs.bitquery.io/v1/docs/query-features/Metrics)
+- [Introduction](https://docs.bitquery.io/v1/docs/intro)

@@ -1,4 +1,14 @@
+---
+title: "Flow Coinpath API"
+description: "Query Flow coinpath data using Bitquery GraphQL API. Get fund flows, hop paths, and address-level tracing across transfers."
+keywords: ["Flow API", "Flow Coinpath", "Bitquery", "GraphQL"]
+---
+
 # Coinpath
+
+:::caution Deprecated
+Bitquery has stopped supporting the Flow blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The Tezos Coinpath API provides information about money flow from the Flow Blockchain. 
 
@@ -35,3 +45,10 @@ You can filter the data using following fields:
 -   receiver: returns address of transfer receiver
 -   sender: returns address of transfer sender
 -   transaction: returns summary of transaction where transfer is included
+
+## Related Resources
+
+- [Flow schema overview](https://docs.bitquery.io/v1/docs/Schema/flow/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

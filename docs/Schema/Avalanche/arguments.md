@@ -1,5 +1,6 @@
 ---
 title: "Avalanche Arguments API"
+description: "Query smart contract call and event arguments on Avalanche."
 ---
 
 <head>
@@ -81,3 +82,12 @@ The following are available fields for the `arguments`:
 - `success`:
 - `transaction`: returns transaction information
 - `value`: returns value of method or event argument
+
+## Related Resources
+
+- [Avalanche schema overview](https://docs.bitquery.io/v1/docs/Schema/Avalanche/overview)
+- [Avalanche API examples](https://docs.bitquery.io/v1/docs/Examples/avalanche/avax-trades-api)
+- [Coinpath (Avalanche)](https://docs.bitquery.io/v1/docs/Schema/Avalanche/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

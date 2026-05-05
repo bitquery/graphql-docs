@@ -1,3 +1,9 @@
+---
+title: "Conflux Transactions API"
+description: "Conflux transactions: CFX gas with USD conversion, success flag, contract-creation target, sender, currency, and block details."
+keywords: ["Conflux API", "Conflux Transactions", "Bitquery", "GraphQL"]
+---
+
 # Conflux Transactions API
 
 ```
@@ -46,7 +52,10 @@ query ($network: ConfluxNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
 
 ```
 
-<details><summary>Filtering Transactions</summary>
+<details>
+
+<summary>Filtering Transactions</summary>
+
 
 - **options**
   - **asc** or **desc** The field to sort the results by in ascending or descending
@@ -106,3 +115,11 @@ query ($network: ConfluxNetwork!, $from: ISO8601DateTime, $till: ISO8601DateTime
     - A annotation field that contains any information about the address
 - **success**
   - Whether the transaction was successful.
+
+## Related Resources
+
+- [Conflux schema overview](https://docs.bitquery.io/v1/docs/Schema/conflux/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Conflux Coinpath API](https://docs.bitquery.io/v1/docs/Schema/conflux/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

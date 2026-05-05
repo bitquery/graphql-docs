@@ -1,5 +1,6 @@
 ---
 title: ETH2 Validator Updates API
+description: "Query validator status updates on the Beacon Chain."
 ---
 
 <head>
@@ -20,6 +21,10 @@ title: ETH2 Validator Updates API
 <meta property="twitter:title" content="ETH2 Validator Updates API" />
 <meta property="twitter:description" content="Get Validator Updates information on the ETH2 blockchain. Also, get information on epochs, block root and  validator information on the ETH2 blockchain." />
 </head>
+
+:::caution Deprecated
+Bitquery has stopped supporting the Ethereum Beacon Chain (ETH2) API. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 ```
 query ($network: Ethereum2Network!) {
@@ -71,6 +76,7 @@ query ($network: Ethereum2Network!) {
 ```
 <details>
 <summary>Filtering validatorUpdates</summary>
+
 `options`: This field contains a set of options that can be used to customize the response.
 
 `limit`: This option can be used to limit the number of results that are returned. 
@@ -161,8 +167,11 @@ query ($network: Ethereum2Network!) {
 
 `validatorWithdrawalCredentials`: This field contains the validator's withdrawal credentials.
 
+## Related Resources
 
-
-
-
+- [Beacon Chain schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum2/overview)
+- [ETH2 examples](https://docs.bitquery.io/v1/docs/Examples/Beacon%20Chain%20Examples/eth2_examples)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+- [Ethereum execution layer schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
 

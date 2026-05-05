@@ -1,3 +1,9 @@
+---
+title: "Harmony Staking Transactions API"
+description: "Query Harmony staking data using Bitquery GraphQL API. Get staking delegations, validators, and staking-related transactions."
+keywords: ["Harmony API", "Harmony Staking Transactions", "Bitquery", "GraphQL"]
+---
+
 # Staking Transactions
 
 The Harmony Staking Transaction API provides details about staking transactions from the Harmony blockchain.
@@ -49,3 +55,11 @@ You can filter staking transactions using following fields:
 -   transactionType: returns type of the transaction
 -   validatorAddress: returns address of the validator
 -   value: returns value transfrred in atto
+
+## Related Resources
+
+- [Harmony schema overview](https://docs.bitquery.io/v1/docs/Schema/harmony/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Harmony Coinpath API](https://docs.bitquery.io/v1/docs/Schema/harmony/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

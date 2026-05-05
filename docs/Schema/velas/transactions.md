@@ -1,3 +1,9 @@
+---
+title: "Velas Transactions API"
+description: "Velas EVM txs: gas, gasCurrency, feeRatio, txType, sender/to—query ethereum(network: velas)—GraphQL."
+keywords: ["Velas API", "Velas Transactions", "Bitquery", "GraphQL"]
+---
+
 # Transactions
 
 Bitquery `transactions` API allows you to retrieve all the blockchain transactions from velas Blockchain.
@@ -111,3 +117,11 @@ Transactions can be filtered using following arguments:
 - `success`: returns if transaction is success or not
 - `to`: returns address to which of a particular transaction was sent
 - `txType`: returns transaction type
+
+## Related Resources
+
+- [Velas schema overview](https://docs.bitquery.io/v1/docs/Schema/velas/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Velas Coinpath API](https://docs.bitquery.io/v1/docs/Schema/velas/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

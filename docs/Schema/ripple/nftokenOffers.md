@@ -1,5 +1,6 @@
 ---
 title: Ripple NFToken API
+description: "Query NFToken offers and taker details on the XRP Ledger."
 ---
 
 <head>
@@ -89,7 +90,10 @@ query ($network: RippleNetwork!, $limit: Int!, $offset: Int!) {
 
 ```
 
-<details><summary>Filtering NFtoken NFToken</summary>
+<details>
+
+<summary>Filtering NFtoken NFToken</summary>
+
 
 - `transactionType`: The type of transaction that created the offer.
 - `transactionSender`: The account that created the offer.
@@ -137,3 +141,12 @@ query ($network: RippleNetwork!, $limit: Int!, $offset: Int!) {
 - `flags`: The flags of the offer.
 - `bookNode`: The book node of the offer.
 - `bookDirectory`: The book directory of the offer.
+
+## Related Resources
+
+- [XRP Ledger schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Ripple API examples](https://docs.bitquery.io/v1/docs/Examples/ripple)
+- [Coinpath (XRP Ledger)](https://docs.bitquery.io/v1/docs/Schema/ripple/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

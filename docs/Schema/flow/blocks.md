@@ -1,4 +1,14 @@
+---
+title: "Flow Blocks API"
+description: "Query Flow blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."
+keywords: ["Flow API", "Flow Blocks", "Bitquery", "GraphQL"]
+---
+
 # Blocks
+
+:::caution Deprecated
+Bitquery has stopped supporting the Flow blockchain. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The Flow Blocks API provides detailed information about blocks created on the Flow Blockchain.
 
@@ -36,3 +46,11 @@ You can filter the blocks using the following fields:
 -   parentBlockId: returns id/hash of parent block
 -   time: returns time when block was created
 -   transactionsCount: returns transaction count of block
+
+## Related Resources
+
+- [Flow schema overview](https://docs.bitquery.io/v1/docs/Schema/flow/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Flow Coinpath API](https://docs.bitquery.io/v1/docs/Schema/flow/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

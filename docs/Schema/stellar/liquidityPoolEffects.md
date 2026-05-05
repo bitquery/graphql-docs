@@ -1,3 +1,9 @@
+---
+title: "Stellar Liquidity Pool Effects API"
+description: "Query Stellar liquidity pool effects data using Bitquery GraphQL API. Get liquidity pool changes, reserves, and shares."
+keywords: ["Stellar API", "Stellar Liquidity Pool Effects", "Bitquery", "GraphQL"]
+---
+
 # Liquidity PoolEffects
 
 Liquidity pools on Stellar support AMMs. Bitquery's LiquidityPoolEffects API gives you effects information regarding liquidity pools. The following are the fields in the schema:
@@ -63,7 +69,10 @@ query MyQuery {
 
 ```
 
-<details><summary>Filtering Effects API</summary>
+<details>
+
+<summary>Filtering Effects API</summary>
+
 
 - **transactionHash**
 
@@ -208,3 +217,11 @@ query MyQuery {
 - **transaction**
 
   The transaction that created the liquidity pool trade effect. This includes the hash, index, and sender of the transaction.
+
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Stellar Coinpath API](https://docs.bitquery.io/v1/docs/Schema/stellar/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

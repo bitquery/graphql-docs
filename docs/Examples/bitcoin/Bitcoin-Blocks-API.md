@@ -1,8 +1,14 @@
+---
+title: "Bitcoin Blocks API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Bitcoin block data. Get recent blocks, height, difficulty, transaction counts, and timestamps."
+keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
+---
+
 # Blocks API
 
-Our Bitcoin Blocks API provides all the information related to blocks produced on Bitcoin network.
+The Bitcoin Blocks API returns block-level data including height, difficulty, size, timestamps, and transaction counts. Use it for block explorer features, mining analytics, and network monitoring.
 
-## Retrieve the 10 Most Recent Blocks
+## Retrieve Ten Most Recent Bitcoin Blocks with Height and Stats
 
 ```
 query  {
@@ -22,9 +28,11 @@ query  {
 
 ```
 
-This query retrieves details about the 10 most recent blocks on the Cosmos blockchain. It includes information like block hash, height, difficulty, block size, and timestamp for each block. The results are ordered by block heights in descending order.
+Get the 10 most recent Bitcoin blocks with height, difficulty, transaction count, size, and timestamp. Ordered by block height descending.
 
-## Get the Blocks with maximum Transactions
+**Variations:** Change `limit` for more blocks. Use `height: {is: N}` to look up a specific block. Add `date` for a time-bounded query. Switch `network` to `litecoin`, `dogecoin`, or other UTXO chains.
+
+## Get Top Bitcoin Blocks Ranked by Transaction Count
 
 ```
 query  {
@@ -42,4 +50,14 @@ query  {
 
 ```
 
-This query fetches details about the 10 most transaction-laden blocks on the Bitcoin blockchain. We can see the difficulty, timestamp and number of transaction in each block.
+Find the blocks with the highest transaction counts on Bitcoin. Uses `desc: "transactionCount"` to surface the busiest blocks — useful for studying network congestion and block utilization.
+
+**Variations:** Sort by `difficulty` or `blockSizeBigInt` instead. Add `date` to search within a specific period. Use [aggregations](/docs/query-features/aggregation/) like `average(of: transaction_count)` for average transactions per block.
+
+## Related Resources
+
+- [Bitcoin schema overview](https://docs.bitquery.io/v1/docs/Schema/bitcoin/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Bitcoin examples index](https://docs.bitquery.io/v1/docs/examples/Bitcoin/index)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

@@ -1,5 +1,6 @@
 ---
 title: BNB Smart Contract Calls API
+description: "Query decoded smart contract calls and calldata on BNB Smart Chain."
 ---
 
 <head>
@@ -103,3 +104,12 @@ Smart Contract Calls can be filtered using following arguments:
 - `smartContractMethod`: returns details of method to which the call was made
 - `success`: returns if calls is successful or not
 - `transaction`: returns details of the transaction in which smart contract call was executed
+
+## Related Resources
+
+- [BNB Smart Chain schema overview](https://docs.bitquery.io/v1/docs/Schema/binance_smart_chain/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath (BNB Smart Chain)](https://docs.bitquery.io/v1/docs/Schema/binance_smart_chain/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

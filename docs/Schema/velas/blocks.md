@@ -1,3 +1,9 @@
+---
+title: "Velas Blocks API"
+description: "Query Velas blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."
+keywords: ["Velas API", "Velas Blocks", "Bitquery", "GraphQL"]
+---
+
 # Blocks
 
 The `blocks` field allows us to retrieve information about the blocks from the velas blockchain.
@@ -68,3 +74,10 @@ Blocks data can be filtered using following arguments:
 -   `totalDifficulty`: returns the total difficulty.
 -   `transactionCount`: returns the number of transactions included in the block.
 
+## Related Resources
+
+- [Velas schema overview](https://docs.bitquery.io/v1/docs/Schema/velas/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Velas Coinpath API](https://docs.bitquery.io/v1/docs/Schema/velas/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,7 +1,14 @@
+---
+title: "Stellar Address Stats API"
+description: "Query Stellar address stats data using Bitquery GraphQL API. Get aggregate address statistics and activity metrics."
+keywords: ["Stellar API", "Stellar Address Stats", "Bitquery", "GraphQL"]
+---
+
 # AddressStats
 
 Stellar AddressStats API helps you get information on Addresses in the network. Below are the fields in the API:
 
+Address statistics aggregate a Stellar account's lifetime activity: transaction counts, sent and received amounts across XLM and issued assets, fee totals, and active-day metrics. These are useful for compliance profiling, anchor due diligence, and building account summary pages for explorers or institutional dashboards.
 
 ```
 
@@ -118,3 +125,10 @@ query ($address: String!, $network: StellarNetwork!) {
 
 - **lastTxAt** : The timestamp of the most recent transaction to or from the address.
 
+## Related Resources
+
+- [Stellar schema overview](https://docs.bitquery.io/v1/docs/Schema/stellar/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Stellar Coinpath API](https://docs.bitquery.io/v1/docs/Schema/stellar/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

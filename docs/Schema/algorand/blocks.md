@@ -1,3 +1,9 @@
+---
+title: "Algorand Blocks API"
+description: "Query Algorand blocks data using Bitquery GraphQL API. Get block heights, hashes, timestamps, proposers, and protocol metadata."
+keywords: ["Algorand API", "Algorand Blocks", "Bitquery", "GraphQL"]
+---
+
 # Blocks
 
 The `blocks` field allows us to retrieve details about blocks from Algorand blockchain.
@@ -77,3 +83,11 @@ Blocks can be filtered using the following arguments:
 - `txnRoot`: returns transaction root
 - `upgradeApprove`: returns number of vote for the current proposal
 - `upgradePropose`: returns proposed upgrade
+
+## Related Resources
+
+- [Algorand schema overview](https://docs.bitquery.io/v1/docs/Schema/algorand/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Algorand Coinpath API](https://docs.bitquery.io/v1/docs/Schema/algorand/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,5 +1,6 @@
 ---
 title: ETH2 Blocks API
+description: "Query Beacon Chain blocks, roots, and consensus data."
 ---
 
 <head>
@@ -20,6 +21,10 @@ title: ETH2 Blocks API
 <meta property="twitter:title" content="ETH2 Blocks API" />
 <meta property="twitter:description" content="Get blocks information on the ETH2 blockchain. Also, get blocks information for tokens or NFTs on the ETH2 blockchain." />
 </head>
+
+:::caution Deprecated
+Bitquery has stopped supporting the Ethereum Beacon Chain (ETH2) API. Historical data may still be available, but it is no longer updated. The schema reference below is preserved for archival purposes.
+:::
 
 The Eth2 blocks API retrieves staking and validator information for a block. Here are the fields in the schema:
 
@@ -70,7 +75,10 @@ query ($network: Ethereum2Network!, $dateFormat: String!, $from: ISO8601DateTime
 }
 ```
 
-<details> <summary>Filtering Blocks</summary>
+<details>
+
+<summary>Filtering Blocks</summary>
+
 
 `any` (or condition): This field can be used to filter the results by any of the other fields in the response.
 
@@ -125,3 +133,12 @@ query ($network: Ethereum2Network!, $dateFormat: String!, $from: ISO8601DateTime
 `stateRoot`: This field contains the hash of the block's state root.
 
 `randaoReveal`: This field contains the RANDAO reveal of the block.
+
+## Related Resources
+
+- [Beacon Chain schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum2/overview)
+- [ETH2 examples](https://docs.bitquery.io/v1/docs/Examples/Beacon%20Chain%20Examples/eth2_examples)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+- [Ethereum execution layer schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+

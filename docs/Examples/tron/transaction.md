@@ -1,8 +1,18 @@
+---
+title: "Tron Transactions API Examples — Bitquery GraphQL"
+description: "Example GraphQL queries for Tron transactions. Get transactions by block, height, fees, energy, and counts."
+keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
+---
+
 # Transaction API
 
-Our Tron Transaction API provides detailed information about transactions from Tron Blockchain.
+Query Tron transactions by block height, including fees, energy usage, net consumption, and result status.
 
-## Get List Of Transaction In A Particular Block
+## List Tron Transactions at Block Height With Fees Energy and Logs
+
+Retrieve all transactions at a given Tron block height along with energy fees, total energy usage, net fees, log counts, result status, and signatures.
+
+**Variations:** Change the `height` filter to target a different block, or add [date and time filters](/docs/category/query-features) to select a range.
 
 ```
 {
@@ -22,9 +32,11 @@ Our Tron Transaction API provides detailed information about transactions from T
 }
 ```
 
-This query retrieves details of a specific Tron blockchain transaction at height 53420256, including energy fee, total energy usage, transaction fee, transaction hash, number of logs, net fee, net usage, transaction result, and transaction signatures.
+## Count Tron Transactions at a Specific Block Height
 
-## Get Count of Transaction In The Block
+Count the total number of transactions recorded at a specific Tron block height.
+
+**Variations:** Swap `height` for a [date range filter](/docs/category/query-features) to count transactions across multiple blocks.
 
 ```
 {
@@ -93,3 +105,10 @@ Aggregate daily Tron network fee and energy metrics, which can be used in the ca
 Returns one row per day with transaction count, total TRX fees, total energy and bandwidth (`netUsage`) consumed, and total energy fee — the four metrics every Tron chain-health dashboard needs.
 
 <!-- END Claude additions -->
+## Related Resources
+
+- [Tron schema overview](https://docs.bitquery.io/v1/docs/Schema/tron/overview)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Tron transfers examples](https://docs.bitquery.io/v1/docs/Examples/tron/transfers)
+- [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)

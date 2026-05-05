@@ -1,5 +1,6 @@
 ---
 title: "Ethereum Addresses API"
+description: "Explore specific address details, balances, and smart contract attributes using Bitquery's Ethereum address query."
 ---
 
 <head>
@@ -29,6 +30,8 @@ title: "Ethereum Addresses API"
 </head>
 
 The `address` allows us to retrieve information about a specific address.
+
+On Ethereum, an address can be an externally owned account (EOA) or a smart contract. The address API returns the current ETH balance, human-readable annotations where available, and—when the address is a contract—details such as contract type, protocol type, token metadata (decimals, symbol, token standard), and on-chain attributes. Use this for wallet pages, portfolio dashboards, token supply lookups, and quick contract verification before diving into transfer or event history.
 
 Here is an example that demonstrates how to retrieve basic information about the USDT smart contract:
 
@@ -77,3 +80,11 @@ The following are available fields for the address:
 - `balance`: Returns the current balance of the address.
 - `balances`: Returns the balance history of the address.
 - `smartContract`: Returns details if the address is that of a smart contract.
+
+## Related Resources
+
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
+- [Transfer API examples](https://docs.bitquery.io/v1/docs/Examples/Transfers/transfer-api)
+- [Coinpath (Ethereum)](https://docs.bitquery.io/v1/docs/Schema/ethereum/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)

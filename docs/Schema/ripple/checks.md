@@ -1,5 +1,6 @@
 ---
 title: "Ripple Checks API"
+description: "Query Checks (deferred payments) on the XRP Ledger."
 ---
 
 <head>
@@ -74,7 +75,11 @@ query ($network: RippleNetwork!) {
 
 ```
 
-<details><summary>Filtering Checks</summary>
+<details>
+
+<summary>Filtering Checks</summary>
+
+
 -   `options`: This object contains options that control the pagination and sorting of the results.
  
 -   `date`: This object contains the start and end dates and times of the time range to filter the results by.
@@ -115,3 +120,12 @@ query ($network: RippleNetwork!) {
 - `send_max_usd`: The maximum amount that can be redeemed from the check in USD.
 - `currency`: The currency of the check.
 - `operation`: The type of check that was created.
+
+## Related Resources
+
+- [XRP Ledger schema overview](https://docs.bitquery.io/v1/docs/Schema/ripple/overview)
+- [Ripple API examples](https://docs.bitquery.io/v1/docs/Examples/ripple)
+- [Coinpath (XRP Ledger)](https://docs.bitquery.io/v1/docs/Schema/ripple/coinpath)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Documentation intro](https://docs.bitquery.io/v1/docs/intro)
+

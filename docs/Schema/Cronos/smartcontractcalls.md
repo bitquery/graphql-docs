@@ -1,3 +1,8 @@
+---
+title: "Cronos Smart Contract Calls API"
+description: "Query Cronos smart contract calls data using Bitquery GraphQL API. Get contract calls, methods, inputs, and execution context."
+keywords: ["Cronos API", "Cronos Smart Contract Calls", "Bitquery", "GraphQL"]
+---
 
 # Smart Contract Calls
 
@@ -83,3 +88,11 @@ Smart Contract Calls can be filtered using following arguments:
 - `smartContractMethod`: returns details of method to which the call was made
 - `success`: returns if calls is successful or not
 - `transaction`: returns details of the transaction in which smart contract call was executed
+
+## Related Resources
+
+- [Cronos schema overview](https://docs.bitquery.io/v1/docs/Schema/Cronos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cronos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/Cronos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

@@ -1,13 +1,15 @@
 ---
 sidebar_position: 1
+title: "Aggregation in Bitquery GraphQL API"
+description: "Group and aggregate blockchain data with sum, count, average, maximum, minimum, and median on Bitquery V1 GraphQL."
+keywords: [Bitquery, GraphQL, aggregation, calculate, sum, count]
 ---
-
 
 # Aggregation in V1 
 
 Aggregation is a way to group data and calculate aggregate values. The API supports a variety of aggregation functions, including `sum`, `count`, `average`, `maximum`, and `minimum`.
 
-The following is an example of a query that calculates the total amount of ETH sent by the address 0xd576769d320c81fdedb8b7e7e97042d7789134c4 between January 1, 2023 and January 31, 2023:
+The following query uses `calculate: sum` on the `amount` field to aggregate the total ETH sent by a specific address within a date range — a common pattern for wallet activity summaries and transaction volume tracking:
 
 ```
 query ($network: EthereumNetwork!, $address: String!, $from: ISO8601DateTime, $till: ISO8601DateTime) {
@@ -19,9 +21,9 @@ query ($network: EthereumNetwork!, $address: String!, $from: ISO8601DateTime, $t
 }
 
 ```
-This query will return the following field:
+The response returns a single `amount` value representing the summed ETH for the filtered address and date window.
 
-amount: The total amount of ETH sent by the address 0xd576769d320c81fdedb8b7e7e97042d7789134c4 between January 1, 2023 and January 31, 2023.
+**Variations:** Replace `sum` with `count` to get the number of transactions, or with `average` for the mean transaction size.
 
 > Notes:
 
@@ -30,7 +32,7 @@ amount: The total amount of ETH sent by the address 0xd576769d320c81fdedb8b7e7e9
 - The calculate keyword can only be used on fields that contain numeric values.
 
 
-Here's another example where we calculate the average gas price, the maximum gas price, and the median gas price for transactions sent between the dates 2023-01-01 and 2023-01-31.
+This next query demonstrates multiple aggregation functions in a single request — computing average, maximum, and median gas prices for Ethereum transactions sorted by date. This pattern is useful for gas fee analytics dashboards:
 
 
 ```
@@ -65,3 +67,11 @@ parameters:
 > Notes:
 
 The calculate argument can be used to specify the aggregation function that should be used.
+
+## Related Resources
+
+- [Count aggregation](https://docs.bitquery.io/v1/docs/query-features/aggregation/count)
+- [Sum aggregation](https://docs.bitquery.io/v1/docs/query-features/aggregation/sum)
+- [Basic structure of a query](https://docs.bitquery.io/v1/docs/building-queries/basic-structure-of-a-query)
+- [Filtering fields](https://docs.bitquery.io/v1/docs/query-features/filtering/fields)
+- [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)

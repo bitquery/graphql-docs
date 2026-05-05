@@ -1,3 +1,9 @@
+---
+title: "Elrond Call Results API"
+description: "Query Elrond call results data using Bitquery GraphQL API. Get smart contract call results and return data."
+keywords: ["Elrond API", "Elrond Call Results", "Bitquery", "GraphQL"]
+---
+
 # MultiversX CallResults API
 
 The MultiversX CallResults API allows you to query information about call results on the MultiversX blockchain. A call result is a record of a function call that was made to a smart contract. The API can be used to get information about the sender, receiver, value, type, and other details of a call result.
@@ -52,7 +58,10 @@ query ($network: ElrondNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
 
 ```
 
-<details><summary>Filtering CallResults</summary>
+<details>
+
+<summary>Filtering CallResults</summary>
+
 
 **options** : A set of options that can be used to filter the results.
 
@@ -119,3 +128,11 @@ query ($network: ElrondNetwork!, $limit: Int!, $offset: Int!, $from: ISO8601Date
 - **data:** The data that was passed to the call result.
 - **dataOperation:** The data operation that was performed by the call result.
 - **transaction:** The transaction that the call result belongs to
+
+## Related Resources
+
+- [Elrond schema overview](https://docs.bitquery.io/v1/docs/Schema/elrond/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Elrond Coinpath API](https://docs.bitquery.io/v1/docs/Schema/elrond/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)

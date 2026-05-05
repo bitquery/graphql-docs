@@ -1,3 +1,9 @@
+---
+title: "Cronos Active Addresses API"
+description: "Query Cronos active addresses data using Bitquery GraphQL API. Get active address counts and time-bucketed activity."
+keywords: ["Cronos API", "Cronos Active Addresses", "Bitquery", "GraphQL"]
+---
+
 # Active Addresses
 
 The `activeAddresses` field allows us to retrieve details about the active addresses from the cronos blockchain.
@@ -40,3 +46,11 @@ The following are available fields for the `activeAddresses`:
 -   `address`: returns the address and its annotation.
 -   `count`: returns the aggregate count of active addresses.
 -   `countBigInt`: returns the aggregate count of active addresses in `BigInt` format.
+
+## Related Resources
+
+- [Cronos schema overview](https://docs.bitquery.io/v1/docs/Schema/Cronos/overview)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
+- [Coinpath explained](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)
+- [Cronos Coinpath API](https://docs.bitquery.io/v1/docs/Schema/Cronos/coinpath)
+- [GraphQL examples overview](https://docs.bitquery.io/v1/docs/Examples/overview)
