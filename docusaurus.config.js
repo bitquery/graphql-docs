@@ -36,6 +36,15 @@ const config = {
     locales: ["en"],
   },
 
+  scripts: [
+    {
+      src: "https://www.chatbase.co/embed.min.js",
+      async: true,
+      id: "AyacAyaYZrLbucHlUUbZ5",
+      domain: "www.chatbase.co",
+    },
+  ],
+
   plugins: [
     // [
     //   "@graphql-markdown/docusaurus",
