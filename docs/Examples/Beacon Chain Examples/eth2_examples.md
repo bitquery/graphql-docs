@@ -1,5 +1,5 @@
 ---
-title: "Ethereum 2 / Beacon Chain API Examples — Bitquery GraphQL"
+title: "Ethereum 2 / Beacon Chain API Examples"
 description: "Example GraphQL queries for Ethereum 2 and Beacon Chain data. Get validators, attestations, slots, and network stats."
 keywords: [Ethereum 2 API examples, Beacon Chain GraphQL queries, Bitquery]
 sidebar_position: 1

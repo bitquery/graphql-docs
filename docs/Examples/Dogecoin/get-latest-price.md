@@ -1,5 +1,5 @@
 ---
-title: "Dogecoin Price API Examples — Bitquery GraphQL"
+title: "Dogecoin Price API Examples"
 description: "Example GraphQL queries for Dogecoin USD price from on-chain data. Get latest price and block context."
 keywords: [Dogecoin API examples, Dogecoin GraphQL queries, Bitquery]
 ---

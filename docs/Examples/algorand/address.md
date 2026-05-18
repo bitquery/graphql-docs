@@ -1,5 +1,5 @@
 ---
-title: "Algorand Address API Examples — Bitquery GraphQL"
+title: "Algorand Address API Examples"
 description: "Example GraphQL queries for Algorand addresses. Get balances, assets, and smart contract bytecode."
 keywords: [Algorand API examples, Algorand GraphQL queries, Bitquery]
 ---

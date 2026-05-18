@@ -1,5 +1,5 @@
 ---
-title: "DEX Trading Data API Examples — Bitquery GraphQL"
+title: "DEX Trading Data API Examples"
 description: "Example GraphQL queries for DEX trades across EVM chains. Get swaps, liquidity, prices, and DEX analytics."
 keywords: [DEX API examples, DEX GraphQL queries, Bitquery]
 sidebar_position: 1

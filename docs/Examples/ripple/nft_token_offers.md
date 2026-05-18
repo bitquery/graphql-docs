@@ -1,5 +1,5 @@
 ---
-title: "Ripple NFT Token Offers API Examples — Bitquery GraphQL"
+title: "Ripple NFT Token Offers API Examples"
 description: "Example GraphQL queries for XRPL NFT token offers. Filter by sender, amounts, and operations."
 keywords: [Ripple API examples, XRP GraphQL queries, Bitquery]
 ---

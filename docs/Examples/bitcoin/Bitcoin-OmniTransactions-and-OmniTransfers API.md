@@ -1,5 +1,5 @@
 ---
-title: "Bitcoin Omni API Examples — Bitquery GraphQL"
+title: "Bitcoin Omni API Examples"
 description: "Example GraphQL queries for Bitcoin Omni Layer data. Get Omni transactions and transfers by address."
 keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 ---

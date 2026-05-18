@@ -1,5 +1,5 @@
 ---
-title: "Cosmos Coinpath API Examples — Bitquery GraphQL"
+title: "Cosmos Coinpath API Examples"
 description: "Example GraphQL queries for Cosmos coinpath flows. Trace funds between addresses with depth and amounts."
 keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
 ---

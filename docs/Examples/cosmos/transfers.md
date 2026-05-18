@@ -1,5 +1,5 @@
 ---
-title: "Cosmos Transfers API Examples — Bitquery GraphQL"
+title: "Cosmos Transfers API Examples"
 description: "Example GraphQL queries for Cosmos transfers. Get transfers by signer, currency, value, and time."
 keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
 ---
@@ -94,4 +94,3 @@ Fetch the highest-value ATOM transfers after a given date. Returns the top 10 tr
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Cosmos address examples](https://docs.bitquery.io/v1/docs/Examples/cosmos/address)
 - [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
-

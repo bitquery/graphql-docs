@@ -1,5 +1,5 @@
 ---
-title: "Cosmos Messages API Examples — Bitquery GraphQL"
+title: "Cosmos Messages API Examples"
 description: "Example GraphQL queries for Cosmos messages. Get message types by block and message counts."
 keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
 ---

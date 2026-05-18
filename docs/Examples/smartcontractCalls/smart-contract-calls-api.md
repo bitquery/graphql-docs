@@ -1,5 +1,5 @@
 ---
-title: "Smart Contract Calls API Examples — Bitquery GraphQL"
+title: "Smart Contract Calls API Examples"
 description: "Example GraphQL queries for EVM smart contract calls. Get methods, arguments, call depth, and callers."
 keywords: [smart contract API examples, GraphQL queries, Bitquery]
 ---

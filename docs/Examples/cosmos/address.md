@@ -1,5 +1,5 @@
 ---
-title: "Cosmos Address API Examples — Bitquery GraphQL"
+title: "Cosmos Address API Examples"
 description: "Example GraphQL queries for Cosmos addresses. Get balances, transfers, and signer activity."
 keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
 ---

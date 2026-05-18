@@ -1,5 +1,5 @@
 ---
-title: "Cardano Coinpath API Examples — Bitquery GraphQL"
+title: "Cardano Coinpath API Examples"
 description: "Example GraphQL queries for Cardano Coinpath. Trace ADA flows in and out of a wallet with multi-hop depth."
 keywords: [Cardano API examples, Cardano GraphQL queries, Bitquery, Cardano coinpath, fund tracing, eUTXO]
 ---

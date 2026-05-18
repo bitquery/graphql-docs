@@ -1,5 +1,5 @@
 ---
-title: "Token API Examples — Bitquery GraphQL"
+title: "Token API Examples"
 description: "Example GraphQL queries for token prices, holders, supply, and DEX trades. Works across supported EVM chains."
 keywords: [token API examples, GraphQL queries, Bitquery]
 ---

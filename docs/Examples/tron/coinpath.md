@@ -1,5 +1,5 @@
 ---
-title: "Tron Coinpath API Examples — Bitquery GraphQL"
+title: "Tron Coinpath API Examples"
 description: "Example GraphQL queries for Tron coinpath and fund flows. Trace sender, receiver, depth, and amounts."
 keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
 ---
@@ -107,4 +107,3 @@ Trace incoming fund flows to a specific Tron receiver address for a given token.
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Coinpath money flow examples](https://docs.bitquery.io/v1/docs/Examples/coinpath/money-flow-api)
 - [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
-

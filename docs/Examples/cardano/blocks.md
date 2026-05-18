@@ -1,5 +1,5 @@
 ---
-title: "Cardano Blocks API Examples — Bitquery GraphQL"
+title: "Cardano Blocks API Examples"
 description: "Example GraphQL queries for Cardano blocks. Look up a block by height and list recent blocks in a time window."
 keywords: [Cardano API examples, Cardano GraphQL queries, Bitquery, Cardano blocks, epoch, slot]
 ---

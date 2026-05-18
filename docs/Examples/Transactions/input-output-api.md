@@ -1,5 +1,5 @@
 ---
-title: "UTXO Input Output API Examples — Bitquery GraphQL"
+title: "UTXO Input Output API Examples"
 description: "Example GraphQL queries for UTXO inputs and outputs on Bitcoin-family chains. Get scripts, values, and transaction links."
 keywords: [UTXO API examples, Bitcoin GraphQL queries, Bitquery]
 ---

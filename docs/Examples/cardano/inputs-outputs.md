@@ -1,5 +1,5 @@
 ---
-title: "Cardano Inputs and Outputs API Examples — Bitquery GraphQL"
+title: "Cardano Inputs and Outputs API Examples"
 description: "Example GraphQL queries for Cardano inputs and outputs. Compute address balances from UTXOs and list transfers in a date range."
 keywords:
   [

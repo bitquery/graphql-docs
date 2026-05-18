@@ -1,5 +1,5 @@
 ---
-title: "Tron Smart Contract Calls API Examples — Bitquery GraphQL"
+title: "Tron Smart Contract Calls API Examples"
 description: "Example GraphQL queries for Tron smart contract calls. Filter by method, contract, energy usage, and arguments."
 keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
 ---

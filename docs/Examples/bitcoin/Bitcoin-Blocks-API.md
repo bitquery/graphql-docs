@@ -1,5 +1,5 @@
 ---
-title: "Bitcoin Blocks API Examples — Bitquery GraphQL"
+title: "Bitcoin Blocks API Examples"
 description: "Example GraphQL queries for Bitcoin block data. Get recent blocks, height, difficulty, transaction counts, and timestamps."
 keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 ---

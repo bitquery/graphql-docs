@@ -1,5 +1,5 @@
 ---
-title: "Bitcoin API Examples — Bitquery GraphQL"
+title: "Bitcoin API Examples"
 description: "Example GraphQL queries for Bitcoin blockchain data. Get blocks, addresses, coinpath, fees, Omni, and transactions."
 keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 slug: /examples/Bitcoin/

@@ -1,5 +1,5 @@
 ---
-title: "Address & Balance Query Examples — Bitquery GraphQL"
+title: "Address & Balance Query Examples"
 description: "Example GraphQL queries for address balances on EVM networks. Get native and token balances for Polygon and more."
 keywords: [address API examples, GraphQL queries, Bitquery]
 sidebar_position: 2

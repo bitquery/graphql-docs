@@ -1,5 +1,5 @@
 ---
-title: "Algorand Coinpath API Examples — Bitquery GraphQL"
+title: "Algorand Coinpath API Examples"
 description: "Example GraphQL queries for Algorand coinpath. Trace senders, receivers, and transaction counts."
 keywords: [Algorand API examples, Algorand GraphQL queries, Bitquery]
 ---

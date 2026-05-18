@@ -1,5 +1,5 @@
 ---
-title: "Address Stats API Examples — Bitquery GraphQL"
+title: "Address Stats API Examples"
 description: "Example GraphQL queries for EVM address statistics. Get balance, send/receive amounts, and transaction counts."
 keywords: [address stats API examples, GraphQL queries, Bitquery]
 ---

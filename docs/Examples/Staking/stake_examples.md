@@ -1,5 +1,5 @@
 ---
-title: "Staking API Examples — Bitquery GraphQL"
+title: "Staking API Examples"
 description: "Example GraphQL queries for staking data. Get Cardano stake rewards and distribution history."
 keywords: [staking API examples, GraphQL queries, Bitquery]
 ---

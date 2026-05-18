@@ -1,5 +1,5 @@
 ---
-title: "Hedera Messages API Examples — Bitquery GraphQL"
+title: "Hedera Messages API Examples"
 description: "Example GraphQL queries for Hedera network messages. Get memos, node accounts, and timestamps."
 keywords: [Hedera API examples, Hedera GraphQL queries, Bitquery]
 ---

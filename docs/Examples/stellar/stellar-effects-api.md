@@ -1,5 +1,5 @@
 ---
-title: "Stellar Effects API Examples — Bitquery GraphQL"
+title: "Stellar Effects API Examples"
 description: "Example GraphQL queries for Stellar ledger effects. Get state changes, operations, and transaction links."
 keywords: [Stellar API examples, Stellar GraphQL queries, Bitquery]
 ---

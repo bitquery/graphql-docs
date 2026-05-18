@@ -1,5 +1,5 @@
 ---
-title: "Ethereum Trace API Examples — Bitquery GraphQL"
+title: "Ethereum Trace API Examples"
 description: "Example GraphQL queries for EVM transaction traces. Inspect internal calls, gas, and execution trees."
 keywords: [Ethereum API examples, trace GraphQL queries, Bitquery]
 ---

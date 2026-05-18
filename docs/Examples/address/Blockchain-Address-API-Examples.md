@@ -1,5 +1,5 @@
 ---
-title: "Blockchain Address API Examples — Bitquery GraphQL"
+title: "Blockchain Address API Examples"
 description: "Example GraphQL queries for addresses across chains. Get transactions, balances, transfers, and coinpath."
 keywords: [address API examples, GraphQL queries, Bitquery]
 sidebar_position: 1
@@ -422,6 +422,5 @@ Trace where an address sent its funds using Coinpath's default outbound directio
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Cross-chain examples](https://docs.bitquery.io/v1/docs/Examples/cross-chain/cross-chain-api)
 - [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
-
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Cosmos Transactions API Examples — Bitquery GraphQL"
+title: "Cosmos Transactions API Examples"
 description: "Example GraphQL queries for Cosmos transactions. Get fees, gas, signers, and raw transaction data."
 keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
 ---
@@ -86,5 +86,4 @@ Retrieve all transactions signed by a specific address on a given date. Returns 
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Cosmos transfers examples](https://docs.bitquery.io/v1/docs/Examples/cosmos/transfers)
 - [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
-
 

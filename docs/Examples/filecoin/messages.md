@@ -1,5 +1,5 @@
 ---
-title: "Filecoin Messages API Examples — Bitquery GraphQL"
+title: "Filecoin Messages API Examples"
 description: "Example GraphQL queries for Filecoin messages and storage deals. Track publish, faults, and on-chain actors."
 keywords: [Filecoin API examples, Filecoin GraphQL queries, Bitquery]
 ---

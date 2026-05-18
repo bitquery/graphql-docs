@@ -1,5 +1,5 @@
 ---
-title: "DEX Pools API Examples — Bitquery GraphQL"
+title: "DEX Pools API Examples"
 description: "Example GraphQL queries for DEX liquidity pools. Get pair creation, reserves, and pool metadata on EVM chains."
 keywords: [DEX API examples, DEX GraphQL queries, Bitquery]
 ---
@@ -78,4 +78,3 @@ Once you have both values, you can multiply and get the FDV.
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [DEX trading data examples](https://docs.bitquery.io/v1/docs/Examples/dexTrades/dex-trading-data-api)
 - [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
-

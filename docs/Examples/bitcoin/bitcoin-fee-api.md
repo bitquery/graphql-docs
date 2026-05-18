@@ -1,5 +1,5 @@
 ---
-title: "Bitcoin Fee API Examples — Bitquery GraphQL"
+title: "Bitcoin Fee API Examples"
 description: "Example GraphQL queries for Bitcoin transaction fees. Get per-tx fees, USD fees, and fee aggregates by account."
 keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 ---

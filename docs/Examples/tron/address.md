@@ -1,5 +1,5 @@
 ---
-title: "Tron Address API Examples — Bitquery GraphQL"
+title: "Tron Address API Examples"
 description: "Example GraphQL queries for Tron addresses. Get balance, rewards, and smart contract details for an address."
 keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
 ---

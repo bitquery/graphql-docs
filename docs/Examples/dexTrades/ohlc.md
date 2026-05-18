@@ -1,5 +1,5 @@
 ---
-title: "DEX OHLC API Examples — Bitquery GraphQL"
+title: "DEX OHLC API Examples"
 description: "Example GraphQL queries for DEX OHLC candle data. Get open, high, low, close, and trade counts for pairs."
 keywords: [DEX API examples, DEX GraphQL queries, Bitquery]
 ---

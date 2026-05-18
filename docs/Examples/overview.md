@@ -1,5 +1,5 @@
 ---
-title: "Blockchain API Examples — Bitquery GraphQL Query Library"
+title: "Blockchain API Examples"
 sidebar_position: 1
 description: "Browse production-ready GraphQL examples for Bitquery V1 across Ethereum, Solana, Bitcoin, Ripple, Tron, and more — built for accounting, audit, trading, compliance, and bulk export to S3 and Parquet."
 keywords:

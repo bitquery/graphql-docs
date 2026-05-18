@@ -1,5 +1,5 @@
 ---
-title: "Stellar Transactions API Examples — Bitquery GraphQL"
+title: "Stellar Transactions API Examples"
 description: "Example GraphQL queries for Stellar transactions. Get fees, hashes, senders, operation counts, and timestamps."
 keywords: [Stellar API examples, Stellar GraphQL queries, Bitquery]
 ---

@@ -2,7 +2,7 @@
   "label": "Solana",
   "link": {
     "type": "generated-index",
-    "title": "Solana API Examples — Bitquery GraphQL",
+    "title": "Solana API Examples",
     "description": "Production-ready GraphQL examples for Solana on Bitquery V1: full historical SOL and SPL transfers, transactions, addresses, and Coinpath. Built for accounting, tax, audit, trading research, compliance, treasury, and bulk export to S3 in Parquet.",
     "keywords": [
       "Solana API",

@@ -1,5 +1,5 @@
 ---
-title: "Cosmos Blocks API Examples — Bitquery GraphQL"
+title: "Cosmos Blocks API Examples"
 description: "Example GraphQL queries for Cosmos blocks. Get heights, proposers, timestamps, and block counts."
 keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Tron DEX Trades API Examples — Bitquery GraphQL"
+title: "Tron DEX Trades API Examples"
 description: "Example GraphQL queries for Tron DEX trades. Get pairs, base/quote currencies, smart contracts, and trade counts."
 keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Cardano Transactions API Examples — Bitquery GraphQL"
+title: "Cardano Transactions API Examples"
 description: "Example GraphQL queries for Cardano transactions. Get tx details for a specific date and daily transaction counts."
 keywords: [Cardano API examples, Cardano GraphQL queries, Bitquery, Cardano transactions, mintCount, feeValue]
 ---

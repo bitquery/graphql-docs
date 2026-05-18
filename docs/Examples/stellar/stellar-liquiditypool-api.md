@@ -1,5 +1,5 @@
 ---
-title: "Stellar Liquidity Pools API Examples — Bitquery GraphQL"
+title: "Stellar Liquidity Pools API Examples"
 description: "Example GraphQL queries for Stellar liquidity pool effects. Get pool operations, transactions, and currencies."
 keywords: [Stellar API examples, Stellar GraphQL queries, Bitquery]
 ---

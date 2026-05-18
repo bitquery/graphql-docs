@@ -1,5 +1,5 @@
 ---
-title: "Non-EVM Smart Contract Events API Examples — Bitquery GraphQL"
+title: "Non-EVM Smart Contract Events API Examples"
 description: "Example GraphQL queries for events on non-EVM chains like Flow. Get mint, burn, and custom event data."
 keywords: [smart contract API examples, GraphQL queries, Bitquery]
 ---

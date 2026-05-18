@@ -1,5 +1,5 @@
 ---
-title: "Dogecoin Transfers API Examples — Bitquery GraphQL"
+title: "Dogecoin Transfers API Examples"
 description: "Example GraphQL queries for Dogecoin transfers and address flows. Get inbound and outbound transfer paths."
 keywords: [Dogecoin API examples, Dogecoin GraphQL queries, Bitquery]
 ---

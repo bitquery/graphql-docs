@@ -1,5 +1,5 @@
 ---
-title: "Stellar Payments API Examples — Bitquery GraphQL"
+title: "Stellar Payments API Examples"
 description: "Example GraphQL queries for Stellar payments. Get amounts, currencies, issuers, paths, and counterparties."
 keywords: [Stellar API examples, Stellar GraphQL queries, Bitquery]
 ---

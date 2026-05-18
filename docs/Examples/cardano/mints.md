@@ -1,5 +1,5 @@
 ---
-title: "Cardano Mints API Examples — Bitquery GraphQL"
+title: "Cardano Mints API Examples"
 description: "Example GraphQL queries for Cardano native-token mints. Get recent mint events and aggregate mint counts over time."
 keywords:
   [

@@ -1,5 +1,5 @@
 ---
-title: "Tron Smart Contract Events API Examples — Bitquery GraphQL"
+title: "Tron Smart Contract Events API Examples"
 description: "Example GraphQL queries for Tron smart contract events. Filter by contract, event name, block, and logs."
 keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Transfer API Examples — Bitquery GraphQL"
+title: "Transfer API Examples"
 description: "Example GraphQL queries for token and native transfers on EVM chains. Filter by address, contract, and time."
 keywords: [transfer API examples, GraphQL queries, Bitquery]
 sidebar_position: 1

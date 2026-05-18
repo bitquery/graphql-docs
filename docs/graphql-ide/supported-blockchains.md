@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-title: "Supported Blockchains — Bitquery V1 API Networks & Status"
+title: "Supported Blockchains"
 description: "Bitquery V1 supports 40+ blockchains including Ethereum, BSC, Solana, Cosmos, Bitcoin, and more. Check system status and data availability for each network."
 keywords:
   [

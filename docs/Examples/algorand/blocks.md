@@ -1,5 +1,5 @@
 ---
-title: "Algorand Blocks API Examples — Bitquery GraphQL"
+title: "Algorand Blocks API Examples"
 description: "Example GraphQL queries for Algorand blocks. Get proposers, rewards, and block metadata."
 keywords: [Algorand API examples, Algorand GraphQL queries, Bitquery]
 ---

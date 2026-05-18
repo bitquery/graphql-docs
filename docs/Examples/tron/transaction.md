@@ -1,5 +1,5 @@
 ---
-title: "Tron Transactions API Examples — Bitquery GraphQL"
+title: "Tron Transactions API Examples"
 description: "Example GraphQL queries for Tron transactions. Get transactions by block, height, fees, energy, and counts."
 keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
 ---

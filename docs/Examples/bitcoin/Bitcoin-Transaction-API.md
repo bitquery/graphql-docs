@@ -1,5 +1,5 @@
 ---
-title: "Bitcoin Transaction API Examples — Bitquery GraphQL"
+title: "Bitcoin Transaction API Examples"
 description: "Example GraphQL queries for Bitcoin transactions. Get latest txs, fees, inputs, outputs, and daily aggregates."
 keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Stellar Address API Examples — Bitquery GraphQL"
+title: "Stellar Address API Examples"
 description: "Example GraphQL queries for Stellar addresses. Get wallet balances, assets, issuers, and asset codes."
 keywords: [Stellar API examples, Stellar GraphQL queries, Bitquery]
 ---

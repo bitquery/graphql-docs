@@ -1,5 +1,5 @@
 ---
-title: "Active Addresses API Examples — Bitquery GraphQL"
+title: "Active Addresses API Examples"
 description: "Example GraphQL queries for active addresses by chain or token. Count unique addresses over time."
 keywords: [active addresses API examples, GraphQL queries, Bitquery]
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Crypto Price Prediction with Machine Learning — Bitquery API Use Case"
+title: "Crypto Price Prediction with Machine Learning"
 sidebar_position: 3
 description: "Learn how to fetch historical DEX trading data with GraphQL from the Bitquery API and build a Python Random Forest model for cryptocurrency price prediction."
 keywords: [machine learning, cryptocurrency, GraphQL, Bitquery API, DEX, Python]

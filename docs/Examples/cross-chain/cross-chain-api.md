@@ -1,5 +1,5 @@
 ---
-title: "Cross-Chain API Examples — Bitquery GraphQL"
+title: "Cross-Chain API Examples"
 description: "Example GraphQL queries spanning multiple blockchains. Get balances, transfers, trades, and token analytics in one request."
 keywords: [cross-chain API examples, GraphQL queries, Bitquery]
 ---

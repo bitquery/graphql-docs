@@ -1,5 +1,5 @@
 ---
-title: "Bitcoin Address API Examples — Bitquery GraphQL"
+title: "Bitcoin Address API Examples"
 description: "Example GraphQL queries for Bitcoin address data. Get balances, inputs, outputs, UTXO activity, and USD values."
 keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery, Bitcoin balance API, Bitcoin UTXO, BTC address balance, Bitcoin wallet balance, Bitcoin inputs outputs]
 ---

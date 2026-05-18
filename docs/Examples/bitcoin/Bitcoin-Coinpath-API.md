@@ -1,5 +1,5 @@
 ---
-title: "Bitcoin Coinpath API Examples — Bitquery GraphQL"
+title: "Bitcoin Coinpath API Examples"
 description: "Example GraphQL queries for Bitcoin coinpath and fund flow data. Track transfers between addresses, depth, direction, and transaction paths."
 keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 ---

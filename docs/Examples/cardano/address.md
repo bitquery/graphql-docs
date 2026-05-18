@@ -1,5 +1,5 @@
 ---
-title: "Cardano Address API Examples — Bitquery GraphQL"
+title: "Cardano Address API Examples"
 description: "Example GraphQL queries for Cardano addresses. Get wallet balances with native assets and aggregate address activity metrics."
 keywords:
   [

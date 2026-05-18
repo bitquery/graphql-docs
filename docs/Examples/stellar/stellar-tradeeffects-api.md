@@ -1,5 +1,5 @@
 ---
-title: "Stellar Trades API Examples — Bitquery GraphQL"
+title: "Stellar Trades API Examples"
 description: "Example GraphQL queries for Stellar DEX trades and trade effects. Get prices, sellers, buyers, and assets."
 keywords: [Stellar API examples, Stellar GraphQL queries, Bitquery]
 slug: /blockchain/Stellar/trade-effects-api
@@ -126,4 +126,3 @@ query MyQuery {
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Stellar payments examples](https://docs.bitquery.io/v1/docs/Examples/stellar/stellar-payments-api)
 - [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
-

@@ -290,5 +290,5 @@ The full code is available in this repo here https://github.com/bitquery/Trading
 - [Bitquery documentation home](https://docs.bitquery.io/v1/docs/intro)
 - [How to start with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Ethereum schema overview](https://docs.bitquery.io/v1/docs/Schema/ethereum/overview)
-- [React tutorial — Bitquery APIs](https://docs.bitquery.io/v1/docs/Use-Cases/react-example)
+- [React tutorials](https://docs.bitquery.io/v1/docs/Use-Cases/react-example)
 - [Coinpath explained — overview](https://docs.bitquery.io/v1/docs/building-queries/Coinpath-Explained/Overview)

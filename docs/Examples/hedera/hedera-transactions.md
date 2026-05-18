@@ -1,5 +1,5 @@
 ---
-title: "Hedera Transactions API Examples — Bitquery GraphQL"
+title: "Hedera Transactions API Examples"
 description: "Example GraphQL queries for Hedera consensus transactions. Get fees, timestamps, and transaction types."
 keywords: [Hedera API examples, Hedera GraphQL queries, Bitquery]
 ---

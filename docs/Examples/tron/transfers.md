@@ -1,5 +1,5 @@
 ---
-title: "Tron Transfers API Examples — Bitquery GraphQL"
+title: "Tron Transfers API Examples"
 description: "Example GraphQL queries for Tron token transfers. Get latest transfers, TRC-20 flows, and inflow/outflow totals."
 keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
 ---

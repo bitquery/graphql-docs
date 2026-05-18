@@ -1,5 +1,5 @@
 ---
-title: "Smart Contract Events API Examples — Bitquery GraphQL"
+title: "Smart Contract Events API Examples"
 description: "Example GraphQL queries for EVM smart contract events. Get logs, topics, arguments, and transaction hashes."
 keywords: [smart contract API examples, GraphQL queries, Bitquery]
 ---

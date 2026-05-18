@@ -1,5 +1,5 @@
 ---
-title: "Djed Stablecoin API Examples — Bitquery GraphQL on Cardano"
+title: "Djed Stablecoin API Examples on Cardano"
 description: "Query Djed stablecoin on Cardano with Bitquery GraphQL. Track DJED mints and burns, list recent DJED transfers, and see DJED received or sent by a specific address."
 keywords:
   [

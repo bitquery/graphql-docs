@@ -1,5 +1,5 @@
 ---
-title: "Algorand Arguments API Examples — Bitquery GraphQL"
+title: "Algorand Arguments API Examples"
 description: "Example GraphQL queries for Algorand smart contract arguments on calls and events."
 keywords: [Algorand API examples, Algorand GraphQL queries, Bitquery]
 ---
@@ -17,4 +17,3 @@ Retrieve argument names, types, and values from Algorand smart contract calls an
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Algorand address examples](https://docs.bitquery.io/v1/docs/Examples/algorand/address)
 - [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
-

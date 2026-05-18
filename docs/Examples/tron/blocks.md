@@ -1,5 +1,5 @@
 ---
-title: "Tron Blocks API Examples — Bitquery GraphQL"
+title: "Tron Blocks API Examples"
 description: "Example GraphQL queries for Tron blocks. Get recent blocks, witnesses, timestamps, and parent hashes."
 keywords: [Tron API examples, Tron GraphQL queries, Bitquery]
 ---
@@ -101,4 +101,3 @@ Retrieve Tron blocks produced by a specific witness (super representative) addre
 - [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
 - [Tron transactions examples](https://docs.bitquery.io/v1/docs/Examples/tron/transaction)
 - [Bitquery documentation intro](https://docs.bitquery.io/v1/docs/intro)
-

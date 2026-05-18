@@ -1,5 +1,5 @@
 ---
-title: "Multi-Chain Transaction API Examples — Bitquery GraphQL"
+title: "Multi-Chain Transaction API Examples"
 description: "Example GraphQL queries for transactions on Bitcoin, Ethereum, and other networks. Get hashes, senders, receivers, and aggregates."
 keywords: [transaction API examples, GraphQL queries, Bitquery]
 ---

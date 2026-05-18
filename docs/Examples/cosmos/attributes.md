@@ -1,5 +1,5 @@
 ---
-title: "Cosmos Event Attributes API Examples — Bitquery GraphQL"
+title: "Cosmos Event Attributes API Examples"
 description: "Example GraphQL queries for Cosmos event attributes. Filter by event type and time ranges."
 keywords: [Cosmos API examples, Cosmos GraphQL queries, Bitquery]
 ---

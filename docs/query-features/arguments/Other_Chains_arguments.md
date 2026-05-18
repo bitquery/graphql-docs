@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: "Arguments on Algorand, Hedera & Other Chains — Bitquery API"
+title: "Arguments on Algorand, Hedera & Other Chains"
 description: "Examples of the arguments API on non-EVM chains including Algorand and Hedera with Bitquery GraphQL."
 keywords: [Bitquery, GraphQL, arguments, Algorand, Hedera]
 ---

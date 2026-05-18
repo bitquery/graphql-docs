@@ -1,5 +1,5 @@
 ---
-title: "Hedera Address API Examples — Bitquery GraphQL"
+title: "Hedera Address API Examples"
 description: "Example GraphQL queries for Hedera accounts. Get latest HBAR balances and account metadata."
 keywords: [Hedera API examples, Hedera GraphQL queries, Bitquery]
 ---
